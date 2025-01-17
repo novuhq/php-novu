@@ -10,6 +10,10 @@ targets:
     novu:
         target: php
         source: novu-OAS
+        publish:
+            packagist:
+                username: novuhq
+                token: $packagist_token
         codeSamples:
             registry:
                 location: registry.speakeasyapi.dev/novu/novu/novu-oas-php-code-samples
