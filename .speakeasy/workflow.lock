@@ -1,0 +1,35 @@
+speakeasyVersion: 1.469.0
+sources:
+    novu-OAS:
+        sourceNamespace: novu-oas
+        sourceRevisionDigest: sha256:21367ef75f16ed5cfdf8972684fbe3671307fe5f95f10842295478088904d0a5
+        sourceBlobDigest: sha256:ba8ff28975436bfaa7b97c66c2a878486ea83454788feffc7c3b3b65390c3add
+        tags:
+            - latest
+targets:
+    novu:
+        source: novu-OAS
+        sourceNamespace: novu-oas
+        sourceRevisionDigest: sha256:21367ef75f16ed5cfdf8972684fbe3671307fe5f95f10842295478088904d0a5
+        sourceBlobDigest: sha256:ba8ff28975436bfaa7b97c66c2a878486ea83454788feffc7c3b3b65390c3add
+        codeSamplesNamespace: novu-oas-php-code-samples
+        codeSamplesRevisionDigest: sha256:c8e706ea02db24c7e018e31e90f32932d1c676a7cf3d68ebf7ab919538531d46
+workflow:
+    workflowVersion: 1.0.0
+    speakeasyVersion: latest
+    sources:
+        novu-OAS:
+            inputs:
+                - location: registry.speakeasyapi.dev/novu/novu/novu-oas:main
+            registry:
+                location: registry.speakeasyapi.dev/novu/novu/novu-oas
+    targets:
+        novu:
+            target: php
+            source: novu-OAS
+            codeSamples:
+                registry:
+                    location: registry.speakeasyapi.dev/novu/novu/novu-oas-php-code-samples
+                labelOverride:
+                    fixedValue: Php (SDK)
+                blocking: false

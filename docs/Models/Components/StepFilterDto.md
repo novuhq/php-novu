@@ -1,0 +1,11 @@
+# StepFilterDto
+
+
+## Fields
+
+| Field                                                                                 | Type                                                                                  | Required                                                                              | Description                                                                           |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `isNegated`                                                                           | *bool*                                                                                | :heavy_check_mark:                                                                    | N/A                                                                                   |
+| `type`                                                                                | [Components\BuilderFieldTypeEnum](../../Models/Components/BuilderFieldTypeEnum.md)    | :heavy_check_mark:                                                                    | N/A                                                                                   |
+| `value`                                                                               | [Components\Value](../../Models/Components/Value.md)                                  | :heavy_check_mark:                                                                    | N/A                                                                                   |
+| `children`                                                                            | array<[Components\FieldFilterPartDto](../../Models/Components/FieldFilterPartDto.md)> | :heavy_check_mark:                                                                    | N/A                                                                                   |

@@ -1,0 +1,10 @@
+# BulkCreateSubscriberResponseDto
+
+
+## Fields
+
+| Field                                                                                     | Type                                                                                      | Required                                                                                  | Description                                                                               |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `updated`                                                                                 | array<[Components\UpdatedSubscriberDto](../../Models/Components/UpdatedSubscriberDto.md)> | :heavy_check_mark:                                                                        | An array of subscribers that were successfully updated.                                   |
+| `created`                                                                                 | array<[Components\CreatedSubscriberDto](../../Models/Components/CreatedSubscriberDto.md)> | :heavy_check_mark:                                                                        | An array of subscribers that were successfully created.                                   |
+| `failed`                                                                                  | array<[Components\FailedOperationDto](../../Models/Components/FailedOperationDto.md)>     | :heavy_check_mark:                                                                        | An array of failed operations with error messages and optional subscriber IDs.            |
