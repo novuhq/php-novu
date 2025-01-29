@@ -26,7 +26,7 @@ class MarkAllMessageAsRequestDto
      * @var string|array<string>|null $feedIdentifier
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('feedIdentifier')]
-    #[\Speakeasy\Serializer\Annotation\Type('string|array<string>')]
+    #[\Speakeasy\Serializer\Annotation\Type('string|array<string>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public string|array|null $feedIdentifier = null;
 

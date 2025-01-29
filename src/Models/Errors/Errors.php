@@ -25,7 +25,7 @@ class Errors
      * @var string|float|bool|array<string, mixed>|array<array<string, mixed>>|null $value
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('value')]
-    #[\Speakeasy\Serializer\Annotation\Type('string|float|bool|array<string, mixed>|array<array<string, mixed>>')]
+    #[\Speakeasy\Serializer\Annotation\Type('string|float|bool|array<string, mixed>|array<array<string, mixed>>|null')]
     public string|float|bool|array|null $value;
 
     /**

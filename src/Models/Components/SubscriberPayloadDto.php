@@ -76,10 +76,10 @@ class SubscriberPayloadDto
     /**
      * An optional payload object that can contain any properties.
      *
-     * @var ?array<string, mixed> $data
+     * @var ?array<string, string|array<string>|bool|float> $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, string|array<string>|bool|float>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $data = null;
 
@@ -101,7 +101,7 @@ class SubscriberPayloadDto
      * @param  ?string  $phone
      * @param  ?string  $avatar
      * @param  ?string  $locale
-     * @param  ?array<string, mixed>  $data
+     * @param  ?array<string, string|array<string>|bool|float>  $data
      * @param  ?array<SubscriberChannelDto>  $channels
      */
     public function __construct(string $subscriberId, ?string $email = null, ?string $firstName = null, ?string $lastName = null, ?string $phone = null, ?string $avatar = null, ?string $locale = null, ?array $data = null, ?array $channels = null)

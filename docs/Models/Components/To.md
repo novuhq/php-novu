@@ -9,7 +9,7 @@ The recipients list of people who will receive the notification.
 
 ```php
 /**
-* @var array<mixed>
+* @var array<Components\SubscriberPayloadDto|Components\TopicPayloadDto|string>
 */
 array $value = /* values here */
 ```

@@ -22,10 +22,10 @@ class TriggerEventRequestDto
     /**
      * The recipients list of people who will receive the notification.
      *
-     * @var array<mixed>|string|SubscriberPayloadDto|TopicPayloadDto $to
+     * @var array<SubscriberPayloadDto|TopicPayloadDto|string>|string|SubscriberPayloadDto|TopicPayloadDto $to
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('to')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<mixed>|string|\novu\Models\Components\SubscriberPayloadDto|\novu\Models\Components\TopicPayloadDto')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\SubscriberPayloadDto|\novu\Models\Components\TopicPayloadDto|string>|string|\novu\Models\Components\SubscriberPayloadDto|\novu\Models\Components\TopicPayloadDto')]
     public array|string|SubscriberPayloadDto|TopicPayloadDto $to;
 
     /**
@@ -80,7 +80,7 @@ class TriggerEventRequestDto
      * @var string|SubscriberPayloadDto|null $actor
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('actor')]
-    #[\Speakeasy\Serializer\Annotation\Type('string|\novu\Models\Components\SubscriberPayloadDto')]
+    #[\Speakeasy\Serializer\Annotation\Type('string|\novu\Models\Components\SubscriberPayloadDto|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public string|SubscriberPayloadDto|null $actor = null;
 
@@ -92,7 +92,7 @@ class TriggerEventRequestDto
      * @var string|TenantPayloadDto|null $tenant
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('tenant')]
-    #[\Speakeasy\Serializer\Annotation\Type('string|\novu\Models\Components\TenantPayloadDto')]
+    #[\Speakeasy\Serializer\Annotation\Type('string|\novu\Models\Components\TenantPayloadDto|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public string|TenantPayloadDto|null $tenant = null;
 
@@ -108,7 +108,7 @@ class TriggerEventRequestDto
 
     /**
      * @param  string  $name
-     * @param  array<mixed>|string|SubscriberPayloadDto|TopicPayloadDto  $to
+     * @param  array<SubscriberPayloadDto|TopicPayloadDto|string>|string|SubscriberPayloadDto|TopicPayloadDto  $to
      * @param  ?array<string, mixed>  $payload
      * @param  ?string  $bridgeUrl
      * @param  ?array<string, array<string, mixed>>  $overrides

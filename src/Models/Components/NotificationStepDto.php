@@ -100,7 +100,7 @@ class NotificationStepDto
      * @var DigestRegularMetadata|DigestTimedMetadata|DelayRegularMetadata|DelayScheduledMetadata|null $metadata
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('metadata')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\DigestRegularMetadata|\novu\Models\Components\DigestTimedMetadata|\novu\Models\Components\DelayRegularMetadata|\novu\Models\Components\DelayScheduledMetadata')]
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\DigestRegularMetadata|\novu\Models\Components\DigestTimedMetadata|\novu\Models\Components\DelayRegularMetadata|\novu\Models\Components\DelayScheduledMetadata|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public DigestRegularMetadata|DigestTimedMetadata|DelayRegularMetadata|DelayScheduledMetadata|null $metadata = null;
 

@@ -59,7 +59,7 @@ class TriggerEventToAllRequestDto
      * @var string|SubscriberPayloadDto|null $actor
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('actor')]
-    #[\Speakeasy\Serializer\Annotation\Type('string|\novu\Models\Components\SubscriberPayloadDto')]
+    #[\Speakeasy\Serializer\Annotation\Type('string|\novu\Models\Components\SubscriberPayloadDto|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public string|SubscriberPayloadDto|null $actor = null;
 
@@ -72,7 +72,7 @@ class TriggerEventToAllRequestDto
      * @var string|TenantPayloadDto|null $tenant
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('tenant')]
-    #[\Speakeasy\Serializer\Annotation\Type('string|\novu\Models\Components\TenantPayloadDto')]
+    #[\Speakeasy\Serializer\Annotation\Type('string|\novu\Models\Components\TenantPayloadDto|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public string|TenantPayloadDto|null $tenant = null;
 
