@@ -43,32 +43,11 @@ For more information about the API: [Novu Documentation](https://docs.novu.co)
 <!-- Start SDK Installation [installation] -->
 ## SDK Installation
 
-> [!TIP]
-> To finish publishing your SDK you must [run your first generation action](https://www.speakeasy.com/docs/github-setup#step-by-step-guide).
-
-
 The SDK relies on [Composer](https://getcomposer.org/) to manage its dependencies.
 
-To install the SDK first add the below to your `composer.json` file:
-
-```json
-{
-    "repositories": [
-        {
-            "type": "github",
-            "url": "<UNSET>.git"
-        }
-    ],
-    "require": {
-        "novuhq/novu": "*"
-    }
-}
-```
-
-Then run the following command:
-
+To install the SDK and add it as a dependency to an existing `composer.json` file:
 ```bash
-composer update
+composer require "novuhq/novu"
 ```
 <!-- End SDK Installation [installation] -->
 
