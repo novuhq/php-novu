@@ -36,13 +36,13 @@ class NovuBuilder
     /**
      * setSecurity is used to configure the security required for the SDK.
      *
-     * @param  string  $apiKey
+     * @param  string  $secretKey
      * @return NovuBuilder
      */
-    public function setSecurity(string $apiKey): NovuBuilder
+    public function setSecurity(string $secretKey): NovuBuilder
     {
         $security = new Models\Components\Security(
-            apiKey: $apiKey
+            secretKey: $secretKey
         );
         $this->sdkConfig->security = $security;
 

@@ -5,9 +5,9 @@
 
 ### Available Operations
 
-* [getProviderStatus](#getproviderstatus) - Get webhook support status for provider
+* [retrieve](#retrieve) - Get webhook support status for provider
 
-## getProviderStatus
+## retrieve
 
 Return the status of the webhook for this provider, if it is supported or if it is not based on a boolean value
 
@@ -28,8 +28,10 @@ $sdk = novu\Novu::builder()
 
 
 
-$response = $sdk->integrations->webhooks->getProviderStatus(
-    providerOrIntegrationId: '<id>'
+$response = $sdk->integrations->webhooks->retrieve(
+    providerOrIntegrationId: '<id>',
+    idempotencyKey: '<value>'
+
 );
 
 if ($response->boolean !== null) {
@@ -39,9 +41,10 @@ if ($response->boolean !== null) {
 
 ### Parameters
 
-| Parameter                 | Type                      | Required                  | Description               |
-| ------------------------- | ------------------------- | ------------------------- | ------------------------- |
-| `providerOrIntegrationId` | *string*                  | :heavy_check_mark:        | N/A                       |
+| Parameter                         | Type                              | Required                          | Description                       |
+| --------------------------------- | --------------------------------- | --------------------------------- | --------------------------------- |
+| `providerOrIntegrationId`         | *string*                          | :heavy_check_mark:                | N/A                               |
+| `idempotencyKey`                  | *?string*                         | :heavy_minus_sign:                | A header for idempotency purposes |
 
 ### Response
 
@@ -49,8 +52,10 @@ if ($response->boolean !== null) {
 
 ### Errors
 
-| Error Type                | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| Errors\ErrorDto           | 400, 404, 409             | application/json          |
-| Errors\ValidationErrorDto | 422                       | application/json          |
-| Errors\APIException       | 4XX, 5XX                  | \*/\*                     |
+| Error Type                             | Status Code                            | Content Type                           |
+| -------------------------------------- | -------------------------------------- | -------------------------------------- |
+| Errors\ErrorDto                        | 414                                    | application/json                       |
+| Errors\ErrorDto                        | 400, 401, 403, 404, 405, 409, 413, 415 | application/json                       |
+| Errors\ValidationErrorDto              | 422                                    | application/json                       |
+| Errors\ErrorDto                        | 500                                    | application/json                       |
+| Errors\APIException                    | 4XX, 5XX                               | \*/\*                                  |

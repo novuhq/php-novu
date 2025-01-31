@@ -10,7 +10,7 @@ Topics are a way to group subscribers together so that they can be notified of e
 
 * [create](#create) - Topic creation
 * [delete](#delete) - Delete topic
-* [get](#get) - Get topic
+* [retrieve](#retrieve) - Get topic
 * [list](#list) - Get topic list filtered 
 * [rename](#rename) - Rename a topic
 
@@ -34,13 +34,15 @@ $sdk = novu\Novu::builder()
     )
     ->build();
 
-$request = new Components\CreateTopicRequestDto(
+$createTopicRequestDto = new Components\CreateTopicRequestDto(
     key: '<key>',
     name: '<value>',
 );
 
 $response = $sdk->topics->create(
-    request: $request
+    createTopicRequestDto: $createTopicRequestDto,
+    idempotencyKey: '<value>'
+
 );
 
 if ($response->createTopicResponseDto !== null) {
@@ -52,7 +54,8 @@ if ($response->createTopicResponseDto !== null) {
 
 | Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
 | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
-| `$request`                                                                           | [Components\CreateTopicRequestDto](../../Models/Components/CreateTopicRequestDto.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
+| `createTopicRequestDto`                                                              | [Components\CreateTopicRequestDto](../../Models/Components/CreateTopicRequestDto.md) | :heavy_check_mark:                                                                   | N/A                                                                                  |
+| `idempotencyKey`                                                                     | *?string*                                                                            | :heavy_minus_sign:                                                                   | A header for idempotency purposes                                                    |
 
 ### Response
 
@@ -60,11 +63,13 @@ if ($response->createTopicResponseDto !== null) {
 
 ### Errors
 
-| Error Type                | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| Errors\ErrorDto           | 400, 404, 409             | application/json          |
-| Errors\ValidationErrorDto | 422                       | application/json          |
-| Errors\APIException       | 4XX, 5XX                  | \*/\*                     |
+| Error Type                             | Status Code                            | Content Type                           |
+| -------------------------------------- | -------------------------------------- | -------------------------------------- |
+| Errors\ErrorDto                        | 414                                    | application/json                       |
+| Errors\ErrorDto                        | 400, 401, 403, 404, 405, 409, 413, 415 | application/json                       |
+| Errors\ValidationErrorDto              | 422                                    | application/json                       |
+| Errors\ErrorDto                        | 500                                    | application/json                       |
+| Errors\APIException                    | 4XX, 5XX                               | \*/\*                                  |
 
 ## delete
 
@@ -88,7 +93,9 @@ $sdk = novu\Novu::builder()
 
 
 $response = $sdk->topics->delete(
-    topicKey: '<value>'
+    topicKey: '<value>',
+    idempotencyKey: '<value>'
+
 );
 
 if ($response->statusCode === 200) {
@@ -98,9 +105,10 @@ if ($response->statusCode === 200) {
 
 ### Parameters
 
-| Parameter          | Type               | Required           | Description        |
-| ------------------ | ------------------ | ------------------ | ------------------ |
-| `topicKey`         | *string*           | :heavy_check_mark: | The topic key      |
+| Parameter                         | Type                              | Required                          | Description                       |
+| --------------------------------- | --------------------------------- | --------------------------------- | --------------------------------- |
+| `topicKey`                        | *string*                          | :heavy_check_mark:                | The topic key                     |
+| `idempotencyKey`                  | *?string*                         | :heavy_minus_sign:                | A header for idempotency purposes |
 
 ### Response
 
@@ -108,13 +116,15 @@ if ($response->statusCode === 200) {
 
 ### Errors
 
-| Error Type                | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| Errors\ErrorDto           | 400, 404, 409             | application/json          |
-| Errors\ValidationErrorDto | 422                       | application/json          |
-| Errors\APIException       | 4XX, 5XX                  | \*/\*                     |
+| Error Type                             | Status Code                            | Content Type                           |
+| -------------------------------------- | -------------------------------------- | -------------------------------------- |
+| Errors\ErrorDto                        | 414                                    | application/json                       |
+| Errors\ErrorDto                        | 400, 401, 403, 404, 405, 409, 413, 415 | application/json                       |
+| Errors\ValidationErrorDto              | 422                                    | application/json                       |
+| Errors\ErrorDto                        | 500                                    | application/json                       |
+| Errors\APIException                    | 4XX, 5XX                               | \*/\*                                  |
 
-## get
+## retrieve
 
 Get a topic by its topic key
 
@@ -135,8 +145,10 @@ $sdk = novu\Novu::builder()
 
 
 
-$response = $sdk->topics->get(
-    topicKey: '<value>'
+$response = $sdk->topics->retrieve(
+    topicKey: '<value>',
+    idempotencyKey: '<value>'
+
 );
 
 if ($response->getTopicResponseDto !== null) {
@@ -146,9 +158,10 @@ if ($response->getTopicResponseDto !== null) {
 
 ### Parameters
 
-| Parameter          | Type               | Required           | Description        |
-| ------------------ | ------------------ | ------------------ | ------------------ |
-| `topicKey`         | *string*           | :heavy_check_mark: | The topic key      |
+| Parameter                         | Type                              | Required                          | Description                       |
+| --------------------------------- | --------------------------------- | --------------------------------- | --------------------------------- |
+| `topicKey`                        | *string*                          | :heavy_check_mark:                | The topic key                     |
+| `idempotencyKey`                  | *?string*                         | :heavy_minus_sign:                | A header for idempotency purposes |
 
 ### Response
 
@@ -156,11 +169,13 @@ if ($response->getTopicResponseDto !== null) {
 
 ### Errors
 
-| Error Type                | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| Errors\ErrorDto           | 400, 404, 409             | application/json          |
-| Errors\ValidationErrorDto | 422                       | application/json          |
-| Errors\APIException       | 4XX, 5XX                  | \*/\*                     |
+| Error Type                             | Status Code                            | Content Type                           |
+| -------------------------------------- | -------------------------------------- | -------------------------------------- |
+| Errors\ErrorDto                        | 414                                    | application/json                       |
+| Errors\ErrorDto                        | 400, 401, 403, 404, 405, 409, 413, 415 | application/json                       |
+| Errors\ValidationErrorDto              | 422                                    | application/json                       |
+| Errors\ErrorDto                        | 500                                    | application/json                       |
+| Errors\APIException                    | 4XX, 5XX                               | \*/\*                                  |
 
 ## list
 
@@ -186,7 +201,8 @@ $sdk = novu\Novu::builder()
 $response = $sdk->topics->list(
     page: 0,
     pageSize: 10,
-    key: 'exampleKey'
+    key: 'exampleKey',
+    idempotencyKey: '<value>'
 
 );
 
@@ -202,6 +218,7 @@ if ($response->filterTopicsResponseDto !== null) {
 | `page`                                               | *?int*                                               | :heavy_minus_sign:                                   | The page number to retrieve (starts from 0)          | 0                                                    |
 | `pageSize`                                           | *?int*                                               | :heavy_minus_sign:                                   | The number of items to return per page (default: 10) | 10                                                   |
 | `key`                                                | *?string*                                            | :heavy_minus_sign:                                   | A filter key to apply to the results                 | exampleKey                                           |
+| `idempotencyKey`                                     | *?string*                                            | :heavy_minus_sign:                                   | A header for idempotency purposes                    |                                                      |
 
 ### Response
 
@@ -209,11 +226,13 @@ if ($response->filterTopicsResponseDto !== null) {
 
 ### Errors
 
-| Error Type                | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| Errors\ErrorDto           | 400, 404, 409             | application/json          |
-| Errors\ValidationErrorDto | 422                       | application/json          |
-| Errors\APIException       | 4XX, 5XX                  | \*/\*                     |
+| Error Type                             | Status Code                            | Content Type                           |
+| -------------------------------------- | -------------------------------------- | -------------------------------------- |
+| Errors\ErrorDto                        | 414                                    | application/json                       |
+| Errors\ErrorDto                        | 400, 401, 403, 404, 405, 409, 413, 415 | application/json                       |
+| Errors\ValidationErrorDto              | 422                                    | application/json                       |
+| Errors\ErrorDto                        | 500                                    | application/json                       |
+| Errors\APIException                    | 4XX, 5XX                               | \*/\*                                  |
 
 ## rename
 
@@ -241,7 +260,8 @@ $renameTopicRequestDto = new Components\RenameTopicRequestDto(
 
 $response = $sdk->topics->rename(
     topicKey: '<value>',
-    renameTopicRequestDto: $renameTopicRequestDto
+    renameTopicRequestDto: $renameTopicRequestDto,
+    idempotencyKey: '<value>'
 
 );
 
@@ -256,6 +276,7 @@ if ($response->renameTopicResponseDto !== null) {
 | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
 | `topicKey`                                                                           | *string*                                                                             | :heavy_check_mark:                                                                   | The topic key                                                                        |
 | `renameTopicRequestDto`                                                              | [Components\RenameTopicRequestDto](../../Models/Components/RenameTopicRequestDto.md) | :heavy_check_mark:                                                                   | N/A                                                                                  |
+| `idempotencyKey`                                                                     | *?string*                                                                            | :heavy_minus_sign:                                                                   | A header for idempotency purposes                                                    |
 
 ### Response
 
@@ -263,8 +284,10 @@ if ($response->renameTopicResponseDto !== null) {
 
 ### Errors
 
-| Error Type                | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| Errors\ErrorDto           | 400, 404, 409             | application/json          |
-| Errors\ValidationErrorDto | 422                       | application/json          |
-| Errors\APIException       | 4XX, 5XX                  | \*/\*                     |
+| Error Type                             | Status Code                            | Content Type                           |
+| -------------------------------------- | -------------------------------------- | -------------------------------------- |
+| Errors\ErrorDto                        | 414                                    | application/json                       |
+| Errors\ErrorDto                        | 400, 401, 403, 404, 405, 409, 413, 415 | application/json                       |
+| Errors\ValidationErrorDto              | 422                                    | application/json                       |
+| Errors\ErrorDto                        | 500                                    | application/json                       |
+| Errors\APIException                    | 4XX, 5XX                               | \*/\*                                  |

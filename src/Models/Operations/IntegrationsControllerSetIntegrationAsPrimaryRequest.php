@@ -19,10 +19,20 @@ class IntegrationsControllerSetIntegrationAsPrimaryRequest
     public string $integrationId;
 
     /**
-     * @param  string  $integrationId
+     * A header for idempotency purposes
+     *
+     * @var ?string $idempotencyKey
      */
-    public function __construct(string $integrationId)
+    #[SpeakeasyMetadata('header:style=simple,explode=false,name=idempotency-key')]
+    public ?string $idempotencyKey = null;
+
+    /**
+     * @param  string  $integrationId
+     * @param  ?string  $idempotencyKey
+     */
+    public function __construct(string $integrationId, ?string $idempotencyKey = null)
     {
         $this->integrationId = $integrationId;
+        $this->idempotencyKey = $idempotencyKey;
     }
 }

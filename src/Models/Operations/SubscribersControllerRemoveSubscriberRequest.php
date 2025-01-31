@@ -19,10 +19,20 @@ class SubscribersControllerRemoveSubscriberRequest
     public string $subscriberId;
 
     /**
-     * @param  string  $subscriberId
+     * A header for idempotency purposes
+     *
+     * @var ?string $idempotencyKey
      */
-    public function __construct(string $subscriberId)
+    #[SpeakeasyMetadata('header:style=simple,explode=false,name=idempotency-key')]
+    public ?string $idempotencyKey = null;
+
+    /**
+     * @param  string  $subscriberId
+     * @param  ?string  $idempotencyKey
+     */
+    public function __construct(string $subscriberId, ?string $idempotencyKey = null)
     {
         $this->subscriberId = $subscriberId;
+        $this->idempotencyKey = $idempotencyKey;
     }
 }

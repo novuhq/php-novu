@@ -14,10 +14,10 @@ class TriggerEventRequestDto
     /**
      * The trigger identifier of the workflow you wish to send. This identifier can be found on the workflow page.
      *
-     * @var string $name
+     * @var string $workflowId
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('name')]
-    public string $name;
+    public string $workflowId;
 
     /**
      * The recipients list of people who will receive the notification.
@@ -42,15 +42,6 @@ class TriggerEventRequestDto
     public ?array $payload = null;
 
     /**
-     * A URL to bridge for additional processing.
-     *
-     * @var ?string $bridgeUrl
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('bridgeUrl')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $bridgeUrl = null;
-
-    /**
      * This could be used to override provider specific configurations
      *
      * @var ?array<string, array<string, mixed>> $overrides
@@ -71,9 +62,6 @@ class TriggerEventRequestDto
 
     /**
      * It is used to display the Avatar of the provided actor's subscriber id or actor object.
-     *
-     *
-     *
      *
      *     If a new actor object is provided, we will create a new subscriber in our system
      *
@@ -97,36 +85,22 @@ class TriggerEventRequestDto
     public string|TenantPayloadDto|null $tenant = null;
 
     /**
-     * Additional control configurations.
-     *
-     * @var ?WorkflowToStepControlValuesDto $controls
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('controls')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\WorkflowToStepControlValuesDto|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?WorkflowToStepControlValuesDto $controls = null;
-
-    /**
-     * @param  string  $name
+     * @param  string  $workflowId
      * @param  array<SubscriberPayloadDto|TopicPayloadDto|string>|string|SubscriberPayloadDto|TopicPayloadDto  $to
      * @param  ?array<string, mixed>  $payload
-     * @param  ?string  $bridgeUrl
      * @param  ?array<string, array<string, mixed>>  $overrides
      * @param  ?string  $transactionId
      * @param  string|SubscriberPayloadDto|null  $actor
      * @param  string|TenantPayloadDto|null  $tenant
-     * @param  ?WorkflowToStepControlValuesDto  $controls
      */
-    public function __construct(string $name, array|string|SubscriberPayloadDto|TopicPayloadDto $to, ?array $payload = null, ?string $bridgeUrl = null, ?array $overrides = null, ?string $transactionId = null, string|SubscriberPayloadDto|null $actor = null, string|TenantPayloadDto|null $tenant = null, ?WorkflowToStepControlValuesDto $controls = null)
+    public function __construct(string $workflowId, array|string|SubscriberPayloadDto|TopicPayloadDto $to, ?array $payload = null, ?array $overrides = null, ?string $transactionId = null, string|SubscriberPayloadDto|null $actor = null, string|TenantPayloadDto|null $tenant = null)
     {
-        $this->name = $name;
+        $this->workflowId = $workflowId;
         $this->to = $to;
         $this->payload = $payload;
-        $this->bridgeUrl = $bridgeUrl;
         $this->overrides = $overrides;
         $this->transactionId = $transactionId;
         $this->actor = $actor;
         $this->tenant = $tenant;
-        $this->controls = $controls;
     }
 }

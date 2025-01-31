@@ -20,10 +20,20 @@ class TopicsControllerGetTopicRequest
     public string $topicKey;
 
     /**
-     * @param  string  $topicKey
+     * A header for idempotency purposes
+     *
+     * @var ?string $idempotencyKey
      */
-    public function __construct(string $topicKey)
+    #[SpeakeasyMetadata('header:style=simple,explode=false,name=idempotency-key')]
+    public ?string $idempotencyKey = null;
+
+    /**
+     * @param  string  $topicKey
+     * @param  ?string  $idempotencyKey
+     */
+    public function __construct(string $topicKey, ?string $idempotencyKey = null)
     {
         $this->topicKey = $topicKey;
+        $this->idempotencyKey = $idempotencyKey;
     }
 }

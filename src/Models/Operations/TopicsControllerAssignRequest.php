@@ -28,12 +28,22 @@ class TopicsControllerAssignRequest
     public Components\AddSubscribersRequestDto $addSubscribersRequestDto;
 
     /**
+     * A header for idempotency purposes
+     *
+     * @var ?string $idempotencyKey
+     */
+    #[SpeakeasyMetadata('header:style=simple,explode=false,name=idempotency-key')]
+    public ?string $idempotencyKey = null;
+
+    /**
      * @param  string  $topicKey
      * @param  Components\AddSubscribersRequestDto  $addSubscribersRequestDto
+     * @param  ?string  $idempotencyKey
      */
-    public function __construct(string $topicKey, Components\AddSubscribersRequestDto $addSubscribersRequestDto)
+    public function __construct(string $topicKey, Components\AddSubscribersRequestDto $addSubscribersRequestDto, ?string $idempotencyKey = null)
     {
         $this->topicKey = $topicKey;
         $this->addSubscribersRequestDto = $addSubscribersRequestDto;
+        $this->idempotencyKey = $idempotencyKey;
     }
 }

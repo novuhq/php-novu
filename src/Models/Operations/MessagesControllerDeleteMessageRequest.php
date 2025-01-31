@@ -19,10 +19,20 @@ class MessagesControllerDeleteMessageRequest
     public string $messageId;
 
     /**
-     * @param  string  $messageId
+     * A header for idempotency purposes
+     *
+     * @var ?string $idempotencyKey
      */
-    public function __construct(string $messageId)
+    #[SpeakeasyMetadata('header:style=simple,explode=false,name=idempotency-key')]
+    public ?string $idempotencyKey = null;
+
+    /**
+     * @param  string  $messageId
+     * @param  ?string  $idempotencyKey
+     */
+    public function __construct(string $messageId, ?string $idempotencyKey = null)
     {
         $this->messageId = $messageId;
+        $this->idempotencyKey = $idempotencyKey;
     }
 }

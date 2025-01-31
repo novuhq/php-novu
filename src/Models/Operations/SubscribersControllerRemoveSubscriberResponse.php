@@ -42,23 +42,23 @@ class SubscribersControllerRemoveSubscriberResponse
     /**
      * OK
      *
-     * @var ?Components\DeleteSubscriberResponseDto $deleteSubscriberResponseDto
+     * @var ?Components\RemoveSubscriberResponseDto $removeSubscriberResponseDto
      */
-    public ?Components\DeleteSubscriberResponseDto $deleteSubscriberResponseDto = null;
+    public ?Components\RemoveSubscriberResponseDto $removeSubscriberResponseDto = null;
 
     /**
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
-     * @param  ?Components\DeleteSubscriberResponseDto  $deleteSubscriberResponseDto
+     * @param  ?Components\RemoveSubscriberResponseDto  $removeSubscriberResponseDto
      */
-    public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\DeleteSubscriberResponseDto $deleteSubscriberResponseDto = null, ?array $headers = [])
+    public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\RemoveSubscriberResponseDto $removeSubscriberResponseDto = null, ?array $headers = [])
     {
         $this->contentType = $contentType;
         $this->statusCode = $statusCode;
         $this->rawResponse = $rawResponse;
         $this->headers = $headers;
-        $this->deleteSubscriberResponseDto = $deleteSubscriberResponseDto;
+        $this->removeSubscriberResponseDto = $removeSubscriberResponseDto;
     }
 }

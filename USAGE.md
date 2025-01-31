@@ -15,7 +15,7 @@ $sdk = novu\Novu::builder()
     )
     ->build();
 
-$request = new Components\TriggerEventToAllRequestDto(
+$triggerEventToAllRequestDto = new Components\TriggerEventToAllRequestDto(
     name: '<value>',
     payload: [
         'comment_id' => 'string',
@@ -26,8 +26,10 @@ $request = new Components\TriggerEventToAllRequestDto(
     overrides: new Components\Overrides(),
 );
 
-$response = $sdk->broadcast(
-    request: $request
+$response = $sdk->triggerBroadcast(
+    triggerEventToAllRequestDto: $triggerEventToAllRequestDto,
+    idempotencyKey: '<value>'
+
 );
 
 if ($response->triggerEventResponseDto !== null) {
@@ -53,7 +55,9 @@ $sdk = novu\Novu::builder()
 
 
 $response = $sdk->cancel(
-    transactionId: '<id>'
+    transactionId: '<id>',
+    idempotencyKey: '<value>'
+
 );
 
 if ($response->dataBooleanDto !== null) {
@@ -77,8 +81,8 @@ $sdk = novu\Novu::builder()
     )
     ->build();
 
-$request = new Components\TriggerEventRequestDto(
-    name: 'workflow_identifier',
+$triggerEventRequestDto = new Components\TriggerEventRequestDto(
+    workflowId: 'workflow_identifier',
     to: new Components\SubscriberPayloadDto(
         subscriberId: '<id>',
     ),
@@ -88,7 +92,6 @@ $request = new Components\TriggerEventRequestDto(
             'text' => 'string',
         ],
     ],
-    bridgeUrl: 'https://example.com/bridge',
     overrides: [
         'fcm' => [
             'data' => [
@@ -99,7 +102,9 @@ $request = new Components\TriggerEventRequestDto(
 );
 
 $response = $sdk->trigger(
-    request: $request
+    triggerEventRequestDto: $triggerEventRequestDto,
+    idempotencyKey: '<value>'
+
 );
 
 if ($response->triggerEventResponseDto !== null) {
@@ -123,10 +128,10 @@ $sdk = novu\Novu::builder()
     )
     ->build();
 
-$request = new Components\BulkTriggerEventDto(
+$bulkTriggerEventDto = new Components\BulkTriggerEventDto(
     events: [
         new Components\TriggerEventRequestDto(
-            name: 'workflow_identifier',
+            workflowId: 'workflow_identifier',
             to: new Components\TopicPayloadDto(
                 topicKey: '<value>',
                 type: Components\TriggerRecipientsTypeEnum::Topic,
@@ -137,7 +142,6 @@ $request = new Components\BulkTriggerEventDto(
                     'text' => 'string',
                 ],
             ],
-            bridgeUrl: 'https://example.com/bridge',
             overrides: [
                 'fcm' => [
                     'data' => [
@@ -150,7 +154,9 @@ $request = new Components\BulkTriggerEventDto(
 );
 
 $response = $sdk->triggerBulk(
-    request: $request
+    bulkTriggerEventDto: $bulkTriggerEventDto,
+    idempotencyKey: '<value>'
+
 );
 
 if ($response->triggerEventResponseDtos !== null) {

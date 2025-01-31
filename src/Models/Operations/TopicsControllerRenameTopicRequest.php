@@ -28,12 +28,22 @@ class TopicsControllerRenameTopicRequest
     public Components\RenameTopicRequestDto $renameTopicRequestDto;
 
     /**
+     * A header for idempotency purposes
+     *
+     * @var ?string $idempotencyKey
+     */
+    #[SpeakeasyMetadata('header:style=simple,explode=false,name=idempotency-key')]
+    public ?string $idempotencyKey = null;
+
+    /**
      * @param  string  $topicKey
      * @param  Components\RenameTopicRequestDto  $renameTopicRequestDto
+     * @param  ?string  $idempotencyKey
      */
-    public function __construct(string $topicKey, Components\RenameTopicRequestDto $renameTopicRequestDto)
+    public function __construct(string $topicKey, Components\RenameTopicRequestDto $renameTopicRequestDto, ?string $idempotencyKey = null)
     {
         $this->topicKey = $topicKey;
         $this->renameTopicRequestDto = $renameTopicRequestDto;
+        $this->idempotencyKey = $idempotencyKey;
     }
 }

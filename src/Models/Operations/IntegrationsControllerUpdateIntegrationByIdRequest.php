@@ -27,12 +27,22 @@ class IntegrationsControllerUpdateIntegrationByIdRequest
     public Components\UpdateIntegrationRequestDto $updateIntegrationRequestDto;
 
     /**
+     * A header for idempotency purposes
+     *
+     * @var ?string $idempotencyKey
+     */
+    #[SpeakeasyMetadata('header:style=simple,explode=false,name=idempotency-key')]
+    public ?string $idempotencyKey = null;
+
+    /**
      * @param  string  $integrationId
      * @param  Components\UpdateIntegrationRequestDto  $updateIntegrationRequestDto
+     * @param  ?string  $idempotencyKey
      */
-    public function __construct(string $integrationId, Components\UpdateIntegrationRequestDto $updateIntegrationRequestDto)
+    public function __construct(string $integrationId, Components\UpdateIntegrationRequestDto $updateIntegrationRequestDto, ?string $idempotencyKey = null)
     {
         $this->integrationId = $integrationId;
         $this->updateIntegrationRequestDto = $updateIntegrationRequestDto;
+        $this->idempotencyKey = $idempotencyKey;
     }
 }

@@ -32,7 +32,8 @@ $sdk = novu\Novu::builder()
 
 $response = $sdk->subscribers->credentials->delete(
     subscriberId: '<id>',
-    providerId: '<id>'
+    providerId: '<id>',
+    idempotencyKey: '<value>'
 
 );
 
@@ -43,29 +44,29 @@ if ($response->statusCode === 200) {
 
 ### Parameters
 
-| Parameter          | Type               | Required           | Description        |
-| ------------------ | ------------------ | ------------------ | ------------------ |
-| `subscriberId`     | *string*           | :heavy_check_mark: | N/A                |
-| `providerId`       | *string*           | :heavy_check_mark: | N/A                |
+| Parameter                         | Type                              | Required                          | Description                       |
+| --------------------------------- | --------------------------------- | --------------------------------- | --------------------------------- |
+| `subscriberId`                    | *string*                          | :heavy_check_mark:                | N/A                               |
+| `providerId`                      | *string*                          | :heavy_check_mark:                | N/A                               |
+| `idempotencyKey`                  | *?string*                         | :heavy_minus_sign:                | A header for idempotency purposes |
 
 ### Response
 
-**[?Operations\SubscribersControllerDeleteSubscriberCredentialsResponse](../../Models/Operations/SubscribersControllerDeleteSubscriberCredentialsResponse.md)**
+**[?Operations\SubscribersV1ControllerDeleteSubscriberCredentialsResponse](../../Models/Operations/SubscribersV1ControllerDeleteSubscriberCredentialsResponse.md)**
 
 ### Errors
 
-| Error Type                | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| Errors\ErrorDto           | 400, 404, 409             | application/json          |
-| Errors\ValidationErrorDto | 422                       | application/json          |
-| Errors\APIException       | 4XX, 5XX                  | \*/\*                     |
+| Error Type                             | Status Code                            | Content Type                           |
+| -------------------------------------- | -------------------------------------- | -------------------------------------- |
+| Errors\ErrorDto                        | 414                                    | application/json                       |
+| Errors\ErrorDto                        | 400, 401, 403, 404, 405, 409, 413, 415 | application/json                       |
+| Errors\ValidationErrorDto              | 422                                    | application/json                       |
+| Errors\ErrorDto                        | 500                                    | application/json                       |
+| Errors\APIException                    | 4XX, 5XX                               | \*/\*                                  |
 
 ## append
 
 Subscriber credentials associated to the delivery methods such as slack and push tokens.
-
-
-
     This endpoint appends provided credentials and deviceTokens to the existing ones.
 
 ### Example Usage
@@ -104,7 +105,8 @@ $updateSubscriberChannelRequestDto = new Components\UpdateSubscriberChannelReque
 
 $response = $sdk->subscribers->credentials->append(
     subscriberId: '<id>',
-    updateSubscriberChannelRequestDto: $updateSubscriberChannelRequestDto
+    updateSubscriberChannelRequestDto: $updateSubscriberChannelRequestDto,
+    idempotencyKey: '<value>'
 
 );
 
@@ -119,18 +121,21 @@ if ($response->subscriberResponseDto !== null) {
 | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
 | `subscriberId`                                                                                               | *string*                                                                                                     | :heavy_check_mark:                                                                                           | N/A                                                                                                          |
 | `updateSubscriberChannelRequestDto`                                                                          | [Components\UpdateSubscriberChannelRequestDto](../../Models/Components/UpdateSubscriberChannelRequestDto.md) | :heavy_check_mark:                                                                                           | N/A                                                                                                          |
+| `idempotencyKey`                                                                                             | *?string*                                                                                                    | :heavy_minus_sign:                                                                                           | A header for idempotency purposes                                                                            |
 
 ### Response
 
-**[?Operations\SubscribersControllerModifySubscriberChannelResponse](../../Models/Operations/SubscribersControllerModifySubscriberChannelResponse.md)**
+**[?Operations\SubscribersV1ControllerModifySubscriberChannelResponse](../../Models/Operations/SubscribersV1ControllerModifySubscriberChannelResponse.md)**
 
 ### Errors
 
-| Error Type                | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| Errors\ErrorDto           | 400, 404, 409             | application/json          |
-| Errors\ValidationErrorDto | 422                       | application/json          |
-| Errors\APIException       | 4XX, 5XX                  | \*/\*                     |
+| Error Type                             | Status Code                            | Content Type                           |
+| -------------------------------------- | -------------------------------------- | -------------------------------------- |
+| Errors\ErrorDto                        | 414                                    | application/json                       |
+| Errors\ErrorDto                        | 400, 401, 403, 404, 405, 409, 413, 415 | application/json                       |
+| Errors\ValidationErrorDto              | 422                                    | application/json                       |
+| Errors\ErrorDto                        | 500                                    | application/json                       |
+| Errors\APIException                    | 4XX, 5XX                               | \*/\*                                  |
 
 ## update
 
@@ -172,7 +177,8 @@ $updateSubscriberChannelRequestDto = new Components\UpdateSubscriberChannelReque
 
 $response = $sdk->subscribers->credentials->update(
     subscriberId: '<id>',
-    updateSubscriberChannelRequestDto: $updateSubscriberChannelRequestDto
+    updateSubscriberChannelRequestDto: $updateSubscriberChannelRequestDto,
+    idempotencyKey: '<value>'
 
 );
 
@@ -187,15 +193,18 @@ if ($response->subscriberResponseDto !== null) {
 | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
 | `subscriberId`                                                                                               | *string*                                                                                                     | :heavy_check_mark:                                                                                           | N/A                                                                                                          |
 | `updateSubscriberChannelRequestDto`                                                                          | [Components\UpdateSubscriberChannelRequestDto](../../Models/Components/UpdateSubscriberChannelRequestDto.md) | :heavy_check_mark:                                                                                           | N/A                                                                                                          |
+| `idempotencyKey`                                                                                             | *?string*                                                                                                    | :heavy_minus_sign:                                                                                           | A header for idempotency purposes                                                                            |
 
 ### Response
 
-**[?Operations\SubscribersControllerUpdateSubscriberChannelResponse](../../Models/Operations/SubscribersControllerUpdateSubscriberChannelResponse.md)**
+**[?Operations\SubscribersV1ControllerUpdateSubscriberChannelResponse](../../Models/Operations/SubscribersV1ControllerUpdateSubscriberChannelResponse.md)**
 
 ### Errors
 
-| Error Type                | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| Errors\ErrorDto           | 400, 404, 409             | application/json          |
-| Errors\ValidationErrorDto | 422                       | application/json          |
-| Errors\APIException       | 4XX, 5XX                  | \*/\*                     |
+| Error Type                             | Status Code                            | Content Type                           |
+| -------------------------------------- | -------------------------------------- | -------------------------------------- |
+| Errors\ErrorDto                        | 414                                    | application/json                       |
+| Errors\ErrorDto                        | 400, 401, 403, 404, 405, 409, 413, 415 | application/json                       |
+| Errors\ValidationErrorDto              | 422                                    | application/json                       |
+| Errors\ErrorDto                        | 500                                    | application/json                       |
+| Errors\APIException                    | 4XX, 5XX                               | \*/\*                                  |

@@ -70,8 +70,8 @@ $sdk = novu\Novu::builder()
     )
     ->build();
 
-$request = new Components\TriggerEventRequestDto(
-    name: 'workflow_identifier',
+$triggerEventRequestDto = new Components\TriggerEventRequestDto(
+    workflowId: 'workflow_identifier',
     to: new Components\SubscriberPayloadDto(
         subscriberId: '<id>',
     ),
@@ -81,7 +81,6 @@ $request = new Components\TriggerEventRequestDto(
             'text' => 'string',
         ],
     ],
-    bridgeUrl: 'https://example.com/bridge',
     overrides: [
         'fcm' => [
             'data' => [
@@ -92,7 +91,9 @@ $request = new Components\TriggerEventRequestDto(
 );
 
 $response = $sdk->trigger(
-    request: $request
+    triggerEventRequestDto: $triggerEventRequestDto,
+    idempotencyKey: '<value>'
+
 );
 
 if ($response->triggerEventResponseDto !== null) {
@@ -116,10 +117,10 @@ $sdk = novu\Novu::builder()
     )
     ->build();
 
-$request = new Components\BulkTriggerEventDto(
+$bulkTriggerEventDto = new Components\BulkTriggerEventDto(
     events: [
         new Components\TriggerEventRequestDto(
-            name: 'workflow_identifier',
+            workflowId: 'workflow_identifier',
             to: new Components\TopicPayloadDto(
                 topicKey: '<value>',
                 type: Components\TriggerRecipientsTypeEnum::Topic,
@@ -130,7 +131,6 @@ $request = new Components\BulkTriggerEventDto(
                     'text' => 'string',
                 ],
             ],
-            bridgeUrl: 'https://example.com/bridge',
             overrides: [
                 'fcm' => [
                     'data' => [
@@ -143,7 +143,9 @@ $request = new Components\BulkTriggerEventDto(
 );
 
 $response = $sdk->triggerBulk(
-    request: $request
+    bulkTriggerEventDto: $bulkTriggerEventDto,
+    idempotencyKey: '<value>'
+
 );
 
 if ($response->triggerEventResponseDtos !== null) {
@@ -167,7 +169,7 @@ $sdk = novu\Novu::builder()
     )
     ->build();
 
-$request = new Components\TriggerEventToAllRequestDto(
+$triggerEventToAllRequestDto = new Components\TriggerEventToAllRequestDto(
     name: '<value>',
     payload: [
         'comment_id' => 'string',
@@ -178,8 +180,10 @@ $request = new Components\TriggerEventToAllRequestDto(
     overrides: new Components\Overrides(),
 );
 
-$response = $sdk->broadcast(
-    request: $request
+$response = $sdk->triggerBroadcast(
+    triggerEventToAllRequestDto: $triggerEventToAllRequestDto,
+    idempotencyKey: '<value>'
+
 );
 
 if ($response->triggerEventResponseDto !== null) {
@@ -205,7 +209,9 @@ $sdk = novu\Novu::builder()
 
 
 $response = $sdk->cancel(
-    transactionId: '<id>'
+    transactionId: '<id>',
+    idempotencyKey: '<value>'
+
 );
 
 if ($response->dataBooleanDto !== null) {
@@ -221,11 +227,11 @@ if ($response->dataBooleanDto !== null) {
 
 This SDK supports the following security scheme globally:
 
-| Name     | Type   | Scheme  |
-| -------- | ------ | ------- |
-| `apiKey` | apiKey | API key |
+| Name        | Type   | Scheme  |
+| ----------- | ------ | ------- |
+| `secretKey` | apiKey | API key |
 
-To authenticate with the API the `apiKey` parameter must be set when initializing the SDK. For example:
+To authenticate with the API the `secretKey` parameter must be set when initializing the SDK. For example:
 ```php
 declare(strict_types=1);
 
@@ -240,7 +246,7 @@ $sdk = novu\Novu::builder()
     )
     ->build();
 
-$request = new Components\TriggerEventToAllRequestDto(
+$triggerEventToAllRequestDto = new Components\TriggerEventToAllRequestDto(
     name: '<value>',
     payload: [
         'comment_id' => 'string',
@@ -251,8 +257,10 @@ $request = new Components\TriggerEventToAllRequestDto(
     overrides: new Components\Overrides(),
 );
 
-$response = $sdk->broadcast(
-    request: $request
+$response = $sdk->triggerBroadcast(
+    triggerEventToAllRequestDto: $triggerEventToAllRequestDto,
+    idempotencyKey: '<value>'
+
 );
 
 if ($response->triggerEventResponseDto !== null) {
@@ -273,50 +281,53 @@ if ($response->triggerEventResponseDto !== null) {
 * [listActive](docs/sdks/integrations/README.md#listactive) - Get active integrations
 * [list](docs/sdks/integrations/README.md#list) - Get integrations
 * [delete](docs/sdks/integrations/README.md#delete) - Delete integration
-* [setPrimary](docs/sdks/integrations/README.md#setprimary) - Set integration as primary
+* [setAsPrimary](docs/sdks/integrations/README.md#setasprimary) - Set integration as primary
 * [update](docs/sdks/integrations/README.md#update) - Update integration
 
 #### [integrations->webhooks](docs/sdks/webhooks/README.md)
 
-* [getProviderStatus](docs/sdks/webhooks/README.md#getproviderstatus) - Get webhook support status for provider
+* [retrieve](docs/sdks/webhooks/README.md#retrieve) - Get webhook support status for provider
 
 ### [messages](docs/sdks/messages/README.md)
 
 * [delete](docs/sdks/messages/README.md#delete) - Delete message
 * [deleteByTransactionId](docs/sdks/messages/README.md#deletebytransactionid) - Delete messages by transactionId
-* [list](docs/sdks/messages/README.md#list) - Get messages
+* [retrieve](docs/sdks/messages/README.md#retrieve) - Get messages
 
 ### [notifications](docs/sdks/notifications/README.md)
 
-* [get](docs/sdks/notifications/README.md#get) - Get notification
+* [retrieve](docs/sdks/notifications/README.md#retrieve) - Get notification
 * [list](docs/sdks/notifications/README.md#list) - Get notifications
 
 #### [notifications->stats](docs/sdks/stats/README.md)
 
-* [getGraph](docs/sdks/stats/README.md#getgraph) - Get notification graph statistics
-* [get](docs/sdks/stats/README.md#get) - Get notification statistics
+* [graph](docs/sdks/stats/README.md#graph) - Get notification graph statistics
+* [retrieve](docs/sdks/stats/README.md#retrieve) - Get notification statistics
 
 ### [Novu SDK](docs/sdks/novu/README.md)
 
-* [broadcast](docs/sdks/novu/README.md#broadcast) - Broadcast event to all
+* [triggerBroadcast](docs/sdks/novu/README.md#triggerbroadcast) - Broadcast event to all
 * [cancel](docs/sdks/novu/README.md#cancel) - Cancel triggered event
 * [trigger](docs/sdks/novu/README.md#trigger) - Trigger event
 * [triggerBulk](docs/sdks/novu/README.md#triggerbulk) - Bulk trigger event
 
 ### [subscribers](docs/sdks/subscribers/README.md)
 
+* [retrieve](docs/sdks/subscribers/README.md#retrieve) - Get subscriber
+* [patch](docs/sdks/subscribers/README.md#patch) - Patch subscriber
+* [delete](docs/sdks/subscribers/README.md#delete) - Delete subscriber
+* [search](docs/sdks/subscribers/README.md#search) - Search for subscribers
 * [createBulk](docs/sdks/subscribers/README.md#createbulk) - Bulk create subscribers
 * [create](docs/sdks/subscribers/README.md#create) - Create subscriber
-* [get](docs/sdks/subscribers/README.md#get) - Get subscriber
+* [retrieveLegacy](docs/sdks/subscribers/README.md#retrievelegacy) - Get subscriber
 * [list](docs/sdks/subscribers/README.md#list) - Get subscribers
-* [delete](docs/sdks/subscribers/README.md#delete) - Delete subscriber
+* [~~deleteLegacy~~](docs/sdks/subscribers/README.md#deletelegacy) - Delete subscriber :warning: **Deprecated**
 * [update](docs/sdks/subscribers/README.md#update) - Update subscriber
-* [updateOnlineStatus](docs/sdks/subscribers/README.md#updateonlinestatus) - Update subscriber online status
 
 #### [subscribers->authentication](docs/sdks/authentication/README.md)
 
 * [chatAccessOauth](docs/sdks/authentication/README.md#chataccessoauth) - Handle chat oauth
-* [oauthCallback](docs/sdks/authentication/README.md#oauthcallback) - Handle providers oauth redirect
+* [chatAccessOauthCallBack](docs/sdks/authentication/README.md#chataccessoauthcallback) - Handle providers oauth redirect
 
 #### [subscribers->credentials](docs/sdks/credentials/README.md)
 
@@ -326,46 +337,39 @@ if ($response->triggerEventResponseDto !== null) {
 
 #### [subscribers->messages](docs/sdks/novumessages/README.md)
 
-* [updateAction](docs/sdks/novumessages/README.md#updateaction) - Mark message action as seen
+* [updateAsSeen](docs/sdks/novumessages/README.md#updateasseen) - Mark message action as seen
 * [markAll](docs/sdks/novumessages/README.md#markall) - Marks all the subscriber messages as read, unread, seen or unseen. Optionally you can pass feed id (or array) to mark messages of a particular feed.
-* [markAs](docs/sdks/novumessages/README.md#markas) - Mark a subscriber messages as seen, read, unseen or unread
+* [markAllAs](docs/sdks/novumessages/README.md#markallas) - Mark a subscriber messages as seen, read, unseen or unread
 
-#### [subscribers->notifications](docs/sdks/novusubscribersnotifications/README.md)
+#### [subscribers->notifications](docs/sdks/novunotifications/README.md)
 
-* [getFeed](docs/sdks/novusubscribersnotifications/README.md#getfeed) - Get in-app notification feed for a particular subscriber
-* [unseenCount](docs/sdks/novusubscribersnotifications/README.md#unseencount) - Get the unseen in-app notifications count for subscribers feed
+* [feed](docs/sdks/novunotifications/README.md#feed) - Get in-app notification feed for a particular subscriber
+* [unseenCount](docs/sdks/novunotifications/README.md#unseencount) - Get the unseen in-app notifications count for subscribers feed
 
 #### [subscribers->preferences](docs/sdks/preferences/README.md)
 
 * [retrieveByLevel](docs/sdks/preferences/README.md#retrievebylevel) - Get subscriber preferences by level
 * [list](docs/sdks/preferences/README.md#list) - Get subscriber preferences
+* [updateGlobal](docs/sdks/preferences/README.md#updateglobal) - Update subscriber global preferences
+* [update](docs/sdks/preferences/README.md#update) - Update subscriber preference
 
-### [subscribersPreferences](docs/sdks/subscriberspreferences/README.md)
+#### [subscribers->properties](docs/sdks/properties/README.md)
 
-* [updateGlobal](docs/sdks/subscriberspreferences/README.md#updateglobal) - Update subscriber global preferences
-* [update](docs/sdks/subscriberspreferences/README.md#update) - Update subscriber preference
-
-### [support](docs/sdks/support/README.md)
-
-* [createThread](docs/sdks/support/README.md#createthread)
-* [fetchUserOrganizations](docs/sdks/support/README.md#fetchuserorganizations)
+* [updateOnlineFlag](docs/sdks/properties/README.md#updateonlineflag) - Update subscriber online status
 
 ### [topics](docs/sdks/topics/README.md)
 
 * [create](docs/sdks/topics/README.md#create) - Topic creation
 * [delete](docs/sdks/topics/README.md#delete) - Delete topic
-* [get](docs/sdks/topics/README.md#get) - Get topic
+* [retrieve](docs/sdks/topics/README.md#retrieve) - Get topic
 * [list](docs/sdks/topics/README.md#list) - Get topic list filtered 
 * [rename](docs/sdks/topics/README.md#rename) - Rename a topic
 
-#### [topics->subscribers](docs/sdks/novutopicssubscribers/README.md)
+#### [topics->subscribers](docs/sdks/novusubscribers/README.md)
 
-* [check](docs/sdks/novutopicssubscribers/README.md#check) - Check topic subscriber
-* [remove](docs/sdks/novutopicssubscribers/README.md#remove) - Subscribers removal
-
-### [topicsSubscribers](docs/sdks/topicssubscribers/README.md)
-
-* [add](docs/sdks/topicssubscribers/README.md#add) - Subscribers addition
+* [assign](docs/sdks/novusubscribers/README.md#assign) - Subscribers addition
+* [retrieve](docs/sdks/novusubscribers/README.md#retrieve) - Check topic subscriber
+* [remove](docs/sdks/novusubscribers/README.md#remove) - Subscribers removal
 
 </details>
 <!-- End Available Resources and Operations [operations] -->
@@ -394,7 +398,8 @@ $sdk = novu\Novu::builder()
 
 $responses = $sdk->subscribers->list(
     page: 7685.78,
-    limit: 10
+    limit: 10,
+    idempotencyKey: '<value>'
 
 );
 
@@ -428,7 +433,7 @@ $sdk = novu\Novu::builder()
     )
     ->build();
 
-$request = new Components\TriggerEventToAllRequestDto(
+$triggerEventToAllRequestDto = new Components\TriggerEventToAllRequestDto(
     name: '<value>',
     payload: [
         'comment_id' => 'string',
@@ -439,8 +444,9 @@ $request = new Components\TriggerEventToAllRequestDto(
     overrides: new Components\Overrides(),
 );
 
-$response = $sdk->broadcast(
-    request: $request,
+$response = $sdk->triggerBroadcast(
+    triggerEventToAllRequestDto: $triggerEventToAllRequestDto,
+    idempotencyKey: '<value>',
     options: Utils\Options->builder()->setRetryConfig(
         new Retry\RetryConfigBackoff(
             initialInterval: 1,
@@ -449,6 +455,7 @@ $response = $sdk->broadcast(
             maxElapsedTime:  100,
             retryConnectionErrors: false,
         ))->build()
+
 );
 
 if ($response->triggerEventResponseDto !== null) {
@@ -481,7 +488,7 @@ $sdk = novu\Novu::builder()
     )
     ->build();
 
-$request = new Components\TriggerEventToAllRequestDto(
+$triggerEventToAllRequestDto = new Components\TriggerEventToAllRequestDto(
     name: '<value>',
     payload: [
         'comment_id' => 'string',
@@ -492,8 +499,10 @@ $request = new Components\TriggerEventToAllRequestDto(
     overrides: new Components\Overrides(),
 );
 
-$response = $sdk->broadcast(
-    request: $request
+$response = $sdk->triggerBroadcast(
+    triggerEventToAllRequestDto: $triggerEventToAllRequestDto,
+    idempotencyKey: '<value>'
+
 );
 
 if ($response->triggerEventResponseDto !== null) {
@@ -516,13 +525,15 @@ By default an API error will raise a `Errors\APIException` exception, which has 
 | `$rawResponse` | *?\Psr\Http\Message\ResponseInterface*  | The raw HTTP response |
 | `$body`        | *string*                                | The response content  |
 
-When custom error responses are specified for an operation, the SDK may also throw their associated exception. You can refer to respective *Errors* tables in SDK docs for more details on possible exception types for each operation. For example, the `broadcast` method throws the following exceptions:
+When custom error responses are specified for an operation, the SDK may also throw their associated exception. You can refer to respective *Errors* tables in SDK docs for more details on possible exception types for each operation. For example, the `triggerBroadcast` method throws the following exceptions:
 
-| Error Type                | Status Code   | Content Type     |
-| ------------------------- | ------------- | ---------------- |
-| Errors\ErrorDto           | 400, 404, 409 | application/json |
-| Errors\ValidationErrorDto | 422           | application/json |
-| Errors\APIException       | 4XX, 5XX      | \*/\*            |
+| Error Type                | Status Code                            | Content Type     |
+| ------------------------- | -------------------------------------- | ---------------- |
+| Errors\ErrorDto           | 414                                    | application/json |
+| Errors\ErrorDto           | 400, 401, 403, 404, 405, 409, 413, 415 | application/json |
+| Errors\ValidationErrorDto | 422                                    | application/json |
+| Errors\ErrorDto           | 500                                    | application/json |
+| Errors\APIException       | 4XX, 5XX                               | \*/\*            |
 
 ### Example
 
@@ -541,7 +552,7 @@ $sdk = novu\Novu::builder()
     ->build();
 
 try {
-    $request = new Components\TriggerEventToAllRequestDto(
+    $triggerEventToAllRequestDto = new Components\TriggerEventToAllRequestDto(
         name: '<value>',
         payload: [
             'comment_id' => 'string',
@@ -552,8 +563,10 @@ try {
         overrides: new Components\Overrides(),
     );
 
-    $response = $sdk->broadcast(
-        request: $request
+    $response = $sdk->triggerBroadcast(
+        triggerEventToAllRequestDto: $triggerEventToAllRequestDto,
+        idempotencyKey: '<value>'
+
     );
 
     if ($response->triggerEventResponseDto !== null) {
@@ -562,7 +575,13 @@ try {
 } catch (Errors\ErrorDtoThrowable $e) {
     // handle $e->$container data
     throw $e;
+} catch (Errors\ErrorDtoThrowable $e) {
+    // handle $e->$container data
+    throw $e;
 } catch (Errors\ValidationErrorDtoThrowable $e) {
+    // handle $e->$container data
+    throw $e;
+} catch (Errors\ErrorDtoThrowable $e) {
     // handle $e->$container data
     throw $e;
 } catch (Errors\APIException $e) {
@@ -601,7 +620,7 @@ $sdk = novu\Novu::builder()
     )
     ->build();
 
-$request = new Components\TriggerEventToAllRequestDto(
+$triggerEventToAllRequestDto = new Components\TriggerEventToAllRequestDto(
     name: '<value>',
     payload: [
         'comment_id' => 'string',
@@ -612,8 +631,10 @@ $request = new Components\TriggerEventToAllRequestDto(
     overrides: new Components\Overrides(),
 );
 
-$response = $sdk->broadcast(
-    request: $request
+$response = $sdk->triggerBroadcast(
+    triggerEventToAllRequestDto: $triggerEventToAllRequestDto,
+    idempotencyKey: '<value>'
+
 );
 
 if ($response->triggerEventResponseDto !== null) {
@@ -639,7 +660,7 @@ $sdk = novu\Novu::builder()
     )
     ->build();
 
-$request = new Components\TriggerEventToAllRequestDto(
+$triggerEventToAllRequestDto = new Components\TriggerEventToAllRequestDto(
     name: '<value>',
     payload: [
         'comment_id' => 'string',
@@ -650,8 +671,10 @@ $request = new Components\TriggerEventToAllRequestDto(
     overrides: new Components\Overrides(),
 );
 
-$response = $sdk->broadcast(
-    request: $request
+$response = $sdk->triggerBroadcast(
+    triggerEventToAllRequestDto: $triggerEventToAllRequestDto,
+    idempotencyKey: '<value>'
+
 );
 
 if ($response->triggerEventResponseDto !== null) {

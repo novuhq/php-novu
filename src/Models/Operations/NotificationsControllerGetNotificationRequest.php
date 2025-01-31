@@ -19,10 +19,20 @@ class NotificationsControllerGetNotificationRequest
     public string $notificationId;
 
     /**
-     * @param  string  $notificationId
+     * A header for idempotency purposes
+     *
+     * @var ?string $idempotencyKey
      */
-    public function __construct(string $notificationId)
+    #[SpeakeasyMetadata('header:style=simple,explode=false,name=idempotency-key')]
+    public ?string $idempotencyKey = null;
+
+    /**
+     * @param  string  $notificationId
+     * @param  ?string  $idempotencyKey
+     */
+    public function __construct(string $notificationId, ?string $idempotencyKey = null)
     {
         $this->notificationId = $notificationId;
+        $this->idempotencyKey = $idempotencyKey;
     }
 }

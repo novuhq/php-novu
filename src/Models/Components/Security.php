@@ -13,16 +13,16 @@ class Security
 {
     /**
      *
-     * @var string $apiKey
+     * @var string $secretKey
      */
     #[SpeakeasyMetadata('security:scheme=true,type=apiKey,subtype=header,name=Authorization')]
-    public string $apiKey;
+    public string $secretKey;
 
     /**
-     * @param  string  $apiKey
+     * @param  string  $secretKey
      */
-    public function __construct(string $apiKey)
+    public function __construct(string $secretKey)
     {
-        $this->apiKey = $apiKey;
+        $this->secretKey = $secretKey;
     }
 }

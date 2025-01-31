@@ -19,10 +19,20 @@ class EventsControllerCancelRequest
     public string $transactionId;
 
     /**
-     * @param  string  $transactionId
+     * A header for idempotency purposes
+     *
+     * @var ?string $idempotencyKey
      */
-    public function __construct(string $transactionId)
+    #[SpeakeasyMetadata('header:style=simple,explode=false,name=idempotency-key')]
+    public ?string $idempotencyKey = null;
+
+    /**
+     * @param  string  $transactionId
+     * @param  ?string  $idempotencyKey
+     */
+    public function __construct(string $transactionId, ?string $idempotencyKey = null)
     {
         $this->transactionId = $transactionId;
+        $this->idempotencyKey = $idempotencyKey;
     }
 }

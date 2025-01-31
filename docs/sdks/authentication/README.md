@@ -6,7 +6,7 @@
 ### Available Operations
 
 * [chatAccessOauth](#chataccessoauth) - Handle chat oauth
-* [oauthCallback](#oauthcallback) - Handle providers oauth redirect
+* [chatAccessOauthCallBack](#chataccessoauthcallback) - Handle providers oauth redirect
 
 ## chatAccessOauth
 
@@ -28,7 +28,7 @@ $sdk = novu\Novu::builder()
     )
     ->build();
 
-$request = new Operations\SubscribersControllerChatAccessOauthRequest(
+$request = new Operations\SubscribersV1ControllerChatAccessOauthRequest(
     subscriberId: '<id>',
     providerId: '<value>',
     hmacHash: '<value>',
@@ -46,23 +46,25 @@ if ($response->statusCode === 200) {
 
 ### Parameters
 
-| Parameter                                                                                                                        | Type                                                                                                                             | Required                                                                                                                         | Description                                                                                                                      |
-| -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                                                       | [Operations\SubscribersControllerChatAccessOauthRequest](../../Models/Operations/SubscribersControllerChatAccessOauthRequest.md) | :heavy_check_mark:                                                                                                               | The request object to use for the request.                                                                                       |
+| Parameter                                                                                                                            | Type                                                                                                                                 | Required                                                                                                                             | Description                                                                                                                          |
+| ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ |
+| `$request`                                                                                                                           | [Operations\SubscribersV1ControllerChatAccessOauthRequest](../../Models/Operations/SubscribersV1ControllerChatAccessOauthRequest.md) | :heavy_check_mark:                                                                                                                   | The request object to use for the request.                                                                                           |
 
 ### Response
 
-**[?Operations\SubscribersControllerChatAccessOauthResponse](../../Models/Operations/SubscribersControllerChatAccessOauthResponse.md)**
+**[?Operations\SubscribersV1ControllerChatAccessOauthResponse](../../Models/Operations/SubscribersV1ControllerChatAccessOauthResponse.md)**
 
 ### Errors
 
-| Error Type                | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| Errors\ErrorDto           | 400, 404, 409             | application/json          |
-| Errors\ValidationErrorDto | 422                       | application/json          |
-| Errors\APIException       | 4XX, 5XX                  | \*/\*                     |
+| Error Type                             | Status Code                            | Content Type                           |
+| -------------------------------------- | -------------------------------------- | -------------------------------------- |
+| Errors\ErrorDto                        | 414                                    | application/json                       |
+| Errors\ErrorDto                        | 400, 401, 403, 404, 405, 409, 413, 415 | application/json                       |
+| Errors\ValidationErrorDto              | 422                                    | application/json                       |
+| Errors\ErrorDto                        | 500                                    | application/json                       |
+| Errors\APIException                    | 4XX, 5XX                               | \*/\*                                  |
 
-## oauthCallback
+## chatAccessOauthCallBack
 
 Handle providers oauth redirect
 
@@ -82,7 +84,7 @@ $sdk = novu\Novu::builder()
     )
     ->build();
 
-$request = new Operations\SubscribersControllerChatOauthCallbackRequest(
+$request = new Operations\SubscribersV1ControllerChatOauthCallbackRequest(
     subscriberId: '<id>',
     providerId: '<value>',
     hmacHash: '<value>',
@@ -90,7 +92,7 @@ $request = new Operations\SubscribersControllerChatOauthCallbackRequest(
     code: '<value>',
 );
 
-$response = $sdk->subscribers->authentication->oauthCallback(
+$response = $sdk->subscribers->authentication->chatAccessOauthCallBack(
     request: $request
 );
 
@@ -101,18 +103,20 @@ if ($response->res !== null) {
 
 ### Parameters
 
-| Parameter                                                                                                                            | Type                                                                                                                                 | Required                                                                                                                             | Description                                                                                                                          |
-| ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ |
-| `$request`                                                                                                                           | [Operations\SubscribersControllerChatOauthCallbackRequest](../../Models/Operations/SubscribersControllerChatOauthCallbackRequest.md) | :heavy_check_mark:                                                                                                                   | The request object to use for the request.                                                                                           |
+| Parameter                                                                                                                                | Type                                                                                                                                     | Required                                                                                                                                 | Description                                                                                                                              |
+| ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| `$request`                                                                                                                               | [Operations\SubscribersV1ControllerChatOauthCallbackRequest](../../Models/Operations/SubscribersV1ControllerChatOauthCallbackRequest.md) | :heavy_check_mark:                                                                                                                       | The request object to use for the request.                                                                                               |
 
 ### Response
 
-**[?Operations\SubscribersControllerChatOauthCallbackResponse](../../Models/Operations/SubscribersControllerChatOauthCallbackResponse.md)**
+**[?Operations\SubscribersV1ControllerChatOauthCallbackResponse](../../Models/Operations/SubscribersV1ControllerChatOauthCallbackResponse.md)**
 
 ### Errors
 
-| Error Type                | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| Errors\ErrorDto           | 400, 404, 409             | application/json          |
-| Errors\ValidationErrorDto | 422                       | application/json          |
-| Errors\APIException       | 4XX, 5XX                  | \*/\*                     |
+| Error Type                             | Status Code                            | Content Type                           |
+| -------------------------------------- | -------------------------------------- | -------------------------------------- |
+| Errors\ErrorDto                        | 414                                    | application/json                       |
+| Errors\ErrorDto                        | 400, 401, 403, 404, 405, 409, 413, 415 | application/json                       |
+| Errors\ValidationErrorDto              | 422                                    | application/json                       |
+| Errors\ErrorDto                        | 500                                    | application/json                       |
+| Errors\APIException                    | 4XX, 5XX                               | \*/\*                                  |

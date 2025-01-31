@@ -5,10 +5,10 @@
 
 ### Available Operations
 
-* [get](#get) - Get notification
+* [retrieve](#retrieve) - Get notification
 * [list](#list) - Get notifications
 
-## get
+## retrieve
 
 Get notification
 
@@ -29,8 +29,10 @@ $sdk = novu\Novu::builder()
 
 
 
-$response = $sdk->notifications->get(
-    notificationId: '<id>'
+$response = $sdk->notifications->retrieve(
+    notificationId: '<id>',
+    idempotencyKey: '<value>'
+
 );
 
 if ($response->activityNotificationResponseDto !== null) {
@@ -40,9 +42,10 @@ if ($response->activityNotificationResponseDto !== null) {
 
 ### Parameters
 
-| Parameter          | Type               | Required           | Description        |
-| ------------------ | ------------------ | ------------------ | ------------------ |
-| `notificationId`   | *string*           | :heavy_check_mark: | N/A                |
+| Parameter                         | Type                              | Required                          | Description                       |
+| --------------------------------- | --------------------------------- | --------------------------------- | --------------------------------- |
+| `notificationId`                  | *string*                          | :heavy_check_mark:                | N/A                               |
+| `idempotencyKey`                  | *?string*                         | :heavy_minus_sign:                | A header for idempotency purposes |
 
 ### Response
 
@@ -50,11 +53,13 @@ if ($response->activityNotificationResponseDto !== null) {
 
 ### Errors
 
-| Error Type                | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| Errors\ErrorDto           | 400, 404, 409             | application/json          |
-| Errors\ValidationErrorDto | 422                       | application/json          |
-| Errors\APIException       | 4XX, 5XX                  | \*/\*                     |
+| Error Type                             | Status Code                            | Content Type                           |
+| -------------------------------------- | -------------------------------------- | -------------------------------------- |
+| Errors\ErrorDto                        | 414                                    | application/json                       |
+| Errors\ErrorDto                        | 400, 401, 403, 404, 405, 409, 413, 415 | application/json                       |
+| Errors\ValidationErrorDto              | 422                                    | application/json                       |
+| Errors\ErrorDto                        | 500                                    | application/json                       |
+| Errors\APIException                    | 4XX, 5XX                               | \*/\*                                  |
 
 ## list
 
@@ -99,8 +104,10 @@ if ($response->activitiesResponseDto !== null) {
 
 ### Errors
 
-| Error Type                | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| Errors\ErrorDto           | 400, 404, 409             | application/json          |
-| Errors\ValidationErrorDto | 422                       | application/json          |
-| Errors\APIException       | 4XX, 5XX                  | \*/\*                     |
+| Error Type                             | Status Code                            | Content Type                           |
+| -------------------------------------- | -------------------------------------- | -------------------------------------- |
+| Errors\ErrorDto                        | 414                                    | application/json                       |
+| Errors\ErrorDto                        | 400, 401, 403, 404, 405, 409, 413, 415 | application/json                       |
+| Errors\ValidationErrorDto              | 422                                    | application/json                       |
+| Errors\ErrorDto                        | 500                                    | application/json                       |
+| Errors\APIException                    | 4XX, 5XX                               | \*/\*                                  |

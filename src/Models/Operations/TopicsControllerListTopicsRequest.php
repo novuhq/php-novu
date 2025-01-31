@@ -20,6 +20,14 @@ class TopicsControllerListTopicsRequest
     public ?string $key = null;
 
     /**
+     * A header for idempotency purposes
+     *
+     * @var ?string $idempotencyKey
+     */
+    #[SpeakeasyMetadata('header:style=simple,explode=false,name=idempotency-key')]
+    public ?string $idempotencyKey = null;
+
+    /**
      * The page number to retrieve (starts from 0)
      *
      * @var ?int $page
@@ -39,10 +47,12 @@ class TopicsControllerListTopicsRequest
      * @param  ?int  $page
      * @param  ?int  $pageSize
      * @param  ?string  $key
+     * @param  ?string  $idempotencyKey
      */
-    public function __construct(?string $key = null, ?int $page = 0, ?int $pageSize = 10)
+    public function __construct(?string $key = null, ?string $idempotencyKey = null, ?int $page = 0, ?int $pageSize = 10)
     {
         $this->key = $key;
+        $this->idempotencyKey = $idempotencyKey;
         $this->page = $page;
         $this->pageSize = $pageSize;
     }

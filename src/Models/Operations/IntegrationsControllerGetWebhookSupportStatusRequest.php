@@ -19,10 +19,20 @@ class IntegrationsControllerGetWebhookSupportStatusRequest
     public string $providerOrIntegrationId;
 
     /**
-     * @param  string  $providerOrIntegrationId
+     * A header for idempotency purposes
+     *
+     * @var ?string $idempotencyKey
      */
-    public function __construct(string $providerOrIntegrationId)
+    #[SpeakeasyMetadata('header:style=simple,explode=false,name=idempotency-key')]
+    public ?string $idempotencyKey = null;
+
+    /**
+     * @param  string  $providerOrIntegrationId
+     * @param  ?string  $idempotencyKey
+     */
+    public function __construct(string $providerOrIntegrationId, ?string $idempotencyKey = null)
     {
         $this->providerOrIntegrationId = $providerOrIntegrationId;
+        $this->idempotencyKey = $idempotencyKey;
     }
 }

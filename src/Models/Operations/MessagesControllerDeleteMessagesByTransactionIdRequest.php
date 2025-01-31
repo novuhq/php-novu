@@ -27,12 +27,22 @@ class MessagesControllerDeleteMessagesByTransactionIdRequest
     public ?Channel $channel = null;
 
     /**
+     * A header for idempotency purposes
+     *
+     * @var ?string $idempotencyKey
+     */
+    #[SpeakeasyMetadata('header:style=simple,explode=false,name=idempotency-key')]
+    public ?string $idempotencyKey = null;
+
+    /**
      * @param  string  $transactionId
      * @param  ?Channel  $channel
+     * @param  ?string  $idempotencyKey
      */
-    public function __construct(string $transactionId, ?Channel $channel = null)
+    public function __construct(string $transactionId, ?Channel $channel = null, ?string $idempotencyKey = null)
     {
         $this->transactionId = $transactionId;
         $this->channel = $channel;
+        $this->idempotencyKey = $idempotencyKey;
     }
 }

@@ -19,10 +19,20 @@ class NotificationsControllerGetActivityGraphStatsRequest
     public ?float $days = null;
 
     /**
-     * @param  ?float  $days
+     * A header for idempotency purposes
+     *
+     * @var ?string $idempotencyKey
      */
-    public function __construct(?float $days = null)
+    #[SpeakeasyMetadata('header:style=simple,explode=false,name=idempotency-key')]
+    public ?string $idempotencyKey = null;
+
+    /**
+     * @param  ?float  $days
+     * @param  ?string  $idempotencyKey
+     */
+    public function __construct(?float $days = null, ?string $idempotencyKey = null)
     {
         $this->days = $days;
+        $this->idempotencyKey = $idempotencyKey;
     }
 }

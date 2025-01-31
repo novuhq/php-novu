@@ -28,12 +28,22 @@ class TopicsControllerRemoveSubscribersRequest
     public Components\RemoveSubscribersRequestDto $removeSubscribersRequestDto;
 
     /**
+     * A header for idempotency purposes
+     *
+     * @var ?string $idempotencyKey
+     */
+    #[SpeakeasyMetadata('header:style=simple,explode=false,name=idempotency-key')]
+    public ?string $idempotencyKey = null;
+
+    /**
      * @param  string  $topicKey
      * @param  Components\RemoveSubscribersRequestDto  $removeSubscribersRequestDto
+     * @param  ?string  $idempotencyKey
      */
-    public function __construct(string $topicKey, Components\RemoveSubscribersRequestDto $removeSubscribersRequestDto)
+    public function __construct(string $topicKey, Components\RemoveSubscribersRequestDto $removeSubscribersRequestDto, ?string $idempotencyKey = null)
     {
         $this->topicKey = $topicKey;
         $this->removeSubscribersRequestDto = $removeSubscribersRequestDto;
+        $this->idempotencyKey = $idempotencyKey;
     }
 }

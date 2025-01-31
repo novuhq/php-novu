@@ -26,11 +26,11 @@ class SDKConfiguration
 
     public string $openapiDocVersion = '1.0';
 
-    public string $sdkVersion = '0.0.3';
+    public string $sdkVersion = '0.0.4';
 
-    public string $genVersion = '2.497.0';
+    public string $genVersion = '2.499.0';
 
-    public string $userAgent = 'speakeasy-sdk/php 0.0.3 2.497.0 1.0 novuhq/novu';
+    public string $userAgent = 'speakeasy-sdk/php 0.0.4 2.499.0 1.0 novuhq/novu';
 
     public ?RetryConfig $retryConfig = null;
 
@@ -61,7 +61,7 @@ class SDKConfiguration
     {
         if ($this->securitySource !== null) {
             $security = new Models\Components\Security(
-                apiKey: $this->securitySource->call($this)
+                secretKey: $this->securitySource->call($this)
             );
 
             return $security;

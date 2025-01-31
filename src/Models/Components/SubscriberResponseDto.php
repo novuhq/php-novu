@@ -116,10 +116,10 @@ class SubscriberResponseDto
     /**
      * An array of channel settings associated with the subscriber.
      *
-     * @var ?array<ChannelSettings> $channels
+     * @var ?array<ChannelSettingsDto> $channels
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('channels')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\ChannelSettings>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\ChannelSettingsDto>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $channels = null;
 
@@ -127,6 +127,7 @@ class SubscriberResponseDto
      * An array of topics that the subscriber is subscribed to.
      *
      * @var ?array<string> $topics
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('topics')]
     #[\Speakeasy\Serializer\Annotation\Type('array<string>|null')]
@@ -170,6 +171,16 @@ class SubscriberResponseDto
     public ?string $email = null;
 
     /**
+     * Additional custom data for the subscriber
+     *
+     * @var ?array<string, mixed> $data
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $data = null;
+
+    /**
      * @param  string  $subscriberId
      * @param  string  $organizationId
      * @param  string  $environmentId
@@ -182,14 +193,15 @@ class SubscriberResponseDto
      * @param  ?string  $phone
      * @param  ?string  $avatar
      * @param  ?string  $locale
-     * @param  ?array<ChannelSettings>  $channels
+     * @param  ?array<ChannelSettingsDto>  $channels
      * @param  ?array<string>  $topics
      * @param  ?bool  $isOnline
      * @param  ?string  $lastOnlineAt
      * @param  ?float  $v
      * @param  ?string  $email
+     * @param  ?array<string, mixed>  $data
      */
-    public function __construct(string $subscriberId, string $organizationId, string $environmentId, bool $deleted, string $createdAt, string $updatedAt, ?string $id = null, ?string $firstName = null, ?string $lastName = null, ?string $phone = null, ?string $avatar = null, ?string $locale = null, ?array $channels = null, ?array $topics = null, ?bool $isOnline = null, ?string $lastOnlineAt = null, ?float $v = null, ?string $email = null)
+    public function __construct(string $subscriberId, string $organizationId, string $environmentId, bool $deleted, string $createdAt, string $updatedAt, ?string $id = null, ?string $firstName = null, ?string $lastName = null, ?string $phone = null, ?string $avatar = null, ?string $locale = null, ?array $channels = null, ?array $topics = null, ?bool $isOnline = null, ?string $lastOnlineAt = null, ?float $v = null, ?string $email = null, ?array $data = null)
     {
         $this->subscriberId = $subscriberId;
         $this->organizationId = $organizationId;
@@ -209,5 +221,6 @@ class SubscriberResponseDto
         $this->lastOnlineAt = $lastOnlineAt;
         $this->v = $v;
         $this->email = $email;
+        $this->data = $data;
     }
 }

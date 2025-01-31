@@ -8,9 +8,7 @@ declare(strict_types=1);
 
 namespace novu\Models\Errors;
 
-
 use novu\Utils;
-
 class ErrorDto
 {
     /**

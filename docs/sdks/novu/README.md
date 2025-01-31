@@ -9,17 +9,14 @@ Novu Documentation
 
 ### Available Operations
 
-* [broadcast](#broadcast) - Broadcast event to all
+* [triggerBroadcast](#triggerbroadcast) - Broadcast event to all
 * [cancel](#cancel) - Cancel triggered event
 * [trigger](#trigger) - Trigger event
 * [triggerBulk](#triggerbulk) - Bulk trigger event
 
-## broadcast
+## triggerBroadcast
 
 Trigger a broadcast event to all existing subscribers, could be used to send announcements, etc.
-
-
-
       In the future could be used to trigger events to a subset of subscribers based on defined filters.
 
 ### Example Usage
@@ -38,7 +35,7 @@ $sdk = novu\Novu::builder()
     )
     ->build();
 
-$request = new Components\TriggerEventToAllRequestDto(
+$triggerEventToAllRequestDto = new Components\TriggerEventToAllRequestDto(
     name: '<value>',
     payload: [
         'comment_id' => 'string',
@@ -49,8 +46,10 @@ $request = new Components\TriggerEventToAllRequestDto(
     overrides: new Components\Overrides(),
 );
 
-$response = $sdk->broadcast(
-    request: $request
+$response = $sdk->triggerBroadcast(
+    triggerEventToAllRequestDto: $triggerEventToAllRequestDto,
+    idempotencyKey: '<value>'
+
 );
 
 if ($response->triggerEventResponseDto !== null) {
@@ -62,7 +61,8 @@ if ($response->triggerEventResponseDto !== null) {
 
 | Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
 | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
-| `$request`                                                                                       | [Components\TriggerEventToAllRequestDto](../../Models/Components/TriggerEventToAllRequestDto.md) | :heavy_check_mark:                                                                               | The request object to use for the request.                                                       |
+| `triggerEventToAllRequestDto`                                                                    | [Components\TriggerEventToAllRequestDto](../../Models/Components/TriggerEventToAllRequestDto.md) | :heavy_check_mark:                                                                               | N/A                                                                                              |
+| `idempotencyKey`                                                                                 | *?string*                                                                                        | :heavy_minus_sign:                                                                               | A header for idempotency purposes                                                                |
 
 ### Response
 
@@ -70,11 +70,13 @@ if ($response->triggerEventResponseDto !== null) {
 
 ### Errors
 
-| Error Type                | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| Errors\ErrorDto           | 400, 404, 409             | application/json          |
-| Errors\ValidationErrorDto | 422                       | application/json          |
-| Errors\APIException       | 4XX, 5XX                  | \*/\*                     |
+| Error Type                             | Status Code                            | Content Type                           |
+| -------------------------------------- | -------------------------------------- | -------------------------------------- |
+| Errors\ErrorDto                        | 414                                    | application/json                       |
+| Errors\ErrorDto                        | 400, 401, 403, 404, 405, 409, 413, 415 | application/json                       |
+| Errors\ValidationErrorDto              | 422                                    | application/json                       |
+| Errors\ErrorDto                        | 500                                    | application/json                       |
+| Errors\APIException                    | 4XX, 5XX                               | \*/\*                                  |
 
 ## cancel
 
@@ -101,7 +103,9 @@ $sdk = novu\Novu::builder()
 
 
 $response = $sdk->cancel(
-    transactionId: '<id>'
+    transactionId: '<id>',
+    idempotencyKey: '<value>'
+
 );
 
 if ($response->dataBooleanDto !== null) {
@@ -111,9 +115,10 @@ if ($response->dataBooleanDto !== null) {
 
 ### Parameters
 
-| Parameter          | Type               | Required           | Description        |
-| ------------------ | ------------------ | ------------------ | ------------------ |
-| `transactionId`    | *string*           | :heavy_check_mark: | N/A                |
+| Parameter                         | Type                              | Required                          | Description                       |
+| --------------------------------- | --------------------------------- | --------------------------------- | --------------------------------- |
+| `transactionId`                   | *string*                          | :heavy_check_mark:                | N/A                               |
+| `idempotencyKey`                  | *?string*                         | :heavy_minus_sign:                | A header for idempotency purposes |
 
 ### Response
 
@@ -121,11 +126,13 @@ if ($response->dataBooleanDto !== null) {
 
 ### Errors
 
-| Error Type                | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| Errors\ErrorDto           | 400, 404, 409             | application/json          |
-| Errors\ValidationErrorDto | 422                       | application/json          |
-| Errors\APIException       | 4XX, 5XX                  | \*/\*                     |
+| Error Type                             | Status Code                            | Content Type                           |
+| -------------------------------------- | -------------------------------------- | -------------------------------------- |
+| Errors\ErrorDto                        | 414                                    | application/json                       |
+| Errors\ErrorDto                        | 400, 401, 403, 404, 405, 409, 413, 415 | application/json                       |
+| Errors\ValidationErrorDto              | 422                                    | application/json                       |
+| Errors\ErrorDto                        | 500                                    | application/json                       |
+| Errors\APIException                    | 4XX, 5XX                               | \*/\*                                  |
 
 ## trigger
 
@@ -151,8 +158,8 @@ $sdk = novu\Novu::builder()
     )
     ->build();
 
-$request = new Components\TriggerEventRequestDto(
-    name: 'workflow_identifier',
+$triggerEventRequestDto = new Components\TriggerEventRequestDto(
+    workflowId: 'workflow_identifier',
     to: new Components\SubscriberPayloadDto(
         subscriberId: '<id>',
     ),
@@ -162,7 +169,6 @@ $request = new Components\TriggerEventRequestDto(
             'text' => 'string',
         ],
     ],
-    bridgeUrl: 'https://example.com/bridge',
     overrides: [
         'fcm' => [
             'data' => [
@@ -173,7 +179,9 @@ $request = new Components\TriggerEventRequestDto(
 );
 
 $response = $sdk->trigger(
-    request: $request
+    triggerEventRequestDto: $triggerEventRequestDto,
+    idempotencyKey: '<value>'
+
 );
 
 if ($response->triggerEventResponseDto !== null) {
@@ -185,7 +193,8 @@ if ($response->triggerEventResponseDto !== null) {
 
 | Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
 | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| `$request`                                                                             | [Components\TriggerEventRequestDto](../../Models/Components/TriggerEventRequestDto.md) | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
+| `triggerEventRequestDto`                                                               | [Components\TriggerEventRequestDto](../../Models/Components/TriggerEventRequestDto.md) | :heavy_check_mark:                                                                     | N/A                                                                                    |
+| `idempotencyKey`                                                                       | *?string*                                                                              | :heavy_minus_sign:                                                                     | A header for idempotency purposes                                                      |
 
 ### Response
 
@@ -193,11 +202,13 @@ if ($response->triggerEventResponseDto !== null) {
 
 ### Errors
 
-| Error Type                | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| Errors\ErrorDto           | 400, 404, 409             | application/json          |
-| Errors\ValidationErrorDto | 422                       | application/json          |
-| Errors\APIException       | 4XX, 5XX                  | \*/\*                     |
+| Error Type                             | Status Code                            | Content Type                           |
+| -------------------------------------- | -------------------------------------- | -------------------------------------- |
+| Errors\ErrorDto                        | 414                                    | application/json                       |
+| Errors\ErrorDto                        | 400, 401, 403, 404, 405, 409, 413, 415 | application/json                       |
+| Errors\ValidationErrorDto              | 422                                    | application/json                       |
+| Errors\ErrorDto                        | 500                                    | application/json                       |
+| Errors\APIException                    | 4XX, 5XX                               | \*/\*                                  |
 
 ## triggerBulk
 
@@ -222,10 +233,10 @@ $sdk = novu\Novu::builder()
     )
     ->build();
 
-$request = new Components\BulkTriggerEventDto(
+$bulkTriggerEventDto = new Components\BulkTriggerEventDto(
     events: [
         new Components\TriggerEventRequestDto(
-            name: 'workflow_identifier',
+            workflowId: 'workflow_identifier',
             to: new Components\TopicPayloadDto(
                 topicKey: '<value>',
                 type: Components\TriggerRecipientsTypeEnum::Topic,
@@ -236,7 +247,6 @@ $request = new Components\BulkTriggerEventDto(
                     'text' => 'string',
                 ],
             ],
-            bridgeUrl: 'https://example.com/bridge',
             overrides: [
                 'fcm' => [
                     'data' => [
@@ -249,7 +259,9 @@ $request = new Components\BulkTriggerEventDto(
 );
 
 $response = $sdk->triggerBulk(
-    request: $request
+    bulkTriggerEventDto: $bulkTriggerEventDto,
+    idempotencyKey: '<value>'
+
 );
 
 if ($response->triggerEventResponseDtos !== null) {
@@ -261,7 +273,8 @@ if ($response->triggerEventResponseDtos !== null) {
 
 | Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
 | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| `$request`                                                                       | [Components\BulkTriggerEventDto](../../Models/Components/BulkTriggerEventDto.md) | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
+| `bulkTriggerEventDto`                                                            | [Components\BulkTriggerEventDto](../../Models/Components/BulkTriggerEventDto.md) | :heavy_check_mark:                                                               | N/A                                                                              |
+| `idempotencyKey`                                                                 | *?string*                                                                        | :heavy_minus_sign:                                                               | A header for idempotency purposes                                                |
 
 ### Response
 
@@ -269,8 +282,10 @@ if ($response->triggerEventResponseDtos !== null) {
 
 ### Errors
 
-| Error Type                | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| Errors\ErrorDto           | 400, 404, 409             | application/json          |
-| Errors\ValidationErrorDto | 422                       | application/json          |
-| Errors\APIException       | 4XX, 5XX                  | \*/\*                     |
+| Error Type                             | Status Code                            | Content Type                           |
+| -------------------------------------- | -------------------------------------- | -------------------------------------- |
+| Errors\ErrorDto                        | 414                                    | application/json                       |
+| Errors\ErrorDto                        | 400, 401, 403, 404, 405, 409, 413, 415 | application/json                       |
+| Errors\ValidationErrorDto              | 422                                    | application/json                       |
+| Errors\ErrorDto                        | 500                                    | application/json                       |
+| Errors\APIException                    | 4XX, 5XX                               | \*/\*                                  |

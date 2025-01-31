@@ -10,7 +10,7 @@ A message in Novu represents a notification delivered to a recipient on a partic
 
 * [delete](#delete) - Delete message
 * [deleteByTransactionId](#deletebytransactionid) - Delete messages by transactionId
-* [list](#list) - Get messages
+* [retrieve](#retrieve) - Get messages
 
 ## delete
 
@@ -34,7 +34,9 @@ $sdk = novu\Novu::builder()
 
 
 $response = $sdk->messages->delete(
-    messageId: '<id>'
+    messageId: '<id>',
+    idempotencyKey: '<value>'
+
 );
 
 if ($response->deleteMessageResponseDto !== null) {
@@ -44,9 +46,10 @@ if ($response->deleteMessageResponseDto !== null) {
 
 ### Parameters
 
-| Parameter          | Type               | Required           | Description        |
-| ------------------ | ------------------ | ------------------ | ------------------ |
-| `messageId`        | *string*           | :heavy_check_mark: | N/A                |
+| Parameter                         | Type                              | Required                          | Description                       |
+| --------------------------------- | --------------------------------- | --------------------------------- | --------------------------------- |
+| `messageId`                       | *string*                          | :heavy_check_mark:                | N/A                               |
+| `idempotencyKey`                  | *?string*                         | :heavy_minus_sign:                | A header for idempotency purposes |
 
 ### Response
 
@@ -54,11 +57,13 @@ if ($response->deleteMessageResponseDto !== null) {
 
 ### Errors
 
-| Error Type                | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| Errors\ErrorDto           | 400, 404, 409             | application/json          |
-| Errors\ValidationErrorDto | 422                       | application/json          |
-| Errors\APIException       | 4XX, 5XX                  | \*/\*                     |
+| Error Type                             | Status Code                            | Content Type                           |
+| -------------------------------------- | -------------------------------------- | -------------------------------------- |
+| Errors\ErrorDto                        | 414                                    | application/json                       |
+| Errors\ErrorDto                        | 400, 401, 403, 404, 405, 409, 413, 415 | application/json                       |
+| Errors\ValidationErrorDto              | 422                                    | application/json                       |
+| Errors\ErrorDto                        | 500                                    | application/json                       |
+| Errors\APIException                    | 4XX, 5XX                               | \*/\*                                  |
 
 ## deleteByTransactionId
 
@@ -84,7 +89,8 @@ $sdk = novu\Novu::builder()
 
 $response = $sdk->messages->deleteByTransactionId(
     transactionId: '<id>',
-    channel: Operations\Channel::Push
+    channel: Operations\Channel::Push,
+    idempotencyKey: '<value>'
 
 );
 
@@ -99,6 +105,7 @@ if ($response->statusCode === 200) {
 | --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- |
 | `transactionId`                                           | *string*                                                  | :heavy_check_mark:                                        | N/A                                                       |
 | `channel`                                                 | [?Operations\Channel](../../Models/Operations/Channel.md) | :heavy_minus_sign:                                        | The channel of the message to be deleted                  |
+| `idempotencyKey`                                          | *?string*                                                 | :heavy_minus_sign:                                        | A header for idempotency purposes                         |
 
 ### Response
 
@@ -106,13 +113,15 @@ if ($response->statusCode === 200) {
 
 ### Errors
 
-| Error Type                | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| Errors\ErrorDto           | 400, 404, 409             | application/json          |
-| Errors\ValidationErrorDto | 422                       | application/json          |
-| Errors\APIException       | 4XX, 5XX                  | \*/\*                     |
+| Error Type                             | Status Code                            | Content Type                           |
+| -------------------------------------- | -------------------------------------- | -------------------------------------- |
+| Errors\ErrorDto                        | 414                                    | application/json                       |
+| Errors\ErrorDto                        | 400, 401, 403, 404, 405, 409, 413, 415 | application/json                       |
+| Errors\ValidationErrorDto              | 422                                    | application/json                       |
+| Errors\ErrorDto                        | 500                                    | application/json                       |
+| Errors\APIException                    | 4XX, 5XX                               | \*/\*                                  |
 
-## list
+## retrieve
 
 Returns a list of messages, could paginate using the `page` query parameter
 
@@ -134,7 +143,7 @@ $sdk = novu\Novu::builder()
 
 $request = new Operations\MessagesControllerGetMessagesRequest();
 
-$response = $sdk->messages->list(
+$response = $sdk->messages->retrieve(
     request: $request
 );
 
@@ -155,8 +164,10 @@ if ($response->activitiesResponseDto !== null) {
 
 ### Errors
 
-| Error Type                | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| Errors\ErrorDto           | 400, 404, 409             | application/json          |
-| Errors\ValidationErrorDto | 422                       | application/json          |
-| Errors\APIException       | 4XX, 5XX                  | \*/\*                     |
+| Error Type                             | Status Code                            | Content Type                           |
+| -------------------------------------- | -------------------------------------- | -------------------------------------- |
+| Errors\ErrorDto                        | 414                                    | application/json                       |
+| Errors\ErrorDto                        | 400, 401, 403, 404, 405, 409, 413, 415 | application/json                       |
+| Errors\ValidationErrorDto              | 422                                    | application/json                       |
+| Errors\ErrorDto                        | 500                                    | application/json                       |
+| Errors\APIException                    | 4XX, 5XX                               | \*/\*                                  |

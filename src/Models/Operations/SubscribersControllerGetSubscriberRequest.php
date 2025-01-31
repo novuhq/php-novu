@@ -19,20 +19,20 @@ class SubscribersControllerGetSubscriberRequest
     public string $subscriberId;
 
     /**
-     * Includes the topics associated with the subscriber
+     * A header for idempotency purposes
      *
-     * @var ?bool $includeTopics
+     * @var ?string $idempotencyKey
      */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=includeTopics')]
-    public ?bool $includeTopics = null;
+    #[SpeakeasyMetadata('header:style=simple,explode=false,name=idempotency-key')]
+    public ?string $idempotencyKey = null;
 
     /**
      * @param  string  $subscriberId
-     * @param  ?bool  $includeTopics
+     * @param  ?string  $idempotencyKey
      */
-    public function __construct(string $subscriberId, ?bool $includeTopics = null)
+    public function __construct(string $subscriberId, ?string $idempotencyKey = null)
     {
         $this->subscriberId = $subscriberId;
-        $this->includeTopics = $includeTopics;
+        $this->idempotencyKey = $idempotencyKey;
     }
 }

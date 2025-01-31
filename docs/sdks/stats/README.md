@@ -5,10 +5,10 @@
 
 ### Available Operations
 
-* [getGraph](#getgraph) - Get notification graph statistics
-* [get](#get) - Get notification statistics
+* [graph](#graph) - Get notification graph statistics
+* [retrieve](#retrieve) - Get notification statistics
 
-## getGraph
+## graph
 
 Get notification graph statistics
 
@@ -29,8 +29,10 @@ $sdk = novu\Novu::builder()
 
 
 
-$response = $sdk->notifications->stats->getGraph(
-    days: 517.81
+$response = $sdk->notifications->stats->graph(
+    days: 4018.61,
+    idempotencyKey: '<value>'
+
 );
 
 if ($response->activityGraphStatesResponses !== null) {
@@ -40,9 +42,10 @@ if ($response->activityGraphStatesResponses !== null) {
 
 ### Parameters
 
-| Parameter          | Type               | Required           | Description        |
-| ------------------ | ------------------ | ------------------ | ------------------ |
-| `days`             | *?float*           | :heavy_minus_sign: | N/A                |
+| Parameter                         | Type                              | Required                          | Description                       |
+| --------------------------------- | --------------------------------- | --------------------------------- | --------------------------------- |
+| `days`                            | *?float*                          | :heavy_minus_sign:                | N/A                               |
+| `idempotencyKey`                  | *?string*                         | :heavy_minus_sign:                | A header for idempotency purposes |
 
 ### Response
 
@@ -50,13 +53,15 @@ if ($response->activityGraphStatesResponses !== null) {
 
 ### Errors
 
-| Error Type                | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| Errors\ErrorDto           | 400, 404, 409             | application/json          |
-| Errors\ValidationErrorDto | 422                       | application/json          |
-| Errors\APIException       | 4XX, 5XX                  | \*/\*                     |
+| Error Type                             | Status Code                            | Content Type                           |
+| -------------------------------------- | -------------------------------------- | -------------------------------------- |
+| Errors\ErrorDto                        | 414                                    | application/json                       |
+| Errors\ErrorDto                        | 400, 401, 403, 404, 405, 409, 413, 415 | application/json                       |
+| Errors\ValidationErrorDto              | 422                                    | application/json                       |
+| Errors\ErrorDto                        | 500                                    | application/json                       |
+| Errors\APIException                    | 4XX, 5XX                               | \*/\*                                  |
 
-## get
+## retrieve
 
 Get notification statistics
 
@@ -77,8 +82,8 @@ $sdk = novu\Novu::builder()
 
 
 
-$response = $sdk->notifications->stats->get(
-
+$response = $sdk->notifications->stats->retrieve(
+    idempotencyKey: '<value>'
 );
 
 if ($response->activityStatsResponseDto !== null) {
@@ -86,14 +91,22 @@ if ($response->activityStatsResponseDto !== null) {
 }
 ```
 
+### Parameters
+
+| Parameter                         | Type                              | Required                          | Description                       |
+| --------------------------------- | --------------------------------- | --------------------------------- | --------------------------------- |
+| `idempotencyKey`                  | *?string*                         | :heavy_minus_sign:                | A header for idempotency purposes |
+
 ### Response
 
 **[?Operations\NotificationsControllerGetActivityStatsResponse](../../Models/Operations/NotificationsControllerGetActivityStatsResponse.md)**
 
 ### Errors
 
-| Error Type                | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| Errors\ErrorDto           | 400, 404, 409             | application/json          |
-| Errors\ValidationErrorDto | 422                       | application/json          |
-| Errors\APIException       | 4XX, 5XX                  | \*/\*                     |
+| Error Type                             | Status Code                            | Content Type                           |
+| -------------------------------------- | -------------------------------------- | -------------------------------------- |
+| Errors\ErrorDto                        | 414                                    | application/json                       |
+| Errors\ErrorDto                        | 400, 401, 403, 404, 405, 409, 413, 415 | application/json                       |
+| Errors\ValidationErrorDto              | 422                                    | application/json                       |
+| Errors\ErrorDto                        | 500                                    | application/json                       |
+| Errors\APIException                    | 4XX, 5XX                               | \*/\*                                  |

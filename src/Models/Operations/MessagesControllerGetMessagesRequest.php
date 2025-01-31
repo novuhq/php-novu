@@ -36,6 +36,14 @@ class MessagesControllerGetMessagesRequest
     public ?array $transactionId = null;
 
     /**
+     * A header for idempotency purposes
+     *
+     * @var ?string $idempotencyKey
+     */
+    #[SpeakeasyMetadata('header:style=simple,explode=false,name=idempotency-key')]
+    public ?string $idempotencyKey = null;
+
+    /**
      *
      * @var ?float $page
      */
@@ -55,12 +63,14 @@ class MessagesControllerGetMessagesRequest
      * @param  ?array<string>  $transactionId
      * @param  ?float  $page
      * @param  ?float  $limit
+     * @param  ?string  $idempotencyKey
      */
-    public function __construct(?Components\ChannelTypeEnum $channel = null, ?string $subscriberId = null, ?array $transactionId = null, ?float $page = 0, ?float $limit = 10)
+    public function __construct(?Components\ChannelTypeEnum $channel = null, ?string $subscriberId = null, ?array $transactionId = null, ?string $idempotencyKey = null, ?float $page = 0, ?float $limit = 10)
     {
         $this->channel = $channel;
         $this->subscriberId = $subscriberId;
         $this->transactionId = $transactionId;
+        $this->idempotencyKey = $idempotencyKey;
         $this->page = $page;
         $this->limit = $limit;
     }

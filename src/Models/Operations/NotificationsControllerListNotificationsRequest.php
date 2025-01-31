@@ -78,6 +78,14 @@ class NotificationsControllerListNotificationsRequest
     public ?string $before = null;
 
     /**
+     * A header for idempotency purposes
+     *
+     * @var ?string $idempotencyKey
+     */
+    #[SpeakeasyMetadata('header:style=simple,explode=false,name=idempotency-key')]
+    public ?string $idempotencyKey = null;
+
+    /**
      * Page number for pagination
      *
      * @var ?float $page
@@ -95,8 +103,9 @@ class NotificationsControllerListNotificationsRequest
      * @param  ?string  $transactionId
      * @param  ?string  $after
      * @param  ?string  $before
+     * @param  ?string  $idempotencyKey
      */
-    public function __construct(?array $channels = null, ?array $templates = null, ?array $emails = null, ?string $search = null, ?array $subscriberIds = null, ?string $transactionId = null, ?string $after = null, ?string $before = null, ?float $page = 0)
+    public function __construct(?array $channels = null, ?array $templates = null, ?array $emails = null, ?string $search = null, ?array $subscriberIds = null, ?string $transactionId = null, ?string $after = null, ?string $before = null, ?string $idempotencyKey = null, ?float $page = 0)
     {
         $this->channels = $channels;
         $this->templates = $templates;
@@ -106,6 +115,7 @@ class NotificationsControllerListNotificationsRequest
         $this->transactionId = $transactionId;
         $this->after = $after;
         $this->before = $before;
+        $this->idempotencyKey = $idempotencyKey;
         $this->page = $page;
     }
 }

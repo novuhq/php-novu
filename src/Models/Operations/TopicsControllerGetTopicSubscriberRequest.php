@@ -28,12 +28,22 @@ class TopicsControllerGetTopicSubscriberRequest
     public string $topicKey;
 
     /**
+     * A header for idempotency purposes
+     *
+     * @var ?string $idempotencyKey
+     */
+    #[SpeakeasyMetadata('header:style=simple,explode=false,name=idempotency-key')]
+    public ?string $idempotencyKey = null;
+
+    /**
      * @param  string  $externalSubscriberId
      * @param  string  $topicKey
+     * @param  ?string  $idempotencyKey
      */
-    public function __construct(string $externalSubscriberId, string $topicKey)
+    public function __construct(string $externalSubscriberId, string $topicKey, ?string $idempotencyKey = null)
     {
         $this->externalSubscriberId = $externalSubscriberId;
         $this->topicKey = $topicKey;
+        $this->idempotencyKey = $idempotencyKey;
     }
 }

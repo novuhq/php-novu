@@ -3,15 +3,234 @@
 
 ## Overview
 
+A subscriber in Novu represents someone who should receive a message. A subscriber’s profile information contains important attributes about the subscriber that will be used in messages (name, email). The subscriber object can contain other key-value pairs that can be used to further personalize your messages.
+<https://docs.novu.co/subscribers/subscribers>
+
 ### Available Operations
 
+* [retrieve](#retrieve) - Get subscriber
+* [patch](#patch) - Patch subscriber
+* [delete](#delete) - Delete subscriber
+* [search](#search) - Search for subscribers
 * [createBulk](#createbulk) - Bulk create subscribers
 * [create](#create) - Create subscriber
-* [get](#get) - Get subscriber
+* [retrieveLegacy](#retrievelegacy) - Get subscriber
 * [list](#list) - Get subscribers
-* [delete](#delete) - Delete subscriber
+* [~~deleteLegacy~~](#deletelegacy) - Delete subscriber :warning: **Deprecated**
 * [update](#update) - Update subscriber
-* [updateOnlineStatus](#updateonlinestatus) - Update subscriber online status
+
+## retrieve
+
+Get subscriber by your internal id used to identify the subscriber
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use novu;
+
+$sdk = novu\Novu::builder()
+    ->setSecurity(
+        '<YOUR_API_KEY_HERE>'
+    )
+    ->build();
+
+
+
+$response = $sdk->subscribers->retrieve(
+    subscriberId: '<id>',
+    idempotencyKey: '<value>'
+
+);
+
+if ($response->subscriberResponseDto !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                         | Type                              | Required                          | Description                       |
+| --------------------------------- | --------------------------------- | --------------------------------- | --------------------------------- |
+| `subscriberId`                    | *string*                          | :heavy_check_mark:                | N/A                               |
+| `idempotencyKey`                  | *?string*                         | :heavy_minus_sign:                | A header for idempotency purposes |
+
+### Response
+
+**[?Operations\SubscribersControllerGetSubscriberResponse](../../Models/Operations/SubscribersControllerGetSubscriberResponse.md)**
+
+### Errors
+
+| Error Type                             | Status Code                            | Content Type                           |
+| -------------------------------------- | -------------------------------------- | -------------------------------------- |
+| Errors\ErrorDto                        | 414                                    | application/json                       |
+| Errors\ErrorDto                        | 400, 401, 403, 404, 405, 409, 413, 415 | application/json                       |
+| Errors\ValidationErrorDto              | 422                                    | application/json                       |
+| Errors\ErrorDto                        | 500                                    | application/json                       |
+| Errors\APIException                    | 4XX, 5XX                               | \*/\*                                  |
+
+## patch
+
+Patch subscriber by your internal id used to identify the subscriber
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use novu;
+use novu\Models\Components;
+
+$sdk = novu\Novu::builder()
+    ->setSecurity(
+        '<YOUR_API_KEY_HERE>'
+    )
+    ->build();
+
+$patchSubscriberRequestDto = new Components\PatchSubscriberRequestDto();
+
+$response = $sdk->subscribers->patch(
+    subscriberId: '<id>',
+    patchSubscriberRequestDto: $patchSubscriberRequestDto,
+    idempotencyKey: '<value>'
+
+);
+
+if ($response->subscriberResponseDto !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `subscriberId`                                                                               | *string*                                                                                     | :heavy_check_mark:                                                                           | N/A                                                                                          |
+| `patchSubscriberRequestDto`                                                                  | [Components\PatchSubscriberRequestDto](../../Models/Components/PatchSubscriberRequestDto.md) | :heavy_check_mark:                                                                           | N/A                                                                                          |
+| `idempotencyKey`                                                                             | *?string*                                                                                    | :heavy_minus_sign:                                                                           | A header for idempotency purposes                                                            |
+
+### Response
+
+**[?Operations\SubscribersControllerPatchSubscriberResponse](../../Models/Operations/SubscribersControllerPatchSubscriberResponse.md)**
+
+### Errors
+
+| Error Type                             | Status Code                            | Content Type                           |
+| -------------------------------------- | -------------------------------------- | -------------------------------------- |
+| Errors\ErrorDto                        | 414                                    | application/json                       |
+| Errors\ErrorDto                        | 400, 401, 403, 404, 405, 409, 413, 415 | application/json                       |
+| Errors\ValidationErrorDto              | 422                                    | application/json                       |
+| Errors\ErrorDto                        | 500                                    | application/json                       |
+| Errors\APIException                    | 4XX, 5XX                               | \*/\*                                  |
+
+## delete
+
+Deletes a subscriber entity from the Novu platform
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use novu;
+
+$sdk = novu\Novu::builder()
+    ->setSecurity(
+        '<YOUR_API_KEY_HERE>'
+    )
+    ->build();
+
+
+
+$response = $sdk->subscribers->delete(
+    subscriberId: '<id>',
+    idempotencyKey: '<value>'
+
+);
+
+if ($response->removeSubscriberResponseDto !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                         | Type                              | Required                          | Description                       |
+| --------------------------------- | --------------------------------- | --------------------------------- | --------------------------------- |
+| `subscriberId`                    | *string*                          | :heavy_check_mark:                | N/A                               |
+| `idempotencyKey`                  | *?string*                         | :heavy_minus_sign:                | A header for idempotency purposes |
+
+### Response
+
+**[?Operations\SubscribersControllerRemoveSubscriberResponse](../../Models/Operations/SubscribersControllerRemoveSubscriberResponse.md)**
+
+### Errors
+
+| Error Type                             | Status Code                            | Content Type                           |
+| -------------------------------------- | -------------------------------------- | -------------------------------------- |
+| Errors\ErrorDto                        | 414                                    | application/json                       |
+| Errors\ErrorDto                        | 400, 401, 403, 404, 405, 409, 413, 415 | application/json                       |
+| Errors\ValidationErrorDto              | 422                                    | application/json                       |
+| Errors\ErrorDto                        | 500                                    | application/json                       |
+| Errors\APIException                    | 4XX, 5XX                               | \*/\*                                  |
+
+## search
+
+Search for subscribers
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use novu;
+use novu\Models\Operations;
+
+$sdk = novu\Novu::builder()
+    ->setSecurity(
+        '<YOUR_API_KEY_HERE>'
+    )
+    ->build();
+
+$request = new Operations\SubscribersControllerSearchSubscribersRequest();
+
+$response = $sdk->subscribers->search(
+    request: $request
+);
+
+if ($response->listSubscribersResponseDto !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                            | Type                                                                                                                                 | Required                                                                                                                             | Description                                                                                                                          |
+| ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ |
+| `$request`                                                                                                                           | [Operations\SubscribersControllerSearchSubscribersRequest](../../Models/Operations/SubscribersControllerSearchSubscribersRequest.md) | :heavy_check_mark:                                                                                                                   | The request object to use for the request.                                                                                           |
+
+### Response
+
+**[?Operations\SubscribersControllerSearchSubscribersResponse](../../Models/Operations/SubscribersControllerSearchSubscribersResponse.md)**
+
+### Errors
+
+| Error Type                             | Status Code                            | Content Type                           |
+| -------------------------------------- | -------------------------------------- | -------------------------------------- |
+| Errors\ErrorDto                        | 414                                    | application/json                       |
+| Errors\ErrorDto                        | 400, 401, 403, 404, 405, 409, 413, 415 | application/json                       |
+| Errors\ValidationErrorDto              | 422                                    | application/json                       |
+| Errors\ErrorDto                        | 500                                    | application/json                       |
+| Errors\APIException                    | 4XX, 5XX                               | \*/\*                                  |
 
 ## createBulk
 
@@ -36,7 +255,7 @@ $sdk = novu\Novu::builder()
     )
     ->build();
 
-$request = new Components\BulkSubscriberCreateDto(
+$bulkSubscriberCreateDto = new Components\BulkSubscriberCreateDto(
     subscribers: [
         new Components\CreateSubscriberRequestDto(
             subscriberId: '<id>',
@@ -45,7 +264,9 @@ $request = new Components\BulkSubscriberCreateDto(
 );
 
 $response = $sdk->subscribers->createBulk(
-    request: $request
+    bulkSubscriberCreateDto: $bulkSubscriberCreateDto,
+    idempotencyKey: '<value>'
+
 );
 
 if ($response->bulkCreateSubscriberResponseDto !== null) {
@@ -57,19 +278,22 @@ if ($response->bulkCreateSubscriberResponseDto !== null) {
 
 | Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
 | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| `$request`                                                                               | [Components\BulkSubscriberCreateDto](../../Models/Components/BulkSubscriberCreateDto.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
+| `bulkSubscriberCreateDto`                                                                | [Components\BulkSubscriberCreateDto](../../Models/Components/BulkSubscriberCreateDto.md) | :heavy_check_mark:                                                                       | N/A                                                                                      |
+| `idempotencyKey`                                                                         | *?string*                                                                                | :heavy_minus_sign:                                                                       | A header for idempotency purposes                                                        |
 
 ### Response
 
-**[?Operations\SubscribersControllerBulkCreateSubscribersResponse](../../Models/Operations/SubscribersControllerBulkCreateSubscribersResponse.md)**
+**[?Operations\SubscribersV1ControllerBulkCreateSubscribersResponse](../../Models/Operations/SubscribersV1ControllerBulkCreateSubscribersResponse.md)**
 
 ### Errors
 
-| Error Type                | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| Errors\ErrorDto           | 400, 404, 409             | application/json          |
-| Errors\ValidationErrorDto | 422                       | application/json          |
-| Errors\APIException       | 4XX, 5XX                  | \*/\*                     |
+| Error Type                             | Status Code                            | Content Type                           |
+| -------------------------------------- | -------------------------------------- | -------------------------------------- |
+| Errors\ErrorDto                        | 414                                    | application/json                       |
+| Errors\ErrorDto                        | 400, 401, 403, 404, 405, 409, 413, 415 | application/json                       |
+| Errors\ValidationErrorDto              | 422                                    | application/json                       |
+| Errors\ErrorDto                        | 500                                    | application/json                       |
+| Errors\APIException                    | 4XX, 5XX                               | \*/\*                                  |
 
 ## create
 
@@ -91,12 +315,14 @@ $sdk = novu\Novu::builder()
     )
     ->build();
 
-$request = new Components\CreateSubscriberRequestDto(
+$createSubscriberRequestDto = new Components\CreateSubscriberRequestDto(
     subscriberId: '<id>',
 );
 
 $response = $sdk->subscribers->create(
-    request: $request
+    createSubscriberRequestDto: $createSubscriberRequestDto,
+    idempotencyKey: '<value>'
+
 );
 
 if ($response->subscriberResponseDto !== null) {
@@ -108,21 +334,24 @@ if ($response->subscriberResponseDto !== null) {
 
 | Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
 | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `$request`                                                                                     | [Components\CreateSubscriberRequestDto](../../Models/Components/CreateSubscriberRequestDto.md) | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
+| `createSubscriberRequestDto`                                                                   | [Components\CreateSubscriberRequestDto](../../Models/Components/CreateSubscriberRequestDto.md) | :heavy_check_mark:                                                                             | N/A                                                                                            |
+| `idempotencyKey`                                                                               | *?string*                                                                                      | :heavy_minus_sign:                                                                             | A header for idempotency purposes                                                              |
 
 ### Response
 
-**[?Operations\SubscribersControllerCreateSubscriberResponse](../../Models/Operations/SubscribersControllerCreateSubscriberResponse.md)**
+**[?Operations\SubscribersV1ControllerCreateSubscriberResponse](../../Models/Operations/SubscribersV1ControllerCreateSubscriberResponse.md)**
 
 ### Errors
 
-| Error Type                | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| Errors\ErrorDto           | 400, 404, 409             | application/json          |
-| Errors\ValidationErrorDto | 422                       | application/json          |
-| Errors\APIException       | 4XX, 5XX                  | \*/\*                     |
+| Error Type                             | Status Code                            | Content Type                           |
+| -------------------------------------- | -------------------------------------- | -------------------------------------- |
+| Errors\ErrorDto                        | 414                                    | application/json                       |
+| Errors\ErrorDto                        | 400, 401, 403, 404, 405, 409, 413, 415 | application/json                       |
+| Errors\ValidationErrorDto              | 422                                    | application/json                       |
+| Errors\ErrorDto                        | 500                                    | application/json                       |
+| Errors\APIException                    | 4XX, 5XX                               | \*/\*                                  |
 
-## get
+## retrieveLegacy
 
 Get subscriber by your internal id used to identify the subscriber
 
@@ -143,9 +372,10 @@ $sdk = novu\Novu::builder()
 
 
 
-$response = $sdk->subscribers->get(
+$response = $sdk->subscribers->retrieveLegacy(
     subscriberId: '<id>',
-    includeTopics: false
+    includeTopics: false,
+    idempotencyKey: '<value>'
 
 );
 
@@ -160,18 +390,21 @@ if ($response->subscriberResponseDto !== null) {
 | -------------------------------------------------- | -------------------------------------------------- | -------------------------------------------------- | -------------------------------------------------- |
 | `subscriberId`                                     | *string*                                           | :heavy_check_mark:                                 | N/A                                                |
 | `includeTopics`                                    | *?bool*                                            | :heavy_minus_sign:                                 | Includes the topics associated with the subscriber |
+| `idempotencyKey`                                   | *?string*                                          | :heavy_minus_sign:                                 | A header for idempotency purposes                  |
 
 ### Response
 
-**[?Operations\SubscribersControllerGetSubscriberResponse](../../Models/Operations/SubscribersControllerGetSubscriberResponse.md)**
+**[?Operations\SubscribersV1ControllerGetSubscriberResponse](../../Models/Operations/SubscribersV1ControllerGetSubscriberResponse.md)**
 
 ### Errors
 
-| Error Type                | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| Errors\ErrorDto           | 400, 404, 409             | application/json          |
-| Errors\ValidationErrorDto | 422                       | application/json          |
-| Errors\APIException       | 4XX, 5XX                  | \*/\*                     |
+| Error Type                             | Status Code                            | Content Type                           |
+| -------------------------------------- | -------------------------------------- | -------------------------------------- |
+| Errors\ErrorDto                        | 414                                    | application/json                       |
+| Errors\ErrorDto                        | 400, 401, 403, 404, 405, 409, 413, 415 | application/json                       |
+| Errors\ValidationErrorDto              | 422                                    | application/json                       |
+| Errors\ErrorDto                        | 500                                    | application/json                       |
+| Errors\APIException                    | 4XX, 5XX                               | \*/\*                                  |
 
 ## list
 
@@ -196,7 +429,8 @@ $sdk = novu\Novu::builder()
 
 $responses = $sdk->subscribers->list(
     page: 7685.78,
-    limit: 10
+    limit: 10,
+    idempotencyKey: '<value>'
 
 );
 
@@ -210,26 +444,31 @@ foreach ($responses as $response) {
 
 ### Parameters
 
-| Parameter          | Type               | Required           | Description        |
-| ------------------ | ------------------ | ------------------ | ------------------ |
-| `page`             | *?float*           | :heavy_minus_sign: | N/A                |
-| `limit`            | *?float*           | :heavy_minus_sign: | N/A                |
+| Parameter                         | Type                              | Required                          | Description                       |
+| --------------------------------- | --------------------------------- | --------------------------------- | --------------------------------- |
+| `page`                            | *?float*                          | :heavy_minus_sign:                | N/A                               |
+| `limit`                           | *?float*                          | :heavy_minus_sign:                | N/A                               |
+| `idempotencyKey`                  | *?string*                         | :heavy_minus_sign:                | A header for idempotency purposes |
 
 ### Response
 
-**[?Operations\SubscribersControllerListSubscribersResponse](../../Models/Operations/SubscribersControllerListSubscribersResponse.md)**
+**[?Operations\SubscribersV1ControllerListSubscribersResponse](../../Models/Operations/SubscribersV1ControllerListSubscribersResponse.md)**
 
 ### Errors
 
-| Error Type                | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| Errors\ErrorDto           | 400, 404, 409             | application/json          |
-| Errors\ValidationErrorDto | 422                       | application/json          |
-| Errors\APIException       | 4XX, 5XX                  | \*/\*                     |
+| Error Type                             | Status Code                            | Content Type                           |
+| -------------------------------------- | -------------------------------------- | -------------------------------------- |
+| Errors\ErrorDto                        | 414                                    | application/json                       |
+| Errors\ErrorDto                        | 400, 401, 403, 404, 405, 409, 413, 415 | application/json                       |
+| Errors\ValidationErrorDto              | 422                                    | application/json                       |
+| Errors\ErrorDto                        | 500                                    | application/json                       |
+| Errors\APIException                    | 4XX, 5XX                               | \*/\*                                  |
 
-## delete
+## ~~deleteLegacy~~
 
 Deletes a subscriber entity from the Novu platform
+
+> :warning: **DEPRECATED**: This will be removed in a future release, please migrate away from it as soon as possible.
 
 ### Example Usage
 
@@ -248,8 +487,10 @@ $sdk = novu\Novu::builder()
 
 
 
-$response = $sdk->subscribers->delete(
-    subscriberId: '<id>'
+$response = $sdk->subscribers->deleteLegacy(
+    subscriberId: '<id>',
+    idempotencyKey: '<value>'
+
 );
 
 if ($response->deleteSubscriberResponseDto !== null) {
@@ -259,21 +500,24 @@ if ($response->deleteSubscriberResponseDto !== null) {
 
 ### Parameters
 
-| Parameter          | Type               | Required           | Description        |
-| ------------------ | ------------------ | ------------------ | ------------------ |
-| `subscriberId`     | *string*           | :heavy_check_mark: | N/A                |
+| Parameter                         | Type                              | Required                          | Description                       |
+| --------------------------------- | --------------------------------- | --------------------------------- | --------------------------------- |
+| `subscriberId`                    | *string*                          | :heavy_check_mark:                | N/A                               |
+| `idempotencyKey`                  | *?string*                         | :heavy_minus_sign:                | A header for idempotency purposes |
 
 ### Response
 
-**[?Operations\SubscribersControllerRemoveSubscriberResponse](../../Models/Operations/SubscribersControllerRemoveSubscriberResponse.md)**
+**[?Operations\SubscribersV1ControllerRemoveSubscriberResponse](../../Models/Operations/SubscribersV1ControllerRemoveSubscriberResponse.md)**
 
 ### Errors
 
-| Error Type                | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| Errors\ErrorDto           | 400, 404, 409             | application/json          |
-| Errors\ValidationErrorDto | 422                       | application/json          |
-| Errors\APIException       | 4XX, 5XX                  | \*/\*                     |
+| Error Type                             | Status Code                            | Content Type                           |
+| -------------------------------------- | -------------------------------------- | -------------------------------------- |
+| Errors\ErrorDto                        | 414                                    | application/json                       |
+| Errors\ErrorDto                        | 400, 401, 403, 404, 405, 409, 413, 415 | application/json                       |
+| Errors\ValidationErrorDto              | 422                                    | application/json                       |
+| Errors\ErrorDto                        | 500                                    | application/json                       |
+| Errors\APIException                    | 4XX, 5XX                               | \*/\*                                  |
 
 ## update
 
@@ -316,7 +560,8 @@ $updateSubscriberRequestDto = new Components\UpdateSubscriberRequestDto(
 
 $response = $sdk->subscribers->update(
     subscriberId: '<id>',
-    updateSubscriberRequestDto: $updateSubscriberRequestDto
+    updateSubscriberRequestDto: $updateSubscriberRequestDto,
+    idempotencyKey: '<value>'
 
 );
 
@@ -331,69 +576,18 @@ if ($response->subscriberResponseDto !== null) {
 | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
 | `subscriberId`                                                                                 | *string*                                                                                       | :heavy_check_mark:                                                                             | N/A                                                                                            |
 | `updateSubscriberRequestDto`                                                                   | [Components\UpdateSubscriberRequestDto](../../Models/Components/UpdateSubscriberRequestDto.md) | :heavy_check_mark:                                                                             | N/A                                                                                            |
+| `idempotencyKey`                                                                               | *?string*                                                                                      | :heavy_minus_sign:                                                                             | A header for idempotency purposes                                                              |
 
 ### Response
 
-**[?Operations\SubscribersControllerUpdateSubscriberResponse](../../Models/Operations/SubscribersControllerUpdateSubscriberResponse.md)**
+**[?Operations\SubscribersV1ControllerUpdateSubscriberResponse](../../Models/Operations/SubscribersV1ControllerUpdateSubscriberResponse.md)**
 
 ### Errors
 
-| Error Type                | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| Errors\ErrorDto           | 400, 404, 409             | application/json          |
-| Errors\ValidationErrorDto | 422                       | application/json          |
-| Errors\APIException       | 4XX, 5XX                  | \*/\*                     |
-
-## updateOnlineStatus
-
-Used to update the subscriber isOnline flag.
-
-### Example Usage
-
-```php
-declare(strict_types=1);
-
-require 'vendor/autoload.php';
-
-use novu;
-use novu\Models\Components;
-
-$sdk = novu\Novu::builder()
-    ->setSecurity(
-        '<YOUR_API_KEY_HERE>'
-    )
-    ->build();
-
-$updateSubscriberOnlineFlagRequestDto = new Components\UpdateSubscriberOnlineFlagRequestDto(
-    isOnline: false,
-);
-
-$response = $sdk->subscribers->updateOnlineStatus(
-    subscriberId: '<id>',
-    updateSubscriberOnlineFlagRequestDto: $updateSubscriberOnlineFlagRequestDto
-
-);
-
-if ($response->subscriberResponseDto !== null) {
-    // handle response
-}
-```
-
-### Parameters
-
-| Parameter                                                                                                          | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
-| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
-| `subscriberId`                                                                                                     | *string*                                                                                                           | :heavy_check_mark:                                                                                                 | N/A                                                                                                                |
-| `updateSubscriberOnlineFlagRequestDto`                                                                             | [Components\UpdateSubscriberOnlineFlagRequestDto](../../Models/Components/UpdateSubscriberOnlineFlagRequestDto.md) | :heavy_check_mark:                                                                                                 | N/A                                                                                                                |
-
-### Response
-
-**[?Operations\SubscribersControllerUpdateSubscriberOnlineFlagResponse](../../Models/Operations/SubscribersControllerUpdateSubscriberOnlineFlagResponse.md)**
-
-### Errors
-
-| Error Type                | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| Errors\ErrorDto           | 400, 404, 409             | application/json          |
-| Errors\ValidationErrorDto | 422                       | application/json          |
-| Errors\APIException       | 4XX, 5XX                  | \*/\*                     |
+| Error Type                             | Status Code                            | Content Type                           |
+| -------------------------------------- | -------------------------------------- | -------------------------------------- |
+| Errors\ErrorDto                        | 414                                    | application/json                       |
+| Errors\ErrorDto                        | 400, 401, 403, 404, 405, 409, 413, 415 | application/json                       |
+| Errors\ValidationErrorDto              | 422                                    | application/json                       |
+| Errors\ErrorDto                        | 500                                    | application/json                       |
+| Errors\APIException                    | 4XX, 5XX                               | \*/\*                                  |

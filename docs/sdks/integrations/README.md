@@ -12,7 +12,7 @@ With the help of the Integration Store, you can easily integrate your favorite d
 * [listActive](#listactive) - Get active integrations
 * [list](#list) - Get integrations
 * [delete](#delete) - Delete integration
-* [setPrimary](#setprimary) - Set integration as primary
+* [setAsPrimary](#setasprimary) - Set integration as primary
 * [update](#update) - Update integration
 
 ## create
@@ -35,13 +35,15 @@ $sdk = novu\Novu::builder()
     )
     ->build();
 
-$request = new Components\CreateIntegrationRequestDto(
+$createIntegrationRequestDto = new Components\CreateIntegrationRequestDto(
     providerId: '<id>',
     channel: Components\CreateIntegrationRequestDtoChannel::Sms,
 );
 
 $response = $sdk->integrations->create(
-    request: $request
+    createIntegrationRequestDto: $createIntegrationRequestDto,
+    idempotencyKey: '<value>'
+
 );
 
 if ($response->integrationResponseDto !== null) {
@@ -53,7 +55,8 @@ if ($response->integrationResponseDto !== null) {
 
 | Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
 | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
-| `$request`                                                                                       | [Components\CreateIntegrationRequestDto](../../Models/Components/CreateIntegrationRequestDto.md) | :heavy_check_mark:                                                                               | The request object to use for the request.                                                       |
+| `createIntegrationRequestDto`                                                                    | [Components\CreateIntegrationRequestDto](../../Models/Components/CreateIntegrationRequestDto.md) | :heavy_check_mark:                                                                               | N/A                                                                                              |
+| `idempotencyKey`                                                                                 | *?string*                                                                                        | :heavy_minus_sign:                                                                               | A header for idempotency purposes                                                                |
 
 ### Response
 
@@ -61,11 +64,13 @@ if ($response->integrationResponseDto !== null) {
 
 ### Errors
 
-| Error Type                | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| Errors\ErrorDto           | 400, 404, 409             | application/json          |
-| Errors\ValidationErrorDto | 422                       | application/json          |
-| Errors\APIException       | 4XX, 5XX                  | \*/\*                     |
+| Error Type                             | Status Code                            | Content Type                           |
+| -------------------------------------- | -------------------------------------- | -------------------------------------- |
+| Errors\ErrorDto                        | 414                                    | application/json                       |
+| Errors\ErrorDto                        | 400, 401, 403, 404, 405, 409, 413, 415 | application/json                       |
+| Errors\ValidationErrorDto              | 422                                    | application/json                       |
+| Errors\ErrorDto                        | 500                                    | application/json                       |
+| Errors\APIException                    | 4XX, 5XX                               | \*/\*                                  |
 
 ## listActive
 
@@ -89,7 +94,7 @@ $sdk = novu\Novu::builder()
 
 
 $response = $sdk->integrations->listActive(
-
+    idempotencyKey: '<value>'
 );
 
 if ($response->integrationResponseDtos !== null) {
@@ -97,17 +102,25 @@ if ($response->integrationResponseDtos !== null) {
 }
 ```
 
+### Parameters
+
+| Parameter                         | Type                              | Required                          | Description                       |
+| --------------------------------- | --------------------------------- | --------------------------------- | --------------------------------- |
+| `idempotencyKey`                  | *?string*                         | :heavy_minus_sign:                | A header for idempotency purposes |
+
 ### Response
 
 **[?Operations\IntegrationsControllerGetActiveIntegrationsResponse](../../Models/Operations/IntegrationsControllerGetActiveIntegrationsResponse.md)**
 
 ### Errors
 
-| Error Type                | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| Errors\ErrorDto           | 400, 404, 409             | application/json          |
-| Errors\ValidationErrorDto | 422                       | application/json          |
-| Errors\APIException       | 4XX, 5XX                  | \*/\*                     |
+| Error Type                             | Status Code                            | Content Type                           |
+| -------------------------------------- | -------------------------------------- | -------------------------------------- |
+| Errors\ErrorDto                        | 414                                    | application/json                       |
+| Errors\ErrorDto                        | 400, 401, 403, 404, 405, 409, 413, 415 | application/json                       |
+| Errors\ValidationErrorDto              | 422                                    | application/json                       |
+| Errors\ErrorDto                        | 500                                    | application/json                       |
+| Errors\APIException                    | 4XX, 5XX                               | \*/\*                                  |
 
 ## list
 
@@ -131,7 +144,7 @@ $sdk = novu\Novu::builder()
 
 
 $response = $sdk->integrations->list(
-
+    idempotencyKey: '<value>'
 );
 
 if ($response->integrationResponseDtos !== null) {
@@ -139,17 +152,25 @@ if ($response->integrationResponseDtos !== null) {
 }
 ```
 
+### Parameters
+
+| Parameter                         | Type                              | Required                          | Description                       |
+| --------------------------------- | --------------------------------- | --------------------------------- | --------------------------------- |
+| `idempotencyKey`                  | *?string*                         | :heavy_minus_sign:                | A header for idempotency purposes |
+
 ### Response
 
 **[?Operations\IntegrationsControllerListIntegrationsResponse](../../Models/Operations/IntegrationsControllerListIntegrationsResponse.md)**
 
 ### Errors
 
-| Error Type                | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| Errors\ErrorDto           | 400, 404, 409             | application/json          |
-| Errors\ValidationErrorDto | 422                       | application/json          |
-| Errors\APIException       | 4XX, 5XX                  | \*/\*                     |
+| Error Type                             | Status Code                            | Content Type                           |
+| -------------------------------------- | -------------------------------------- | -------------------------------------- |
+| Errors\ErrorDto                        | 414                                    | application/json                       |
+| Errors\ErrorDto                        | 400, 401, 403, 404, 405, 409, 413, 415 | application/json                       |
+| Errors\ValidationErrorDto              | 422                                    | application/json                       |
+| Errors\ErrorDto                        | 500                                    | application/json                       |
+| Errors\APIException                    | 4XX, 5XX                               | \*/\*                                  |
 
 ## delete
 
@@ -173,7 +194,9 @@ $sdk = novu\Novu::builder()
 
 
 $response = $sdk->integrations->delete(
-    integrationId: '<id>'
+    integrationId: '<id>',
+    idempotencyKey: '<value>'
+
 );
 
 if ($response->integrationResponseDtos !== null) {
@@ -183,9 +206,10 @@ if ($response->integrationResponseDtos !== null) {
 
 ### Parameters
 
-| Parameter          | Type               | Required           | Description        |
-| ------------------ | ------------------ | ------------------ | ------------------ |
-| `integrationId`    | *string*           | :heavy_check_mark: | N/A                |
+| Parameter                         | Type                              | Required                          | Description                       |
+| --------------------------------- | --------------------------------- | --------------------------------- | --------------------------------- |
+| `integrationId`                   | *string*                          | :heavy_check_mark:                | N/A                               |
+| `idempotencyKey`                  | *?string*                         | :heavy_minus_sign:                | A header for idempotency purposes |
 
 ### Response
 
@@ -193,13 +217,15 @@ if ($response->integrationResponseDtos !== null) {
 
 ### Errors
 
-| Error Type                | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| Errors\ErrorDto           | 400, 404, 409             | application/json          |
-| Errors\ValidationErrorDto | 422                       | application/json          |
-| Errors\APIException       | 4XX, 5XX                  | \*/\*                     |
+| Error Type                             | Status Code                            | Content Type                           |
+| -------------------------------------- | -------------------------------------- | -------------------------------------- |
+| Errors\ErrorDto                        | 414                                    | application/json                       |
+| Errors\ErrorDto                        | 400, 401, 403, 404, 405, 409, 413, 415 | application/json                       |
+| Errors\ValidationErrorDto              | 422                                    | application/json                       |
+| Errors\ErrorDto                        | 500                                    | application/json                       |
+| Errors\APIException                    | 4XX, 5XX                               | \*/\*                                  |
 
-## setPrimary
+## setAsPrimary
 
 Set integration as primary
 
@@ -220,8 +246,10 @@ $sdk = novu\Novu::builder()
 
 
 
-$response = $sdk->integrations->setPrimary(
-    integrationId: '<id>'
+$response = $sdk->integrations->setAsPrimary(
+    integrationId: '<id>',
+    idempotencyKey: '<value>'
+
 );
 
 if ($response->integrationResponseDto !== null) {
@@ -231,9 +259,10 @@ if ($response->integrationResponseDto !== null) {
 
 ### Parameters
 
-| Parameter          | Type               | Required           | Description        |
-| ------------------ | ------------------ | ------------------ | ------------------ |
-| `integrationId`    | *string*           | :heavy_check_mark: | N/A                |
+| Parameter                         | Type                              | Required                          | Description                       |
+| --------------------------------- | --------------------------------- | --------------------------------- | --------------------------------- |
+| `integrationId`                   | *string*                          | :heavy_check_mark:                | N/A                               |
+| `idempotencyKey`                  | *?string*                         | :heavy_minus_sign:                | A header for idempotency purposes |
 
 ### Response
 
@@ -241,11 +270,13 @@ if ($response->integrationResponseDto !== null) {
 
 ### Errors
 
-| Error Type                | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| Errors\ErrorDto           | 400, 409                  | application/json          |
-| Errors\ValidationErrorDto | 422                       | application/json          |
-| Errors\APIException       | 4XX, 5XX                  | \*/\*                     |
+| Error Type                        | Status Code                       | Content Type                      |
+| --------------------------------- | --------------------------------- | --------------------------------- |
+| Errors\ErrorDto                   | 414                               | application/json                  |
+| Errors\ErrorDto                   | 400, 401, 403, 405, 409, 413, 415 | application/json                  |
+| Errors\ValidationErrorDto         | 422                               | application/json                  |
+| Errors\ErrorDto                   | 500                               | application/json                  |
+| Errors\APIException               | 4XX, 5XX                          | \*/\*                             |
 
 ## update
 
@@ -271,7 +302,8 @@ $updateIntegrationRequestDto = new Components\UpdateIntegrationRequestDto();
 
 $response = $sdk->integrations->update(
     integrationId: '<id>',
-    updateIntegrationRequestDto: $updateIntegrationRequestDto
+    updateIntegrationRequestDto: $updateIntegrationRequestDto,
+    idempotencyKey: '<value>'
 
 );
 
@@ -286,6 +318,7 @@ if ($response->integrationResponseDto !== null) {
 | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
 | `integrationId`                                                                                  | *string*                                                                                         | :heavy_check_mark:                                                                               | N/A                                                                                              |
 | `updateIntegrationRequestDto`                                                                    | [Components\UpdateIntegrationRequestDto](../../Models/Components/UpdateIntegrationRequestDto.md) | :heavy_check_mark:                                                                               | N/A                                                                                              |
+| `idempotencyKey`                                                                                 | *?string*                                                                                        | :heavy_minus_sign:                                                                               | A header for idempotency purposes                                                                |
 
 ### Response
 
@@ -293,8 +326,10 @@ if ($response->integrationResponseDto !== null) {
 
 ### Errors
 
-| Error Type                | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| Errors\ErrorDto           | 400, 409                  | application/json          |
-| Errors\ValidationErrorDto | 422                       | application/json          |
-| Errors\APIException       | 4XX, 5XX                  | \*/\*                     |
+| Error Type                        | Status Code                       | Content Type                      |
+| --------------------------------- | --------------------------------- | --------------------------------- |
+| Errors\ErrorDto                   | 414                               | application/json                  |
+| Errors\ErrorDto                   | 400, 401, 403, 405, 409, 413, 415 | application/json                  |
+| Errors\ValidationErrorDto         | 422                               | application/json                  |
+| Errors\ErrorDto                   | 500                               | application/json                  |
+| Errors\APIException               | 4XX, 5XX                          | \*/\*                             |
