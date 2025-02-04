@@ -9,6 +9,7 @@ use GuzzleHttp\Middleware;
 use GuzzleHttp\HandlerStack;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
+use GuzzleHttp\Psr7\Utils;
 use ReflectionClass;
 use GuzzleHttp\Client;
 
@@ -43,7 +44,8 @@ class NovuHooks implements
         'base_uri' => $baseUrl
     ]));
     }
-    
+
+
     /**
      * Generate a cryptographically secure random string
      */
@@ -80,27 +82,29 @@ class NovuHooks implements
 
     public function beforeRequest(BeforeRequestContext $context, RequestInterface $request): RequestInterface
     {
+        // print something
+        
         $authKey = 'Authorization';
         $idempotencyKey = 'Idempotency-Key';
         $apiKeyPrefix = 'ApiKey';
-
+    
         // Ensure Authorization header is prefixed with ApiKey if needed
         $authHeader = $request->getHeaderLine($authKey);
         if ($authHeader && !str_starts_with($authHeader, $apiKeyPrefix)) {
             $request = $request->withHeader($authKey, "$apiKeyPrefix $authHeader");
         }
-
+    
         // Add idempotency key if not present
         if (!$request->hasHeader($idempotencyKey)) {
             try {
                 $key = $this->generateIdempotencyKey();
                 $request = $request->withHeader($idempotencyKey, $key);
-            } catch (Exception $e) {
+            } catch (SpecificException $e) { // Replace SpecificException with the actual exception class
                 throw new Exception("Failed to generate idempotency key: " . $e->getMessage());
             }
         }
-
         return $request;
+
     }
 
     public function afterSuccess(AfterSuccessContext $context, ResponseInterface $response): ResponseInterface
@@ -128,12 +132,10 @@ class NovuHooks implements
 
         // Check if response has a 'data' key
         if (isset($jsonResponse['data'])) {
-            $newBody = json_encode($jsonResponse['data']);
-            $response->getBody()->rewind();
-            $response->getBody()->write($newBody);
-            $response->getBody()->rewind();
+            $newBody = Utils::streamFor(json_encode($jsonResponse['data']));
+            $response = $response->withBody($newBody);
         }
-
+        
         return $response;
     }
 }
