@@ -5,8 +5,10 @@ management:
   docVersion: "1.0"
   speakeasyVersion: 1.483.0
   generationVersion: 2.502.0
-  releaseVersion: 0.0.8
-  configChecksum: db3d01828fb3ec3c4d83710c9a33ff0d
+  releaseVersion: 0.0.9
+  configChecksum: 22b02057f95fab96c064d85d41d48c9f
+  repoURL: https://github.com/novuhq/php-novu.git
+  installationURL: https://github.com/novuhq/php-novu
   published: true
 features:
   php:
