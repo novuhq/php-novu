@@ -10,7 +10,7 @@ A message in Novu represents a notification delivered to a recipient on a partic
 
 * [delete](#delete) - Delete message
 * [deleteByTransactionId](#deletebytransactionid) - Delete messages by transactionId
-* [retrieve](#retrieve) - Get messages
+* [get](#get) - Get messages
 
 ## delete
 
@@ -121,7 +121,7 @@ if ($response->statusCode === 200) {
 | Errors\ErrorDto                        | 500                                    | application/json                       |
 | Errors\APIException                    | 4XX, 5XX                               | \*/\*                                  |
 
-## retrieve
+## get
 
 Returns a list of messages, could paginate using the `page` query parameter
 
@@ -143,7 +143,7 @@ $sdk = novu\Novu::builder()
 
 $request = new Operations\MessagesControllerGetMessagesRequest();
 
-$response = $sdk->messages->retrieve(
+$response = $sdk->messages->get(
     request: $request
 );
 

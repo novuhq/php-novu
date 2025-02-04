@@ -56,7 +56,7 @@ class Webhooks
      * @return Operations\IntegrationsControllerGetWebhookSupportStatusResponse
      * @throws \novu\Models\Errors\APIException
      */
-    public function retrieve(string $providerOrIntegrationId, ?string $idempotencyKey = null, ?Options $options = null): Operations\IntegrationsControllerGetWebhookSupportStatusResponse
+    public function getSupportStatus(string $providerOrIntegrationId, ?string $idempotencyKey = null, ?Options $options = null): Operations\IntegrationsControllerGetWebhookSupportStatusResponse
     {
         $retryConfig = null;
         if ($options) {

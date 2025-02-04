@@ -57,7 +57,7 @@ class Notifications
      * @return Operations\NotificationsControllerGetNotificationResponse
      * @throws \novu\Models\Errors\APIException
      */
-    public function retrieve(string $notificationId, ?string $idempotencyKey = null, ?Options $options = null): Operations\NotificationsControllerGetNotificationResponse
+    public function get(string $notificationId, ?string $idempotencyKey = null, ?Options $options = null): Operations\NotificationsControllerGetNotificationResponse
     {
         $retryConfig = null;
         if ($options) {

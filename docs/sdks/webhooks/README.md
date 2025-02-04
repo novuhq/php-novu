@@ -5,9 +5,9 @@
 
 ### Available Operations
 
-* [retrieve](#retrieve) - Get webhook support status for provider
+* [getSupportStatus](#getsupportstatus) - Get webhook support status for provider
 
-## retrieve
+## getSupportStatus
 
 Return the status of the webhook for this provider, if it is supported or if it is not based on a boolean value
 
@@ -28,7 +28,7 @@ $sdk = novu\Novu::builder()
 
 
 
-$response = $sdk->integrations->webhooks->retrieve(
+$response = $sdk->integrations->webhooks->getSupportStatus(
     providerOrIntegrationId: '<id>',
     idempotencyKey: '<value>'
 

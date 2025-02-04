@@ -23,7 +23,7 @@ $triggerEventToAllRequestDto = new Components\TriggerEventToAllRequestDto(
             'text' => 'string',
         ],
     ],
-    overrides: new Components\Overrides(),
+    overrides: new Components\TriggerEventToAllRequestDtoOverrides(),
 );
 
 $response = $sdk->triggerBroadcast(

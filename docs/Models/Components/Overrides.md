@@ -1,9 +1,9 @@
 # Overrides
 
-This could be used to override provider specific configurations
-
 
 ## Fields
 
-| Field       | Type        | Required    | Description |
-| ----------- | ----------- | ----------- | ----------- |
+| Field                                                                      | Type                                                                       | Required                                                                   | Description                                                                |
+| -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| `channel`                                                                  | [Components\OverridesChannel](../../Models/Components/OverridesChannel.md) | :heavy_check_mark:                                                         | The channel type which is overridden                                       |
+| `source`                                                                   | [Components\Source](../../Models/Components/Source.md)                     | :heavy_check_mark:                                                         | The source of overrides                                                    |

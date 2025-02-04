@@ -5,10 +5,10 @@
 
 ### Available Operations
 
-* [retrieve](#retrieve) - Get notification
+* [get](#get) - Get notification
 * [list](#list) - Get notifications
 
-## retrieve
+## get
 
 Get notification
 
@@ -29,7 +29,7 @@ $sdk = novu\Novu::builder()
 
 
 
-$response = $sdk->notifications->retrieve(
+$response = $sdk->notifications->get(
     notificationId: '<id>',
     idempotencyKey: '<value>'
 

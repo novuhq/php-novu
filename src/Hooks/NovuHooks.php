@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace novu\Hooks;
 
 use Exception;
-use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Client;
+use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Middleware;
 use GuzzleHttp\Psr7\Utils;
 use Psr\Http\Message\RequestInterface;

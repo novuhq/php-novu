@@ -9,11 +9,33 @@ declare(strict_types=1);
 namespace novu\Models\Components;
 
 
-/** Overrides - This could be used to override provider specific configurations */
 class Overrides
 {
+    /**
+     * The channel type which is overridden
+     *
+     * @var OverridesChannel $channel
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('channel')]
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\OverridesChannel')]
+    public OverridesChannel $channel;
 
-    public function __construct()
+    /**
+     * The source of overrides
+     *
+     * @var Source $source
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('source')]
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\Source')]
+    public Source $source;
+
+    /**
+     * @param  OverridesChannel  $channel
+     * @param  Source  $source
+     */
+    public function __construct(OverridesChannel $channel, Source $source)
     {
+        $this->channel = $channel;
+        $this->source = $source;
     }
 }

@@ -9,14 +9,13 @@ declare(strict_types=1);
 namespace novu;
 
 use novu\Hooks\HookContext;
-use novu\Models\Components;
 use novu\Models\Operations;
 use novu\Utils\Options;
 use novu\Utils\Retry;
 use novu\Utils\Retry\RetryUtils;
 use Speakeasy\Serializer\DeserializationContext;
 
-class Properties
+class TopicsSubscribers
 {
     private SDKConfiguration $sdkConfiguration;
     /**
@@ -48,17 +47,17 @@ class Properties
     }
 
     /**
-     * Update subscriber online status
+     * Check topic subscriber
      *
-     * Used to update the subscriber isOnline flag.
+     * Check if a subscriber belongs to a certain topic
      *
-     * @param  Components\UpdateSubscriberOnlineFlagRequestDto  $updateSubscriberOnlineFlagRequestDto
-     * @param  string  $subscriberId
+     * @param  string  $externalSubscriberId
+     * @param  string  $topicKey
      * @param  ?string  $idempotencyKey
-     * @return Operations\SubscribersV1ControllerUpdateSubscriberOnlineFlagResponse
+     * @return Operations\TopicsControllerGetTopicSubscriberResponse
      * @throws \novu\Models\Errors\APIException
      */
-    public function updateOnlineFlag(Components\UpdateSubscriberOnlineFlagRequestDto $updateSubscriberOnlineFlagRequestDto, string $subscriberId, ?string $idempotencyKey = null, ?Options $options = null): Operations\SubscribersV1ControllerUpdateSubscriberOnlineFlagResponse
+    public function check(string $externalSubscriberId, string $topicKey, ?string $idempotencyKey = null, ?Options $options = null): Operations\TopicsControllerGetTopicSubscriberResponse
     {
         $retryConfig = null;
         if ($options) {
@@ -87,28 +86,23 @@ class Properties
                 '5XX',
             ];
         }
-        $request = new Operations\SubscribersV1ControllerUpdateSubscriberOnlineFlagRequest(
-            subscriberId: $subscriberId,
-            updateSubscriberOnlineFlagRequestDto: $updateSubscriberOnlineFlagRequestDto,
+        $request = new Operations\TopicsControllerGetTopicSubscriberRequest(
+            externalSubscriberId: $externalSubscriberId,
+            topicKey: $topicKey,
             idempotencyKey: $idempotencyKey,
         );
         $baseUrl = $this->sdkConfiguration->getServerUrl();
-        $url = Utils\Utils::generateUrl($baseUrl, '/v1/subscribers/{subscriberId}/online-status', Operations\SubscribersV1ControllerUpdateSubscriberOnlineFlagRequest::class, $request);
+        $url = Utils\Utils::generateUrl($baseUrl, '/v1/topics/{topicKey}/subscribers/{externalSubscriberId}', Operations\TopicsControllerGetTopicSubscriberRequest::class, $request);
         $urlOverride = null;
         $httpOptions = ['http_errors' => false];
-        $body = Utils\Utils::serializeRequestBody($request, 'updateSubscriberOnlineFlagRequestDto', 'json');
-        if ($body === null) {
-            throw new \Exception('Request body is required');
-        }
-        $httpOptions = array_merge_recursive($httpOptions, $body);
         $httpOptions = array_merge_recursive($httpOptions, Utils\Utils::getHeaders($request));
         if (! array_key_exists('headers', $httpOptions)) {
             $httpOptions['headers'] = [];
         }
         $httpOptions['headers']['Accept'] = 'application/json';
         $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
-        $httpRequest = new \GuzzleHttp\Psr7\Request('PATCH', $url);
-        $hookContext = new HookContext('SubscribersV1Controller_updateSubscriberOnlineFlag', null, $this->sdkConfiguration->securitySource);
+        $httpRequest = new \GuzzleHttp\Psr7\Request('GET', $url);
+        $hookContext = new HookContext('TopicsController_getTopicSubscriber', null, $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
         $httpRequest = Utils\Utils::removeHeaders($httpRequest);
@@ -131,13 +125,13 @@ class Properties
 
                 $serializer = Utils\JSON::createSerializer();
                 $responseData = (string) $httpResponse->getBody();
-                $obj = $serializer->deserialize($responseData, '\novu\Models\Components\SubscriberResponseDto', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
-                $response = new Operations\SubscribersV1ControllerUpdateSubscriberOnlineFlagResponse(
+                $obj = $serializer->deserialize($responseData, '\novu\Models\Components\TopicSubscriberDto', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
+                $response = new Operations\TopicsControllerGetTopicSubscriberResponse(
                     statusCode: $statusCode,
                     contentType: $contentType,
                     rawResponse: $httpResponse,
                     headers: $httpResponse->getHeaders(),
-                    subscriberResponseDto: $obj);
+                    topicSubscriberDto: $obj);
 
                 return $response;
             } else {

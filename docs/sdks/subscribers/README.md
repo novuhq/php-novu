@@ -3,23 +3,23 @@
 
 ## Overview
 
-A subscriber in Novu represents someone who should receive a message. A subscriber’s profile information contains important attributes about the subscriber that will be used in messages (name, email). The subscriber object can contain other key-value pairs that can be used to further personalize your messages.
-<https://docs.novu.co/subscribers/subscribers>
-
 ### Available Operations
 
-* [retrieve](#retrieve) - Get subscriber
+* [get](#get) - Get subscriber
 * [patch](#patch) - Patch subscriber
 * [delete](#delete) - Delete subscriber
 * [search](#search) - Search for subscribers
+* [updatePreferences](#updatepreferences) - Update subscriber global or workflow specific preferences
 * [createBulk](#createbulk) - Bulk create subscribers
 * [create](#create) - Create subscriber
-* [retrieveLegacy](#retrievelegacy) - Get subscriber
+* [getById](#getbyid) - Get subscriber
 * [list](#list) - Get subscribers
 * [~~deleteLegacy~~](#deletelegacy) - Delete subscriber :warning: **Deprecated**
 * [update](#update) - Update subscriber
+* [updateCredentials](#updatecredentials) - Update subscriber credentials
+* [updateOnlineStatus](#updateonlinestatus) - Update subscriber online status
 
-## retrieve
+## get
 
 Get subscriber by your internal id used to identify the subscriber
 
@@ -40,7 +40,7 @@ $sdk = novu\Novu::builder()
 
 
 
-$response = $sdk->subscribers->retrieve(
+$response = $sdk->subscribers->get(
     subscriberId: '<id>',
     idempotencyKey: '<value>'
 
@@ -232,6 +232,64 @@ if ($response->listSubscribersResponseDto !== null) {
 | Errors\ErrorDto                        | 500                                    | application/json                       |
 | Errors\APIException                    | 4XX, 5XX                               | \*/\*                                  |
 
+## updatePreferences
+
+Update subscriber global or workflow specific preferences
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use novu;
+use novu\Models\Components;
+
+$sdk = novu\Novu::builder()
+    ->setSecurity(
+        '<YOUR_API_KEY_HERE>'
+    )
+    ->build();
+
+$patchSubscriberPreferencesDto = new Components\PatchSubscriberPreferencesDto(
+    channels: new Components\PatchPreferenceChannelsDto(),
+);
+
+$response = $sdk->subscribers->updatePreferences(
+    subscriberId: '<id>',
+    patchSubscriberPreferencesDto: $patchSubscriberPreferencesDto,
+    idempotencyKey: '<value>'
+
+);
+
+if ($response->getSubscriberPreferencesDto !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `subscriberId`                                                                                       | *string*                                                                                             | :heavy_check_mark:                                                                                   | N/A                                                                                                  |
+| `patchSubscriberPreferencesDto`                                                                      | [Components\PatchSubscriberPreferencesDto](../../Models/Components/PatchSubscriberPreferencesDto.md) | :heavy_check_mark:                                                                                   | N/A                                                                                                  |
+| `idempotencyKey`                                                                                     | *?string*                                                                                            | :heavy_minus_sign:                                                                                   | A header for idempotency purposes                                                                    |
+
+### Response
+
+**[?Operations\SubscribersControllerUpdateSubscriberPreferencesResponse](../../Models/Operations/SubscribersControllerUpdateSubscriberPreferencesResponse.md)**
+
+### Errors
+
+| Error Type                             | Status Code                            | Content Type                           |
+| -------------------------------------- | -------------------------------------- | -------------------------------------- |
+| Errors\ErrorDto                        | 414                                    | application/json                       |
+| Errors\ErrorDto                        | 400, 401, 403, 404, 405, 409, 413, 415 | application/json                       |
+| Errors\ValidationErrorDto              | 422                                    | application/json                       |
+| Errors\ErrorDto                        | 500                                    | application/json                       |
+| Errors\APIException                    | 4XX, 5XX                               | \*/\*                                  |
+
 ## createBulk
 
 
@@ -351,7 +409,7 @@ if ($response->subscriberResponseDto !== null) {
 | Errors\ErrorDto                        | 500                                    | application/json                       |
 | Errors\APIException                    | 4XX, 5XX                               | \*/\*                                  |
 
-## retrieveLegacy
+## getById
 
 Get subscriber by your internal id used to identify the subscriber
 
@@ -372,7 +430,7 @@ $sdk = novu\Novu::builder()
 
 
 
-$response = $sdk->subscribers->retrieveLegacy(
+$response = $sdk->subscribers->getById(
     subscriberId: '<id>',
     includeTopics: false,
     idempotencyKey: '<value>'
@@ -581,6 +639,136 @@ if ($response->subscriberResponseDto !== null) {
 ### Response
 
 **[?Operations\SubscribersV1ControllerUpdateSubscriberResponse](../../Models/Operations/SubscribersV1ControllerUpdateSubscriberResponse.md)**
+
+### Errors
+
+| Error Type                             | Status Code                            | Content Type                           |
+| -------------------------------------- | -------------------------------------- | -------------------------------------- |
+| Errors\ErrorDto                        | 414                                    | application/json                       |
+| Errors\ErrorDto                        | 400, 401, 403, 404, 405, 409, 413, 415 | application/json                       |
+| Errors\ValidationErrorDto              | 422                                    | application/json                       |
+| Errors\ErrorDto                        | 500                                    | application/json                       |
+| Errors\APIException                    | 4XX, 5XX                               | \*/\*                                  |
+
+## updateCredentials
+
+Subscriber credentials associated to the delivery methods such as slack and push tokens.
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use novu;
+use novu\Models\Components;
+
+$sdk = novu\Novu::builder()
+    ->setSecurity(
+        '<YOUR_API_KEY_HERE>'
+    )
+    ->build();
+
+$updateSubscriberChannelRequestDto = new Components\UpdateSubscriberChannelRequestDto(
+    providerId: Components\UpdateSubscriberChannelRequestDtoProviderId::PushWebhook,
+    credentials: new Components\ChannelCredentials(
+        webhookUrl: 'https://example.com/webhook',
+        channel: 'general',
+        deviceTokens: [
+            'token1',
+            'token2',
+            'token3',
+        ],
+        alertUid: '12345-abcde',
+        title: 'Critical Alert',
+        imageUrl: 'https://example.com/image.png',
+        state: 'resolved',
+        externalUrl: 'https://example.com/details',
+    ),
+);
+
+$response = $sdk->subscribers->updateCredentials(
+    subscriberId: '<id>',
+    updateSubscriberChannelRequestDto: $updateSubscriberChannelRequestDto,
+    idempotencyKey: '<value>'
+
+);
+
+if ($response->subscriberResponseDto !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| `subscriberId`                                                                                               | *string*                                                                                                     | :heavy_check_mark:                                                                                           | N/A                                                                                                          |
+| `updateSubscriberChannelRequestDto`                                                                          | [Components\UpdateSubscriberChannelRequestDto](../../Models/Components/UpdateSubscriberChannelRequestDto.md) | :heavy_check_mark:                                                                                           | N/A                                                                                                          |
+| `idempotencyKey`                                                                                             | *?string*                                                                                                    | :heavy_minus_sign:                                                                                           | A header for idempotency purposes                                                                            |
+
+### Response
+
+**[?Operations\SubscribersV1ControllerUpdateSubscriberChannelResponse](../../Models/Operations/SubscribersV1ControllerUpdateSubscriberChannelResponse.md)**
+
+### Errors
+
+| Error Type                             | Status Code                            | Content Type                           |
+| -------------------------------------- | -------------------------------------- | -------------------------------------- |
+| Errors\ErrorDto                        | 414                                    | application/json                       |
+| Errors\ErrorDto                        | 400, 401, 403, 404, 405, 409, 413, 415 | application/json                       |
+| Errors\ValidationErrorDto              | 422                                    | application/json                       |
+| Errors\ErrorDto                        | 500                                    | application/json                       |
+| Errors\APIException                    | 4XX, 5XX                               | \*/\*                                  |
+
+## updateOnlineStatus
+
+Used to update the subscriber isOnline flag.
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use novu;
+use novu\Models\Components;
+
+$sdk = novu\Novu::builder()
+    ->setSecurity(
+        '<YOUR_API_KEY_HERE>'
+    )
+    ->build();
+
+$updateSubscriberOnlineFlagRequestDto = new Components\UpdateSubscriberOnlineFlagRequestDto(
+    isOnline: false,
+);
+
+$response = $sdk->subscribers->updateOnlineStatus(
+    subscriberId: '<id>',
+    updateSubscriberOnlineFlagRequestDto: $updateSubscriberOnlineFlagRequestDto,
+    idempotencyKey: '<value>'
+
+);
+
+if ($response->subscriberResponseDto !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                          | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
+| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
+| `subscriberId`                                                                                                     | *string*                                                                                                           | :heavy_check_mark:                                                                                                 | N/A                                                                                                                |
+| `updateSubscriberOnlineFlagRequestDto`                                                                             | [Components\UpdateSubscriberOnlineFlagRequestDto](../../Models/Components/UpdateSubscriberOnlineFlagRequestDto.md) | :heavy_check_mark:                                                                                                 | N/A                                                                                                                |
+| `idempotencyKey`                                                                                                   | *?string*                                                                                                          | :heavy_minus_sign:                                                                                                 | A header for idempotency purposes                                                                                  |
+
+### Response
+
+**[?Operations\SubscribersV1ControllerUpdateSubscriberOnlineFlagResponse](../../Models/Operations/SubscribersV1ControllerUpdateSubscriberOnlineFlagResponse.md)**
 
 ### Errors
 

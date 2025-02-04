@@ -17,6 +17,7 @@ Novu Documentation
 ## triggerBroadcast
 
 Trigger a broadcast event to all existing subscribers, could be used to send announcements, etc.
+
       In the future could be used to trigger events to a subset of subscribers based on defined filters.
 
 ### Example Usage
@@ -43,7 +44,7 @@ $triggerEventToAllRequestDto = new Components\TriggerEventToAllRequestDto(
             'text' => 'string',
         ],
     ],
-    overrides: new Components\Overrides(),
+    overrides: new Components\TriggerEventToAllRequestDtoOverrides(),
 );
 
 $response = $sdk->triggerBroadcast(

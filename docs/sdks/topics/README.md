@@ -10,7 +10,7 @@ Topics are a way to group subscribers together so that they can be notified of e
 
 * [create](#create) - Topic creation
 * [delete](#delete) - Delete topic
-* [retrieve](#retrieve) - Get topic
+* [get](#get) - Get topic
 * [list](#list) - Get topic list filtered 
 * [rename](#rename) - Rename a topic
 
@@ -124,7 +124,7 @@ if ($response->statusCode === 200) {
 | Errors\ErrorDto                        | 500                                    | application/json                       |
 | Errors\APIException                    | 4XX, 5XX                               | \*/\*                                  |
 
-## retrieve
+## get
 
 Get a topic by its topic key
 
@@ -145,7 +145,7 @@ $sdk = novu\Novu::builder()
 
 
 
-$response = $sdk->topics->retrieve(
+$response = $sdk->topics->get(
     topicKey: '<value>',
     idempotencyKey: '<value>'
 

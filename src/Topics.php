@@ -19,7 +19,7 @@ use Speakeasy\Serializer\DeserializationContext;
 class Topics
 {
     private SDKConfiguration $sdkConfiguration;
-    public NovuSubscribers $subscribers;
+    public NovuTopicsSubscribers $subscribers;
 
     /**
      * @param  SDKConfiguration  $sdkConfig
@@ -27,7 +27,7 @@ class Topics
     public function __construct(public SDKConfiguration $sdkConfig)
     {
         $this->sdkConfiguration = $sdkConfig;
-        $this->subscribers = new NovuSubscribers($this->sdkConfiguration);
+        $this->subscribers = new NovuTopicsSubscribers($this->sdkConfiguration);
     }
     /**
      * @param  string  $baseUrl
@@ -347,7 +347,7 @@ class Topics
      * @return Operations\TopicsControllerGetTopicResponse
      * @throws \novu\Models\Errors\APIException
      */
-    public function retrieve(string $topicKey, ?string $idempotencyKey = null, ?Options $options = null): Operations\TopicsControllerGetTopicResponse
+    public function get(string $topicKey, ?string $idempotencyKey = null, ?Options $options = null): Operations\TopicsControllerGetTopicResponse
     {
         $retryConfig = null;
         if ($options) {

@@ -34,12 +34,12 @@ class TriggerEventToAllRequestDto
     /**
      * This could be used to override provider specific configurations
      *
-     * @var ?Overrides $overrides
+     * @var ?TriggerEventToAllRequestDtoOverrides $overrides
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('overrides')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\Overrides|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\TriggerEventToAllRequestDtoOverrides|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?Overrides $overrides = null;
+    public ?TriggerEventToAllRequestDtoOverrides $overrides = null;
 
     /**
      * A unique identifier for this transaction, we will generated a UUID if not provided.
@@ -79,12 +79,12 @@ class TriggerEventToAllRequestDto
     /**
      * @param  string  $name
      * @param  array<string, mixed>  $payload
-     * @param  ?Overrides  $overrides
+     * @param  ?TriggerEventToAllRequestDtoOverrides  $overrides
      * @param  ?string  $transactionId
      * @param  string|SubscriberPayloadDto|null  $actor
      * @param  string|TenantPayloadDto|null  $tenant
      */
-    public function __construct(string $name, array $payload, ?Overrides $overrides = null, ?string $transactionId = null, string|SubscriberPayloadDto|null $actor = null, string|TenantPayloadDto|null $tenant = null)
+    public function __construct(string $name, array $payload, ?TriggerEventToAllRequestDtoOverrides $overrides = null, ?string $transactionId = null, string|SubscriberPayloadDto|null $actor = null, string|TenantPayloadDto|null $tenant = null)
     {
         $this->name = $name;
         $this->payload = $payload;

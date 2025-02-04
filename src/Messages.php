@@ -342,7 +342,7 @@ class Messages
      * @return Operations\MessagesControllerGetMessagesResponse
      * @throws \novu\Models\Errors\APIException
      */
-    public function retrieve(?Operations\MessagesControllerGetMessagesRequest $request = null, ?Options $options = null): Operations\MessagesControllerGetMessagesResponse
+    public function get(?Operations\MessagesControllerGetMessagesRequest $request = null, ?Options $options = null): Operations\MessagesControllerGetMessagesResponse
     {
         $retryConfig = null;
         if ($options) {

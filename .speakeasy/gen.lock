@@ -1,17 +1,17 @@
 lockVersion: 2.0.0
 id: 4286f3ad-fa54-4c63-a599-e5773b27ae7b
 management:
-  docChecksum: f23fecf192ff90c41d59a13caff7a43a
+  docChecksum: d1632819398aa0f78d5e472d361f69ef
   docVersion: "1.0"
-  speakeasyVersion: 1.480.0
-  generationVersion: 2.499.0
-  releaseVersion: 0.0.4
-  configChecksum: 21ddfcc7874d926cec475b957c89d90b
+  speakeasyVersion: 1.483.0
+  generationVersion: 2.502.0
+  releaseVersion: 0.0.8
+  configChecksum: db3d01828fb3ec3c4d83710c9a33ff0d
   published: true
 features:
   php:
     constsAndDefaults: 0.2.0
-    core: 3.7.12
+    core: 3.7.13
     deprecations: 2.81.1
     examples: 2.81.5
     flattening: 2.81.1
@@ -22,7 +22,7 @@ features:
     methodArguments: 0.1.0
     nameOverrides: 2.81.2
     nullables: 1.0.0
-    pagination: 0.1.1
+    pagination: 0.1.2
     responseFormat: 0.1.0
     retries: 0.1.0
     unions: 0.1.4
@@ -106,8 +106,10 @@ generatedFiles:
   - docs/Models/Components/FeedResponseDto.md
   - docs/Models/Components/FieldFilterPartDto.md
   - docs/Models/Components/FilterTopicsResponseDto.md
+  - docs/Models/Components/GetSubscriberPreferencesDto.md
   - docs/Models/Components/GetSubscriberPreferencesResponseDto.md
   - docs/Models/Components/GetTopicResponseDto.md
+  - docs/Models/Components/GlobalPreferenceDto.md
   - docs/Models/Components/IntegrationResponseDto.md
   - docs/Models/Components/Issues.md
   - docs/Models/Components/ListSubscribersResponseDto.md
@@ -158,6 +160,9 @@ generatedFiles:
   - docs/Models/Components/OrdinalValue.md
   - docs/Models/Components/OrdinalValueEnum.md
   - docs/Models/Components/Overrides.md
+  - docs/Models/Components/OverridesChannel.md
+  - docs/Models/Components/PatchPreferenceChannelsDto.md
+  - docs/Models/Components/PatchSubscriberPreferencesDto.md
   - docs/Models/Components/PatchSubscriberRequestDto.md
   - docs/Models/Components/PatchSubscriberRequestDtoData.md
   - docs/Models/Components/Payload.md
@@ -171,6 +176,7 @@ generatedFiles:
   - docs/Models/Components/RenameTopicResponseDto.md
   - docs/Models/Components/ReplyCallback.md
   - docs/Models/Components/Security.md
+  - docs/Models/Components/Source.md
   - docs/Models/Components/Status.md
   - docs/Models/Components/StepFilterDto.md
   - docs/Models/Components/StepTypeEnum.md
@@ -194,6 +200,7 @@ generatedFiles:
   - docs/Models/Components/TriggerEventResponseDto.md
   - docs/Models/Components/TriggerEventToAllRequestDto.md
   - docs/Models/Components/TriggerEventToAllRequestDtoActor.md
+  - docs/Models/Components/TriggerEventToAllRequestDtoOverrides.md
   - docs/Models/Components/TriggerEventToAllRequestDtoTenant.md
   - docs/Models/Components/TriggerRecipientsTypeEnum.md
   - docs/Models/Components/TriggerReservedVariableResponse.md
@@ -214,7 +221,9 @@ generatedFiles:
   - docs/Models/Components/UpdatedSubscriberDto.md
   - docs/Models/Components/Value.md
   - docs/Models/Components/WeekDays.md
+  - docs/Models/Components/WorkflowInfoDto.md
   - docs/Models/Components/WorkflowIntegrationStatus.md
+  - docs/Models/Components/WorkflowPreferenceDto.md
   - docs/Models/Components/WorkflowResponse.md
   - docs/Models/Components/WorkflowResponseData.md
   - docs/Models/Errors/ErrorDto.md
@@ -260,6 +269,8 @@ generatedFiles:
   - docs/Models/Operations/NotificationsControllerListNotificationsResponse.md
   - docs/Models/Operations/OrderDirection.md
   - docs/Models/Operations/Parameter.md
+  - docs/Models/Operations/SubscribersControllerGetSubscriberPreferencesRequest.md
+  - docs/Models/Operations/SubscribersControllerGetSubscriberPreferencesResponse.md
   - docs/Models/Operations/SubscribersControllerGetSubscriberRequest.md
   - docs/Models/Operations/SubscribersControllerGetSubscriberResponse.md
   - docs/Models/Operations/SubscribersControllerPatchSubscriberRequest.md
@@ -268,6 +279,8 @@ generatedFiles:
   - docs/Models/Operations/SubscribersControllerRemoveSubscriberResponse.md
   - docs/Models/Operations/SubscribersControllerSearchSubscribersRequest.md
   - docs/Models/Operations/SubscribersControllerSearchSubscribersResponse.md
+  - docs/Models/Operations/SubscribersControllerUpdateSubscriberPreferencesRequest.md
+  - docs/Models/Operations/SubscribersControllerUpdateSubscriberPreferencesResponse.md
   - docs/Models/Operations/SubscribersV1ControllerBulkCreateSubscribersRequest.md
   - docs/Models/Operations/SubscribersV1ControllerBulkCreateSubscribersResponse.md
   - docs/Models/Operations/SubscribersV1ControllerChatAccessOauthRequest.md
@@ -328,26 +341,30 @@ generatedFiles:
   - docs/Models/Operations/TopicsControllerRenameTopicRequest.md
   - docs/Models/Operations/TopicsControllerRenameTopicResponse.md
   - docs/sdks/authentication/README.md
-  - docs/sdks/credentials/README.md
   - docs/sdks/integrations/README.md
   - docs/sdks/messages/README.md
   - docs/sdks/notifications/README.md
+  - docs/sdks/notificationsstats/README.md
   - docs/sdks/novu/README.md
   - docs/sdks/novumessages/README.md
-  - docs/sdks/novunotifications/README.md
-  - docs/sdks/novusubscribers/README.md
+  - docs/sdks/novusubscribersnotifications/README.md
+  - docs/sdks/novutopicssubscribers/README.md
   - docs/sdks/preferences/README.md
-  - docs/sdks/properties/README.md
   - docs/sdks/stats/README.md
   - docs/sdks/subscribers/README.md
+  - docs/sdks/subscribersauthentication/README.md
+  - docs/sdks/subscriberscredentials/README.md
+  - docs/sdks/subscribersmessages/README.md
+  - docs/sdks/subscribersnotifications/README.md
+  - docs/sdks/subscriberspreferences/README.md
   - docs/sdks/topics/README.md
+  - docs/sdks/topicssubscribers/README.md
   - docs/sdks/webhooks/README.md
   - phpstan.neon
   - phpunit.xml
   - pint.json
   - rector.php
   - src/Authentication.php
-  - src/Credentials.php
   - src/Hooks/AfterErrorContext.php
   - src/Hooks/AfterErrorHook.php
   - src/Hooks/AfterSuccessContext.php
@@ -437,8 +454,10 @@ generatedFiles:
   - src/Models/Components/FeedResponseDto.php
   - src/Models/Components/FieldFilterPartDto.php
   - src/Models/Components/FilterTopicsResponseDto.php
+  - src/Models/Components/GetSubscriberPreferencesDto.php
   - src/Models/Components/GetSubscriberPreferencesResponseDto.php
   - src/Models/Components/GetTopicResponseDto.php
+  - src/Models/Components/GlobalPreferenceDto.php
   - src/Models/Components/IntegrationResponseDto.php
   - src/Models/Components/Issues.php
   - src/Models/Components/ListSubscribersResponseDto.php
@@ -485,6 +504,9 @@ generatedFiles:
   - src/Models/Components/OrdinalValue.php
   - src/Models/Components/OrdinalValueEnum.php
   - src/Models/Components/Overrides.php
+  - src/Models/Components/OverridesChannel.php
+  - src/Models/Components/PatchPreferenceChannelsDto.php
+  - src/Models/Components/PatchSubscriberPreferencesDto.php
   - src/Models/Components/PatchSubscriberRequestDto.php
   - src/Models/Components/PatchSubscriberRequestDtoData.php
   - src/Models/Components/Payload.php
@@ -498,6 +520,7 @@ generatedFiles:
   - src/Models/Components/RenameTopicResponseDto.php
   - src/Models/Components/ReplyCallback.php
   - src/Models/Components/Security.php
+  - src/Models/Components/Source.php
   - src/Models/Components/Status.php
   - src/Models/Components/StepFilterDto.php
   - src/Models/Components/StepTypeEnum.php
@@ -518,6 +541,7 @@ generatedFiles:
   - src/Models/Components/TriggerEventRequestDto.php
   - src/Models/Components/TriggerEventResponseDto.php
   - src/Models/Components/TriggerEventToAllRequestDto.php
+  - src/Models/Components/TriggerEventToAllRequestDtoOverrides.php
   - src/Models/Components/TriggerRecipientsTypeEnum.php
   - src/Models/Components/TriggerReservedVariableResponse.php
   - src/Models/Components/TriggerReservedVariableResponseType.php
@@ -537,7 +561,9 @@ generatedFiles:
   - src/Models/Components/UpdatedSubscriberDto.php
   - src/Models/Components/Value.php
   - src/Models/Components/WeekDays.php
+  - src/Models/Components/WorkflowInfoDto.php
   - src/Models/Components/WorkflowIntegrationStatus.php
+  - src/Models/Components/WorkflowPreferenceDto.php
   - src/Models/Components/WorkflowResponse.php
   - src/Models/Components/WorkflowResponseData.php
   - src/Models/Errors/APIException.php
@@ -585,6 +611,8 @@ generatedFiles:
   - src/Models/Operations/NotificationsControllerListNotificationsResponse.php
   - src/Models/Operations/OrderDirection.php
   - src/Models/Operations/Parameter.php
+  - src/Models/Operations/SubscribersControllerGetSubscriberPreferencesRequest.php
+  - src/Models/Operations/SubscribersControllerGetSubscriberPreferencesResponse.php
   - src/Models/Operations/SubscribersControllerGetSubscriberRequest.php
   - src/Models/Operations/SubscribersControllerGetSubscriberResponse.php
   - src/Models/Operations/SubscribersControllerPatchSubscriberRequest.php
@@ -593,6 +621,8 @@ generatedFiles:
   - src/Models/Operations/SubscribersControllerRemoveSubscriberResponse.php
   - src/Models/Operations/SubscribersControllerSearchSubscribersRequest.php
   - src/Models/Operations/SubscribersControllerSearchSubscribersResponse.php
+  - src/Models/Operations/SubscribersControllerUpdateSubscriberPreferencesRequest.php
+  - src/Models/Operations/SubscribersControllerUpdateSubscriberPreferencesResponse.php
   - src/Models/Operations/SubscribersV1ControllerBulkCreateSubscribersRequest.php
   - src/Models/Operations/SubscribersV1ControllerBulkCreateSubscribersResponse.php
   - src/Models/Operations/SubscribersV1ControllerChatAccessOauthRequest.php
@@ -653,17 +683,23 @@ generatedFiles:
   - src/Models/Operations/TopicsControllerRenameTopicRequest.php
   - src/Models/Operations/TopicsControllerRenameTopicResponse.php
   - src/Notifications.php
+  - src/NotificationsStats.php
   - src/Novu.php
   - src/NovuBuilder.php
   - src/NovuMessages.php
-  - src/NovuNotifications.php
-  - src/NovuSubscribers.php
+  - src/NovuSubscribersNotifications.php
+  - src/NovuTopicsSubscribers.php
   - src/Preferences.php
-  - src/Properties.php
   - src/SDKConfiguration.php
   - src/Stats.php
   - src/Subscribers.php
+  - src/SubscribersAuthentication.php
+  - src/SubscribersCredentials.php
+  - src/SubscribersMessages.php
+  - src/SubscribersNotifications.php
+  - src/SubscribersPreferences.php
   - src/Topics.php
+  - src/TopicsSubscribers.php
   - src/Utils/BigDecimalHandler.php
   - src/Utils/BigIntHandler.php
   - src/Utils/DateHandler.php
@@ -1850,6 +1886,42 @@ examples:
           environmentId: "<id>"
         header: {}
       responses:
+        "414":
+          application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "Resource not found.", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
+        "400":
+          application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "Resource not found.", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
+        "422":
+          application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "Resource not found.", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123", "errors": {"fieldName1": {"messages": ["Field is required", "Invalid format"], "value": "xx xx xx "}, "fieldName2": {"messages": ["Field is required", "Invalid format"], "value": "xx xx xx "}, "fieldName3": {"messages": ["Field is required", "Invalid format"], "value": "xx xx xx "}, "fieldName4": {"messages": ["Field is required", "Invalid format"], "value": "xx xx xx "}}}
+        "500":
+          application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "Resource not found.", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
+  SubscribersController_getSubscriberPreferences:
+    speakeasy-default-subscribers-controller-get-subscriber-preferences:
+      parameters:
+        path:
+          subscriberId: "<id>"
+        header: {}
+      responses:
+        "200":
+          application/json: {"global": {"enabled": true, "channels": {}}, "workflows": [{"enabled": true, "channels": {}, "overrides": [{"channel": "in_app", "source": "template"}], "workflow": {"slug": "<value>", "identifier": "<value>", "name": "<value>"}}, {"enabled": false, "channels": {}, "overrides": [], "workflow": {"slug": "<value>", "identifier": "<value>", "name": "<value>"}}, {"enabled": false, "channels": {}, "overrides": [], "workflow": {"slug": "<value>", "identifier": "<value>", "name": "<value>"}}]}
+        "414":
+          application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "Resource not found.", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
+        "400":
+          application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "Resource not found.", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
+        "422":
+          application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "Resource not found.", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123", "errors": {"fieldName1": {"messages": ["Field is required", "Invalid format"], "value": "xx xx xx "}, "fieldName2": {"messages": ["Field is required", "Invalid format"], "value": "xx xx xx "}, "fieldName3": {"messages": ["Field is required", "Invalid format"], "value": "xx xx xx "}, "fieldName4": {"messages": ["Field is required", "Invalid format"], "value": "xx xx xx "}}}
+        "500":
+          application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "Resource not found.", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
+  SubscribersController_updateSubscriberPreferences:
+    speakeasy-default-subscribers-controller-update-subscriber-preferences:
+      parameters:
+        path:
+          subscriberId: "<id>"
+        header: {}
+      requestBody:
+        application/json: {"channels": {}}
+      responses:
+        "200":
+          application/json: {"global": {"enabled": false, "channels": {}}, "workflows": [{"enabled": true, "channels": {}, "overrides": [{"channel": "chat", "source": "template"}, {"channel": "push", "source": "subscriber"}, {"channel": "push", "source": "template"}], "workflow": {"slug": "<value>", "identifier": "<value>", "name": "<value>"}}, {"enabled": true, "channels": {}, "overrides": [], "workflow": {"slug": "<value>", "identifier": "<value>", "name": "<value>"}}]}
         "414":
           application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "Resource not found.", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
         "400":

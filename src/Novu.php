@@ -32,6 +32,8 @@ class Novu
 
     public Notifications $notifications;
 
+    public NotificationsStats $notificationsStats;
+
     /**
      * With the help of the Integration Store, you can easily integrate your favorite delivery provider. During the runtime of the API, the Integrations Store is responsible for storing the configurations of all the providers.
      *
@@ -39,12 +41,17 @@ class Novu
      */
     public Integrations $integrations;
 
-    /**
-     * A subscriber in Novu represents someone who should receive a message. A subscriber’s profile information contains important attributes about the subscriber that will be used in messages (name, email). The subscriber object can contain other key-value pairs that can be used to further personalize your messages.
-     *
-     * @var Subscribers $$subscribers
-     */
     public Subscribers $subscribers;
+
+    public SubscribersCredentials $subscribersCredentials;
+
+    public SubscribersPreferences $subscribersPreferences;
+
+    public SubscribersNotifications $subscribersNotifications;
+
+    public SubscribersMessages $subscribersMessages;
+
+    public SubscribersAuthentication $subscribersAuthentication;
 
     /**
      * A message in Novu represents a notification delivered to a recipient on a particular channel. Messages contain information about the request that triggered its delivery, a view of the data sent to the recipient, and a timeline of its lifecycle events. Learn more about messages.
@@ -59,6 +66,8 @@ class Novu
      * @var Topics $$topics
      */
     public Topics $topics;
+
+    public TopicsSubscribers $topicsSubscribers;
 
     /**
      * Returns a new instance of the SDK builder used to configure and create the SDK instance.
@@ -77,10 +86,17 @@ class Novu
         public SDKConfiguration $sdkConfiguration,
     ) {
         $this->notifications = new Notifications($this->sdkConfiguration);
+        $this->notificationsStats = new NotificationsStats($this->sdkConfiguration);
         $this->integrations = new Integrations($this->sdkConfiguration);
         $this->subscribers = new Subscribers($this->sdkConfiguration);
+        $this->subscribersCredentials = new SubscribersCredentials($this->sdkConfiguration);
+        $this->subscribersPreferences = new SubscribersPreferences($this->sdkConfiguration);
+        $this->subscribersNotifications = new SubscribersNotifications($this->sdkConfiguration);
+        $this->subscribersMessages = new SubscribersMessages($this->sdkConfiguration);
+        $this->subscribersAuthentication = new SubscribersAuthentication($this->sdkConfiguration);
         $this->messages = new Messages($this->sdkConfiguration);
         $this->topics = new Topics($this->sdkConfiguration);
+        $this->topicsSubscribers = new TopicsSubscribers($this->sdkConfiguration);
         $this->sdkConfiguration->client = $this->sdkConfiguration->initHooks($this->sdkConfiguration->client);
 
     }
@@ -89,6 +105,7 @@ class Novu
      * Broadcast event to all
      *
      * Trigger a broadcast event to all existing subscribers, could be used to send announcements, etc.
+     *
      *       In the future could be used to trigger events to a subset of subscribers based on defined filters.
      *
      * @param  Components\TriggerEventToAllRequestDto  $triggerEventToAllRequestDto

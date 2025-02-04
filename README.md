@@ -177,7 +177,7 @@ $triggerEventToAllRequestDto = new Components\TriggerEventToAllRequestDto(
             'text' => 'string',
         ],
     ],
-    overrides: new Components\Overrides(),
+    overrides: new Components\TriggerEventToAllRequestDtoOverrides(),
 );
 
 $response = $sdk->triggerBroadcast(
@@ -254,7 +254,7 @@ $triggerEventToAllRequestDto = new Components\TriggerEventToAllRequestDto(
             'text' => 'string',
         ],
     ],
-    overrides: new Components\Overrides(),
+    overrides: new Components\TriggerEventToAllRequestDtoOverrides(),
 );
 
 $response = $sdk->triggerBroadcast(
@@ -286,23 +286,26 @@ if ($response->triggerEventResponseDto !== null) {
 
 #### [integrations->webhooks](docs/sdks/webhooks/README.md)
 
-* [retrieve](docs/sdks/webhooks/README.md#retrieve) - Get webhook support status for provider
+* [getSupportStatus](docs/sdks/webhooks/README.md#getsupportstatus) - Get webhook support status for provider
 
 ### [messages](docs/sdks/messages/README.md)
 
 * [delete](docs/sdks/messages/README.md#delete) - Delete message
 * [deleteByTransactionId](docs/sdks/messages/README.md#deletebytransactionid) - Delete messages by transactionId
-* [retrieve](docs/sdks/messages/README.md#retrieve) - Get messages
+* [get](docs/sdks/messages/README.md#get) - Get messages
 
 ### [notifications](docs/sdks/notifications/README.md)
 
-* [retrieve](docs/sdks/notifications/README.md#retrieve) - Get notification
+* [get](docs/sdks/notifications/README.md#get) - Get notification
 * [list](docs/sdks/notifications/README.md#list) - Get notifications
 
 #### [notifications->stats](docs/sdks/stats/README.md)
 
-* [graph](docs/sdks/stats/README.md#graph) - Get notification graph statistics
-* [retrieve](docs/sdks/stats/README.md#retrieve) - Get notification statistics
+* [get](docs/sdks/stats/README.md#get) - Get notification statistics
+
+### [notificationsStats](docs/sdks/notificationsstats/README.md)
+
+* [getGraph](docs/sdks/notificationsstats/README.md#getgraph) - Get notification graph statistics
 
 ### [Novu SDK](docs/sdks/novu/README.md)
 
@@ -313,63 +316,77 @@ if ($response->triggerEventResponseDto !== null) {
 
 ### [subscribers](docs/sdks/subscribers/README.md)
 
-* [retrieve](docs/sdks/subscribers/README.md#retrieve) - Get subscriber
+* [get](docs/sdks/subscribers/README.md#get) - Get subscriber
 * [patch](docs/sdks/subscribers/README.md#patch) - Patch subscriber
 * [delete](docs/sdks/subscribers/README.md#delete) - Delete subscriber
 * [search](docs/sdks/subscribers/README.md#search) - Search for subscribers
+* [updatePreferences](docs/sdks/subscribers/README.md#updatepreferences) - Update subscriber global or workflow specific preferences
 * [createBulk](docs/sdks/subscribers/README.md#createbulk) - Bulk create subscribers
 * [create](docs/sdks/subscribers/README.md#create) - Create subscriber
-* [retrieveLegacy](docs/sdks/subscribers/README.md#retrievelegacy) - Get subscriber
+* [getById](docs/sdks/subscribers/README.md#getbyid) - Get subscriber
 * [list](docs/sdks/subscribers/README.md#list) - Get subscribers
 * [~~deleteLegacy~~](docs/sdks/subscribers/README.md#deletelegacy) - Delete subscriber :warning: **Deprecated**
 * [update](docs/sdks/subscribers/README.md#update) - Update subscriber
+* [updateCredentials](docs/sdks/subscribers/README.md#updatecredentials) - Update subscriber credentials
+* [updateOnlineStatus](docs/sdks/subscribers/README.md#updateonlinestatus) - Update subscriber online status
 
 #### [subscribers->authentication](docs/sdks/authentication/README.md)
 
-* [chatAccessOauth](docs/sdks/authentication/README.md#chataccessoauth) - Handle chat oauth
-* [chatAccessOauthCallBack](docs/sdks/authentication/README.md#chataccessoauthcallback) - Handle providers oauth redirect
-
-#### [subscribers->credentials](docs/sdks/credentials/README.md)
-
-* [delete](docs/sdks/credentials/README.md#delete) - Delete subscriber credentials by providerId
-* [append](docs/sdks/credentials/README.md#append) - Modify subscriber credentials
-* [update](docs/sdks/credentials/README.md#update) - Update subscriber credentials
+* [handleOauthCallback](docs/sdks/authentication/README.md#handleoauthcallback) - Handle providers oauth redirect
 
 #### [subscribers->messages](docs/sdks/novumessages/README.md)
 
 * [updateAsSeen](docs/sdks/novumessages/README.md#updateasseen) - Mark message action as seen
-* [markAll](docs/sdks/novumessages/README.md#markall) - Marks all the subscriber messages as read, unread, seen or unseen. Optionally you can pass feed id (or array) to mark messages of a particular feed.
 * [markAllAs](docs/sdks/novumessages/README.md#markallas) - Mark a subscriber messages as seen, read, unseen or unread
 
-#### [subscribers->notifications](docs/sdks/novunotifications/README.md)
+#### [subscribers->notifications](docs/sdks/novusubscribersnotifications/README.md)
 
-* [feed](docs/sdks/novunotifications/README.md#feed) - Get in-app notification feed for a particular subscriber
-* [unseenCount](docs/sdks/novunotifications/README.md#unseencount) - Get the unseen in-app notifications count for subscribers feed
+* [getFeed](docs/sdks/novusubscribersnotifications/README.md#getfeed) - Get in-app notification feed for a particular subscriber
 
 #### [subscribers->preferences](docs/sdks/preferences/README.md)
 
-* [retrieveByLevel](docs/sdks/preferences/README.md#retrievebylevel) - Get subscriber preferences by level
-* [list](docs/sdks/preferences/README.md#list) - Get subscriber preferences
-* [updateGlobal](docs/sdks/preferences/README.md#updateglobal) - Update subscriber global preferences
+* [getByLevel](docs/sdks/preferences/README.md#getbylevel) - Get subscriber preferences by level
 * [update](docs/sdks/preferences/README.md#update) - Update subscriber preference
 
-#### [subscribers->properties](docs/sdks/properties/README.md)
+### [subscribersAuthentication](docs/sdks/subscribersauthentication/README.md)
 
-* [updateOnlineFlag](docs/sdks/properties/README.md#updateonlineflag) - Update subscriber online status
+* [chatAccessOauth](docs/sdks/subscribersauthentication/README.md#chataccessoauth) - Handle chat oauth
+
+### [subscribersCredentials](docs/sdks/subscriberscredentials/README.md)
+
+* [deleteProvider](docs/sdks/subscriberscredentials/README.md#deleteprovider) - Delete subscriber credentials by providerId
+* [append](docs/sdks/subscriberscredentials/README.md#append) - Modify subscriber credentials
+
+### [subscribersMessages](docs/sdks/subscribersmessages/README.md)
+
+* [markAll](docs/sdks/subscribersmessages/README.md#markall) - Marks all the subscriber messages as read, unread, seen or unseen. Optionally you can pass feed id (or array) to mark messages of a particular feed.
+
+### [subscribersNotifications](docs/sdks/subscribersnotifications/README.md)
+
+* [getUnseenCount](docs/sdks/subscribersnotifications/README.md#getunseencount) - Get the unseen in-app notifications count for subscribers feed
+
+### [subscribersPreferences](docs/sdks/subscriberspreferences/README.md)
+
+* [retrieve](docs/sdks/subscriberspreferences/README.md#retrieve) - Get subscriber preferences
+* [list](docs/sdks/subscriberspreferences/README.md#list) - Get subscriber preferences
+* [updateGlobal](docs/sdks/subscriberspreferences/README.md#updateglobal) - Update subscriber global preferences
 
 ### [topics](docs/sdks/topics/README.md)
 
 * [create](docs/sdks/topics/README.md#create) - Topic creation
 * [delete](docs/sdks/topics/README.md#delete) - Delete topic
-* [retrieve](docs/sdks/topics/README.md#retrieve) - Get topic
+* [get](docs/sdks/topics/README.md#get) - Get topic
 * [list](docs/sdks/topics/README.md#list) - Get topic list filtered 
 * [rename](docs/sdks/topics/README.md#rename) - Rename a topic
 
-#### [topics->subscribers](docs/sdks/novusubscribers/README.md)
+#### [topics->subscribers](docs/sdks/novutopicssubscribers/README.md)
 
-* [assign](docs/sdks/novusubscribers/README.md#assign) - Subscribers addition
-* [retrieve](docs/sdks/novusubscribers/README.md#retrieve) - Check topic subscriber
-* [remove](docs/sdks/novusubscribers/README.md#remove) - Subscribers removal
+* [assign](docs/sdks/novutopicssubscribers/README.md#assign) - Subscribers addition
+* [remove](docs/sdks/novutopicssubscribers/README.md#remove) - Subscribers removal
+
+### [topicsSubscribers](docs/sdks/topicssubscribers/README.md)
+
+* [check](docs/sdks/topicssubscribers/README.md#check) - Check topic subscriber
 
 </details>
 <!-- End Available Resources and Operations [operations] -->
@@ -441,7 +458,7 @@ $triggerEventToAllRequestDto = new Components\TriggerEventToAllRequestDto(
             'text' => 'string',
         ],
     ],
-    overrides: new Components\Overrides(),
+    overrides: new Components\TriggerEventToAllRequestDtoOverrides(),
 );
 
 $response = $sdk->triggerBroadcast(
@@ -496,7 +513,7 @@ $triggerEventToAllRequestDto = new Components\TriggerEventToAllRequestDto(
             'text' => 'string',
         ],
     ],
-    overrides: new Components\Overrides(),
+    overrides: new Components\TriggerEventToAllRequestDtoOverrides(),
 );
 
 $response = $sdk->triggerBroadcast(
@@ -560,7 +577,7 @@ try {
                 'text' => 'string',
             ],
         ],
-        overrides: new Components\Overrides(),
+        overrides: new Components\TriggerEventToAllRequestDtoOverrides(),
     );
 
     $response = $sdk->triggerBroadcast(
@@ -628,7 +645,7 @@ $triggerEventToAllRequestDto = new Components\TriggerEventToAllRequestDto(
             'text' => 'string',
         ],
     ],
-    overrides: new Components\Overrides(),
+    overrides: new Components\TriggerEventToAllRequestDtoOverrides(),
 );
 
 $response = $sdk->triggerBroadcast(
@@ -668,7 +685,7 @@ $triggerEventToAllRequestDto = new Components\TriggerEventToAllRequestDto(
             'text' => 'string',
         ],
     ],
-    overrides: new Components\Overrides(),
+    overrides: new Components\TriggerEventToAllRequestDtoOverrides(),
 );
 
 $response = $sdk->triggerBroadcast(
