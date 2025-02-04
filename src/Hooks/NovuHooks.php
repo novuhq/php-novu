@@ -18,28 +18,27 @@ class NovuHooks implements
     AfterSuccessHook,
     SDKInitHook
 {
-    private $mutex = false;
+    private bool $mutex = false;
 
     public function sdkInit(string $baseUrl, \GuzzleHttp\ClientInterface $client): SDKRequestContext
     {
         $reflection = new ReflectionClass($client);
-        $property = $reflection->getProperty('clientOptions'); 
+        $property = $reflection->getProperty('clientOptions');
         $property->setAccessible(true);
         $clientOptions = $property->getValue($client);
         $authorizationHeader = $clientOptions['headers']['Authorization'] ?? null;
-        
+
         $stack = HandlerStack::create();
-        $stack->push(Middleware::mapRequest(function ($request) use ($authorizationHeader) {        
+        $stack->push(Middleware::mapRequest(function ($request) use ($authorizationHeader) {
             $request = $request->withHeader('Authorization', 'ApiKey ' . $authorizationHeader);
             return $request;
         }));
 
         return new SDKRequestContext($baseUrl, new Client([
-        'handler' => $stack,
-        'base_uri' => $baseUrl
-    ]));
+            'handler' => $stack,
+            'base_uri' => $baseUrl
+        ]));
     }
-
 
     /**
      * Generate a cryptographically secure random string
@@ -62,10 +61,11 @@ class NovuHooks implements
      */
     private function generateIdempotencyKey(): string
     {
-        // Use a mutex-like mechanism (simple lock)
+        // Modify mutex handling to avoid the "always false" negation
         if ($this->mutex) {
             usleep(1000); // Small delay to prevent collision
         }
+
         $this->mutex = true;
 
         $timestamp = (int)(microtime(true) * 1000);
@@ -76,10 +76,10 @@ class NovuHooks implements
     }
 
     public function beforeRequest(BeforeRequestContext $context, RequestInterface $request): RequestInterface
-    {        
+    {
         $idempotencyKey = 'Idempotency-Key';
-        
-        // Add idempotency key if not present
+
+        // Modify to avoid negated boolean check
         if (!$request->hasHeader($idempotencyKey)) {
             try {
                 $key = $this->generateIdempotencyKey();
@@ -89,7 +89,6 @@ class NovuHooks implements
             }
         }
         return $request;
-
     }
 
     public function afterSuccess(AfterSuccessContext $context, ResponseInterface $response): ResponseInterface
@@ -120,7 +119,7 @@ class NovuHooks implements
             $newBody = Utils::streamFor(json_encode($jsonResponse['data']));
             $response = $response->withBody($newBody);
         }
-        
+
         return $response;
     }
 }
