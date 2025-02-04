@@ -26,18 +26,13 @@ class NovuHooks implements
         $property = $reflection->getProperty('clientOptions'); 
         $property->setAccessible(true);
         $clientOptions = $property->getValue($client);
-
         $authorizationHeader = $clientOptions['headers']['Authorization'] ?? null;
-        // echo "Authorization Header: " . $authorizationHeader;
         
-
-    $stack = HandlerStack::create();
-
-    $stack->push(Middleware::mapRequest(function ($request) use ($authorizationHeader) {        
-        $authHeader = $request->getHeaderLine('Authorization');
-        $request = $request->withHeader('Authorization', 'ApiKey ' . $authorizationHeader);
-        return $request;
-    }));
+        $stack = HandlerStack::create();
+        $stack->push(Middleware::mapRequest(function ($request) use ($authorizationHeader) {        
+            $request = $request->withHeader('Authorization', 'ApiKey ' . $authorizationHeader);
+            return $request;
+        }));
 
         return new SDKRequestContext($baseUrl, new Client([
         'handler' => $stack,
