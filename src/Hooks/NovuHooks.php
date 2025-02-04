@@ -5,15 +5,40 @@ declare(strict_types=1);
 namespace novu\Hooks;
 
 use Exception;
-use GuzzleHttp\Psr7\Request;
+use GuzzleHttp\Middleware;
+use GuzzleHttp\HandlerStack;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
+use GuzzleHttp\Psr7\Utils;
+use ReflectionClass;
+use GuzzleHttp\Client;
 
 class NovuHooks implements
     BeforeRequestHook,
-    AfterSuccessHook
+    AfterSuccessHook,
+    SDKInitHook
 {
     private $mutex = false;
+
+    public function sdkInit(string $baseUrl, \GuzzleHttp\ClientInterface $client): SDKRequestContext
+    {
+        $reflection = new ReflectionClass($client);
+        $property = $reflection->getProperty('clientOptions'); 
+        $property->setAccessible(true);
+        $clientOptions = $property->getValue($client);
+        $authorizationHeader = $clientOptions['headers']['Authorization'] ?? null;
+        
+        $stack = HandlerStack::create();
+        $stack->push(Middleware::mapRequest(function ($request) use ($authorizationHeader) {        
+            $request = $request->withHeader('Authorization', 'ApiKey ' . $authorizationHeader);
+            return $request;
+        }));
+
+        return new SDKRequestContext($baseUrl, new Client([
+        'handler' => $stack,
+        'base_uri' => $baseUrl
+    ]));
+    }
 
 
     /**
@@ -51,17 +76,9 @@ class NovuHooks implements
     }
 
     public function beforeRequest(BeforeRequestContext $context, RequestInterface $request): RequestInterface
-    {
-        $authKey = 'Authorization';
+    {        
         $idempotencyKey = 'Idempotency-Key';
-        $apiKeyPrefix = 'ApiKey';
-
-        // Ensure Authorization header is prefixed with ApiKey if needed
-        $authHeader = $request->getHeaderLine($authKey);
-        if ($authHeader && !str_starts_with($authHeader, $apiKeyPrefix)) {
-            $request = $request->withHeader($authKey, "$apiKeyPrefix $authHeader");
-        }
-
+        
         // Add idempotency key if not present
         if (!$request->hasHeader($idempotencyKey)) {
             try {
@@ -71,8 +88,8 @@ class NovuHooks implements
                 throw new Exception("Failed to generate idempotency key: " . $e->getMessage());
             }
         }
-
         return $request;
+
     }
 
     public function afterSuccess(AfterSuccessContext $context, ResponseInterface $response): ResponseInterface
@@ -100,12 +117,10 @@ class NovuHooks implements
 
         // Check if response has a 'data' key
         if (isset($jsonResponse['data'])) {
-            $newBody = json_encode($jsonResponse['data']);
-            $response->getBody()->rewind();
-            $response->getBody()->write($newBody);
-            $response->getBody()->rewind();
+            $newBody = Utils::streamFor(json_encode($jsonResponse['data']));
+            $response = $response->withBody($newBody);
         }
-
+        
         return $response;
     }
 }
