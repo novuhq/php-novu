@@ -81,19 +81,9 @@ class NovuHooks implements
     }
 
     public function beforeRequest(BeforeRequestContext $context, RequestInterface $request): RequestInterface
-    {
-        // print something
-        
-        $authKey = 'Authorization';
+    {        
         $idempotencyKey = 'Idempotency-Key';
-        $apiKeyPrefix = 'ApiKey';
-    
-        // Ensure Authorization header is prefixed with ApiKey if needed
-        $authHeader = $request->getHeaderLine($authKey);
-        if ($authHeader && !str_starts_with($authHeader, $apiKeyPrefix)) {
-            $request = $request->withHeader($authKey, "$apiKeyPrefix $authHeader");
-        }
-    
+        
         // Add idempotency key if not present
         if (!$request->hasHeader($idempotencyKey)) {
             try {
