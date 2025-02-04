@@ -5,13 +5,13 @@ declare(strict_types=1);
 namespace novu\Hooks;
 
 use Exception;
-use GuzzleHttp\Middleware;
+use GuzzleHttp\Client;
 use GuzzleHttp\HandlerStack;
+use GuzzleHttp\Middleware;
+use GuzzleHttp\Psr7\Utils;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
-use GuzzleHttp\Psr7\Utils;
 use ReflectionClass;
-use GuzzleHttp\Client;
 
 class NovuHooks implements
     BeforeRequestHook,
@@ -30,7 +30,8 @@ class NovuHooks implements
 
         $stack = HandlerStack::create();
         $stack->push(Middleware::mapRequest(function ($request) use ($authorizationHeader) {
-            $request = $request->withHeader('Authorization', 'ApiKey ' . $authorizationHeader);
+            $request = $request->withHeader('Authorization', 'ApiKey '.$authorizationHeader);
+
             return $request;
         }));
 
@@ -61,33 +62,33 @@ class NovuHooks implements
      */
     private function generateIdempotencyKey(): string
     {
-        // Modify mutex handling to avoid the "always false" negation
         if ($this->mutex) {
-            usleep(1000); // Small delay to prevent collision
+            usleep(1000);
         }
 
         $this->mutex = true;
 
-        $timestamp = (int)(microtime(true) * 1000);
+        $timestamp = (int) (microtime(true) * 1000);
         $randomStr = $this->generateSecureRandomString(9);
 
         $this->mutex = false;
-        return (string)$timestamp . $randomStr;
+
+        return (string) $timestamp.$randomStr;
     }
 
     public function beforeRequest(BeforeRequestContext $context, RequestInterface $request): RequestInterface
     {
         $idempotencyKey = 'Idempotency-Key';
 
-        // Modify to avoid negated boolean check
         if (!$request->hasHeader($idempotencyKey)) {
             try {
                 $key = $this->generateIdempotencyKey();
                 $request = $request->withHeader($idempotencyKey, $key);
             } catch (Exception $e) {
-                throw new Exception("Failed to generate idempotency key: " . $e->getMessage());
+                throw new Exception('Failed to generate idempotency key: '.$e->getMessage());
             }
         }
+
         return $request;
     }
 
@@ -95,7 +96,7 @@ class NovuHooks implements
     {
         // Check content type
         $contentType = $response->getHeaderLine('Content-Type');
-        if (!$response->getBody() || !str_contains($contentType, 'application/json')) {
+        if ($response->getBody()->getSize() === 0 || ! str_contains($contentType, 'application/json')) {
             return $response;
         }
 
