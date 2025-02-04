@@ -84,7 +84,7 @@ class NovuHooks implements
             try {
                 $key = $this->generateIdempotencyKey();
                 $request = $request->withHeader($idempotencyKey, $key);
-            } catch (SpecificException $e) { // Replace SpecificException with the actual exception class
+            } catch (Exception $e) {
                 throw new Exception("Failed to generate idempotency key: " . $e->getMessage());
             }
         }
