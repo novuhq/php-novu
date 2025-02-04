@@ -5,17 +5,45 @@ declare(strict_types=1);
 namespace novu\Hooks;
 
 use Exception;
-use GuzzleHttp\Psr7\Request;
+use GuzzleHttp\Middleware;
+use GuzzleHttp\HandlerStack;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
+use ReflectionClass;
+use GuzzleHttp\Client;
 
 class NovuHooks implements
     BeforeRequestHook,
-    AfterSuccessHook
+    AfterSuccessHook,
+    SDKInitHook
 {
     private $mutex = false;
 
+    public function sdkInit(string $baseUrl, \GuzzleHttp\ClientInterface $client): SDKRequestContext
+    {
+        $reflection = new ReflectionClass($client);
+        $property = $reflection->getProperty('clientOptions'); 
+        $property->setAccessible(true);
+        $clientOptions = $property->getValue($client);
 
+        $authorizationHeader = $clientOptions['headers']['Authorization'] ?? null;
+        // echo "Authorization Header: " . $authorizationHeader;
+        
+
+    $stack = HandlerStack::create();
+
+    $stack->push(Middleware::mapRequest(function ($request) use ($authorizationHeader) {        
+        $authHeader = $request->getHeaderLine('Authorization');
+        $request = $request->withHeader('Authorization', 'ApiKey ' . $authorizationHeader);
+        return $request;
+    }));
+
+        return new SDKRequestContext($baseUrl, new Client([
+        'handler' => $stack,
+        'base_uri' => $baseUrl
+    ]));
+    }
+    
     /**
      * Generate a cryptographically secure random string
      */

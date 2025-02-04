@@ -20,7 +20,7 @@ class HookRegistration
     {
          $myHook = new NovuHooks();
 //
-//         $hooks->registerSDKInitHook($myHook);
+        $hooks->registerSDKInitHook($myHook);
          $hooks->registerBeforeRequestHook($myHook);
          $hooks->registerAfterSuccessHook($myHook);
 //         $hooks->registerAfterErrorHook($myHook);
