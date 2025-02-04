@@ -18,11 +18,10 @@ class HookRegistration
      */
     public static function initHooks(Hooks $hooks): void
     {
-         $myHook = new NovuHooks();
-//
+        $myHook = new NovuHooks();
         $hooks->registerSDKInitHook($myHook);
-         $hooks->registerBeforeRequestHook($myHook);
-         $hooks->registerAfterSuccessHook($myHook);
-//         $hooks->registerAfterErrorHook($myHook);
+        $hooks->registerBeforeRequestHook($myHook);
+        $hooks->registerAfterSuccessHook($myHook);
+        //         $hooks->registerAfterErrorHook($myHook);
     }
 }
