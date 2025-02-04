@@ -95,7 +95,7 @@ class NovuHooks implements
     {
         // Check content type
         $contentType = $response->getHeaderLine('Content-Type');
-        if (!$response->getBody() || !str_contains($contentType, 'application/json')) {
+        if ($response->getBody()->getSize() === 0 || !str_contains($contentType, 'application/json')) {
             return $response;
         }
 
