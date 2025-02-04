@@ -27,7 +27,7 @@ class NovuHooks implements AfterSuccessHook, BeforeRequestHook, SDKInitHook
 
         $stack = HandlerStack::create();
         $stack->push(Middleware::mapRequest(function ($request) use ($authorizationHeader) {
-            $request = $request->withHeader('Authorization', 'ApiKey ' . $authorizationHeader);
+            $request = $request->withHeader('Authorization', 'ApiKey '.$authorizationHeader);
 
             return $request;
         }));
@@ -70,20 +70,19 @@ class NovuHooks implements AfterSuccessHook, BeforeRequestHook, SDKInitHook
 
         $this->mutex = false;
 
-        return (string)$timestamp . $randomStr;
+        return (string) $timestamp.$randomStr;
     }
 
     public function beforeRequest(BeforeRequestContext $context, RequestInterface $request): RequestInterface
     {
         $idempotencyKey = 'Idempotency-Key';
 
-        // Modify to avoid negated boolean check
         if (! $request->hasHeader($idempotencyKey)) {
             try {
                 $key = $this->generateIdempotencyKey();
                 $request = $request->withHeader($idempotencyKey, $key);
             } catch (Exception $e) {
-                throw new Exception("Failed to generate idempotency key: ".$e->getMessage());
+                throw new Exception('Failed to generate idempotency key: '.$e->getMessage());
             }
         }
 
@@ -94,7 +93,7 @@ class NovuHooks implements AfterSuccessHook, BeforeRequestHook, SDKInitHook
     {
         // Check content type
         $contentType = $response->getHeaderLine('Content-Type');
-        if ($response->getBody()->getSize() === 0 || !str_contains($contentType, 'application/json')) {
+        if ($response->getBody()->getSize() === 0 || ! str_contains($contentType, 'application/json')) {
             return $response;
         }
 
