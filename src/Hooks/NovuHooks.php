@@ -5,18 +5,15 @@ declare(strict_types=1);
 namespace novu\Hooks;
 
 use Exception;
+use GuzzleHttp\Client;                                                                         
+use GuzzleHttp\HandlerStack;   
 use GuzzleHttp\Middleware;
-use GuzzleHttp\HandlerStack;
+use GuzzleHttp\Psr7\Utils;                                                                     
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
-use GuzzleHttp\Psr7\Utils;
 use ReflectionClass;
-use GuzzleHttp\Client;
 
-class NovuHooks implements
-    BeforeRequestHook,
-    AfterSuccessHook,
-    SDKInitHook
+class NovuHooks implements AfterSuccessHook, BeforeRequestHook, SDKInitHook
 {
     private bool $mutex = false;
 
@@ -31,12 +28,13 @@ class NovuHooks implements
         $stack = HandlerStack::create();
         $stack->push(Middleware::mapRequest(function ($request) use ($authorizationHeader) {
             $request = $request->withHeader('Authorization', 'ApiKey ' . $authorizationHeader);
+
             return $request;
         }));
 
         return new SDKRequestContext($baseUrl, new Client([
             'handler' => $stack,
-            'base_uri' => $baseUrl
+            'base_uri' => $baseUrl,
         ]));
     }
 
@@ -72,6 +70,7 @@ class NovuHooks implements
         $randomStr = $this->generateSecureRandomString(9);
 
         $this->mutex = false;
+
         return (string)$timestamp . $randomStr;
     }
 
@@ -80,12 +79,12 @@ class NovuHooks implements
         $idempotencyKey = 'Idempotency-Key';
 
         // Modify to avoid negated boolean check
-        if (!$request->hasHeader($idempotencyKey)) {
+        if (! $request->hasHeader($idempotencyKey)) {
             try {
                 $key = $this->generateIdempotencyKey();
                 $request = $request->withHeader($idempotencyKey, $key);
             } catch (Exception $e) {
-                throw new Exception("Failed to generate idempotency key: " . $e->getMessage());
+                throw new Exception("Failed to generate idempotency key: ".$e->getMessage());
             }
         }
         return $request;
