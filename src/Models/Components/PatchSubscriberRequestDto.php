@@ -103,6 +103,7 @@ class PatchSubscriberRequestDto
      * @param  ?string  $timezone
      * @param  ?string  $locale
      * @param  ?PatchSubscriberRequestDtoData  $data
+     * @phpstan-pure
      */
     public function __construct(?string $subscriberId = null, ?string $firstName = null, ?string $lastName = null, ?string $email = null, ?string $phone = null, ?string $avatar = null, ?string $timezone = null, ?string $locale = null, ?PatchSubscriberRequestDtoData $data = null)
     {

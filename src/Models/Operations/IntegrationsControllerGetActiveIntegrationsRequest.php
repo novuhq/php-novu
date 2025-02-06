@@ -21,6 +21,7 @@ class IntegrationsControllerGetActiveIntegrationsRequest
 
     /**
      * @param  ?string  $idempotencyKey
+     * @phpstan-pure
      */
     public function __construct(?string $idempotencyKey = null)
     {

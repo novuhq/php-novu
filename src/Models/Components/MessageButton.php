@@ -41,6 +41,7 @@ class MessageButton
      * @param  ButtonTypeEnum  $type
      * @param  string  $content
      * @param  ?string  $resultContent
+     * @phpstan-pure
      */
     public function __construct(ButtonTypeEnum $type, string $content, ?string $resultContent = null)
     {

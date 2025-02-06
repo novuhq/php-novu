@@ -46,6 +46,7 @@ class SubscribersV1ControllerUpdateSubscriberPreferenceRequest
      * @param  string  $workflowId
      * @param  Components\UpdateSubscriberPreferenceRequestDto  $updateSubscriberPreferenceRequestDto
      * @param  ?string  $idempotencyKey
+     * @phpstan-pure
      */
     public function __construct(string $subscriberId, string $workflowId, Components\UpdateSubscriberPreferenceRequestDto $updateSubscriberPreferenceRequestDto, ?string $idempotencyKey = null)
     {

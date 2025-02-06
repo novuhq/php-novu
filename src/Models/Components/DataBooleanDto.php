@@ -20,6 +20,7 @@ class DataBooleanDto
 
     /**
      * @param  bool  $data
+     * @phpstan-pure
      */
     public function __construct(bool $data)
     {

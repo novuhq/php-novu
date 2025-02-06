@@ -21,6 +21,7 @@ class NotificationTriggerVariable
 
     /**
      * @param  string  $name
+     * @phpstan-pure
      */
     public function __construct(string $name)
     {

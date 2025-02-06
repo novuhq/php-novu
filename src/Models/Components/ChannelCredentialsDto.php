@@ -33,6 +33,7 @@ class ChannelCredentialsDto
     /**
      * @param  ?string  $webhookUrl
      * @param  ?array<string>  $deviceTokens
+     * @phpstan-pure
      */
     public function __construct(?string $webhookUrl = null, ?array $deviceTokens = null)
     {

@@ -38,6 +38,7 @@ class SubscribersV1ControllerUpdateSubscriberGlobalPreferencesRequest
      * @param  string  $subscriberId
      * @param  Components\UpdateSubscriberGlobalPreferencesRequestDto  $updateSubscriberGlobalPreferencesRequestDto
      * @param  ?string  $idempotencyKey
+     * @phpstan-pure
      */
     public function __construct(string $subscriberId, Components\UpdateSubscriberGlobalPreferencesRequestDto $updateSubscriberGlobalPreferencesRequestDto, ?string $idempotencyKey = null)
     {

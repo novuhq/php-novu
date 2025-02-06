@@ -33,6 +33,7 @@ class GetSubscriberPreferencesResponseDto
     /**
      * @param  Preference  $preference
      * @param  ?TemplateResponse  $template
+     * @phpstan-pure
      */
     public function __construct(Preference $preference, ?TemplateResponse $template = null)
     {

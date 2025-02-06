@@ -30,6 +30,7 @@ class EventsControllerTriggerBulkRequest
     /**
      * @param  Components\BulkTriggerEventDto  $bulkTriggerEventDto
      * @param  ?string  $idempotencyKey
+     * @phpstan-pure
      */
     public function __construct(Components\BulkTriggerEventDto $bulkTriggerEventDto, ?string $idempotencyKey = null)
     {

@@ -37,6 +37,7 @@ class SubscribersV1ControllerListSubscribersRequest
      * @param  ?float  $page
      * @param  ?float  $limit
      * @param  ?string  $idempotencyKey
+     * @phpstan-pure
      */
     public function __construct(?float $page = null, ?string $idempotencyKey = null, ?float $limit = 10)
     {

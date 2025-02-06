@@ -73,6 +73,7 @@ class TimedConfig
      * @param  ?Ordinal  $ordinal
      * @param  ?OrdinalValue  $ordinalValue
      * @param  ?MonthlyType  $monthlyType
+     * @phpstan-pure
      */
     public function __construct(?string $atTime = null, ?array $weekDays = null, ?array $monthDays = null, ?Ordinal $ordinal = null, ?OrdinalValue $ordinalValue = null, ?MonthlyType $monthlyType = null)
     {

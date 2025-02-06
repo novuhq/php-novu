@@ -273,6 +273,7 @@ class NotificationFeedItemDto
      * @param  ?string  $providerId
      * @param  ?string  $subject
      * @param  ?array<string>  $deviceTokens
+     * @phpstan-pure
      */
     public function __construct(string $id, string $templateId, string $environmentId, string $messageTemplateId, string $organizationId, string $notificationId, string $subscriberId, string $feedId, string $jobId, string $transactionId, string $content, ChannelTypeEnum $channel, bool $read, bool $seen, bool $deleted, MessageCTA $cta, NotificationFeedItemDtoStatus $status, ?ActorFeedItemDto $actor = null, ?SubscriberFeedResponseDto $subscriber = null, ?array $payload = null, ?array $overrides = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null, ?string $templateIdentifier = null, ?string $providerId = null, ?string $subject = null, ?array $deviceTokens = null)
     {

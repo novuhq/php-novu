@@ -37,6 +37,7 @@ class SubscribersV1ControllerDeleteSubscriberCredentialsRequest
      * @param  string  $subscriberId
      * @param  string  $providerId
      * @param  ?string  $idempotencyKey
+     * @phpstan-pure
      */
     public function __construct(string $subscriberId, string $providerId, ?string $idempotencyKey = null)
     {

@@ -30,6 +30,7 @@ class TopicsControllerCreateTopicRequest
     /**
      * @param  Components\CreateTopicRequestDto  $createTopicRequestDto
      * @param  ?string  $idempotencyKey
+     * @phpstan-pure
      */
     public function __construct(Components\CreateTopicRequestDto $createTopicRequestDto, ?string $idempotencyKey = null)
     {

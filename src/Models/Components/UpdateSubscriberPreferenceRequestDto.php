@@ -33,6 +33,7 @@ class UpdateSubscriberPreferenceRequestDto
     /**
      * @param  ?ChannelPreference  $channel
      * @param  ?bool  $enabled
+     * @phpstan-pure
      */
     public function __construct(?ChannelPreference $channel = null, ?bool $enabled = null)
     {

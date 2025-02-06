@@ -40,6 +40,7 @@ class TenantPayloadDto
      * @param  ?string  $identifier
      * @param  ?string  $name
      * @param  ?TenantPayloadDtoData  $data
+     * @phpstan-pure
      */
     public function __construct(?string $identifier = null, ?string $name = null, ?TenantPayloadDtoData $data = null)
     {

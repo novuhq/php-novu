@@ -61,6 +61,7 @@ class SubscriberFeedResponseDto
      * @param  ?string  $firstName
      * @param  ?string  $lastName
      * @param  ?string  $avatar
+     * @phpstan-pure
      */
     public function __construct(string $subscriberId, ?string $id = null, ?string $firstName = null, ?string $lastName = null, ?string $avatar = null)
     {

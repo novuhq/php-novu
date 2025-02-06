@@ -47,6 +47,7 @@ class SubscribersV1ControllerGetSubscriberPreferenceByLevelRequest
      * @param  string  $subscriberId
      * @param  ?bool  $includeInactiveChannels
      * @param  ?string  $idempotencyKey
+     * @phpstan-pure
      */
     public function __construct(Parameter $preferenceLevel, string $subscriberId, ?bool $includeInactiveChannels = null, ?string $idempotencyKey = null)
     {

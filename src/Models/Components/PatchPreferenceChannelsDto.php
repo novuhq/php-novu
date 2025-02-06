@@ -62,6 +62,7 @@ class PatchPreferenceChannelsDto
      * @param  ?bool  $inApp
      * @param  ?bool  $push
      * @param  ?bool  $chat
+     * @phpstan-pure
      */
     public function __construct(?bool $email = null, ?bool $sms = null, ?bool $inApp = null, ?bool $push = null, ?bool $chat = null)
     {

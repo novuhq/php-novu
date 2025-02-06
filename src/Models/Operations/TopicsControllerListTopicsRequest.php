@@ -48,6 +48,7 @@ class TopicsControllerListTopicsRequest
      * @param  ?int  $pageSize
      * @param  ?string  $key
      * @param  ?string  $idempotencyKey
+     * @phpstan-pure
      */
     public function __construct(?string $key = null, ?string $idempotencyKey = null, ?int $page = 0, ?int $pageSize = 10)
     {

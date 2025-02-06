@@ -48,6 +48,7 @@ class ActivityGraphStatesResponse
      * @param  float  $count
      * @param  array<string>  $templates
      * @param  array<Channels>  $channels
+     * @phpstan-pure
      */
     public function __construct(string $id, float $count, array $templates, array $channels)
     {

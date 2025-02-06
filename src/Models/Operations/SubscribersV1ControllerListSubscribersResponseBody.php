@@ -49,6 +49,7 @@ class SubscribersV1ControllerListSubscribersResponseBody
      * @param  bool  $hasMore
      * @param  float  $pageSize
      * @param  array<Components\SubscriberResponseDto>  $data
+     * @phpstan-pure
      */
     public function __construct(float $page, bool $hasMore, float $pageSize, array $data)
     {

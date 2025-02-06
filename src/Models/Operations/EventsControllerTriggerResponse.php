@@ -52,6 +52,7 @@ class EventsControllerTriggerResponse
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
      * @param  ?Components\TriggerEventResponseDto  $triggerEventResponseDto
+     * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\TriggerEventResponseDto $triggerEventResponseDto = null, ?array $headers = [])
     {

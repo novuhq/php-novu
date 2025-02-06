@@ -46,6 +46,7 @@ class FieldFilterPartDto
      * @param  string  $value
      * @param  Operator  $operator
      * @param  On  $on
+     * @phpstan-pure
      */
     public function __construct(string $field, string $value, Operator $operator, On $on)
     {

@@ -48,6 +48,7 @@ class StepFilterDto
      * @param  BuilderFieldTypeEnum  $type
      * @param  Value  $value
      * @param  array<FieldFilterPartDto>  $children
+     * @phpstan-pure
      */
     public function __construct(bool $isNegated, BuilderFieldTypeEnum $type, Value $value, array $children)
     {

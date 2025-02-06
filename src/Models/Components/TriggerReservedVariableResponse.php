@@ -32,6 +32,7 @@ class TriggerReservedVariableResponse
     /**
      * @param  TriggerReservedVariableResponseType  $type
      * @param  array<string>  $variables
+     * @phpstan-pure
      */
     public function __construct(TriggerReservedVariableResponseType $type, array $variables)
     {

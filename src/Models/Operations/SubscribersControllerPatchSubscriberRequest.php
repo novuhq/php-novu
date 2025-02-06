@@ -38,6 +38,7 @@ class SubscribersControllerPatchSubscriberRequest
      * @param  string  $subscriberId
      * @param  Components\PatchSubscriberRequestDto  $patchSubscriberRequestDto
      * @param  ?string  $idempotencyKey
+     * @phpstan-pure
      */
     public function __construct(string $subscriberId, Components\PatchSubscriberRequestDto $patchSubscriberRequestDto, ?string $idempotencyKey = null)
     {

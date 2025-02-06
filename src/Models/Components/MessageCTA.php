@@ -44,6 +44,7 @@ class MessageCTA
      * @param  MessageCTAData  $data
      * @param  ?ChannelCTATypeEnum  $type
      * @param  ?MessageAction  $action
+     * @phpstan-pure
      */
     public function __construct(MessageCTAData $data, ?ChannelCTATypeEnum $type = null, ?MessageAction $action = null)
     {

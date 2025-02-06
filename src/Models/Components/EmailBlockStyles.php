@@ -22,6 +22,7 @@ class EmailBlockStyles
 
     /**
      * @param  TextAlignEnum  $textAlign
+     * @phpstan-pure
      */
     public function __construct(TextAlignEnum $textAlign)
     {

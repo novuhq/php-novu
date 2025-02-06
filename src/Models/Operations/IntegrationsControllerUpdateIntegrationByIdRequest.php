@@ -38,6 +38,7 @@ class IntegrationsControllerUpdateIntegrationByIdRequest
      * @param  string  $integrationId
      * @param  Components\UpdateIntegrationRequestDto  $updateIntegrationRequestDto
      * @param  ?string  $idempotencyKey
+     * @phpstan-pure
      */
     public function __construct(string $integrationId, Components\UpdateIntegrationRequestDto $updateIntegrationRequestDto, ?string $idempotencyKey = null)
     {

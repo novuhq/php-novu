@@ -20,6 +20,7 @@ class Security
 
     /**
      * @param  string  $secretKey
+     * @phpstan-pure
      */
     public function __construct(string $secretKey)
     {

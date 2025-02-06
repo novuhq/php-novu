@@ -60,6 +60,7 @@ class SubscribersV1ControllerChatOauthCallbackResponse
      * @param  array<string, array<string>>  $headers
      * @param  ?string  $res
      * @param  ?string  $string
+     * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?string $res = null, ?string $string = null, ?array $headers = [])
     {

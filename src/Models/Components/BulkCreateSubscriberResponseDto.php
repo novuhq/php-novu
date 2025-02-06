@@ -42,6 +42,7 @@ class BulkCreateSubscriberResponseDto
      * @param  array<UpdatedSubscriberDto>  $updated
      * @param  array<CreatedSubscriberDto>  $created
      * @param  array<FailedOperationDto>  $failed
+     * @phpstan-pure
      */
     public function __construct(array $updated, array $created, array $failed)
     {

@@ -34,6 +34,7 @@ class MessageActionResult
     /**
      * @param  ?MessageActionResultPayload  $payload
      * @param  ?ButtonTypeEnum  $type
+     * @phpstan-pure
      */
     public function __construct(?MessageActionResultPayload $payload = null, ?ButtonTypeEnum $type = null)
     {

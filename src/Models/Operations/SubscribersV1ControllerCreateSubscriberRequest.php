@@ -30,6 +30,7 @@ class SubscribersV1ControllerCreateSubscriberRequest
     /**
      * @param  Components\CreateSubscriberRequestDto  $createSubscriberRequestDto
      * @param  ?string  $idempotencyKey
+     * @phpstan-pure
      */
     public function __construct(Components\CreateSubscriberRequestDto $createSubscriberRequestDto, ?string $idempotencyKey = null)
     {

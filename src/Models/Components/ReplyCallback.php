@@ -32,6 +32,7 @@ class ReplyCallback
     /**
      * @param  ?bool  $active
      * @param  ?string  $url
+     * @phpstan-pure
      */
     public function __construct(?bool $active = null, ?string $url = null)
     {

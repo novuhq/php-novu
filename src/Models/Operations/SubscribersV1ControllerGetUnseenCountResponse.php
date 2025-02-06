@@ -52,6 +52,7 @@ class SubscribersV1ControllerGetUnseenCountResponse
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
      * @param  ?Components\UnseenCountResponse  $unseenCountResponse
+     * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\UnseenCountResponse $unseenCountResponse = null, ?array $headers = [])
     {

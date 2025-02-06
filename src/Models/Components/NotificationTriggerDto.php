@@ -52,6 +52,7 @@ class NotificationTriggerDto
      * @param  string  $identifier
      * @param  array<NotificationTriggerVariable>  $variables
      * @param  ?array<NotificationTriggerVariable>  $subscriberVariables
+     * @phpstan-pure
      */
     public function __construct(Type $type, string $identifier, array $variables, ?array $subscriberVariables = null)
     {

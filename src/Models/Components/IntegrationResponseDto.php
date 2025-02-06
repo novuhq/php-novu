@@ -145,6 +145,7 @@ class IntegrationResponseDto
      * @param  ?string  $deletedAt
      * @param  ?string  $deletedBy
      * @param  ?array<StepFilterDto>  $conditions
+     * @phpstan-pure
      */
     public function __construct(string $environmentId, string $organizationId, string $name, string $identifier, string $providerId, Channel $channel, CredentialsDto $credentials, bool $active, bool $deleted, bool $primary, ?string $id = null, ?string $deletedAt = null, ?string $deletedBy = null, ?array $conditions = null)
     {

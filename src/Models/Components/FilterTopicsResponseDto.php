@@ -49,6 +49,7 @@ class FilterTopicsResponseDto
      * @param  float  $page
      * @param  float  $pageSize
      * @param  float  $totalCount
+     * @phpstan-pure
      */
     public function __construct(array $data, float $page, float $pageSize, float $totalCount)
     {

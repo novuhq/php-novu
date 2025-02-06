@@ -30,6 +30,7 @@ class TopicsControllerDeleteTopicRequest
     /**
      * @param  string  $topicKey
      * @param  ?string  $idempotencyKey
+     * @phpstan-pure
      */
     public function __construct(string $topicKey, ?string $idempotencyKey = null)
     {

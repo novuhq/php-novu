@@ -31,6 +31,7 @@ class DeleteMessageResponseDto
     /**
      * @param  bool  $acknowledged
      * @param  DeleteMessageResponseDtoStatus  $status
+     * @phpstan-pure
      */
     public function __construct(bool $acknowledged, DeleteMessageResponseDtoStatus $status)
     {

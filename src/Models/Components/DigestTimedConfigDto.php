@@ -87,6 +87,7 @@ class DigestTimedConfigDto
      * @param  ?OrdinalValueEnum  $ordinalValue
      * @param  ?MonthlyTypeEnum  $monthlyType
      * @param  ?string  $cronExpression
+     * @phpstan-pure
      */
     public function __construct(?string $atTime = null, ?array $weekDays = null, ?array $monthDays = null, ?OrdinalEnum $ordinal = null, ?OrdinalValueEnum $ordinalValue = null, ?MonthlyTypeEnum $monthlyType = null, ?string $cronExpression = null)
     {

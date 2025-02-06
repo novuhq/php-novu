@@ -103,6 +103,7 @@ class CreateIntegrationRequestDto
      * @param  ?bool  $active
      * @param  ?bool  $check
      * @param  ?array<StepFilterDto>  $conditions
+     * @phpstan-pure
      */
     public function __construct(string $providerId, CreateIntegrationRequestDtoChannel $channel, ?string $name = null, ?string $identifier = null, ?string $environmentId = null, ?CredentialsDto $credentials = null, ?bool $active = null, ?bool $check = null, ?array $conditions = null)
     {

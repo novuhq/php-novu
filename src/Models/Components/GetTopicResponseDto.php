@@ -63,6 +63,7 @@ class GetTopicResponseDto
      * @param  string  $name
      * @param  array<string>  $subscribers
      * @param  ?string  $id
+     * @phpstan-pure
      */
     public function __construct(string $organizationId, string $environmentId, string $key, string $name, array $subscribers, ?string $id = null)
     {

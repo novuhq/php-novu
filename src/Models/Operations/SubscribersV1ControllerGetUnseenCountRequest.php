@@ -47,6 +47,7 @@ class SubscribersV1ControllerGetUnseenCountRequest
      * @param  ?bool  $seen
      * @param  ?float  $limit
      * @param  ?string  $idempotencyKey
+     * @phpstan-pure
      */
     public function __construct(string $subscriberId, ?string $idempotencyKey = null, ?bool $seen = false, ?float $limit = 100)
     {

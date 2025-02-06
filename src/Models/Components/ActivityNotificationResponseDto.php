@@ -186,6 +186,7 @@ class ActivityNotificationResponseDto
      * @param  ?array<string>  $tags
      * @param  ?Controls  $controls
      * @param  ?ActivityNotificationResponseDtoTo  $to
+     * @phpstan-pure
      */
     public function __construct(string $environmentId, string $organizationId, string $subscriberId, string $transactionId, ?string $id = null, ?string $templateId = null, ?string $digestedNotificationId = null, ?string $createdAt = null, ?string $updatedAt = null, ?array $channels = null, ?ActivityNotificationSubscriberResponseDto $subscriber = null, ?ActivityNotificationTemplateResponseDto $template = null, ?array $jobs = null, ?ActivityNotificationResponseDtoPayload $payload = null, ?array $tags = null, ?Controls $controls = null, ?ActivityNotificationResponseDtoTo $to = null)
     {

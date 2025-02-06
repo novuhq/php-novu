@@ -59,6 +59,7 @@ class DigestTimedMetadata
      * @param  ?DigestTimedMetadataUnit  $unit
      * @param  ?string  $digestKey
      * @param  ?TimedConfig  $timed
+     * @phpstan-pure
      */
     public function __construct(DigestTimedMetadataType $type, ?float $amount = null, ?DigestTimedMetadataUnit $unit = null, ?string $digestKey = null, ?TimedConfig $timed = null)
     {

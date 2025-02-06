@@ -38,6 +38,7 @@ class SubscribersV1ControllerUpdateSubscriberOnlineFlagRequest
      * @param  string  $subscriberId
      * @param  Components\UpdateSubscriberOnlineFlagRequestDto  $updateSubscriberOnlineFlagRequestDto
      * @param  ?string  $idempotencyKey
+     * @phpstan-pure
      */
     public function __construct(string $subscriberId, Components\UpdateSubscriberOnlineFlagRequestDto $updateSubscriberOnlineFlagRequestDto, ?string $idempotencyKey = null)
     {

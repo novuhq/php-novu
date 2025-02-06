@@ -39,6 +39,7 @@ class TopicsControllerAssignRequest
      * @param  string  $topicKey
      * @param  Components\AddSubscribersRequestDto  $addSubscribersRequestDto
      * @param  ?string  $idempotencyKey
+     * @phpstan-pure
      */
     public function __construct(string $topicKey, Components\AddSubscribersRequestDto $addSubscribersRequestDto, ?string $idempotencyKey = null)
     {

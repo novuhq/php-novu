@@ -32,6 +32,7 @@ class Overrides
     /**
      * @param  OverridesChannel  $channel
      * @param  Source  $source
+     * @phpstan-pure
      */
     public function __construct(OverridesChannel $channel, Source $source)
     {

@@ -30,6 +30,7 @@ class EventsControllerBroadcastEventToAllRequest
     /**
      * @param  Components\TriggerEventToAllRequestDto  $triggerEventToAllRequestDto
      * @param  ?string  $idempotencyKey
+     * @phpstan-pure
      */
     public function __construct(Components\TriggerEventToAllRequestDto $triggerEventToAllRequestDto, ?string $idempotencyKey = null)
     {

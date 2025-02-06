@@ -38,6 +38,7 @@ class MessagesControllerDeleteMessagesByTransactionIdRequest
      * @param  string  $transactionId
      * @param  ?Channel  $channel
      * @param  ?string  $idempotencyKey
+     * @phpstan-pure
      */
     public function __construct(string $transactionId, ?Channel $channel = null, ?string $idempotencyKey = null)
     {

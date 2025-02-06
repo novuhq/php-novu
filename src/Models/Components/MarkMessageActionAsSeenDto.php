@@ -33,6 +33,7 @@ class MarkMessageActionAsSeenDto
     /**
      * @param  MarkMessageActionAsSeenDtoStatus  $status
      * @param  ?MarkMessageActionAsSeenDtoPayload  $payload
+     * @phpstan-pure
      */
     public function __construct(MarkMessageActionAsSeenDtoStatus $status, ?MarkMessageActionAsSeenDtoPayload $payload = null)
     {

@@ -52,6 +52,7 @@ class IntegrationsControllerGetWebhookSupportStatusResponse
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
      * @param  ?bool  $boolean
+     * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?bool $boolean = null, ?array $headers = [])
     {

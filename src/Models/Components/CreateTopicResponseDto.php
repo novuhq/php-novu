@@ -31,6 +31,7 @@ class CreateTopicResponseDto
     /**
      * @param  string  $key
      * @param  ?string  $id
+     * @phpstan-pure
      */
     public function __construct(string $key, ?string $id = null)
     {

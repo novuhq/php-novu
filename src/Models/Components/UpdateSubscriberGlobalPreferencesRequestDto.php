@@ -33,6 +33,7 @@ class UpdateSubscriberGlobalPreferencesRequestDto
     /**
      * @param  ?bool  $enabled
      * @param  ?array<ChannelPreference>  $preferences
+     * @phpstan-pure
      */
     public function __construct(?bool $enabled = null, ?array $preferences = null)
     {

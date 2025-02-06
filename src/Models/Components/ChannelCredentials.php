@@ -93,6 +93,7 @@ class ChannelCredentials
      * @param  ?string  $imageUrl
      * @param  ?string  $state
      * @param  ?string  $externalUrl
+     * @phpstan-pure
      */
     public function __construct(?string $webhookUrl = null, ?string $channel = null, ?array $deviceTokens = null, ?string $alertUid = null, ?string $title = null, ?string $imageUrl = null, ?string $state = null, ?string $externalUrl = null)
     {

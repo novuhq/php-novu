@@ -29,6 +29,7 @@ class MessagesControllerDeleteMessageRequest
     /**
      * @param  string  $messageId
      * @param  ?string  $idempotencyKey
+     * @phpstan-pure
      */
     public function __construct(string $messageId, ?string $idempotencyKey = null)
     {

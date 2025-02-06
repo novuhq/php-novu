@@ -57,6 +57,7 @@ class PreferenceChannels
      * @param  ?bool  $inApp
      * @param  ?bool  $chat
      * @param  ?bool  $push
+     * @phpstan-pure
      */
     public function __construct(?bool $email = null, ?bool $sms = null, ?bool $inApp = null, ?bool $chat = null, ?bool $push = null)
     {

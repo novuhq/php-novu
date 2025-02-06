@@ -52,6 +52,7 @@ class SubscribersV1ControllerUpdateSubscriberGlobalPreferencesResponse
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
      * @param  ?Components\UpdateSubscriberPreferenceGlobalResponseDto  $updateSubscriberPreferenceGlobalResponseDto
+     * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\UpdateSubscriberPreferenceGlobalResponseDto $updateSubscriberPreferenceGlobalResponseDto = null, ?array $headers = [])
     {

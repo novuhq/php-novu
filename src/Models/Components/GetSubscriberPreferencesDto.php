@@ -32,6 +32,7 @@ class GetSubscriberPreferencesDto
     /**
      * @param  GlobalPreferenceDto  $global
      * @param  array<WorkflowPreferenceDto>  $workflows
+     * @phpstan-pure
      */
     public function __construct(GlobalPreferenceDto $global, array $workflows)
     {

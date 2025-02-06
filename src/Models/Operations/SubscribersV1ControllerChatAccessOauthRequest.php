@@ -64,6 +64,7 @@ class SubscribersV1ControllerChatAccessOauthRequest
      * @param  string  $environmentId
      * @param  ?string  $integrationIdentifier
      * @param  ?string  $idempotencyKey
+     * @phpstan-pure
      */
     public function __construct(string $subscriberId, mixed $providerId, string $hmacHash, string $environmentId, ?string $integrationIdentifier = null, ?string $idempotencyKey = null)
     {

@@ -54,6 +54,7 @@ class NotificationGroup
      * @param  string  $organizationId
      * @param  ?string  $id
      * @param  ?string  $parentId
+     * @phpstan-pure
      */
     public function __construct(string $name, string $environmentId, string $organizationId, ?string $id = null, ?string $parentId = null)
     {

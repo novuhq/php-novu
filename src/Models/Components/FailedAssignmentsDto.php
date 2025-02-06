@@ -23,6 +23,7 @@ class FailedAssignmentsDto
 
     /**
      * @param  ?array<string>  $notFound
+     * @phpstan-pure
      */
     public function __construct(?array $notFound = null)
     {

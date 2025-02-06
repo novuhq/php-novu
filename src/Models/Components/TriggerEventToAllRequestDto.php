@@ -83,6 +83,7 @@ class TriggerEventToAllRequestDto
      * @param  ?string  $transactionId
      * @param  string|SubscriberPayloadDto|null  $actor
      * @param  string|TenantPayloadDto|null  $tenant
+     * @phpstan-pure
      */
     public function __construct(string $name, array $payload, ?TriggerEventToAllRequestDtoOverrides $overrides = null, ?string $transactionId = null, string|SubscriberPayloadDto|null $actor = null, string|TenantPayloadDto|null $tenant = null)
     {

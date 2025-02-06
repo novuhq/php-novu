@@ -38,6 +38,7 @@ class SubscribersV1ControllerMarkMessagesAsRequest
      * @param  string  $subscriberId
      * @param  Components\MessageMarkAsRequestDto  $messageMarkAsRequestDto
      * @param  ?string  $idempotencyKey
+     * @phpstan-pure
      */
     public function __construct(string $subscriberId, Components\MessageMarkAsRequestDto $messageMarkAsRequestDto, ?string $idempotencyKey = null)
     {

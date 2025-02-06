@@ -63,6 +63,7 @@ class NotificationTriggerResponse
      * @param  array<NotificationTriggerVariableResponse>  $variables
      * @param  ?array<NotificationTriggerVariableResponse>  $subscriberVariables
      * @param  ?array<TriggerReservedVariableResponse>  $reservedVariables
+     * @phpstan-pure
      */
     public function __construct(TriggerTypeEnum $type, string $identifier, array $variables, ?array $subscriberVariables = null, ?array $reservedVariables = null)
     {

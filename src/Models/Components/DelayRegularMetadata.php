@@ -40,6 +40,7 @@ class DelayRegularMetadata
      * @param  DelayRegularMetadataType  $type
      * @param  ?float  $amount
      * @param  ?DelayRegularMetadataUnit  $unit
+     * @phpstan-pure
      */
     public function __construct(DelayRegularMetadataType $type, ?float $amount = null, ?DelayRegularMetadataUnit $unit = null)
     {

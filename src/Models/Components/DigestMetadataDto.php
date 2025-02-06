@@ -116,6 +116,7 @@ class DigestMetadataDto
      * @param  ?DigestUnitEnum  $backoffUnit
      * @param  ?bool  $updateMode
      * @param  ?DigestTimedConfigDto  $timed
+     * @phpstan-pure
      */
     public function __construct(DigestTypeEnum $type, ?string $digestKey = null, ?float $amount = null, ?Unit $unit = null, ?array $events = null, ?bool $backoff = null, ?float $backoffAmount = null, ?DigestUnitEnum $backoffUnit = null, ?bool $updateMode = null, ?DigestTimedConfigDto $timed = null)
     {

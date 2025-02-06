@@ -29,6 +29,7 @@ class TopicPayloadDto
     /**
      * @param  string  $topicKey
      * @param  TriggerRecipientsTypeEnum  $type
+     * @phpstan-pure
      */
     public function __construct(string $topicKey, TriggerRecipientsTypeEnum $type)
     {

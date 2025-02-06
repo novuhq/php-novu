@@ -29,6 +29,7 @@ class NotificationsControllerGetNotificationRequest
     /**
      * @param  string  $notificationId
      * @param  ?string  $idempotencyKey
+     * @phpstan-pure
      */
     public function __construct(string $notificationId, ?string $idempotencyKey = null)
     {

@@ -20,6 +20,7 @@ class UnseenCountResponse
 
     /**
      * @param  float  $count
+     * @phpstan-pure
      */
     public function __construct(float $count)
     {

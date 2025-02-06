@@ -49,6 +49,7 @@ class ActivitiesResponseDto
      * @param  array<ActivityNotificationResponseDto>  $data
      * @param  float  $pageSize
      * @param  float  $page
+     * @phpstan-pure
      */
     public function __construct(bool $hasMore, array $data, float $pageSize, float $page)
     {

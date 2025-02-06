@@ -21,6 +21,7 @@ class UpdatedSubscriberDto
 
     /**
      * @param  string  $subscriberId
+     * @phpstan-pure
      */
     public function __construct(string $subscriberId)
     {
