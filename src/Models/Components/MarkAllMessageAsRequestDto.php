@@ -33,6 +33,7 @@ class MarkAllMessageAsRequestDto
     /**
      * @param  MarkAllMessageAsRequestDtoMarkAs  $markAs
      * @param  string|array<string>|null  $feedIdentifier
+     * @phpstan-pure
      */
     public function __construct(MarkAllMessageAsRequestDtoMarkAs $markAs, string|array|null $feedIdentifier = null)
     {

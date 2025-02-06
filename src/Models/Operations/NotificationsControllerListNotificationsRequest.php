@@ -104,6 +104,7 @@ class NotificationsControllerListNotificationsRequest
      * @param  ?string  $after
      * @param  ?string  $before
      * @param  ?string  $idempotencyKey
+     * @phpstan-pure
      */
     public function __construct(?array $channels = null, ?array $templates = null, ?array $emails = null, ?string $search = null, ?array $subscriberIds = null, ?string $transactionId = null, ?string $after = null, ?string $before = null, ?string $idempotencyKey = null, ?float $page = 0)
     {

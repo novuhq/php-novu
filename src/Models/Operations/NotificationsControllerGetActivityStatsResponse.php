@@ -52,6 +52,7 @@ class NotificationsControllerGetActivityStatsResponse
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
      * @param  ?Components\ActivityStatsResponseDto  $activityStatsResponseDto
+     * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\ActivityStatsResponseDto $activityStatsResponseDto = null, ?array $headers = [])
     {

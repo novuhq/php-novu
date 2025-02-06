@@ -49,6 +49,7 @@ class TemplateResponse
      * @param  string  $name
      * @param  bool  $critical
      * @param  array<NotificationTriggerResponse>  $triggers
+     * @phpstan-pure
      */
     public function __construct(string $id, string $name, bool $critical, array $triggers)
     {

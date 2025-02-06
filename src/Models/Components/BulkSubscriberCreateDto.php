@@ -22,6 +22,7 @@ class BulkSubscriberCreateDto
 
     /**
      * @param  array<CreateSubscriberRequestDto>  $subscribers
+     * @phpstan-pure
      */
     public function __construct(array $subscribers)
     {

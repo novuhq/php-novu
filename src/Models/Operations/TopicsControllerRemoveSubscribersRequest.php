@@ -39,6 +39,7 @@ class TopicsControllerRemoveSubscribersRequest
      * @param  string  $topicKey
      * @param  Components\RemoveSubscribersRequestDto  $removeSubscribersRequestDto
      * @param  ?string  $idempotencyKey
+     * @phpstan-pure
      */
     public function __construct(string $topicKey, Components\RemoveSubscribersRequestDto $removeSubscribersRequestDto, ?string $idempotencyKey = null)
     {

@@ -29,6 +29,7 @@ class NotificationsControllerGetActivityGraphStatsRequest
     /**
      * @param  ?float  $days
      * @param  ?string  $idempotencyKey
+     * @phpstan-pure
      */
     public function __construct(?float $days = null, ?string $idempotencyKey = null)
     {

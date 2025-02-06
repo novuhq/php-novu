@@ -135,6 +135,7 @@ class ActivityNotificationStepResponseDto
      * @param  ?array<ActivityNotificationStepResponseDto>  $variants
      * @param  ?string  $name
      * @param  ?string  $parentId
+     * @phpstan-pure
      */
     public function __construct(string $id, bool $active, array $filters, string $templateId, ?ActivityNotificationStepResponseDtoReplyCallback $replyCallback = null, ?ControlVariables $controlVariables = null, ?Metadata $metadata = null, ?Issues $issues = null, ?MessageTemplateDto $template = null, ?array $variants = null, ?string $name = null, ?string $parentId = null)
     {

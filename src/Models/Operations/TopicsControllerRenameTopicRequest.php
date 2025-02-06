@@ -39,6 +39,7 @@ class TopicsControllerRenameTopicRequest
      * @param  string  $topicKey
      * @param  Components\RenameTopicRequestDto  $renameTopicRequestDto
      * @param  ?string  $idempotencyKey
+     * @phpstan-pure
      */
     public function __construct(string $topicKey, Components\RenameTopicRequestDto $renameTopicRequestDto, ?string $idempotencyKey = null)
     {

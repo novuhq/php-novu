@@ -22,6 +22,7 @@ class BulkTriggerEventDto
 
     /**
      * @param  array<TriggerEventRequestDto>  $events
+     * @phpstan-pure
      */
     public function __construct(array $events)
     {

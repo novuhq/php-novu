@@ -345,7 +345,7 @@ if ($response->triggerEventResponseDto !== null) {
 
 #### [subscribers->preferences](docs/sdks/preferences/README.md)
 
-* [getByLevel](docs/sdks/preferences/README.md#getbylevel) - Get subscriber preferences by level
+* [~~getByLevel~~](docs/sdks/preferences/README.md#getbylevel) - Get subscriber preferences by level :warning: **Deprecated**
 * [update](docs/sdks/preferences/README.md#update) - Update subscriber preference
 
 ### [subscribersAuthentication](docs/sdks/subscribersauthentication/README.md)
@@ -368,7 +368,7 @@ if ($response->triggerEventResponseDto !== null) {
 ### [subscribersPreferences](docs/sdks/subscriberspreferences/README.md)
 
 * [retrieve](docs/sdks/subscriberspreferences/README.md#retrieve) - Get subscriber preferences
-* [list](docs/sdks/subscriberspreferences/README.md#list) - Get subscriber preferences
+* [~~listLegacy~~](docs/sdks/subscriberspreferences/README.md#listlegacy) - Get subscriber preferences :warning: **Deprecated**
 * [updateGlobal](docs/sdks/subscriberspreferences/README.md#updateglobal) - Update subscriber global preferences
 
 ### [topics](docs/sdks/topics/README.md)

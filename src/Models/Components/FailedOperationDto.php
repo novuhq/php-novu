@@ -32,6 +32,7 @@ class FailedOperationDto
     /**
      * @param  ?string  $message
      * @param  ?string  $subscriberId
+     * @phpstan-pure
      */
     public function __construct(?string $message = null, ?string $subscriberId = null)
     {

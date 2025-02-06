@@ -31,6 +31,7 @@ class Preference
     /**
      * @param  bool  $enabled
      * @param  PreferenceChannels  $channels
+     * @phpstan-pure
      */
     public function __construct(bool $enabled, PreferenceChannels $channels)
     {

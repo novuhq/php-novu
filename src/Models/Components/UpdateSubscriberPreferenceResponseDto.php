@@ -32,6 +32,7 @@ class UpdateSubscriberPreferenceResponseDto
     /**
      * @param  TemplateResponse  $template
      * @param  Preference  $preference
+     * @phpstan-pure
      */
     public function __construct(TemplateResponse $template, Preference $preference)
     {

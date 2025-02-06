@@ -22,6 +22,7 @@ class AddSubscribersRequestDto
 
     /**
      * @param  array<string>  $subscribers
+     * @phpstan-pure
      */
     public function __construct(array $subscribers)
     {

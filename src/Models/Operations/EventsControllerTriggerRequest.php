@@ -30,6 +30,7 @@ class EventsControllerTriggerRequest
     /**
      * @param  Components\TriggerEventRequestDto  $triggerEventRequestDto
      * @param  ?string  $idempotencyKey
+     * @phpstan-pure
      */
     public function __construct(Components\TriggerEventRequestDto $triggerEventRequestDto, ?string $idempotencyKey = null)
     {

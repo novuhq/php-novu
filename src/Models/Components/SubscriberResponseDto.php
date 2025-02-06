@@ -200,6 +200,7 @@ class SubscriberResponseDto
      * @param  ?float  $v
      * @param  ?string  $email
      * @param  ?array<string, mixed>  $data
+     * @phpstan-pure
      */
     public function __construct(string $subscriberId, string $organizationId, string $environmentId, bool $deleted, string $createdAt, string $updatedAt, ?string $id = null, ?string $firstName = null, ?string $lastName = null, ?string $phone = null, ?string $avatar = null, ?string $locale = null, ?array $channels = null, ?array $topics = null, ?bool $isOnline = null, ?string $lastOnlineAt = null, ?float $v = null, ?string $email = null, ?array $data = null)
     {

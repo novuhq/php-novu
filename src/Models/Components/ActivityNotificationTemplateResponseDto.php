@@ -41,6 +41,7 @@ class ActivityNotificationTemplateResponseDto
      * @param  string  $name
      * @param  array<NotificationTriggerDto>  $triggers
      * @param  ?string  $id
+     * @phpstan-pure
      */
     public function __construct(string $name, array $triggers, ?string $id = null)
     {

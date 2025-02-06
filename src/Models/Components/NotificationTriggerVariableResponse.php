@@ -43,6 +43,7 @@ class NotificationTriggerVariableResponse
      * @param  string  $name
      * @param  ?NotificationTriggerVariableResponseValue  $value
      * @param  ?NotificationTriggerVariableResponseType  $type
+     * @phpstan-pure
      */
     public function __construct(string $name, ?NotificationTriggerVariableResponseValue $value = null, ?NotificationTriggerVariableResponseType $type = null)
     {

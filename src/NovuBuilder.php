@@ -44,7 +44,7 @@ class NovuBuilder
         $security = new Models\Components\Security(
             secretKey: $secretKey
         );
-        $this->sdkConfig->security = $security;
+        $this->sdkConfig->securitySource = fn () => $security;
 
         return $this;
     }
@@ -58,7 +58,7 @@ class NovuBuilder
      */
     public function setSecuritySource(\Closure $securitySource): NovuBuilder
     {
-        $this->sdkConfig->securitySource = $securitySource;
+        $this->sdkConfig->securitySource = fn () => new Models\Components\Security(secretKey: $securitySource());
 
         return $this;
     }

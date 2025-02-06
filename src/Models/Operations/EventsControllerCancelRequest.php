@@ -29,6 +29,7 @@ class EventsControllerCancelRequest
     /**
      * @param  string  $transactionId
      * @param  ?string  $idempotencyKey
+     * @phpstan-pure
      */
     public function __construct(string $transactionId, ?string $idempotencyKey = null)
     {

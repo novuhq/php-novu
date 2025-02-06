@@ -38,6 +38,7 @@ class SubscribersV1ControllerGetSubscriberRequest
      * @param  string  $subscriberId
      * @param  ?bool  $includeTopics
      * @param  ?string  $idempotencyKey
+     * @phpstan-pure
      */
     public function __construct(string $subscriberId, ?bool $includeTopics = null, ?string $idempotencyKey = null)
     {

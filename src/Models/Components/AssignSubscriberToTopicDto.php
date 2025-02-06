@@ -33,6 +33,7 @@ class AssignSubscriberToTopicDto
     /**
      * @param  array<string>  $succeeded
      * @param  ?FailedAssignmentsDto  $failed
+     * @phpstan-pure
      */
     public function __construct(array $succeeded, ?FailedAssignmentsDto $failed = null)
     {

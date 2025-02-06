@@ -52,6 +52,7 @@ class EventsControllerTriggerBulkResponse
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
      * @param  ?array<Components\TriggerEventResponseDto>  $triggerEventResponseDtos
+     * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?array $triggerEventResponseDtos = null, ?array $headers = [])
     {

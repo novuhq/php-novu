@@ -38,6 +38,7 @@ class SubscribersV1ControllerListSubscriberPreferencesRequest
      * @param  string  $subscriberId
      * @param  ?bool  $includeInactiveChannels
      * @param  ?string  $idempotencyKey
+     * @phpstan-pure
      */
     public function __construct(string $subscriberId, ?bool $includeInactiveChannels = null, ?string $idempotencyKey = null)
     {

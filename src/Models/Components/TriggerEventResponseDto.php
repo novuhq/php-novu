@@ -52,6 +52,7 @@ class TriggerEventResponseDto
      * @param  Status  $status
      * @param  ?array<string>  $error
      * @param  ?string  $transactionId
+     * @phpstan-pure
      */
     public function __construct(bool $acknowledged, Status $status, ?array $error = null, ?string $transactionId = null)
     {

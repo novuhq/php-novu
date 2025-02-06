@@ -81,6 +81,7 @@ class ValidationErrorDto
      * @param  array<string, Errors>  $errors
      * @param  ?array<string, mixed>  $ctx
      * @param  ?string  $errorId
+     * @phpstan-pure
      */
     public function __construct(float $statusCode, string $timestamp, string $path, string $message, array $errors, ?array $ctx = null, ?string $errorId = null)
     {

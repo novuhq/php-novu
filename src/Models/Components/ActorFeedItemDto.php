@@ -31,6 +31,7 @@ class ActorFeedItemDto
     /**
      * @param  ActorTypeEnum  $type
      * @param  ?string  $data
+     * @phpstan-pure
      */
     public function __construct(ActorTypeEnum $type, ?string $data = null)
     {

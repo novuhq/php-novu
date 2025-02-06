@@ -29,6 +29,7 @@ class DelayScheduledMetadata
     /**
      * @param  DelayScheduledMetadataType  $type
      * @param  string  $delayPath
+     * @phpstan-pure
      */
     public function __construct(DelayScheduledMetadataType $type, string $delayPath)
     {

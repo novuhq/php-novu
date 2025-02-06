@@ -89,6 +89,7 @@ class UpdateIntegrationRequestDto
      * @param  ?bool  $removeNovuBranding
      * @param  ?bool  $check
      * @param  ?array<StepFilterDto>  $conditions
+     * @phpstan-pure
      */
     public function __construct(?string $name = null, ?string $identifier = null, ?string $environmentId = null, ?bool $active = null, ?CredentialsDto $credentials = null, ?bool $removeNovuBranding = null, ?bool $check = null, ?array $conditions = null)
     {

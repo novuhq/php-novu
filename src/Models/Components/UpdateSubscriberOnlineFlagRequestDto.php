@@ -20,6 +20,7 @@ class UpdateSubscriberOnlineFlagRequestDto
 
     /**
      * @param  bool  $isOnline
+     * @phpstan-pure
      */
     public function __construct(bool $isOnline)
     {

@@ -52,6 +52,7 @@ class SubscribersControllerRemoveSubscriberResponse
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
      * @param  ?Components\RemoveSubscriberResponseDto  $removeSubscriberResponseDto
+     * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\RemoveSubscriberResponseDto $removeSubscriberResponseDto = null, ?array $headers = [])
     {

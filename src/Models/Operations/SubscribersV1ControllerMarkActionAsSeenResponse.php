@@ -52,6 +52,7 @@ class SubscribersV1ControllerMarkActionAsSeenResponse
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
      * @param  ?Components\MessageResponseDto  $messageResponseDto
+     * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\MessageResponseDto $messageResponseDto = null, ?array $headers = [])
     {

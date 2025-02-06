@@ -42,6 +42,7 @@ class SubscriberChannelDto
      * @param  ProviderId  $providerId
      * @param  ChannelCredentialsDto  $credentials
      * @param  ?string  $integrationIdentifier
+     * @phpstan-pure
      */
     public function __construct(ProviderId $providerId, ChannelCredentialsDto $credentials, ?string $integrationIdentifier = null)
     {

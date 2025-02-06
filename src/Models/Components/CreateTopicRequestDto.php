@@ -30,6 +30,7 @@ class CreateTopicRequestDto
     /**
      * @param  string  $key
      * @param  string  $name
+     * @phpstan-pure
      */
     public function __construct(string $key, string $name)
     {

@@ -103,6 +103,7 @@ class CreateSubscriberRequestDto
      * @param  ?string  $locale
      * @param  ?array<string, string|array<string>|bool|float>  $data
      * @param  ?array<SubscriberChannelDto>  $channels
+     * @phpstan-pure
      */
     public function __construct(string $subscriberId, ?string $email = null, ?string $firstName = null, ?string $lastName = null, ?string $phone = null, ?string $avatar = null, ?string $locale = null, ?array $data = null, ?array $channels = null)
     {

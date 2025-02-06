@@ -28,6 +28,7 @@ class ActivityStatsResponseDto
     /**
      * @param  float  $weeklySent
      * @param  float  $monthlySent
+     * @phpstan-pure
      */
     public function __construct(float $weeklySent, float $monthlySent)
     {

@@ -99,6 +99,7 @@ class SubscribersControllerSearchSubscribersRequest
      * @param  ?OrderDirection  $orderDirection
      * @param  mixed  $orderBy
      * @param  ?string  $idempotencyKey
+     * @phpstan-pure
      */
     public function __construct(?string $after = null, ?string $before = null, ?string $email = null, ?string $name = null, ?string $phone = null, ?string $subscriberId = null, ?float $limit = null, ?OrderDirection $orderDirection = null, mixed $orderBy = null, ?string $idempotencyKey = null)
     {

@@ -71,6 +71,7 @@ class ErrorDto
      * @param  string  $message
      * @param  ?array<string, mixed>  $ctx
      * @param  ?string  $errorId
+     * @phpstan-pure
      */
     public function __construct(float $statusCode, string $timestamp, string $path, string $message, ?array $ctx = null, ?string $errorId = null)
     {

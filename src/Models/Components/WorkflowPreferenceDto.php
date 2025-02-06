@@ -51,6 +51,7 @@ class WorkflowPreferenceDto
      * @param  PreferenceChannels  $channels
      * @param  array<Overrides>  $overrides
      * @param  WorkflowInfoDto  $workflow
+     * @phpstan-pure
      */
     public function __construct(bool $enabled, PreferenceChannels $channels, array $overrides, WorkflowInfoDto $workflow)
     {

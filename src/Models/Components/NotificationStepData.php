@@ -126,6 +126,7 @@ class NotificationStepData
      * @param  ?string  $parentId
      * @param  DigestRegularMetadata|DigestTimedMetadata|DelayRegularMetadata|DelayScheduledMetadata|null  $metadata
      * @param  ?ReplyCallback  $replyCallback
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $uuid = null, ?string $name = null, ?string $templateId = null, ?bool $active = null, ?bool $shouldStopOnFail = null, ?MessageTemplate $template = null, ?array $filters = null, ?string $parentId = null, DigestRegularMetadata|DigestTimedMetadata|DelayRegularMetadata|DelayScheduledMetadata|null $metadata = null, ?ReplyCallback $replyCallback = null)
     {

@@ -30,6 +30,7 @@ class IntegrationsControllerCreateIntegrationRequest
     /**
      * @param  Components\CreateIntegrationRequestDto  $createIntegrationRequestDto
      * @param  ?string  $idempotencyKey
+     * @phpstan-pure
      */
     public function __construct(Components\CreateIntegrationRequestDto $createIntegrationRequestDto, ?string $idempotencyKey = null)
     {

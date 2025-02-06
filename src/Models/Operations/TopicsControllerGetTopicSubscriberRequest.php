@@ -39,6 +39,7 @@ class TopicsControllerGetTopicSubscriberRequest
      * @param  string  $externalSubscriberId
      * @param  string  $topicKey
      * @param  ?string  $idempotencyKey
+     * @phpstan-pure
      */
     public function __construct(string $externalSubscriberId, string $topicKey, ?string $idempotencyKey = null)
     {

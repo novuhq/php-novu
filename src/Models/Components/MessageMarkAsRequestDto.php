@@ -30,6 +30,7 @@ class MessageMarkAsRequestDto
     /**
      * @param  string|array<string>  $messageId
      * @param  MarkAs  $markAs
+     * @phpstan-pure
      */
     public function __construct(string|array $messageId, MarkAs $markAs)
     {

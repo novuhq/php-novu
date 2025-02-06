@@ -54,6 +54,7 @@ class SubscribersV1ControllerMarkActionAsSeenRequest
      * @param  string  $subscriberId
      * @param  Components\MarkMessageActionAsSeenDto  $markMessageActionAsSeenDto
      * @param  ?string  $idempotencyKey
+     * @phpstan-pure
      */
     public function __construct(string $messageId, mixed $type, string $subscriberId, Components\MarkMessageActionAsSeenDto $markMessageActionAsSeenDto, ?string $idempotencyKey = null)
     {

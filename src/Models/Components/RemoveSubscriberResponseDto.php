@@ -30,6 +30,7 @@ class RemoveSubscriberResponseDto
     /**
      * @param  bool  $acknowledged
      * @param  string  $status
+     * @phpstan-pure
      */
     public function __construct(bool $acknowledged, string $status)
     {

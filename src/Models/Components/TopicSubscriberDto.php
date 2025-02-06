@@ -66,6 +66,7 @@ class TopicSubscriberDto
      * @param  string  $topicId
      * @param  string  $topicKey
      * @param  string  $externalSubscriberId
+     * @phpstan-pure
      */
     public function __construct(string $organizationId, string $environmentId, string $subscriberId, string $topicId, string $topicKey, string $externalSubscriberId)
     {

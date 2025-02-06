@@ -98,6 +98,7 @@ class ActivityNotificationExecutionDetailResponseDto
      * @param  ExecutionDetailsSourceEnum  $source
      * @param  ?string  $createdAt
      * @param  ?string  $raw
+     * @phpstan-pure
      */
     public function __construct(string $id, ExecutionDetailsStatusEnum $status, string $detail, bool $isRetry, bool $isTest, ProvidersIdEnum $providerId, ExecutionDetailsSourceEnum $source, ?string $createdAt = null, ?string $raw = null)
     {

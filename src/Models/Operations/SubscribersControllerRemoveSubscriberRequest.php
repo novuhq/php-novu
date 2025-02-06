@@ -29,6 +29,7 @@ class SubscribersControllerRemoveSubscriberRequest
     /**
      * @param  string  $subscriberId
      * @param  ?string  $idempotencyKey
+     * @phpstan-pure
      */
     public function __construct(string $subscriberId, ?string $idempotencyKey = null)
     {

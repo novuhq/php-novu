@@ -39,6 +39,7 @@ class WorkflowInfoDto
      * @param  string  $slug
      * @param  string  $identifier
      * @param  string  $name
+     * @phpstan-pure
      */
     public function __construct(string $slug, string $identifier, string $name)
     {

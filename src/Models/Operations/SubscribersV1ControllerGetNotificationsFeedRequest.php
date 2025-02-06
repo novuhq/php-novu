@@ -70,6 +70,7 @@ class SubscribersV1ControllerGetNotificationsFeedRequest
      * @param  ?bool  $seen
      * @param  ?string  $payload
      * @param  ?string  $idempotencyKey
+     * @phpstan-pure
      */
     public function __construct(string $subscriberId, ?float $page = null, ?bool $read = null, ?bool $seen = null, ?string $payload = null, ?string $idempotencyKey = null, ?float $limit = 10)
     {

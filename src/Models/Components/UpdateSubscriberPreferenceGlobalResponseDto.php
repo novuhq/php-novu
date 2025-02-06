@@ -22,6 +22,7 @@ class UpdateSubscriberPreferenceGlobalResponseDto
 
     /**
      * @param  Preference  $preference
+     * @phpstan-pure
      */
     public function __construct(Preference $preference)
     {

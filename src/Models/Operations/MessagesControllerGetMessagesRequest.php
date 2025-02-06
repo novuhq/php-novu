@@ -64,6 +64,7 @@ class MessagesControllerGetMessagesRequest
      * @param  ?float  $page
      * @param  ?float  $limit
      * @param  ?string  $idempotencyKey
+     * @phpstan-pure
      */
     public function __construct(?Components\ChannelTypeEnum $channel = null, ?string $subscriberId = null, ?array $transactionId = null, ?string $idempotencyKey = null, ?float $page = 0, ?float $limit = 10)
     {

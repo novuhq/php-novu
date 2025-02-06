@@ -52,6 +52,7 @@ class IntegrationsControllerCreateIntegrationResponse
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
      * @param  ?Components\IntegrationResponseDto  $integrationResponseDto
+     * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\IntegrationResponseDto $integrationResponseDto = null, ?array $headers = [])
     {

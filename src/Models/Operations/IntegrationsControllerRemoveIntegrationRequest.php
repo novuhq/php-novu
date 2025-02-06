@@ -29,6 +29,7 @@ class IntegrationsControllerRemoveIntegrationRequest
     /**
      * @param  string  $integrationId
      * @param  ?string  $idempotencyKey
+     * @phpstan-pure
      */
     public function __construct(string $integrationId, ?string $idempotencyKey = null)
     {

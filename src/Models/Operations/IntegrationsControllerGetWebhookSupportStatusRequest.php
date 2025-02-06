@@ -29,6 +29,7 @@ class IntegrationsControllerGetWebhookSupportStatusRequest
     /**
      * @param  string  $providerOrIntegrationId
      * @param  ?string  $idempotencyKey
+     * @phpstan-pure
      */
     public function __construct(string $providerOrIntegrationId, ?string $idempotencyKey = null)
     {

@@ -31,6 +31,7 @@ class ChannelPreference
     /**
      * @param  ChannelTypeEnum  $type
      * @param  bool  $enabled
+     * @phpstan-pure
      */
     public function __construct(ChannelTypeEnum $type, bool $enabled)
     {

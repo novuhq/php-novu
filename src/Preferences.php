@@ -56,9 +56,11 @@ class Preferences
      * @param  ?string  $idempotencyKey
      * @return Operations\SubscribersV1ControllerGetSubscriberPreferenceByLevelResponse
      * @throws \novu\Models\Errors\APIException
+     * @deprecated  method: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     public function getByLevel(Operations\Parameter $preferenceLevel, string $subscriberId, ?bool $includeInactiveChannels = null, ?string $idempotencyKey = null, ?Options $options = null): Operations\SubscribersV1ControllerGetSubscriberPreferenceByLevelResponse
     {
+        trigger_error('Method '.__METHOD__.' is deprecated', E_USER_DEPRECATED);
         $retryConfig = null;
         if ($options) {
             $retryConfig = $options->retryConfig;

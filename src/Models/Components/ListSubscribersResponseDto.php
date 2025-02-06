@@ -40,6 +40,7 @@ class ListSubscribersResponseDto
      * @param  array<SubscriberResponseDto>  $data
      * @param  ?string  $next
      * @param  ?string  $previous
+     * @phpstan-pure
      */
     public function __construct(array $data, ?string $next = null, ?string $previous = null)
     {

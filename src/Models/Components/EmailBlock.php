@@ -52,6 +52,7 @@ class EmailBlock
      * @param  string  $content
      * @param  ?string  $url
      * @param  ?EmailBlockStyles  $styles
+     * @phpstan-pure
      */
     public function __construct(EmailBlockTypeEnum $type, string $content, ?string $url = null, ?EmailBlockStyles $styles = null)
     {

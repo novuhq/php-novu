@@ -31,6 +31,7 @@ class Errors
     /**
      * @param  array<string>  $messages
      * @param  string|float|bool|array<string, mixed>|array<array<string, mixed>>|null  $value
+     * @phpstan-pure
      */
     public function __construct(array $messages, string|float|bool|array|null $value = null)
     {

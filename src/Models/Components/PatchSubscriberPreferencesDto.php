@@ -32,6 +32,7 @@ class PatchSubscriberPreferencesDto
     /**
      * @param  PatchPreferenceChannelsDto  $channels
      * @param  ?string  $workflowId
+     * @phpstan-pure
      */
     public function __construct(PatchPreferenceChannelsDto $channels, ?string $workflowId = null)
     {

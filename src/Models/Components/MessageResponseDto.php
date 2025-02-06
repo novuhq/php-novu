@@ -327,6 +327,7 @@ class MessageResponseDto
      * @param  ?MessageResponseDtoPayload  $payload
      * @param  ?MessageResponseDtoOverrides  $overrides
      * @param  ?string  $feedId
+     * @phpstan-pure
      */
     public function __construct(string $templateId, string $environmentId, string $messageTemplateId, string $organizationId, string $notificationId, string $subscriberId, string $createdAt, EmailBlock|string $content, string $transactionId, ChannelTypeEnum $channel, bool $read, bool $seen, MessageCTA $cta, MessageStatusEnum $status, ?string $id = null, ?SubscriberResponseDto $subscriber = null, ?WorkflowResponse $template = null, ?string $templateIdentifier = null, ?string $lastSeenDate = null, ?string $lastReadDate = null, ?string $subject = null, ?string $email = null, ?string $phone = null, ?string $directWebhookUrl = null, ?string $providerId = null, ?array $deviceTokens = null, ?string $title = null, ?string $errorId = null, ?string $errorText = null, ?MessageResponseDtoPayload $payload = null, ?MessageResponseDtoOverrides $overrides = null, ?string $feedId = null)
     {

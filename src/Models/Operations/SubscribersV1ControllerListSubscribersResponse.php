@@ -55,6 +55,7 @@ class SubscribersV1ControllerListSubscribersResponse
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
      * @param  ?SubscribersV1ControllerListSubscribersResponseBody  $object
+     * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?SubscribersV1ControllerListSubscribersResponseBody $object = null, ?array $headers = [])
     {

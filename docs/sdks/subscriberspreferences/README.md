@@ -6,7 +6,7 @@
 ### Available Operations
 
 * [retrieve](#retrieve) - Get subscriber preferences
-* [list](#list) - Get subscriber preferences
+* [~~listLegacy~~](#listlegacy) - Get subscriber preferences :warning: **Deprecated**
 * [updateGlobal](#updateglobal) - Update subscriber global preferences
 
 ## retrieve
@@ -62,9 +62,11 @@ if ($response->getSubscriberPreferencesDto !== null) {
 | Errors\ErrorDto                        | 500                                    | application/json                       |
 | Errors\APIException                    | 4XX, 5XX                               | \*/\*                                  |
 
-## list
+## ~~listLegacy~~
 
 Get subscriber preferences
+
+> :warning: **DEPRECATED**: This will be removed in a future release, please migrate away from it as soon as possible.
 
 ### Example Usage
 
@@ -83,7 +85,7 @@ $sdk = novu\Novu::builder()
 
 
 
-$response = $sdk->subscribersPreferences->list(
+$response = $sdk->subscribersPreferences->listLegacy(
     subscriberId: '<id>',
     includeInactiveChannels: false,
     idempotencyKey: '<value>'

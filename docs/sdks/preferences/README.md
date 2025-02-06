@@ -5,12 +5,14 @@
 
 ### Available Operations
 
-* [getByLevel](#getbylevel) - Get subscriber preferences by level
+* [~~getByLevel~~](#getbylevel) - Get subscriber preferences by level :warning: **Deprecated**
 * [update](#update) - Update subscriber preference
 
-## getByLevel
+## ~~getByLevel~~
 
 Get subscriber preferences by level
+
+> :warning: **DEPRECATED**: This will be removed in a future release, please migrate away from it as soon as possible.
 
 ### Example Usage
 

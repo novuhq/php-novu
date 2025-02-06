@@ -201,9 +201,11 @@ class SubscribersPreferences
      * @param  ?string  $idempotencyKey
      * @return Operations\SubscribersV1ControllerListSubscriberPreferencesResponse
      * @throws \novu\Models\Errors\APIException
+     * @deprecated  method: This will be removed in a future release, please migrate away from it as soon as possible.
      */
-    public function list(string $subscriberId, ?bool $includeInactiveChannels = null, ?string $idempotencyKey = null, ?Options $options = null): Operations\SubscribersV1ControllerListSubscriberPreferencesResponse
+    public function listLegacy(string $subscriberId, ?bool $includeInactiveChannels = null, ?string $idempotencyKey = null, ?Options $options = null): Operations\SubscribersV1ControllerListSubscriberPreferencesResponse
     {
+        trigger_error('Method '.__METHOD__.' is deprecated', E_USER_DEPRECATED);
         $retryConfig = null;
         if ($options) {
             $retryConfig = $options->retryConfig;

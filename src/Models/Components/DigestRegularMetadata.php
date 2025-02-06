@@ -86,6 +86,7 @@ class DigestRegularMetadata
      * @param  ?float  $backoffAmount
      * @param  ?BackoffUnit  $backoffUnit
      * @param  ?bool  $updateMode
+     * @phpstan-pure
      */
     public function __construct(DigestRegularMetadataType $type, ?float $amount = null, ?DigestRegularMetadataUnit $unit = null, ?string $digestKey = null, ?bool $backoff = null, ?float $backoffAmount = null, ?BackoffUnit $backoffUnit = null, ?bool $updateMode = null)
     {

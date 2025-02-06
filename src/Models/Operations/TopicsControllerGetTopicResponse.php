@@ -52,6 +52,7 @@ class TopicsControllerGetTopicResponse
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
      * @param  ?Components\GetTopicResponseDto  $getTopicResponseDto
+     * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\GetTopicResponseDto $getTopicResponseDto = null, ?array $headers = [])
     {

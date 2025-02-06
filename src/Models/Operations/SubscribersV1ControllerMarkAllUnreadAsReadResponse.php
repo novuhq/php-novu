@@ -51,6 +51,7 @@ class SubscribersV1ControllerMarkAllUnreadAsReadResponse
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
      * @param  ?float  $number
+     * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?float $number = null, ?array $headers = [])
     {

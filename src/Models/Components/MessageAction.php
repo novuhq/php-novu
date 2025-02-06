@@ -45,6 +45,7 @@ class MessageAction
      * @param  ?MessageActionStatusEnum  $status
      * @param  ?array<MessageButton>  $buttons
      * @param  ?MessageActionResult  $result
+     * @phpstan-pure
      */
     public function __construct(?MessageActionStatusEnum $status = null, ?array $buttons = null, ?MessageActionResult $result = null)
     {

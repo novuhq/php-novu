@@ -102,6 +102,7 @@ class ActivityNotificationJobResponseDto
      * @param  ?DigestMetadataDto  $digest
      * @param  ?Payload  $payload
      * @param  ?string  $updatedAt
+     * @phpstan-pure
      */
     public function __construct(string $id, ActivityNotificationJobResponseDtoType $type, array $executionDetails, ActivityNotificationStepResponseDto $step, ProvidersIdEnum $providerId, string $status, ?DigestMetadataDto $digest = null, ?Payload $payload = null, ?string $updatedAt = null)
     {

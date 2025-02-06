@@ -70,6 +70,7 @@ class ActivityNotificationSubscriberResponseDto
      * @param  ?string  $lastName
      * @param  ?string  $email
      * @param  ?string  $phone
+     * @phpstan-pure
      */
     public function __construct(string $subscriberId, string $id, ?string $firstName = null, ?string $lastName = null, ?string $email = null, ?string $phone = null)
     {

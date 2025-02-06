@@ -391,6 +391,7 @@ class CredentialsDto
      * @param  ?string  $channelId
      * @param  ?string  $phoneNumberIdentification
      * @param  ?string  $accessKey
+     * @phpstan-pure
      */
     public function __construct(?string $apiKey = null, ?string $user = null, ?string $secretKey = null, ?string $domain = null, ?string $password = null, ?string $host = null, ?string $port = null, ?bool $secure = null, ?string $region = null, ?string $accountSid = null, ?string $messageProfileId = null, ?string $token = null, ?string $from = null, ?string $senderName = null, ?string $projectName = null, ?string $applicationId = null, ?string $clientId = null, ?bool $requireTls = null, ?bool $ignoreTls = null, ?TlsOptions $tlsOptions = null, ?string $baseUrl = null, ?string $webhookUrl = null, ?string $redirectUrl = null, ?bool $hmac = null, ?string $serviceAccount = null, ?string $ipPoolName = null, ?string $apiKeyRequestHeader = null, ?string $secretKeyRequestHeader = null, ?string $idPath = null, ?string $datePath = null, ?string $apiToken = null, ?bool $authenticateByToken = null, ?string $authenticationTokenKey = null, ?string $instanceId = null, ?string $alertUid = null, ?string $title = null, ?string $imageUrl = null, ?string $state = null, ?string $externalLink = null, ?string $channelId = null, ?string $phoneNumberIdentification = null, ?string $accessKey = null)
     {

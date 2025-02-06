@@ -59,6 +59,7 @@ class FeedResponseDto
      * @param  float  $pageSize
      * @param  float  $page
      * @param  ?float  $totalCount
+     * @phpstan-pure
      */
     public function __construct(bool $hasMore, array $data, float $pageSize, float $page, ?float $totalCount = null)
     {
