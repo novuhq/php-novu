@@ -18,4 +18,5 @@ enum Status: string
     case NoWorkflowStepsDefined = 'no_workflow_steps_defined';
     case Processed = 'processed';
     case NoTenantFound = 'no_tenant_found';
+    case InvalidRecipients = 'invalid_recipients';
 }

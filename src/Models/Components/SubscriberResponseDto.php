@@ -162,6 +162,15 @@ class SubscriberResponseDto
     public ?float $v = null;
 
     /**
+     * Timezone of the subscriber
+     *
+     * @var ?string $timezone
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('timezone')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $timezone = null;
+
+    /**
      * The email address of the subscriber.
      *
      * @var ?string $email
@@ -198,11 +207,12 @@ class SubscriberResponseDto
      * @param  ?bool  $isOnline
      * @param  ?string  $lastOnlineAt
      * @param  ?float  $v
+     * @param  ?string  $timezone
      * @param  ?string  $email
      * @param  ?array<string, mixed>  $data
      * @phpstan-pure
      */
-    public function __construct(string $subscriberId, string $organizationId, string $environmentId, bool $deleted, string $createdAt, string $updatedAt, ?string $id = null, ?string $firstName = null, ?string $lastName = null, ?string $phone = null, ?string $avatar = null, ?string $locale = null, ?array $channels = null, ?array $topics = null, ?bool $isOnline = null, ?string $lastOnlineAt = null, ?float $v = null, ?string $email = null, ?array $data = null)
+    public function __construct(string $subscriberId, string $organizationId, string $environmentId, bool $deleted, string $createdAt, string $updatedAt, ?string $id = null, ?string $firstName = null, ?string $lastName = null, ?string $phone = null, ?string $avatar = null, ?string $locale = null, ?array $channels = null, ?array $topics = null, ?bool $isOnline = null, ?string $lastOnlineAt = null, ?float $v = null, ?string $timezone = null, ?string $email = null, ?array $data = null)
     {
         $this->subscriberId = $subscriberId;
         $this->organizationId = $organizationId;
@@ -221,6 +231,7 @@ class SubscriberResponseDto
         $this->isOnline = $isOnline;
         $this->lastOnlineAt = $lastOnlineAt;
         $this->v = $v;
+        $this->timezone = $timezone;
         $this->email = $email;
         $this->data = $data;
     }
