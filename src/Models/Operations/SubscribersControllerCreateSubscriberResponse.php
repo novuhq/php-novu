@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace novu\Models\Operations;
 
 use novu\Models\Components;
-class SubscribersV1ControllerUpdateSubscriberPreferenceResponse
+class SubscribersControllerCreateSubscriberResponse
 {
     /**
      * HTTP response content type for this operation
@@ -40,26 +40,26 @@ class SubscribersV1ControllerUpdateSubscriberPreferenceResponse
     public array $headers;
 
     /**
-     * OK
+     * Created
      *
-     * @var ?Components\UpdateSubscriberPreferenceResponseDto $updateSubscriberPreferenceResponseDto
+     * @var ?Components\SubscriberResponseDto $subscriberResponseDto
      */
-    public ?Components\UpdateSubscriberPreferenceResponseDto $updateSubscriberPreferenceResponseDto = null;
+    public ?Components\SubscriberResponseDto $subscriberResponseDto = null;
 
     /**
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
-     * @param  ?Components\UpdateSubscriberPreferenceResponseDto  $updateSubscriberPreferenceResponseDto
+     * @param  ?Components\SubscriberResponseDto  $subscriberResponseDto
      * @phpstan-pure
      */
-    public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\UpdateSubscriberPreferenceResponseDto $updateSubscriberPreferenceResponseDto = null, ?array $headers = [])
+    public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\SubscriberResponseDto $subscriberResponseDto = null, ?array $headers = [])
     {
         $this->contentType = $contentType;
         $this->statusCode = $statusCode;
         $this->rawResponse = $rawResponse;
         $this->headers = $headers;
-        $this->updateSubscriberPreferenceResponseDto = $updateSubscriberPreferenceResponseDto;
+        $this->subscriberResponseDto = $subscriberResponseDto;
     }
 }
