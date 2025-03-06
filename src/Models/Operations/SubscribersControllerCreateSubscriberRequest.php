@@ -10,7 +10,7 @@ namespace novu\Models\Operations;
 
 use novu\Models\Components;
 use novu\Utils\SpeakeasyMetadata;
-class SubscribersV1ControllerCreateSubscriberRequest
+class SubscribersControllerCreateSubscriberRequest
 {
     /**
      *

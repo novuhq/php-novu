@@ -12,15 +12,6 @@ namespace novu\Models\Components;
 class PatchSubscriberRequestDto
 {
     /**
-     * Unique identifier of the subscriber
-     *
-     * @var ?string $subscriberId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('subscriberId')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $subscriberId = null;
-
-    /**
      * First name of the subscriber
      *
      * @var ?string $firstName
@@ -94,7 +85,6 @@ class PatchSubscriberRequestDto
     public ?PatchSubscriberRequestDtoData $data = null;
 
     /**
-     * @param  ?string  $subscriberId
      * @param  ?string  $firstName
      * @param  ?string  $lastName
      * @param  ?string  $email
@@ -105,9 +95,8 @@ class PatchSubscriberRequestDto
      * @param  ?PatchSubscriberRequestDtoData  $data
      * @phpstan-pure
      */
-    public function __construct(?string $subscriberId = null, ?string $firstName = null, ?string $lastName = null, ?string $email = null, ?string $phone = null, ?string $avatar = null, ?string $timezone = null, ?string $locale = null, ?PatchSubscriberRequestDtoData $data = null)
+    public function __construct(?string $firstName = null, ?string $lastName = null, ?string $email = null, ?string $phone = null, ?string $avatar = null, ?string $timezone = null, ?string $locale = null, ?PatchSubscriberRequestDtoData $data = null)
     {
-        $this->subscriberId = $subscriberId;
         $this->firstName = $firstName;
         $this->lastName = $lastName;
         $this->email = $email;

@@ -1,4 +1,4 @@
-# SubscribersV1ControllerCreateSubscriberRequest
+# SubscribersControllerCreateSubscriberRequest
 
 
 ## Fields
