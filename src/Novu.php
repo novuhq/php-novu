@@ -45,13 +45,13 @@ class Novu
 
     public SubscribersCredentials $subscribersCredentials;
 
-    public SubscribersPreferences $subscribersPreferences;
-
     public SubscribersNotifications $subscribersNotifications;
 
     public SubscribersMessages $subscribersMessages;
 
     public SubscribersAuthentication $subscribersAuthentication;
+
+    public SubscribersPreferences $subscribersPreferences;
 
     /**
      * A message in Novu represents a notification delivered to a recipient on a particular channel. Messages contain information about the request that triggered its delivery, a view of the data sent to the recipient, and a timeline of its lifecycle events. Learn more about messages.
@@ -90,10 +90,10 @@ class Novu
         $this->integrations = new Integrations($this->sdkConfiguration);
         $this->subscribers = new Subscribers($this->sdkConfiguration);
         $this->subscribersCredentials = new SubscribersCredentials($this->sdkConfiguration);
-        $this->subscribersPreferences = new SubscribersPreferences($this->sdkConfiguration);
         $this->subscribersNotifications = new SubscribersNotifications($this->sdkConfiguration);
         $this->subscribersMessages = new SubscribersMessages($this->sdkConfiguration);
         $this->subscribersAuthentication = new SubscribersAuthentication($this->sdkConfiguration);
+        $this->subscribersPreferences = new SubscribersPreferences($this->sdkConfiguration);
         $this->messages = new Messages($this->sdkConfiguration);
         $this->topics = new Topics($this->sdkConfiguration);
         $this->topicsSubscribers = new TopicsSubscribers($this->sdkConfiguration);

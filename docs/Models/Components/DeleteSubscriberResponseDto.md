@@ -1,9 +1,0 @@
-# DeleteSubscriberResponseDto
-
-
-## Fields
-
-| Field                                                                                                        | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
-| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
-| `acknowledged`                                                                                               | *bool*                                                                                                       | :heavy_check_mark:                                                                                           | A boolean stating the success of the action                                                                  |
-| `status`                                                                                                     | [Components\DeleteSubscriberResponseDtoStatus](../../Models/Components/DeleteSubscriberResponseDtoStatus.md) | :heavy_check_mark:                                                                                           | The status enum for the performed action                                                                     |
