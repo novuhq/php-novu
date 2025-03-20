@@ -23,12 +23,12 @@ use novu\Models\Components;
 
 $sdk = novu\Novu::builder()
     ->setSecurity(
-        '<YOUR_API_KEY_HERE>'
+        'YOUR_SECRET_KEY_HERE'
     )
     ->build();
 
 $markAllMessageAsRequestDto = new Components\MarkAllMessageAsRequestDto(
-    markAs: Components\MarkAllMessageAsRequestDtoMarkAs::Seen,
+    markAs: Components\MarkAs::Seen,
 );
 
 $response = $sdk->subscribersMessages->markAll(

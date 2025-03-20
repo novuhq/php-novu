@@ -14,11 +14,11 @@ class Overrides
     /**
      * The channel type which is overridden
      *
-     * @var OverridesChannel $channel
+     * @var Channel $channel
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('channel')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\OverridesChannel')]
-    public OverridesChannel $channel;
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\Channel')]
+    public Channel $channel;
 
     /**
      * The source of overrides
@@ -30,11 +30,11 @@ class Overrides
     public Source $source;
 
     /**
-     * @param  OverridesChannel  $channel
+     * @param  Channel  $channel
      * @param  Source  $source
      * @phpstan-pure
      */
-    public function __construct(OverridesChannel $channel, Source $source)
+    public function __construct(Channel $channel, Source $source)
     {
         $this->channel = $channel;
         $this->source = $source;

@@ -25,7 +25,7 @@ use novu\Models\Operations;
 
 $sdk = novu\Novu::builder()
     ->setSecurity(
-        '<YOUR_API_KEY_HERE>'
+        'YOUR_SECRET_KEY_HERE'
     )
     ->build();
 
@@ -83,13 +83,13 @@ use novu\Models\Components;
 
 $sdk = novu\Novu::builder()
     ->setSecurity(
-        '<YOUR_API_KEY_HERE>'
+        'YOUR_SECRET_KEY_HERE'
     )
     ->build();
 
 $messageMarkAsRequestDto = new Components\MessageMarkAsRequestDto(
     messageId: '<id>',
-    markAs: Components\MarkAs::Unread,
+    markAs: Components\MessageMarkAsRequestDtoMarkAs::Unread,
 );
 
 $response = $sdk->subscribers->messages->markAllAs(

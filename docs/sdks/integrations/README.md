@@ -31,7 +31,7 @@ use novu\Models\Components;
 
 $sdk = novu\Novu::builder()
     ->setSecurity(
-        '<YOUR_API_KEY_HERE>'
+        'YOUR_SECRET_KEY_HERE'
     )
     ->build();
 
@@ -87,7 +87,7 @@ use novu;
 
 $sdk = novu\Novu::builder()
     ->setSecurity(
-        '<YOUR_API_KEY_HERE>'
+        'YOUR_SECRET_KEY_HERE'
     )
     ->build();
 
@@ -137,7 +137,7 @@ use novu;
 
 $sdk = novu\Novu::builder()
     ->setSecurity(
-        '<YOUR_API_KEY_HERE>'
+        'YOUR_SECRET_KEY_HERE'
     )
     ->build();
 
@@ -187,7 +187,7 @@ use novu;
 
 $sdk = novu\Novu::builder()
     ->setSecurity(
-        '<YOUR_API_KEY_HERE>'
+        'YOUR_SECRET_KEY_HERE'
     )
     ->build();
 
@@ -240,7 +240,7 @@ use novu;
 
 $sdk = novu\Novu::builder()
     ->setSecurity(
-        '<YOUR_API_KEY_HERE>'
+        'YOUR_SECRET_KEY_HERE'
     )
     ->build();
 
@@ -294,7 +294,7 @@ use novu\Models\Components;
 
 $sdk = novu\Novu::builder()
     ->setSecurity(
-        '<YOUR_API_KEY_HERE>'
+        'YOUR_SECRET_KEY_HERE'
     )
     ->build();
 

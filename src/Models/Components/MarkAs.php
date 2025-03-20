@@ -9,6 +9,7 @@ declare(strict_types=1);
 namespace novu\Models\Components;
 
 
+/** Mark all subscriber messages as read, unread, seen or unseen */
 enum MarkAs: string
 {
     case Read = 'read';

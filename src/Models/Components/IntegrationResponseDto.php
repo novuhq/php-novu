@@ -54,11 +54,11 @@ class IntegrationResponseDto
     /**
      * The channel type for the integration, which defines how the integration communicates (e.g., email, SMS).
      *
-     * @var Channel $channel
+     * @var IntegrationResponseDtoChannel $channel
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('channel')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\Channel')]
-    public Channel $channel;
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\IntegrationResponseDtoChannel')]
+    public IntegrationResponseDtoChannel $channel;
 
     /**
      * The credentials required for the integration to function, including API keys and other sensitive information.
@@ -136,7 +136,7 @@ class IntegrationResponseDto
      * @param  string  $name
      * @param  string  $identifier
      * @param  string  $providerId
-     * @param  Channel  $channel
+     * @param  IntegrationResponseDtoChannel  $channel
      * @param  CredentialsDto  $credentials
      * @param  bool  $active
      * @param  bool  $deleted
@@ -147,7 +147,7 @@ class IntegrationResponseDto
      * @param  ?array<StepFilterDto>  $conditions
      * @phpstan-pure
      */
-    public function __construct(string $environmentId, string $organizationId, string $name, string $identifier, string $providerId, Channel $channel, CredentialsDto $credentials, bool $active, bool $deleted, bool $primary, ?string $id = null, ?string $deletedAt = null, ?string $deletedBy = null, ?array $conditions = null)
+    public function __construct(string $environmentId, string $organizationId, string $name, string $identifier, string $providerId, IntegrationResponseDtoChannel $channel, CredentialsDto $credentials, bool $active, bool $deleted, bool $primary, ?string $id = null, ?string $deletedAt = null, ?string $deletedBy = null, ?array $conditions = null)
     {
         $this->environmentId = $environmentId;
         $this->organizationId = $organizationId;

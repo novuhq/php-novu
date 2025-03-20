@@ -94,6 +94,15 @@ class SubscriberPayloadDto
     public ?array $channels = null;
 
     /**
+     * The timezone of the subscriber.
+     *
+     * @var ?string $timezone
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('timezone')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $timezone = null;
+
+    /**
      * @param  string  $subscriberId
      * @param  ?string  $email
      * @param  ?string  $firstName
@@ -103,9 +112,10 @@ class SubscriberPayloadDto
      * @param  ?string  $locale
      * @param  ?array<string, string|array<string>|bool|float>  $data
      * @param  ?array<SubscriberChannelDto>  $channels
+     * @param  ?string  $timezone
      * @phpstan-pure
      */
-    public function __construct(string $subscriberId, ?string $email = null, ?string $firstName = null, ?string $lastName = null, ?string $phone = null, ?string $avatar = null, ?string $locale = null, ?array $data = null, ?array $channels = null)
+    public function __construct(string $subscriberId, ?string $email = null, ?string $firstName = null, ?string $lastName = null, ?string $phone = null, ?string $avatar = null, ?string $locale = null, ?array $data = null, ?array $channels = null, ?string $timezone = null)
     {
         $this->subscriberId = $subscriberId;
         $this->email = $email;
@@ -116,5 +126,6 @@ class SubscriberPayloadDto
         $this->locale = $locale;
         $this->data = $data;
         $this->channels = $channels;
+        $this->timezone = $timezone;
     }
 }

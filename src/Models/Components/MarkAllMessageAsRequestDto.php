@@ -14,11 +14,11 @@ class MarkAllMessageAsRequestDto
     /**
      * Mark all subscriber messages as read, unread, seen or unseen
      *
-     * @var MarkAllMessageAsRequestDtoMarkAs $markAs
+     * @var MarkAs $markAs
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('markAs')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\MarkAllMessageAsRequestDtoMarkAs')]
-    public MarkAllMessageAsRequestDtoMarkAs $markAs;
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\MarkAs')]
+    public MarkAs $markAs;
 
     /**
      * Optional feed identifier or array of feed identifiers
@@ -31,11 +31,11 @@ class MarkAllMessageAsRequestDto
     public string|array|null $feedIdentifier = null;
 
     /**
-     * @param  MarkAllMessageAsRequestDtoMarkAs  $markAs
+     * @param  MarkAs  $markAs
      * @param  string|array<string>|null  $feedIdentifier
      * @phpstan-pure
      */
-    public function __construct(MarkAllMessageAsRequestDtoMarkAs $markAs, string|array|null $feedIdentifier = null)
+    public function __construct(MarkAs $markAs, string|array|null $feedIdentifier = null)
     {
         $this->markAs = $markAs;
         $this->feedIdentifier = $feedIdentifier;

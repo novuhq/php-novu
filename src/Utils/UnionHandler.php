@@ -173,6 +173,8 @@ final class UnionHandler implements SubscribingHandlerInterface
                 continue;
             } catch (\Brick\Math\Exception\NumberFormatException $e) {
                 continue;
+            } catch (\Brick\Math\Exception\RoundingNecessaryException $e) {
+                continue;
             } catch (RuntimeException $e) {
                 continue;
             }
@@ -238,12 +240,12 @@ final class UnionHandler implements SubscribingHandlerInterface
                 continue;
             } else {
                 if (count($possibleType['params']) == 2) {
-                    $possibleValueType = $possibleType['params'][1]['name'];
+                    $possibleValueType = $possibleType['params'][1];
                 } else {
-                    $possibleValueType = $possibleType['params'][0]['name'];
+                    $possibleValueType = $possibleType['params'][0];
                 }
-
-                if ($possibleValueType == 'mixed' || $possibleValueType == $dataType) {
+                $isMatchingEnum = $possibleValueType['name'] == 'enum' && $possibleValueType['params'][0]['name'] == $dataType;
+                if ($possibleValueType['name'] == 'mixed' || $possibleValueType['name'] == $dataType || $isMatchingEnum) {
                     return $context->getNavigator()->accept($data, $possibleType);
                 }
             }
@@ -274,13 +276,13 @@ final class UnionHandler implements SubscribingHandlerInterface
             if ($isNotArray || $isNotAssociativeArray) {
                 continue;
             } else {
-                $possibleValueType = $possibleType['params'][1]['name'];
+                $possibleValueType = $possibleType['params'][1];
 
                 if ($valueType == 'object') {
                     $valueType = get_class($value);
                 }
-
-                if ($possibleValueType == 'mixed' || $possibleValueType == $valueType) {
+                $isMatchingEnum = $possibleValueType['name'] == 'enum' && $possibleValueType['params'][0]['name'] == $valueType;
+                if ($possibleValueType['name'] == 'mixed' || $possibleValueType['name'] == $valueType || $isMatchingEnum) {
                     return $context->getNavigator()->accept($data, $possibleType);
                 }
             }
@@ -342,6 +344,10 @@ final class UnionHandler implements SubscribingHandlerInterface
         if ($type['params']) {
             uasort($type['params'], static function ($a, $b) {
                 if (\class_exists($a['name']) && \class_exists($b['name'])) {
+                    /** always try BigInteger before trying BigDecimal */
+                    if ($a['name'] == '\Brick\Math\BigInteger' && $b['name'] == '\Brick\Math\BigDecimal') {
+                        return -1;
+                    }
                     $aClass = new \ReflectionClass($a['name']);
                     $bClass = new \ReflectionClass($b['name']);
                     $aRequiredPropertyCount = 0;

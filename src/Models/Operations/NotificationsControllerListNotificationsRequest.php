@@ -62,7 +62,7 @@ class NotificationsControllerListNotificationsRequest
     public ?string $transactionId = null;
 
     /**
-     * Date filter for records after this timestamp
+     * Date filter for records after this timestamp. Defaults to earliest date allowed by subscription plan
      *
      * @var ?string $after
      */
@@ -70,7 +70,7 @@ class NotificationsControllerListNotificationsRequest
     public ?string $after = null;
 
     /**
-     * Date filter for records before this timestamp
+     * Date filter for records before this timestamp. Defaults to current time of request (now)
      *
      * @var ?string $before
      */
@@ -94,19 +94,28 @@ class NotificationsControllerListNotificationsRequest
     public ?float $page = null;
 
     /**
+     * Limit for pagination
+     *
+     * @var ?float $limit
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=limit')]
+    public ?float $limit = null;
+
+    /**
      * @param  ?array<Components\ChannelTypeEnum>  $channels
      * @param  ?array<string>  $templates
      * @param  ?array<string>  $emails
      * @param  ?string  $search
      * @param  ?array<string>  $subscriberIds
      * @param  ?float  $page
+     * @param  ?float  $limit
      * @param  ?string  $transactionId
      * @param  ?string  $after
      * @param  ?string  $before
      * @param  ?string  $idempotencyKey
      * @phpstan-pure
      */
-    public function __construct(?array $channels = null, ?array $templates = null, ?array $emails = null, ?string $search = null, ?array $subscriberIds = null, ?string $transactionId = null, ?string $after = null, ?string $before = null, ?string $idempotencyKey = null, ?float $page = 0)
+    public function __construct(?array $channels = null, ?array $templates = null, ?array $emails = null, ?string $search = null, ?array $subscriberIds = null, ?string $transactionId = null, ?string $after = null, ?string $before = null, ?string $idempotencyKey = null, ?float $page = 0, ?float $limit = 10)
     {
         $this->channels = $channels;
         $this->templates = $templates;
@@ -118,5 +127,6 @@ class NotificationsControllerListNotificationsRequest
         $this->before = $before;
         $this->idempotencyKey = $idempotencyKey;
         $this->page = $page;
+        $this->limit = $limit;
     }
 }
