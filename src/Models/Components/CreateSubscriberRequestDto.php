@@ -12,7 +12,7 @@ namespace novu\Models\Components;
 class CreateSubscriberRequestDto
 {
     /**
-     * The internal identifier you used to create this subscriber, usually correlates to the id the user in your systems
+     * Unique identifier of the subscriber
      *
      * @var string $subscriberId
      */
@@ -20,16 +20,7 @@ class CreateSubscriberRequestDto
     public string $subscriberId;
 
     /**
-     * The email address of the subscriber.
-     *
-     * @var ?string $email
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('email')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $email = null;
-
-    /**
-     * The first name of the subscriber.
+     * First name of the subscriber
      *
      * @var ?string $firstName
      */
@@ -38,7 +29,7 @@ class CreateSubscriberRequestDto
     public ?string $firstName = null;
 
     /**
-     * The last name of the subscriber.
+     * Last name of the subscriber
      *
      * @var ?string $lastName
      */
@@ -47,7 +38,16 @@ class CreateSubscriberRequestDto
     public ?string $lastName = null;
 
     /**
-     * The phone number of the subscriber.
+     * Email address of the subscriber
+     *
+     * @var ?string $email
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('email')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $email = null;
+
+    /**
+     * Phone number of the subscriber
      *
      * @var ?string $phone
      */
@@ -56,7 +56,7 @@ class CreateSubscriberRequestDto
     public ?string $phone = null;
 
     /**
-     * An HTTP URL to the profile image of your subscriber.
+     * Avatar URL or identifier
      *
      * @var ?string $avatar
      */
@@ -65,7 +65,16 @@ class CreateSubscriberRequestDto
     public ?string $avatar = null;
 
     /**
-     * The locale of the subscriber.
+     * Timezone of the subscriber
+     *
+     * @var ?string $timezone
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('timezone')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $timezone = null;
+
+    /**
+     * Locale of the subscriber
      *
      * @var ?string $locale
      */
@@ -74,47 +83,37 @@ class CreateSubscriberRequestDto
     public ?string $locale = null;
 
     /**
-     * An optional payload object that can contain any properties.
+     * Additional custom data for the subscriber
      *
-     * @var ?array<string, string|array<string>|bool|float> $data
+     * @var ?array<string, mixed> $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<string, string|array<string>|bool|float>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $data = null;
 
     /**
-     * An optional array of subscriber channels.
-     *
-     * @var ?array<SubscriberChannelDto> $channels
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('channels')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\SubscriberChannelDto>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $channels = null;
-
-    /**
      * @param  string  $subscriberId
-     * @param  ?string  $email
      * @param  ?string  $firstName
      * @param  ?string  $lastName
+     * @param  ?string  $email
      * @param  ?string  $phone
      * @param  ?string  $avatar
+     * @param  ?string  $timezone
      * @param  ?string  $locale
-     * @param  ?array<string, string|array<string>|bool|float>  $data
-     * @param  ?array<SubscriberChannelDto>  $channels
+     * @param  ?array<string, mixed>  $data
      * @phpstan-pure
      */
-    public function __construct(string $subscriberId, ?string $email = null, ?string $firstName = null, ?string $lastName = null, ?string $phone = null, ?string $avatar = null, ?string $locale = null, ?array $data = null, ?array $channels = null)
+    public function __construct(string $subscriberId, ?string $firstName = null, ?string $lastName = null, ?string $email = null, ?string $phone = null, ?string $avatar = null, ?string $timezone = null, ?string $locale = null, ?array $data = null)
     {
         $this->subscriberId = $subscriberId;
-        $this->email = $email;
         $this->firstName = $firstName;
         $this->lastName = $lastName;
+        $this->email = $email;
         $this->phone = $phone;
         $this->avatar = $avatar;
+        $this->timezone = $timezone;
         $this->locale = $locale;
         $this->data = $data;
-        $this->channels = $channels;
     }
 }

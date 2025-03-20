@@ -59,7 +59,6 @@ For more information about the API: [Novu Documentation](https://docs.novu.co)
 <!-- Start Table of Contents [toc] -->
 ## Table of Contents
 <!-- $toc-max-depth=2 -->
-* [novuhq/novu](#novuhqnovu)
   * [SDK Installation](#sdk-installation)
   * [SDK Example Usage](#sdk-example-usage)
   * [Authentication](#authentication)
@@ -100,7 +99,7 @@ use novu\Models\Components;
 
 $sdk = novu\Novu::builder()
     ->setSecurity(
-        '<YOUR_API_KEY_HERE>'
+        'YOUR_SECRET_KEY_HERE'
     )
     ->build();
 
@@ -135,6 +134,72 @@ if ($response->triggerEventResponseDto !== null) {
 }
 ```
 
+### Cancel Triggered Event
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use novu;
+
+$sdk = novu\Novu::builder()
+    ->setSecurity(
+        'YOUR_SECRET_KEY_HERE'
+    )
+    ->build();
+
+
+
+$response = $sdk->cancel(
+    transactionId: '<id>',
+    idempotencyKey: '<value>'
+
+);
+
+if ($response->boolean !== null) {
+    // handle response
+}
+```
+
+### Broadcast Event to All
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use novu;
+use novu\Models\Components;
+
+$sdk = novu\Novu::builder()
+    ->setSecurity(
+        'YOUR_SECRET_KEY_HERE'
+    )
+    ->build();
+
+$triggerEventToAllRequestDto = new Components\TriggerEventToAllRequestDto(
+    name: '<value>',
+    payload: [
+        'comment_id' => 'string',
+        'post' => [
+            'text' => 'string',
+        ],
+    ],
+    overrides: new Components\TriggerEventToAllRequestDtoOverrides(),
+);
+
+$response = $sdk->triggerBroadcast(
+    triggerEventToAllRequestDto: $triggerEventToAllRequestDto,
+    idempotencyKey: '<value>'
+
+);
+
+if ($response->triggerEventResponseDto !== null) {
+    // handle response
+}
+```
+
 ### Trigger Notification Events in Bulk
 
 ```php
@@ -147,7 +212,7 @@ use novu\Models\Components;
 
 $sdk = novu\Novu::builder()
     ->setSecurity(
-        '<YOUR_API_KEY_HERE>'
+        'YOUR_SECRET_KEY_HERE'
     )
     ->build();
 
@@ -186,72 +251,6 @@ if ($response->triggerEventResponseDtos !== null) {
     // handle response
 }
 ```
-
-### Broadcast Event to All
-
-```php
-declare(strict_types=1);
-
-require 'vendor/autoload.php';
-
-use novu;
-use novu\Models\Components;
-
-$sdk = novu\Novu::builder()
-    ->setSecurity(
-        '<YOUR_API_KEY_HERE>'
-    )
-    ->build();
-
-$triggerEventToAllRequestDto = new Components\TriggerEventToAllRequestDto(
-    name: '<value>',
-    payload: [
-        'comment_id' => 'string',
-        'post' => [
-            'text' => 'string',
-        ],
-    ],
-    overrides: new Components\TriggerEventToAllRequestDtoOverrides(),
-);
-
-$response = $sdk->triggerBroadcast(
-    triggerEventToAllRequestDto: $triggerEventToAllRequestDto,
-    idempotencyKey: '<value>'
-
-);
-
-if ($response->triggerEventResponseDto !== null) {
-    // handle response
-}
-```
-
-### Cancel Triggered Event
-
-```php
-declare(strict_types=1);
-
-require 'vendor/autoload.php';
-
-use novu;
-
-$sdk = novu\Novu::builder()
-    ->setSecurity(
-        '<YOUR_API_KEY_HERE>'
-    )
-    ->build();
-
-
-
-$response = $sdk->cancel(
-    transactionId: '<id>',
-    idempotencyKey: '<value>'
-
-);
-
-if ($response->dataBooleanDto !== null) {
-    // handle response
-}
-```
 <!-- End SDK Example Usage [usage] -->
 
 <!-- Start Authentication [security] -->
@@ -276,7 +275,7 @@ use novu\Models\Components;
 
 $sdk = novu\Novu::builder()
     ->setSecurity(
-        '<YOUR_API_KEY_HERE>'
+        'YOUR_SECRET_KEY_HERE'
     )
     ->build();
 
@@ -350,17 +349,14 @@ if ($response->triggerEventResponseDto !== null) {
 
 ### [subscribers](docs/sdks/subscribers/README.md)
 
+* [create](docs/sdks/subscribers/README.md#create) - Create subscriber
 * [get](docs/sdks/subscribers/README.md#get) - Get subscriber
 * [patch](docs/sdks/subscribers/README.md#patch) - Patch subscriber
 * [delete](docs/sdks/subscribers/README.md#delete) - Delete subscriber
 * [search](docs/sdks/subscribers/README.md#search) - Search for subscribers
 * [updatePreferences](docs/sdks/subscribers/README.md#updatepreferences) - Update subscriber global or workflow specific preferences
 * [createBulk](docs/sdks/subscribers/README.md#createbulk) - Bulk create subscribers
-* [create](docs/sdks/subscribers/README.md#create) - Create subscriber
-* [getById](docs/sdks/subscribers/README.md#getbyid) - Get subscriber
 * [list](docs/sdks/subscribers/README.md#list) - Get subscribers
-* [~~deleteLegacy~~](docs/sdks/subscribers/README.md#deletelegacy) - Delete subscriber :warning: **Deprecated**
-* [update](docs/sdks/subscribers/README.md#update) - Update subscriber
 * [updateCredentials](docs/sdks/subscribers/README.md#updatecredentials) - Update subscriber credentials
 * [updateOnlineStatus](docs/sdks/subscribers/README.md#updateonlinestatus) - Update subscriber online status
 
@@ -376,11 +372,6 @@ if ($response->triggerEventResponseDto !== null) {
 #### [subscribers->notifications](docs/sdks/novusubscribersnotifications/README.md)
 
 * [getFeed](docs/sdks/novusubscribersnotifications/README.md#getfeed) - Get in-app notification feed for a particular subscriber
-
-#### [subscribers->preferences](docs/sdks/preferences/README.md)
-
-* [~~getByLevel~~](docs/sdks/preferences/README.md#getbylevel) - Get subscriber preferences by level :warning: **Deprecated**
-* [update](docs/sdks/preferences/README.md#update) - Update subscriber preference
 
 ### [subscribersAuthentication](docs/sdks/subscribersauthentication/README.md)
 
@@ -401,9 +392,7 @@ if ($response->triggerEventResponseDto !== null) {
 
 ### [subscribersPreferences](docs/sdks/subscriberspreferences/README.md)
 
-* [retrieve](docs/sdks/subscriberspreferences/README.md#retrieve) - Get subscriber preferences
-* [~~listLegacy~~](docs/sdks/subscriberspreferences/README.md#listlegacy) - Get subscriber preferences :warning: **Deprecated**
-* [updateGlobal](docs/sdks/subscriberspreferences/README.md#updateglobal) - Update subscriber global preferences
+* [list](docs/sdks/subscriberspreferences/README.md#list) - Get subscriber preferences
 
 ### [topics](docs/sdks/topics/README.md)
 
@@ -441,7 +430,7 @@ use novu;
 
 $sdk = novu\Novu::builder()
     ->setSecurity(
-        '<YOUR_API_KEY_HERE>'
+        'YOUR_SECRET_KEY_HERE'
     )
     ->build();
 
@@ -480,7 +469,7 @@ use novu\Utils\Retry;
 
 $sdk = novu\Novu::builder()
     ->setSecurity(
-        '<YOUR_API_KEY_HERE>'
+        'YOUR_SECRET_KEY_HERE'
     )
     ->build();
 
@@ -535,7 +524,7 @@ $sdk = novu\Novu::builder()
         )
   )
     ->setSecurity(
-        '<YOUR_API_KEY_HERE>'
+        'YOUR_SECRET_KEY_HERE'
     )
     ->build();
 
@@ -595,10 +584,11 @@ require 'vendor/autoload.php';
 
 use novu;
 use novu\Models\Components;
+use novu\Models\Errors;
 
 $sdk = novu\Novu::builder()
     ->setSecurity(
-        '<YOUR_API_KEY_HERE>'
+        'YOUR_SECRET_KEY_HERE'
     )
     ->build();
 
@@ -649,10 +639,10 @@ try {
 
 You can override the default server globally using the `setServerIndex(int $serverIdx)` builder method when initializing the SDK client instance. The selected server will then be used as the default on the operations that use it. This table lists the indexes associated with the available servers:
 
-| #   | Server                   |
-| --- | ------------------------ |
-| 0   | `https://api.novu.co`    |
-| 1   | `https://eu.api.novu.co` |
+| #   | Server                   | Description |
+| --- | ------------------------ | ----------- |
+| 0   | `https://api.novu.co`    |             |
+| 1   | `https://eu.api.novu.co` |             |
 
 #### Example
 
@@ -667,7 +657,7 @@ use novu\Models\Components;
 $sdk = novu\Novu::builder()
     ->setServerIndex(1)
     ->setSecurity(
-        '<YOUR_API_KEY_HERE>'
+        'YOUR_SECRET_KEY_HERE'
     )
     ->build();
 
@@ -707,7 +697,7 @@ use novu\Models\Components;
 $sdk = novu\Novu::builder()
     ->setServerURL('https://api.novu.co')
     ->setSecurity(
-        '<YOUR_API_KEY_HERE>'
+        'YOUR_SECRET_KEY_HERE'
     )
     ->build();
 

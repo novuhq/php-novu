@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace novu\Models\Components;
 
 
-/** The ID of the chat or push provider. */
+/** The provider identifier for the credentials */
 enum ProviderId: string
 {
     case Slack = 'slack';

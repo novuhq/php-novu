@@ -1,6 +1,6 @@
 # ProviderId
 
-The ID of the chat or push provider.
+The provider identifier for the credentials
 
 
 ## Values

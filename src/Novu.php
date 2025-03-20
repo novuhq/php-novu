@@ -30,9 +30,9 @@ class Novu
         'https://eu.api.novu.co',
     ];
 
-    public Notifications $notifications;
+    public Subscribers $subscribers;
 
-    public NotificationsStats $notificationsStats;
+    public SubscribersPreferences $subscribersPreferences;
 
     /**
      * With the help of the Integration Store, you can easily integrate your favorite delivery provider. During the runtime of the API, the Integrations Store is responsible for storing the configurations of all the providers.
@@ -41,24 +41,24 @@ class Novu
      */
     public Integrations $integrations;
 
-    public Subscribers $subscribers;
-
-    public SubscribersCredentials $subscribersCredentials;
-
-    public SubscribersPreferences $subscribersPreferences;
-
-    public SubscribersNotifications $subscribersNotifications;
-
-    public SubscribersMessages $subscribersMessages;
-
-    public SubscribersAuthentication $subscribersAuthentication;
-
     /**
      * A message in Novu represents a notification delivered to a recipient on a particular channel. Messages contain information about the request that triggered its delivery, a view of the data sent to the recipient, and a timeline of its lifecycle events. Learn more about messages.
      *
      * @var Messages $$messages
      */
     public Messages $messages;
+
+    public Notifications $notifications;
+
+    public NotificationsStats $notificationsStats;
+
+    public SubscribersCredentials $subscribersCredentials;
+
+    public SubscribersAuthentication $subscribersAuthentication;
+
+    public SubscribersMessages $subscribersMessages;
+
+    public SubscribersNotifications $subscribersNotifications;
 
     /**
      * Topics are a way to group subscribers together so that they can be notified of events at once. A topic is identified by a custom key. This can be helpful for things like sending out marketing emails or notifying users of new features. Topics can also be used to send notifications to the subscribers who have been grouped together based on their interests, location, activities and much more.
@@ -85,16 +85,16 @@ class Novu
     public function __construct(
         public SDKConfiguration $sdkConfiguration,
     ) {
+        $this->subscribers = new Subscribers($this->sdkConfiguration);
+        $this->subscribersPreferences = new SubscribersPreferences($this->sdkConfiguration);
+        $this->integrations = new Integrations($this->sdkConfiguration);
+        $this->messages = new Messages($this->sdkConfiguration);
         $this->notifications = new Notifications($this->sdkConfiguration);
         $this->notificationsStats = new NotificationsStats($this->sdkConfiguration);
-        $this->integrations = new Integrations($this->sdkConfiguration);
-        $this->subscribers = new Subscribers($this->sdkConfiguration);
         $this->subscribersCredentials = new SubscribersCredentials($this->sdkConfiguration);
-        $this->subscribersPreferences = new SubscribersPreferences($this->sdkConfiguration);
-        $this->subscribersNotifications = new SubscribersNotifications($this->sdkConfiguration);
-        $this->subscribersMessages = new SubscribersMessages($this->sdkConfiguration);
         $this->subscribersAuthentication = new SubscribersAuthentication($this->sdkConfiguration);
-        $this->messages = new Messages($this->sdkConfiguration);
+        $this->subscribersMessages = new SubscribersMessages($this->sdkConfiguration);
+        $this->subscribersNotifications = new SubscribersNotifications($this->sdkConfiguration);
         $this->topics = new Topics($this->sdkConfiguration);
         $this->topicsSubscribers = new TopicsSubscribers($this->sdkConfiguration);
         $this->sdkConfiguration->client = $this->sdkConfiguration->initHooks($this->sdkConfiguration->client);
@@ -334,13 +334,13 @@ class Novu
 
                 $serializer = Utils\JSON::createSerializer();
                 $responseData = (string) $httpResponse->getBody();
-                $obj = $serializer->deserialize($responseData, '\novu\Models\Components\DataBooleanDto', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
+                $obj = $serializer->deserialize($responseData, 'bool', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
                 $response = new Operations\EventsControllerCancelResponse(
                     statusCode: $statusCode,
                     contentType: $contentType,
                     rawResponse: $httpResponse,
                     headers: $httpResponse->getHeaders(),
-                    dataBooleanDto: $obj);
+                    boolean: $obj);
 
                 return $response;
             } else {

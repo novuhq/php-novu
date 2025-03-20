@@ -74,6 +74,16 @@ class ActivityNotificationJobResponseDto
     public ?DigestMetadataDto $digest = null;
 
     /**
+     * Optional context object for additional error details.
+     *
+     * @var ?array<string, mixed> $overrides
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('overrides')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $overrides = null;
+
+    /**
      * Optional payload for the job
      *
      * @var ?Payload $payload
@@ -100,11 +110,12 @@ class ActivityNotificationJobResponseDto
      * @param  ProvidersIdEnum  $providerId
      * @param  string  $status
      * @param  ?DigestMetadataDto  $digest
+     * @param  ?array<string, mixed>  $overrides
      * @param  ?Payload  $payload
      * @param  ?string  $updatedAt
      * @phpstan-pure
      */
-    public function __construct(string $id, ActivityNotificationJobResponseDtoType $type, array $executionDetails, ActivityNotificationStepResponseDto $step, ProvidersIdEnum $providerId, string $status, ?DigestMetadataDto $digest = null, ?Payload $payload = null, ?string $updatedAt = null)
+    public function __construct(string $id, ActivityNotificationJobResponseDtoType $type, array $executionDetails, ActivityNotificationStepResponseDto $step, ProvidersIdEnum $providerId, string $status, ?DigestMetadataDto $digest = null, ?array $overrides = null, ?Payload $payload = null, ?string $updatedAt = null)
     {
         $this->id = $id;
         $this->type = $type;
@@ -113,6 +124,7 @@ class ActivityNotificationJobResponseDto
         $this->providerId = $providerId;
         $this->status = $status;
         $this->digest = $digest;
+        $this->overrides = $overrides;
         $this->payload = $payload;
         $this->updatedAt = $updatedAt;
     }

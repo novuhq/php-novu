@@ -21,18 +21,18 @@ class MessageMarkAsRequestDto
 
     /**
      *
-     * @var MarkAs $markAs
+     * @var MessageMarkAsRequestDtoMarkAs $markAs
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('markAs')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\MarkAs')]
-    public MarkAs $markAs;
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\MessageMarkAsRequestDtoMarkAs')]
+    public MessageMarkAsRequestDtoMarkAs $markAs;
 
     /**
      * @param  string|array<string>  $messageId
-     * @param  MarkAs  $markAs
+     * @param  MessageMarkAsRequestDtoMarkAs  $markAs
      * @phpstan-pure
      */
-    public function __construct(string|array $messageId, MarkAs $markAs)
+    public function __construct(string|array $messageId, MessageMarkAsRequestDtoMarkAs $markAs)
     {
         $this->messageId = $messageId;
         $this->markAs = $markAs;

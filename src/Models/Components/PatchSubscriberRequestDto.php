@@ -12,15 +12,6 @@ namespace novu\Models\Components;
 class PatchSubscriberRequestDto
 {
     /**
-     * Unique identifier of the subscriber
-     *
-     * @var ?string $subscriberId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('subscriberId')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $subscriberId = null;
-
-    /**
      * First name of the subscriber
      *
      * @var ?string $firstName
@@ -86,15 +77,14 @@ class PatchSubscriberRequestDto
     /**
      * Additional custom data for the subscriber
      *
-     * @var ?PatchSubscriberRequestDtoData $data
+     * @var ?Data $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\PatchSubscriberRequestDtoData|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\Data|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?PatchSubscriberRequestDtoData $data = null;
+    public ?Data $data = null;
 
     /**
-     * @param  ?string  $subscriberId
      * @param  ?string  $firstName
      * @param  ?string  $lastName
      * @param  ?string  $email
@@ -102,12 +92,11 @@ class PatchSubscriberRequestDto
      * @param  ?string  $avatar
      * @param  ?string  $timezone
      * @param  ?string  $locale
-     * @param  ?PatchSubscriberRequestDtoData  $data
+     * @param  ?Data  $data
      * @phpstan-pure
      */
-    public function __construct(?string $subscriberId = null, ?string $firstName = null, ?string $lastName = null, ?string $email = null, ?string $phone = null, ?string $avatar = null, ?string $timezone = null, ?string $locale = null, ?PatchSubscriberRequestDtoData $data = null)
+    public function __construct(?string $firstName = null, ?string $lastName = null, ?string $email = null, ?string $phone = null, ?string $avatar = null, ?string $timezone = null, ?string $locale = null, ?Data $data = null)
     {
-        $this->subscriberId = $subscriberId;
         $this->firstName = $firstName;
         $this->lastName = $lastName;
         $this->email = $email;
