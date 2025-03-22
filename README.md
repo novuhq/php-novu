@@ -63,6 +63,7 @@ For more information about the API: [Novu Documentation](https://docs.novu.co)
 <!-- Start Table of Contents [toc] -->
 ## Table of Contents
 <!-- $toc-max-depth=2 -->
+* [Novu PHP SDK](#novu-php-sdk)
   * [SDK Installation](#sdk-installation)
   * [SDK Example Usage](#sdk-example-usage)
   * [Authentication](#authentication)
