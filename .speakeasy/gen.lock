@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 4286f3ad-fa54-4c63-a599-e5773b27ae7b
 management:
-  docChecksum: 2baf7b7b1013df7ed3dec65b77527e2f
+  docChecksum: f4564969530b17fd4cac2dde9bf53ea4
   docVersion: "1.0"
-  speakeasyVersion: 1.521.0
-  generationVersion: 2.558.2
-  releaseVersion: 0.1.0
-  configChecksum: 99deb2793610bd835828014a768841ba
+  speakeasyVersion: 1.522.0
+  generationVersion: 2.559.0
+  releaseVersion: 0.1.1
+  configChecksum: 051d18f8fe5f2f8817daca9b817bc1c5
   repoURL: https://github.com/novuhq/php-novu.git
   installationURL: https://github.com/novuhq/php-novu
   published: true
