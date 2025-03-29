@@ -95,7 +95,7 @@ class Authentication
         $httpOptions['headers']['Accept'] = 'application/json;q=1, text/html;q=0';
         $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('GET', $url);
-        $hookContext = new HookContext('SubscribersV1Controller_chatOauthCallback', null, $this->sdkConfiguration->securitySource);
+        $hookContext = new HookContext($baseUrl, 'SubscribersV1Controller_chatOauthCallback', [], $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
         $httpOptions['query'] = Utils\QueryParameters::standardizeQueryParams($httpRequest, $qp);
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
