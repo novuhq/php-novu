@@ -89,9 +89,9 @@ class ValidationErrorDto
         $this->timestamp = $timestamp;
         $this->path = $path;
         $this->message = $message;
-        $this->errors = $errors;
         $this->ctx = $ctx;
         $this->errorId = $errorId;
+        $this->errors = $errors;
     }
 
     public function toException(): ValidationErrorDtoThrowable

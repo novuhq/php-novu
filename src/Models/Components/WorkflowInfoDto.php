@@ -36,15 +36,26 @@ class WorkflowInfoDto
     public string $name;
 
     /**
+     * last updated date
+     *
+     * @var ?string $updatedAt
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('updatedAt')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $updatedAt = null;
+
+    /**
      * @param  string  $slug
      * @param  string  $identifier
      * @param  string  $name
+     * @param  ?string  $updatedAt
      * @phpstan-pure
      */
-    public function __construct(string $slug, string $identifier, string $name)
+    public function __construct(string $slug, string $identifier, string $name, ?string $updatedAt = null)
     {
         $this->slug = $slug;
         $this->identifier = $identifier;
         $this->name = $name;
+        $this->updatedAt = $updatedAt;
     }
 }
