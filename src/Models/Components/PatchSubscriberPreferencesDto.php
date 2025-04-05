@@ -21,7 +21,7 @@ class PatchSubscriberPreferencesDto
     public PatchPreferenceChannelsDto $channels;
 
     /**
-     * If provided, update workflow specific preferences, otherwise update global preferences
+     * Workflow internal _id, identifier or slug. If provided, update workflow specific preferences, otherwise update global preferences
      *
      * @var ?string $workflowId
      */

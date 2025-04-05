@@ -1,4 +1,79 @@
 <!-- Start SDK Example Usage [usage] -->
+### Trigger Notification Event
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use novu;
+use novu\Models\Components;
+
+$sdk = novu\Novu::builder()
+    ->setSecurity(
+        'YOUR_SECRET_KEY_HERE'
+    )
+    ->build();
+
+$triggerEventRequestDto = new Components\TriggerEventRequestDto(
+    workflowId: 'workflow_identifier',
+    payload: [
+        'comment_id' => 'string',
+        'post' => [
+            'text' => 'string',
+        ],
+    ],
+    overrides: [
+        'fcm' => [
+            'data' => [
+                'key' => 'value',
+            ],
+        ],
+    ],
+    to: new Components\SubscriberPayloadDto(
+        subscriberId: '<id>',
+    ),
+);
+
+$response = $sdk->trigger(
+    triggerEventRequestDto: $triggerEventRequestDto,
+    idempotencyKey: '<value>'
+
+);
+
+if ($response->triggerEventResponseDto !== null) {
+    // handle response
+}
+```
+
+### Cancel Triggered Event
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use novu;
+
+$sdk = novu\Novu::builder()
+    ->setSecurity(
+        'YOUR_SECRET_KEY_HERE'
+    )
+    ->build();
+
+
+
+$response = $sdk->cancel(
+    transactionId: '<id>',
+    idempotencyKey: '<value>'
+
+);
+
+if ($response->boolean !== null) {
+    // handle response
+}
+```
+
 ### Broadcast Event to All
 
 ```php
@@ -37,81 +112,6 @@ if ($response->triggerEventResponseDto !== null) {
 }
 ```
 
-### Cancel Triggered Event
-
-```php
-declare(strict_types=1);
-
-require 'vendor/autoload.php';
-
-use novu;
-
-$sdk = novu\Novu::builder()
-    ->setSecurity(
-        'YOUR_SECRET_KEY_HERE'
-    )
-    ->build();
-
-
-
-$response = $sdk->cancel(
-    transactionId: '<id>',
-    idempotencyKey: '<value>'
-
-);
-
-if ($response->boolean !== null) {
-    // handle response
-}
-```
-
-### Trigger Notification Event
-
-```php
-declare(strict_types=1);
-
-require 'vendor/autoload.php';
-
-use novu;
-use novu\Models\Components;
-
-$sdk = novu\Novu::builder()
-    ->setSecurity(
-        'YOUR_SECRET_KEY_HERE'
-    )
-    ->build();
-
-$triggerEventRequestDto = new Components\TriggerEventRequestDto(
-    workflowId: 'workflow_identifier',
-    to: new Components\SubscriberPayloadDto(
-        subscriberId: '<id>',
-    ),
-    payload: [
-        'comment_id' => 'string',
-        'post' => [
-            'text' => 'string',
-        ],
-    ],
-    overrides: [
-        'fcm' => [
-            'data' => [
-                'key' => 'value',
-            ],
-        ],
-    ],
-);
-
-$response = $sdk->trigger(
-    triggerEventRequestDto: $triggerEventRequestDto,
-    idempotencyKey: '<value>'
-
-);
-
-if ($response->triggerEventResponseDto !== null) {
-    // handle response
-}
-```
-
 ### Trigger Notification Events in Bulk
 
 ```php
@@ -132,10 +132,6 @@ $bulkTriggerEventDto = new Components\BulkTriggerEventDto(
     events: [
         new Components\TriggerEventRequestDto(
             workflowId: 'workflow_identifier',
-            to: new Components\TopicPayloadDto(
-                topicKey: '<value>',
-                type: Components\TriggerRecipientsTypeEnum::Topic,
-            ),
             payload: [
                 'comment_id' => 'string',
                 'post' => [
@@ -149,6 +145,10 @@ $bulkTriggerEventDto = new Components\BulkTriggerEventDto(
                     ],
                 ],
             ],
+            to: new Components\TopicPayloadDto(
+                topicKey: '<value>',
+                type: Components\TriggerRecipientsTypeEnum::Topic,
+            ),
         ),
     ],
 );
