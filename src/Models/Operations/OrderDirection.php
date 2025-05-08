@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace novu\Models\Operations;
 
 
-
+/** Direction of sorting */
 enum OrderDirection: string
 {
     case Asc = 'ASC';

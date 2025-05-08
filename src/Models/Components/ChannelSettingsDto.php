@@ -14,11 +14,11 @@ class ChannelSettingsDto
     /**
      * The provider identifier for the credentials
      *
-     * @var ProviderId $providerId
+     * @var ChatOrPushProviderEnum $providerId
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('providerId')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ProviderId')]
-    public ProviderId $providerId;
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ChatOrPushProviderEnum')]
+    public ChatOrPushProviderEnum $providerId;
 
     /**
      * Credentials payload for the specified provider
@@ -47,13 +47,13 @@ class ChannelSettingsDto
     public ?string $integrationIdentifier = null;
 
     /**
-     * @param  ProviderId  $providerId
+     * @param  ChatOrPushProviderEnum  $providerId
      * @param  ChannelCredentials  $credentials
      * @param  string  $integrationId
      * @param  ?string  $integrationIdentifier
      * @phpstan-pure
      */
-    public function __construct(ProviderId $providerId, ChannelCredentials $credentials, string $integrationId, ?string $integrationIdentifier = null)
+    public function __construct(ChatOrPushProviderEnum $providerId, ChannelCredentials $credentials, string $integrationId, ?string $integrationIdentifier = null)
     {
         $this->providerId = $providerId;
         $this->credentials = $credentials;

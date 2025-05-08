@@ -8,9 +8,60 @@ A message in Novu represents a notification delivered to a recipient on a partic
 
 ### Available Operations
 
+* [get](#get) - Get messages
 * [delete](#delete) - Delete message
 * [deleteByTransactionId](#deletebytransactionid) - Delete messages by transactionId
-* [get](#get) - Get messages
+
+## get
+
+Returns a list of messages, could paginate using the `page` query parameter
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use novu;
+use novu\Models\Operations;
+
+$sdk = novu\Novu::builder()
+    ->setSecurity(
+        'YOUR_SECRET_KEY_HERE'
+    )
+    ->build();
+
+$request = new Operations\MessagesControllerGetMessagesRequest();
+
+$response = $sdk->messages->get(
+    request: $request
+);
+
+if ($response->messagesResponseDto !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                          | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
+| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
+| `$request`                                                                                                         | [Operations\MessagesControllerGetMessagesRequest](../../Models/Operations/MessagesControllerGetMessagesRequest.md) | :heavy_check_mark:                                                                                                 | The request object to use for the request.                                                                         |
+
+### Response
+
+**[?Operations\MessagesControllerGetMessagesResponse](../../Models/Operations/MessagesControllerGetMessagesResponse.md)**
+
+### Errors
+
+| Error Type                             | Status Code                            | Content Type                           |
+| -------------------------------------- | -------------------------------------- | -------------------------------------- |
+| Errors\ErrorDto                        | 414                                    | application/json                       |
+| Errors\ErrorDto                        | 400, 401, 403, 404, 405, 409, 413, 415 | application/json                       |
+| Errors\ValidationErrorDto              | 422                                    | application/json                       |
+| Errors\ErrorDto                        | 500                                    | application/json                       |
+| Errors\APIException                    | 4XX, 5XX                               | \*/\*                                  |
 
 ## delete
 
@@ -110,57 +161,6 @@ if ($response->statusCode === 200) {
 ### Response
 
 **[?Operations\MessagesControllerDeleteMessagesByTransactionIdResponse](../../Models/Operations/MessagesControllerDeleteMessagesByTransactionIdResponse.md)**
-
-### Errors
-
-| Error Type                             | Status Code                            | Content Type                           |
-| -------------------------------------- | -------------------------------------- | -------------------------------------- |
-| Errors\ErrorDto                        | 414                                    | application/json                       |
-| Errors\ErrorDto                        | 400, 401, 403, 404, 405, 409, 413, 415 | application/json                       |
-| Errors\ValidationErrorDto              | 422                                    | application/json                       |
-| Errors\ErrorDto                        | 500                                    | application/json                       |
-| Errors\APIException                    | 4XX, 5XX                               | \*/\*                                  |
-
-## get
-
-Returns a list of messages, could paginate using the `page` query parameter
-
-### Example Usage
-
-```php
-declare(strict_types=1);
-
-require 'vendor/autoload.php';
-
-use novu;
-use novu\Models\Operations;
-
-$sdk = novu\Novu::builder()
-    ->setSecurity(
-        'YOUR_SECRET_KEY_HERE'
-    )
-    ->build();
-
-$request = new Operations\MessagesControllerGetMessagesRequest();
-
-$response = $sdk->messages->get(
-    request: $request
-);
-
-if ($response->activitiesResponseDto !== null) {
-    // handle response
-}
-```
-
-### Parameters
-
-| Parameter                                                                                                          | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
-| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
-| `$request`                                                                                                         | [Operations\MessagesControllerGetMessagesRequest](../../Models/Operations/MessagesControllerGetMessagesRequest.md) | :heavy_check_mark:                                                                                                 | The request object to use for the request.                                                                         |
-
-### Response
-
-**[?Operations\MessagesControllerGetMessagesResponse](../../Models/Operations/MessagesControllerGetMessagesResponse.md)**
 
 ### Errors
 

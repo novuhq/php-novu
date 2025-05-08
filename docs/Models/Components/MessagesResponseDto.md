@@ -1,0 +1,12 @@
+# MessagesResponseDto
+
+
+## Fields
+
+| Field                                                                                 | Type                                                                                  | Required                                                                              | Description                                                                           |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `totalCount`                                                                          | *?float*                                                                              | :heavy_minus_sign:                                                                    | Total number of messages available                                                    |
+| `hasMore`                                                                             | *bool*                                                                                | :heavy_check_mark:                                                                    | Indicates if there are more messages available                                        |
+| `data`                                                                                | array<[Components\MessageResponseDto](../../Models/Components/MessageResponseDto.md)> | :heavy_check_mark:                                                                    | List of messages                                                                      |
+| `pageSize`                                                                            | *float*                                                                               | :heavy_check_mark:                                                                    | Number of messages per page                                                           |
+| `page`                                                                                | *float*                                                                               | :heavy_check_mark:                                                                    | Current page number                                                                   |

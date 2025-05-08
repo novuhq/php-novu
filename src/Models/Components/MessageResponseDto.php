@@ -70,11 +70,11 @@ class MessageResponseDto
     /**
      * Content of the message, can be an email block or a string
      *
-     * @var EmailBlock|string $content
+     * @var array<EmailBlock>|string $content
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('content')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\EmailBlock|string')]
-    public EmailBlock|string $content;
+    #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\EmailBlock>|string')]
+    public array|string $content;
 
     /**
      * Transaction ID associated with the message
@@ -166,6 +166,16 @@ class MessageResponseDto
     public ?string $templateIdentifier = null;
 
     /**
+     * Array of delivery dates for the message, if the message has multiple delivery dates, for example after being snoozed
+     *
+     * @var ?array<string> $deliveredAt
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('deliveredAt')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $deliveredAt = null;
+
+    /**
      * Last seen date of the message, if available
      *
      * @var ?string $lastSeenDate
@@ -191,6 +201,15 @@ class MessageResponseDto
     #[\Speakeasy\Serializer\Annotation\SerializedName('subject')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $subject = null;
+
+    /**
+     * Date when the message will be unsnoozed
+     *
+     * @var ?string $snoozedUntil
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('snoozedUntil')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $snoozedUntil = null;
 
     /**
      * Email address associated with the message, if applicable
@@ -302,7 +321,7 @@ class MessageResponseDto
      * @param  string  $notificationId
      * @param  string  $subscriberId
      * @param  string  $createdAt
-     * @param  EmailBlock|string  $content
+     * @param  array<EmailBlock>|string  $content
      * @param  string  $transactionId
      * @param  ChannelTypeEnum  $channel
      * @param  bool  $read
@@ -313,9 +332,11 @@ class MessageResponseDto
      * @param  ?SubscriberResponseDto  $subscriber
      * @param  ?WorkflowResponse  $template
      * @param  ?string  $templateIdentifier
+     * @param  ?array<string>  $deliveredAt
      * @param  ?string  $lastSeenDate
      * @param  ?string  $lastReadDate
      * @param  ?string  $subject
+     * @param  ?string  $snoozedUntil
      * @param  ?string  $email
      * @param  ?string  $phone
      * @param  ?string  $directWebhookUrl
@@ -329,7 +350,7 @@ class MessageResponseDto
      * @param  ?string  $feedId
      * @phpstan-pure
      */
-    public function __construct(string $templateId, string $environmentId, string $messageTemplateId, string $organizationId, string $notificationId, string $subscriberId, string $createdAt, EmailBlock|string $content, string $transactionId, ChannelTypeEnum $channel, bool $read, bool $seen, MessageCTA $cta, MessageStatusEnum $status, ?string $id = null, ?SubscriberResponseDto $subscriber = null, ?WorkflowResponse $template = null, ?string $templateIdentifier = null, ?string $lastSeenDate = null, ?string $lastReadDate = null, ?string $subject = null, ?string $email = null, ?string $phone = null, ?string $directWebhookUrl = null, ?string $providerId = null, ?array $deviceTokens = null, ?string $title = null, ?string $errorId = null, ?string $errorText = null, ?MessageResponseDtoPayload $payload = null, ?MessageResponseDtoOverrides $overrides = null, ?string $feedId = null)
+    public function __construct(string $templateId, string $environmentId, string $messageTemplateId, string $organizationId, string $notificationId, string $subscriberId, string $createdAt, array|string $content, string $transactionId, ChannelTypeEnum $channel, bool $read, bool $seen, MessageCTA $cta, MessageStatusEnum $status, ?string $id = null, ?SubscriberResponseDto $subscriber = null, ?WorkflowResponse $template = null, ?string $templateIdentifier = null, ?array $deliveredAt = null, ?string $lastSeenDate = null, ?string $lastReadDate = null, ?string $subject = null, ?string $snoozedUntil = null, ?string $email = null, ?string $phone = null, ?string $directWebhookUrl = null, ?string $providerId = null, ?array $deviceTokens = null, ?string $title = null, ?string $errorId = null, ?string $errorText = null, ?MessageResponseDtoPayload $payload = null, ?MessageResponseDtoOverrides $overrides = null, ?string $feedId = null)
     {
         $this->templateId = $templateId;
         $this->environmentId = $environmentId;
@@ -349,9 +370,11 @@ class MessageResponseDto
         $this->subscriber = $subscriber;
         $this->template = $template;
         $this->templateIdentifier = $templateIdentifier;
+        $this->deliveredAt = $deliveredAt;
         $this->lastSeenDate = $lastSeenDate;
         $this->lastReadDate = $lastReadDate;
         $this->subject = $subject;
+        $this->snoozedUntil = $snoozedUntil;
         $this->email = $email;
         $this->phone = $phone;
         $this->directWebhookUrl = $directWebhookUrl;

@@ -1,9 +1,43 @@
 # Metadata
 
-Metadata for the workflow step
+Metadata associated with the workflow step. Can vary based on the type of step.
 
 
-## Fields
+## Supported Types
 
-| Field       | Type        | Required    | Description |
-| ----------- | ----------- | ----------- | ----------- |
+### `Components\DigestRegularMetadata`
+
+```php
+/**
+* @var Components\DigestRegularMetadata
+*/
+Components\DigestRegularMetadata $value = /* values here */
+```
+
+### `Components\DigestTimedMetadata`
+
+```php
+/**
+* @var Components\DigestTimedMetadata
+*/
+Components\DigestTimedMetadata $value = /* values here */
+```
+
+### `Components\DelayRegularMetadata`
+
+```php
+/**
+* @var Components\DelayRegularMetadata
+*/
+Components\DelayRegularMetadata $value = /* values here */
+```
+
+### `Components\DelayScheduledMetadata`
+
+```php
+/**
+* @var Components\DelayScheduledMetadata
+*/
+Components\DelayScheduledMetadata $value = /* values here */
+```
+

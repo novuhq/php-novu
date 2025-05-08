@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace novu\Models\Components;
 
 
-/** The channel type which is overridden */
+/** The channel type for the integration, which defines how the integration communicates (e.g., email, SMS). */
 enum Channel: string
 {
     case InApp = 'in_app';

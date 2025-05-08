@@ -67,12 +67,12 @@ class ActivityNotificationStepResponseDto
     /**
      * Metadata for the workflow step
      *
-     * @var ?Metadata $metadata
+     * @var ?ActivityNotificationStepResponseDtoMetadata $metadata
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('metadata')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\Metadata|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ActivityNotificationStepResponseDtoMetadata|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?Metadata $metadata = null;
+    public ?ActivityNotificationStepResponseDtoMetadata $metadata = null;
 
     /**
      * Step issues
@@ -129,7 +129,7 @@ class ActivityNotificationStepResponseDto
      * @param  string  $templateId
      * @param  ?ActivityNotificationStepResponseDtoReplyCallback  $replyCallback
      * @param  ?ControlVariables  $controlVariables
-     * @param  ?Metadata  $metadata
+     * @param  ?ActivityNotificationStepResponseDtoMetadata  $metadata
      * @param  ?Issues  $issues
      * @param  ?MessageTemplateDto  $template
      * @param  ?array<ActivityNotificationStepResponseDto>  $variants
@@ -137,7 +137,7 @@ class ActivityNotificationStepResponseDto
      * @param  ?string  $parentId
      * @phpstan-pure
      */
-    public function __construct(string $id, bool $active, array $filters, string $templateId, ?ActivityNotificationStepResponseDtoReplyCallback $replyCallback = null, ?ControlVariables $controlVariables = null, ?Metadata $metadata = null, ?Issues $issues = null, ?MessageTemplateDto $template = null, ?array $variants = null, ?string $name = null, ?string $parentId = null)
+    public function __construct(string $id, bool $active, array $filters, string $templateId, ?ActivityNotificationStepResponseDtoReplyCallback $replyCallback = null, ?ControlVariables $controlVariables = null, ?ActivityNotificationStepResponseDtoMetadata $metadata = null, ?Issues $issues = null, ?MessageTemplateDto $template = null, ?array $variants = null, ?string $name = null, ?string $parentId = null)
     {
         $this->id = $id;
         $this->active = $active;

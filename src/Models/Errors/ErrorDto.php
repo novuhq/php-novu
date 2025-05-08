@@ -36,12 +36,14 @@ class ErrorDto
     public string $path;
 
     /**
-     * A detailed error message.
+     * Value that failed validation
      *
-     * @var string $message
+     * @var string|float|bool|Four|array<string|float|bool|array<string, mixed>|null>|null $message
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('message')]
-    public string $message;
+    #[\Speakeasy\Serializer\Annotation\Type('string|float|bool|\novu\Models\Errors\Four|array<string|float|bool|array<string, mixed>|null>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public string|float|bool|Four|array|null $message = null;
 
     /**
      * Optional context object for additional error details.
@@ -68,12 +70,12 @@ class ErrorDto
      * @param  float  $statusCode
      * @param  string  $timestamp
      * @param  string  $path
-     * @param  string  $message
      * @param  ?array<string, mixed>  $ctx
      * @param  ?string  $errorId
+     * @param  string|float|bool|Four|array<string|float|bool|array<string, mixed>|null>|null  $message
      * @phpstan-pure
      */
-    public function __construct(float $statusCode, string $timestamp, string $path, string $message, ?array $ctx = null, ?string $errorId = null)
+    public function __construct(float $statusCode, string $timestamp, string $path, ?array $ctx = null, ?string $errorId = null, string|float|bool|Four|array|null $message = null)
     {
         $this->statusCode = $statusCode;
         $this->timestamp = $timestamp;

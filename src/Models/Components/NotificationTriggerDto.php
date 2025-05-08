@@ -14,11 +14,11 @@ class NotificationTriggerDto
     /**
      * Type of the trigger
      *
-     * @var Type $type
+     * @var NotificationTriggerDtoType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\Type')]
-    public Type $type;
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\NotificationTriggerDtoType')]
+    public NotificationTriggerDtoType $type;
 
     /**
      * Identifier of the trigger
@@ -48,13 +48,13 @@ class NotificationTriggerDto
     public ?array $subscriberVariables = null;
 
     /**
-     * @param  Type  $type
+     * @param  NotificationTriggerDtoType  $type
      * @param  string  $identifier
      * @param  array<NotificationTriggerVariable>  $variables
      * @param  ?array<NotificationTriggerVariable>  $subscriberVariables
      * @phpstan-pure
      */
-    public function __construct(Type $type, string $identifier, array $variables, ?array $subscriberVariables = null)
+    public function __construct(NotificationTriggerDtoType $type, string $identifier, array $variables, ?array $subscriberVariables = null)
     {
         $this->type = $type;
         $this->identifier = $identifier;

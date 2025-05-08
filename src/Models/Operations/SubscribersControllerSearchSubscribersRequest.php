@@ -28,6 +28,38 @@ class SubscribersControllerSearchSubscribersRequest
     public ?string $before = null;
 
     /**
+     * Limit the number of items to return
+     *
+     * @var ?float $limit
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=limit')]
+    public ?float $limit = null;
+
+    /**
+     * Direction of sorting
+     *
+     * @var ?OrderDirection $orderDirection
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=orderDirection')]
+    public ?OrderDirection $orderDirection = null;
+
+    /**
+     * Field to order by
+     *
+     * @var ?string $orderBy
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=orderBy')]
+    public ?string $orderBy = null;
+
+    /**
+     * Include cursor item in response
+     *
+     * @var ?bool $includeCursor
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=includeCursor')]
+    public ?bool $includeCursor = null;
+
+    /**
      * Email address of the subscriber to filter results.
      *
      * @var ?string $email
@@ -60,27 +92,6 @@ class SubscribersControllerSearchSubscribersRequest
     public ?string $subscriberId = null;
 
     /**
-     *
-     * @var ?float $limit
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=limit')]
-    public ?float $limit = null;
-
-    /**
-     *
-     * @var ?OrderDirection $orderDirection
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=orderDirection')]
-    public ?OrderDirection $orderDirection = null;
-
-    /**
-     *
-     * @var mixed $orderBy
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=orderBy')]
-    public mixed $orderBy = null;
-
-    /**
      * A header for idempotency purposes
      *
      * @var ?string $idempotencyKey
@@ -91,27 +102,29 @@ class SubscribersControllerSearchSubscribersRequest
     /**
      * @param  ?string  $after
      * @param  ?string  $before
+     * @param  ?float  $limit
+     * @param  ?OrderDirection  $orderDirection
+     * @param  ?string  $orderBy
+     * @param  ?bool  $includeCursor
      * @param  ?string  $email
      * @param  ?string  $name
      * @param  ?string  $phone
      * @param  ?string  $subscriberId
-     * @param  ?float  $limit
-     * @param  ?OrderDirection  $orderDirection
-     * @param  mixed  $orderBy
      * @param  ?string  $idempotencyKey
      * @phpstan-pure
      */
-    public function __construct(?string $after = null, ?string $before = null, ?string $email = null, ?string $name = null, ?string $phone = null, ?string $subscriberId = null, ?float $limit = null, ?OrderDirection $orderDirection = null, mixed $orderBy = null, ?string $idempotencyKey = null)
+    public function __construct(?string $after = null, ?string $before = null, ?float $limit = null, ?OrderDirection $orderDirection = null, ?string $orderBy = null, ?bool $includeCursor = null, ?string $email = null, ?string $name = null, ?string $phone = null, ?string $subscriberId = null, ?string $idempotencyKey = null)
     {
         $this->after = $after;
         $this->before = $before;
+        $this->limit = $limit;
+        $this->orderDirection = $orderDirection;
+        $this->orderBy = $orderBy;
+        $this->includeCursor = $includeCursor;
         $this->email = $email;
         $this->name = $name;
         $this->phone = $phone;
         $this->subscriberId = $subscriberId;
-        $this->limit = $limit;
-        $this->orderDirection = $orderDirection;
-        $this->orderBy = $orderBy;
         $this->idempotencyKey = $idempotencyKey;
     }
 }

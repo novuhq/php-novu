@@ -44,12 +44,12 @@ class TriggerEventRequestDto
     /**
      * This could be used to override provider specific configurations
      *
-     * @var ?array<string, array<string, mixed>> $overrides
+     * @var ?Overrides $overrides
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('overrides')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<string, array<string, mixed>>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\Overrides|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $overrides = null;
+    public ?Overrides $overrides = null;
 
     /**
      * A unique identifier for this transaction, we will generate a UUID if not provided.
@@ -89,13 +89,13 @@ class TriggerEventRequestDto
      * @param  string  $workflowId
      * @param  array<SubscriberPayloadDto|TopicPayloadDto|string>|string|SubscriberPayloadDto|TopicPayloadDto  $to
      * @param  ?array<string, mixed>  $payload
-     * @param  ?array<string, array<string, mixed>>  $overrides
+     * @param  ?Overrides  $overrides
      * @param  ?string  $transactionId
      * @param  string|SubscriberPayloadDto|null  $actor
      * @param  string|TenantPayloadDto|null  $tenant
      * @phpstan-pure
      */
-    public function __construct(string $workflowId, array|string|SubscriberPayloadDto|TopicPayloadDto $to, ?array $payload = null, ?array $overrides = null, ?string $transactionId = null, string|SubscriberPayloadDto|null $actor = null, string|TenantPayloadDto|null $tenant = null)
+    public function __construct(string $workflowId, array|string|SubscriberPayloadDto|TopicPayloadDto $to, ?array $payload = null, ?Overrides $overrides = null, ?string $transactionId = null, string|SubscriberPayloadDto|null $actor = null, string|TenantPayloadDto|null $tenant = null)
     {
         $this->workflowId = $workflowId;
         $this->to = $to;

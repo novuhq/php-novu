@@ -23,10 +23,10 @@ class DigestTimedConfigDto
     /**
      * Days of the week for the digest
      *
-     * @var ?array<WeekDays> $weekDays
+     * @var ?array<DigestTimedConfigDtoWeekDays> $weekDays
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('weekDays')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\WeekDays>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\DigestTimedConfigDtoWeekDays>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $weekDays = null;
 
@@ -81,7 +81,7 @@ class DigestTimedConfigDto
 
     /**
      * @param  ?string  $atTime
-     * @param  ?array<WeekDays>  $weekDays
+     * @param  ?array<DigestTimedConfigDtoWeekDays>  $weekDays
      * @param  ?array<float>  $monthDays
      * @param  ?OrdinalEnum  $ordinal
      * @param  ?OrdinalValueEnum  $ordinalValue

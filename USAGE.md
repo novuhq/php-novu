@@ -1,5 +1,5 @@
 <!-- Start SDK Example Usage [usage] -->
-### Broadcast Event to All
+### Trigger Notification Event
 
 ```php
 declare(strict_types=1);
@@ -15,19 +15,22 @@ $sdk = novu\Novu::builder()
     )
     ->build();
 
-$triggerEventToAllRequestDto = new Components\TriggerEventToAllRequestDto(
-    name: '<value>',
+$triggerEventRequestDto = new Components\TriggerEventRequestDto(
+    workflowId: 'workflow_identifier',
     payload: [
         'comment_id' => 'string',
         'post' => [
             'text' => 'string',
         ],
     ],
-    overrides: new Components\TriggerEventToAllRequestDtoOverrides(),
+    overrides: new Components\Overrides(),
+    to: new Components\SubscriberPayloadDto(
+        subscriberId: '<id>',
+    ),
 );
 
-$response = $sdk->triggerBroadcast(
-    triggerEventToAllRequestDto: $triggerEventToAllRequestDto,
+$response = $sdk->trigger(
+    triggerEventRequestDto: $triggerEventRequestDto,
     idempotencyKey: '<value>'
 
 );
@@ -65,7 +68,7 @@ if ($response->boolean !== null) {
 }
 ```
 
-### Trigger Notification Event
+### Broadcast Event to All
 
 ```php
 declare(strict_types=1);
@@ -81,28 +84,27 @@ $sdk = novu\Novu::builder()
     )
     ->build();
 
-$triggerEventRequestDto = new Components\TriggerEventRequestDto(
-    workflowId: 'workflow_identifier',
-    to: new Components\SubscriberPayloadDto(
-        subscriberId: '<id>',
-    ),
+$triggerEventToAllRequestDto = new Components\TriggerEventToAllRequestDto(
+    name: '<value>',
     payload: [
         'comment_id' => 'string',
         'post' => [
             'text' => 'string',
         ],
     ],
-    overrides: [
-        'fcm' => [
-            'data' => [
-                'key' => 'value',
+    overrides: new Components\TriggerEventToAllRequestDtoOverrides(
+        additionalProperties: [
+            'fcm' => [
+                'data' => [
+                    'key' => 'value',
+                ],
             ],
         ],
-    ],
+    ),
 );
 
-$response = $sdk->trigger(
-    triggerEventRequestDto: $triggerEventRequestDto,
+$response = $sdk->triggerBroadcast(
+    triggerEventToAllRequestDto: $triggerEventToAllRequestDto,
     idempotencyKey: '<value>'
 
 );
@@ -132,23 +134,17 @@ $bulkTriggerEventDto = new Components\BulkTriggerEventDto(
     events: [
         new Components\TriggerEventRequestDto(
             workflowId: 'workflow_identifier',
-            to: new Components\TopicPayloadDto(
-                topicKey: '<value>',
-                type: Components\TriggerRecipientsTypeEnum::Topic,
-            ),
             payload: [
                 'comment_id' => 'string',
                 'post' => [
                     'text' => 'string',
                 ],
             ],
-            overrides: [
-                'fcm' => [
-                    'data' => [
-                        'key' => 'value',
-                    ],
-                ],
-            ],
+            overrides: new Components\Overrides(),
+            to: new Components\TopicPayloadDto(
+                topicKey: '<value>',
+                type: Components\TriggerRecipientsTypeEnum::Topic,
+            ),
         ),
     ],
 );
