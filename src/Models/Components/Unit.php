@@ -9,7 +9,6 @@ declare(strict_types=1);
 namespace novu\Models\Components;
 
 
-/** Unit of the digest */
 enum Unit: string
 {
     case Seconds = 'seconds';

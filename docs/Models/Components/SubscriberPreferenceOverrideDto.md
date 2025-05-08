@@ -1,0 +1,9 @@
+# SubscriberPreferenceOverrideDto
+
+
+## Fields
+
+| Field                                                                                              | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `channel`                                                                                          | [Components\ChannelTypeEnum](../../Models/Components/ChannelTypeEnum.md)                           | :heavy_check_mark:                                                                                 | Channel type through which the message is sent                                                     |
+| `source`                                                                                           | [Components\PreferenceOverrideSourceEnum](../../Models/Components/PreferenceOverrideSourceEnum.md) | :heavy_check_mark:                                                                                 | The source of overrides                                                                            |

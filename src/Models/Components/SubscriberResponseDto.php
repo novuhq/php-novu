@@ -87,6 +87,15 @@ class SubscriberResponseDto
     public ?string $lastName = null;
 
     /**
+     * The email address of the subscriber.
+     *
+     * @var ?string $email
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('email')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $email = null;
+
+    /**
      * The phone number of the subscriber.
      *
      * @var ?string $phone
@@ -171,15 +180,6 @@ class SubscriberResponseDto
     public ?string $timezone = null;
 
     /**
-     * The email address of the subscriber.
-     *
-     * @var ?string $email
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('email')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $email = null;
-
-    /**
      * Additional custom data for the subscriber
      *
      * @var ?array<string, mixed> $data
@@ -199,6 +199,7 @@ class SubscriberResponseDto
      * @param  ?string  $id
      * @param  ?string  $firstName
      * @param  ?string  $lastName
+     * @param  ?string  $email
      * @param  ?string  $phone
      * @param  ?string  $avatar
      * @param  ?string  $locale
@@ -208,11 +209,10 @@ class SubscriberResponseDto
      * @param  ?string  $lastOnlineAt
      * @param  ?float  $v
      * @param  ?string  $timezone
-     * @param  ?string  $email
      * @param  ?array<string, mixed>  $data
      * @phpstan-pure
      */
-    public function __construct(string $subscriberId, string $organizationId, string $environmentId, bool $deleted, string $createdAt, string $updatedAt, ?string $id = null, ?string $firstName = null, ?string $lastName = null, ?string $phone = null, ?string $avatar = null, ?string $locale = null, ?array $channels = null, ?array $topics = null, ?bool $isOnline = null, ?string $lastOnlineAt = null, ?float $v = null, ?string $timezone = null, ?string $email = null, ?array $data = null)
+    public function __construct(string $subscriberId, string $organizationId, string $environmentId, bool $deleted, string $createdAt, string $updatedAt, ?string $id = null, ?string $firstName = null, ?string $lastName = null, ?string $email = null, ?string $phone = null, ?string $avatar = null, ?string $locale = null, ?array $channels = null, ?array $topics = null, ?bool $isOnline = null, ?string $lastOnlineAt = null, ?float $v = null, ?string $timezone = null, ?array $data = null)
     {
         $this->subscriberId = $subscriberId;
         $this->organizationId = $organizationId;
@@ -223,6 +223,7 @@ class SubscriberResponseDto
         $this->id = $id;
         $this->firstName = $firstName;
         $this->lastName = $lastName;
+        $this->email = $email;
         $this->phone = $phone;
         $this->avatar = $avatar;
         $this->locale = $locale;
@@ -232,7 +233,6 @@ class SubscriberResponseDto
         $this->lastOnlineAt = $lastOnlineAt;
         $this->v = $v;
         $this->timezone = $timezone;
-        $this->email = $email;
         $this->data = $data;
     }
 }

@@ -22,10 +22,10 @@ class TimedConfig
     /**
      * $weekDays
      *
-     * @var ?array<TimedConfigWeekDays> $weekDays
+     * @var ?array<WeekDays> $weekDays
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('weekDays')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\TimedConfigWeekDays>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\WeekDays>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $weekDays = null;
 
@@ -68,7 +68,7 @@ class TimedConfig
 
     /**
      * @param  ?string  $atTime
-     * @param  ?array<TimedConfigWeekDays>  $weekDays
+     * @param  ?array<WeekDays>  $weekDays
      * @param  ?array<string>  $monthDays
      * @param  ?Ordinal  $ordinal
      * @param  ?OrdinalValue  $ordinalValue

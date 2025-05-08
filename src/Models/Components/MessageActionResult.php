@@ -14,12 +14,12 @@ class MessageActionResult
     /**
      * Payload of the action result
      *
-     * @var ?MessageActionResultPayload $payload
+     * @var ?Payload $payload
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('payload')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\MessageActionResultPayload|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\Payload|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?MessageActionResultPayload $payload = null;
+    public ?Payload $payload = null;
 
     /**
      * Type of button for the action result
@@ -32,11 +32,11 @@ class MessageActionResult
     public ?ButtonTypeEnum $type = null;
 
     /**
-     * @param  ?MessageActionResultPayload  $payload
+     * @param  ?Payload  $payload
      * @param  ?ButtonTypeEnum  $type
      * @phpstan-pure
      */
-    public function __construct(?MessageActionResultPayload $payload = null, ?ButtonTypeEnum $type = null)
+    public function __construct(?Payload $payload = null, ?ButtonTypeEnum $type = null)
     {
         $this->payload = $payload;
         $this->type = $type;

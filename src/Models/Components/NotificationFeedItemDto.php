@@ -125,14 +125,6 @@ class NotificationFeedItemDto
     public bool $seen;
 
     /**
-     * Indicates whether the notification has been deleted.
-     *
-     * @var bool $deleted
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('deleted')]
-    public bool $deleted;
-
-    /**
      * Call-to-action information associated with the notification.
      *
      * @var MessageCTA $cta
@@ -260,7 +252,6 @@ class NotificationFeedItemDto
      * @param  ChannelTypeEnum  $channel
      * @param  bool  $read
      * @param  bool  $seen
-     * @param  bool  $deleted
      * @param  MessageCTA  $cta
      * @param  NotificationFeedItemDtoStatus  $status
      * @param  ?ActorFeedItemDto  $actor
@@ -275,7 +266,7 @@ class NotificationFeedItemDto
      * @param  ?array<string>  $deviceTokens
      * @phpstan-pure
      */
-    public function __construct(string $id, string $templateId, string $environmentId, string $messageTemplateId, string $organizationId, string $notificationId, string $subscriberId, string $feedId, string $jobId, string $transactionId, string $content, ChannelTypeEnum $channel, bool $read, bool $seen, bool $deleted, MessageCTA $cta, NotificationFeedItemDtoStatus $status, ?ActorFeedItemDto $actor = null, ?SubscriberFeedResponseDto $subscriber = null, ?array $payload = null, ?array $overrides = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null, ?string $templateIdentifier = null, ?string $providerId = null, ?string $subject = null, ?array $deviceTokens = null)
+    public function __construct(string $id, string $templateId, string $environmentId, string $messageTemplateId, string $organizationId, string $notificationId, string $subscriberId, string $feedId, string $jobId, string $transactionId, string $content, ChannelTypeEnum $channel, bool $read, bool $seen, MessageCTA $cta, NotificationFeedItemDtoStatus $status, ?ActorFeedItemDto $actor = null, ?SubscriberFeedResponseDto $subscriber = null, ?array $payload = null, ?array $overrides = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null, ?string $templateIdentifier = null, ?string $providerId = null, ?string $subject = null, ?array $deviceTokens = null)
     {
         $this->id = $id;
         $this->templateId = $templateId;
@@ -291,7 +282,6 @@ class NotificationFeedItemDto
         $this->channel = $channel;
         $this->read = $read;
         $this->seen = $seen;
-        $this->deleted = $deleted;
         $this->cta = $cta;
         $this->status = $status;
         $this->actor = $actor;

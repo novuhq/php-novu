@@ -5,16 +5,68 @@
 
 ### Available Operations
 
+* [search](#search) - Search for subscribers
 * [create](#create) - Create subscriber
 * [get](#get) - Get subscriber
 * [patch](#patch) - Patch subscriber
 * [delete](#delete) - Delete subscriber
-* [search](#search) - Search for subscribers
-* [updatePreferences](#updatepreferences) - Update subscriber global or workflow specific preferences
-* [createBulk](#createbulk) - Bulk create subscribers
 * [list](#list) - Get subscribers
+* [update](#update) - Upsert subscriber
+* [createBulk](#createbulk) - Bulk create subscribers
+* [updatePreferences](#updatepreferences) - Update subscriber global or workflow specific preferences
 * [updateCredentials](#updatecredentials) - Update subscriber credentials
 * [updateOnlineStatus](#updateonlinestatus) - Update subscriber online status
+
+## search
+
+Search for subscribers
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use novu;
+use novu\Models\Operations;
+
+$sdk = novu\Novu::builder()
+    ->setSecurity(
+        'YOUR_SECRET_KEY_HERE'
+    )
+    ->build();
+
+$request = new Operations\SubscribersControllerSearchSubscribersRequest();
+
+$response = $sdk->subscribers->search(
+    request: $request
+);
+
+if ($response->listSubscribersResponseDto !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                            | Type                                                                                                                                 | Required                                                                                                                             | Description                                                                                                                          |
+| ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ |
+| `$request`                                                                                                                           | [Operations\SubscribersControllerSearchSubscribersRequest](../../Models/Operations/SubscribersControllerSearchSubscribersRequest.md) | :heavy_check_mark:                                                                                                                   | The request object to use for the request.                                                                                           |
+
+### Response
+
+**[?Operations\SubscribersControllerSearchSubscribersResponse](../../Models/Operations/SubscribersControllerSearchSubscribersResponse.md)**
+
+### Errors
+
+| Error Type                             | Status Code                            | Content Type                           |
+| -------------------------------------- | -------------------------------------- | -------------------------------------- |
+| Errors\ErrorDto                        | 414                                    | application/json                       |
+| Errors\ErrorDto                        | 400, 401, 403, 404, 405, 409, 413, 415 | application/json                       |
+| Errors\ValidationErrorDto              | 422                                    | application/json                       |
+| Errors\ErrorDto                        | 500                                    | application/json                       |
+| Errors\APIException                    | 4XX, 5XX                               | \*/\*                                  |
 
 ## create
 
@@ -234,9 +286,9 @@ if ($response->removeSubscriberResponseDto !== null) {
 | Errors\ErrorDto                        | 500                                    | application/json                       |
 | Errors\APIException                    | 4XX, 5XX                               | \*/\*                                  |
 
-## search
+## list
 
-Search for subscribers
+Returns a list of subscribers, could paginated using the `page` and `limit` query parameter
 
 ### Example Usage
 
@@ -246,7 +298,6 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use novu;
-use novu\Models\Operations;
 
 $sdk = novu\Novu::builder()
     ->setSecurity(
@@ -254,26 +305,34 @@ $sdk = novu\Novu::builder()
     )
     ->build();
 
-$request = new Operations\SubscribersControllerSearchSubscribersRequest();
 
-$response = $sdk->subscribers->search(
-    request: $request
+
+$responses = $sdk->subscribers->list(
+    page: 7685.78,
+    limit: 10,
+    idempotencyKey: '<value>'
+
 );
 
-if ($response->listSubscribersResponseDto !== null) {
-    // handle response
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
 }
 ```
 
 ### Parameters
 
-| Parameter                                                                                                                            | Type                                                                                                                                 | Required                                                                                                                             | Description                                                                                                                          |
-| ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ |
-| `$request`                                                                                                                           | [Operations\SubscribersControllerSearchSubscribersRequest](../../Models/Operations/SubscribersControllerSearchSubscribersRequest.md) | :heavy_check_mark:                                                                                                                   | The request object to use for the request.                                                                                           |
+| Parameter                         | Type                              | Required                          | Description                       |
+| --------------------------------- | --------------------------------- | --------------------------------- | --------------------------------- |
+| `page`                            | *?float*                          | :heavy_minus_sign:                | N/A                               |
+| `limit`                           | *?float*                          | :heavy_minus_sign:                | N/A                               |
+| `idempotencyKey`                  | *?string*                         | :heavy_minus_sign:                | A header for idempotency purposes |
 
 ### Response
 
-**[?Operations\SubscribersControllerSearchSubscribersResponse](../../Models/Operations/SubscribersControllerSearchSubscribersResponse.md)**
+**[?Operations\SubscribersV1ControllerListSubscribersResponse](../../Models/Operations/SubscribersV1ControllerListSubscribersResponse.md)**
 
 ### Errors
 
@@ -285,9 +344,9 @@ if ($response->listSubscribersResponseDto !== null) {
 | Errors\ErrorDto                        | 500                                    | application/json                       |
 | Errors\APIException                    | 4XX, 5XX                               | \*/\*                                  |
 
-## updatePreferences
+## update
 
-Update subscriber global or workflow specific preferences
+Used to upsert the subscriber entity with new information
 
 ### Example Usage
 
@@ -305,33 +364,48 @@ $sdk = novu\Novu::builder()
     )
     ->build();
 
-$patchSubscriberPreferencesDto = new Components\PatchSubscriberPreferencesDto(
-    channels: new Components\PatchPreferenceChannelsDto(),
+$updateSubscriberRequestDto = new Components\UpdateSubscriberRequestDto(
+    email: 'john.doe@example.com',
+    firstName: 'John',
+    lastName: 'Doe',
+    phone: '+1234567890',
+    avatar: 'https://example.com/avatar.jpg',
+    locale: 'en-US',
+    data: [
+        'preferences' => [
+            'notifications' => true,
+            'theme' => 'dark',
+        ],
+        'tags' => [
+            'premium',
+            'newsletter',
+        ],
+    ],
 );
 
-$response = $sdk->subscribers->updatePreferences(
+$response = $sdk->subscribers->update(
     subscriberId: '<id>',
-    patchSubscriberPreferencesDto: $patchSubscriberPreferencesDto,
+    updateSubscriberRequestDto: $updateSubscriberRequestDto,
     idempotencyKey: '<value>'
 
 );
 
-if ($response->getSubscriberPreferencesDto !== null) {
+if ($response->subscriberResponseDto !== null) {
     // handle response
 }
 ```
 
 ### Parameters
 
-| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
-| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `subscriberId`                                                                                       | *string*                                                                                             | :heavy_check_mark:                                                                                   | N/A                                                                                                  |
-| `patchSubscriberPreferencesDto`                                                                      | [Components\PatchSubscriberPreferencesDto](../../Models/Components/PatchSubscriberPreferencesDto.md) | :heavy_check_mark:                                                                                   | N/A                                                                                                  |
-| `idempotencyKey`                                                                                     | *?string*                                                                                            | :heavy_minus_sign:                                                                                   | A header for idempotency purposes                                                                    |
+| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
+| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `subscriberId`                                                                                 | *string*                                                                                       | :heavy_check_mark:                                                                             | N/A                                                                                            |
+| `updateSubscriberRequestDto`                                                                   | [Components\UpdateSubscriberRequestDto](../../Models/Components/UpdateSubscriberRequestDto.md) | :heavy_check_mark:                                                                             | N/A                                                                                            |
+| `idempotencyKey`                                                                               | *?string*                                                                                      | :heavy_minus_sign:                                                                             | A header for idempotency purposes                                                              |
 
 ### Response
 
-**[?Operations\SubscribersControllerUpdateSubscriberPreferencesResponse](../../Models/Operations/SubscribersControllerUpdateSubscriberPreferencesResponse.md)**
+**[?Operations\SubscribersV1ControllerUpdateSubscriberResponse](../../Models/Operations/SubscribersV1ControllerUpdateSubscriberResponse.md)**
 
 ### Errors
 
@@ -406,9 +480,9 @@ if ($response->bulkCreateSubscriberResponseDto !== null) {
 | Errors\ErrorDto                        | 500                                    | application/json                       |
 | Errors\APIException                    | 4XX, 5XX                               | \*/\*                                  |
 
-## list
+## updatePreferences
 
-Returns a list of subscribers, could paginated using the `page` and `limit` query parameter
+Update subscriber global or workflow specific preferences
 
 ### Example Usage
 
@@ -418,6 +492,7 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use novu;
+use novu\Models\Components;
 
 $sdk = novu\Novu::builder()
     ->setSecurity(
@@ -425,34 +500,33 @@ $sdk = novu\Novu::builder()
     )
     ->build();
 
+$patchSubscriberPreferencesDto = new Components\PatchSubscriberPreferencesDto(
+    channels: new Components\PatchPreferenceChannelsDto(),
+);
 
-
-$responses = $sdk->subscribers->list(
-    page: 7685.78,
-    limit: 10,
+$response = $sdk->subscribers->updatePreferences(
+    subscriberId: '<id>',
+    patchSubscriberPreferencesDto: $patchSubscriberPreferencesDto,
     idempotencyKey: '<value>'
 
 );
 
-
-foreach ($responses as $response) {
-    if ($response->statusCode === 200) {
-        // handle response
-    }
+if ($response->getSubscriberPreferencesDto !== null) {
+    // handle response
 }
 ```
 
 ### Parameters
 
-| Parameter                         | Type                              | Required                          | Description                       |
-| --------------------------------- | --------------------------------- | --------------------------------- | --------------------------------- |
-| `page`                            | *?float*                          | :heavy_minus_sign:                | N/A                               |
-| `limit`                           | *?float*                          | :heavy_minus_sign:                | N/A                               |
-| `idempotencyKey`                  | *?string*                         | :heavy_minus_sign:                | A header for idempotency purposes |
+| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `subscriberId`                                                                                       | *string*                                                                                             | :heavy_check_mark:                                                                                   | N/A                                                                                                  |
+| `patchSubscriberPreferencesDto`                                                                      | [Components\PatchSubscriberPreferencesDto](../../Models/Components/PatchSubscriberPreferencesDto.md) | :heavy_check_mark:                                                                                   | N/A                                                                                                  |
+| `idempotencyKey`                                                                                     | *?string*                                                                                            | :heavy_minus_sign:                                                                                   | A header for idempotency purposes                                                                    |
 
 ### Response
 
-**[?Operations\SubscribersV1ControllerListSubscribersResponse](../../Models/Operations/SubscribersV1ControllerListSubscribersResponse.md)**
+**[?Operations\SubscribersControllerUpdateSubscriberPreferencesResponse](../../Models/Operations/SubscribersControllerUpdateSubscriberPreferencesResponse.md)**
 
 ### Errors
 
@@ -485,7 +559,7 @@ $sdk = novu\Novu::builder()
     ->build();
 
 $updateSubscriberChannelRequestDto = new Components\UpdateSubscriberChannelRequestDto(
-    providerId: Components\UpdateSubscriberChannelRequestDtoProviderId::PushWebhook,
+    providerId: Components\ChatOrPushProviderEnum::PushWebhook,
     credentials: new Components\ChannelCredentials(
         webhookUrl: 'https://example.com/webhook',
         channel: 'general',

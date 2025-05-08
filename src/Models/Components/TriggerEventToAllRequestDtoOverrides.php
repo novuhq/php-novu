@@ -12,8 +12,110 @@ namespace novu\Models\Components;
 /** TriggerEventToAllRequestDtoOverrides - This could be used to override provider specific configurations */
 class TriggerEventToAllRequestDtoOverrides
 {
+    /**
+     * This could be used to override provider specific configurations
+     *
+     * @var ?array<string, StepsOverrides> $steps
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('steps')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, \novu\Models\Components\StepsOverrides>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $steps = null;
 
-    public function __construct()
+    /**
+     * Overrides the provider configuration for the entire workflow and all steps
+     *
+     * @var ?array<string, array<string, mixed>> $providers
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('providers')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, array<string, mixed>>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $providers = null;
+
+    /**
+     * Override the email provider specific configurations for the entire workflow
+     *
+     * @var ?array<string, mixed> $email
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('email')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $email = null;
+
+    /**
+     * Override the push provider specific configurations for the entire workflow
+     *
+     * @var ?array<string, mixed> $push
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('push')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $push = null;
+
+    /**
+     * Override the sms provider specific configurations for the entire workflow
+     *
+     * @var ?array<string, mixed> $sms
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('sms')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $sms = null;
+
+    /**
+     * Override the chat provider specific configurations for the entire workflow
+     *
+     * @var ?array<string, mixed> $chat
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('chat')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $chat = null;
+
+    /**
+     * Override the layout identifier for the entire workflow
+     *
+     * @var ?string $layoutIdentifier
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('layoutIdentifier')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $layoutIdentifier = null;
+
+    /**
+     * $additionalProperties
+     *
+     * @var ?array<string, array<string, mixed>> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, array<string, mixed>>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
+     * @param  ?array<string, StepsOverrides>  $steps
+     * @param  ?array<string, array<string, mixed>>  $providers
+     * @param  ?array<string, mixed>  $email
+     * @param  ?array<string, mixed>  $push
+     * @param  ?array<string, mixed>  $sms
+     * @param  ?array<string, mixed>  $chat
+     * @param  ?string  $layoutIdentifier
+     * @param  ?array<string, array<string, mixed>>  $additionalProperties
+     * @phpstan-pure
+     */
+    public function __construct(?array $steps = null, ?array $providers = null, ?array $email = null, ?array $push = null, ?array $sms = null, ?array $chat = null, ?string $layoutIdentifier = null, ?array $additionalProperties = null)
     {
+        $this->steps = $steps;
+        $this->providers = $providers;
+        $this->email = $email;
+        $this->push = $push;
+        $this->sms = $sms;
+        $this->chat = $chat;
+        $this->layoutIdentifier = $layoutIdentifier;
+        $this->additionalProperties = $additionalProperties;
     }
 }

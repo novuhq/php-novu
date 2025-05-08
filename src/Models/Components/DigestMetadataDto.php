@@ -41,12 +41,12 @@ class DigestMetadataDto
     /**
      * Unit of the digest
      *
-     * @var ?Unit $unit
+     * @var ?DigestMetadataDtoUnit $unit
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('unit')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\Unit|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\DigestMetadataDtoUnit|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?Unit $unit = null;
+    public ?DigestMetadataDtoUnit $unit = null;
 
     /**
      * Optional array of events associated with the digest, represented as key-value pairs
@@ -109,7 +109,7 @@ class DigestMetadataDto
      * @param  DigestTypeEnum  $type
      * @param  ?string  $digestKey
      * @param  ?float  $amount
-     * @param  ?Unit  $unit
+     * @param  ?DigestMetadataDtoUnit  $unit
      * @param  ?array<array<string, mixed>>  $events
      * @param  ?bool  $backoff
      * @param  ?float  $backoffAmount
@@ -118,7 +118,7 @@ class DigestMetadataDto
      * @param  ?DigestTimedConfigDto  $timed
      * @phpstan-pure
      */
-    public function __construct(DigestTypeEnum $type, ?string $digestKey = null, ?float $amount = null, ?Unit $unit = null, ?array $events = null, ?bool $backoff = null, ?float $backoffAmount = null, ?DigestUnitEnum $backoffUnit = null, ?bool $updateMode = null, ?DigestTimedConfigDto $timed = null)
+    public function __construct(DigestTypeEnum $type, ?string $digestKey = null, ?float $amount = null, ?DigestMetadataDtoUnit $unit = null, ?array $events = null, ?bool $backoff = null, ?float $backoffAmount = null, ?DigestUnitEnum $backoffUnit = null, ?bool $updateMode = null, ?DigestTimedConfigDto $timed = null)
     {
         $this->type = $type;
         $this->digestKey = $digestKey;

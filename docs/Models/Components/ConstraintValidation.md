@@ -1,0 +1,9 @@
+# ConstraintValidation
+
+
+## Fields
+
+| Field                                                                            | Type                                                                             | Required                                                                         | Description                                                                      | Example                                                                          |
+| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| `messages`                                                                       | array<*string*>                                                                  | :heavy_check_mark:                                                               | List of validation error messages                                                | [<br/>"Field is required",<br/>"Invalid format"<br/>]                            |
+| `value`                                                                          | [string\|float\|bool\|Components\Four\|array\|null](../../Models/Components/Value.md) | :heavy_minus_sign:                                                               | Value that failed validation                                                     | xx xx xx                                                                         |

@@ -5,13 +5,13 @@ Content of the message, can be an email block or a string
 
 ## Supported Types
 
-### `Components\EmailBlock`
+### `array`
 
 ```php
 /**
-* @var Components\EmailBlock
+* @var array<Components\EmailBlock>
 */
-Components\EmailBlock $value = /* values here */
+array $value = /* values here */
 ```
 
 ### `string`

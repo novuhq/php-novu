@@ -41,11 +41,11 @@ class WorkflowResponse
 
     /**
      *
-     * @var PreferenceChannels $preferenceSettings
+     * @var SubscriberPreferenceChannels $preferenceSettings
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('preferenceSettings')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\PreferenceChannels')]
-    public PreferenceChannels $preferenceSettings;
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\SubscriberPreferenceChannels')]
+    public SubscriberPreferenceChannels $preferenceSettings;
 
     /**
      *
@@ -178,7 +178,7 @@ class WorkflowResponse
      * @param  string  $description
      * @param  bool  $active
      * @param  bool  $draft
-     * @param  PreferenceChannels  $preferenceSettings
+     * @param  SubscriberPreferenceChannels  $preferenceSettings
      * @param  bool  $critical
      * @param  array<string>  $tags
      * @param  array<NotificationStepDto>  $steps
@@ -197,7 +197,7 @@ class WorkflowResponse
      * @param  ?WorkflowIntegrationStatus  $workflowIntegrationStatus
      * @phpstan-pure
      */
-    public function __construct(string $name, string $description, bool $active, bool $draft, PreferenceChannels $preferenceSettings, bool $critical, array $tags, array $steps, string $organizationId, string $creatorId, string $environmentId, array $triggers, string $notificationGroupId, bool $deleted, string $deletedAt, string $deletedBy, ?string $id = null, ?string $parentId = null, ?NotificationGroup $notificationGroup = null, ?WorkflowResponseData $data = null, ?WorkflowIntegrationStatus $workflowIntegrationStatus = null)
+    public function __construct(string $name, string $description, bool $active, bool $draft, SubscriberPreferenceChannels $preferenceSettings, bool $critical, array $tags, array $steps, string $organizationId, string $creatorId, string $environmentId, array $triggers, string $notificationGroupId, bool $deleted, string $deletedAt, string $deletedBy, ?string $id = null, ?string $parentId = null, ?NotificationGroup $notificationGroup = null, ?WorkflowResponseData $data = null, ?WorkflowIntegrationStatus $workflowIntegrationStatus = null)
     {
         $this->name = $name;
         $this->description = $description;

@@ -13,11 +13,11 @@ class DigestRegularMetadata
 {
     /**
      *
-     * @var DigestRegularMetadataType $type
+     * @var Type $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\DigestRegularMetadataType')]
-    public DigestRegularMetadataType $type;
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\Type')]
+    public Type $type;
 
     /**
      *
@@ -29,12 +29,12 @@ class DigestRegularMetadata
 
     /**
      *
-     * @var ?DigestRegularMetadataUnit $unit
+     * @var ?Unit $unit
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('unit')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\DigestRegularMetadataUnit|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\Unit|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?DigestRegularMetadataUnit $unit = null;
+    public ?Unit $unit = null;
 
     /**
      *
@@ -78,9 +78,9 @@ class DigestRegularMetadata
     public ?bool $updateMode = null;
 
     /**
-     * @param  DigestRegularMetadataType  $type
+     * @param  Type  $type
      * @param  ?float  $amount
-     * @param  ?DigestRegularMetadataUnit  $unit
+     * @param  ?Unit  $unit
      * @param  ?string  $digestKey
      * @param  ?bool  $backoff
      * @param  ?float  $backoffAmount
@@ -88,7 +88,7 @@ class DigestRegularMetadata
      * @param  ?bool  $updateMode
      * @phpstan-pure
      */
-    public function __construct(DigestRegularMetadataType $type, ?float $amount = null, ?DigestRegularMetadataUnit $unit = null, ?string $digestKey = null, ?bool $backoff = null, ?float $backoffAmount = null, ?BackoffUnit $backoffUnit = null, ?bool $updateMode = null)
+    public function __construct(Type $type, ?float $amount = null, ?Unit $unit = null, ?string $digestKey = null, ?bool $backoff = null, ?float $backoffAmount = null, ?BackoffUnit $backoffUnit = null, ?bool $updateMode = null)
     {
         $this->type = $type;
         $this->amount = $amount;

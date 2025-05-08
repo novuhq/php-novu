@@ -8,6 +8,7 @@ declare(strict_types=1);
 
 namespace novu\Models\Errors;
 
+use novu\Models\Components;
 use novu\Utils;
 class ValidationErrorDto
 {
@@ -36,12 +37,14 @@ class ValidationErrorDto
     public string $path;
 
     /**
-     * A detailed error message.
+     * Value that failed validation
      *
-     * @var string $message
+     * @var string|float|bool|Message4|array<string|float|bool|array<string, mixed>|null>|null $message
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('message')]
-    public string $message;
+    #[\Speakeasy\Serializer\Annotation\Type('string|float|bool|\novu\Models\Errors\Message4|array<string|float|bool|array<string, mixed>|null>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public string|float|bool|Message4|array|null $message = null;
 
     /**
      * Optional context object for additional error details.
@@ -67,31 +70,31 @@ class ValidationErrorDto
     /**
      * A record of validation errors keyed by field name
      *
-     * @var array<string, Errors> $errors
+     * @var array<string, Components\ConstraintValidation> $errors
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('errors')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<string, \novu\Models\Errors\Errors>')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, \novu\Models\Components\ConstraintValidation>')]
     public array $errors;
 
     /**
      * @param  float  $statusCode
      * @param  string  $timestamp
      * @param  string  $path
-     * @param  string  $message
-     * @param  array<string, Errors>  $errors
+     * @param  array<string, Components\ConstraintValidation>  $errors
      * @param  ?array<string, mixed>  $ctx
      * @param  ?string  $errorId
+     * @param  string|float|bool|Message4|array<string|float|bool|array<string, mixed>|null>|null  $message
      * @phpstan-pure
      */
-    public function __construct(float $statusCode, string $timestamp, string $path, string $message, array $errors, ?array $ctx = null, ?string $errorId = null)
+    public function __construct(float $statusCode, string $timestamp, string $path, array $errors, ?array $ctx = null, ?string $errorId = null, string|float|bool|Message4|array|null $message = null)
     {
         $this->statusCode = $statusCode;
         $this->timestamp = $timestamp;
         $this->path = $path;
         $this->message = $message;
-        $this->errors = $errors;
         $this->ctx = $ctx;
         $this->errorId = $errorId;
+        $this->errors = $errors;
     }
 
     public function toException(): ValidationErrorDtoThrowable

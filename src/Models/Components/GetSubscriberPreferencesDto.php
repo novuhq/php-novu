@@ -14,27 +14,27 @@ class GetSubscriberPreferencesDto
     /**
      * Global preference settings
      *
-     * @var GlobalPreferenceDto $global
+     * @var SubscriberGlobalPreferenceDto $global
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('global')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\GlobalPreferenceDto')]
-    public GlobalPreferenceDto $global;
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\SubscriberGlobalPreferenceDto')]
+    public SubscriberGlobalPreferenceDto $global;
 
     /**
      * Workflow-specific preference settings
      *
-     * @var array<WorkflowPreferenceDto> $workflows
+     * @var array<SubscriberWorkflowPreferenceDto> $workflows
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('workflows')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\WorkflowPreferenceDto>')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\SubscriberWorkflowPreferenceDto>')]
     public array $workflows;
 
     /**
-     * @param  GlobalPreferenceDto  $global
-     * @param  array<WorkflowPreferenceDto>  $workflows
+     * @param  SubscriberGlobalPreferenceDto  $global
+     * @param  array<SubscriberWorkflowPreferenceDto>  $workflows
      * @phpstan-pure
      */
-    public function __construct(GlobalPreferenceDto $global, array $workflows)
+    public function __construct(SubscriberGlobalPreferenceDto $global, array $workflows)
     {
         $this->global = $global;
         $this->workflows = $workflows;

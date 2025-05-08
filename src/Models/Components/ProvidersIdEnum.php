@@ -63,6 +63,7 @@ enum ProvidersIdEnum: string
     case BrevoSms = 'brevo-sms';
     case EazySms = 'eazy-sms';
     case Mobishastra = 'mobishastra';
+    case AfroMessage = 'afro-message';
     case Fcm = 'fcm';
     case Apns = 'apns';
     case Expo = 'expo';

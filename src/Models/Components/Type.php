@@ -9,8 +9,8 @@ declare(strict_types=1);
 namespace novu\Models\Components;
 
 
-/** Type of the trigger */
 enum Type: string
 {
-    case Event = 'event';
+    case Regular = 'regular';
+    case Backoff = 'backoff';
 }

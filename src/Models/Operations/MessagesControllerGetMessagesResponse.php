@@ -41,24 +41,24 @@ class MessagesControllerGetMessagesResponse
 
     /**
      *
-     * @var ?Components\ActivitiesResponseDto $activitiesResponseDto
+     * @var ?Components\MessagesResponseDto $messagesResponseDto
      */
-    public ?Components\ActivitiesResponseDto $activitiesResponseDto = null;
+    public ?Components\MessagesResponseDto $messagesResponseDto = null;
 
     /**
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
-     * @param  ?Components\ActivitiesResponseDto  $activitiesResponseDto
+     * @param  ?Components\MessagesResponseDto  $messagesResponseDto
      * @phpstan-pure
      */
-    public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\ActivitiesResponseDto $activitiesResponseDto = null, ?array $headers = [])
+    public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\MessagesResponseDto $messagesResponseDto = null, ?array $headers = [])
     {
         $this->contentType = $contentType;
         $this->statusCode = $statusCode;
         $this->rawResponse = $rawResponse;
         $this->headers = $headers;
-        $this->activitiesResponseDto = $activitiesResponseDto;
+        $this->messagesResponseDto = $messagesResponseDto;
     }
 }

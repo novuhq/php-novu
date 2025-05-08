@@ -9,16 +9,18 @@ Novu Documentation
 
 ### Available Operations
 
-* [triggerBroadcast](#triggerbroadcast) - Broadcast event to all
-* [cancel](#cancel) - Cancel triggered event
 * [trigger](#trigger) - Trigger event
+* [cancel](#cancel) - Cancel triggered event
+* [triggerBroadcast](#triggerbroadcast) - Broadcast event to all
 * [triggerBulk](#triggerbulk) - Bulk trigger event
 
-## triggerBroadcast
+## trigger
 
-Trigger a broadcast event to all existing subscribers, could be used to send announcements, etc.
 
-      In the future could be used to trigger events to a subset of subscribers based on defined filters.
+    Trigger event is the main (and only) way to send notifications to subscribers. 
+    The trigger identifier is used to match the particular workflow associated with it. 
+    Additional information can be passed according the body interface below.
+    
 
 ### Example Usage
 
@@ -36,19 +38,22 @@ $sdk = novu\Novu::builder()
     )
     ->build();
 
-$triggerEventToAllRequestDto = new Components\TriggerEventToAllRequestDto(
-    name: '<value>',
+$triggerEventRequestDto = new Components\TriggerEventRequestDto(
+    workflowId: 'workflow_identifier',
     payload: [
         'comment_id' => 'string',
         'post' => [
             'text' => 'string',
         ],
     ],
-    overrides: new Components\TriggerEventToAllRequestDtoOverrides(),
+    overrides: new Components\Overrides(),
+    to: new Components\SubscriberPayloadDto(
+        subscriberId: '<id>',
+    ),
 );
 
-$response = $sdk->triggerBroadcast(
-    triggerEventToAllRequestDto: $triggerEventToAllRequestDto,
+$response = $sdk->trigger(
+    triggerEventRequestDto: $triggerEventRequestDto,
     idempotencyKey: '<value>'
 
 );
@@ -60,14 +65,14 @@ if ($response->triggerEventResponseDto !== null) {
 
 ### Parameters
 
-| Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
-| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
-| `triggerEventToAllRequestDto`                                                                    | [Components\TriggerEventToAllRequestDto](../../Models/Components/TriggerEventToAllRequestDto.md) | :heavy_check_mark:                                                                               | N/A                                                                                              |
-| `idempotencyKey`                                                                                 | *?string*                                                                                        | :heavy_minus_sign:                                                                               | A header for idempotency purposes                                                                |
+| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `triggerEventRequestDto`                                                               | [Components\TriggerEventRequestDto](../../Models/Components/TriggerEventRequestDto.md) | :heavy_check_mark:                                                                     | N/A                                                                                    |
+| `idempotencyKey`                                                                       | *?string*                                                                              | :heavy_minus_sign:                                                                     | A header for idempotency purposes                                                      |
 
 ### Response
 
-**[?Operations\EventsControllerBroadcastEventToAllResponse](../../Models/Operations/EventsControllerBroadcastEventToAllResponse.md)**
+**[?Operations\EventsControllerTriggerResponse](../../Models/Operations/EventsControllerTriggerResponse.md)**
 
 ### Errors
 
@@ -135,13 +140,11 @@ if ($response->boolean !== null) {
 | Errors\ErrorDto                        | 500                                    | application/json                       |
 | Errors\APIException                    | 4XX, 5XX                               | \*/\*                                  |
 
-## trigger
+## triggerBroadcast
 
+Trigger a broadcast event to all existing subscribers, could be used to send announcements, etc.
 
-    Trigger event is the main (and only) way to send notifications to subscribers. 
-    The trigger identifier is used to match the particular workflow associated with it. 
-    Additional information can be passed according the body interface below.
-    
+      In the future could be used to trigger events to a subset of subscribers based on defined filters.
 
 ### Example Usage
 
@@ -159,28 +162,27 @@ $sdk = novu\Novu::builder()
     )
     ->build();
 
-$triggerEventRequestDto = new Components\TriggerEventRequestDto(
-    workflowId: 'workflow_identifier',
-    to: new Components\SubscriberPayloadDto(
-        subscriberId: '<id>',
-    ),
+$triggerEventToAllRequestDto = new Components\TriggerEventToAllRequestDto(
+    name: '<value>',
     payload: [
         'comment_id' => 'string',
         'post' => [
             'text' => 'string',
         ],
     ],
-    overrides: [
-        'fcm' => [
-            'data' => [
-                'key' => 'value',
+    overrides: new Components\TriggerEventToAllRequestDtoOverrides(
+        additionalProperties: [
+            'fcm' => [
+                'data' => [
+                    'key' => 'value',
+                ],
             ],
         ],
-    ],
+    ),
 );
 
-$response = $sdk->trigger(
-    triggerEventRequestDto: $triggerEventRequestDto,
+$response = $sdk->triggerBroadcast(
+    triggerEventToAllRequestDto: $triggerEventToAllRequestDto,
     idempotencyKey: '<value>'
 
 );
@@ -192,14 +194,14 @@ if ($response->triggerEventResponseDto !== null) {
 
 ### Parameters
 
-| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
-| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| `triggerEventRequestDto`                                                               | [Components\TriggerEventRequestDto](../../Models/Components/TriggerEventRequestDto.md) | :heavy_check_mark:                                                                     | N/A                                                                                    |
-| `idempotencyKey`                                                                       | *?string*                                                                              | :heavy_minus_sign:                                                                     | A header for idempotency purposes                                                      |
+| Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
+| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
+| `triggerEventToAllRequestDto`                                                                    | [Components\TriggerEventToAllRequestDto](../../Models/Components/TriggerEventToAllRequestDto.md) | :heavy_check_mark:                                                                               | N/A                                                                                              |
+| `idempotencyKey`                                                                                 | *?string*                                                                                        | :heavy_minus_sign:                                                                               | A header for idempotency purposes                                                                |
 
 ### Response
 
-**[?Operations\EventsControllerTriggerResponse](../../Models/Operations/EventsControllerTriggerResponse.md)**
+**[?Operations\EventsControllerBroadcastEventToAllResponse](../../Models/Operations/EventsControllerBroadcastEventToAllResponse.md)**
 
 ### Errors
 
@@ -238,23 +240,17 @@ $bulkTriggerEventDto = new Components\BulkTriggerEventDto(
     events: [
         new Components\TriggerEventRequestDto(
             workflowId: 'workflow_identifier',
-            to: new Components\TopicPayloadDto(
-                topicKey: '<value>',
-                type: Components\TriggerRecipientsTypeEnum::Topic,
-            ),
             payload: [
                 'comment_id' => 'string',
                 'post' => [
                     'text' => 'string',
                 ],
             ],
-            overrides: [
-                'fcm' => [
-                    'data' => [
-                        'key' => 'value',
-                    ],
-                ],
-            ],
+            overrides: new Components\Overrides(),
+            to: new Components\TopicPayloadDto(
+                topicKey: '<value>',
+                type: Components\TriggerRecipientsTypeEnum::Topic,
+            ),
         ),
     ],
 );
