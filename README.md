@@ -712,7 +712,7 @@ use novu;
 use novu\Models\Components;
 
 $sdk = novu\Novu::builder()
-    ->setServerURL('https://api.novu.co')
+    ->setServerURL('https://eu.api.novu.co')
     ->setSecurity(
         'YOUR_SECRET_KEY_HERE'
     )
