@@ -35,6 +35,13 @@ class Novu
     public SubscribersPreferences $subscribersPreferences;
 
     /**
+     * Topics are a way to group subscribers together so that they can be notified of events at once. A topic is identified by a custom key. This can be helpful for things like sending out marketing emails or notifying users of new features. Topics can also be used to send notifications to the subscribers who have been grouped together based on their interests, location, activities and much more.
+     *
+     * @var Topics $$topics
+     */
+    public Topics $topics;
+
+    /**
      * With the help of the Integration Store, you can easily integrate your favorite delivery provider. During the runtime of the API, the Integrations Store is responsible for storing the configurations of all the providers.
      *
      * @var Integrations $$integrations
@@ -60,13 +67,6 @@ class Novu
 
     public SubscribersNotifications $subscribersNotifications;
 
-    /**
-     * Topics are a way to group subscribers together so that they can be notified of events at once. A topic is identified by a custom key. This can be helpful for things like sending out marketing emails or notifying users of new features. Topics can also be used to send notifications to the subscribers who have been grouped together based on their interests, location, activities and much more.
-     *
-     * @var Topics $$topics
-     */
-    public Topics $topics;
-
     public TopicsSubscribers $topicsSubscribers;
 
     /**
@@ -87,6 +87,7 @@ class Novu
     ) {
         $this->subscribers = new Subscribers($this->sdkConfiguration);
         $this->subscribersPreferences = new SubscribersPreferences($this->sdkConfiguration);
+        $this->topics = new Topics($this->sdkConfiguration);
         $this->integrations = new Integrations($this->sdkConfiguration);
         $this->messages = new Messages($this->sdkConfiguration);
         $this->notifications = new Notifications($this->sdkConfiguration);
@@ -95,7 +96,6 @@ class Novu
         $this->subscribersAuthentication = new SubscribersAuthentication($this->sdkConfiguration);
         $this->subscribersMessages = new SubscribersMessages($this->sdkConfiguration);
         $this->subscribersNotifications = new SubscribersNotifications($this->sdkConfiguration);
-        $this->topics = new Topics($this->sdkConfiguration);
         $this->topicsSubscribers = new TopicsSubscribers($this->sdkConfiguration);
         $this->sdkConfiguration->client = $this->sdkConfiguration->initHooks($this->sdkConfiguration->client);
 

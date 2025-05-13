@@ -1,0 +1,10 @@
+# CreateTopicSubscriptionsResponseDto
+
+
+## Fields
+
+| Field                                                                                     | Type                                                                                      | Required                                                                                  | Description                                                                               |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `data`                                                                                    | array<[Components\SubscriptionDto](../../Models/Components/SubscriptionDto.md)>           | :heavy_check_mark:                                                                        | The list of successfully created subscriptions                                            |
+| `meta`                                                                                    | [Components\MetaDto](../../Models/Components/MetaDto.md)                                  | :heavy_check_mark:                                                                        | Metadata about the operation                                                              |
+| `errors`                                                                                  | array<[Components\SubscriptionErrorDto](../../Models/Components/SubscriptionErrorDto.md)> | :heavy_minus_sign:                                                                        | The list of errors for failed subscription attempts                                       |

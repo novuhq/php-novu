@@ -54,10 +54,10 @@ class TopicsSubscribers
      * @param  string  $externalSubscriberId
      * @param  string  $topicKey
      * @param  ?string  $idempotencyKey
-     * @return Operations\TopicsControllerGetTopicSubscriberResponse
+     * @return Operations\TopicsV1ControllerGetTopicSubscriberResponse
      * @throws \novu\Models\Errors\APIException
      */
-    public function check(string $externalSubscriberId, string $topicKey, ?string $idempotencyKey = null, ?Options $options = null): Operations\TopicsControllerGetTopicSubscriberResponse
+    public function check(string $externalSubscriberId, string $topicKey, ?string $idempotencyKey = null, ?Options $options = null): Operations\TopicsV1ControllerGetTopicSubscriberResponse
     {
         $retryConfig = null;
         if ($options) {
@@ -86,13 +86,13 @@ class TopicsSubscribers
                 '5XX',
             ];
         }
-        $request = new Operations\TopicsControllerGetTopicSubscriberRequest(
+        $request = new Operations\TopicsV1ControllerGetTopicSubscriberRequest(
             externalSubscriberId: $externalSubscriberId,
             topicKey: $topicKey,
             idempotencyKey: $idempotencyKey,
         );
         $baseUrl = $this->sdkConfiguration->getServerUrl();
-        $url = Utils\Utils::generateUrl($baseUrl, '/v1/topics/{topicKey}/subscribers/{externalSubscriberId}', Operations\TopicsControllerGetTopicSubscriberRequest::class, $request);
+        $url = Utils\Utils::generateUrl($baseUrl, '/v1/topics/{topicKey}/subscribers/{externalSubscriberId}', Operations\TopicsV1ControllerGetTopicSubscriberRequest::class, $request);
         $urlOverride = null;
         $httpOptions = ['http_errors' => false];
         $httpOptions = array_merge_recursive($httpOptions, Utils\Utils::getHeaders($request));
@@ -102,7 +102,7 @@ class TopicsSubscribers
         $httpOptions['headers']['Accept'] = 'application/json';
         $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('GET', $url);
-        $hookContext = new HookContext($baseUrl, 'TopicsController_getTopicSubscriber', [], $this->sdkConfiguration->securitySource);
+        $hookContext = new HookContext($baseUrl, 'TopicsV1Controller_getTopicSubscriber', [], $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
         $httpRequest = Utils\Utils::removeHeaders($httpRequest);
@@ -126,7 +126,7 @@ class TopicsSubscribers
                 $serializer = Utils\JSON::createSerializer();
                 $responseData = (string) $httpResponse->getBody();
                 $obj = $serializer->deserialize($responseData, '\novu\Models\Components\TopicSubscriberDto', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
-                $response = new Operations\TopicsControllerGetTopicSubscriberResponse(
+                $response = new Operations\TopicsV1ControllerGetTopicSubscriberResponse(
                     statusCode: $statusCode,
                     contentType: $contentType,
                     rawResponse: $httpResponse,

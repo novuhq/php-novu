@@ -62,6 +62,14 @@ class NotificationsControllerListNotificationsRequest
     public ?string $transactionId = null;
 
     /**
+     * Topic Key for filtering notifications by topic
+     *
+     * @var ?string $topicKey
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=topicKey')]
+    public ?string $topicKey = null;
+
+    /**
      * Date filter for records after this timestamp. Defaults to earliest date allowed by subscription plan
      *
      * @var ?string $after
@@ -110,12 +118,13 @@ class NotificationsControllerListNotificationsRequest
      * @param  ?float  $page
      * @param  ?float  $limit
      * @param  ?string  $transactionId
+     * @param  ?string  $topicKey
      * @param  ?string  $after
      * @param  ?string  $before
      * @param  ?string  $idempotencyKey
      * @phpstan-pure
      */
-    public function __construct(?array $channels = null, ?array $templates = null, ?array $emails = null, ?string $search = null, ?array $subscriberIds = null, ?string $transactionId = null, ?string $after = null, ?string $before = null, ?string $idempotencyKey = null, ?float $page = 0, ?float $limit = 10)
+    public function __construct(?array $channels = null, ?array $templates = null, ?array $emails = null, ?string $search = null, ?array $subscriberIds = null, ?string $transactionId = null, ?string $topicKey = null, ?string $after = null, ?string $before = null, ?string $idempotencyKey = null, ?float $page = 0, ?float $limit = 10)
     {
         $this->channels = $channels;
         $this->templates = $templates;
@@ -123,6 +132,7 @@ class NotificationsControllerListNotificationsRequest
         $this->search = $search;
         $this->subscriberIds = $subscriberIds;
         $this->transactionId = $transactionId;
+        $this->topicKey = $topicKey;
         $this->after = $after;
         $this->before = $before;
         $this->idempotencyKey = $idempotencyKey;
