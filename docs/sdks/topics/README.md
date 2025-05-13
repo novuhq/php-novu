@@ -8,15 +8,66 @@ Topics are a way to group subscribers together so that they can be notified of e
 
 ### Available Operations
 
-* [create](#create) - Topic creation
-* [list](#list) - Get topic list filtered 
-* [delete](#delete) - Delete topic
-* [get](#get) - Get topic
-* [rename](#rename) - Rename a topic
+* [list](#list) - Get topics list
+* [create](#create) - Create or update a topic
+* [get](#get) - Get topic by key
+* [update](#update) - Update topic by key
+* [delete](#delete) - Delete topic by key
+
+## list
+
+Get topics list
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use novu;
+use novu\Models\Operations;
+
+$sdk = novu\Novu::builder()
+    ->setSecurity(
+        'YOUR_SECRET_KEY_HERE'
+    )
+    ->build();
+
+$request = new Operations\TopicsControllerListTopicsRequest();
+
+$response = $sdk->topics->list(
+    request: $request
+);
+
+if ($response->listTopicsResponseDto !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| `$request`                                                                                                   | [Operations\TopicsControllerListTopicsRequest](../../Models/Operations/TopicsControllerListTopicsRequest.md) | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
+
+### Response
+
+**[?Operations\TopicsControllerListTopicsResponse](../../Models/Operations/TopicsControllerListTopicsResponse.md)**
+
+### Errors
+
+| Error Type                             | Status Code                            | Content Type                           |
+| -------------------------------------- | -------------------------------------- | -------------------------------------- |
+| Errors\ErrorDto                        | 414                                    | application/json                       |
+| Errors\ErrorDto                        | 400, 401, 403, 404, 405, 409, 413, 415 | application/json                       |
+| Errors\ValidationErrorDto              | 422                                    | application/json                       |
+| Errors\ErrorDto                        | 500                                    | application/json                       |
+| Errors\APIException                    | 4XX, 5XX                               | \*/\*                                  |
 
 ## create
 
-Create a topic
+Creates a new topic if it does not exist, or updates an existing topic if it already exists
 
 ### Example Usage
 
@@ -34,142 +85,32 @@ $sdk = novu\Novu::builder()
     )
     ->build();
 
-$createTopicRequestDto = new Components\CreateTopicRequestDto(
-    key: '<key>',
-    name: '<value>',
+$createUpdateTopicRequestDto = new Components\CreateUpdateTopicRequestDto(
+    key: 'task:12345',
+    name: 'Task Title',
 );
 
 $response = $sdk->topics->create(
-    createTopicRequestDto: $createTopicRequestDto,
+    createUpdateTopicRequestDto: $createUpdateTopicRequestDto,
     idempotencyKey: '<value>'
 
 );
 
-if ($response->createTopicResponseDto !== null) {
+if ($response->topicResponseDto !== null) {
     // handle response
 }
 ```
 
 ### Parameters
 
-| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
-| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
-| `createTopicRequestDto`                                                              | [Components\CreateTopicRequestDto](../../Models/Components/CreateTopicRequestDto.md) | :heavy_check_mark:                                                                   | N/A                                                                                  |
-| `idempotencyKey`                                                                     | *?string*                                                                            | :heavy_minus_sign:                                                                   | A header for idempotency purposes                                                    |
+| Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
+| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
+| `createUpdateTopicRequestDto`                                                                    | [Components\CreateUpdateTopicRequestDto](../../Models/Components/CreateUpdateTopicRequestDto.md) | :heavy_check_mark:                                                                               | N/A                                                                                              |
+| `idempotencyKey`                                                                                 | *?string*                                                                                        | :heavy_minus_sign:                                                                               | A header for idempotency purposes                                                                |
 
 ### Response
 
-**[?Operations\TopicsControllerCreateTopicResponse](../../Models/Operations/TopicsControllerCreateTopicResponse.md)**
-
-### Errors
-
-| Error Type                             | Status Code                            | Content Type                           |
-| -------------------------------------- | -------------------------------------- | -------------------------------------- |
-| Errors\ErrorDto                        | 414                                    | application/json                       |
-| Errors\ErrorDto                        | 400, 401, 403, 404, 405, 409, 413, 415 | application/json                       |
-| Errors\ValidationErrorDto              | 422                                    | application/json                       |
-| Errors\ErrorDto                        | 500                                    | application/json                       |
-| Errors\APIException                    | 4XX, 5XX                               | \*/\*                                  |
-
-## list
-
-Returns a list of topics that can be paginated using the `page` query parameter and filtered by the topic key with the `key` query parameter
-
-### Example Usage
-
-```php
-declare(strict_types=1);
-
-require 'vendor/autoload.php';
-
-use novu;
-
-$sdk = novu\Novu::builder()
-    ->setSecurity(
-        'YOUR_SECRET_KEY_HERE'
-    )
-    ->build();
-
-
-
-$response = $sdk->topics->list(
-    page: 0,
-    pageSize: 10,
-    key: 'exampleKey',
-    idempotencyKey: '<value>'
-
-);
-
-if ($response->filterTopicsResponseDto !== null) {
-    // handle response
-}
-```
-
-### Parameters
-
-| Parameter                                            | Type                                                 | Required                                             | Description                                          | Example                                              |
-| ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- |
-| `page`                                               | *?int*                                               | :heavy_minus_sign:                                   | The page number to retrieve (starts from 0)          | 0                                                    |
-| `pageSize`                                           | *?int*                                               | :heavy_minus_sign:                                   | The number of items to return per page (default: 10) | 10                                                   |
-| `key`                                                | *?string*                                            | :heavy_minus_sign:                                   | A filter key to apply to the results                 | exampleKey                                           |
-| `idempotencyKey`                                     | *?string*                                            | :heavy_minus_sign:                                   | A header for idempotency purposes                    |                                                      |
-
-### Response
-
-**[?Operations\TopicsControllerListTopicsResponse](../../Models/Operations/TopicsControllerListTopicsResponse.md)**
-
-### Errors
-
-| Error Type                             | Status Code                            | Content Type                           |
-| -------------------------------------- | -------------------------------------- | -------------------------------------- |
-| Errors\ErrorDto                        | 414                                    | application/json                       |
-| Errors\ErrorDto                        | 400, 401, 403, 404, 405, 409, 413, 415 | application/json                       |
-| Errors\ValidationErrorDto              | 422                                    | application/json                       |
-| Errors\ErrorDto                        | 500                                    | application/json                       |
-| Errors\APIException                    | 4XX, 5XX                               | \*/\*                                  |
-
-## delete
-
-Delete a topic by its topic key if it has no subscribers
-
-### Example Usage
-
-```php
-declare(strict_types=1);
-
-require 'vendor/autoload.php';
-
-use novu;
-
-$sdk = novu\Novu::builder()
-    ->setSecurity(
-        'YOUR_SECRET_KEY_HERE'
-    )
-    ->build();
-
-
-
-$response = $sdk->topics->delete(
-    topicKey: '<value>',
-    idempotencyKey: '<value>'
-
-);
-
-if ($response->statusCode === 200) {
-    // handle response
-}
-```
-
-### Parameters
-
-| Parameter                         | Type                              | Required                          | Description                       |
-| --------------------------------- | --------------------------------- | --------------------------------- | --------------------------------- |
-| `topicKey`                        | *string*                          | :heavy_check_mark:                | The topic key                     |
-| `idempotencyKey`                  | *?string*                         | :heavy_minus_sign:                | A header for idempotency purposes |
-
-### Response
-
-**[?Operations\TopicsControllerDeleteTopicResponse](../../Models/Operations/TopicsControllerDeleteTopicResponse.md)**
+**[?Operations\TopicsControllerUpsertTopicResponse](../../Models/Operations/TopicsControllerUpsertTopicResponse.md)**
 
 ### Errors
 
@@ -183,7 +124,7 @@ if ($response->statusCode === 200) {
 
 ## get
 
-Get a topic by its topic key
+Get topic by key
 
 ### Example Usage
 
@@ -208,7 +149,7 @@ $response = $sdk->topics->get(
 
 );
 
-if ($response->getTopicResponseDto !== null) {
+if ($response->topicResponseDto !== null) {
     // handle response
 }
 ```
@@ -217,7 +158,7 @@ if ($response->getTopicResponseDto !== null) {
 
 | Parameter                         | Type                              | Required                          | Description                       |
 | --------------------------------- | --------------------------------- | --------------------------------- | --------------------------------- |
-| `topicKey`                        | *string*                          | :heavy_check_mark:                | The topic key                     |
+| `topicKey`                        | *string*                          | :heavy_check_mark:                | The key identifier of the topic   |
 | `idempotencyKey`                  | *?string*                         | :heavy_minus_sign:                | A header for idempotency purposes |
 
 ### Response
@@ -234,9 +175,9 @@ if ($response->getTopicResponseDto !== null) {
 | Errors\ErrorDto                        | 500                                    | application/json                       |
 | Errors\APIException                    | 4XX, 5XX                               | \*/\*                                  |
 
-## rename
+## update
 
-Rename a topic by providing a new name
+Update topic by key
 
 ### Example Usage
 
@@ -254,18 +195,18 @@ $sdk = novu\Novu::builder()
     )
     ->build();
 
-$renameTopicRequestDto = new Components\RenameTopicRequestDto(
-    name: '<value>',
+$updateTopicRequestDto = new Components\UpdateTopicRequestDto(
+    name: 'Updated Topic Name',
 );
 
-$response = $sdk->topics->rename(
+$response = $sdk->topics->update(
     topicKey: '<value>',
-    renameTopicRequestDto: $renameTopicRequestDto,
+    updateTopicRequestDto: $updateTopicRequestDto,
     idempotencyKey: '<value>'
 
 );
 
-if ($response->renameTopicResponseDto !== null) {
+if ($response->topicResponseDto !== null) {
     // handle response
 }
 ```
@@ -274,13 +215,66 @@ if ($response->renameTopicResponseDto !== null) {
 
 | Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
 | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
-| `topicKey`                                                                           | *string*                                                                             | :heavy_check_mark:                                                                   | The topic key                                                                        |
-| `renameTopicRequestDto`                                                              | [Components\RenameTopicRequestDto](../../Models/Components/RenameTopicRequestDto.md) | :heavy_check_mark:                                                                   | N/A                                                                                  |
+| `topicKey`                                                                           | *string*                                                                             | :heavy_check_mark:                                                                   | The key identifier of the topic                                                      |
+| `updateTopicRequestDto`                                                              | [Components\UpdateTopicRequestDto](../../Models/Components/UpdateTopicRequestDto.md) | :heavy_check_mark:                                                                   | N/A                                                                                  |
 | `idempotencyKey`                                                                     | *?string*                                                                            | :heavy_minus_sign:                                                                   | A header for idempotency purposes                                                    |
 
 ### Response
 
-**[?Operations\TopicsControllerRenameTopicResponse](../../Models/Operations/TopicsControllerRenameTopicResponse.md)**
+**[?Operations\TopicsControllerUpdateTopicResponse](../../Models/Operations/TopicsControllerUpdateTopicResponse.md)**
+
+### Errors
+
+| Error Type                             | Status Code                            | Content Type                           |
+| -------------------------------------- | -------------------------------------- | -------------------------------------- |
+| Errors\ErrorDto                        | 414                                    | application/json                       |
+| Errors\ErrorDto                        | 400, 401, 403, 404, 405, 409, 413, 415 | application/json                       |
+| Errors\ValidationErrorDto              | 422                                    | application/json                       |
+| Errors\ErrorDto                        | 500                                    | application/json                       |
+| Errors\APIException                    | 4XX, 5XX                               | \*/\*                                  |
+
+## delete
+
+Delete topic by key
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use novu;
+
+$sdk = novu\Novu::builder()
+    ->setSecurity(
+        'YOUR_SECRET_KEY_HERE'
+    )
+    ->build();
+
+
+
+$response = $sdk->topics->delete(
+    topicKey: '<value>',
+    idempotencyKey: '<value>'
+
+);
+
+if ($response->deleteTopicResponseDto !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                         | Type                              | Required                          | Description                       |
+| --------------------------------- | --------------------------------- | --------------------------------- | --------------------------------- |
+| `topicKey`                        | *string*                          | :heavy_check_mark:                | The key identifier of the topic   |
+| `idempotencyKey`                  | *?string*                         | :heavy_minus_sign:                | A header for idempotency purposes |
+
+### Response
+
+**[?Operations\TopicsControllerDeleteTopicResponse](../../Models/Operations/TopicsControllerDeleteTopicResponse.md)**
 
 ### Errors
 

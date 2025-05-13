@@ -12,7 +12,7 @@ use novu\Utils\SpeakeasyMetadata;
 class TopicsControllerDeleteTopicRequest
 {
     /**
-     * The topic key
+     * The key identifier of the topic
      *
      * @var string $topicKey
      */

@@ -12,20 +12,15 @@ namespace novu\Models\Components;
 class TopicDto
 {
     /**
+     * The internal unique identifier of the topic
      *
-     * @var string $organizationId
+     * @var string $id
      */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('_organizationId')]
-    public string $organizationId;
+    #[\Speakeasy\Serializer\Annotation\SerializedName('_id')]
+    public string $id;
 
     /**
-     *
-     * @var string $environmentId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('_environmentId')]
-    public string $environmentId;
-
-    /**
+     * The key identifier of the topic used in your application. Should be unique on the environment level.
      *
      * @var string $key
      */
@@ -33,45 +28,24 @@ class TopicDto
     public string $key;
 
     /**
+     * The name of the topic
      *
-     * @var string $name
+     * @var ?string $name
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('name')]
-    public string $name;
-
-    /**
-     * $subscribers
-     *
-     * @var array<string> $subscribers
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('subscribers')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<string>')]
-    public array $subscribers;
-
-    /**
-     *
-     * @var ?string $id
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('_id')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $id = null;
+    public ?string $name = null;
 
     /**
-     * @param  string  $organizationId
-     * @param  string  $environmentId
+     * @param  string  $id
      * @param  string  $key
-     * @param  string  $name
-     * @param  array<string>  $subscribers
-     * @param  ?string  $id
+     * @param  ?string  $name
      * @phpstan-pure
      */
-    public function __construct(string $organizationId, string $environmentId, string $key, string $name, array $subscribers, ?string $id = null)
+    public function __construct(string $id, string $key, ?string $name = null)
     {
-        $this->organizationId = $organizationId;
-        $this->environmentId = $environmentId;
+        $this->id = $id;
         $this->key = $key;
         $this->name = $name;
-        $this->subscribers = $subscribers;
-        $this->id = $id;
     }
 }

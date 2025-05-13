@@ -50,7 +50,7 @@ if ($response->topicSubscriberDto !== null) {
 
 ### Response
 
-**[?Operations\TopicsControllerGetTopicSubscriberResponse](../../Models/Operations/TopicsControllerGetTopicSubscriberResponse.md)**
+**[?Operations\TopicsV1ControllerGetTopicSubscriberResponse](../../Models/Operations/TopicsV1ControllerGetTopicSubscriberResponse.md)**
 
 ### Errors
 

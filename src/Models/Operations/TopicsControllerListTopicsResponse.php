@@ -40,25 +40,26 @@ class TopicsControllerListTopicsResponse
     public array $headers;
 
     /**
+     * OK
      *
-     * @var ?Components\FilterTopicsResponseDto $filterTopicsResponseDto
+     * @var ?Components\ListTopicsResponseDto $listTopicsResponseDto
      */
-    public ?Components\FilterTopicsResponseDto $filterTopicsResponseDto = null;
+    public ?Components\ListTopicsResponseDto $listTopicsResponseDto = null;
 
     /**
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
-     * @param  ?Components\FilterTopicsResponseDto  $filterTopicsResponseDto
+     * @param  ?Components\ListTopicsResponseDto  $listTopicsResponseDto
      * @phpstan-pure
      */
-    public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\FilterTopicsResponseDto $filterTopicsResponseDto = null, ?array $headers = [])
+    public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\ListTopicsResponseDto $listTopicsResponseDto = null, ?array $headers = [])
     {
         $this->contentType = $contentType;
         $this->statusCode = $statusCode;
         $this->rawResponse = $rawResponse;
         $this->headers = $headers;
-        $this->filterTopicsResponseDto = $filterTopicsResponseDto;
+        $this->listTopicsResponseDto = $listTopicsResponseDto;
     }
 }

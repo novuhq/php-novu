@@ -19,6 +19,8 @@ use Speakeasy\Serializer\DeserializationContext;
 class Subscribers
 {
     private SDKConfiguration $sdkConfiguration;
+    public NovuTopics $topics;
+
     public Authentication $authentication;
 
     public NovuMessages $messages;
@@ -31,6 +33,7 @@ class Subscribers
     public function __construct(public SDKConfiguration $sdkConfig)
     {
         $this->sdkConfiguration = $sdkConfig;
+        $this->topics = new NovuTopics($this->sdkConfiguration);
         $this->authentication = new Authentication($this->sdkConfiguration);
         $this->messages = new NovuMessages($this->sdkConfiguration);
         $this->notifications = new NovuSubscribersNotifications($this->sdkConfiguration);
@@ -59,7 +62,7 @@ class Subscribers
     /**
      * Create subscriber
      *
-     * Create subscriber with the given data
+     * Create subscriber with the given data, if the subscriber already exists, it will be updated
      *
      * @param  Components\CreateSubscriberRequestDto  $createSubscriberRequestDto
      * @param  ?string  $idempotencyKey

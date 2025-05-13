@@ -12,12 +12,68 @@ use novu\Utils\SpeakeasyMetadata;
 class TopicsControllerListTopicsRequest
 {
     /**
-     * A filter key to apply to the results
+     * Cursor for pagination indicating the starting point after which to fetch results.
+     *
+     * @var ?string $after
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=after')]
+    public ?string $after = null;
+
+    /**
+     * Cursor for pagination indicating the ending point before which to fetch results.
+     *
+     * @var ?string $before
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=before')]
+    public ?string $before = null;
+
+    /**
+     * Limit the number of items to return (max 100)
+     *
+     * @var ?float $limit
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=limit')]
+    public ?float $limit = null;
+
+    /**
+     * Direction of sorting
+     *
+     * @var ?TopicsControllerListTopicsQueryParamOrderDirection $orderDirection
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=orderDirection')]
+    public ?TopicsControllerListTopicsQueryParamOrderDirection $orderDirection = null;
+
+    /**
+     * Field to order by
+     *
+     * @var ?string $orderBy
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=orderBy')]
+    public ?string $orderBy = null;
+
+    /**
+     * Include cursor item in response
+     *
+     * @var ?bool $includeCursor
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=includeCursor')]
+    public ?bool $includeCursor = null;
+
+    /**
+     * Key of the topic to filter results.
      *
      * @var ?string $key
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=key')]
     public ?string $key = null;
+
+    /**
+     * Name of the topic to filter results.
+     *
+     * @var ?string $name
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=name')]
+    public ?string $name = null;
 
     /**
      * A header for idempotency purposes
@@ -28,33 +84,27 @@ class TopicsControllerListTopicsRequest
     public ?string $idempotencyKey = null;
 
     /**
-     * The page number to retrieve (starts from 0)
-     *
-     * @var ?int $page
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=page')]
-    public ?int $page = null;
-
-    /**
-     * The number of items to return per page (default: 10)
-     *
-     * @var ?int $pageSize
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=pageSize')]
-    public ?int $pageSize = null;
-
-    /**
-     * @param  ?int  $page
-     * @param  ?int  $pageSize
+     * @param  ?string  $after
+     * @param  ?string  $before
+     * @param  ?float  $limit
+     * @param  ?TopicsControllerListTopicsQueryParamOrderDirection  $orderDirection
+     * @param  ?string  $orderBy
+     * @param  ?bool  $includeCursor
      * @param  ?string  $key
+     * @param  ?string  $name
      * @param  ?string  $idempotencyKey
      * @phpstan-pure
      */
-    public function __construct(?string $key = null, ?string $idempotencyKey = null, ?int $page = 0, ?int $pageSize = 10)
+    public function __construct(?string $after = null, ?string $before = null, ?float $limit = null, ?TopicsControllerListTopicsQueryParamOrderDirection $orderDirection = null, ?string $orderBy = null, ?bool $includeCursor = null, ?string $key = null, ?string $name = null, ?string $idempotencyKey = null)
     {
+        $this->after = $after;
+        $this->before = $before;
+        $this->limit = $limit;
+        $this->orderDirection = $orderDirection;
+        $this->orderBy = $orderBy;
+        $this->includeCursor = $includeCursor;
         $this->key = $key;
+        $this->name = $name;
         $this->idempotencyKey = $idempotencyKey;
-        $this->page = $page;
-        $this->pageSize = $pageSize;
     }
 }

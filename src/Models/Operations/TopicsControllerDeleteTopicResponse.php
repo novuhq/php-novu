@@ -8,7 +8,7 @@ declare(strict_types=1);
 
 namespace novu\Models\Operations;
 
-
+use novu\Models\Components;
 class TopicsControllerDeleteTopicResponse
 {
     /**
@@ -40,17 +40,26 @@ class TopicsControllerDeleteTopicResponse
     public array $headers;
 
     /**
+     * Topic deleted successfully
+     *
+     * @var ?Components\DeleteTopicResponseDto $deleteTopicResponseDto
+     */
+    public ?Components\DeleteTopicResponseDto $deleteTopicResponseDto = null;
+
+    /**
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
+     * @param  ?Components\DeleteTopicResponseDto  $deleteTopicResponseDto
      * @phpstan-pure
      */
-    public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?array $headers = [])
+    public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\DeleteTopicResponseDto $deleteTopicResponseDto = null, ?array $headers = [])
     {
         $this->contentType = $contentType;
         $this->statusCode = $statusCode;
         $this->rawResponse = $rawResponse;
         $this->headers = $headers;
+        $this->deleteTopicResponseDto = $deleteTopicResponseDto;
     }
 }

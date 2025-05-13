@@ -169,6 +169,16 @@ class ActivityNotificationResponseDto
     public ?ActivityNotificationResponseDtoTo $to = null;
 
     /**
+     * Topics of the notification
+     *
+     * @var ?array<ActivityTopicDto> $topics
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('topics')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\ActivityTopicDto>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $topics = null;
+
+    /**
      * @param  string  $environmentId
      * @param  string  $organizationId
      * @param  string  $subscriberId
@@ -186,9 +196,10 @@ class ActivityNotificationResponseDto
      * @param  ?array<string>  $tags
      * @param  ?Controls  $controls
      * @param  ?ActivityNotificationResponseDtoTo  $to
+     * @param  ?array<ActivityTopicDto>  $topics
      * @phpstan-pure
      */
-    public function __construct(string $environmentId, string $organizationId, string $subscriberId, string $transactionId, ?string $id = null, ?string $templateId = null, ?string $digestedNotificationId = null, ?string $createdAt = null, ?string $updatedAt = null, ?array $channels = null, ?ActivityNotificationSubscriberResponseDto $subscriber = null, ?ActivityNotificationTemplateResponseDto $template = null, ?array $jobs = null, ?ActivityNotificationResponseDtoPayload $payload = null, ?array $tags = null, ?Controls $controls = null, ?ActivityNotificationResponseDtoTo $to = null)
+    public function __construct(string $environmentId, string $organizationId, string $subscriberId, string $transactionId, ?string $id = null, ?string $templateId = null, ?string $digestedNotificationId = null, ?string $createdAt = null, ?string $updatedAt = null, ?array $channels = null, ?ActivityNotificationSubscriberResponseDto $subscriber = null, ?ActivityNotificationTemplateResponseDto $template = null, ?array $jobs = null, ?ActivityNotificationResponseDtoPayload $payload = null, ?array $tags = null, ?Controls $controls = null, ?ActivityNotificationResponseDtoTo $to = null, ?array $topics = null)
     {
         $this->environmentId = $environmentId;
         $this->organizationId = $organizationId;
@@ -207,5 +218,6 @@ class ActivityNotificationResponseDto
         $this->tags = $tags;
         $this->controls = $controls;
         $this->to = $to;
+        $this->topics = $topics;
     }
 }

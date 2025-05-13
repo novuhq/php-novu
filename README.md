@@ -378,6 +378,10 @@ if ($response->triggerEventResponseDto !== null) {
 
 * [getFeed](docs/sdks/novusubscribersnotifications/README.md#getfeed) - Get in-app notification feed for a particular subscriber
 
+#### [subscribers->topics](docs/sdks/novutopics/README.md)
+
+* [list](docs/sdks/novutopics/README.md#list) - List topics a subscriber is subscribed to
+
 ### [subscribersAuthentication](docs/sdks/subscribersauthentication/README.md)
 
 * [chatAccessOauth](docs/sdks/subscribersauthentication/README.md#chataccessoauth) - Handle chat oauth
@@ -389,7 +393,7 @@ if ($response->triggerEventResponseDto !== null) {
 
 ### [subscribersMessages](docs/sdks/subscribersmessages/README.md)
 
-* [markAll](docs/sdks/subscribersmessages/README.md#markall) - Marks all the subscriber messages as read, unread, seen or unseen. Optionally you can pass feed id (or array) to mark messages of a particular feed.
+* [markAll](docs/sdks/subscribersmessages/README.md#markall) - Marks all the subscriber messages as read, unread, seen or unseen.
 
 ### [subscribersNotifications](docs/sdks/subscribersnotifications/README.md)
 
@@ -401,16 +405,17 @@ if ($response->triggerEventResponseDto !== null) {
 
 ### [topics](docs/sdks/topics/README.md)
 
-* [create](docs/sdks/topics/README.md#create) - Topic creation
-* [list](docs/sdks/topics/README.md#list) - Get topic list filtered 
-* [delete](docs/sdks/topics/README.md#delete) - Delete topic
-* [get](docs/sdks/topics/README.md#get) - Get topic
-* [rename](docs/sdks/topics/README.md#rename) - Rename a topic
+* [list](docs/sdks/topics/README.md#list) - Get topics list
+* [create](docs/sdks/topics/README.md#create) - Create or update a topic
+* [get](docs/sdks/topics/README.md#get) - Get topic by key
+* [update](docs/sdks/topics/README.md#update) - Update topic by key
+* [delete](docs/sdks/topics/README.md#delete) - Delete topic by key
 
-#### [topics->subscribers](docs/sdks/novutopicssubscribers/README.md)
+#### [topics->subscriptions](docs/sdks/subscriptions/README.md)
 
-* [assign](docs/sdks/novutopicssubscribers/README.md#assign) - Subscribers addition
-* [remove](docs/sdks/novutopicssubscribers/README.md#remove) - Subscribers removal
+* [list](docs/sdks/subscriptions/README.md#list) - List topic subscriptions
+* [create](docs/sdks/subscriptions/README.md#create) - Create topic subscriptions, if the topic does not exist, it will be created.
+* [delete](docs/sdks/subscriptions/README.md#delete) - Delete topic subscriptions
 
 ### [topicsSubscribers](docs/sdks/topicssubscribers/README.md)
 
@@ -712,7 +717,7 @@ use novu;
 use novu\Models\Components;
 
 $sdk = novu\Novu::builder()
-    ->setServerURL('https://api.novu.co')
+    ->setServerURL('https://eu.api.novu.co')
     ->setSecurity(
         'YOUR_SECRET_KEY_HERE'
     )
