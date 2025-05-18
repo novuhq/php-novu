@@ -34,7 +34,7 @@ $request = new Operations\SubscribersV1ControllerMarkActionAsSeenRequest(
     type: '<value>',
     subscriberId: '<id>',
     markMessageActionAsSeenDto: new Components\MarkMessageActionAsSeenDto(
-        status: Components\MarkMessageActionAsSeenDtoStatus::Done,
+        status: Components\MarkMessageActionAsSeenDtoStatus::Pending,
     ),
 );
 
@@ -88,8 +88,10 @@ $sdk = novu\Novu::builder()
     ->build();
 
 $messageMarkAsRequestDto = new Components\MessageMarkAsRequestDto(
-    messageId: '<id>',
-    markAs: Components\MessageMarkAsRequestDtoMarkAs::Unread,
+    messageId: [
+        '<id>',
+    ],
+    markAs: Components\MessageMarkAsRequestDtoMarkAs::Read,
 );
 
 $response = $sdk->subscribers->messages->markAllAs(

@@ -87,7 +87,7 @@ $sdk = novu\Novu::builder()
 
 $createIntegrationRequestDto = new Components\CreateIntegrationRequestDto(
     providerId: '<id>',
-    channel: Components\CreateIntegrationRequestDtoChannel::Sms,
+    channel: Components\CreateIntegrationRequestDtoChannel::Email,
 );
 
 $response = $sdk->integrations->create(

@@ -308,7 +308,7 @@ $sdk = novu\Novu::builder()
 
 
 $responses = $sdk->subscribers->list(
-    page: 7685.78,
+    page: 1980.01,
     limit: 10,
     idempotencyKey: '<value>'
 
@@ -559,7 +559,7 @@ $sdk = novu\Novu::builder()
     ->build();
 
 $updateSubscriberChannelRequestDto = new Components\UpdateSubscriberChannelRequestDto(
-    providerId: Components\ChatOrPushProviderEnum::PushWebhook,
+    providerId: Components\ChatOrPushProviderEnum::Slack,
     credentials: new Components\ChannelCredentials(
         webhookUrl: 'https://example.com/webhook',
         channel: 'general',

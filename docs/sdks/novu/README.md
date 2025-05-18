@@ -47,9 +47,12 @@ $triggerEventRequestDto = new Components\TriggerEventRequestDto(
         ],
     ],
     overrides: new Components\Overrides(),
-    to: new Components\SubscriberPayloadDto(
-        subscriberId: '<id>',
-    ),
+    to: [
+        new Components\TopicPayloadDto(
+            topicKey: '<value>',
+            type: Components\TriggerRecipientsTypeEnum::Subscriber,
+        ),
+    ],
 );
 
 $response = $sdk->trigger(
