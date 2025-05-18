@@ -28,7 +28,7 @@ $sdk = novu\Novu::builder()
     ->build();
 
 $markAllMessageAsRequestDto = new Components\MarkAllMessageAsRequestDto(
-    markAs: Components\MarkAs::Seen,
+    markAs: Components\MarkAs::Read,
 );
 
 $response = $sdk->subscribersMessages->markAll(

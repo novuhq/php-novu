@@ -31,7 +31,7 @@ $sdk = novu\Novu::builder()
     ->build();
 
 $updateSubscriberChannelRequestDto = new Components\UpdateSubscriberChannelRequestDto(
-    providerId: Components\ChatOrPushProviderEnum::Zulip,
+    providerId: Components\ChatOrPushProviderEnum::OneSignal,
     credentials: new Components\ChannelCredentials(
         webhookUrl: 'https://example.com/webhook',
         channel: 'general',

@@ -117,9 +117,12 @@ $triggerEventRequestDto = new Components\TriggerEventRequestDto(
         ],
     ],
     overrides: new Components\Overrides(),
-    to: new Components\SubscriberPayloadDto(
-        subscriberId: '<id>',
-    ),
+    to: [
+        new Components\TopicPayloadDto(
+            topicKey: '<value>',
+            type: Components\TriggerRecipientsTypeEnum::Subscriber,
+        ),
+    ],
 );
 
 $response = $sdk->trigger(
@@ -289,9 +292,12 @@ $triggerEventRequestDto = new Components\TriggerEventRequestDto(
         ],
     ],
     overrides: new Components\Overrides(),
-    to: new Components\SubscriberPayloadDto(
-        subscriberId: '<id>',
-    ),
+    to: [
+        new Components\TopicPayloadDto(
+            topicKey: '<value>',
+            type: Components\TriggerRecipientsTypeEnum::Subscriber,
+        ),
+    ],
 );
 
 $response = $sdk->trigger(
@@ -447,7 +453,7 @@ $sdk = novu\Novu::builder()
 
 
 $responses = $sdk->subscribers->list(
-    page: 7685.78,
+    page: 1980.01,
     limit: 10,
     idempotencyKey: '<value>'
 
@@ -492,9 +498,12 @@ $triggerEventRequestDto = new Components\TriggerEventRequestDto(
         ],
     ],
     overrides: new Components\Overrides(),
-    to: new Components\SubscriberPayloadDto(
-        subscriberId: '<id>',
-    ),
+    to: [
+        new Components\TopicPayloadDto(
+            topicKey: '<value>',
+            type: Components\TriggerRecipientsTypeEnum::Subscriber,
+        ),
+    ],
 );
 
 $response = $sdk->trigger(
@@ -550,9 +559,12 @@ $triggerEventRequestDto = new Components\TriggerEventRequestDto(
         ],
     ],
     overrides: new Components\Overrides(),
-    to: new Components\SubscriberPayloadDto(
-        subscriberId: '<id>',
-    ),
+    to: [
+        new Components\TopicPayloadDto(
+            topicKey: '<value>',
+            type: Components\TriggerRecipientsTypeEnum::Subscriber,
+        ),
+    ],
 );
 
 $response = $sdk->trigger(
@@ -618,9 +630,12 @@ try {
             ],
         ],
         overrides: new Components\Overrides(),
-        to: new Components\SubscriberPayloadDto(
-            subscriberId: '<id>',
-        ),
+        to: [
+            new Components\TopicPayloadDto(
+                topicKey: '<value>',
+                type: Components\TriggerRecipientsTypeEnum::Subscriber,
+            ),
+        ],
     );
 
     $response = $sdk->trigger(
@@ -689,9 +704,12 @@ $triggerEventRequestDto = new Components\TriggerEventRequestDto(
         ],
     ],
     overrides: new Components\Overrides(),
-    to: new Components\SubscriberPayloadDto(
-        subscriberId: '<id>',
-    ),
+    to: [
+        new Components\TopicPayloadDto(
+            topicKey: '<value>',
+            type: Components\TriggerRecipientsTypeEnum::Subscriber,
+        ),
+    ],
 );
 
 $response = $sdk->trigger(
@@ -732,9 +750,12 @@ $triggerEventRequestDto = new Components\TriggerEventRequestDto(
         ],
     ],
     overrides: new Components\Overrides(),
-    to: new Components\SubscriberPayloadDto(
-        subscriberId: '<id>',
-    ),
+    to: [
+        new Components\TopicPayloadDto(
+            topicKey: '<value>',
+            type: Components\TriggerRecipientsTypeEnum::Subscriber,
+        ),
+    ],
 );
 
 $response = $sdk->trigger(

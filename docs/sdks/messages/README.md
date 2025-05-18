@@ -140,7 +140,7 @@ $sdk = novu\Novu::builder()
 
 $response = $sdk->messages->deleteByTransactionId(
     transactionId: '<id>',
-    channel: Operations\Channel::Push,
+    channel: Operations\Channel::Sms,
     idempotencyKey: '<value>'
 
 );

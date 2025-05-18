@@ -29,7 +29,7 @@ $sdk = novu\Novu::builder()
 
 
 $response = $sdk->notificationsStats->getGraph(
-    days: 517.81,
+    days: 6559.5,
     idempotencyKey: '<value>'
 
 );
