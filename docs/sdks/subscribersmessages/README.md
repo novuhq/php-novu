@@ -5,11 +5,11 @@
 
 ### Available Operations
 
-* [markAll](#markall) - Marks all the subscriber messages as read, unread, seen or unseen.
+* [markAll](#markall) - Update all notifications state
 
 ## markAll
 
-Marks all the subscriber messages as read, unread, seen or unseen.
+Update all subscriber in-app (inbox) notifications state such as read, unread, seen or unseen by **subscriberId**.
 
 ### Example Usage
 
@@ -28,7 +28,7 @@ $sdk = novu\Novu::builder()
     ->build();
 
 $markAllMessageAsRequestDto = new Components\MarkAllMessageAsRequestDto(
-    markAs: Components\MarkAs::Seen,
+    markAs: Components\MarkAs::Read,
 );
 
 $response = $sdk->subscribersMessages->markAll(

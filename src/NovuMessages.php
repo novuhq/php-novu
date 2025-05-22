@@ -48,7 +48,10 @@ class NovuMessages
     }
 
     /**
-     * Mark message action as seen
+     * Update notification action status
+     *
+     * Update in-app (inbox) notification's action status by its unique key identifier **messageId** and type field **type**. 
+     *       **type** field can be **primary** or **secondary**
      *
      * @param  Operations\SubscribersV1ControllerMarkActionAsSeenRequest  $request
      * @return Operations\SubscribersV1ControllerMarkActionAsSeenResponse
@@ -192,7 +195,10 @@ class NovuMessages
     }
 
     /**
-     * Mark a subscriber messages as seen, read, unseen or unread
+     * Update notifications state
+     *
+     * Update subscriber's multiple in-app (inbox) notifications state such as seen, read, unseen or unread by **subscriberId**. 
+     *       **messageId** is of type mongodbId of notifications
      *
      * @param  Components\MessageMarkAsRequestDto  $messageMarkAsRequestDto
      * @param  string  $subscriberId

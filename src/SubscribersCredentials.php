@@ -48,9 +48,10 @@ class SubscribersCredentials
     }
 
     /**
-     * Delete subscriber credentials by providerId
+     * Delete provider credentials
      *
-     * Delete subscriber credentials such as slack and expo tokens.
+     * Delete subscriber credentials for a provider such as **slack** and **FCM** by **providerId**. 
+     *     This action is irreversible and will remove the credentials for the provider for particular **subscriberId**.
      *
      * @param  string  $subscriberId
      * @param  string  $providerId
@@ -186,11 +187,10 @@ class SubscribersCredentials
     }
 
     /**
-     * Modify subscriber credentials
+     * Upsert provider credentials
      *
-     * Subscriber credentials associated to the delivery methods such as slack and push tokens.
-     *
-     *     This endpoint appends provided credentials and deviceTokens to the existing ones.
+     * Update credentials for a provider such as **slack** and **FCM**. 
+     *       **providerId** is required field. This API replaces the existing deviceTokens with the provided ones.
      *
      * @param  Components\UpdateSubscriberChannelRequestDto  $updateSubscriberChannelRequestDto
      * @param  string  $subscriberId

@@ -5,11 +5,11 @@
 
 ### Available Operations
 
-* [getUnseenCount](#getunseencount) - Get the unseen in-app notifications count for subscribers feed
+* [getUnseenCount](#getunseencount) - Retrieve unseen notifications count
 
 ## getUnseenCount
 
-Get the unseen in-app notifications count for subscribers feed
+Retrieve unseen in-app (inbox) notifications count for a subscriber by its unique key identifier **subscriberId**.
 
 ### Example Usage
 

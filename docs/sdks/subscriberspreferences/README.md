@@ -5,11 +5,12 @@
 
 ### Available Operations
 
-* [list](#list) - Get subscriber preferences
+* [list](#list) - Retrieve subscriber preferences
 
 ## list
 
-Get subscriber global and workflow specific preferences
+Retrieve subscriber channel preferences by its unique key identifier **subscriberId**. 
+    This API returns all five channels preferences for all workflows and global preferences.
 
 ### Example Usage
 

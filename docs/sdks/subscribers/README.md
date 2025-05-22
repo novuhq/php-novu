@@ -5,21 +5,20 @@
 
 ### Available Operations
 
-* [search](#search) - Search for subscribers
-* [create](#create) - Create subscriber
-* [get](#get) - Get subscriber
-* [patch](#patch) - Patch subscriber
+* [search](#search) - Search subscribers
+* [create](#create) - Create a subscriber
+* [get](#get) - Retrieve a subscriber
+* [patch](#patch) - Update a subscriber
 * [delete](#delete) - Delete subscriber
-* [list](#list) - Get subscribers
-* [update](#update) - Upsert subscriber
 * [createBulk](#createbulk) - Bulk create subscribers
-* [updatePreferences](#updatepreferences) - Update subscriber global or workflow specific preferences
-* [updateCredentials](#updatecredentials) - Update subscriber credentials
+* [updatePreferences](#updatepreferences) - Update subscriber preferences
+* [updateCredentials](#updatecredentials) - Update provider credentials
 * [updateOnlineStatus](#updateonlinestatus) - Update subscriber online status
 
 ## search
 
-Search for subscribers
+Search subscribers by their **email**, **phone**, **subscriberId** and **name**. 
+    The search is case sensitive and supports pagination.Checkout all available filters in the query section.
 
 ### Example Usage
 
@@ -70,7 +69,8 @@ if ($response->listSubscribersResponseDto !== null) {
 
 ## create
 
-Create subscriber with the given data, if the subscriber already exists, it will be updated
+Create a subscriber with the subscriber attributes. 
+      **subscriberId** is a required field, rest other fields are optional, if the subscriber already exists, it will be updated
 
 ### Example Usage
 
@@ -126,7 +126,8 @@ if ($response->subscriberResponseDto !== null) {
 
 ## get
 
-Get subscriber by your internal id used to identify the subscriber
+Retrive a subscriber by its unique key identifier **subscriberId**. 
+    **subscriberId** field is required.
 
 ### Example Usage
 
@@ -179,7 +180,8 @@ if ($response->subscriberResponseDto !== null) {
 
 ## patch
 
-Patch subscriber by your internal id used to identify the subscriber
+Update a subscriber by its unique key identifier **subscriberId**. 
+    **subscriberId** is a required field, rest other fields are optional
 
 ### Example Usage
 
@@ -235,7 +237,7 @@ if ($response->subscriberResponseDto !== null) {
 
 ## delete
 
-Deletes a subscriber entity from the Novu platform
+Deletes a subscriber entity from the Novu platform along with associated messages, preferences, and topic subscriptions
 
 ### Example Usage
 
@@ -286,142 +288,10 @@ if ($response->removeSubscriberResponseDto !== null) {
 | Errors\ErrorDto                        | 500                                    | application/json                       |
 | Errors\APIException                    | 4XX, 5XX                               | \*/\*                                  |
 
-## list
-
-Returns a list of subscribers, could paginated using the `page` and `limit` query parameter
-
-### Example Usage
-
-```php
-declare(strict_types=1);
-
-require 'vendor/autoload.php';
-
-use novu;
-
-$sdk = novu\Novu::builder()
-    ->setSecurity(
-        'YOUR_SECRET_KEY_HERE'
-    )
-    ->build();
-
-
-
-$responses = $sdk->subscribers->list(
-    page: 7685.78,
-    limit: 10,
-    idempotencyKey: '<value>'
-
-);
-
-
-foreach ($responses as $response) {
-    if ($response->statusCode === 200) {
-        // handle response
-    }
-}
-```
-
-### Parameters
-
-| Parameter                         | Type                              | Required                          | Description                       |
-| --------------------------------- | --------------------------------- | --------------------------------- | --------------------------------- |
-| `page`                            | *?float*                          | :heavy_minus_sign:                | N/A                               |
-| `limit`                           | *?float*                          | :heavy_minus_sign:                | N/A                               |
-| `idempotencyKey`                  | *?string*                         | :heavy_minus_sign:                | A header for idempotency purposes |
-
-### Response
-
-**[?Operations\SubscribersV1ControllerListSubscribersResponse](../../Models/Operations/SubscribersV1ControllerListSubscribersResponse.md)**
-
-### Errors
-
-| Error Type                             | Status Code                            | Content Type                           |
-| -------------------------------------- | -------------------------------------- | -------------------------------------- |
-| Errors\ErrorDto                        | 414                                    | application/json                       |
-| Errors\ErrorDto                        | 400, 401, 403, 404, 405, 409, 413, 415 | application/json                       |
-| Errors\ValidationErrorDto              | 422                                    | application/json                       |
-| Errors\ErrorDto                        | 500                                    | application/json                       |
-| Errors\APIException                    | 4XX, 5XX                               | \*/\*                                  |
-
-## update
-
-Used to upsert the subscriber entity with new information
-
-### Example Usage
-
-```php
-declare(strict_types=1);
-
-require 'vendor/autoload.php';
-
-use novu;
-use novu\Models\Components;
-
-$sdk = novu\Novu::builder()
-    ->setSecurity(
-        'YOUR_SECRET_KEY_HERE'
-    )
-    ->build();
-
-$updateSubscriberRequestDto = new Components\UpdateSubscriberRequestDto(
-    email: 'john.doe@example.com',
-    firstName: 'John',
-    lastName: 'Doe',
-    phone: '+1234567890',
-    avatar: 'https://example.com/avatar.jpg',
-    locale: 'en-US',
-    data: [
-        'preferences' => [
-            'notifications' => true,
-            'theme' => 'dark',
-        ],
-        'tags' => [
-            'premium',
-            'newsletter',
-        ],
-    ],
-);
-
-$response = $sdk->subscribers->update(
-    subscriberId: '<id>',
-    updateSubscriberRequestDto: $updateSubscriberRequestDto,
-    idempotencyKey: '<value>'
-
-);
-
-if ($response->subscriberResponseDto !== null) {
-    // handle response
-}
-```
-
-### Parameters
-
-| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
-| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `subscriberId`                                                                                 | *string*                                                                                       | :heavy_check_mark:                                                                             | N/A                                                                                            |
-| `updateSubscriberRequestDto`                                                                   | [Components\UpdateSubscriberRequestDto](../../Models/Components/UpdateSubscriberRequestDto.md) | :heavy_check_mark:                                                                             | N/A                                                                                            |
-| `idempotencyKey`                                                                               | *?string*                                                                                      | :heavy_minus_sign:                                                                             | A header for idempotency purposes                                                              |
-
-### Response
-
-**[?Operations\SubscribersV1ControllerUpdateSubscriberResponse](../../Models/Operations/SubscribersV1ControllerUpdateSubscriberResponse.md)**
-
-### Errors
-
-| Error Type                             | Status Code                            | Content Type                           |
-| -------------------------------------- | -------------------------------------- | -------------------------------------- |
-| Errors\ErrorDto                        | 414                                    | application/json                       |
-| Errors\ErrorDto                        | 400, 401, 403, 404, 405, 409, 413, 415 | application/json                       |
-| Errors\ValidationErrorDto              | 422                                    | application/json                       |
-| Errors\ErrorDto                        | 500                                    | application/json                       |
-| Errors\APIException                    | 4XX, 5XX                               | \*/\*                                  |
-
 ## createBulk
 
 
-      Using this endpoint you can create multiple subscribers at once, to avoid multiple calls to the API.
-      The bulk API is limited to 500 subscribers per request.
+      Using this endpoint multiple subscribers can be created at once. The bulk API is limited to 500 subscribers per request.
     
 
 ### Example Usage
@@ -482,7 +352,9 @@ if ($response->bulkCreateSubscriberResponseDto !== null) {
 
 ## updatePreferences
 
-Update subscriber global or workflow specific preferences
+Update subscriber preferences by its unique key identifier **subscriberId**. 
+    **workflowId** is optional field, if provided, this API will update that workflow preference, 
+    otherwise it will update global preferences
 
 ### Example Usage
 
@@ -540,7 +412,8 @@ if ($response->getSubscriberPreferencesDto !== null) {
 
 ## updateCredentials
 
-Subscriber credentials associated to the delivery methods such as slack and push tokens.
+Update credentials for a provider such as slack and push tokens. 
+      **providerId** is required field. This API appends the **deviceTokens** to the existing ones.
 
 ### Example Usage
 
@@ -559,7 +432,7 @@ $sdk = novu\Novu::builder()
     ->build();
 
 $updateSubscriberChannelRequestDto = new Components\UpdateSubscriberChannelRequestDto(
-    providerId: Components\ChatOrPushProviderEnum::PushWebhook,
+    providerId: Components\ChatOrPushProviderEnum::Slack,
     credentials: new Components\ChannelCredentials(
         webhookUrl: 'https://example.com/webhook',
         channel: 'general',
@@ -612,7 +485,7 @@ if ($response->subscriberResponseDto !== null) {
 
 ## updateOnlineStatus
 
-Used to update the subscriber isOnline flag.
+Update the subscriber online status by its unique key identifier **subscriberId**
 
 ### Example Usage
 

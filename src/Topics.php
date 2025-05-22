@@ -51,7 +51,10 @@ class Topics
     }
 
     /**
-     * Delete topic by key
+     * Delete a topic
+     *
+     * Delete a topic by its unique key identifier **topicKey**. 
+     *     This action is irreversible and will remove all subscriptions to the topic.
      *
      * @param  string  $topicKey
      * @param  ?string  $idempotencyKey
@@ -195,7 +198,9 @@ class Topics
     }
 
     /**
-     * Get topic by key
+     * Retrieve a topic
+     *
+     * Retrieve a topic by its unique key identifier **topicKey**
      *
      * @param  string  $topicKey
      * @param  ?string  $idempotencyKey
@@ -339,7 +344,11 @@ class Topics
     }
 
     /**
-     * Get topics list
+     * List all topics
+     *
+     * This api returns a paginated list of topics.
+     *     Topics can be filtered by **key**, **name**, or **includeCursor** to paginate through the list. 
+     *     Checkout all available filters in the query section.
      *
      * @param  ?Operations\TopicsControllerListTopicsRequest  $request
      * @return Operations\TopicsControllerListTopicsResponse
@@ -481,7 +490,9 @@ class Topics
     }
 
     /**
-     * Update topic by key
+     * Update a topic
+     *
+     * Update a topic name by its unique key identifier **topicKey**
      *
      * @param  Components\UpdateTopicRequestDto  $updateTopicRequestDto
      * @param  string  $topicKey
@@ -632,7 +643,7 @@ class Topics
     }
 
     /**
-     * Create or update a topic
+     * Create a topic
      *
      * Creates a new topic if it does not exist, or updates an existing topic if it already exists
      *

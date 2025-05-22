@@ -47,9 +47,10 @@ class SubscribersPreferences
     }
 
     /**
-     * Get subscriber preferences
+     * Retrieve subscriber preferences
      *
-     * Get subscriber global and workflow specific preferences
+     * Retrieve subscriber channel preferences by its unique key identifier **subscriberId**. 
+     *     This API returns all five channels preferences for all workflows and global preferences.
      *
      * @param  string  $subscriberId
      * @param  ?string  $idempotencyKey

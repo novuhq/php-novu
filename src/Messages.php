@@ -47,9 +47,10 @@ class Messages
     }
 
     /**
-     * Delete message
+     * Delete a message
      *
-     * Deletes a message entity from the Novu platform
+     * Delete a message entity from the Novu platform by **messageId**. 
+     *     This action is irreversible. **messageId** is required and of mongodbId type.
      *
      * @param  string  $messageId
      * @param  ?string  $idempotencyKey
@@ -195,7 +196,8 @@ class Messages
     /**
      * Delete messages by transactionId
      *
-     * Deletes messages entity from the Novu platform using TransactionId of message
+     * Delete multiple messages from the Novu platform using **transactionId** of triggered event. 
+     *     This API supports filtering by **channel** and delete all messages associated with the **transactionId**.
      *
      * @param  string  $transactionId
      * @param  ?Operations\Channel  $channel
@@ -334,9 +336,11 @@ class Messages
     }
 
     /**
-     * Get messages
+     * List all messages
      *
-     * Returns a list of messages, could paginate using the `page` query parameter
+     * List all messages for the current environment. 
+     *     This API supports filtering by **channel**, **subscriberId**, and **transactionId**. 
+     *     This API returns a paginated list of messages.
      *
      * @param  ?Operations\MessagesControllerGetMessagesRequest  $request
      * @return Operations\MessagesControllerGetMessagesResponse

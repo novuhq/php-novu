@@ -48,7 +48,10 @@ class Subscriptions
     }
 
     /**
-     * Create topic subscriptions, if the topic does not exist, it will be created.
+     * Create topic subscriptions
+     *
+     * This api will create subscription for subscriberIds for a topic. 
+     *       Its like subscribing to a common interest group. if topic does not exist, it will be created.
      *
      * @param  Components\CreateTopicSubscriptionsRequestDto  $createTopicSubscriptionsRequestDto
      * @param  string  $topicKey
@@ -201,6 +204,8 @@ class Subscriptions
     /**
      * Delete topic subscriptions
      *
+     * Delete subscriptions for subscriberIds for a topic.
+     *
      * @param  Components\DeleteTopicSubscriptionsRequestDto  $deleteTopicSubscriptionsRequestDto
      * @param  string  $topicKey
      * @param  ?string  $idempotencyKey
@@ -351,6 +356,9 @@ class Subscriptions
 
     /**
      * List topic subscriptions
+     *
+     * List all topics that a subscriber is subscribed to.
+     *     Checkout all available filters in the query section.
      *
      * @param  Operations\TopicsControllerListTopicSubscriptionsRequest  $request
      * @return Operations\TopicsControllerListTopicSubscriptionsResponse

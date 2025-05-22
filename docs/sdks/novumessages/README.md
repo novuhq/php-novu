@@ -5,12 +5,13 @@
 
 ### Available Operations
 
-* [updateAsSeen](#updateasseen) - Mark message action as seen
-* [markAllAs](#markallas) - Mark a subscriber messages as seen, read, unseen or unread
+* [updateAsSeen](#updateasseen) - Update notification action status
+* [markAllAs](#markallas) - Update notifications state
 
 ## updateAsSeen
 
-Mark message action as seen
+Update in-app (inbox) notification's action status by its unique key identifier **messageId** and type field **type**. 
+      **type** field can be **primary** or **secondary**
 
 ### Example Usage
 
@@ -34,7 +35,7 @@ $request = new Operations\SubscribersV1ControllerMarkActionAsSeenRequest(
     type: '<value>',
     subscriberId: '<id>',
     markMessageActionAsSeenDto: new Components\MarkMessageActionAsSeenDto(
-        status: Components\MarkMessageActionAsSeenDtoStatus::Done,
+        status: Components\MarkMessageActionAsSeenDtoStatus::Pending,
     ),
 );
 
@@ -69,7 +70,8 @@ if ($response->messageResponseDto !== null) {
 
 ## markAllAs
 
-Mark a subscriber messages as seen, read, unseen or unread
+Update subscriber's multiple in-app (inbox) notifications state such as seen, read, unseen or unread by **subscriberId**. 
+      **messageId** is of type mongodbId of notifications
 
 ### Example Usage
 
@@ -88,8 +90,10 @@ $sdk = novu\Novu::builder()
     ->build();
 
 $messageMarkAsRequestDto = new Components\MessageMarkAsRequestDto(
-    messageId: '<id>',
-    markAs: Components\MessageMarkAsRequestDtoMarkAs::Unread,
+    messageId: [
+        '<id>',
+    ],
+    markAs: Components\MessageMarkAsRequestDtoMarkAs::Read,
 );
 
 $response = $sdk->subscribers->messages->markAllAs(
