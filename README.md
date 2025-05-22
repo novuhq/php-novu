@@ -68,7 +68,6 @@ For more information about the API: [Novu Documentation](https://docs.novu.co)
   * [SDK Example Usage](#sdk-example-usage)
   * [Authentication](#authentication)
   * [Available Resources and Operations](#available-resources-and-operations)
-  * [Pagination](#pagination)
   * [Retries](#retries)
   * [Error Handling](#error-handling)
   * [Server Selection](#server-selection)
@@ -117,9 +116,7 @@ $triggerEventRequestDto = new Components\TriggerEventRequestDto(
         ],
     ],
     overrides: new Components\Overrides(),
-    to: new Components\SubscriberPayloadDto(
-        subscriberId: '<id>',
-    ),
+    to: 'SUBSCRIBER_ID',
 );
 
 $response = $sdk->trigger(
@@ -234,10 +231,7 @@ $bulkTriggerEventDto = new Components\BulkTriggerEventDto(
                 ],
             ],
             overrides: new Components\Overrides(),
-            to: new Components\TopicPayloadDto(
-                topicKey: '<value>',
-                type: Components\TriggerRecipientsTypeEnum::Topic,
-            ),
+            to: 'SUBSCRIBER_ID',
         ),
     ],
 );
@@ -289,9 +283,7 @@ $triggerEventRequestDto = new Components\TriggerEventRequestDto(
         ],
     ],
     overrides: new Components\Overrides(),
-    to: new Components\SubscriberPayloadDto(
-        subscriberId: '<id>',
-    ),
+    to: 'SUBSCRIBER_ID',
 );
 
 $response = $sdk->trigger(
@@ -314,35 +306,23 @@ if ($response->triggerEventResponseDto !== null) {
 
 ### [integrations](docs/sdks/integrations/README.md)
 
-* [list](docs/sdks/integrations/README.md#list) - Get integrations
-* [create](docs/sdks/integrations/README.md#create) - Create integration
-* [update](docs/sdks/integrations/README.md#update) - Update integration
-* [delete](docs/sdks/integrations/README.md#delete) - Delete integration
-* [setAsPrimary](docs/sdks/integrations/README.md#setasprimary) - Set integration as primary
-* [listActive](docs/sdks/integrations/README.md#listactive) - Get active integrations
-
-#### [integrations->webhooks](docs/sdks/webhooks/README.md)
-
-* [getSupportStatus](docs/sdks/webhooks/README.md#getsupportstatus) - Get webhook support status for provider
+* [list](docs/sdks/integrations/README.md#list) - List all integrations
+* [create](docs/sdks/integrations/README.md#create) - Create an integration
+* [update](docs/sdks/integrations/README.md#update) - Update an integration
+* [delete](docs/sdks/integrations/README.md#delete) - Delete an integration
+* [setAsPrimary](docs/sdks/integrations/README.md#setasprimary) - Update integration as primary
+* [listActive](docs/sdks/integrations/README.md#listactive) - List active integrations
 
 ### [messages](docs/sdks/messages/README.md)
 
-* [get](docs/sdks/messages/README.md#get) - Get messages
-* [delete](docs/sdks/messages/README.md#delete) - Delete message
+* [get](docs/sdks/messages/README.md#get) - List all messages
+* [delete](docs/sdks/messages/README.md#delete) - Delete a message
 * [deleteByTransactionId](docs/sdks/messages/README.md#deletebytransactionid) - Delete messages by transactionId
 
 ### [notifications](docs/sdks/notifications/README.md)
 
-* [list](docs/sdks/notifications/README.md#list) - Get notifications
-* [get](docs/sdks/notifications/README.md#get) - Get notification
-
-#### [notifications->stats](docs/sdks/stats/README.md)
-
-* [get](docs/sdks/stats/README.md#get) - Get notification statistics
-
-### [notificationsStats](docs/sdks/notificationsstats/README.md)
-
-* [getGraph](docs/sdks/notificationsstats/README.md#getgraph) - Get notification graph statistics
+* [list](docs/sdks/notifications/README.md#list) - List all events
+* [get](docs/sdks/notifications/README.md#get) - Retrieve an event
 
 ### [Novu SDK](docs/sdks/novu/README.md)
 
@@ -353,68 +333,58 @@ if ($response->triggerEventResponseDto !== null) {
 
 ### [subscribers](docs/sdks/subscribers/README.md)
 
-* [search](docs/sdks/subscribers/README.md#search) - Search for subscribers
-* [create](docs/sdks/subscribers/README.md#create) - Create subscriber
-* [get](docs/sdks/subscribers/README.md#get) - Get subscriber
-* [patch](docs/sdks/subscribers/README.md#patch) - Patch subscriber
+* [search](docs/sdks/subscribers/README.md#search) - Search subscribers
+* [create](docs/sdks/subscribers/README.md#create) - Create a subscriber
+* [get](docs/sdks/subscribers/README.md#get) - Retrieve a subscriber
+* [patch](docs/sdks/subscribers/README.md#patch) - Update a subscriber
 * [delete](docs/sdks/subscribers/README.md#delete) - Delete subscriber
-* [list](docs/sdks/subscribers/README.md#list) - Get subscribers
-* [update](docs/sdks/subscribers/README.md#update) - Upsert subscriber
 * [createBulk](docs/sdks/subscribers/README.md#createbulk) - Bulk create subscribers
-* [updatePreferences](docs/sdks/subscribers/README.md#updatepreferences) - Update subscriber global or workflow specific preferences
-* [updateCredentials](docs/sdks/subscribers/README.md#updatecredentials) - Update subscriber credentials
+* [updatePreferences](docs/sdks/subscribers/README.md#updatepreferences) - Update subscriber preferences
+* [updateCredentials](docs/sdks/subscribers/README.md#updatecredentials) - Update provider credentials
 * [updateOnlineStatus](docs/sdks/subscribers/README.md#updateonlinestatus) - Update subscriber online status
-
-#### [subscribers->authentication](docs/sdks/authentication/README.md)
-
-* [handleOauthCallback](docs/sdks/authentication/README.md#handleoauthcallback) - Handle providers oauth redirect
 
 #### [subscribers->messages](docs/sdks/novumessages/README.md)
 
-* [updateAsSeen](docs/sdks/novumessages/README.md#updateasseen) - Mark message action as seen
-* [markAllAs](docs/sdks/novumessages/README.md#markallas) - Mark a subscriber messages as seen, read, unseen or unread
+* [updateAsSeen](docs/sdks/novumessages/README.md#updateasseen) - Update notification action status
+* [markAllAs](docs/sdks/novumessages/README.md#markallas) - Update notifications state
 
-#### [subscribers->notifications](docs/sdks/novusubscribersnotifications/README.md)
+#### [subscribers->notifications](docs/sdks/novunotifications/README.md)
 
-* [getFeed](docs/sdks/novusubscribersnotifications/README.md#getfeed) - Get in-app notification feed for a particular subscriber
+* [getFeed](docs/sdks/novunotifications/README.md#getfeed) - Retrieve subscriber notifications
 
 #### [subscribers->topics](docs/sdks/novutopics/README.md)
 
-* [list](docs/sdks/novutopics/README.md#list) - List topics a subscriber is subscribed to
-
-### [subscribersAuthentication](docs/sdks/subscribersauthentication/README.md)
-
-* [chatAccessOauth](docs/sdks/subscribersauthentication/README.md#chataccessoauth) - Handle chat oauth
+* [list](docs/sdks/novutopics/README.md#list) - Retrieve subscriber subscriptions
 
 ### [subscribersCredentials](docs/sdks/subscriberscredentials/README.md)
 
-* [append](docs/sdks/subscriberscredentials/README.md#append) - Modify subscriber credentials
-* [deleteProvider](docs/sdks/subscriberscredentials/README.md#deleteprovider) - Delete subscriber credentials by providerId
+* [append](docs/sdks/subscriberscredentials/README.md#append) - Upsert provider credentials
+* [deleteProvider](docs/sdks/subscriberscredentials/README.md#deleteprovider) - Delete provider credentials
 
 ### [subscribersMessages](docs/sdks/subscribersmessages/README.md)
 
-* [markAll](docs/sdks/subscribersmessages/README.md#markall) - Marks all the subscriber messages as read, unread, seen or unseen.
+* [markAll](docs/sdks/subscribersmessages/README.md#markall) - Update all notifications state
 
 ### [subscribersNotifications](docs/sdks/subscribersnotifications/README.md)
 
-* [getUnseenCount](docs/sdks/subscribersnotifications/README.md#getunseencount) - Get the unseen in-app notifications count for subscribers feed
+* [getUnseenCount](docs/sdks/subscribersnotifications/README.md#getunseencount) - Retrieve unseen notifications count
 
 ### [subscribersPreferences](docs/sdks/subscriberspreferences/README.md)
 
-* [list](docs/sdks/subscriberspreferences/README.md#list) - Get subscriber preferences
+* [list](docs/sdks/subscriberspreferences/README.md#list) - Retrieve subscriber preferences
 
 ### [topics](docs/sdks/topics/README.md)
 
-* [list](docs/sdks/topics/README.md#list) - Get topics list
-* [create](docs/sdks/topics/README.md#create) - Create or update a topic
-* [get](docs/sdks/topics/README.md#get) - Get topic by key
-* [update](docs/sdks/topics/README.md#update) - Update topic by key
-* [delete](docs/sdks/topics/README.md#delete) - Delete topic by key
+* [list](docs/sdks/topics/README.md#list) - List all topics
+* [create](docs/sdks/topics/README.md#create) - Create a topic
+* [get](docs/sdks/topics/README.md#get) - Retrieve a topic
+* [update](docs/sdks/topics/README.md#update) - Update a topic
+* [delete](docs/sdks/topics/README.md#delete) - Delete a topic
 
 #### [topics->subscriptions](docs/sdks/subscriptions/README.md)
 
 * [list](docs/sdks/subscriptions/README.md#list) - List topic subscriptions
-* [create](docs/sdks/subscriptions/README.md#create) - Create topic subscriptions, if the topic does not exist, it will be created.
+* [create](docs/sdks/subscriptions/README.md#create) - Create topic subscriptions
 * [delete](docs/sdks/subscriptions/README.md#delete) - Delete topic subscriptions
 
 ### [topicsSubscribers](docs/sdks/topicssubscribers/README.md)
@@ -423,44 +393,6 @@ if ($response->triggerEventResponseDto !== null) {
 
 </details>
 <!-- End Available Resources and Operations [operations] -->
-
-<!-- Start Pagination [pagination] -->
-## Pagination
-
-Some of the endpoints in this SDK support pagination. To use pagination, you make your SDK calls as usual, but the
-returned object will be a `Generator` instead of an individual response.
-
-Working with generators is as simple as iterating over the responses in a `foreach` loop, and you can see an example below:
-```php
-declare(strict_types=1);
-
-require 'vendor/autoload.php';
-
-use novu;
-
-$sdk = novu\Novu::builder()
-    ->setSecurity(
-        'YOUR_SECRET_KEY_HERE'
-    )
-    ->build();
-
-
-
-$responses = $sdk->subscribers->list(
-    page: 7685.78,
-    limit: 10,
-    idempotencyKey: '<value>'
-
-);
-
-
-foreach ($responses as $response) {
-    if ($response->statusCode === 200) {
-        // handle response
-    }
-}
-```
-<!-- End Pagination [pagination] -->
 
 <!-- Start Retries [retries] -->
 ## Retries
@@ -492,9 +424,7 @@ $triggerEventRequestDto = new Components\TriggerEventRequestDto(
         ],
     ],
     overrides: new Components\Overrides(),
-    to: new Components\SubscriberPayloadDto(
-        subscriberId: '<id>',
-    ),
+    to: 'SUBSCRIBER_ID',
 );
 
 $response = $sdk->trigger(
@@ -550,9 +480,7 @@ $triggerEventRequestDto = new Components\TriggerEventRequestDto(
         ],
     ],
     overrides: new Components\Overrides(),
-    to: new Components\SubscriberPayloadDto(
-        subscriberId: '<id>',
-    ),
+    to: 'SUBSCRIBER_ID',
 );
 
 $response = $sdk->trigger(
@@ -618,9 +546,7 @@ try {
             ],
         ],
         overrides: new Components\Overrides(),
-        to: new Components\SubscriberPayloadDto(
-            subscriberId: '<id>',
-        ),
+        to: 'SUBSCRIBER_ID',
     );
 
     $response = $sdk->trigger(
@@ -689,9 +615,7 @@ $triggerEventRequestDto = new Components\TriggerEventRequestDto(
         ],
     ],
     overrides: new Components\Overrides(),
-    to: new Components\SubscriberPayloadDto(
-        subscriberId: '<id>',
-    ),
+    to: 'SUBSCRIBER_ID',
 );
 
 $response = $sdk->trigger(
@@ -732,9 +656,7 @@ $triggerEventRequestDto = new Components\TriggerEventRequestDto(
         ],
     ],
     overrides: new Components\Overrides(),
-    to: new Components\SubscriberPayloadDto(
-        subscriberId: '<id>',
-    ),
+    to: 'SUBSCRIBER_ID',
 );
 
 $response = $sdk->trigger(

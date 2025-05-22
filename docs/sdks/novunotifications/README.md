@@ -1,15 +1,15 @@
-# NovuSubscribersNotifications
+# NovuNotifications
 (*subscribers->notifications*)
 
 ## Overview
 
 ### Available Operations
 
-* [getFeed](#getfeed) - Get in-app notification feed for a particular subscriber
+* [getFeed](#getfeed) - Retrieve subscriber notifications
 
 ## getFeed
 
-Get in-app notification feed for a particular subscriber
+Retrieve subscriber in-app (inbox) notifications by its unique key identifier **subscriberId**.
 
 ### Example Usage
 

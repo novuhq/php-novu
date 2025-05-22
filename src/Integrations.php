@@ -19,15 +19,12 @@ use Speakeasy\Serializer\DeserializationContext;
 class Integrations
 {
     private SDKConfiguration $sdkConfiguration;
-    public Webhooks $webhooks;
-
     /**
      * @param  SDKConfiguration  $sdkConfig
      */
     public function __construct(public SDKConfiguration $sdkConfig)
     {
         $this->sdkConfiguration = $sdkConfig;
-        $this->webhooks = new Webhooks($this->sdkConfiguration);
     }
     /**
      * @param  string  $baseUrl
@@ -51,9 +48,10 @@ class Integrations
     }
 
     /**
-     * Create integration
+     * Create an integration
      *
-     * Create an integration for the current environment the user is based on the API key provided
+     * Create an integration for the current environment the user is based on the API key provided. 
+     *     Each provider supports different credentials, check the provider documentation for more details.
      *
      * @param  Components\CreateIntegrationRequestDto  $createIntegrationRequestDto
      * @param  ?string  $idempotencyKey
@@ -202,9 +200,9 @@ class Integrations
     }
 
     /**
-     * Get active integrations
+     * List active integrations
      *
-     * Return all the active integrations the user has created for that organization. Review v.0.17.0 changelog for a breaking change
+     * List all the active integrations created in the organization
      *
      * @param  ?string  $idempotencyKey
      * @return Operations\IntegrationsControllerGetActiveIntegrationsResponse
@@ -346,9 +344,9 @@ class Integrations
     }
 
     /**
-     * Get integrations
+     * List all integrations
      *
-     * Return all the integrations the user has created for that organization. Review v.0.17.0 changelog for a breaking change
+     * List all the channels integrations created in the organization
      *
      * @param  ?string  $idempotencyKey
      * @return Operations\IntegrationsControllerListIntegrationsResponse
@@ -490,7 +488,10 @@ class Integrations
     }
 
     /**
-     * Delete integration
+     * Delete an integration
+     *
+     * Delete an integration by its unique key identifier **integrationId**. 
+     *     This action is irreversible.
      *
      * @param  string  $integrationId
      * @param  ?string  $idempotencyKey
@@ -634,7 +635,11 @@ class Integrations
     }
 
     /**
-     * Set integration as primary
+     * Update integration as primary
+     *
+     * Update an integration as **primary** by its unique key identifier **integrationId**. 
+     *     This API will set the integration as primary for that channel in the current environment. 
+     *     Primary integration is used to deliver notification for sms and email channels in the workflow.
      *
      * @param  string  $integrationId
      * @param  ?string  $idempotencyKey
@@ -778,7 +783,10 @@ class Integrations
     }
 
     /**
-     * Update integration
+     * Update an integration
+     *
+     * Update an integration by its unique key identifier **integrationId**. 
+     *     Each provider supports different credentials, check the provider documentation for more details.
      *
      * @param  Components\UpdateIntegrationRequestDto  $updateIntegrationRequestDto
      * @param  string  $integrationId

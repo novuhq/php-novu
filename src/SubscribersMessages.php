@@ -48,7 +48,9 @@ class SubscribersMessages
     }
 
     /**
-     * Marks all the subscriber messages as read, unread, seen or unseen.
+     * Update all notifications state
+     *
+     * Update all subscriber in-app (inbox) notifications state such as read, unread, seen or unseen by **subscriberId**.
      *
      * @param  Components\MarkAllMessageAsRequestDto  $markAllMessageAsRequestDto
      * @param  string  $subscriberId

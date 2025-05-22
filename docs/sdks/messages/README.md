@@ -8,13 +8,15 @@ A message in Novu represents a notification delivered to a recipient on a partic
 
 ### Available Operations
 
-* [get](#get) - Get messages
-* [delete](#delete) - Delete message
+* [get](#get) - List all messages
+* [delete](#delete) - Delete a message
 * [deleteByTransactionId](#deletebytransactionid) - Delete messages by transactionId
 
 ## get
 
-Returns a list of messages, could paginate using the `page` query parameter
+List all messages for the current environment. 
+    This API supports filtering by **channel**, **subscriberId**, and **transactionId**. 
+    This API returns a paginated list of messages.
 
 ### Example Usage
 
@@ -65,7 +67,8 @@ if ($response->messagesResponseDto !== null) {
 
 ## delete
 
-Deletes a message entity from the Novu platform
+Delete a message entity from the Novu platform by **messageId**. 
+    This action is irreversible. **messageId** is required and of mongodbId type.
 
 ### Example Usage
 
@@ -85,7 +88,7 @@ $sdk = novu\Novu::builder()
 
 
 $response = $sdk->messages->delete(
-    messageId: '<id>',
+    messageId: '507f1f77bcf86cd799439011',
     idempotencyKey: '<value>'
 
 );
@@ -97,10 +100,10 @@ if ($response->deleteMessageResponseDto !== null) {
 
 ### Parameters
 
-| Parameter                         | Type                              | Required                          | Description                       |
-| --------------------------------- | --------------------------------- | --------------------------------- | --------------------------------- |
-| `messageId`                       | *string*                          | :heavy_check_mark:                | N/A                               |
-| `idempotencyKey`                  | *?string*                         | :heavy_minus_sign:                | A header for idempotency purposes |
+| Parameter                         | Type                              | Required                          | Description                       | Example                           |
+| --------------------------------- | --------------------------------- | --------------------------------- | --------------------------------- | --------------------------------- |
+| `messageId`                       | *string*                          | :heavy_check_mark:                | N/A                               | 507f1f77bcf86cd799439011          |
+| `idempotencyKey`                  | *?string*                         | :heavy_minus_sign:                | A header for idempotency purposes |                                   |
 
 ### Response
 
@@ -118,7 +121,8 @@ if ($response->deleteMessageResponseDto !== null) {
 
 ## deleteByTransactionId
 
-Deletes messages entity from the Novu platform using TransactionId of message
+Delete multiple messages from the Novu platform using **transactionId** of triggered event. 
+    This API supports filtering by **channel** and delete all messages associated with the **transactionId**.
 
 ### Example Usage
 
@@ -139,8 +143,8 @@ $sdk = novu\Novu::builder()
 
 
 $response = $sdk->messages->deleteByTransactionId(
-    transactionId: '<id>',
-    channel: Operations\Channel::Push,
+    transactionId: '507f1f77bcf86cd799439011',
+    channel: Operations\Channel::Sms,
     idempotencyKey: '<value>'
 
 );
@@ -152,11 +156,11 @@ if ($response->statusCode === 200) {
 
 ### Parameters
 
-| Parameter                                                 | Type                                                      | Required                                                  | Description                                               |
-| --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- |
-| `transactionId`                                           | *string*                                                  | :heavy_check_mark:                                        | N/A                                                       |
-| `channel`                                                 | [?Operations\Channel](../../Models/Operations/Channel.md) | :heavy_minus_sign:                                        | The channel of the message to be deleted                  |
-| `idempotencyKey`                                          | *?string*                                                 | :heavy_minus_sign:                                        | A header for idempotency purposes                         |
+| Parameter                                                 | Type                                                      | Required                                                  | Description                                               | Example                                                   |
+| --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- |
+| `transactionId`                                           | *string*                                                  | :heavy_check_mark:                                        | N/A                                                       | 507f1f77bcf86cd799439011                                  |
+| `channel`                                                 | [?Operations\Channel](../../Models/Operations/Channel.md) | :heavy_minus_sign:                                        | The channel of the message to be deleted                  |                                                           |
+| `idempotencyKey`                                          | *?string*                                                 | :heavy_minus_sign:                                        | A header for idempotency purposes                         |                                                           |
 
 ### Response
 

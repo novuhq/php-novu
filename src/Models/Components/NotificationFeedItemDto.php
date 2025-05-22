@@ -68,14 +68,6 @@ class NotificationFeedItemDto
     public string $subscriberId;
 
     /**
-     * Identifier for the feed associated with the notification.
-     *
-     * @var string $feedId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('_feedId')]
-    public string $feedId;
-
-    /**
      * Identifier for the job that triggered the notification.
      *
      * @var string $jobId
@@ -183,6 +175,15 @@ class NotificationFeedItemDto
     public ?array $overrides = null;
 
     /**
+     * Identifier for the feed associated with the notification.
+     *
+     * @var ?string $feedId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('_feedId')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $feedId = null;
+
+    /**
      * Timestamp indicating when the notification was created.
      *
      * @var ?\DateTime $createdAt
@@ -245,7 +246,6 @@ class NotificationFeedItemDto
      * @param  string  $organizationId
      * @param  string  $notificationId
      * @param  string  $subscriberId
-     * @param  string  $feedId
      * @param  string  $jobId
      * @param  string  $transactionId
      * @param  string  $content
@@ -258,6 +258,7 @@ class NotificationFeedItemDto
      * @param  ?SubscriberFeedResponseDto  $subscriber
      * @param  ?array<string, mixed>  $payload
      * @param  ?array<string, mixed>  $overrides
+     * @param  ?string  $feedId
      * @param  ?\DateTime  $createdAt
      * @param  ?\DateTime  $updatedAt
      * @param  ?string  $templateIdentifier
@@ -266,7 +267,7 @@ class NotificationFeedItemDto
      * @param  ?array<string>  $deviceTokens
      * @phpstan-pure
      */
-    public function __construct(string $id, string $templateId, string $environmentId, string $messageTemplateId, string $organizationId, string $notificationId, string $subscriberId, string $feedId, string $jobId, string $transactionId, string $content, ChannelTypeEnum $channel, bool $read, bool $seen, MessageCTA $cta, NotificationFeedItemDtoStatus $status, ?ActorFeedItemDto $actor = null, ?SubscriberFeedResponseDto $subscriber = null, ?array $payload = null, ?array $overrides = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null, ?string $templateIdentifier = null, ?string $providerId = null, ?string $subject = null, ?array $deviceTokens = null)
+    public function __construct(string $id, string $templateId, string $environmentId, string $messageTemplateId, string $organizationId, string $notificationId, string $subscriberId, string $jobId, string $transactionId, string $content, ChannelTypeEnum $channel, bool $read, bool $seen, MessageCTA $cta, NotificationFeedItemDtoStatus $status, ?ActorFeedItemDto $actor = null, ?SubscriberFeedResponseDto $subscriber = null, ?array $payload = null, ?array $overrides = null, ?string $feedId = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null, ?string $templateIdentifier = null, ?string $providerId = null, ?string $subject = null, ?array $deviceTokens = null)
     {
         $this->id = $id;
         $this->templateId = $templateId;
@@ -275,7 +276,6 @@ class NotificationFeedItemDto
         $this->organizationId = $organizationId;
         $this->notificationId = $notificationId;
         $this->subscriberId = $subscriberId;
-        $this->feedId = $feedId;
         $this->jobId = $jobId;
         $this->transactionId = $transactionId;
         $this->content = $content;
@@ -288,6 +288,7 @@ class NotificationFeedItemDto
         $this->subscriber = $subscriber;
         $this->payload = $payload;
         $this->overrides = $overrides;
+        $this->feedId = $feedId;
         $this->createdAt = $createdAt;
         $this->updatedAt = $updatedAt;
         $this->templateIdentifier = $templateIdentifier;

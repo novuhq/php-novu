@@ -5,14 +5,13 @@
 
 ### Available Operations
 
-* [append](#append) - Modify subscriber credentials
-* [deleteProvider](#deleteprovider) - Delete subscriber credentials by providerId
+* [append](#append) - Upsert provider credentials
+* [deleteProvider](#deleteprovider) - Delete provider credentials
 
 ## append
 
-Subscriber credentials associated to the delivery methods such as slack and push tokens.
-
-    This endpoint appends provided credentials and deviceTokens to the existing ones.
+Update credentials for a provider such as **slack** and **FCM**. 
+      **providerId** is required field. This API replaces the existing deviceTokens with the provided ones.
 
 ### Example Usage
 
@@ -31,7 +30,7 @@ $sdk = novu\Novu::builder()
     ->build();
 
 $updateSubscriberChannelRequestDto = new Components\UpdateSubscriberChannelRequestDto(
-    providerId: Components\ChatOrPushProviderEnum::Zulip,
+    providerId: Components\ChatOrPushProviderEnum::OneSignal,
     credentials: new Components\ChannelCredentials(
         webhookUrl: 'https://example.com/webhook',
         channel: 'general',
@@ -84,7 +83,8 @@ if ($response->subscriberResponseDto !== null) {
 
 ## deleteProvider
 
-Delete subscriber credentials such as slack and expo tokens.
+Delete subscriber credentials for a provider such as **slack** and **FCM** by **providerId**. 
+    This action is irreversible and will remove the credentials for the provider for particular **subscriberId**.
 
 ### Example Usage
 

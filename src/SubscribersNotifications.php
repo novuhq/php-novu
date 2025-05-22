@@ -47,7 +47,9 @@ class SubscribersNotifications
     }
 
     /**
-     * Get the unseen in-app notifications count for subscribers feed
+     * Retrieve unseen notifications count
+     *
+     * Retrieve unseen in-app (inbox) notifications count for a subscriber by its unique key identifier **subscriberId**.
      *
      * @param  string  $subscriberId
      * @param  ?bool  $seen

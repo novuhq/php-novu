@@ -15,7 +15,7 @@ use novu\Utils\Retry;
 use novu\Utils\Retry\RetryUtils;
 use Speakeasy\Serializer\DeserializationContext;
 
-class NotificationsStats
+class NovuNotifications
 {
     private SDKConfiguration $sdkConfiguration;
     /**
@@ -47,14 +47,15 @@ class NotificationsStats
     }
 
     /**
-     * Get notification graph statistics
+     * Retrieve subscriber notifications
      *
-     * @param  ?float  $days
-     * @param  ?string  $idempotencyKey
-     * @return Operations\NotificationsControllerGetActivityGraphStatsResponse
+     * Retrieve subscriber in-app (inbox) notifications by its unique key identifier **subscriberId**.
+     *
+     * @param  Operations\SubscribersV1ControllerGetNotificationsFeedRequest  $request
+     * @return Operations\SubscribersV1ControllerGetNotificationsFeedResponse
      * @throws \novu\Models\Errors\APIException
      */
-    public function getGraph(?float $days = null, ?string $idempotencyKey = null, ?Options $options = null): Operations\NotificationsControllerGetActivityGraphStatsResponse
+    public function getFeed(Operations\SubscribersV1ControllerGetNotificationsFeedRequest $request, ?Options $options = null): Operations\SubscribersV1ControllerGetNotificationsFeedResponse
     {
         $retryConfig = null;
         if ($options) {
@@ -83,16 +84,12 @@ class NotificationsStats
                 '5XX',
             ];
         }
-        $request = new Operations\NotificationsControllerGetActivityGraphStatsRequest(
-            days: $days,
-            idempotencyKey: $idempotencyKey,
-        );
         $baseUrl = $this->sdkConfiguration->getServerUrl();
-        $url = Utils\Utils::generateUrl($baseUrl, '/v1/notifications/graph/stats');
+        $url = Utils\Utils::generateUrl($baseUrl, '/v1/subscribers/{subscriberId}/notifications/feed', Operations\SubscribersV1ControllerGetNotificationsFeedRequest::class, $request);
         $urlOverride = null;
         $httpOptions = ['http_errors' => false];
 
-        $qp = Utils\Utils::getQueryParams(Operations\NotificationsControllerGetActivityGraphStatsRequest::class, $request, $urlOverride);
+        $qp = Utils\Utils::getQueryParams(Operations\SubscribersV1ControllerGetNotificationsFeedRequest::class, $request, $urlOverride);
         $httpOptions = array_merge_recursive($httpOptions, Utils\Utils::getHeaders($request));
         if (! array_key_exists('headers', $httpOptions)) {
             $httpOptions['headers'] = [];
@@ -100,7 +97,7 @@ class NotificationsStats
         $httpOptions['headers']['Accept'] = 'application/json';
         $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('GET', $url);
-        $hookContext = new HookContext($baseUrl, 'NotificationsController_getActivityGraphStats', [], $this->sdkConfiguration->securitySource);
+        $hookContext = new HookContext($baseUrl, 'SubscribersV1Controller_getNotificationsFeed', [], $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
         $httpOptions['query'] = Utils\QueryParameters::standardizeQueryParams($httpRequest, $qp);
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
@@ -124,13 +121,13 @@ class NotificationsStats
 
                 $serializer = Utils\JSON::createSerializer();
                 $responseData = (string) $httpResponse->getBody();
-                $obj = $serializer->deserialize($responseData, 'array<\novu\Models\Components\ActivityGraphStatesResponse>', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
-                $response = new Operations\NotificationsControllerGetActivityGraphStatsResponse(
+                $obj = $serializer->deserialize($responseData, '\novu\Models\Components\FeedResponseDto', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
+                $response = new Operations\SubscribersV1ControllerGetNotificationsFeedResponse(
                     statusCode: $statusCode,
                     contentType: $contentType,
                     rawResponse: $httpResponse,
                     headers: $httpResponse->getHeaders(),
-                    activityGraphStatesResponses: $obj);
+                    feedResponseDto: $obj);
 
                 return $response;
             } else {

@@ -47,9 +47,10 @@ class NovuTopics
     }
 
     /**
-     * List topics a subscriber is subscribed to
+     * Retrieve subscriber subscriptions
      *
-     * List topic subscriptions for a subscriber with pagination and filtering
+     * Retrieve subscriber's topic subscriptions by its unique key identifier **subscriberId**. 
+     *     Checkout all available filters in the query section.
      *
      * @param  Operations\SubscribersControllerListSubscriberTopicsRequest  $request
      * @return Operations\SubscribersControllerListSubscriberTopicsResponse

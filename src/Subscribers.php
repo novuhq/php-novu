@@ -21,11 +21,9 @@ class Subscribers
     private SDKConfiguration $sdkConfiguration;
     public NovuTopics $topics;
 
-    public Authentication $authentication;
-
     public NovuMessages $messages;
 
-    public NovuSubscribersNotifications $notifications;
+    public NovuNotifications $notifications;
 
     /**
      * @param  SDKConfiguration  $sdkConfig
@@ -34,9 +32,8 @@ class Subscribers
     {
         $this->sdkConfiguration = $sdkConfig;
         $this->topics = new NovuTopics($this->sdkConfiguration);
-        $this->authentication = new Authentication($this->sdkConfiguration);
         $this->messages = new NovuMessages($this->sdkConfiguration);
-        $this->notifications = new NovuSubscribersNotifications($this->sdkConfiguration);
+        $this->notifications = new NovuNotifications($this->sdkConfiguration);
     }
     /**
      * @param  string  $baseUrl
@@ -60,9 +57,10 @@ class Subscribers
     }
 
     /**
-     * Create subscriber
+     * Create a subscriber
      *
-     * Create subscriber with the given data, if the subscriber already exists, it will be updated
+     * Create a subscriber with the subscriber attributes. 
+     *       **subscriberId** is a required field, rest other fields are optional, if the subscriber already exists, it will be updated
      *
      * @param  Components\CreateSubscriberRequestDto  $createSubscriberRequestDto
      * @param  ?string  $idempotencyKey
@@ -211,9 +209,10 @@ class Subscribers
     }
 
     /**
-     * Get subscriber
+     * Retrieve a subscriber
      *
-     * Get subscriber by your internal id used to identify the subscriber
+     * Retrive a subscriber by its unique key identifier **subscriberId**. 
+     *     **subscriberId** field is required.
      *
      * @param  string  $subscriberId
      * @param  ?string  $idempotencyKey
@@ -357,9 +356,10 @@ class Subscribers
     }
 
     /**
-     * Patch subscriber
+     * Update a subscriber
      *
-     * Patch subscriber by your internal id used to identify the subscriber
+     * Update a subscriber by its unique key identifier **subscriberId**. 
+     *     **subscriberId** is a required field, rest other fields are optional
      *
      * @param  Components\PatchSubscriberRequestDto  $patchSubscriberRequestDto
      * @param  string  $subscriberId
@@ -512,7 +512,7 @@ class Subscribers
     /**
      * Delete subscriber
      *
-     * Deletes a subscriber entity from the Novu platform
+     * Deletes a subscriber entity from the Novu platform along with associated messages, preferences, and topic subscriptions
      *
      * @param  string  $subscriberId
      * @param  ?string  $idempotencyKey
@@ -656,7 +656,10 @@ class Subscribers
     }
 
     /**
-     * Search for subscribers
+     * Search subscribers
+     *
+     * Search subscribers by their **email**, **phone**, **subscriberId** and **name**. 
+     *     The search is case sensitive and supports pagination.Checkout all available filters in the query section.
      *
      * @param  ?Operations\SubscribersControllerSearchSubscribersRequest  $request
      * @return Operations\SubscribersControllerSearchSubscribersResponse
@@ -798,9 +801,11 @@ class Subscribers
     }
 
     /**
-     * Update subscriber global or workflow specific preferences
+     * Update subscriber preferences
      *
-     * Update subscriber global or workflow specific preferences
+     * Update subscriber preferences by its unique key identifier **subscriberId**. 
+     *     **workflowId** is optional field, if provided, this API will update that workflow preference, 
+     *     otherwise it will update global preferences
      *
      * @param  Components\PatchSubscriberPreferencesDto  $patchSubscriberPreferencesDto
      * @param  string  $subscriberId
@@ -954,8 +959,7 @@ class Subscribers
      * Bulk create subscribers
      *
      *
-     *       Using this endpoint you can create multiple subscribers at once, to avoid multiple calls to the API.
-     *       The bulk API is limited to 500 subscribers per request.
+     *       Using this endpoint multiple subscribers can be created at once. The bulk API is limited to 500 subscribers per request.
      *     
      *
      * @param  Components\BulkSubscriberCreateDto  $bulkSubscriberCreateDto
@@ -1105,361 +1109,10 @@ class Subscribers
     }
 
     /**
-     * Get subscribers
+     * Update provider credentials
      *
-     * Returns a list of subscribers, could paginated using the `page` and `limit` query parameter
-     *
-     * @param  ?float  $page
-     * @param  ?float  $limit
-     * @param  ?string  $idempotencyKey
-     * @return Operations\SubscribersV1ControllerListSubscribersResponse
-     * @throws \novu\Models\Errors\APIException
-     */
-    private function listIndividual(?float $page = null, ?float $limit = null, ?string $idempotencyKey = null, ?Options $options = null): Operations\SubscribersV1ControllerListSubscribersResponse
-    {
-        $retryConfig = null;
-        if ($options) {
-            $retryConfig = $options->retryConfig;
-        }
-        if ($retryConfig === null && $this->sdkConfiguration->retryConfig) {
-            $retryConfig = $this->sdkConfiguration->retryConfig;
-        } else {
-            $retryConfig = new Retry\RetryConfigBackoff(
-                initialIntervalMs: 1000,
-                maxIntervalMs: 30000,
-                exponent: 1.5,
-                maxElapsedTimeMs: 3600000,
-                retryConnectionErrors: true,
-            );
-        }
-        $retryCodes = null;
-        if ($options) {
-            $retryCodes = $options->retryCodes;
-        }
-        if ($retryCodes === null) {
-            $retryCodes = [
-                '408',
-                '409',
-                '429',
-                '5XX',
-            ];
-        }
-        $request = new Operations\SubscribersV1ControllerListSubscribersRequest(
-            page: $page,
-            limit: $limit,
-            idempotencyKey: $idempotencyKey,
-        );
-        $baseUrl = $this->sdkConfiguration->getServerUrl();
-        $url = Utils\Utils::generateUrl($baseUrl, '/v1/subscribers');
-        $urlOverride = null;
-        $httpOptions = ['http_errors' => false];
-
-        $qp = Utils\Utils::getQueryParams(Operations\SubscribersV1ControllerListSubscribersRequest::class, $request, $urlOverride);
-        $httpOptions = array_merge_recursive($httpOptions, Utils\Utils::getHeaders($request));
-        if (! array_key_exists('headers', $httpOptions)) {
-            $httpOptions['headers'] = [];
-        }
-        $httpOptions['headers']['Accept'] = 'application/json';
-        $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
-        $httpRequest = new \GuzzleHttp\Psr7\Request('GET', $url);
-        $hookContext = new HookContext($baseUrl, 'SubscribersV1Controller_listSubscribers', [], $this->sdkConfiguration->securitySource);
-        $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
-        $httpOptions['query'] = Utils\QueryParameters::standardizeQueryParams($httpRequest, $qp);
-        $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
-        $httpRequest = Utils\Utils::removeHeaders($httpRequest);
-        try {
-            $httpResponse = RetryUtils::retryWrapper(fn () => $this->sdkConfiguration->client->send($httpRequest, $httpOptions), $retryConfig, $retryCodes);
-        } catch (\GuzzleHttp\Exception\GuzzleException $error) {
-            $res = $this->sdkConfiguration->hooks->afterError(new Hooks\AfterErrorContext($hookContext), null, $error);
-            $httpResponse = $res;
-        }
-        $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
-
-        $statusCode = $httpResponse->getStatusCode();
-        if (Utils\Utils::matchStatusCodes($statusCode, ['400', '401', '403', '404', '405', '409', '413', '414', '415', '422', '429', '4XX', '500', '503', '5XX'])) {
-            $res = $this->sdkConfiguration->hooks->afterError(new Hooks\AfterErrorContext($hookContext), $httpResponse, null);
-            $httpResponse = $res;
-        }
-        if (Utils\Utils::matchStatusCodes($statusCode, ['200'])) {
-            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
-                $httpResponse = $this->sdkConfiguration->hooks->afterSuccess(new Hooks\AfterSuccessContext($hookContext), $httpResponse);
-
-                $serializer = Utils\JSON::createSerializer();
-                $responseData = (string) $httpResponse->getBody();
-                $obj = $serializer->deserialize($responseData, '\novu\Models\Operations\SubscribersV1ControllerListSubscribersResponseBody', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
-                $response = new Operations\SubscribersV1ControllerListSubscribersResponse(
-                    statusCode: $statusCode,
-                    contentType: $contentType,
-                    rawResponse: $httpResponse,
-                    headers: $httpResponse->getHeaders(),
-                    object: $obj);
-                $sdk = $this;
-
-                $response->next = function () use ($sdk, $request, $responseData, $limit, $idempotencyKey): ?Operations\SubscribersV1ControllerListSubscribersResponse {
-                    $page = $request != null ? $request->page : 0;
-                    $nextPage = $page + 1;
-                    if (! $responseData) {
-                        return null;
-                    }
-                    $jsonObject = new \JsonPath\JsonObject($responseData);
-                    $results = $jsonObject->get('$.data.resultArray');
-
-                    if (is_array($results)) {
-                        $results = $results[0];
-                    }
-                    if (count($results) === 0) {
-                        return null;
-                    }
-                    $limit = $request != null ? $request->limit : 0;
-                    if (count($results) < $limit) {
-                        return null;
-                    }
-
-                    return $sdk->listIndividual(
-                        page: $nextPage,
-                        limit: $limit,
-                        idempotencyKey: $idempotencyKey,
-                    );
-                };
-
-
-                return $response;
-            } else {
-                throw new \novu\Models\Errors\APIException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
-            }
-        } elseif (Utils\Utils::matchStatusCodes($statusCode, ['414'])) {
-            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
-                $httpResponse = $this->sdkConfiguration->hooks->afterSuccess(new Hooks\AfterSuccessContext($hookContext), $httpResponse);
-
-                $serializer = Utils\JSON::createSerializer();
-                $responseData = (string) $httpResponse->getBody();
-                $obj = $serializer->deserialize($responseData, '\novu\Models\Errors\ErrorDto', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
-                throw $obj->toException();
-            } else {
-                throw new \novu\Models\Errors\APIException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
-            }
-        } elseif (Utils\Utils::matchStatusCodes($statusCode, ['400', '401', '403', '404', '405', '409', '413', '415'])) {
-            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
-                $httpResponse = $this->sdkConfiguration->hooks->afterSuccess(new Hooks\AfterSuccessContext($hookContext), $httpResponse);
-
-                $serializer = Utils\JSON::createSerializer();
-                $responseData = (string) $httpResponse->getBody();
-                $obj = $serializer->deserialize($responseData, '\novu\Models\Errors\ErrorDto', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
-                throw $obj->toException();
-            } else {
-                throw new \novu\Models\Errors\APIException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
-            }
-        } elseif (Utils\Utils::matchStatusCodes($statusCode, ['422'])) {
-            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
-                $httpResponse = $this->sdkConfiguration->hooks->afterSuccess(new Hooks\AfterSuccessContext($hookContext), $httpResponse);
-
-                $serializer = Utils\JSON::createSerializer();
-                $responseData = (string) $httpResponse->getBody();
-                $obj = $serializer->deserialize($responseData, '\novu\Models\Errors\ValidationErrorDto', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
-                throw $obj->toException();
-            } else {
-                throw new \novu\Models\Errors\APIException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
-            }
-        } elseif (Utils\Utils::matchStatusCodes($statusCode, ['429'])) {
-            throw new \novu\Models\Errors\APIException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
-        } elseif (Utils\Utils::matchStatusCodes($statusCode, ['500'])) {
-            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
-                $httpResponse = $this->sdkConfiguration->hooks->afterSuccess(new Hooks\AfterSuccessContext($hookContext), $httpResponse);
-
-                $serializer = Utils\JSON::createSerializer();
-                $responseData = (string) $httpResponse->getBody();
-                $obj = $serializer->deserialize($responseData, '\novu\Models\Errors\ErrorDto', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
-                throw $obj->toException();
-            } else {
-                throw new \novu\Models\Errors\APIException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
-            }
-        } elseif (Utils\Utils::matchStatusCodes($statusCode, ['503'])) {
-            throw new \novu\Models\Errors\APIException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
-        } elseif (Utils\Utils::matchStatusCodes($statusCode, ['4XX'])) {
-            throw new \novu\Models\Errors\APIException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
-        } elseif (Utils\Utils::matchStatusCodes($statusCode, ['5XX'])) {
-            throw new \novu\Models\Errors\APIException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
-        } else {
-            throw new \novu\Models\Errors\APIException('Unknown status code received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
-        }
-    }
-    /**
-     * Get subscribers
-     *
-     * Returns a list of subscribers, could paginated using the `page` and `limit` query parameter
-     *
-     * @param  ?float  $page
-     * @param  ?float  $limit
-     * @param  ?string  $idempotencyKey
-     * @return \Generator<Operations\SubscribersV1ControllerListSubscribersResponse>
-     * @throws \novu\Models\Errors\APIException
-     */
-    public function list(?float $page = null, ?float $limit = null, ?string $idempotencyKey = null, ?Options $options = null): \Generator
-    {
-        $res = $this->listIndividual($page, $limit, $idempotencyKey, $options);
-        while ($res !== null) {
-            yield $res;
-            $res = $res->next($res);
-        }
-    }
-
-    /**
-     * Upsert subscriber
-     *
-     * Used to upsert the subscriber entity with new information
-     *
-     * @param  Components\UpdateSubscriberRequestDto  $updateSubscriberRequestDto
-     * @param  string  $subscriberId
-     * @param  ?string  $idempotencyKey
-     * @return Operations\SubscribersV1ControllerUpdateSubscriberResponse
-     * @throws \novu\Models\Errors\APIException
-     */
-    public function update(Components\UpdateSubscriberRequestDto $updateSubscriberRequestDto, string $subscriberId, ?string $idempotencyKey = null, ?Options $options = null): Operations\SubscribersV1ControllerUpdateSubscriberResponse
-    {
-        $retryConfig = null;
-        if ($options) {
-            $retryConfig = $options->retryConfig;
-        }
-        if ($retryConfig === null && $this->sdkConfiguration->retryConfig) {
-            $retryConfig = $this->sdkConfiguration->retryConfig;
-        } else {
-            $retryConfig = new Retry\RetryConfigBackoff(
-                initialIntervalMs: 1000,
-                maxIntervalMs: 30000,
-                exponent: 1.5,
-                maxElapsedTimeMs: 3600000,
-                retryConnectionErrors: true,
-            );
-        }
-        $retryCodes = null;
-        if ($options) {
-            $retryCodes = $options->retryCodes;
-        }
-        if ($retryCodes === null) {
-            $retryCodes = [
-                '408',
-                '409',
-                '429',
-                '5XX',
-            ];
-        }
-        $request = new Operations\SubscribersV1ControllerUpdateSubscriberRequest(
-            subscriberId: $subscriberId,
-            updateSubscriberRequestDto: $updateSubscriberRequestDto,
-            idempotencyKey: $idempotencyKey,
-        );
-        $baseUrl = $this->sdkConfiguration->getServerUrl();
-        $url = Utils\Utils::generateUrl($baseUrl, '/v1/subscribers/{subscriberId}', Operations\SubscribersV1ControllerUpdateSubscriberRequest::class, $request);
-        $urlOverride = null;
-        $httpOptions = ['http_errors' => false];
-        $body = Utils\Utils::serializeRequestBody($request, 'updateSubscriberRequestDto', 'json');
-        if ($body === null) {
-            throw new \Exception('Request body is required');
-        }
-        $httpOptions = array_merge_recursive($httpOptions, $body);
-        $httpOptions = array_merge_recursive($httpOptions, Utils\Utils::getHeaders($request));
-        if (! array_key_exists('headers', $httpOptions)) {
-            $httpOptions['headers'] = [];
-        }
-        $httpOptions['headers']['Accept'] = 'application/json';
-        $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
-        $httpRequest = new \GuzzleHttp\Psr7\Request('PUT', $url);
-        $hookContext = new HookContext($baseUrl, 'SubscribersV1Controller_updateSubscriber', [], $this->sdkConfiguration->securitySource);
-        $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
-        $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
-        $httpRequest = Utils\Utils::removeHeaders($httpRequest);
-        try {
-            $httpResponse = RetryUtils::retryWrapper(fn () => $this->sdkConfiguration->client->send($httpRequest, $httpOptions), $retryConfig, $retryCodes);
-        } catch (\GuzzleHttp\Exception\GuzzleException $error) {
-            $res = $this->sdkConfiguration->hooks->afterError(new Hooks\AfterErrorContext($hookContext), null, $error);
-            $httpResponse = $res;
-        }
-        $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
-
-        $statusCode = $httpResponse->getStatusCode();
-        if (Utils\Utils::matchStatusCodes($statusCode, ['400', '401', '403', '404', '405', '409', '413', '414', '415', '422', '429', '4XX', '500', '503', '5XX'])) {
-            $res = $this->sdkConfiguration->hooks->afterError(new Hooks\AfterErrorContext($hookContext), $httpResponse, null);
-            $httpResponse = $res;
-        }
-        if (Utils\Utils::matchStatusCodes($statusCode, ['200'])) {
-            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
-                $httpResponse = $this->sdkConfiguration->hooks->afterSuccess(new Hooks\AfterSuccessContext($hookContext), $httpResponse);
-
-                $serializer = Utils\JSON::createSerializer();
-                $responseData = (string) $httpResponse->getBody();
-                $obj = $serializer->deserialize($responseData, '\novu\Models\Components\SubscriberResponseDto', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
-                $response = new Operations\SubscribersV1ControllerUpdateSubscriberResponse(
-                    statusCode: $statusCode,
-                    contentType: $contentType,
-                    rawResponse: $httpResponse,
-                    headers: $httpResponse->getHeaders(),
-                    subscriberResponseDto: $obj);
-
-                return $response;
-            } else {
-                throw new \novu\Models\Errors\APIException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
-            }
-        } elseif (Utils\Utils::matchStatusCodes($statusCode, ['414'])) {
-            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
-                $httpResponse = $this->sdkConfiguration->hooks->afterSuccess(new Hooks\AfterSuccessContext($hookContext), $httpResponse);
-
-                $serializer = Utils\JSON::createSerializer();
-                $responseData = (string) $httpResponse->getBody();
-                $obj = $serializer->deserialize($responseData, '\novu\Models\Errors\ErrorDto', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
-                throw $obj->toException();
-            } else {
-                throw new \novu\Models\Errors\APIException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
-            }
-        } elseif (Utils\Utils::matchStatusCodes($statusCode, ['400', '401', '403', '404', '405', '409', '413', '415'])) {
-            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
-                $httpResponse = $this->sdkConfiguration->hooks->afterSuccess(new Hooks\AfterSuccessContext($hookContext), $httpResponse);
-
-                $serializer = Utils\JSON::createSerializer();
-                $responseData = (string) $httpResponse->getBody();
-                $obj = $serializer->deserialize($responseData, '\novu\Models\Errors\ErrorDto', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
-                throw $obj->toException();
-            } else {
-                throw new \novu\Models\Errors\APIException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
-            }
-        } elseif (Utils\Utils::matchStatusCodes($statusCode, ['422'])) {
-            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
-                $httpResponse = $this->sdkConfiguration->hooks->afterSuccess(new Hooks\AfterSuccessContext($hookContext), $httpResponse);
-
-                $serializer = Utils\JSON::createSerializer();
-                $responseData = (string) $httpResponse->getBody();
-                $obj = $serializer->deserialize($responseData, '\novu\Models\Errors\ValidationErrorDto', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
-                throw $obj->toException();
-            } else {
-                throw new \novu\Models\Errors\APIException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
-            }
-        } elseif (Utils\Utils::matchStatusCodes($statusCode, ['429'])) {
-            throw new \novu\Models\Errors\APIException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
-        } elseif (Utils\Utils::matchStatusCodes($statusCode, ['500'])) {
-            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
-                $httpResponse = $this->sdkConfiguration->hooks->afterSuccess(new Hooks\AfterSuccessContext($hookContext), $httpResponse);
-
-                $serializer = Utils\JSON::createSerializer();
-                $responseData = (string) $httpResponse->getBody();
-                $obj = $serializer->deserialize($responseData, '\novu\Models\Errors\ErrorDto', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
-                throw $obj->toException();
-            } else {
-                throw new \novu\Models\Errors\APIException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
-            }
-        } elseif (Utils\Utils::matchStatusCodes($statusCode, ['503'])) {
-            throw new \novu\Models\Errors\APIException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
-        } elseif (Utils\Utils::matchStatusCodes($statusCode, ['4XX'])) {
-            throw new \novu\Models\Errors\APIException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
-        } elseif (Utils\Utils::matchStatusCodes($statusCode, ['5XX'])) {
-            throw new \novu\Models\Errors\APIException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
-        } else {
-            throw new \novu\Models\Errors\APIException('Unknown status code received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
-        }
-    }
-
-    /**
-     * Update subscriber credentials
-     *
-     * Subscriber credentials associated to the delivery methods such as slack and push tokens.
+     * Update credentials for a provider such as slack and push tokens. 
+     *       **providerId** is required field. This API appends the **deviceTokens** to the existing ones.
      *
      * @param  Components\UpdateSubscriberChannelRequestDto  $updateSubscriberChannelRequestDto
      * @param  string  $subscriberId
@@ -1612,7 +1265,7 @@ class Subscribers
     /**
      * Update subscriber online status
      *
-     * Used to update the subscriber isOnline flag.
+     * Update the subscriber online status by its unique key identifier **subscriberId**
      *
      * @param  Components\UpdateSubscriberOnlineFlagRequestDto  $updateSubscriberOnlineFlagRequestDto
      * @param  string  $subscriberId

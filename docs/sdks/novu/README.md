@@ -47,9 +47,7 @@ $triggerEventRequestDto = new Components\TriggerEventRequestDto(
         ],
     ],
     overrides: new Components\Overrides(),
-    to: new Components\SubscriberPayloadDto(
-        subscriberId: '<id>',
-    ),
+    to: 'SUBSCRIBER_ID',
 );
 
 $response = $sdk->trigger(
@@ -247,10 +245,7 @@ $bulkTriggerEventDto = new Components\BulkTriggerEventDto(
                 ],
             ],
             overrides: new Components\Overrides(),
-            to: new Components\TopicPayloadDto(
-                topicKey: '<value>',
-                type: Components\TriggerRecipientsTypeEnum::Topic,
-            ),
+            to: 'SUBSCRIBER_ID',
         ),
     ],
 );

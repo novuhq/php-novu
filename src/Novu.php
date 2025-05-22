@@ -57,11 +57,7 @@ class Novu
 
     public Notifications $notifications;
 
-    public NotificationsStats $notificationsStats;
-
     public SubscribersCredentials $subscribersCredentials;
-
-    public SubscribersAuthentication $subscribersAuthentication;
 
     public SubscribersMessages $subscribersMessages;
 
@@ -91,9 +87,7 @@ class Novu
         $this->integrations = new Integrations($this->sdkConfiguration);
         $this->messages = new Messages($this->sdkConfiguration);
         $this->notifications = new Notifications($this->sdkConfiguration);
-        $this->notificationsStats = new NotificationsStats($this->sdkConfiguration);
         $this->subscribersCredentials = new SubscribersCredentials($this->sdkConfiguration);
-        $this->subscribersAuthentication = new SubscribersAuthentication($this->sdkConfiguration);
         $this->subscribersMessages = new SubscribersMessages($this->sdkConfiguration);
         $this->subscribersNotifications = new SubscribersNotifications($this->sdkConfiguration);
         $this->topicsSubscribers = new TopicsSubscribers($this->sdkConfiguration);

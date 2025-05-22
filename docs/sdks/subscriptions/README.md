@@ -6,12 +6,13 @@
 ### Available Operations
 
 * [list](#list) - List topic subscriptions
-* [create](#create) - Create topic subscriptions, if the topic does not exist, it will be created.
+* [create](#create) - Create topic subscriptions
 * [delete](#delete) - Delete topic subscriptions
 
 ## list
 
-List topic subscriptions
+List all topics that a subscriber is subscribed to.
+    Checkout all available filters in the query section.
 
 ### Example Usage
 
@@ -64,7 +65,8 @@ if ($response->listTopicSubscriptionsResponseDto !== null) {
 
 ## create
 
-Create topic subscriptions, if the topic does not exist, it will be created.
+This api will create subscription for subscriberIds for a topic. 
+      Its like subscribing to a common interest group. if topic does not exist, it will be created.
 
 ### Example Usage
 
@@ -125,7 +127,7 @@ if ($response->createTopicSubscriptionsResponseDto !== null) {
 
 ## delete
 
-Delete topic subscriptions
+Delete subscriptions for subscriberIds for a topic.
 
 ### Example Usage
 
