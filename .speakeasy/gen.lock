@@ -3,10 +3,10 @@ id: 4286f3ad-fa54-4c63-a599-e5773b27ae7b
 management:
   docChecksum: b823b32c1b952363bcf90c90eff4a668
   docVersion: 2.2.0
-  speakeasyVersion: 1.548.4
-  generationVersion: 2.605.6
-  releaseVersion: 1.1.0
-  configChecksum: b00c73c67da870da8320916f997b2510
+  speakeasyVersion: 1.551.0
+  generationVersion: 2.610.0
+  releaseVersion: 1.1.1
+  configChecksum: 3ba63d5354242cc426ca579e82d02e01
   repoURL: https://github.com/novuhq/php-novu.git
   installationURL: https://github.com/novuhq/php-novu
   published: true
