@@ -100,7 +100,7 @@ class Subscribers
             createSubscriberRequestDto: $createSubscriberRequestDto,
             idempotencyKey: $idempotencyKey,
         );
-        $baseUrl = $this->sdkConfiguration->getServerUrl();
+        $baseUrl = $this->sdkConfiguration->getTemplatedServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/v2/subscribers');
         $urlOverride = null;
         $httpOptions = ['http_errors' => false];
@@ -116,7 +116,7 @@ class Subscribers
         $httpOptions['headers']['Accept'] = 'application/json';
         $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('POST', $url);
-        $hookContext = new HookContext($baseUrl, 'SubscribersController_createSubscriber', [], $this->sdkConfiguration->securitySource);
+        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'SubscribersController_createSubscriber', [], $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
         $httpRequest = Utils\Utils::removeHeaders($httpRequest);
@@ -252,7 +252,7 @@ class Subscribers
             subscriberId: $subscriberId,
             idempotencyKey: $idempotencyKey,
         );
-        $baseUrl = $this->sdkConfiguration->getServerUrl();
+        $baseUrl = $this->sdkConfiguration->getTemplatedServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/v2/subscribers/{subscriberId}', Operations\SubscribersControllerGetSubscriberRequest::class, $request);
         $urlOverride = null;
         $httpOptions = ['http_errors' => false];
@@ -263,7 +263,7 @@ class Subscribers
         $httpOptions['headers']['Accept'] = 'application/json';
         $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('GET', $url);
-        $hookContext = new HookContext($baseUrl, 'SubscribersController_getSubscriber', [], $this->sdkConfiguration->securitySource);
+        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'SubscribersController_getSubscriber', [], $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
         $httpRequest = Utils\Utils::removeHeaders($httpRequest);
@@ -401,7 +401,7 @@ class Subscribers
             patchSubscriberRequestDto: $patchSubscriberRequestDto,
             idempotencyKey: $idempotencyKey,
         );
-        $baseUrl = $this->sdkConfiguration->getServerUrl();
+        $baseUrl = $this->sdkConfiguration->getTemplatedServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/v2/subscribers/{subscriberId}', Operations\SubscribersControllerPatchSubscriberRequest::class, $request);
         $urlOverride = null;
         $httpOptions = ['http_errors' => false];
@@ -417,7 +417,7 @@ class Subscribers
         $httpOptions['headers']['Accept'] = 'application/json';
         $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('PATCH', $url);
-        $hookContext = new HookContext($baseUrl, 'SubscribersController_patchSubscriber', [], $this->sdkConfiguration->securitySource);
+        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'SubscribersController_patchSubscriber', [], $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
         $httpRequest = Utils\Utils::removeHeaders($httpRequest);
@@ -552,7 +552,7 @@ class Subscribers
             subscriberId: $subscriberId,
             idempotencyKey: $idempotencyKey,
         );
-        $baseUrl = $this->sdkConfiguration->getServerUrl();
+        $baseUrl = $this->sdkConfiguration->getTemplatedServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/v2/subscribers/{subscriberId}', Operations\SubscribersControllerRemoveSubscriberRequest::class, $request);
         $urlOverride = null;
         $httpOptions = ['http_errors' => false];
@@ -563,7 +563,7 @@ class Subscribers
         $httpOptions['headers']['Accept'] = 'application/json';
         $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('DELETE', $url);
-        $hookContext = new HookContext($baseUrl, 'SubscribersController_removeSubscriber', [], $this->sdkConfiguration->securitySource);
+        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'SubscribersController_removeSubscriber', [], $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
         $httpRequest = Utils\Utils::removeHeaders($httpRequest);
@@ -694,7 +694,7 @@ class Subscribers
                 '5XX',
             ];
         }
-        $baseUrl = $this->sdkConfiguration->getServerUrl();
+        $baseUrl = $this->sdkConfiguration->getTemplatedServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/v2/subscribers');
         $urlOverride = null;
         $httpOptions = ['http_errors' => false];
@@ -707,7 +707,7 @@ class Subscribers
         $httpOptions['headers']['Accept'] = 'application/json';
         $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('GET', $url);
-        $hookContext = new HookContext($baseUrl, 'SubscribersController_searchSubscribers', [], $this->sdkConfiguration->securitySource);
+        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'SubscribersController_searchSubscribers', [], $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
         $httpOptions['query'] = Utils\QueryParameters::standardizeQueryParams($httpRequest, $qp);
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
@@ -847,7 +847,7 @@ class Subscribers
             patchSubscriberPreferencesDto: $patchSubscriberPreferencesDto,
             idempotencyKey: $idempotencyKey,
         );
-        $baseUrl = $this->sdkConfiguration->getServerUrl();
+        $baseUrl = $this->sdkConfiguration->getTemplatedServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/v2/subscribers/{subscriberId}/preferences', Operations\SubscribersControllerUpdateSubscriberPreferencesRequest::class, $request);
         $urlOverride = null;
         $httpOptions = ['http_errors' => false];
@@ -863,7 +863,7 @@ class Subscribers
         $httpOptions['headers']['Accept'] = 'application/json';
         $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('PATCH', $url);
-        $hookContext = new HookContext($baseUrl, 'SubscribersController_updateSubscriberPreferences', [], $this->sdkConfiguration->securitySource);
+        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'SubscribersController_updateSubscriberPreferences', [], $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
         $httpRequest = Utils\Utils::removeHeaders($httpRequest);
@@ -1000,7 +1000,7 @@ class Subscribers
             bulkSubscriberCreateDto: $bulkSubscriberCreateDto,
             idempotencyKey: $idempotencyKey,
         );
-        $baseUrl = $this->sdkConfiguration->getServerUrl();
+        $baseUrl = $this->sdkConfiguration->getTemplatedServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/v1/subscribers/bulk');
         $urlOverride = null;
         $httpOptions = ['http_errors' => false];
@@ -1016,7 +1016,7 @@ class Subscribers
         $httpOptions['headers']['Accept'] = 'application/json';
         $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('POST', $url);
-        $hookContext = new HookContext($baseUrl, 'SubscribersV1Controller_bulkCreateSubscribers', [], $this->sdkConfiguration->securitySource);
+        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'SubscribersV1Controller_bulkCreateSubscribers', [], $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
         $httpRequest = Utils\Utils::removeHeaders($httpRequest);
@@ -1154,7 +1154,7 @@ class Subscribers
             updateSubscriberChannelRequestDto: $updateSubscriberChannelRequestDto,
             idempotencyKey: $idempotencyKey,
         );
-        $baseUrl = $this->sdkConfiguration->getServerUrl();
+        $baseUrl = $this->sdkConfiguration->getTemplatedServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/v1/subscribers/{subscriberId}/credentials', Operations\SubscribersV1ControllerUpdateSubscriberChannelRequest::class, $request);
         $urlOverride = null;
         $httpOptions = ['http_errors' => false];
@@ -1170,7 +1170,7 @@ class Subscribers
         $httpOptions['headers']['Accept'] = 'application/json';
         $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('PUT', $url);
-        $hookContext = new HookContext($baseUrl, 'SubscribersV1Controller_updateSubscriberChannel', [], $this->sdkConfiguration->securitySource);
+        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'SubscribersV1Controller_updateSubscriberChannel', [], $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
         $httpRequest = Utils\Utils::removeHeaders($httpRequest);
@@ -1307,7 +1307,7 @@ class Subscribers
             updateSubscriberOnlineFlagRequestDto: $updateSubscriberOnlineFlagRequestDto,
             idempotencyKey: $idempotencyKey,
         );
-        $baseUrl = $this->sdkConfiguration->getServerUrl();
+        $baseUrl = $this->sdkConfiguration->getTemplatedServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/v1/subscribers/{subscriberId}/online-status', Operations\SubscribersV1ControllerUpdateSubscriberOnlineFlagRequest::class, $request);
         $urlOverride = null;
         $httpOptions = ['http_errors' => false];
@@ -1323,7 +1323,7 @@ class Subscribers
         $httpOptions['headers']['Accept'] = 'application/json';
         $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('PATCH', $url);
-        $hookContext = new HookContext($baseUrl, 'SubscribersV1Controller_updateSubscriberOnlineFlag', [], $this->sdkConfiguration->securitySource);
+        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'SubscribersV1Controller_updateSubscriberOnlineFlag', [], $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
         $httpRequest = Utils\Utils::removeHeaders($httpRequest);

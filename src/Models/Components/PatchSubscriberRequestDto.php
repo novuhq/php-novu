@@ -77,12 +77,12 @@ class PatchSubscriberRequestDto
     /**
      * Additional custom data for the subscriber
      *
-     * @var ?Data $data
+     * @var ?array<string, mixed> $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\Data|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?Data $data = null;
+    public ?array $data = null;
 
     /**
      * @param  ?string  $firstName
@@ -92,10 +92,10 @@ class PatchSubscriberRequestDto
      * @param  ?string  $avatar
      * @param  ?string  $timezone
      * @param  ?string  $locale
-     * @param  ?Data  $data
+     * @param  ?array<string, mixed>  $data
      * @phpstan-pure
      */
-    public function __construct(?string $firstName = null, ?string $lastName = null, ?string $email = null, ?string $phone = null, ?string $avatar = null, ?string $timezone = null, ?string $locale = null, ?Data $data = null)
+    public function __construct(?string $firstName = null, ?string $lastName = null, ?string $email = null, ?string $phone = null, ?string $avatar = null, ?string $timezone = null, ?string $locale = null, ?array $data = null)
     {
         $this->firstName = $firstName;
         $this->lastName = $lastName;

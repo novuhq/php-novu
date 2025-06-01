@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 4286f3ad-fa54-4c63-a599-e5773b27ae7b
 management:
-  docChecksum: b823b32c1b952363bcf90c90eff4a668
+  docChecksum: 9b9872d06e14e7814d2cbb2edb98702f
   docVersion: 2.2.0
-  speakeasyVersion: 1.548.4
-  generationVersion: 2.605.6
-  releaseVersion: 1.1.0
-  configChecksum: b00c73c67da870da8320916f997b2510
+  speakeasyVersion: 1.554.1
+  generationVersion: 2.616.1
+  releaseVersion: 1.1.1
+  configChecksum: dc01f7c2ecd7bca2f5a29906b7e07b08
   repoURL: https://github.com/novuhq/php-novu.git
   installationURL: https://github.com/novuhq/php-novu
   published: true
@@ -177,7 +177,6 @@ generatedFiles:
   - docs/Models/Components/SubscriberFeedResponseDto.md
   - docs/Models/Components/SubscriberGlobalPreferenceDto.md
   - docs/Models/Components/SubscriberPayloadDto.md
-  - docs/Models/Components/SubscriberPayloadDtoData.md
   - docs/Models/Components/SubscriberPreferenceChannels.md
   - docs/Models/Components/SubscriberPreferenceOverrideDto.md
   - docs/Models/Components/SubscriberPreferencesWorkflowInfoDto.md
@@ -393,7 +392,6 @@ generatedFiles:
   - src/Models/Components/CreateUpdateTopicRequestDto.php
   - src/Models/Components/CreatedSubscriberDto.php
   - src/Models/Components/CredentialsDto.php
-  - src/Models/Components/Data.php
   - src/Models/Components/DelayRegularMetadata.php
   - src/Models/Components/DelayRegularMetadataType.php
   - src/Models/Components/DelayRegularMetadataUnit.php
