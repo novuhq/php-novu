@@ -36,14 +36,6 @@ class NotificationFeedItemDto
     public string $environmentId;
 
     /**
-     * Identifier for the message template used.
-     *
-     * @var string $messageTemplateId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('_messageTemplateId')]
-    public string $messageTemplateId;
-
-    /**
      * Identifier for the organization sending the notification.
      *
      * @var string $organizationId
@@ -133,6 +125,15 @@ class NotificationFeedItemDto
     #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\NotificationFeedItemDtoStatus')]
     public NotificationFeedItemDtoStatus $status;
+
+    /**
+     * Identifier for the message template used.
+     *
+     * @var ?string $messageTemplateId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('_messageTemplateId')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $messageTemplateId = null;
 
     /**
      * Actor details related to the notification, if applicable.
@@ -242,7 +243,6 @@ class NotificationFeedItemDto
      * @param  string  $id
      * @param  string  $templateId
      * @param  string  $environmentId
-     * @param  string  $messageTemplateId
      * @param  string  $organizationId
      * @param  string  $notificationId
      * @param  string  $subscriberId
@@ -254,6 +254,7 @@ class NotificationFeedItemDto
      * @param  bool  $seen
      * @param  MessageCTA  $cta
      * @param  NotificationFeedItemDtoStatus  $status
+     * @param  ?string  $messageTemplateId
      * @param  ?ActorFeedItemDto  $actor
      * @param  ?SubscriberFeedResponseDto  $subscriber
      * @param  ?array<string, mixed>  $payload
@@ -267,12 +268,11 @@ class NotificationFeedItemDto
      * @param  ?array<string>  $deviceTokens
      * @phpstan-pure
      */
-    public function __construct(string $id, string $templateId, string $environmentId, string $messageTemplateId, string $organizationId, string $notificationId, string $subscriberId, string $jobId, string $transactionId, string $content, ChannelTypeEnum $channel, bool $read, bool $seen, MessageCTA $cta, NotificationFeedItemDtoStatus $status, ?ActorFeedItemDto $actor = null, ?SubscriberFeedResponseDto $subscriber = null, ?array $payload = null, ?array $overrides = null, ?string $feedId = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null, ?string $templateIdentifier = null, ?string $providerId = null, ?string $subject = null, ?array $deviceTokens = null)
+    public function __construct(string $id, string $templateId, string $environmentId, string $organizationId, string $notificationId, string $subscriberId, string $jobId, string $transactionId, string $content, ChannelTypeEnum $channel, bool $read, bool $seen, MessageCTA $cta, NotificationFeedItemDtoStatus $status, ?string $messageTemplateId = null, ?ActorFeedItemDto $actor = null, ?SubscriberFeedResponseDto $subscriber = null, ?array $payload = null, ?array $overrides = null, ?string $feedId = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null, ?string $templateIdentifier = null, ?string $providerId = null, ?string $subject = null, ?array $deviceTokens = null)
     {
         $this->id = $id;
         $this->templateId = $templateId;
         $this->environmentId = $environmentId;
-        $this->messageTemplateId = $messageTemplateId;
         $this->organizationId = $organizationId;
         $this->notificationId = $notificationId;
         $this->subscriberId = $subscriberId;
@@ -284,6 +284,7 @@ class NotificationFeedItemDto
         $this->seen = $seen;
         $this->cta = $cta;
         $this->status = $status;
+        $this->messageTemplateId = $messageTemplateId;
         $this->actor = $actor;
         $this->subscriber = $subscriber;
         $this->payload = $payload;
