@@ -49,8 +49,7 @@ $updateSubscriberChannelRequestDto = new Components\UpdateSubscriberChannelReque
 
 $response = $sdk->subscribersCredentials->append(
     subscriberId: '<id>',
-    updateSubscriberChannelRequestDto: $updateSubscriberChannelRequestDto,
-    idempotencyKey: '<value>'
+    updateSubscriberChannelRequestDto: $updateSubscriberChannelRequestDto
 
 );
 
@@ -105,8 +104,7 @@ $sdk = novu\Novu::builder()
 
 $response = $sdk->subscribersCredentials->deleteProvider(
     subscriberId: '<id>',
-    providerId: '<id>',
-    idempotencyKey: '<value>'
+    providerId: '<id>'
 
 );
 

@@ -30,9 +30,7 @@ $sdk = novu\Novu::builder()
 
 
 $response = $sdk->subscribersPreferences->list(
-    subscriberId: '<id>',
-    idempotencyKey: '<value>'
-
+    subscriberId: '<id>'
 );
 
 if ($response->getSubscriberPreferencesDto !== null) {

@@ -28,9 +28,7 @@ $triggerEventRequestDto = new Components\TriggerEventRequestDto(
 );
 
 $response = $sdk->trigger(
-    triggerEventRequestDto: $triggerEventRequestDto,
-    idempotencyKey: '<value>'
-
+    triggerEventRequestDto: $triggerEventRequestDto
 );
 
 if ($response->triggerEventResponseDto !== null) {
@@ -56,9 +54,7 @@ $sdk = novu\Novu::builder()
 
 
 $response = $sdk->cancel(
-    transactionId: '<id>',
-    idempotencyKey: '<value>'
-
+    transactionId: '<id>'
 );
 
 if ($response->boolean !== null) {
@@ -102,9 +98,7 @@ $triggerEventToAllRequestDto = new Components\TriggerEventToAllRequestDto(
 );
 
 $response = $sdk->triggerBroadcast(
-    triggerEventToAllRequestDto: $triggerEventToAllRequestDto,
-    idempotencyKey: '<value>'
-
+    triggerEventToAllRequestDto: $triggerEventToAllRequestDto
 );
 
 if ($response->triggerEventResponseDto !== null) {
@@ -141,13 +135,33 @@ $bulkTriggerEventDto = new Components\BulkTriggerEventDto(
             overrides: new Components\Overrides(),
             to: 'SUBSCRIBER_ID',
         ),
+        new Components\TriggerEventRequestDto(
+            workflowId: 'workflow_identifier',
+            payload: [
+                'comment_id' => 'string',
+                'post' => [
+                    'text' => 'string',
+                ],
+            ],
+            overrides: new Components\Overrides(),
+            to: 'SUBSCRIBER_ID',
+        ),
+        new Components\TriggerEventRequestDto(
+            workflowId: 'workflow_identifier',
+            payload: [
+                'comment_id' => 'string',
+                'post' => [
+                    'text' => 'string',
+                ],
+            ],
+            overrides: new Components\Overrides(),
+            to: 'SUBSCRIBER_ID',
+        ),
     ],
 );
 
 $response = $sdk->triggerBulk(
-    bulkTriggerEventDto: $bulkTriggerEventDto,
-    idempotencyKey: '<value>'
-
+    bulkTriggerEventDto: $bulkTriggerEventDto
 );
 
 if ($response->triggerEventResponseDtos !== null) {

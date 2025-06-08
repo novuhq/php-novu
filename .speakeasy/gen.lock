@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 4286f3ad-fa54-4c63-a599-e5773b27ae7b
 management:
-  docChecksum: b823b32c1b952363bcf90c90eff4a668
+  docChecksum: e60c44765f421409e967fb65fe1b35b1
   docVersion: 2.2.0
-  speakeasyVersion: 1.548.4
-  generationVersion: 2.605.6
-  releaseVersion: 1.1.0
-  configChecksum: b00c73c67da870da8320916f997b2510
+  speakeasyVersion: 1.557.0
+  generationVersion: 2.623.0
+  releaseVersion: 1.2.0
+  configChecksum: 1e21e120dbbb9f3a156ca3db2d129369
   repoURL: https://github.com/novuhq/php-novu.git
   installationURL: https://github.com/novuhq/php-novu
   published: true
@@ -160,6 +160,8 @@ generatedFiles:
   - docs/Models/Components/PatchSubscriberPreferencesDto.md
   - docs/Models/Components/PatchSubscriberRequestDto.md
   - docs/Models/Components/Payload.md
+  - docs/Models/Components/PayloadValidationErrorDto.md
+  - docs/Models/Components/PayloadValidationErrorDtoValue.md
   - docs/Models/Components/PreferenceOverrideSourceEnum.md
   - docs/Models/Components/ProviderId.md
   - docs/Models/Components/ProvidersIdEnum.md
@@ -177,7 +179,6 @@ generatedFiles:
   - docs/Models/Components/SubscriberFeedResponseDto.md
   - docs/Models/Components/SubscriberGlobalPreferenceDto.md
   - docs/Models/Components/SubscriberPayloadDto.md
-  - docs/Models/Components/SubscriberPayloadDtoData.md
   - docs/Models/Components/SubscriberPreferenceChannels.md
   - docs/Models/Components/SubscriberPreferenceOverrideDto.md
   - docs/Models/Components/SubscriberPreferencesWorkflowInfoDto.md
@@ -214,6 +215,8 @@ generatedFiles:
   - docs/Models/Components/UpdateTopicRequestDto.md
   - docs/Models/Components/UpdatedSubscriberDto.md
   - docs/Models/Components/Value.md
+  - docs/Models/Components/Value4.md
+  - docs/Models/Components/Value5.md
   - docs/Models/Components/WeekDays.md
   - docs/Models/Components/WorkflowIntegrationStatus.md
   - docs/Models/Components/WorkflowOriginEnum.md
@@ -225,6 +228,11 @@ generatedFiles:
   - docs/Models/Errors/Message.md
   - docs/Models/Errors/Message4.md
   - docs/Models/Errors/Message5.md
+  - docs/Models/Errors/MessagePayloadValidationExceptionDto4.md
+  - docs/Models/Errors/MessagePayloadValidationExceptionDto5.md
+  - docs/Models/Errors/PayloadValidationExceptionDto.md
+  - docs/Models/Errors/PayloadValidationExceptionDtoMessage.md
+  - docs/Models/Errors/Schema.md
   - docs/Models/Errors/ValidationErrorDto.md
   - docs/Models/Errors/ValidationErrorDtoMessage.md
   - docs/Models/Operations/Channel.md
@@ -393,7 +401,6 @@ generatedFiles:
   - src/Models/Components/CreateUpdateTopicRequestDto.php
   - src/Models/Components/CreatedSubscriberDto.php
   - src/Models/Components/CredentialsDto.php
-  - src/Models/Components/Data.php
   - src/Models/Components/DelayRegularMetadata.php
   - src/Models/Components/DelayRegularMetadataType.php
   - src/Models/Components/DelayRegularMetadataUnit.php
@@ -473,6 +480,7 @@ generatedFiles:
   - src/Models/Components/PatchSubscriberPreferencesDto.php
   - src/Models/Components/PatchSubscriberRequestDto.php
   - src/Models/Components/Payload.php
+  - src/Models/Components/PayloadValidationErrorDto.php
   - src/Models/Components/PreferenceOverrideSourceEnum.php
   - src/Models/Components/ProviderId.php
   - src/Models/Components/ProvidersIdEnum.php
@@ -521,6 +529,7 @@ generatedFiles:
   - src/Models/Components/UpdateSubscriberOnlineFlagRequestDto.php
   - src/Models/Components/UpdateTopicRequestDto.php
   - src/Models/Components/UpdatedSubscriberDto.php
+  - src/Models/Components/Value4.php
   - src/Models/Components/WeekDays.php
   - src/Models/Components/WorkflowIntegrationStatus.php
   - src/Models/Components/WorkflowOriginEnum.php
@@ -531,6 +540,10 @@ generatedFiles:
   - src/Models/Errors/ErrorDtoThrowable.php
   - src/Models/Errors/Four.php
   - src/Models/Errors/Message4.php
+  - src/Models/Errors/MessagePayloadValidationExceptionDto4.php
+  - src/Models/Errors/PayloadValidationExceptionDto.php
+  - src/Models/Errors/PayloadValidationExceptionDtoThrowable.php
+  - src/Models/Errors/Schema.php
   - src/Models/Errors/ValidationErrorDto.php
   - src/Models/Errors/ValidationErrorDtoThrowable.php
   - src/Models/Operations/Channel.php
@@ -683,10 +696,12 @@ examples:
         "414":
           application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
         "400":
-          application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
+          application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123", "type": "PAYLOAD_VALIDATION_ERROR", "errors": [{"field": "user.name", "message": "must have required property 'name'", "value": "{\"age\":25}", "schemaPath": "#/required"}], "schema": {}}
         "422":
           application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123", "errors": {"fieldName1": {"messages": ["Field is required", "Must be a valid email address"], "value": "invalidEmail"}, "fieldName2": {"messages": ["Must be at least 18 years old"], "value": 17}, "fieldName3": {"messages": ["Must be a boolean value"], "value": true}, "fieldName4": {"messages": ["Must be a valid object"], "value": null}, "fieldName5": {"messages": ["Field is missing"], "value": null}, "fieldName6": {"messages": ["Undefined value"]}}}
         "500":
+          application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
+        "401":
           application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
   EventsController_cancel:
     speakeasy-default-events-controller-cancel:
@@ -714,10 +729,12 @@ examples:
         "414":
           application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
         "400":
-          application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
+          application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123", "type": "PAYLOAD_VALIDATION_ERROR", "errors": [{"field": "user.name", "message": "must have required property 'name'", "value": [{"age": 25}], "schemaPath": "#/required"}], "schema": {}}
         "422":
           application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123", "errors": {"fieldName1": {"messages": ["Field is required", "Must be a valid email address"], "value": "invalidEmail"}, "fieldName2": {"messages": ["Must be at least 18 years old"], "value": 17}, "fieldName3": {"messages": ["Must be a boolean value"], "value": true}, "fieldName4": {"messages": ["Must be a valid object"], "value": {}}, "fieldName5": {"messages": ["Field is missing"], "value": null}, "fieldName6": {"messages": ["Undefined value"]}}}
         "500":
+          application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
+        "401":
           application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
   EventsController_triggerBulk:
     speakeasy-default-events-controller-trigger-bulk:
@@ -729,10 +746,12 @@ examples:
         "414":
           application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
         "400":
-          application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
+          application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123", "type": "PAYLOAD_VALIDATION_ERROR", "errors": [{"field": "user.name", "message": "must have required property 'name'", "value": [{"age": 25}], "schemaPath": "#/required"}], "schema": {}}
         "422":
           application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123", "errors": {"fieldName1": {"messages": ["Field is required", "Must be a valid email address"], "value": "invalidEmail"}, "fieldName2": {"messages": ["Must be at least 18 years old"], "value": 17}, "fieldName3": {"messages": ["Must be a boolean value"], "value": true}, "fieldName4": {"messages": ["Must be a valid object"], "value": null}, "fieldName5": {"messages": ["Field is missing"], "value": null}, "fieldName6": {"messages": ["Undefined value"]}}}
         "500":
+          application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
+        "401":
           application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
   SubscribersController_searchSubscribers:
     speakeasy-default-subscribers-controller-search-subscribers:
