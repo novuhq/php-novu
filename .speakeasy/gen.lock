@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 4286f3ad-fa54-4c63-a599-e5773b27ae7b
 management:
-  docChecksum: b823b32c1b952363bcf90c90eff4a668
+  docChecksum: a15c6e3b1b07b55d25113f76e6fa5473
   docVersion: 2.2.0
-  speakeasyVersion: 1.548.4
-  generationVersion: 2.605.6
-  releaseVersion: 1.1.0
-  configChecksum: b00c73c67da870da8320916f997b2510
+  speakeasyVersion: 1.563.1
+  generationVersion: 2.629.1
+  releaseVersion: 1.2.0
+  configChecksum: 1e21e120dbbb9f3a156ca3db2d129369
   repoURL: https://github.com/novuhq/php-novu.git
   installationURL: https://github.com/novuhq/php-novu
   published: true
@@ -14,7 +14,7 @@ features:
   php:
     additionalProperties: 0.1.0
     constsAndDefaults: 0.2.0
-    core: 3.8.5
+    core: 3.8.6
     deprecations: 2.81.1
     examples: 2.81.5
     flattening: 2.81.1
@@ -49,7 +49,9 @@ generatedFiles:
   - docs/Models/Components/Actor.md
   - docs/Models/Components/ActorFeedItemDto.md
   - docs/Models/Components/ActorTypeEnum.md
+  - docs/Models/Components/ApiKeyDto.md
   - docs/Models/Components/BackoffUnit.md
+  - docs/Models/Components/BridgeConfigurationDto.md
   - docs/Models/Components/BuilderFieldTypeEnum.md
   - docs/Models/Components/BulkCreateSubscriberResponseDto.md
   - docs/Models/Components/BulkSubscriberCreateDto.md
@@ -66,6 +68,7 @@ generatedFiles:
   - docs/Models/Components/Content.md
   - docs/Models/Components/ControlVariables.md
   - docs/Models/Components/Controls.md
+  - docs/Models/Components/CreateEnvironmentRequestDto.md
   - docs/Models/Components/CreateIntegrationRequestDto.md
   - docs/Models/Components/CreateIntegrationRequestDtoChannel.md
   - docs/Models/Components/CreateSubscriberRequestDto.md
@@ -98,6 +101,7 @@ generatedFiles:
   - docs/Models/Components/EmailBlock.md
   - docs/Models/Components/EmailBlockStyles.md
   - docs/Models/Components/EmailBlockTypeEnum.md
+  - docs/Models/Components/EnvironmentResponseDto.md
   - docs/Models/Components/ExecutionDetailsSourceEnum.md
   - docs/Models/Components/ExecutionDetailsStatusEnum.md
   - docs/Models/Components/FailedOperationDto.md
@@ -107,6 +111,7 @@ generatedFiles:
   - docs/Models/Components/Five.md
   - docs/Models/Components/Four.md
   - docs/Models/Components/GetSubscriberPreferencesDto.md
+  - docs/Models/Components/InBoundParseDomainDto.md
   - docs/Models/Components/IntegrationResponseDto.md
   - docs/Models/Components/Issues.md
   - docs/Models/Components/ListSubscribersResponseDto.md
@@ -160,6 +165,8 @@ generatedFiles:
   - docs/Models/Components/PatchSubscriberPreferencesDto.md
   - docs/Models/Components/PatchSubscriberRequestDto.md
   - docs/Models/Components/Payload.md
+  - docs/Models/Components/PayloadValidationErrorDto.md
+  - docs/Models/Components/PayloadValidationErrorDtoValue.md
   - docs/Models/Components/PreferenceOverrideSourceEnum.md
   - docs/Models/Components/ProviderId.md
   - docs/Models/Components/ProvidersIdEnum.md
@@ -177,7 +184,6 @@ generatedFiles:
   - docs/Models/Components/SubscriberFeedResponseDto.md
   - docs/Models/Components/SubscriberGlobalPreferenceDto.md
   - docs/Models/Components/SubscriberPayloadDto.md
-  - docs/Models/Components/SubscriberPayloadDtoData.md
   - docs/Models/Components/SubscriberPreferenceChannels.md
   - docs/Models/Components/SubscriberPreferenceOverrideDto.md
   - docs/Models/Components/SubscriberPreferencesWorkflowInfoDto.md
@@ -208,12 +214,15 @@ generatedFiles:
   - docs/Models/Components/Type.md
   - docs/Models/Components/Unit.md
   - docs/Models/Components/UnseenCountResponse.md
+  - docs/Models/Components/UpdateEnvironmentRequestDto.md
   - docs/Models/Components/UpdateIntegrationRequestDto.md
   - docs/Models/Components/UpdateSubscriberChannelRequestDto.md
   - docs/Models/Components/UpdateSubscriberOnlineFlagRequestDto.md
   - docs/Models/Components/UpdateTopicRequestDto.md
   - docs/Models/Components/UpdatedSubscriberDto.md
   - docs/Models/Components/Value.md
+  - docs/Models/Components/Value4.md
+  - docs/Models/Components/Value5.md
   - docs/Models/Components/WeekDays.md
   - docs/Models/Components/WorkflowIntegrationStatus.md
   - docs/Models/Components/WorkflowOriginEnum.md
@@ -225,9 +234,22 @@ generatedFiles:
   - docs/Models/Errors/Message.md
   - docs/Models/Errors/Message4.md
   - docs/Models/Errors/Message5.md
+  - docs/Models/Errors/MessagePayloadValidationExceptionDto4.md
+  - docs/Models/Errors/MessagePayloadValidationExceptionDto5.md
+  - docs/Models/Errors/PayloadValidationExceptionDto.md
+  - docs/Models/Errors/PayloadValidationExceptionDtoMessage.md
+  - docs/Models/Errors/Schema.md
   - docs/Models/Errors/ValidationErrorDto.md
   - docs/Models/Errors/ValidationErrorDtoMessage.md
   - docs/Models/Operations/Channel.md
+  - docs/Models/Operations/EnvironmentsControllerV1CreateEnvironmentRequest.md
+  - docs/Models/Operations/EnvironmentsControllerV1CreateEnvironmentResponse.md
+  - docs/Models/Operations/EnvironmentsControllerV1DeleteEnvironmentRequest.md
+  - docs/Models/Operations/EnvironmentsControllerV1DeleteEnvironmentResponse.md
+  - docs/Models/Operations/EnvironmentsControllerV1ListMyEnvironmentsRequest.md
+  - docs/Models/Operations/EnvironmentsControllerV1ListMyEnvironmentsResponse.md
+  - docs/Models/Operations/EnvironmentsControllerV1UpdateMyEnvironmentRequest.md
+  - docs/Models/Operations/EnvironmentsControllerV1UpdateMyEnvironmentResponse.md
   - docs/Models/Operations/EventsControllerBroadcastEventToAllRequest.md
   - docs/Models/Operations/EventsControllerBroadcastEventToAllResponse.md
   - docs/Models/Operations/EventsControllerCancelRequest.md
@@ -316,6 +338,7 @@ generatedFiles:
   - docs/Models/Operations/TopicsControllerUpsertTopicResponse.md
   - docs/Models/Operations/TopicsV1ControllerGetTopicSubscriberRequest.md
   - docs/Models/Operations/TopicsV1ControllerGetTopicSubscriberResponse.md
+  - docs/sdks/environments/README.md
   - docs/sdks/integrations/README.md
   - docs/sdks/messages/README.md
   - docs/sdks/notifications/README.md
@@ -335,6 +358,7 @@ generatedFiles:
   - phpunit.xml
   - pint.json
   - rector.php
+  - src/Environments.php
   - src/Hooks/AfterErrorContext.php
   - src/Hooks/AfterErrorHook.php
   - src/Hooks/AfterSuccessContext.php
@@ -369,7 +393,9 @@ generatedFiles:
   - src/Models/Components/ActivityTopicDto.php
   - src/Models/Components/ActorFeedItemDto.php
   - src/Models/Components/ActorTypeEnum.php
+  - src/Models/Components/ApiKeyDto.php
   - src/Models/Components/BackoffUnit.php
+  - src/Models/Components/BridgeConfigurationDto.php
   - src/Models/Components/BuilderFieldTypeEnum.php
   - src/Models/Components/BulkCreateSubscriberResponseDto.php
   - src/Models/Components/BulkSubscriberCreateDto.php
@@ -385,6 +411,7 @@ generatedFiles:
   - src/Models/Components/ConstraintValidation.php
   - src/Models/Components/ControlVariables.php
   - src/Models/Components/Controls.php
+  - src/Models/Components/CreateEnvironmentRequestDto.php
   - src/Models/Components/CreateIntegrationRequestDto.php
   - src/Models/Components/CreateIntegrationRequestDtoChannel.php
   - src/Models/Components/CreateSubscriberRequestDto.php
@@ -393,7 +420,6 @@ generatedFiles:
   - src/Models/Components/CreateUpdateTopicRequestDto.php
   - src/Models/Components/CreatedSubscriberDto.php
   - src/Models/Components/CredentialsDto.php
-  - src/Models/Components/Data.php
   - src/Models/Components/DelayRegularMetadata.php
   - src/Models/Components/DelayRegularMetadataType.php
   - src/Models/Components/DelayRegularMetadataUnit.php
@@ -417,6 +443,7 @@ generatedFiles:
   - src/Models/Components/EmailBlock.php
   - src/Models/Components/EmailBlockStyles.php
   - src/Models/Components/EmailBlockTypeEnum.php
+  - src/Models/Components/EnvironmentResponseDto.php
   - src/Models/Components/ExecutionDetailsSourceEnum.php
   - src/Models/Components/ExecutionDetailsStatusEnum.php
   - src/Models/Components/FailedOperationDto.php
@@ -424,6 +451,7 @@ generatedFiles:
   - src/Models/Components/FieldFilterPartDto.php
   - src/Models/Components/Four.php
   - src/Models/Components/GetSubscriberPreferencesDto.php
+  - src/Models/Components/InBoundParseDomainDto.php
   - src/Models/Components/IntegrationResponseDto.php
   - src/Models/Components/Issues.php
   - src/Models/Components/ListSubscribersResponseDto.php
@@ -473,6 +501,7 @@ generatedFiles:
   - src/Models/Components/PatchSubscriberPreferencesDto.php
   - src/Models/Components/PatchSubscriberRequestDto.php
   - src/Models/Components/Payload.php
+  - src/Models/Components/PayloadValidationErrorDto.php
   - src/Models/Components/PreferenceOverrideSourceEnum.php
   - src/Models/Components/ProviderId.php
   - src/Models/Components/ProvidersIdEnum.php
@@ -516,11 +545,13 @@ generatedFiles:
   - src/Models/Components/Type.php
   - src/Models/Components/Unit.php
   - src/Models/Components/UnseenCountResponse.php
+  - src/Models/Components/UpdateEnvironmentRequestDto.php
   - src/Models/Components/UpdateIntegrationRequestDto.php
   - src/Models/Components/UpdateSubscriberChannelRequestDto.php
   - src/Models/Components/UpdateSubscriberOnlineFlagRequestDto.php
   - src/Models/Components/UpdateTopicRequestDto.php
   - src/Models/Components/UpdatedSubscriberDto.php
+  - src/Models/Components/Value4.php
   - src/Models/Components/WeekDays.php
   - src/Models/Components/WorkflowIntegrationStatus.php
   - src/Models/Components/WorkflowOriginEnum.php
@@ -531,9 +562,21 @@ generatedFiles:
   - src/Models/Errors/ErrorDtoThrowable.php
   - src/Models/Errors/Four.php
   - src/Models/Errors/Message4.php
+  - src/Models/Errors/MessagePayloadValidationExceptionDto4.php
+  - src/Models/Errors/PayloadValidationExceptionDto.php
+  - src/Models/Errors/PayloadValidationExceptionDtoThrowable.php
+  - src/Models/Errors/Schema.php
   - src/Models/Errors/ValidationErrorDto.php
   - src/Models/Errors/ValidationErrorDtoThrowable.php
   - src/Models/Operations/Channel.php
+  - src/Models/Operations/EnvironmentsControllerV1CreateEnvironmentRequest.php
+  - src/Models/Operations/EnvironmentsControllerV1CreateEnvironmentResponse.php
+  - src/Models/Operations/EnvironmentsControllerV1DeleteEnvironmentRequest.php
+  - src/Models/Operations/EnvironmentsControllerV1DeleteEnvironmentResponse.php
+  - src/Models/Operations/EnvironmentsControllerV1ListMyEnvironmentsRequest.php
+  - src/Models/Operations/EnvironmentsControllerV1ListMyEnvironmentsResponse.php
+  - src/Models/Operations/EnvironmentsControllerV1UpdateMyEnvironmentRequest.php
+  - src/Models/Operations/EnvironmentsControllerV1UpdateMyEnvironmentResponse.php
   - src/Models/Operations/EventsControllerBroadcastEventToAllRequest.php
   - src/Models/Operations/EventsControllerBroadcastEventToAllResponse.php
   - src/Models/Operations/EventsControllerCancelRequest.php
@@ -683,10 +726,12 @@ examples:
         "414":
           application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
         "400":
-          application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
+          application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123", "type": "PAYLOAD_VALIDATION_ERROR", "errors": [{"field": "user.name", "message": "must have required property 'name'", "value": "{\"age\":25}", "schemaPath": "#/required"}], "schema": {}}
         "422":
           application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123", "errors": {"fieldName1": {"messages": ["Field is required", "Must be a valid email address"], "value": "invalidEmail"}, "fieldName2": {"messages": ["Must be at least 18 years old"], "value": 17}, "fieldName3": {"messages": ["Must be a boolean value"], "value": true}, "fieldName4": {"messages": ["Must be a valid object"], "value": null}, "fieldName5": {"messages": ["Field is missing"], "value": null}, "fieldName6": {"messages": ["Undefined value"]}}}
         "500":
+          application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
+        "401":
           application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
   EventsController_cancel:
     speakeasy-default-events-controller-cancel:
@@ -714,10 +759,12 @@ examples:
         "414":
           application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
         "400":
-          application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
+          application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123", "type": "PAYLOAD_VALIDATION_ERROR", "errors": [{"field": "user.name", "message": "must have required property 'name'", "value": [{"age": 25}], "schemaPath": "#/required"}], "schema": {}}
         "422":
           application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123", "errors": {"fieldName1": {"messages": ["Field is required", "Must be a valid email address"], "value": "invalidEmail"}, "fieldName2": {"messages": ["Must be at least 18 years old"], "value": 17}, "fieldName3": {"messages": ["Must be a boolean value"], "value": true}, "fieldName4": {"messages": ["Must be a valid object"], "value": {}}, "fieldName5": {"messages": ["Field is missing"], "value": null}, "fieldName6": {"messages": ["Undefined value"]}}}
         "500":
+          application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
+        "401":
           application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
   EventsController_triggerBulk:
     speakeasy-default-events-controller-trigger-bulk:
@@ -729,10 +776,12 @@ examples:
         "414":
           application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
         "400":
-          application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
+          application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123", "type": "PAYLOAD_VALIDATION_ERROR", "errors": [{"field": "user.name", "message": "must have required property 'name'", "value": [{"age": 25}], "schemaPath": "#/required"}], "schema": {}}
         "422":
           application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123", "errors": {"fieldName1": {"messages": ["Field is required", "Must be a valid email address"], "value": "invalidEmail"}, "fieldName2": {"messages": ["Must be at least 18 years old"], "value": 17}, "fieldName3": {"messages": ["Must be a boolean value"], "value": true}, "fieldName4": {"messages": ["Must be a valid object"], "value": null}, "fieldName5": {"messages": ["Field is missing"], "value": null}, "fieldName6": {"messages": ["Undefined value"]}}}
         "500":
+          application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
+        "401":
           application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
   SubscribersController_searchSubscribers:
     speakeasy-default-subscribers-controller-search-subscribers:
@@ -952,6 +1001,24 @@ examples:
           application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
         "422":
           application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123", "errors": {"fieldName1": {"messages": ["Field is required", "Must be a valid email address"], "value": "invalidEmail"}, "fieldName2": {"messages": ["Must be at least 18 years old"], "value": 17}, "fieldName3": {"messages": ["Must be a boolean value"], "value": true}, "fieldName4": {"messages": ["Must be a valid object"], "value": null}, "fieldName5": {"messages": ["Field is missing"], "value": null}, "fieldName6": {"messages": ["Undefined value"]}}}
+        "500":
+          application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
+    speakeasy-default-subscribers-v1-controller-get-notifications-feed:
+      parameters:
+        path:
+          subscriberId: "<id>"
+        query:
+          limit: 10
+          payload: "btoa(JSON.stringify({ foo: 123 })) results in base64 encoded string like eyJmb28iOjEyM30="
+      responses:
+        "200":
+          application/json: {"totalCount": 5, "hasMore": true, "data": [], "pageSize": 2, "page": 1}
+        "414":
+          application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
+        "400":
+          application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
+        "422":
+          application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123", "errors": {"fieldName1": {"messages": ["Field is required", "Must be a valid email address"], "value": "invalidEmail"}, "fieldName2": {"messages": ["Must be at least 18 years old"], "value": 17}, "fieldName3": {"messages": ["Must be a boolean value"], "value": true}, "fieldName4": {"messages": ["Must be a valid object"], "value": "xx xx xx "}, "fieldName5": {"messages": ["Field is missing"], "value": null}, "fieldName6": {"messages": ["Undefined value"]}}}
         "500":
           application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
   SubscribersController_getSubscriberPreferences:
@@ -1224,8 +1291,36 @@ examples:
           application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123", "errors": {"fieldName1": {"messages": ["Field is required", "Must be a valid email address"], "value": "invalidEmail"}, "fieldName2": {"messages": ["Must be at least 18 years old"], "value": 17}, "fieldName3": {"messages": ["Must be a boolean value"], "value": true}, "fieldName4": {"messages": ["Must be a valid object"], "value": ["xx xx xx "]}, "fieldName5": {"messages": ["Field is missing"], "value": null}, "fieldName6": {"messages": ["Undefined value"]}}}
         "500":
           application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
+    speakeasy-default-messages-controller-delete-message:
+      parameters:
+        path:
+          messageId: "507f1f77bcf86cd799439011"
+      responses:
+        "200":
+          application/json: {"acknowledged": false, "status": "deleted"}
+        "414":
+          application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
+        "400":
+          application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
+        "422":
+          application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123", "errors": {"fieldName1": {"messages": ["Field is required", "Must be a valid email address"], "value": "invalidEmail"}, "fieldName2": {"messages": ["Must be at least 18 years old"], "value": 17}, "fieldName3": {"messages": ["Must be a boolean value"], "value": true}, "fieldName4": {"messages": ["Must be a valid object"], "value": ["xx xx xx "]}, "fieldName5": {"messages": ["Field is missing"], "value": null}, "fieldName6": {"messages": ["Undefined value"]}}}
+        "500":
+          application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
   MessagesController_deleteMessagesByTransactionId:
     "":
+      parameters:
+        path:
+          transactionId: "507f1f77bcf86cd799439011"
+      responses:
+        "414":
+          application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
+        "400":
+          application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
+        "422":
+          application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123", "errors": {"fieldName1": {"messages": ["Field is required", "Must be a valid email address"], "value": "invalidEmail"}, "fieldName2": {"messages": ["Must be at least 18 years old"], "value": 17}, "fieldName3": {"messages": ["Must be a boolean value"], "value": true}, "fieldName4": {"messages": ["Must be a valid object"], "value": true}, "fieldName5": {"messages": ["Field is missing"], "value": null}, "fieldName6": {"messages": ["Undefined value"]}}}
+        "500":
+          application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
+    speakeasy-default-messages-controller-delete-messages-by-transaction-id:
       parameters:
         path:
           transactionId: "507f1f77bcf86cd799439011"
@@ -1350,6 +1445,66 @@ examples:
       responses:
         "200":
           application/json: {"_organizationId": "org_123456789", "_environmentId": "env_123456789", "_subscriberId": "sub_123456789", "_topicId": "topic_123456789", "topicKey": "my_topic_key", "externalSubscriberId": "external_subscriber_123"}
+        "414":
+          application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
+        "400":
+          application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
+        "422":
+          application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123", "errors": {"fieldName1": {"messages": ["Field is required", "Must be a valid email address"], "value": "invalidEmail"}, "fieldName2": {"messages": ["Must be at least 18 years old"], "value": 17}, "fieldName3": {"messages": ["Must be a boolean value"], "value": true}, "fieldName4": {"messages": ["Must be a valid object"], "value": {}}, "fieldName5": {"messages": ["Field is missing"], "value": null}, "fieldName6": {"messages": ["Undefined value"]}}}
+        "500":
+          application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
+  EnvironmentsControllerV1_createEnvironment:
+    speakeasy-default-environments-controller-v1-create-environment:
+      requestBody:
+        application/json: {"name": "Production Environment", "parentId": "60d5ecb8b3b3a30015f3e1a1", "color": "#3498db"}
+      responses:
+        "201":
+          application/json: {"_id": "60d5ecb8b3b3a30015f3e1a1", "name": "Production Environment", "_organizationId": "60d5ecb8b3b3a30015f3e1a2", "identifier": "prod-env-01", "apiKeys": [{"key": "sk_test_1234567890abcdef", "_userId": "60d5ecb8b3b3a30015f3e1a4", "hash": "hash_value_here"}], "_parentId": "60d5ecb8b3b3a30015f3e1a3", "slug": "production"}
+        "402":
+          application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
+        "400":
+          application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
+        "422":
+          application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123", "errors": {"fieldName1": {"messages": ["Field is required", "Must be a valid email address"], "value": "invalidEmail"}, "fieldName2": {"messages": ["Must be at least 18 years old"], "value": 17}, "fieldName3": {"messages": ["Must be a boolean value"], "value": true}, "fieldName4": {"messages": ["Must be a valid object"], "value": "xx xx xx "}, "fieldName5": {"messages": ["Field is missing"], "value": null}, "fieldName6": {"messages": ["Undefined value"]}}}
+        "500":
+          application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
+  EnvironmentsControllerV1_listMyEnvironments:
+    speakeasy-default-environments-controller-v1-list-my-environments:
+      responses:
+        "200":
+          application/json: [{"_id": "60d5ecb8b3b3a30015f3e1a1", "name": "Production Environment", "_organizationId": "60d5ecb8b3b3a30015f3e1a2", "identifier": "prod-env-01", "apiKeys": [{"key": "sk_test_1234567890abcdef", "_userId": "60d5ecb8b3b3a30015f3e1a4", "hash": "hash_value_here"}], "_parentId": "60d5ecb8b3b3a30015f3e1a3", "slug": "production"}]
+        "414":
+          application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
+        "400":
+          application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
+        "422":
+          application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123", "errors": {"fieldName1": {"messages": ["Field is required", "Must be a valid email address"], "value": "invalidEmail"}, "fieldName2": {"messages": ["Must be at least 18 years old"], "value": 17}, "fieldName3": {"messages": ["Must be a boolean value"], "value": true}, "fieldName4": {"messages": ["Must be a valid object"], "value": ["xx xx xx "]}, "fieldName5": {"messages": ["Field is missing"], "value": null}, "fieldName6": {"messages": ["Undefined value"]}}}
+        "500":
+          application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
+  EnvironmentsControllerV1_updateMyEnvironment:
+    speakeasy-default-environments-controller-v1-update-my-environment:
+      parameters:
+        path:
+          environmentId: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {"_id": "60d5ecb8b3b3a30015f3e1a1", "name": "Production Environment", "_organizationId": "60d5ecb8b3b3a30015f3e1a2", "identifier": "prod-env-01", "apiKeys": [{"key": "sk_test_1234567890abcdef", "_userId": "60d5ecb8b3b3a30015f3e1a4", "hash": "hash_value_here"}], "_parentId": "60d5ecb8b3b3a30015f3e1a3", "slug": "production"}
+        "414":
+          application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
+        "400":
+          application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
+        "422":
+          application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123", "errors": {"fieldName1": {"messages": ["Field is required", "Must be a valid email address"], "value": "invalidEmail"}, "fieldName2": {"messages": ["Must be at least 18 years old"], "value": 17}, "fieldName3": {"messages": ["Must be a boolean value"], "value": true}, "fieldName4": {"messages": ["Must be a valid object"], "value": "xx xx xx "}, "fieldName5": {"messages": ["Field is missing"], "value": null}, "fieldName6": {"messages": ["Undefined value"]}}}
+        "500":
+          application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
+  EnvironmentsControllerV1_deleteEnvironment:
+    speakeasy-default-environments-controller-v1-delete-environment:
+      parameters:
+        path:
+          environmentId: "<id>"
+      responses:
         "414":
           application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
         "400":

@@ -6,11 +6,10 @@
 
 declare(strict_types=1);
 
-namespace novu\Models\Components;
+namespace novu\Models\Errors;
 
 
-/** Data - Additional custom data for the subscriber */
-class Data
+class MessagePayloadValidationExceptionDto4
 {
 
     public function __construct()
