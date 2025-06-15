@@ -51,9 +51,7 @@ $triggerEventRequestDto = new Components\TriggerEventRequestDto(
 );
 
 $response = $sdk->trigger(
-    triggerEventRequestDto: $triggerEventRequestDto,
-    idempotencyKey: '<value>'
-
+    triggerEventRequestDto: $triggerEventRequestDto
 );
 
 if ($response->triggerEventResponseDto !== null) {
@@ -74,13 +72,14 @@ if ($response->triggerEventResponseDto !== null) {
 
 ### Errors
 
-| Error Type                             | Status Code                            | Content Type                           |
-| -------------------------------------- | -------------------------------------- | -------------------------------------- |
-| Errors\ErrorDto                        | 414                                    | application/json                       |
-| Errors\ErrorDto                        | 400, 401, 403, 404, 405, 409, 413, 415 | application/json                       |
-| Errors\ValidationErrorDto              | 422                                    | application/json                       |
-| Errors\ErrorDto                        | 500                                    | application/json                       |
-| Errors\APIException                    | 4XX, 5XX                               | \*/\*                                  |
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| Errors\PayloadValidationExceptionDto | 400                                  | application/json                     |
+| Errors\ErrorDto                      | 414                                  | application/json                     |
+| Errors\ErrorDto                      | 401, 403, 404, 405, 409, 413, 415    | application/json                     |
+| Errors\ValidationErrorDto            | 422                                  | application/json                     |
+| Errors\ErrorDto                      | 500                                  | application/json                     |
+| Errors\APIException                  | 4XX, 5XX                             | \*/\*                                |
 
 ## cancel
 
@@ -107,9 +106,7 @@ $sdk = novu\Novu::builder()
 
 
 $response = $sdk->cancel(
-    transactionId: '<id>',
-    idempotencyKey: '<value>'
-
+    transactionId: '<id>'
 );
 
 if ($response->boolean !== null) {
@@ -180,9 +177,7 @@ $triggerEventToAllRequestDto = new Components\TriggerEventToAllRequestDto(
 );
 
 $response = $sdk->triggerBroadcast(
-    triggerEventToAllRequestDto: $triggerEventToAllRequestDto,
-    idempotencyKey: '<value>'
-
+    triggerEventToAllRequestDto: $triggerEventToAllRequestDto
 );
 
 if ($response->triggerEventResponseDto !== null) {
@@ -203,13 +198,14 @@ if ($response->triggerEventResponseDto !== null) {
 
 ### Errors
 
-| Error Type                             | Status Code                            | Content Type                           |
-| -------------------------------------- | -------------------------------------- | -------------------------------------- |
-| Errors\ErrorDto                        | 414                                    | application/json                       |
-| Errors\ErrorDto                        | 400, 401, 403, 404, 405, 409, 413, 415 | application/json                       |
-| Errors\ValidationErrorDto              | 422                                    | application/json                       |
-| Errors\ErrorDto                        | 500                                    | application/json                       |
-| Errors\APIException                    | 4XX, 5XX                               | \*/\*                                  |
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| Errors\PayloadValidationExceptionDto | 400                                  | application/json                     |
+| Errors\ErrorDto                      | 414                                  | application/json                     |
+| Errors\ErrorDto                      | 401, 403, 404, 405, 409, 413, 415    | application/json                     |
+| Errors\ValidationErrorDto            | 422                                  | application/json                     |
+| Errors\ErrorDto                      | 500                                  | application/json                     |
+| Errors\APIException                  | 4XX, 5XX                             | \*/\*                                |
 
 ## triggerBulk
 
@@ -247,13 +243,33 @@ $bulkTriggerEventDto = new Components\BulkTriggerEventDto(
             overrides: new Components\Overrides(),
             to: 'SUBSCRIBER_ID',
         ),
+        new Components\TriggerEventRequestDto(
+            workflowId: 'workflow_identifier',
+            payload: [
+                'comment_id' => 'string',
+                'post' => [
+                    'text' => 'string',
+                ],
+            ],
+            overrides: new Components\Overrides(),
+            to: 'SUBSCRIBER_ID',
+        ),
+        new Components\TriggerEventRequestDto(
+            workflowId: 'workflow_identifier',
+            payload: [
+                'comment_id' => 'string',
+                'post' => [
+                    'text' => 'string',
+                ],
+            ],
+            overrides: new Components\Overrides(),
+            to: 'SUBSCRIBER_ID',
+        ),
     ],
 );
 
 $response = $sdk->triggerBulk(
-    bulkTriggerEventDto: $bulkTriggerEventDto,
-    idempotencyKey: '<value>'
-
+    bulkTriggerEventDto: $bulkTriggerEventDto
 );
 
 if ($response->triggerEventResponseDtos !== null) {
@@ -274,10 +290,11 @@ if ($response->triggerEventResponseDtos !== null) {
 
 ### Errors
 
-| Error Type                             | Status Code                            | Content Type                           |
-| -------------------------------------- | -------------------------------------- | -------------------------------------- |
-| Errors\ErrorDto                        | 414                                    | application/json                       |
-| Errors\ErrorDto                        | 400, 401, 403, 404, 405, 409, 413, 415 | application/json                       |
-| Errors\ValidationErrorDto              | 422                                    | application/json                       |
-| Errors\ErrorDto                        | 500                                    | application/json                       |
-| Errors\APIException                    | 4XX, 5XX                               | \*/\*                                  |
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| Errors\PayloadValidationExceptionDto | 400                                  | application/json                     |
+| Errors\ErrorDto                      | 414                                  | application/json                     |
+| Errors\ErrorDto                      | 401, 403, 404, 405, 409, 413, 415    | application/json                     |
+| Errors\ValidationErrorDto            | 422                                  | application/json                     |
+| Errors\ErrorDto                      | 500                                  | application/json                     |
+| Errors\APIException                  | 4XX, 5XX                             | \*/\*                                |

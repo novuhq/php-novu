@@ -1,0 +1,10 @@
+# EnvironmentsControllerV1UpdateMyEnvironmentRequest
+
+
+## Fields
+
+| Field                                                                                            | Type                                                                                             | Required                                                                                         | Description                                                                                      |
+| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
+| `environmentId`                                                                                  | *string*                                                                                         | :heavy_check_mark:                                                                               | The unique identifier of the environment                                                         |
+| `idempotencyKey`                                                                                 | *?string*                                                                                        | :heavy_minus_sign:                                                                               | A header for idempotency purposes                                                                |
+| `updateEnvironmentRequestDto`                                                                    | [Components\UpdateEnvironmentRequestDto](../../Models/Components/UpdateEnvironmentRequestDto.md) | :heavy_check_mark:                                                                               | N/A                                                                                              |

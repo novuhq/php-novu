@@ -86,9 +86,7 @@ $sdk = novu\Novu::builder()
 
 
 $response = $sdk->notifications->get(
-    notificationId: '<id>',
-    idempotencyKey: '<value>'
-
+    notificationId: '<id>'
 );
 
 if ($response->activityNotificationResponseDto !== null) {
