@@ -91,7 +91,7 @@ class TopicsSubscribers
             topicKey: $topicKey,
             idempotencyKey: $idempotencyKey,
         );
-        $baseUrl = $this->sdkConfiguration->getServerUrl();
+        $baseUrl = $this->sdkConfiguration->getTemplatedServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/v1/topics/{topicKey}/subscribers/{externalSubscriberId}', Operations\TopicsV1ControllerGetTopicSubscriberRequest::class, $request);
         $urlOverride = null;
         $httpOptions = ['http_errors' => false];
@@ -102,7 +102,7 @@ class TopicsSubscribers
         $httpOptions['headers']['Accept'] = 'application/json';
         $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('GET', $url);
-        $hookContext = new HookContext($baseUrl, 'TopicsV1Controller_getTopicSubscriber', [], $this->sdkConfiguration->securitySource);
+        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'TopicsV1Controller_getTopicSubscriber', [], $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
         $httpRequest = Utils\Utils::removeHeaders($httpRequest);
