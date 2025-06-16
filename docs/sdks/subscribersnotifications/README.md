@@ -31,8 +31,7 @@ $sdk = novu\Novu::builder()
 $response = $sdk->subscribersNotifications->getUnseenCount(
     subscriberId: '<id>',
     seen: false,
-    limit: 100,
-    idempotencyKey: '<value>'
+    limit: 100
 
 );
 
