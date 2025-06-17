@@ -9,8 +9,8 @@ declare(strict_types=1);
 namespace novu\Models\Components;
 
 
+/** Type of the delay. Currently only 'regular' is supported by the schema. */
 enum Type: string
 {
     case Regular = 'regular';
-    case Backoff = 'backoff';
 }

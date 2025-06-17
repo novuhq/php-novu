@@ -1,4 +1,4 @@
-# SubscriberPayloadDtoData
+# Value5
 
 
 ## Supported Types
@@ -12,13 +12,13 @@
 string $value = /* values here */
 ```
 
-### `array`
+### `float`
 
 ```php
 /**
-* @var array<string>
+* @var float
 */
-array $value = /* values here */
+float $value = /* values here */
 ```
 
 ### `bool`
@@ -30,12 +30,12 @@ array $value = /* values here */
 bool $value = /* values here */
 ```
 
-### `float`
+### `array`
 
 ```php
 /**
-* @var float
+* @var array<string, mixed>
 */
-float $value = /* values here */
+array $value = /* values here */
 ```
 

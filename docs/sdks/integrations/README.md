@@ -37,7 +37,7 @@ $sdk = novu\Novu::builder()
 
 
 $response = $sdk->integrations->list(
-    idempotencyKey: '<value>'
+
 );
 
 if ($response->integrationResponseDtos !== null) {
@@ -92,9 +92,7 @@ $createIntegrationRequestDto = new Components\CreateIntegrationRequestDto(
 );
 
 $response = $sdk->integrations->create(
-    createIntegrationRequestDto: $createIntegrationRequestDto,
-    idempotencyKey: '<value>'
-
+    createIntegrationRequestDto: $createIntegrationRequestDto
 );
 
 if ($response->integrationResponseDto !== null) {
@@ -148,8 +146,7 @@ $updateIntegrationRequestDto = new Components\UpdateIntegrationRequestDto();
 
 $response = $sdk->integrations->update(
     integrationId: '<id>',
-    updateIntegrationRequestDto: $updateIntegrationRequestDto,
-    idempotencyKey: '<value>'
+    updateIntegrationRequestDto: $updateIntegrationRequestDto
 
 );
 
@@ -203,9 +200,7 @@ $sdk = novu\Novu::builder()
 
 
 $response = $sdk->integrations->delete(
-    integrationId: '<id>',
-    idempotencyKey: '<value>'
-
+    integrationId: '<id>'
 );
 
 if ($response->integrationResponseDtos !== null) {
@@ -258,9 +253,7 @@ $sdk = novu\Novu::builder()
 
 
 $response = $sdk->integrations->setAsPrimary(
-    integrationId: '<id>',
-    idempotencyKey: '<value>'
-
+    integrationId: '<id>'
 );
 
 if ($response->integrationResponseDto !== null) {
@@ -311,7 +304,7 @@ $sdk = novu\Novu::builder()
 
 
 $response = $sdk->integrations->listActive(
-    idempotencyKey: '<value>'
+
 );
 
 if ($response->integrationResponseDtos !== null) {

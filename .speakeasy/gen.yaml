@@ -4,6 +4,7 @@ generation:
   maintainOpenAPIOrder: true
   usageSnippets:
     optionalPropertyRendering: withExample
+    sdkInitStyle: constructor
   useClassNamesForArrayFields: true
   fixes:
     nameResolutionDec2023: true
@@ -16,12 +17,13 @@ generation:
     oAuth2ClientCredentialsEnabled: true
     oAuth2PasswordEnabled: true
 php:
-  version: 1.1.0
+  version: 1.2.0
   additionalDependencies:
     autoload: {}
     autoload-dev: {}
     require: {}
     require-dev: {}
+  baseErrorName: NovuError
   clientServerStatusCodesAsErrors: true
   defaultErrorName: APIException
   flattenGlobalSecurity: true

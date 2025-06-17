@@ -88,9 +88,7 @@ $sdk = novu\Novu::builder()
 
 
 $response = $sdk->messages->delete(
-    messageId: '507f1f77bcf86cd799439011',
-    idempotencyKey: '<value>'
-
+    messageId: '507f1f77bcf86cd799439011'
 );
 
 if ($response->deleteMessageResponseDto !== null) {
@@ -132,7 +130,6 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use novu;
-use novu\Models\Operations;
 
 $sdk = novu\Novu::builder()
     ->setSecurity(
@@ -143,10 +140,7 @@ $sdk = novu\Novu::builder()
 
 
 $response = $sdk->messages->deleteByTransactionId(
-    transactionId: '507f1f77bcf86cd799439011',
-    channel: Operations\Channel::Sms,
-    idempotencyKey: '<value>'
-
+    transactionId: '507f1f77bcf86cd799439011'
 );
 
 if ($response->statusCode === 200) {

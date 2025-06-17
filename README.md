@@ -120,9 +120,7 @@ $triggerEventRequestDto = new Components\TriggerEventRequestDto(
 );
 
 $response = $sdk->trigger(
-    triggerEventRequestDto: $triggerEventRequestDto,
-    idempotencyKey: '<value>'
-
+    triggerEventRequestDto: $triggerEventRequestDto
 );
 
 if ($response->triggerEventResponseDto !== null) {
@@ -148,9 +146,7 @@ $sdk = novu\Novu::builder()
 
 
 $response = $sdk->cancel(
-    transactionId: '<id>',
-    idempotencyKey: '<value>'
-
+    transactionId: '<id>'
 );
 
 if ($response->boolean !== null) {
@@ -194,9 +190,7 @@ $triggerEventToAllRequestDto = new Components\TriggerEventToAllRequestDto(
 );
 
 $response = $sdk->triggerBroadcast(
-    triggerEventToAllRequestDto: $triggerEventToAllRequestDto,
-    idempotencyKey: '<value>'
-
+    triggerEventToAllRequestDto: $triggerEventToAllRequestDto
 );
 
 if ($response->triggerEventResponseDto !== null) {
@@ -233,13 +227,33 @@ $bulkTriggerEventDto = new Components\BulkTriggerEventDto(
             overrides: new Components\Overrides(),
             to: 'SUBSCRIBER_ID',
         ),
+        new Components\TriggerEventRequestDto(
+            workflowId: 'workflow_identifier',
+            payload: [
+                'comment_id' => 'string',
+                'post' => [
+                    'text' => 'string',
+                ],
+            ],
+            overrides: new Components\Overrides(),
+            to: 'SUBSCRIBER_ID',
+        ),
+        new Components\TriggerEventRequestDto(
+            workflowId: 'workflow_identifier',
+            payload: [
+                'comment_id' => 'string',
+                'post' => [
+                    'text' => 'string',
+                ],
+            ],
+            overrides: new Components\Overrides(),
+            to: 'SUBSCRIBER_ID',
+        ),
     ],
 );
 
 $response = $sdk->triggerBulk(
-    bulkTriggerEventDto: $bulkTriggerEventDto,
-    idempotencyKey: '<value>'
-
+    bulkTriggerEventDto: $bulkTriggerEventDto
 );
 
 if ($response->triggerEventResponseDtos !== null) {
@@ -287,9 +301,7 @@ $triggerEventRequestDto = new Components\TriggerEventRequestDto(
 );
 
 $response = $sdk->trigger(
-    triggerEventRequestDto: $triggerEventRequestDto,
-    idempotencyKey: '<value>'
-
+    triggerEventRequestDto: $triggerEventRequestDto
 );
 
 if ($response->triggerEventResponseDto !== null) {
@@ -303,6 +315,13 @@ if ($response->triggerEventResponseDto !== null) {
 
 <details open>
 <summary>Available methods</summary>
+
+### [environments](docs/sdks/environments/README.md)
+
+* [create](docs/sdks/environments/README.md#create) - Create an environment
+* [list](docs/sdks/environments/README.md#list) - List all environments
+* [update](docs/sdks/environments/README.md#update) - Update an environment
+* [delete](docs/sdks/environments/README.md#delete) - Delete an environment
 
 ### [integrations](docs/sdks/integrations/README.md)
 
@@ -337,7 +356,7 @@ if ($response->triggerEventResponseDto !== null) {
 * [create](docs/sdks/subscribers/README.md#create) - Create a subscriber
 * [get](docs/sdks/subscribers/README.md#get) - Retrieve a subscriber
 * [patch](docs/sdks/subscribers/README.md#patch) - Update a subscriber
-* [delete](docs/sdks/subscribers/README.md#delete) - Delete subscriber
+* [delete](docs/sdks/subscribers/README.md#delete) - Delete a subscriber
 * [createBulk](docs/sdks/subscribers/README.md#createbulk) - Bulk create subscribers
 * [updatePreferences](docs/sdks/subscribers/README.md#updatepreferences) - Update subscriber preferences
 * [updateCredentials](docs/sdks/subscribers/README.md#updatecredentials) - Update provider credentials
@@ -391,6 +410,20 @@ if ($response->triggerEventResponseDto !== null) {
 
 * [check](docs/sdks/topicssubscribers/README.md#check) - Check topic subscriber
 
+### [workflows](docs/sdks/workflows/README.md)
+
+* [create](docs/sdks/workflows/README.md#create) - Create a workflow
+* [list](docs/sdks/workflows/README.md#list) - List all workflows
+* [update](docs/sdks/workflows/README.md#update) - Update a workflow
+* [get](docs/sdks/workflows/README.md#get) - Retrieve a workflow
+* [delete](docs/sdks/workflows/README.md#delete) - Delete a workflow
+* [patch](docs/sdks/workflows/README.md#patch) - Update a workflow
+* [sync](docs/sdks/workflows/README.md#sync) - Sync a workflow
+
+#### [workflows->steps](docs/sdks/steps/README.md)
+
+* [retrieve](docs/sdks/steps/README.md#retrieve) - Retrieve workflow step
+
 </details>
 <!-- End Available Resources and Operations [operations] -->
 
@@ -429,7 +462,6 @@ $triggerEventRequestDto = new Components\TriggerEventRequestDto(
 
 $response = $sdk->trigger(
     triggerEventRequestDto: $triggerEventRequestDto,
-    idempotencyKey: '<value>',
     options: Utils\Options->builder()->setRetryConfig(
         new Retry\RetryConfigBackoff(
             initialInterval: 1,
@@ -484,9 +516,7 @@ $triggerEventRequestDto = new Components\TriggerEventRequestDto(
 );
 
 $response = $sdk->trigger(
-    triggerEventRequestDto: $triggerEventRequestDto,
-    idempotencyKey: '<value>'
-
+    triggerEventRequestDto: $triggerEventRequestDto
 );
 
 if ($response->triggerEventResponseDto !== null) {
@@ -511,13 +541,14 @@ By default an API error will raise a `Errors\APIException` exception, which has 
 
 When custom error responses are specified for an operation, the SDK may also throw their associated exception. You can refer to respective *Errors* tables in SDK docs for more details on possible exception types for each operation. For example, the `trigger` method throws the following exceptions:
 
-| Error Type                | Status Code                            | Content Type     |
-| ------------------------- | -------------------------------------- | ---------------- |
-| Errors\ErrorDto           | 414                                    | application/json |
-| Errors\ErrorDto           | 400, 401, 403, 404, 405, 409, 413, 415 | application/json |
-| Errors\ValidationErrorDto | 422                                    | application/json |
-| Errors\ErrorDto           | 500                                    | application/json |
-| Errors\APIException       | 4XX, 5XX                               | \*/\*            |
+| Error Type                           | Status Code                       | Content Type     |
+| ------------------------------------ | --------------------------------- | ---------------- |
+| Errors\PayloadValidationExceptionDto | 400                               | application/json |
+| Errors\ErrorDto                      | 414                               | application/json |
+| Errors\ErrorDto                      | 401, 403, 404, 405, 409, 413, 415 | application/json |
+| Errors\ValidationErrorDto            | 422                               | application/json |
+| Errors\ErrorDto                      | 500                               | application/json |
+| Errors\APIException                  | 4XX, 5XX                          | \*/\*            |
 
 ### Example
 
@@ -550,14 +581,15 @@ try {
     );
 
     $response = $sdk->trigger(
-        triggerEventRequestDto: $triggerEventRequestDto,
-        idempotencyKey: '<value>'
-
+        triggerEventRequestDto: $triggerEventRequestDto
     );
 
     if ($response->triggerEventResponseDto !== null) {
         // handle response
     }
+} catch (Errors\PayloadValidationExceptionDtoThrowable $e) {
+    // handle $e->$container data
+    throw $e;
 } catch (Errors\ErrorDtoThrowable $e) {
     // handle $e->$container data
     throw $e;
@@ -619,9 +651,7 @@ $triggerEventRequestDto = new Components\TriggerEventRequestDto(
 );
 
 $response = $sdk->trigger(
-    triggerEventRequestDto: $triggerEventRequestDto,
-    idempotencyKey: '<value>'
-
+    triggerEventRequestDto: $triggerEventRequestDto
 );
 
 if ($response->triggerEventResponseDto !== null) {
@@ -660,9 +690,7 @@ $triggerEventRequestDto = new Components\TriggerEventRequestDto(
 );
 
 $response = $sdk->trigger(
-    triggerEventRequestDto: $triggerEventRequestDto,
-    idempotencyKey: '<value>'
-
+    triggerEventRequestDto: $triggerEventRequestDto
 );
 
 if ($response->triggerEventResponseDto !== null) {

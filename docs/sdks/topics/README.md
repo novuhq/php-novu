@@ -28,7 +28,6 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use novu;
-use novu\Models\Operations;
 
 $sdk = novu\Novu::builder()
     ->setSecurity(
@@ -36,7 +35,7 @@ $sdk = novu\Novu::builder()
     )
     ->build();
 
-$request = new Operations\TopicsControllerListTopicsRequest();
+
 
 $response = $sdk->topics->list(
     request: $request
@@ -93,9 +92,7 @@ $createUpdateTopicRequestDto = new Components\CreateUpdateTopicRequestDto(
 );
 
 $response = $sdk->topics->create(
-    createUpdateTopicRequestDto: $createUpdateTopicRequestDto,
-    idempotencyKey: '<value>'
-
+    createUpdateTopicRequestDto: $createUpdateTopicRequestDto
 );
 
 if ($response->topicResponseDto !== null) {
@@ -146,9 +143,7 @@ $sdk = novu\Novu::builder()
 
 
 $response = $sdk->topics->get(
-    topicKey: '<value>',
-    idempotencyKey: '<value>'
-
+    topicKey: '<value>'
 );
 
 if ($response->topicResponseDto !== null) {
@@ -203,8 +198,7 @@ $updateTopicRequestDto = new Components\UpdateTopicRequestDto(
 
 $response = $sdk->topics->update(
     topicKey: '<value>',
-    updateTopicRequestDto: $updateTopicRequestDto,
-    idempotencyKey: '<value>'
+    updateTopicRequestDto: $updateTopicRequestDto
 
 );
 
@@ -258,9 +252,7 @@ $sdk = novu\Novu::builder()
 
 
 $response = $sdk->topics->delete(
-    topicKey: '<value>',
-    idempotencyKey: '<value>'
-
+    topicKey: '<value>'
 );
 
 if ($response->deleteTopicResponseDto !== null) {

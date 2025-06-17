@@ -9,7 +9,7 @@
 * [create](#create) - Create a subscriber
 * [get](#get) - Retrieve a subscriber
 * [patch](#patch) - Update a subscriber
-* [delete](#delete) - Delete subscriber
+* [delete](#delete) - Delete a subscriber
 * [createBulk](#createbulk) - Bulk create subscribers
 * [updatePreferences](#updatepreferences) - Update subscriber preferences
 * [updateCredentials](#updatecredentials) - Update provider credentials
@@ -28,7 +28,6 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use novu;
-use novu\Models\Operations;
 
 $sdk = novu\Novu::builder()
     ->setSecurity(
@@ -36,7 +35,7 @@ $sdk = novu\Novu::builder()
     )
     ->build();
 
-$request = new Operations\SubscribersControllerSearchSubscribersRequest();
+
 
 $response = $sdk->subscribers->search(
     request: $request
@@ -93,9 +92,7 @@ $createSubscriberRequestDto = new Components\CreateSubscriberRequestDto(
 );
 
 $response = $sdk->subscribers->create(
-    createSubscriberRequestDto: $createSubscriberRequestDto,
-    idempotencyKey: '<value>'
-
+    createSubscriberRequestDto: $createSubscriberRequestDto
 );
 
 if ($response->subscriberResponseDto !== null) {
@@ -126,7 +123,7 @@ if ($response->subscriberResponseDto !== null) {
 
 ## get
 
-Retrive a subscriber by its unique key identifier **subscriberId**. 
+Retrieve a subscriber by its unique key identifier **subscriberId**. 
     **subscriberId** field is required.
 
 ### Example Usage
@@ -147,9 +144,7 @@ $sdk = novu\Novu::builder()
 
 
 $response = $sdk->subscribers->get(
-    subscriberId: '<id>',
-    idempotencyKey: '<value>'
-
+    subscriberId: '<id>'
 );
 
 if ($response->subscriberResponseDto !== null) {
@@ -203,8 +198,7 @@ $patchSubscriberRequestDto = new Components\PatchSubscriberRequestDto();
 
 $response = $sdk->subscribers->patch(
     subscriberId: '<id>',
-    patchSubscriberRequestDto: $patchSubscriberRequestDto,
-    idempotencyKey: '<value>'
+    patchSubscriberRequestDto: $patchSubscriberRequestDto
 
 );
 
@@ -237,7 +231,8 @@ if ($response->subscriberResponseDto !== null) {
 
 ## delete
 
-Deletes a subscriber entity from the Novu platform along with associated messages, preferences, and topic subscriptions
+Deletes a subscriber entity from the Novu platform along with associated messages, preferences, and topic subscriptions. 
+      **subscriberId** is a required field.
 
 ### Example Usage
 
@@ -257,9 +252,7 @@ $sdk = novu\Novu::builder()
 
 
 $response = $sdk->subscribers->delete(
-    subscriberId: '<id>',
-    idempotencyKey: '<value>'
-
+    subscriberId: '<id>'
 );
 
 if ($response->removeSubscriberResponseDto !== null) {
@@ -319,9 +312,7 @@ $bulkSubscriberCreateDto = new Components\BulkSubscriberCreateDto(
 );
 
 $response = $sdk->subscribers->createBulk(
-    bulkSubscriberCreateDto: $bulkSubscriberCreateDto,
-    idempotencyKey: '<value>'
-
+    bulkSubscriberCreateDto: $bulkSubscriberCreateDto
 );
 
 if ($response->bulkCreateSubscriberResponseDto !== null) {
@@ -378,8 +369,7 @@ $patchSubscriberPreferencesDto = new Components\PatchSubscriberPreferencesDto(
 
 $response = $sdk->subscribers->updatePreferences(
     subscriberId: '<id>',
-    patchSubscriberPreferencesDto: $patchSubscriberPreferencesDto,
-    idempotencyKey: '<value>'
+    patchSubscriberPreferencesDto: $patchSubscriberPreferencesDto
 
 );
 
@@ -451,8 +441,7 @@ $updateSubscriberChannelRequestDto = new Components\UpdateSubscriberChannelReque
 
 $response = $sdk->subscribers->updateCredentials(
     subscriberId: '<id>',
-    updateSubscriberChannelRequestDto: $updateSubscriberChannelRequestDto,
-    idempotencyKey: '<value>'
+    updateSubscriberChannelRequestDto: $updateSubscriberChannelRequestDto
 
 );
 
@@ -509,8 +498,7 @@ $updateSubscriberOnlineFlagRequestDto = new Components\UpdateSubscriberOnlineFla
 
 $response = $sdk->subscribers->updateOnlineStatus(
     subscriberId: '<id>',
-    updateSubscriberOnlineFlagRequestDto: $updateSubscriberOnlineFlagRequestDto,
-    idempotencyKey: '<value>'
+    updateSubscriberOnlineFlagRequestDto: $updateSubscriberOnlineFlagRequestDto
 
 );
 

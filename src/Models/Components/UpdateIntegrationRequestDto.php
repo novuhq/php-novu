@@ -54,15 +54,6 @@ class UpdateIntegrationRequestDto
     public ?CredentialsDto $credentials = null;
 
     /**
-     * If true, the Novu branding will be removed from the Inbox component
-     *
-     * @var ?bool $removeNovuBranding
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('removeNovuBranding')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?bool $removeNovuBranding = null;
-
-    /**
      *
      * @var ?bool $check
      */
@@ -86,19 +77,17 @@ class UpdateIntegrationRequestDto
      * @param  ?string  $environmentId
      * @param  ?bool  $active
      * @param  ?CredentialsDto  $credentials
-     * @param  ?bool  $removeNovuBranding
      * @param  ?bool  $check
      * @param  ?array<StepFilterDto>  $conditions
      * @phpstan-pure
      */
-    public function __construct(?string $name = null, ?string $identifier = null, ?string $environmentId = null, ?bool $active = null, ?CredentialsDto $credentials = null, ?bool $removeNovuBranding = null, ?bool $check = null, ?array $conditions = null)
+    public function __construct(?string $name = null, ?string $identifier = null, ?string $environmentId = null, ?bool $active = null, ?CredentialsDto $credentials = null, ?bool $check = null, ?array $conditions = null)
     {
         $this->name = $name;
         $this->identifier = $identifier;
         $this->environmentId = $environmentId;
         $this->active = $active;
         $this->credentials = $credentials;
-        $this->removeNovuBranding = $removeNovuBranding;
         $this->check = $check;
         $this->conditions = $conditions;
     }

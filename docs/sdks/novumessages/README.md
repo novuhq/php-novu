@@ -90,16 +90,13 @@ $sdk = novu\Novu::builder()
     ->build();
 
 $messageMarkAsRequestDto = new Components\MessageMarkAsRequestDto(
-    messageId: [
-        '<id>',
-    ],
-    markAs: Components\MessageMarkAsRequestDtoMarkAs::Read,
+    messageId: [],
+    markAs: Components\MessageMarkAsRequestDtoMarkAs::Seen,
 );
 
 $response = $sdk->subscribers->messages->markAllAs(
     subscriberId: '<id>',
-    messageMarkAsRequestDto: $messageMarkAsRequestDto,
-    idempotencyKey: '<value>'
+    messageMarkAsRequestDto: $messageMarkAsRequestDto
 
 );
 

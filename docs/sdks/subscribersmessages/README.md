@@ -33,8 +33,7 @@ $markAllMessageAsRequestDto = new Components\MarkAllMessageAsRequestDto(
 
 $response = $sdk->subscribersMessages->markAll(
     subscriberId: '<id>',
-    markAllMessageAsRequestDto: $markAllMessageAsRequestDto,
-    idempotencyKey: '<value>'
+    markAllMessageAsRequestDto: $markAllMessageAsRequestDto
 
 );
 

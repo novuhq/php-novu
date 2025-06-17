@@ -1,0 +1,9 @@
+# StepIssuesDto
+
+
+## Fields
+
+| Field                                                                                                    | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `controls`                                                                                               | array<string, array<[Components\StepContentIssueDto](../../Models/Components/StepContentIssueDto.md)>>   | :heavy_minus_sign:                                                                                       | Controls-related issues                                                                                  |
+| `integration`                                                                                            | array<string, array<[Components\StepIntegrationIssue](../../Models/Components/StepIntegrationIssue.md)>> | :heavy_minus_sign:                                                                                       | Integration-related issues                                                                               |
