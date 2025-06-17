@@ -30,8 +30,7 @@ $sdk = novu\Novu::builder()
 
 $response = $sdk->topicsSubscribers->check(
     externalSubscriberId: '<id>',
-    topicKey: '<value>',
-    idempotencyKey: '<value>'
+    topicKey: '<value>'
 
 );
 

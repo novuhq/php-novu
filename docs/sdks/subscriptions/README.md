@@ -11,7 +11,7 @@
 
 ## list
 
-List all topics that a subscriber is subscribed to.
+List all subscriptions of subscribers for a topic.
     Checkout all available filters in the query section.
 
 ### Example Usage
@@ -93,8 +93,7 @@ $createTopicSubscriptionsRequestDto = new Components\CreateTopicSubscriptionsReq
 
 $response = $sdk->topics->subscriptions->create(
     topicKey: '<value>',
-    createTopicSubscriptionsRequestDto: $createTopicSubscriptionsRequestDto,
-    idempotencyKey: '<value>'
+    createTopicSubscriptionsRequestDto: $createTopicSubscriptionsRequestDto
 
 );
 
@@ -154,8 +153,7 @@ $deleteTopicSubscriptionsRequestDto = new Components\DeleteTopicSubscriptionsReq
 
 $response = $sdk->topics->subscriptions->delete(
     topicKey: '<value>',
-    deleteTopicSubscriptionsRequestDto: $deleteTopicSubscriptionsRequestDto,
-    idempotencyKey: '<value>'
+    deleteTopicSubscriptionsRequestDto: $deleteTopicSubscriptionsRequestDto
 
 );
 

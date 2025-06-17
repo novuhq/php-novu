@@ -9,8 +9,8 @@ declare(strict_types=1);
 namespace novu\Models\Components;
 
 
-/** Data - Additional custom data for the subscriber */
-class Data
+/** PushStepResponseDtoSlug - Slug of the step */
+class PushStepResponseDtoSlug
 {
 
     public function __construct()

@@ -1,0 +1,11 @@
+# InAppStepUpsertDto
+
+
+## Fields
+
+| Field                                                                 | Type                                                                  | Required                                                              | Description                                                           |
+| --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| `id`                                                                  | *?string*                                                             | :heavy_minus_sign:                                                    | Unique identifier of the step                                         |
+| `name`                                                                | *string*                                                              | :heavy_check_mark:                                                    | Name of the step                                                      |
+| `type`                                                                | [Components\StepTypeEnum](../../Models/Components/StepTypeEnum.md)    | :heavy_check_mark:                                                    | Type of the step                                                      |
+| `controlValues`                                                       | [?Components\ControlValues](../../Models/Components/ControlValues.md) | :heavy_minus_sign:                                                    | Control values for the In-App step                                    |

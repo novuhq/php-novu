@@ -1,0 +1,9 @@
+# ListWorkflowResponse
+
+
+## Fields
+
+| Field                                                                                           | Type                                                                                            | Required                                                                                        | Description                                                                                     |
+| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| `workflows`                                                                                     | array<[Components\WorkflowListResponseDto](../../Models/Components/WorkflowListResponseDto.md)> | :heavy_check_mark:                                                                              | List of workflows                                                                               |
+| `totalCount`                                                                                    | *float*                                                                                         | :heavy_check_mark:                                                                              | Total number of workflows                                                                       |
