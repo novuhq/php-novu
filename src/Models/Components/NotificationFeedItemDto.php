@@ -240,6 +240,26 @@ class NotificationFeedItemDto
     public ?array $deviceTokens = null;
 
     /**
+     * The data sent with the notification.
+     *
+     * @var ?array<string, mixed> $data
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $data = null;
+
+    /**
+     * Tags associated with the workflow that triggered the notification.
+     *
+     * @var ?array<string> $tags
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('tags')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $tags = null;
+
+    /**
      * @param  string  $id
      * @param  string  $templateId
      * @param  string  $environmentId
@@ -266,9 +286,11 @@ class NotificationFeedItemDto
      * @param  ?string  $providerId
      * @param  ?string  $subject
      * @param  ?array<string>  $deviceTokens
+     * @param  ?array<string, mixed>  $data
+     * @param  ?array<string>  $tags
      * @phpstan-pure
      */
-    public function __construct(string $id, string $templateId, string $environmentId, string $organizationId, string $notificationId, string $subscriberId, string $jobId, string $transactionId, string $content, ChannelTypeEnum $channel, bool $read, bool $seen, MessageCTA $cta, NotificationFeedItemDtoStatus $status, ?string $messageTemplateId = null, ?ActorFeedItemDto $actor = null, ?SubscriberFeedResponseDto $subscriber = null, ?array $payload = null, ?array $overrides = null, ?string $feedId = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null, ?string $templateIdentifier = null, ?string $providerId = null, ?string $subject = null, ?array $deviceTokens = null)
+    public function __construct(string $id, string $templateId, string $environmentId, string $organizationId, string $notificationId, string $subscriberId, string $jobId, string $transactionId, string $content, ChannelTypeEnum $channel, bool $read, bool $seen, MessageCTA $cta, NotificationFeedItemDtoStatus $status, ?string $messageTemplateId = null, ?ActorFeedItemDto $actor = null, ?SubscriberFeedResponseDto $subscriber = null, ?array $payload = null, ?array $overrides = null, ?string $feedId = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null, ?string $templateIdentifier = null, ?string $providerId = null, ?string $subject = null, ?array $deviceTokens = null, ?array $data = null, ?array $tags = null)
     {
         $this->id = $id;
         $this->templateId = $templateId;
@@ -296,5 +318,7 @@ class NotificationFeedItemDto
         $this->providerId = $providerId;
         $this->subject = $subject;
         $this->deviceTokens = $deviceTokens;
+        $this->data = $data;
+        $this->tags = $tags;
     }
 }
