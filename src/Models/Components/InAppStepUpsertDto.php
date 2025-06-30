@@ -38,23 +38,23 @@ class InAppStepUpsertDto
     public ?string $id = null;
 
     /**
-     * Control values for the In-App step
+     * Control values for the In-App step.
      *
-     * @var ?ControlValues $controlValues
+     * @var InAppControlDto|array<string, mixed>|null $controlValues
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('controlValues')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ControlValues|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\InAppControlDto|array<string, mixed>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?ControlValues $controlValues = null;
+    public InAppControlDto|array|null $controlValues = null;
 
     /**
      * @param  string  $name
      * @param  StepTypeEnum  $type
      * @param  ?string  $id
-     * @param  ?ControlValues  $controlValues
+     * @param  InAppControlDto|array<string, mixed>|null  $controlValues
      * @phpstan-pure
      */
-    public function __construct(string $name, StepTypeEnum $type, ?string $id = null, ?ControlValues $controlValues = null)
+    public function __construct(string $name, StepTypeEnum $type, ?string $id = null, InAppControlDto|array|null $controlValues = null)
     {
         $this->name = $name;
         $this->type = $type;

@@ -38,23 +38,23 @@ class DigestStepUpsertDto
     public ?string $id = null;
 
     /**
-     * Control values for the Digest step
+     * Control values for the Digest step.
      *
-     * @var ?DigestStepUpsertDtoControlValues $controlValues
+     * @var DigestControlDto|array<string, mixed>|null $controlValues
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('controlValues')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\DigestStepUpsertDtoControlValues|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\DigestControlDto|array<string, mixed>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?DigestStepUpsertDtoControlValues $controlValues = null;
+    public DigestControlDto|array|null $controlValues = null;
 
     /**
      * @param  string  $name
      * @param  StepTypeEnum  $type
      * @param  ?string  $id
-     * @param  ?DigestStepUpsertDtoControlValues  $controlValues
+     * @param  DigestControlDto|array<string, mixed>|null  $controlValues
      * @phpstan-pure
      */
-    public function __construct(string $name, StepTypeEnum $type, ?string $id = null, ?DigestStepUpsertDtoControlValues $controlValues = null)
+    public function __construct(string $name, StepTypeEnum $type, ?string $id = null, DigestControlDto|array|null $controlValues = null)
     {
         $this->name = $name;
         $this->type = $type;

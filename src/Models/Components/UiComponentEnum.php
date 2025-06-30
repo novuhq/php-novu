@@ -13,6 +13,7 @@ namespace novu\Models\Components;
 enum UiComponentEnum: string
 {
     case EmailEditorSelect = 'EMAIL_EDITOR_SELECT';
+    case LayoutSelect = 'LAYOUT_SELECT';
     case BlockEditor = 'BLOCK_EDITOR';
     case EmailBody = 'EMAIL_BODY';
     case TextFullLine = 'TEXT_FULL_LINE';
@@ -37,4 +38,5 @@ enum UiComponentEnum: string
     case PushSubject = 'PUSH_SUBJECT';
     case QueryEditor = 'QUERY_EDITOR';
     case Data = 'DATA';
+    case LayoutEmail = 'LAYOUT_EMAIL';
 }
