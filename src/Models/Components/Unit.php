@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace novu\Models\Components;
 
 
-/** Unit of time for the look-back window. */
+/** Unit of time for the delay amount. */
 enum Unit: string
 {
     case Seconds = 'seconds';

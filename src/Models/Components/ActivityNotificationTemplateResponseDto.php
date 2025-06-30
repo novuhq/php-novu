@@ -40,21 +40,21 @@ class ActivityNotificationTemplateResponseDto
     /**
      * Origin of the workflow
      *
-     * @var ?WorkflowOriginEnum $origin
+     * @var ?ResourceOriginEnum $origin
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('origin')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\WorkflowOriginEnum|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ResourceOriginEnum|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?WorkflowOriginEnum $origin = null;
+    public ?ResourceOriginEnum $origin = null;
 
     /**
      * @param  string  $name
      * @param  array<NotificationTriggerDto>  $triggers
      * @param  ?string  $id
-     * @param  ?WorkflowOriginEnum  $origin
+     * @param  ?ResourceOriginEnum  $origin
      * @phpstan-pure
      */
-    public function __construct(string $name, array $triggers, ?string $id = null, ?WorkflowOriginEnum $origin = null)
+    public function __construct(string $name, array $triggers, ?string $id = null, ?ResourceOriginEnum $origin = null)
     {
         $this->name = $name;
         $this->triggers = $triggers;

@@ -72,11 +72,11 @@ class WorkflowResponseDto
     /**
      * Origin of the workflow
      *
-     * @var WorkflowOriginEnum $origin
+     * @var ResourceOriginEnum $origin
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('origin')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\WorkflowOriginEnum')]
-    public WorkflowOriginEnum $origin;
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ResourceOriginEnum')]
+    public ResourceOriginEnum $origin;
 
     /**
      * Preferences for the workflow
@@ -180,7 +180,7 @@ class WorkflowResponseDto
      * @param  string  $updatedAt
      * @param  string  $createdAt
      * @param  array<InAppStepResponseDto|EmailStepResponseDto|SmsStepResponseDto|PushStepResponseDto|ChatStepResponseDto|DelayStepResponseDto|DigestStepResponseDto|CustomStepResponseDto>  $steps
-     * @param  WorkflowOriginEnum  $origin
+     * @param  ResourceOriginEnum  $origin
      * @param  WorkflowPreferencesResponseDto  $preferences
      * @param  WorkflowStatusEnum  $status
      * @param  ?string  $description
@@ -193,7 +193,7 @@ class WorkflowResponseDto
      * @param  ?array<string, mixed>  $payloadExample
      * @phpstan-pure
      */
-    public function __construct(string $name, string $id, string $workflowId, Slug $slug, string $updatedAt, string $createdAt, array $steps, WorkflowOriginEnum $origin, WorkflowPreferencesResponseDto $preferences, WorkflowStatusEnum $status, ?string $description = null, ?array $tags = null, ?array $issues = null, ?bool $validatePayload = null, ?string $lastTriggeredAt = null, ?array $payloadSchema = null, ?array $payloadExample = null, ?bool $active = false)
+    public function __construct(string $name, string $id, string $workflowId, Slug $slug, string $updatedAt, string $createdAt, array $steps, ResourceOriginEnum $origin, WorkflowPreferencesResponseDto $preferences, WorkflowStatusEnum $status, ?string $description = null, ?array $tags = null, ?array $issues = null, ?bool $validatePayload = null, ?string $lastTriggeredAt = null, ?array $payloadSchema = null, ?array $payloadExample = null, ?bool $active = false)
     {
         $this->name = $name;
         $this->id = $id;

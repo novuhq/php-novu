@@ -20,4 +20,5 @@ enum UiSchemaGroupEnum: string
     case Chat = 'CHAT';
     case Push = 'PUSH';
     case Skip = 'SKIP';
+    case Layout = 'LAYOUT';
 }

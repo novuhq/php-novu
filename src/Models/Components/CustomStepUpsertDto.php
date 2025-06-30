@@ -38,23 +38,23 @@ class CustomStepUpsertDto
     public ?string $id = null;
 
     /**
-     * Control values for the Custom step
+     * Control values for the Custom step.
      *
-     * @var ?CustomStepUpsertDtoControlValues $controlValues
+     * @var CustomControlDto|array<string, mixed>|null $controlValues
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('controlValues')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\CustomStepUpsertDtoControlValues|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\CustomControlDto|array<string, mixed>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?CustomStepUpsertDtoControlValues $controlValues = null;
+    public CustomControlDto|array|null $controlValues = null;
 
     /**
      * @param  string  $name
      * @param  StepTypeEnum  $type
      * @param  ?string  $id
-     * @param  ?CustomStepUpsertDtoControlValues  $controlValues
+     * @param  CustomControlDto|array<string, mixed>|null  $controlValues
      * @phpstan-pure
      */
-    public function __construct(string $name, StepTypeEnum $type, ?string $id = null, ?CustomStepUpsertDtoControlValues $controlValues = null)
+    public function __construct(string $name, StepTypeEnum $type, ?string $id = null, CustomControlDto|array|null $controlValues = null)
     {
         $this->name = $name;
         $this->type = $type;

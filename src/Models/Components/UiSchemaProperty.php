@@ -21,6 +21,16 @@ class UiSchemaProperty
     public UiComponentEnum $component;
 
     /**
+     * Properties of the UI Schema
+     *
+     * @var ?array<string, UiSchemaProperty> $properties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('properties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, \novu\Models\Components\UiSchemaProperty>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $properties = null;
+
+    /**
      * Placeholder for the UI Schema Property
      *
      * @var string|float|bool|array<string, mixed>|array<string|float|bool|array<string, mixed>>|null $placeholder
@@ -32,12 +42,14 @@ class UiSchemaProperty
 
     /**
      * @param  UiComponentEnum  $component
+     * @param  ?array<string, UiSchemaProperty>  $properties
      * @param  string|float|bool|array<string, mixed>|array<string|float|bool|array<string, mixed>>|null  $placeholder
      * @phpstan-pure
      */
-    public function __construct(UiComponentEnum $component, string|float|bool|array|null $placeholder = null)
+    public function __construct(UiComponentEnum $component, ?array $properties = null, string|float|bool|array|null $placeholder = null)
     {
         $this->component = $component;
+        $this->properties = $properties;
         $this->placeholder = $placeholder;
     }
 }

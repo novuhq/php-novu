@@ -74,11 +74,11 @@ class PushStepResponseDto
     /**
      * Origin of the workflow
      *
-     * @var WorkflowOriginEnum $origin
+     * @var ResourceOriginEnum $origin
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('origin')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\WorkflowOriginEnum')]
-    public WorkflowOriginEnum $origin;
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ResourceOriginEnum')]
+    public ResourceOriginEnum $origin;
 
     /**
      * Workflow identifier
@@ -124,14 +124,14 @@ class PushStepResponseDto
      * @param  string  $name
      * @param  PushStepResponseDtoSlug  $slug
      * @param  StepTypeEnum  $type
-     * @param  WorkflowOriginEnum  $origin
+     * @param  ResourceOriginEnum  $origin
      * @param  string  $workflowId
      * @param  string  $workflowDatabaseId
      * @param  ?PushStepResponseDtoControlValues  $controlValues
      * @param  ?StepIssuesDto  $issues
      * @phpstan-pure
      */
-    public function __construct(PushControlsMetadataResponseDto $controls, array $variables, string $stepId, string $id, string $name, PushStepResponseDtoSlug $slug, StepTypeEnum $type, WorkflowOriginEnum $origin, string $workflowId, string $workflowDatabaseId, ?PushStepResponseDtoControlValues $controlValues = null, ?StepIssuesDto $issues = null)
+    public function __construct(PushControlsMetadataResponseDto $controls, array $variables, string $stepId, string $id, string $name, PushStepResponseDtoSlug $slug, StepTypeEnum $type, ResourceOriginEnum $origin, string $workflowId, string $workflowDatabaseId, ?PushStepResponseDtoControlValues $controlValues = null, ?StepIssuesDto $issues = null)
     {
         $this->controls = $controls;
         $this->variables = $variables;
