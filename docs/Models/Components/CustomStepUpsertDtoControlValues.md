@@ -1,10 +1,25 @@
 # CustomStepUpsertDtoControlValues
 
-Control values for the Custom step
+Control values for the Custom step.
 
 
-## Fields
+## Supported Types
 
-| Field                               | Type                                | Required                            | Description                         |
-| ----------------------------------- | ----------------------------------- | ----------------------------------- | ----------------------------------- |
-| `custom`                            | array<string, *mixed*>              | :heavy_minus_sign:                  | Custom control values for the step. |
+### `Components\CustomControlDto`
+
+```php
+/**
+* @var Components\CustomControlDto
+*/
+Components\CustomControlDto $value = /* values here */
+```
+
+### `array`
+
+```php
+/**
+* @var array<string, mixed>
+*/
+array $value = /* values here */
+```
+

@@ -10,7 +10,7 @@ namespace novu\Models\Components;
 
 
 /** Origin of the workflow */
-enum WorkflowOriginEnum: string
+enum ResourceOriginEnum: string
 {
     case NovuCloud = 'novu-cloud';
     case NovuCloudV1 = 'novu-cloud-v1';

@@ -38,23 +38,23 @@ class SmsStepUpsertDto
     public ?string $id = null;
 
     /**
-     * Control values for the SMS step
+     * Control values for the SMS step.
      *
-     * @var ?SmsStepUpsertDtoControlValues $controlValues
+     * @var SmsControlDto|array<string, mixed>|null $controlValues
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('controlValues')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\SmsStepUpsertDtoControlValues|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\SmsControlDto|array<string, mixed>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?SmsStepUpsertDtoControlValues $controlValues = null;
+    public SmsControlDto|array|null $controlValues = null;
 
     /**
      * @param  string  $name
      * @param  StepTypeEnum  $type
      * @param  ?string  $id
-     * @param  ?SmsStepUpsertDtoControlValues  $controlValues
+     * @param  SmsControlDto|array<string, mixed>|null  $controlValues
      * @phpstan-pure
      */
-    public function __construct(string $name, StepTypeEnum $type, ?string $id = null, ?SmsStepUpsertDtoControlValues $controlValues = null)
+    public function __construct(string $name, StepTypeEnum $type, ?string $id = null, SmsControlDto|array|null $controlValues = null)
     {
         $this->name = $name;
         $this->type = $type;

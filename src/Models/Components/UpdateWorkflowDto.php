@@ -40,11 +40,11 @@ class UpdateWorkflowDto
     /**
      * Origin of the workflow
      *
-     * @var WorkflowOriginEnum $origin
+     * @var ResourceOriginEnum $origin
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('origin')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\WorkflowOriginEnum')]
-    public WorkflowOriginEnum $origin;
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ResourceOriginEnum')]
+    public ResourceOriginEnum $origin;
 
     /**
      * Description of the workflow
@@ -106,7 +106,7 @@ class UpdateWorkflowDto
      * @param  string  $name
      * @param  array<InAppStepUpsertDto|EmailStepUpsertDto|SmsStepUpsertDto|PushStepUpsertDto|ChatStepUpsertDto|DelayStepUpsertDto|DigestStepUpsertDto|CustomStepUpsertDto>  $steps
      * @param  PreferencesRequestDto  $preferences
-     * @param  WorkflowOriginEnum  $origin
+     * @param  ResourceOriginEnum  $origin
      * @param  ?string  $description
      * @param  ?array<string>  $tags
      * @param  ?bool  $active
@@ -115,7 +115,7 @@ class UpdateWorkflowDto
      * @param  ?bool  $validatePayload
      * @phpstan-pure
      */
-    public function __construct(string $name, array $steps, PreferencesRequestDto $preferences, WorkflowOriginEnum $origin, ?string $description = null, ?array $tags = null, ?string $workflowId = null, ?array $payloadSchema = null, ?bool $validatePayload = null, ?bool $active = false)
+    public function __construct(string $name, array $steps, PreferencesRequestDto $preferences, ResourceOriginEnum $origin, ?string $description = null, ?array $tags = null, ?string $workflowId = null, ?array $payloadSchema = null, ?bool $validatePayload = null, ?bool $active = false)
     {
         $this->name = $name;
         $this->steps = $steps;

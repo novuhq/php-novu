@@ -22,6 +22,7 @@ enum ProviderId: string
     case Getstream = 'getstream';
     case RocketChat = 'rocket-chat';
     case WhatsappBusiness = 'whatsapp-business';
+    case ChatWebhook = 'chat-webhook';
     case Fcm = 'fcm';
     case Apns = 'apns';
     case Expo = 'expo';

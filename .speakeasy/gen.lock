@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 4286f3ad-fa54-4c63-a599-e5773b27ae7b
 management:
-  docChecksum: a5dda2e684af60d1d38a58737864c776
-  docVersion: 2.2.0
-  speakeasyVersion: 1.563.4
-  generationVersion: 2.630.6
-  releaseVersion: 1.2.0
-  configChecksum: 1e21e120dbbb9f3a156ca3db2d129369
+  docChecksum: faabdbbe9fc84fc6c528900ae6aa6e63
+  docVersion: 2.3.0
+  speakeasyVersion: 1.573.0
+  generationVersion: 2.644.1
+  releaseVersion: 1.3.0
+  configChecksum: 1d81c2903aa748836b687293b4ec3afc
   repoURL: https://github.com/novuhq/php-novu.git
   installationURL: https://github.com/novuhq/php-novu
   published: true
@@ -27,7 +27,7 @@ features:
     nullables: 1.0.1
     responseFormat: 0.1.0
     retries: 0.1.0
-    unions: 0.1.4
+    unions: 0.1.5
 generatedFiles:
   - .gitattributes
   - USAGE.md
@@ -99,7 +99,6 @@ generatedFiles:
   - docs/Models/Components/CustomStepUpsertDtoControlValues.md
   - docs/Models/Components/Data.md
   - docs/Models/Components/DelayControlDto.md
-  - docs/Models/Components/DelayControlDtoUnit.md
   - docs/Models/Components/DelayControlsMetadataResponseDto.md
   - docs/Models/Components/DelayRegularMetadata.md
   - docs/Models/Components/DelayRegularMetadataType.md
@@ -113,8 +112,6 @@ generatedFiles:
   - docs/Models/Components/DelayStepResponseDtoUnit.md
   - docs/Models/Components/DelayStepUpsertDto.md
   - docs/Models/Components/DelayStepUpsertDtoControlValues.md
-  - docs/Models/Components/DelayStepUpsertDtoType.md
-  - docs/Models/Components/DelayStepUpsertDtoUnit.md
   - docs/Models/Components/DeleteMessageResponseDto.md
   - docs/Models/Components/DeleteMessageResponseDtoStatus.md
   - docs/Models/Components/DeleteTopicResponseDto.md
@@ -136,8 +133,6 @@ generatedFiles:
   - docs/Models/Components/DigestStepResponseDtoUnit.md
   - docs/Models/Components/DigestStepUpsertDto.md
   - docs/Models/Components/DigestStepUpsertDtoControlValues.md
-  - docs/Models/Components/DigestStepUpsertDtoType.md
-  - docs/Models/Components/DigestStepUpsertDtoUnit.md
   - docs/Models/Components/DigestTimedConfigDto.md
   - docs/Models/Components/DigestTimedConfigDtoWeekDays.md
   - docs/Models/Components/DigestTimedMetadata.md
@@ -158,7 +153,6 @@ generatedFiles:
   - docs/Models/Components/EmailStepResponseDtoSlug.md
   - docs/Models/Components/EmailStepUpsertDto.md
   - docs/Models/Components/EmailStepUpsertDtoControlValues.md
-  - docs/Models/Components/EmailStepUpsertDtoEditorType.md
   - docs/Models/Components/EnvironmentResponseDto.md
   - docs/Models/Components/ExecutionDetailsSourceEnum.md
   - docs/Models/Components/ExecutionDetailsStatusEnum.md
@@ -184,6 +178,7 @@ generatedFiles:
   - docs/Models/Components/ListTopicsResponseDto.md
   - docs/Models/Components/ListWorkflowResponse.md
   - docs/Models/Components/LookBackWindowDto.md
+  - docs/Models/Components/LookBackWindowDtoUnit.md
   - docs/Models/Components/MarkAllMessageAsRequestDto.md
   - docs/Models/Components/MarkAs.md
   - docs/Models/Components/MarkMessageActionAsSeenDto.md
@@ -252,6 +247,7 @@ generatedFiles:
   - docs/Models/Components/RedirectDto.md
   - docs/Models/Components/RemoveSubscriberResponseDto.md
   - docs/Models/Components/ReplyCallback.md
+  - docs/Models/Components/ResourceOriginEnum.md
   - docs/Models/Components/RuntimeIssueDto.md
   - docs/Models/Components/Security.md
   - docs/Models/Components/Slug.md
@@ -336,7 +332,6 @@ generatedFiles:
   - docs/Models/Components/WorkflowCreationSourceEnum.md
   - docs/Models/Components/WorkflowIntegrationStatus.md
   - docs/Models/Components/WorkflowListResponseDto.md
-  - docs/Models/Components/WorkflowOriginEnum.md
   - docs/Models/Components/WorkflowPreferenceDto.md
   - docs/Models/Components/WorkflowPreferencesDto.md
   - docs/Models/Components/WorkflowPreferencesResponseDto.md
@@ -554,9 +549,7 @@ generatedFiles:
   - src/Models/Components/ChatStepResponseDtoControlValues.php
   - src/Models/Components/ChatStepResponseDtoSlug.php
   - src/Models/Components/ChatStepUpsertDto.php
-  - src/Models/Components/ChatStepUpsertDtoControlValues.php
   - src/Models/Components/ConstraintValidation.php
-  - src/Models/Components/ControlValues.php
   - src/Models/Components/ControlVariables.php
   - src/Models/Components/Controls.php
   - src/Models/Components/ControlsMetadataDto.php
@@ -576,9 +569,7 @@ generatedFiles:
   - src/Models/Components/CustomStepResponseDtoControlValues.php
   - src/Models/Components/CustomStepResponseDtoSlug.php
   - src/Models/Components/CustomStepUpsertDto.php
-  - src/Models/Components/CustomStepUpsertDtoControlValues.php
   - src/Models/Components/DelayControlDto.php
-  - src/Models/Components/DelayControlDtoUnit.php
   - src/Models/Components/DelayControlsMetadataResponseDto.php
   - src/Models/Components/DelayRegularMetadata.php
   - src/Models/Components/DelayRegularMetadataType.php
@@ -591,9 +582,6 @@ generatedFiles:
   - src/Models/Components/DelayStepResponseDtoType.php
   - src/Models/Components/DelayStepResponseDtoUnit.php
   - src/Models/Components/DelayStepUpsertDto.php
-  - src/Models/Components/DelayStepUpsertDtoControlValues.php
-  - src/Models/Components/DelayStepUpsertDtoType.php
-  - src/Models/Components/DelayStepUpsertDtoUnit.php
   - src/Models/Components/DeleteMessageResponseDto.php
   - src/Models/Components/DeleteMessageResponseDtoStatus.php
   - src/Models/Components/DeleteTopicResponseDto.php
@@ -614,9 +602,6 @@ generatedFiles:
   - src/Models/Components/DigestStepResponseDtoType.php
   - src/Models/Components/DigestStepResponseDtoUnit.php
   - src/Models/Components/DigestStepUpsertDto.php
-  - src/Models/Components/DigestStepUpsertDtoControlValues.php
-  - src/Models/Components/DigestStepUpsertDtoType.php
-  - src/Models/Components/DigestStepUpsertDtoUnit.php
   - src/Models/Components/DigestTimedConfigDto.php
   - src/Models/Components/DigestTimedConfigDtoWeekDays.php
   - src/Models/Components/DigestTimedMetadata.php
@@ -636,8 +621,6 @@ generatedFiles:
   - src/Models/Components/EmailStepResponseDtoEditorType.php
   - src/Models/Components/EmailStepResponseDtoSlug.php
   - src/Models/Components/EmailStepUpsertDto.php
-  - src/Models/Components/EmailStepUpsertDtoControlValues.php
-  - src/Models/Components/EmailStepUpsertDtoEditorType.php
   - src/Models/Components/EnvironmentResponseDto.php
   - src/Models/Components/ExecutionDetailsSourceEnum.php
   - src/Models/Components/ExecutionDetailsStatusEnum.php
@@ -661,6 +644,7 @@ generatedFiles:
   - src/Models/Components/ListTopicsResponseDto.php
   - src/Models/Components/ListWorkflowResponse.php
   - src/Models/Components/LookBackWindowDto.php
+  - src/Models/Components/LookBackWindowDtoUnit.php
   - src/Models/Components/MarkAllMessageAsRequestDto.php
   - src/Models/Components/MarkAs.php
   - src/Models/Components/MarkMessageActionAsSeenDto.php
@@ -717,10 +701,10 @@ generatedFiles:
   - src/Models/Components/PushStepResponseDtoControlValues.php
   - src/Models/Components/PushStepResponseDtoSlug.php
   - src/Models/Components/PushStepUpsertDto.php
-  - src/Models/Components/PushStepUpsertDtoControlValues.php
   - src/Models/Components/RedirectDto.php
   - src/Models/Components/RemoveSubscriberResponseDto.php
   - src/Models/Components/ReplyCallback.php
+  - src/Models/Components/ResourceOriginEnum.php
   - src/Models/Components/RuntimeIssueDto.php
   - src/Models/Components/Security.php
   - src/Models/Components/Slug.php
@@ -730,7 +714,6 @@ generatedFiles:
   - src/Models/Components/SmsStepResponseDtoControlValues.php
   - src/Models/Components/SmsStepResponseDtoSlug.php
   - src/Models/Components/SmsStepUpsertDto.php
-  - src/Models/Components/SmsStepUpsertDtoControlValues.php
   - src/Models/Components/Status.php
   - src/Models/Components/StepContentIssueDto.php
   - src/Models/Components/StepContentIssueEnum.php
@@ -795,7 +778,6 @@ generatedFiles:
   - src/Models/Components/WorkflowCreationSourceEnum.php
   - src/Models/Components/WorkflowIntegrationStatus.php
   - src/Models/Components/WorkflowListResponseDto.php
-  - src/Models/Components/WorkflowOriginEnum.php
   - src/Models/Components/WorkflowPreferenceDto.php
   - src/Models/Components/WorkflowPreferencesDto.php
   - src/Models/Components/WorkflowPreferencesResponseDto.php

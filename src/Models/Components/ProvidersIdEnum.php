@@ -82,4 +82,5 @@ enum ProvidersIdEnum: string
     case Getstream = 'getstream';
     case RocketChat = 'rocket-chat';
     case WhatsappBusiness = 'whatsapp-business';
+    case ChatWebhook = 'chat-webhook';
 }

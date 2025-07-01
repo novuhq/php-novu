@@ -38,23 +38,23 @@ class DelayStepUpsertDto
     public ?string $id = null;
 
     /**
-     * Control values for the Delay step
+     * Control values for the Delay step.
      *
-     * @var ?DelayStepUpsertDtoControlValues $controlValues
+     * @var DelayControlDto|array<string, mixed>|null $controlValues
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('controlValues')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\DelayStepUpsertDtoControlValues|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\DelayControlDto|array<string, mixed>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?DelayStepUpsertDtoControlValues $controlValues = null;
+    public DelayControlDto|array|null $controlValues = null;
 
     /**
      * @param  string  $name
      * @param  StepTypeEnum  $type
      * @param  ?string  $id
-     * @param  ?DelayStepUpsertDtoControlValues  $controlValues
+     * @param  DelayControlDto|array<string, mixed>|null  $controlValues
      * @phpstan-pure
      */
-    public function __construct(string $name, StepTypeEnum $type, ?string $id = null, ?DelayStepUpsertDtoControlValues $controlValues = null)
+    public function __construct(string $name, StepTypeEnum $type, ?string $id = null, DelayControlDto|array|null $controlValues = null)
     {
         $this->name = $name;
         $this->type = $type;
