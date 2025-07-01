@@ -38,23 +38,23 @@ class ChatStepUpsertDto
     public ?string $id = null;
 
     /**
-     * Control values for the Chat step
+     * Control values for the Chat step.
      *
-     * @var ?ChatStepUpsertDtoControlValues $controlValues
+     * @var ChatControlDto|array<string, mixed>|null $controlValues
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('controlValues')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ChatStepUpsertDtoControlValues|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ChatControlDto|array<string, mixed>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?ChatStepUpsertDtoControlValues $controlValues = null;
+    public ChatControlDto|array|null $controlValues = null;
 
     /**
      * @param  string  $name
      * @param  StepTypeEnum  $type
      * @param  ?string  $id
-     * @param  ?ChatStepUpsertDtoControlValues  $controlValues
+     * @param  ChatControlDto|array<string, mixed>|null  $controlValues
      * @phpstan-pure
      */
-    public function __construct(string $name, StepTypeEnum $type, ?string $id = null, ?ChatStepUpsertDtoControlValues $controlValues = null)
+    public function __construct(string $name, StepTypeEnum $type, ?string $id = null, ChatControlDto|array|null $controlValues = null)
     {
         $this->name = $name;
         $this->type = $type;

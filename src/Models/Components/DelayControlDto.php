@@ -22,11 +22,11 @@ class DelayControlDto
     /**
      * Unit of time for the delay amount.
      *
-     * @var DelayControlDtoUnit $unit
+     * @var Unit $unit
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('unit')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\DelayControlDtoUnit')]
-    public DelayControlDtoUnit $unit;
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\Unit')]
+    public Unit $unit;
 
     /**
      * JSONLogic filter conditions for conditionally skipping the step execution. Supports complex logical operations with AND, OR, and comparison operators. See https://jsonlogic.com/ for full typing reference.
@@ -50,12 +50,12 @@ class DelayControlDto
 
     /**
      * @param  float  $amount
-     * @param  DelayControlDtoUnit  $unit
+     * @param  Unit  $unit
      * @param  ?array<string, mixed>  $skip
      * @param  ?Type  $type
      * @phpstan-pure
      */
-    public function __construct(float $amount, DelayControlDtoUnit $unit, ?array $skip = null, ?Type $type = Type::Regular)
+    public function __construct(float $amount, Unit $unit, ?array $skip = null, ?Type $type = Type::Regular)
     {
         $this->amount = $amount;
         $this->unit = $unit;

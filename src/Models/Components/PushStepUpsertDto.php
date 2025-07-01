@@ -38,23 +38,23 @@ class PushStepUpsertDto
     public ?string $id = null;
 
     /**
-     * Control values for the Push step
+     * Control values for the Push step.
      *
-     * @var ?PushStepUpsertDtoControlValues $controlValues
+     * @var PushControlDto|array<string, mixed>|null $controlValues
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('controlValues')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\PushStepUpsertDtoControlValues|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\PushControlDto|array<string, mixed>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?PushStepUpsertDtoControlValues $controlValues = null;
+    public PushControlDto|array|null $controlValues = null;
 
     /**
      * @param  string  $name
      * @param  StepTypeEnum  $type
      * @param  ?string  $id
-     * @param  ?PushStepUpsertDtoControlValues  $controlValues
+     * @param  PushControlDto|array<string, mixed>|null  $controlValues
      * @phpstan-pure
      */
-    public function __construct(string $name, StepTypeEnum $type, ?string $id = null, ?PushStepUpsertDtoControlValues $controlValues = null)
+    public function __construct(string $name, StepTypeEnum $type, ?string $id = null, PushControlDto|array|null $controlValues = null)
     {
         $this->name = $name;
         $this->type = $type;

@@ -1,13 +1,25 @@
 # DelayStepUpsertDtoControlValues
 
-Control values for the Delay step
+Control values for the Delay step.
 
 
-## Fields
+## Supported Types
 
-| Field                                                                                                                                                                                                        | Type                                                                                                                                                                                                         | Required                                                                                                                                                                                                     | Description                                                                                                                                                                                                  | Example                                                                                                                                                                                                      |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `skip`                                                                                                                                                                                                       | array<string, *mixed*>                                                                                                                                                                                       | :heavy_minus_sign:                                                                                                                                                                                           | JSONLogic filter conditions for conditionally skipping the step execution. Supports complex logical operations with AND, OR, and comparison operators. See https://jsonlogic.com/ for full typing reference. | {<br/>"and": [<br/>{<br/>"==": [<br/>{<br/>"var": "payload.tier"<br/>},<br/>"pro"<br/>]<br/>},<br/>{<br/>"==": [<br/>{<br/>"var": "subscriber.data.role"<br/>},<br/>"admin"<br/>]<br/>},<br/>{<br/>"\u003e": [<br/>{<br/>"var": "payload.amount"<br/>},<br/>"4"<br/>]<br/>}<br/>]<br/>} |
-| `type`                                                                                                                                                                                                       | [?Components\DelayStepUpsertDtoType](../../Models/Components/DelayStepUpsertDtoType.md)                                                                                                                      | :heavy_minus_sign:                                                                                                                                                                                           | Type of the delay. Currently only 'regular' is supported by the schema.                                                                                                                                      |                                                                                                                                                                                                              |
-| `amount`                                                                                                                                                                                                     | *float*                                                                                                                                                                                                      | :heavy_check_mark:                                                                                                                                                                                           | Amount of time to delay.                                                                                                                                                                                     |                                                                                                                                                                                                              |
-| `unit`                                                                                                                                                                                                       | [Components\DelayStepUpsertDtoUnit](../../Models/Components/DelayStepUpsertDtoUnit.md)                                                                                                                       | :heavy_check_mark:                                                                                                                                                                                           | Unit of time for the delay amount.                                                                                                                                                                           |                                                                                                                                                                                                              |
+### `Components\DelayControlDto`
+
+```php
+/**
+* @var Components\DelayControlDto
+*/
+Components\DelayControlDto $value = /* values here */
+```
+
+### `array`
+
+```php
+/**
+* @var array<string, mixed>
+*/
+array $value = /* values here */
+```
+

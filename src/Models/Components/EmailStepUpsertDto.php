@@ -38,23 +38,23 @@ class EmailStepUpsertDto
     public ?string $id = null;
 
     /**
-     * Control values for the Email step
+     * Control values for the Email step.
      *
-     * @var ?EmailStepUpsertDtoControlValues $controlValues
+     * @var EmailControlDto|array<string, mixed>|null $controlValues
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('controlValues')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\EmailStepUpsertDtoControlValues|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\EmailControlDto|array<string, mixed>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?EmailStepUpsertDtoControlValues $controlValues = null;
+    public EmailControlDto|array|null $controlValues = null;
 
     /**
      * @param  string  $name
      * @param  StepTypeEnum  $type
      * @param  ?string  $id
-     * @param  ?EmailStepUpsertDtoControlValues  $controlValues
+     * @param  EmailControlDto|array<string, mixed>|null  $controlValues
      * @phpstan-pure
      */
-    public function __construct(string $name, StepTypeEnum $type, ?string $id = null, ?EmailStepUpsertDtoControlValues $controlValues = null)
+    public function __construct(string $name, StepTypeEnum $type, ?string $id = null, EmailControlDto|array|null $controlValues = null)
     {
         $this->name = $name;
         $this->type = $type;

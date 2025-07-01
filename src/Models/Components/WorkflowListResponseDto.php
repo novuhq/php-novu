@@ -71,11 +71,11 @@ class WorkflowListResponseDto
     /**
      * Origin of the workflow
      *
-     * @var WorkflowOriginEnum $origin
+     * @var ResourceOriginEnum $origin
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('origin')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\WorkflowOriginEnum')]
-    public WorkflowOriginEnum $origin;
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ResourceOriginEnum')]
+    public ResourceOriginEnum $origin;
 
     /**
      * Overview of step types in the workflow
@@ -113,13 +113,13 @@ class WorkflowListResponseDto
      * @param  string  $workflowId
      * @param  string  $slug
      * @param  WorkflowStatusEnum  $status
-     * @param  WorkflowOriginEnum  $origin
+     * @param  ResourceOriginEnum  $origin
      * @param  array<StepTypeEnum>  $stepTypeOverviews
      * @param  ?array<string>  $tags
      * @param  ?string  $lastTriggeredAt
      * @phpstan-pure
      */
-    public function __construct(string $name, string $updatedAt, string $createdAt, string $id, string $workflowId, string $slug, WorkflowStatusEnum $status, WorkflowOriginEnum $origin, array $stepTypeOverviews, ?array $tags = null, ?string $lastTriggeredAt = null)
+    public function __construct(string $name, string $updatedAt, string $createdAt, string $id, string $workflowId, string $slug, WorkflowStatusEnum $status, ResourceOriginEnum $origin, array $stepTypeOverviews, ?array $tags = null, ?string $lastTriggeredAt = null)
     {
         $this->name = $name;
         $this->updatedAt = $updatedAt;
