@@ -13,6 +13,7 @@ Novu Documentation
 * [cancel](#cancel) - Cancel triggered event
 * [triggerBroadcast](#triggerbroadcast) - Broadcast event to all
 * [triggerBulk](#triggerbulk) - Bulk trigger event
+* [retrieve](#retrieve)
 
 ## trigger
 
@@ -298,3 +299,47 @@ if ($response->triggerEventResponseDtos !== null) {
 | Errors\ValidationErrorDto            | 422                                  | application/json                     |
 | Errors\ErrorDto                      | 500                                  | application/json                     |
 | Errors\APIException                  | 4XX, 5XX                             | \*/\*                                |
+
+## retrieve
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use novu;
+
+$sdk = novu\Novu::builder()
+    ->setSecurity(
+        'YOUR_SECRET_KEY_HERE'
+    )
+    ->build();
+
+
+
+$response = $sdk->retrieve(
+    request: $request
+);
+
+if ($response->object !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `$request`                                                                                         | [Operations\LogsControllerGetLogsRequest](../../Models/Operations/LogsControllerGetLogsRequest.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
+
+### Response
+
+**[?Operations\LogsControllerGetLogsResponse](../../Models/Operations/LogsControllerGetLogsResponse.md)**
+
+### Errors
+
+| Error Type          | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| Errors\APIException | 4XX, 5XX            | \*/\*               |
