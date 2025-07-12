@@ -349,6 +349,7 @@ if ($response->triggerEventResponseDto !== null) {
 * [cancel](docs/sdks/novu/README.md#cancel) - Cancel triggered event
 * [triggerBroadcast](docs/sdks/novu/README.md#triggerbroadcast) - Broadcast event to all
 * [triggerBulk](docs/sdks/novu/README.md#triggerbulk) - Bulk trigger event
+* [retrieve](docs/sdks/novu/README.md#retrieve)
 
 ### [subscribers](docs/sdks/subscribers/README.md)
 
