@@ -87,6 +87,14 @@ class WorkflowListResponseDto
     public array $stepTypeOverviews;
 
     /**
+     * Is translation enabled for the workflow
+     *
+     * @var bool $isTranslationEnabled
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('isTranslationEnabled')]
+    public bool $isTranslationEnabled;
+
+    /**
      * Tags associated with the workflow
      *
      * @var ?array<string> $tags
@@ -95,6 +103,16 @@ class WorkflowListResponseDto
     #[\Speakeasy\Serializer\Annotation\Type('array<string>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $tags = null;
+
+    /**
+     * User who last updated the workflow
+     *
+     * @var ?WorkflowListResponseDtoUpdatedBy $updatedBy
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('updatedBy')]
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\WorkflowListResponseDtoUpdatedBy|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?WorkflowListResponseDtoUpdatedBy $updatedBy = null;
 
     /**
      * Timestamp of the last workflow trigger
@@ -115,11 +133,13 @@ class WorkflowListResponseDto
      * @param  WorkflowStatusEnum  $status
      * @param  ResourceOriginEnum  $origin
      * @param  array<StepTypeEnum>  $stepTypeOverviews
+     * @param  bool  $isTranslationEnabled
      * @param  ?array<string>  $tags
+     * @param  ?WorkflowListResponseDtoUpdatedBy  $updatedBy
      * @param  ?string  $lastTriggeredAt
      * @phpstan-pure
      */
-    public function __construct(string $name, string $updatedAt, string $createdAt, string $id, string $workflowId, string $slug, WorkflowStatusEnum $status, ResourceOriginEnum $origin, array $stepTypeOverviews, ?array $tags = null, ?string $lastTriggeredAt = null)
+    public function __construct(string $name, string $updatedAt, string $createdAt, string $id, string $workflowId, string $slug, WorkflowStatusEnum $status, ResourceOriginEnum $origin, array $stepTypeOverviews, bool $isTranslationEnabled, ?array $tags = null, ?WorkflowListResponseDtoUpdatedBy $updatedBy = null, ?string $lastTriggeredAt = null)
     {
         $this->name = $name;
         $this->updatedAt = $updatedAt;
@@ -130,7 +150,9 @@ class WorkflowListResponseDto
         $this->status = $status;
         $this->origin = $origin;
         $this->stepTypeOverviews = $stepTypeOverviews;
+        $this->isTranslationEnabled = $isTranslationEnabled;
         $this->tags = $tags;
+        $this->updatedBy = $updatedBy;
         $this->lastTriggeredAt = $lastTriggeredAt;
     }
 }

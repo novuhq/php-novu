@@ -8,10 +8,62 @@ Environments allow you to manage different stages of your application developmen
 
 ### Available Operations
 
+* [getTags](#gettags) - Get environment tags
 * [create](#create) - Create an environment
 * [list](#list) - List all environments
 * [update](#update) - Update an environment
 * [delete](#delete) - Delete an environment
+
+## getTags
+
+Retrieve all unique tags used in workflows within the specified environment. These tags can be used for filtering workflows.
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use novu;
+
+$sdk = novu\Novu::builder()
+    ->setSecurity(
+        'YOUR_SECRET_KEY_HERE'
+    )
+    ->build();
+
+
+
+$response = $sdk->environments->getTags(
+    environmentId: '6615943e7ace93b0540ae377'
+);
+
+if ($response->getEnvironmentTagsDtos !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                | Type                                                     | Required                                                 | Description                                              | Example                                                  |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `environmentId`                                          | *string*                                                 | :heavy_check_mark:                                       | Environment internal ID (MongoDB ObjectId) or identifier | 6615943e7ace93b0540ae377                                 |
+| `idempotencyKey`                                         | *?string*                                                | :heavy_minus_sign:                                       | A header for idempotency purposes                        |                                                          |
+
+### Response
+
+**[?Operations\EnvironmentsControllerGetEnvironmentTagsResponse](../../Models/Operations/EnvironmentsControllerGetEnvironmentTagsResponse.md)**
+
+### Errors
+
+| Error Type                             | Status Code                            | Content Type                           |
+| -------------------------------------- | -------------------------------------- | -------------------------------------- |
+| Errors\ErrorDto                        | 414                                    | application/json                       |
+| Errors\ErrorDto                        | 400, 401, 403, 404, 405, 409, 413, 415 | application/json                       |
+| Errors\ValidationErrorDto              | 422                                    | application/json                       |
+| Errors\ErrorDto                        | 500                                    | application/json                       |
+| Errors\APIException                    | 4XX, 5XX                               | \*/\*                                  |
 
 ## create
 

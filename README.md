@@ -318,6 +318,7 @@ if ($response->triggerEventResponseDto !== null) {
 
 ### [environments](docs/sdks/environments/README.md)
 
+* [getTags](docs/sdks/environments/README.md#gettags) - Get environment tags
 * [create](docs/sdks/environments/README.md#create) - Create an environment
 * [list](docs/sdks/environments/README.md#list) - List all environments
 * [update](docs/sdks/environments/README.md#update) - Update an environment
@@ -349,6 +350,7 @@ if ($response->triggerEventResponseDto !== null) {
 * [cancel](docs/sdks/novu/README.md#cancel) - Cancel triggered event
 * [triggerBroadcast](docs/sdks/novu/README.md#triggerbroadcast) - Broadcast event to all
 * [triggerBulk](docs/sdks/novu/README.md#triggerbulk) - Bulk trigger event
+* [retrieve](docs/sdks/novu/README.md#retrieve)
 
 ### [subscribers](docs/sdks/subscribers/README.md)
 

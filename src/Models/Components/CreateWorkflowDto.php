@@ -56,14 +56,13 @@ class CreateWorkflowDto
     public ?array $tags = null;
 
     /**
-     * Workflow preferences
+     * Enable or disable payload schema validation
      *
-     * @var ?PreferencesRequestDto $preferences
+     * @var ?bool $validatePayload
      */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('preferences')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\PreferencesRequestDto|null')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('validatePayload')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?PreferencesRequestDto $preferences = null;
+    public ?bool $validatePayload = null;
 
     /**
      * The payload JSON Schema for the workflow
@@ -76,13 +75,14 @@ class CreateWorkflowDto
     public ?array $payloadSchema = null;
 
     /**
-     * Enable or disable payload schema validation
+     * Workflow preferences
      *
-     * @var ?bool $validatePayload
+     * @var ?PreferencesRequestDto $preferences
      */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('validatePayload')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('preferences')]
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\PreferencesRequestDto|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?bool $validatePayload = null;
+    public ?PreferencesRequestDto $preferences = null;
 
     /**
      * Whether the workflow is active
@@ -92,6 +92,15 @@ class CreateWorkflowDto
     #[\Speakeasy\Serializer\Annotation\SerializedName('active')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?bool $active = null;
+
+    /**
+     * Enable or disable translations for this workflow
+     *
+     * @var ?bool $isTranslationEnabled
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('isTranslationEnabled')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?bool $isTranslationEnabled = null;
 
     /**
      * Source of workflow creation
@@ -110,23 +119,25 @@ class CreateWorkflowDto
      * @param  ?string  $description
      * @param  ?array<string>  $tags
      * @param  ?bool  $active
+     * @param  ?bool  $validatePayload
+     * @param  ?array<string, mixed>  $payloadSchema
+     * @param  ?bool  $isTranslationEnabled
      * @param  ?WorkflowCreationSourceEnum  $source
      * @param  ?PreferencesRequestDto  $preferences
-     * @param  ?array<string, mixed>  $payloadSchema
-     * @param  ?bool  $validatePayload
      * @phpstan-pure
      */
-    public function __construct(string $name, string $workflowId, array $steps, ?string $description = null, ?array $tags = null, ?PreferencesRequestDto $preferences = null, ?array $payloadSchema = null, ?bool $validatePayload = null, ?bool $active = false, ?WorkflowCreationSourceEnum $source = WorkflowCreationSourceEnum::Editor)
+    public function __construct(string $name, string $workflowId, array $steps, ?string $description = null, ?array $tags = null, ?bool $validatePayload = null, ?array $payloadSchema = null, ?PreferencesRequestDto $preferences = null, ?bool $active = false, ?bool $isTranslationEnabled = false, ?WorkflowCreationSourceEnum $source = WorkflowCreationSourceEnum::Editor)
     {
         $this->name = $name;
         $this->workflowId = $workflowId;
         $this->steps = $steps;
         $this->description = $description;
         $this->tags = $tags;
-        $this->preferences = $preferences;
-        $this->payloadSchema = $payloadSchema;
         $this->validatePayload = $validatePayload;
+        $this->payloadSchema = $payloadSchema;
+        $this->preferences = $preferences;
         $this->active = $active;
+        $this->isTranslationEnabled = $isTranslationEnabled;
         $this->source = $source;
     }
 }

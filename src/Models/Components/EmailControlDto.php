@@ -30,6 +30,15 @@ class EmailControlDto
     public ?array $skip = null;
 
     /**
+     * Layout ID to use for the email. Null means no layout, undefined means default layout.
+     *
+     * @var ?string $layoutId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('layoutId')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $layoutId = null;
+
+    /**
      * Body content of the email, either a valid Maily JSON object, or html string.
      *
      * @var ?string $body
@@ -63,12 +72,14 @@ class EmailControlDto
      * @param  ?string  $body
      * @param  ?EditorType  $editorType
      * @param  ?bool  $disableOutputSanitization
+     * @param  ?string  $layoutId
      * @phpstan-pure
      */
-    public function __construct(string $subject, ?array $skip = null, ?string $body = '', ?EditorType $editorType = EditorType::Block, ?bool $disableOutputSanitization = false)
+    public function __construct(string $subject, ?array $skip = null, ?string $layoutId = null, ?string $body = '', ?EditorType $editorType = EditorType::Block, ?bool $disableOutputSanitization = false)
     {
         $this->subject = $subject;
         $this->skip = $skip;
+        $this->layoutId = $layoutId;
         $this->body = $body;
         $this->editorType = $editorType;
         $this->disableOutputSanitization = $disableOutputSanitization;
