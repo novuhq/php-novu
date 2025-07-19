@@ -41,6 +41,15 @@ class EmailStepResponseDtoControlValues
     public ?array $additionalProperties = null;
 
     /**
+     * Layout ID to use for the email. Null means no layout, undefined means default layout.
+     *
+     * @var ?string $layoutId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('layoutId')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $layoutId = null;
+
+    /**
      * Body content of the email, either a valid Maily JSON object, or html string.
      *
      * @var ?string $body
@@ -75,13 +84,15 @@ class EmailStepResponseDtoControlValues
      * @param  ?EmailStepResponseDtoEditorType  $editorType
      * @param  ?bool  $disableOutputSanitization
      * @param  ?array<string, mixed>  $additionalProperties
+     * @param  ?string  $layoutId
      * @phpstan-pure
      */
-    public function __construct(string $subject, ?array $skip = null, ?array $additionalProperties = null, ?string $body = '', ?EmailStepResponseDtoEditorType $editorType = EmailStepResponseDtoEditorType::Block, ?bool $disableOutputSanitization = false)
+    public function __construct(string $subject, ?array $skip = null, ?array $additionalProperties = null, ?string $layoutId = null, ?string $body = '', ?EmailStepResponseDtoEditorType $editorType = EmailStepResponseDtoEditorType::Block, ?bool $disableOutputSanitization = false)
     {
         $this->subject = $subject;
         $this->skip = $skip;
         $this->additionalProperties = $additionalProperties;
+        $this->layoutId = $layoutId;
         $this->body = $body;
         $this->editorType = $editorType;
         $this->disableOutputSanitization = $disableOutputSanitization;

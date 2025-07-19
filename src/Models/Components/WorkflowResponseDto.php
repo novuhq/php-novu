@@ -116,32 +116,13 @@ class WorkflowResponseDto
     public ?array $tags = null;
 
     /**
-     * Runtime issues for workflow creation and update
-     *
-     * @var ?array<string, RuntimeIssueDto> $issues
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('issues')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<string, \novu\Models\Components\RuntimeIssueDto>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $issues = null;
-
-    /**
-     * Whether payload schema validation is enabled
+     * Enable or disable payload schema validation
      *
      * @var ?bool $validatePayload
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('validatePayload')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?bool $validatePayload = null;
-
-    /**
-     * Timestamp of the last workflow trigger
-     *
-     * @var ?string $lastTriggeredAt
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('lastTriggeredAt')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $lastTriggeredAt = null;
 
     /**
      * The payload JSON Schema for the workflow
@@ -152,6 +133,35 @@ class WorkflowResponseDto
     #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $payloadSchema = null;
+
+    /**
+     * Runtime issues for workflow creation and update
+     *
+     * @var ?array<string, RuntimeIssueDto> $issues
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('issues')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, \novu\Models\Components\RuntimeIssueDto>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $issues = null;
+
+    /**
+     * User who last updated the workflow
+     *
+     * @var ?UpdatedBy $updatedBy
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('updatedBy')]
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\UpdatedBy|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?UpdatedBy $updatedBy = null;
+
+    /**
+     * Timestamp of the last workflow trigger
+     *
+     * @var ?string $lastTriggeredAt
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('lastTriggeredAt')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $lastTriggeredAt = null;
 
     /**
      * Generated payload example based on the payload schema
@@ -173,6 +183,15 @@ class WorkflowResponseDto
     public ?bool $active = null;
 
     /**
+     * Enable or disable translations for this workflow
+     *
+     * @var ?bool $isTranslationEnabled
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('isTranslationEnabled')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?bool $isTranslationEnabled = null;
+
+    /**
      * @param  string  $name
      * @param  string  $id
      * @param  string  $workflowId
@@ -186,14 +205,16 @@ class WorkflowResponseDto
      * @param  ?string  $description
      * @param  ?array<string>  $tags
      * @param  ?bool  $active
-     * @param  ?array<string, RuntimeIssueDto>  $issues
      * @param  ?bool  $validatePayload
-     * @param  ?string  $lastTriggeredAt
      * @param  ?array<string, mixed>  $payloadSchema
+     * @param  ?bool  $isTranslationEnabled
+     * @param  ?array<string, RuntimeIssueDto>  $issues
+     * @param  ?UpdatedBy  $updatedBy
+     * @param  ?string  $lastTriggeredAt
      * @param  ?array<string, mixed>  $payloadExample
      * @phpstan-pure
      */
-    public function __construct(string $name, string $id, string $workflowId, Slug $slug, string $updatedAt, string $createdAt, array $steps, ResourceOriginEnum $origin, WorkflowPreferencesResponseDto $preferences, WorkflowStatusEnum $status, ?string $description = null, ?array $tags = null, ?array $issues = null, ?bool $validatePayload = null, ?string $lastTriggeredAt = null, ?array $payloadSchema = null, ?array $payloadExample = null, ?bool $active = false)
+    public function __construct(string $name, string $id, string $workflowId, Slug $slug, string $updatedAt, string $createdAt, array $steps, ResourceOriginEnum $origin, WorkflowPreferencesResponseDto $preferences, WorkflowStatusEnum $status, ?string $description = null, ?array $tags = null, ?bool $validatePayload = null, ?array $payloadSchema = null, ?array $issues = null, ?UpdatedBy $updatedBy = null, ?string $lastTriggeredAt = null, ?array $payloadExample = null, ?bool $active = false, ?bool $isTranslationEnabled = false)
     {
         $this->name = $name;
         $this->id = $id;
@@ -207,11 +228,13 @@ class WorkflowResponseDto
         $this->status = $status;
         $this->description = $description;
         $this->tags = $tags;
-        $this->issues = $issues;
         $this->validatePayload = $validatePayload;
-        $this->lastTriggeredAt = $lastTriggeredAt;
         $this->payloadSchema = $payloadSchema;
+        $this->issues = $issues;
+        $this->updatedBy = $updatedBy;
+        $this->lastTriggeredAt = $lastTriggeredAt;
         $this->payloadExample = $payloadExample;
         $this->active = $active;
+        $this->isTranslationEnabled = $isTranslationEnabled;
     }
 }
