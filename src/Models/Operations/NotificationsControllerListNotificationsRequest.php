@@ -54,7 +54,7 @@ class NotificationsControllerListNotificationsRequest
     public ?array $subscriberIds = null;
 
     /**
-     * Transaction ID for filtering
+     * The transaction ID to filter by
      *
      * @var ?string $transactionId
      */

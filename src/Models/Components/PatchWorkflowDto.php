@@ -49,6 +49,24 @@ class PatchWorkflowDto
     public ?array $tags = null;
 
     /**
+     * Enable or disable payload schema validation
+     *
+     * @var ?bool $validatePayload
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('validatePayload')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?bool $validatePayload = null;
+
+    /**
+     * Enable or disable translations for this workflow
+     *
+     * @var ?bool $isTranslationEnabled
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('isTranslationEnabled')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?bool $isTranslationEnabled = null;
+
+    /**
      * The payload JSON Schema for the workflow
      *
      * @var ?array<string, mixed> $payloadSchema
@@ -59,30 +77,23 @@ class PatchWorkflowDto
     public ?array $payloadSchema = null;
 
     /**
-     * Enable or disable payload schema validation
-     *
-     * @var ?bool $validatePayload
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('validatePayload')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?bool $validatePayload = null;
-
-    /**
      * @param  ?bool  $active
      * @param  ?string  $name
      * @param  ?string  $description
      * @param  ?array<string>  $tags
-     * @param  ?array<string, mixed>  $payloadSchema
      * @param  ?bool  $validatePayload
+     * @param  ?bool  $isTranslationEnabled
+     * @param  ?array<string, mixed>  $payloadSchema
      * @phpstan-pure
      */
-    public function __construct(?bool $active = null, ?string $name = null, ?string $description = null, ?array $tags = null, ?array $payloadSchema = null, ?bool $validatePayload = null)
+    public function __construct(?bool $active = null, ?string $name = null, ?string $description = null, ?array $tags = null, ?bool $validatePayload = null, ?bool $isTranslationEnabled = null, ?array $payloadSchema = null)
     {
         $this->active = $active;
         $this->name = $name;
         $this->description = $description;
         $this->tags = $tags;
-        $this->payloadSchema = $payloadSchema;
         $this->validatePayload = $validatePayload;
+        $this->isTranslationEnabled = $isTranslationEnabled;
+        $this->payloadSchema = $payloadSchema;
     }
 }

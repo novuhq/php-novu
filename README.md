@@ -280,7 +280,7 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use novu;
-use novu\Models\Components;
+use novu\Models\Operations;
 
 $sdk = novu\Novu::builder()
     ->setSecurity(
@@ -288,23 +288,20 @@ $sdk = novu\Novu::builder()
     )
     ->build();
 
-$triggerEventRequestDto = new Components\TriggerEventRequestDto(
-    workflowId: 'workflow_identifier',
-    payload: [
-        'comment_id' => 'string',
-        'post' => [
-            'text' => 'string',
-        ],
+$request = new Operations\ActivityControllerGetLogsRequest(
+    statusCodes: [
+        200,
+        404,
+        500,
     ],
-    overrides: new Components\Overrides(),
-    to: 'SUBSCRIBER_ID',
+    createdGte: 1640995200,
 );
 
-$response = $sdk->trigger(
-    triggerEventRequestDto: $triggerEventRequestDto
+$response = $sdk->retrieve(
+    request: $request
 );
 
-if ($response->triggerEventResponseDto !== null) {
+if ($response->getRequestsResponseDto !== null) {
     // handle response
 }
 ```
@@ -318,6 +315,7 @@ if ($response->triggerEventResponseDto !== null) {
 
 ### [environments](docs/sdks/environments/README.md)
 
+* [getTags](docs/sdks/environments/README.md#gettags) - Get environment tags
 * [create](docs/sdks/environments/README.md#create) - Create an environment
 * [list](docs/sdks/environments/README.md#list) - List all environments
 * [update](docs/sdks/environments/README.md#update) - Update an environment
@@ -345,6 +343,7 @@ if ($response->triggerEventResponseDto !== null) {
 
 ### [Novu SDK](docs/sdks/novu/README.md)
 
+* [retrieve](docs/sdks/novu/README.md#retrieve)
 * [trigger](docs/sdks/novu/README.md#trigger) - Trigger event
 * [cancel](docs/sdks/novu/README.md#cancel) - Cancel triggered event
 * [triggerBroadcast](docs/sdks/novu/README.md#triggerbroadcast) - Broadcast event to all
@@ -359,7 +358,7 @@ if ($response->triggerEventResponseDto !== null) {
 * [delete](docs/sdks/subscribers/README.md#delete) - Delete a subscriber
 * [createBulk](docs/sdks/subscribers/README.md#createbulk) - Bulk create subscribers
 * [updatePreferences](docs/sdks/subscribers/README.md#updatepreferences) - Update subscriber preferences
-* [updateCredentials](docs/sdks/subscribers/README.md#updatecredentials) - Update provider credentials
+* [updateCredentials](docs/sdks/subscribers/README.md#updatecredentials) - Upsert provider credentials
 * [updateOnlineStatus](docs/sdks/subscribers/README.md#updateonlinestatus) - Update subscriber online status
 
 #### [subscribers->messages](docs/sdks/novumessages/README.md)
@@ -377,7 +376,7 @@ if ($response->triggerEventResponseDto !== null) {
 
 ### [subscribersCredentials](docs/sdks/subscriberscredentials/README.md)
 
-* [append](docs/sdks/subscriberscredentials/README.md#append) - Upsert provider credentials
+* [append](docs/sdks/subscriberscredentials/README.md#append) - Update provider credentials
 * [deleteProvider](docs/sdks/subscriberscredentials/README.md#deleteprovider) - Delete provider credentials
 
 ### [subscribersMessages](docs/sdks/subscribersmessages/README.md)
@@ -439,7 +438,7 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use novu;
-use novu\Models\Components;
+use novu\Models\Operations;
 use novu\Utils\Retry;
 
 $sdk = novu\Novu::builder()
@@ -448,20 +447,17 @@ $sdk = novu\Novu::builder()
     )
     ->build();
 
-$triggerEventRequestDto = new Components\TriggerEventRequestDto(
-    workflowId: 'workflow_identifier',
-    payload: [
-        'comment_id' => 'string',
-        'post' => [
-            'text' => 'string',
-        ],
+$request = new Operations\ActivityControllerGetLogsRequest(
+    statusCodes: [
+        200,
+        404,
+        500,
     ],
-    overrides: new Components\Overrides(),
-    to: 'SUBSCRIBER_ID',
+    createdGte: 1640995200,
 );
 
-$response = $sdk->trigger(
-    triggerEventRequestDto: $triggerEventRequestDto,
+$response = $sdk->retrieve(
+    request: $request,
     options: Utils\Options->builder()->setRetryConfig(
         new Retry\RetryConfigBackoff(
             initialInterval: 1,
@@ -470,10 +466,9 @@ $response = $sdk->trigger(
             maxElapsedTime:  100,
             retryConnectionErrors: false,
         ))->build()
-
 );
 
-if ($response->triggerEventResponseDto !== null) {
+if ($response->getRequestsResponseDto !== null) {
     // handle response
 }
 ```
@@ -485,7 +480,7 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use novu;
-use novu\Models\Components;
+use novu\Models\Operations;
 use novu\Utils\Retry;
 
 $sdk = novu\Novu::builder()
@@ -503,23 +498,20 @@ $sdk = novu\Novu::builder()
     )
     ->build();
 
-$triggerEventRequestDto = new Components\TriggerEventRequestDto(
-    workflowId: 'workflow_identifier',
-    payload: [
-        'comment_id' => 'string',
-        'post' => [
-            'text' => 'string',
-        ],
+$request = new Operations\ActivityControllerGetLogsRequest(
+    statusCodes: [
+        200,
+        404,
+        500,
     ],
-    overrides: new Components\Overrides(),
-    to: 'SUBSCRIBER_ID',
+    createdGte: 1640995200,
 );
 
-$response = $sdk->trigger(
-    triggerEventRequestDto: $triggerEventRequestDto
+$response = $sdk->retrieve(
+    request: $request
 );
 
-if ($response->triggerEventResponseDto !== null) {
+if ($response->getRequestsResponseDto !== null) {
     // handle response
 }
 ```
@@ -629,7 +621,7 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use novu;
-use novu\Models\Components;
+use novu\Models\Operations;
 
 $sdk = novu\Novu::builder()
     ->setServerIndex(1)
@@ -638,23 +630,20 @@ $sdk = novu\Novu::builder()
     )
     ->build();
 
-$triggerEventRequestDto = new Components\TriggerEventRequestDto(
-    workflowId: 'workflow_identifier',
-    payload: [
-        'comment_id' => 'string',
-        'post' => [
-            'text' => 'string',
-        ],
+$request = new Operations\ActivityControllerGetLogsRequest(
+    statusCodes: [
+        200,
+        404,
+        500,
     ],
-    overrides: new Components\Overrides(),
-    to: 'SUBSCRIBER_ID',
+    createdGte: 1640995200,
 );
 
-$response = $sdk->trigger(
-    triggerEventRequestDto: $triggerEventRequestDto
+$response = $sdk->retrieve(
+    request: $request
 );
 
-if ($response->triggerEventResponseDto !== null) {
+if ($response->getRequestsResponseDto !== null) {
     // handle response
 }
 ```
@@ -668,7 +657,7 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use novu;
-use novu\Models\Components;
+use novu\Models\Operations;
 
 $sdk = novu\Novu::builder()
     ->setServerURL('https://eu.api.novu.co')
@@ -677,23 +666,20 @@ $sdk = novu\Novu::builder()
     )
     ->build();
 
-$triggerEventRequestDto = new Components\TriggerEventRequestDto(
-    workflowId: 'workflow_identifier',
-    payload: [
-        'comment_id' => 'string',
-        'post' => [
-            'text' => 'string',
-        ],
+$request = new Operations\ActivityControllerGetLogsRequest(
+    statusCodes: [
+        200,
+        404,
+        500,
     ],
-    overrides: new Components\Overrides(),
-    to: 'SUBSCRIBER_ID',
+    createdGte: 1640995200,
 );
 
-$response = $sdk->trigger(
-    triggerEventRequestDto: $triggerEventRequestDto
+$response = $sdk->retrieve(
+    request: $request
 );
 
-if ($response->triggerEventResponseDto !== null) {
+if ($response->getRequestsResponseDto !== null) {
     // handle response
 }
 ```

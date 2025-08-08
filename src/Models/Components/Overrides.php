@@ -13,7 +13,7 @@ namespace novu\Models\Components;
 class Overrides
 {
     /**
-     * This could be used to override provider specific configurations
+     * This could be used to override provider specific configurations or layout at the step level
      *
      * @var ?array<string, StepsOverrides> $steps
      */
@@ -21,6 +21,16 @@ class Overrides
     #[\Speakeasy\Serializer\Annotation\Type('array<string, \novu\Models\Components\StepsOverrides>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $steps = null;
+
+    /**
+     * Channel-specific overrides that apply to all steps of a particular channel type. Step-level overrides take precedence over channel-level overrides.
+     *
+     * @var ?Channels $channels
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('channels')]
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\Channels|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?Channels $channels = null;
 
     /**
      * Overrides the provider configuration for the entire workflow and all steps
@@ -88,6 +98,7 @@ class Overrides
 
     /**
      * @param  ?array<string, StepsOverrides>  $steps
+     * @param  ?Channels  $channels
      * @param  ?array<string, array<string, mixed>>  $providers
      * @param  ?array<string, mixed>  $email
      * @param  ?array<string, mixed>  $push
@@ -96,9 +107,10 @@ class Overrides
      * @param  ?string  $layoutIdentifier
      * @phpstan-pure
      */
-    public function __construct(?array $steps = null, ?array $providers = null, ?array $email = null, ?array $push = null, ?array $sms = null, ?array $chat = null, ?string $layoutIdentifier = null)
+    public function __construct(?array $steps = null, ?Channels $channels = null, ?array $providers = null, ?array $email = null, ?array $push = null, ?array $sms = null, ?array $chat = null, ?string $layoutIdentifier = null)
     {
         $this->steps = $steps;
+        $this->channels = $channels;
         $this->providers = $providers;
         $this->email = $email;
         $this->push = $push;

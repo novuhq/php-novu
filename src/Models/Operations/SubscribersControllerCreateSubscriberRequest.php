@@ -14,6 +14,13 @@ class SubscribersControllerCreateSubscriberRequest
 {
     /**
      *
+     * @var bool $failIfExists
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=failIfExists')]
+    public bool $failIfExists;
+
+    /**
+     *
      * @var Components\CreateSubscriberRequestDto $createSubscriberRequestDto
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
@@ -28,12 +35,14 @@ class SubscribersControllerCreateSubscriberRequest
     public ?string $idempotencyKey = null;
 
     /**
+     * @param  bool  $failIfExists
      * @param  Components\CreateSubscriberRequestDto  $createSubscriberRequestDto
      * @param  ?string  $idempotencyKey
      * @phpstan-pure
      */
-    public function __construct(Components\CreateSubscriberRequestDto $createSubscriberRequestDto, ?string $idempotencyKey = null)
+    public function __construct(bool $failIfExists, Components\CreateSubscriberRequestDto $createSubscriberRequestDto, ?string $idempotencyKey = null)
     {
+        $this->failIfExists = $failIfExists;
         $this->createSubscriberRequestDto = $createSubscriberRequestDto;
         $this->idempotencyKey = $idempotencyKey;
     }

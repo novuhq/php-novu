@@ -645,14 +645,15 @@ class Topics
     /**
      * Create a topic
      *
-     * Creates a new topic if it does not exist, or updates an existing topic if it already exists
+     * Creates a new topic if it does not exist, or updates an existing topic if it already exists. Use ?failIfExists=true to prevent updates.
      *
      * @param  Components\CreateUpdateTopicRequestDto  $createUpdateTopicRequestDto
+     * @param  bool  $failIfExists
      * @param  ?string  $idempotencyKey
      * @return Operations\TopicsControllerUpsertTopicResponse
      * @throws \novu\Models\Errors\APIException
      */
-    public function create(Components\CreateUpdateTopicRequestDto $createUpdateTopicRequestDto, ?string $idempotencyKey = null, ?Options $options = null): Operations\TopicsControllerUpsertTopicResponse
+    public function create(Components\CreateUpdateTopicRequestDto $createUpdateTopicRequestDto, bool $failIfExists, ?string $idempotencyKey = null, ?Options $options = null): Operations\TopicsControllerUpsertTopicResponse
     {
         $retryConfig = null;
         if ($options) {
@@ -682,6 +683,7 @@ class Topics
             ];
         }
         $request = new Operations\TopicsControllerUpsertTopicRequest(
+            failIfExists: $failIfExists,
             createUpdateTopicRequestDto: $createUpdateTopicRequestDto,
             idempotencyKey: $idempotencyKey,
         );
@@ -694,6 +696,8 @@ class Topics
             throw new \Exception('Request body is required');
         }
         $httpOptions = array_merge_recursive($httpOptions, $body);
+
+        $qp = Utils\Utils::getQueryParams(Operations\TopicsControllerUpsertTopicRequest::class, $request, $urlOverride);
         $httpOptions = array_merge_recursive($httpOptions, Utils\Utils::getHeaders($request));
         if (! array_key_exists('headers', $httpOptions)) {
             $httpOptions['headers'] = [];
@@ -703,6 +707,7 @@ class Topics
         $httpRequest = new \GuzzleHttp\Psr7\Request('POST', $url);
         $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'TopicsController_upsertTopic', [], $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
+        $httpOptions['query'] = Utils\QueryParameters::standardizeQueryParams($httpRequest, $qp);
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
         $httpRequest = Utils\Utils::removeHeaders($httpRequest);
         try {
@@ -736,6 +741,17 @@ class Topics
             } else {
                 throw new \novu\Models\Errors\APIException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
             }
+        } elseif (Utils\Utils::matchStatusCodes($statusCode, ['409'])) {
+            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
+                $httpResponse = $this->sdkConfiguration->hooks->afterSuccess(new Hooks\AfterSuccessContext($hookContext), $httpResponse);
+
+                $serializer = Utils\JSON::createSerializer();
+                $responseData = (string) $httpResponse->getBody();
+                $obj = $serializer->deserialize($responseData, '\novu\Models\Errors\TopicResponseDto', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
+                throw $obj->toException();
+            } else {
+                throw new \novu\Models\Errors\APIException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+            }
         } elseif (Utils\Utils::matchStatusCodes($statusCode, ['414'])) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $httpResponse = $this->sdkConfiguration->hooks->afterSuccess(new Hooks\AfterSuccessContext($hookContext), $httpResponse);
@@ -747,7 +763,7 @@ class Topics
             } else {
                 throw new \novu\Models\Errors\APIException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
             }
-        } elseif (Utils\Utils::matchStatusCodes($statusCode, ['400', '401', '403', '404', '405', '409', '413', '415'])) {
+        } elseif (Utils\Utils::matchStatusCodes($statusCode, ['400', '401', '403', '404', '405', '413', '415'])) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $httpResponse = $this->sdkConfiguration->hooks->afterSuccess(new Hooks\AfterSuccessContext($hookContext), $httpResponse);
 

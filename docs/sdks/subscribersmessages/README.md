@@ -13,6 +13,7 @@ Update all subscriber in-app (inbox) notifications state such as read, unread, s
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="SubscribersV1Controller_markAllUnreadAsRead" method="post" path="/v1/subscribers/{subscriberId}/messages/mark-all" -->
 ```php
 declare(strict_types=1);
 

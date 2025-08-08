@@ -22,6 +22,7 @@ This api returns a paginated list of topics.
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="TopicsController_listTopics" method="get" path="/v2/topics" -->
 ```php
 declare(strict_types=1);
 
@@ -68,10 +69,11 @@ if ($response->listTopicsResponseDto !== null) {
 
 ## create
 
-Creates a new topic if it does not exist, or updates an existing topic if it already exists
+Creates a new topic if it does not exist, or updates an existing topic if it already exists. Use ?failIfExists=true to prevent updates.
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="TopicsController_upsertTopic" method="post" path="/v2/topics" -->
 ```php
 declare(strict_types=1);
 
@@ -92,7 +94,9 @@ $createUpdateTopicRequestDto = new Components\CreateUpdateTopicRequestDto(
 );
 
 $response = $sdk->topics->create(
+    failIfExists: true,
     createUpdateTopicRequestDto: $createUpdateTopicRequestDto
+
 );
 
 if ($response->topicResponseDto !== null) {
@@ -104,6 +108,7 @@ if ($response->topicResponseDto !== null) {
 
 | Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
 | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
+| `failIfExists`                                                                                   | *bool*                                                                                           | :heavy_check_mark:                                                                               | N/A                                                                                              |
 | `createUpdateTopicRequestDto`                                                                    | [Components\CreateUpdateTopicRequestDto](../../Models/Components/CreateUpdateTopicRequestDto.md) | :heavy_check_mark:                                                                               | N/A                                                                                              |
 | `idempotencyKey`                                                                                 | *?string*                                                                                        | :heavy_minus_sign:                                                                               | A header for idempotency purposes                                                                |
 
@@ -113,13 +118,14 @@ if ($response->topicResponseDto !== null) {
 
 ### Errors
 
-| Error Type                             | Status Code                            | Content Type                           |
-| -------------------------------------- | -------------------------------------- | -------------------------------------- |
-| Errors\ErrorDto                        | 414                                    | application/json                       |
-| Errors\ErrorDto                        | 400, 401, 403, 404, 405, 409, 413, 415 | application/json                       |
-| Errors\ValidationErrorDto              | 422                                    | application/json                       |
-| Errors\ErrorDto                        | 500                                    | application/json                       |
-| Errors\APIException                    | 4XX, 5XX                               | \*/\*                                  |
+| Error Type                        | Status Code                       | Content Type                      |
+| --------------------------------- | --------------------------------- | --------------------------------- |
+| Errors\TopicResponseDto           | 409                               | application/json                  |
+| Errors\ErrorDto                   | 414                               | application/json                  |
+| Errors\ErrorDto                   | 400, 401, 403, 404, 405, 413, 415 | application/json                  |
+| Errors\ValidationErrorDto         | 422                               | application/json                  |
+| Errors\ErrorDto                   | 500                               | application/json                  |
+| Errors\APIException               | 4XX, 5XX                          | \*/\*                             |
 
 ## get
 
@@ -127,6 +133,7 @@ Retrieve a topic by its unique key identifier **topicKey**
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="TopicsController_getTopic" method="get" path="/v2/topics/{topicKey}" -->
 ```php
 declare(strict_types=1);
 
@@ -178,6 +185,7 @@ Update a topic name by its unique key identifier **topicKey**
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="TopicsController_updateTopic" method="patch" path="/v2/topics/{topicKey}" -->
 ```php
 declare(strict_types=1);
 
@@ -236,6 +244,7 @@ Delete a topic by its unique key identifier **topicKey**.
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="TopicsController_deleteTopic" method="delete" path="/v2/topics/{topicKey}" -->
 ```php
 declare(strict_types=1);
 

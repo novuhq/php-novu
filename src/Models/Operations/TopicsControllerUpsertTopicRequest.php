@@ -14,6 +14,13 @@ class TopicsControllerUpsertTopicRequest
 {
     /**
      *
+     * @var bool $failIfExists
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=failIfExists')]
+    public bool $failIfExists;
+
+    /**
+     *
      * @var Components\CreateUpdateTopicRequestDto $createUpdateTopicRequestDto
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
@@ -28,12 +35,14 @@ class TopicsControllerUpsertTopicRequest
     public ?string $idempotencyKey = null;
 
     /**
+     * @param  bool  $failIfExists
      * @param  Components\CreateUpdateTopicRequestDto  $createUpdateTopicRequestDto
      * @param  ?string  $idempotencyKey
      * @phpstan-pure
      */
-    public function __construct(Components\CreateUpdateTopicRequestDto $createUpdateTopicRequestDto, ?string $idempotencyKey = null)
+    public function __construct(bool $failIfExists, Components\CreateUpdateTopicRequestDto $createUpdateTopicRequestDto, ?string $idempotencyKey = null)
     {
+        $this->failIfExists = $failIfExists;
         $this->createUpdateTopicRequestDto = $createUpdateTopicRequestDto;
         $this->idempotencyKey = $idempotencyKey;
     }

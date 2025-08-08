@@ -9,8 +9,9 @@ declare(strict_types=1);
 namespace novu\Models\Components;
 
 
-/** Type of integration issue */
-enum StepIntegrationIssueEnum: string
+/** Type of the environment */
+enum EnvironmentResponseDtoType: string
 {
-    case MissingIntegration = 'MISSING_INTEGRATION';
+    case Dev = 'dev';
+    case Prod = 'prod';
 }

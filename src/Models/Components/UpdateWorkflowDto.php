@@ -66,6 +66,15 @@ class UpdateWorkflowDto
     public ?array $tags = null;
 
     /**
+     * Enable or disable payload schema validation
+     *
+     * @var ?bool $validatePayload
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('validatePayload')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?bool $validatePayload = null;
+
+    /**
      * Workflow ID (allowed only for code-first workflows)
      *
      * @var ?string $workflowId
@@ -85,15 +94,6 @@ class UpdateWorkflowDto
     public ?array $payloadSchema = null;
 
     /**
-     * Enable or disable payload schema validation
-     *
-     * @var ?bool $validatePayload
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('validatePayload')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?bool $validatePayload = null;
-
-    /**
      * Whether the workflow is active
      *
      * @var ?bool $active
@@ -103,6 +103,15 @@ class UpdateWorkflowDto
     public ?bool $active = null;
 
     /**
+     * Enable or disable translations for this workflow
+     *
+     * @var ?bool $isTranslationEnabled
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('isTranslationEnabled')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?bool $isTranslationEnabled = null;
+
+    /**
      * @param  string  $name
      * @param  array<InAppStepUpsertDto|EmailStepUpsertDto|SmsStepUpsertDto|PushStepUpsertDto|ChatStepUpsertDto|DelayStepUpsertDto|DigestStepUpsertDto|CustomStepUpsertDto>  $steps
      * @param  PreferencesRequestDto  $preferences
@@ -110,12 +119,13 @@ class UpdateWorkflowDto
      * @param  ?string  $description
      * @param  ?array<string>  $tags
      * @param  ?bool  $active
+     * @param  ?bool  $validatePayload
+     * @param  ?bool  $isTranslationEnabled
      * @param  ?string  $workflowId
      * @param  ?array<string, mixed>  $payloadSchema
-     * @param  ?bool  $validatePayload
      * @phpstan-pure
      */
-    public function __construct(string $name, array $steps, PreferencesRequestDto $preferences, ResourceOriginEnum $origin, ?string $description = null, ?array $tags = null, ?string $workflowId = null, ?array $payloadSchema = null, ?bool $validatePayload = null, ?bool $active = false)
+    public function __construct(string $name, array $steps, PreferencesRequestDto $preferences, ResourceOriginEnum $origin, ?string $description = null, ?array $tags = null, ?bool $validatePayload = null, ?string $workflowId = null, ?array $payloadSchema = null, ?bool $active = false, ?bool $isTranslationEnabled = false)
     {
         $this->name = $name;
         $this->steps = $steps;
@@ -123,9 +133,10 @@ class UpdateWorkflowDto
         $this->origin = $origin;
         $this->description = $description;
         $this->tags = $tags;
+        $this->validatePayload = $validatePayload;
         $this->workflowId = $workflowId;
         $this->payloadSchema = $payloadSchema;
-        $this->validatePayload = $validatePayload;
         $this->active = $active;
+        $this->isTranslationEnabled = $isTranslationEnabled;
     }
 }

@@ -9,21 +9,73 @@ Novu Documentation
 
 ### Available Operations
 
+* [retrieve](#retrieve)
 * [trigger](#trigger) - Trigger event
 * [cancel](#cancel) - Cancel triggered event
 * [triggerBroadcast](#triggerbroadcast) - Broadcast event to all
 * [triggerBulk](#triggerbulk) - Bulk trigger event
 
-## trigger
-
-
-    Trigger event is the main (and only) way to send notifications to subscribers. 
-    The trigger identifier is used to match the particular workflow associated with it. 
-    Additional information can be passed according the body interface below.
-    
+## retrieve
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ActivityController_getLogs" method="get" path="/v1/activity/requests" -->
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use novu;
+use novu\Models\Operations;
+
+$sdk = novu\Novu::builder()
+    ->setSecurity(
+        'YOUR_SECRET_KEY_HERE'
+    )
+    ->build();
+
+$request = new Operations\ActivityControllerGetLogsRequest(
+    statusCodes: [
+        200,
+        404,
+        500,
+    ],
+    createdGte: 1640995200,
+);
+
+$response = $sdk->retrieve(
+    request: $request
+);
+
+if ($response->getRequestsResponseDto !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `$request`                                                                                                 | [Operations\ActivityControllerGetLogsRequest](../../Models/Operations/ActivityControllerGetLogsRequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
+
+### Response
+
+**[?Operations\ActivityControllerGetLogsResponse](../../Models/Operations/ActivityControllerGetLogsResponse.md)**
+
+### Errors
+
+| Error Type          | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| Errors\APIException | 4XX, 5XX            | \*/\*               |
+
+## trigger
+
+    Trigger event is the main (and only) way to send notifications to subscribers. The trigger identifier is used to match the particular workflow associated with it. Additional information can be passed according the body interface below.
+    To prevent duplicate triggers, you can optionally pass a **transactionId** in the request body. If the same **transactionId** is used again, the trigger will be ignored. The retention period depends on your billing tier.
+
+### Example Usage
+
+<!-- UsageSnippet language="php" operationID="EventsController_trigger" method="post" path="/v1/events/trigger" -->
 ```php
 declare(strict_types=1);
 
@@ -90,6 +142,7 @@ if ($response->triggerEventResponseDto !== null) {
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="EventsController_cancel" method="delete" path="/v1/events/trigger/{transactionId}" -->
 ```php
 declare(strict_types=1);
 
@@ -143,6 +196,7 @@ Trigger a broadcast event to all existing subscribers, could be used to send ann
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="EventsController_broadcastEventToAll" method="post" path="/v1/events/trigger/broadcast" -->
 ```php
 declare(strict_types=1);
 
@@ -216,6 +270,7 @@ if ($response->triggerEventResponseDto !== null) {
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="EventsController_triggerBulk" method="post" path="/v1/events/trigger/bulk" -->
 ```php
 declare(strict_types=1);
 

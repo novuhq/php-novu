@@ -22,6 +22,7 @@ Creates a new workflow in the Novu Cloud environment
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="WorkflowController_create" method="post" path="/v2/workflows" -->
 ```php
 declare(strict_types=1);
 
@@ -98,6 +99,7 @@ Retrieves a list of workflows with optional filtering and pagination
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="WorkflowController_searchWorkflows" method="get" path="/v2/workflows" -->
 ```php
 declare(strict_types=1);
 
@@ -148,6 +150,7 @@ Updates the details of an existing workflow, here **workflowId** is the identifi
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="WorkflowController_update" method="put" path="/v2/workflows/{workflowId}" -->
 ```php
 declare(strict_types=1);
 
@@ -227,6 +230,7 @@ Fetches details of a specific workflow by its unique identifier **workflowId**
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="WorkflowController_getWorkflow" method="get" path="/v2/workflows/{workflowId}" -->
 ```php
 declare(strict_types=1);
 
@@ -279,6 +283,7 @@ Removes a specific workflow by its unique identifier **workflowId**
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="WorkflowController_removeWorkflow" method="delete" path="/v2/workflows/{workflowId}" -->
 ```php
 declare(strict_types=1);
 
@@ -330,6 +335,7 @@ Partially updates a workflow by its unique identifier **workflowId**
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="WorkflowController_patchWorkflow" method="patch" path="/v2/workflows/{workflowId}" -->
 ```php
 declare(strict_types=1);
 
@@ -385,6 +391,7 @@ Synchronizes a workflow to the target environment
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="WorkflowController_sync" method="put" path="/v2/workflows/{workflowId}/sync" -->
 ```php
 declare(strict_types=1);
 

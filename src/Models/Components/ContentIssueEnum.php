@@ -10,7 +10,7 @@ namespace novu\Models\Components;
 
 
 /** Type of step content issue */
-enum StepContentIssueEnum: string
+enum ContentIssueEnum: string
 {
     case IllegalVariableInControlValue = 'ILLEGAL_VARIABLE_IN_CONTROL_VALUE';
     case InvalidFilterArgInVariable = 'INVALID_FILTER_ARG_IN_VARIABLE';

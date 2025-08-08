@@ -116,6 +116,15 @@ class WorkflowResponseDto
     public ?array $tags = null;
 
     /**
+     * Enable or disable payload schema validation
+     *
+     * @var ?bool $validatePayload
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('validatePayload')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?bool $validatePayload = null;
+
+    /**
      * Runtime issues for workflow creation and update
      *
      * @var ?array<string, RuntimeIssueDto> $issues
@@ -126,13 +135,43 @@ class WorkflowResponseDto
     public ?array $issues = null;
 
     /**
-     * Whether payload schema validation is enabled
+     * The payload JSON Schema for the workflow
      *
-     * @var ?bool $validatePayload
+     * @var ?array<string, mixed> $payloadSchema
      */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('validatePayload')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('payloadSchema')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?bool $validatePayload = null;
+    public ?array $payloadSchema = null;
+
+    /**
+     * User who last updated the workflow
+     *
+     * @var ?UpdatedBy $updatedBy
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('updatedBy')]
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\UpdatedBy|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?UpdatedBy $updatedBy = null;
+
+    /**
+     * Timestamp of the last workflow publication
+     *
+     * @var ?string $lastPublishedAt
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('lastPublishedAt')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $lastPublishedAt = null;
+
+    /**
+     * User who last published the workflow
+     *
+     * @var ?LastPublishedBy $lastPublishedBy
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('lastPublishedBy')]
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\LastPublishedBy|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?LastPublishedBy $lastPublishedBy = null;
 
     /**
      * Timestamp of the last workflow trigger
@@ -142,16 +181,6 @@ class WorkflowResponseDto
     #[\Speakeasy\Serializer\Annotation\SerializedName('lastTriggeredAt')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $lastTriggeredAt = null;
-
-    /**
-     * The payload JSON Schema for the workflow
-     *
-     * @var ?array<string, mixed> $payloadSchema
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('payloadSchema')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $payloadSchema = null;
 
     /**
      * Generated payload example based on the payload schema
@@ -173,6 +202,15 @@ class WorkflowResponseDto
     public ?bool $active = null;
 
     /**
+     * Enable or disable translations for this workflow
+     *
+     * @var ?bool $isTranslationEnabled
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('isTranslationEnabled')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?bool $isTranslationEnabled = null;
+
+    /**
      * @param  string  $name
      * @param  string  $id
      * @param  string  $workflowId
@@ -186,14 +224,18 @@ class WorkflowResponseDto
      * @param  ?string  $description
      * @param  ?array<string>  $tags
      * @param  ?bool  $active
-     * @param  ?array<string, RuntimeIssueDto>  $issues
      * @param  ?bool  $validatePayload
-     * @param  ?string  $lastTriggeredAt
+     * @param  ?bool  $isTranslationEnabled
+     * @param  ?array<string, RuntimeIssueDto>  $issues
      * @param  ?array<string, mixed>  $payloadSchema
+     * @param  ?UpdatedBy  $updatedBy
+     * @param  ?string  $lastPublishedAt
+     * @param  ?LastPublishedBy  $lastPublishedBy
+     * @param  ?string  $lastTriggeredAt
      * @param  ?array<string, mixed>  $payloadExample
      * @phpstan-pure
      */
-    public function __construct(string $name, string $id, string $workflowId, Slug $slug, string $updatedAt, string $createdAt, array $steps, ResourceOriginEnum $origin, WorkflowPreferencesResponseDto $preferences, WorkflowStatusEnum $status, ?string $description = null, ?array $tags = null, ?array $issues = null, ?bool $validatePayload = null, ?string $lastTriggeredAt = null, ?array $payloadSchema = null, ?array $payloadExample = null, ?bool $active = false)
+    public function __construct(string $name, string $id, string $workflowId, Slug $slug, string $updatedAt, string $createdAt, array $steps, ResourceOriginEnum $origin, WorkflowPreferencesResponseDto $preferences, WorkflowStatusEnum $status, ?string $description = null, ?array $tags = null, ?bool $validatePayload = null, ?array $issues = null, ?array $payloadSchema = null, ?UpdatedBy $updatedBy = null, ?string $lastPublishedAt = null, ?LastPublishedBy $lastPublishedBy = null, ?string $lastTriggeredAt = null, ?array $payloadExample = null, ?bool $active = false, ?bool $isTranslationEnabled = false)
     {
         $this->name = $name;
         $this->id = $id;
@@ -207,11 +249,15 @@ class WorkflowResponseDto
         $this->status = $status;
         $this->description = $description;
         $this->tags = $tags;
-        $this->issues = $issues;
         $this->validatePayload = $validatePayload;
-        $this->lastTriggeredAt = $lastTriggeredAt;
+        $this->issues = $issues;
         $this->payloadSchema = $payloadSchema;
+        $this->updatedBy = $updatedBy;
+        $this->lastPublishedAt = $lastPublishedAt;
+        $this->lastPublishedBy = $lastPublishedBy;
+        $this->lastTriggeredAt = $lastTriggeredAt;
         $this->payloadExample = $payloadExample;
         $this->active = $active;
+        $this->isTranslationEnabled = $isTranslationEnabled;
     }
 }

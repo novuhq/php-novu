@@ -14,6 +14,7 @@ Retrieve subscriber channel preferences by its unique key identifier **subscribe
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="SubscribersController_getSubscriberPreferences" method="get" path="/v2/subscribers/{subscriberId}/preferences" -->
 ```php
 declare(strict_types=1);
 

@@ -1,0 +1,11 @@
+# GetRequestsResponseDto
+
+
+## Fields
+
+| Field                                                                                       | Type                                                                                        | Required                                                                                    | Description                                                                                 |
+| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| `data`                                                                                      | array<[Components\RequestLogResponseDto](../../Models/Components/RequestLogResponseDto.md)> | :heavy_check_mark:                                                                          | Request log data                                                                            |
+| `total`                                                                                     | *float*                                                                                     | :heavy_check_mark:                                                                          | Total number of requests                                                                    |
+| `pageSize`                                                                                  | *?float*                                                                                    | :heavy_minus_sign:                                                                          | Page size                                                                                   |
+| `page`                                                                                      | *?float*                                                                                    | :heavy_minus_sign:                                                                          | Current page number                                                                         |

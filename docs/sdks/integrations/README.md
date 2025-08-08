@@ -21,6 +21,7 @@ List all the channels integrations created in the organization
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="IntegrationsController_listIntegrations" method="get" path="/v1/integrations" -->
 ```php
 declare(strict_types=1);
 
@@ -72,6 +73,7 @@ Create an integration for the current environment the user is based on the API k
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="IntegrationsController_createIntegration" method="post" path="/v1/integrations" -->
 ```php
 declare(strict_types=1);
 
@@ -128,6 +130,7 @@ Update an integration by its unique key identifier **integrationId**.
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="IntegrationsController_updateIntegrationById" method="put" path="/v1/integrations/{integrationId}" -->
 ```php
 declare(strict_types=1);
 
@@ -184,6 +187,7 @@ Delete an integration by its unique key identifier **integrationId**.
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="IntegrationsController_removeIntegration" method="delete" path="/v1/integrations/{integrationId}" -->
 ```php
 declare(strict_types=1);
 
@@ -237,6 +241,7 @@ Update an integration as **primary** by its unique key identifier **integrationI
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="IntegrationsController_setIntegrationAsPrimary" method="post" path="/v1/integrations/{integrationId}/set-primary" -->
 ```php
 declare(strict_types=1);
 
@@ -288,6 +293,7 @@ List all the active integrations created in the organization
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="IntegrationsController_getActiveIntegrations" method="get" path="/v1/integrations/active" -->
 ```php
 declare(strict_types=1);
 

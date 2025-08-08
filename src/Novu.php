@@ -30,6 +30,13 @@ class Novu
         'https://eu.api.novu.co',
     ];
 
+    /**
+     * Environments allow you to manage different stages of your application development lifecycle. Each environment has its own set of API keys and configurations, enabling you to separate development, staging, and production workflows.
+     *
+     * @var Environments $$environments
+     */
+    public Environments $environments;
+
     public Subscribers $subscribers;
 
     public SubscribersPreferences $subscribersPreferences;
@@ -47,13 +54,6 @@ class Novu
      * @var Workflows $$workflows
      */
     public Workflows $workflows;
-
-    /**
-     * Environments allow you to manage different stages of your application development lifecycle. Each environment has its own set of API keys and configurations, enabling you to separate development, staging, and production workflows.
-     *
-     * @var Environments $$environments
-     */
-    public Environments $environments;
 
     /**
      * With the help of the Integration Store, you can easily integrate your favorite delivery provider. During the runtime of the API, the Integrations Store is responsible for storing the configurations of all the providers.
@@ -95,11 +95,11 @@ class Novu
     public function __construct(
         public SDKConfiguration $sdkConfiguration,
     ) {
+        $this->environments = new Environments($this->sdkConfiguration);
         $this->subscribers = new Subscribers($this->sdkConfiguration);
         $this->subscribersPreferences = new SubscribersPreferences($this->sdkConfiguration);
         $this->topics = new Topics($this->sdkConfiguration);
         $this->workflows = new Workflows($this->sdkConfiguration);
-        $this->environments = new Environments($this->sdkConfiguration);
         $this->integrations = new Integrations($this->sdkConfiguration);
         $this->messages = new Messages($this->sdkConfiguration);
         $this->notifications = new Notifications($this->sdkConfiguration);
@@ -119,6 +119,99 @@ class Novu
             $this->sdkConfiguration->serverUrl = $ret->url;
         }
         $this->sdkConfiguration->client = $ret->client;
+    }
+
+    /**
+     * retrieve
+     *
+     * @param  ?Operations\ActivityControllerGetLogsRequest  $request
+     * @return Operations\ActivityControllerGetLogsResponse
+     * @throws \novu\Models\Errors\APIException
+     */
+    public function retrieve(?Operations\ActivityControllerGetLogsRequest $request = null, ?Options $options = null): Operations\ActivityControllerGetLogsResponse
+    {
+        $retryConfig = null;
+        if ($options) {
+            $retryConfig = $options->retryConfig;
+        }
+        if ($retryConfig === null && $this->sdkConfiguration->retryConfig) {
+            $retryConfig = $this->sdkConfiguration->retryConfig;
+        } else {
+            $retryConfig = new Retry\RetryConfigBackoff(
+                initialIntervalMs: 1000,
+                maxIntervalMs: 30000,
+                exponent: 1.5,
+                maxElapsedTimeMs: 3600000,
+                retryConnectionErrors: true,
+            );
+        }
+        $retryCodes = null;
+        if ($options) {
+            $retryCodes = $options->retryCodes;
+        }
+        if ($retryCodes === null) {
+            $retryCodes = [
+                '408',
+                '409',
+                '429',
+                '5XX',
+            ];
+        }
+        $baseUrl = $this->sdkConfiguration->getTemplatedServerUrl();
+        $url = Utils\Utils::generateUrl($baseUrl, '/v1/activity/requests');
+        $urlOverride = null;
+        $httpOptions = ['http_errors' => false];
+
+        $qp = Utils\Utils::getQueryParams(Operations\ActivityControllerGetLogsRequest::class, $request, $urlOverride);
+        $httpOptions = array_merge_recursive($httpOptions, Utils\Utils::getHeaders($request));
+        if (! array_key_exists('headers', $httpOptions)) {
+            $httpOptions['headers'] = [];
+        }
+        $httpOptions['headers']['Accept'] = 'application/json';
+        $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
+        $httpRequest = new \GuzzleHttp\Psr7\Request('GET', $url);
+        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'ActivityController_getLogs', [], $this->sdkConfiguration->securitySource);
+        $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
+        $httpOptions['query'] = Utils\QueryParameters::standardizeQueryParams($httpRequest, $qp);
+        $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
+        $httpRequest = Utils\Utils::removeHeaders($httpRequest);
+        try {
+            $httpResponse = RetryUtils::retryWrapper(fn () => $this->sdkConfiguration->client->send($httpRequest, $httpOptions), $retryConfig, $retryCodes);
+        } catch (\GuzzleHttp\Exception\GuzzleException $error) {
+            $res = $this->sdkConfiguration->hooks->afterError(new Hooks\AfterErrorContext($hookContext), null, $error);
+            $httpResponse = $res;
+        }
+        $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
+
+        $statusCode = $httpResponse->getStatusCode();
+        if (Utils\Utils::matchStatusCodes($statusCode, ['4XX', '5XX'])) {
+            $res = $this->sdkConfiguration->hooks->afterError(new Hooks\AfterErrorContext($hookContext), $httpResponse, null);
+            $httpResponse = $res;
+        }
+        if (Utils\Utils::matchStatusCodes($statusCode, ['200'])) {
+            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
+                $httpResponse = $this->sdkConfiguration->hooks->afterSuccess(new Hooks\AfterSuccessContext($hookContext), $httpResponse);
+
+                $serializer = Utils\JSON::createSerializer();
+                $responseData = (string) $httpResponse->getBody();
+                $obj = $serializer->deserialize($responseData, '\novu\Models\Components\GetRequestsResponseDto', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
+                $response = new Operations\ActivityControllerGetLogsResponse(
+                    statusCode: $statusCode,
+                    contentType: $contentType,
+                    rawResponse: $httpResponse,
+                    getRequestsResponseDto: $obj);
+
+                return $response;
+            } else {
+                throw new \novu\Models\Errors\APIException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+            }
+        } elseif (Utils\Utils::matchStatusCodes($statusCode, ['4XX'])) {
+            throw new \novu\Models\Errors\APIException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+        } elseif (Utils\Utils::matchStatusCodes($statusCode, ['5XX'])) {
+            throw new \novu\Models\Errors\APIException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+        } else {
+            throw new \novu\Models\Errors\APIException('Unknown status code received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+        }
     }
 
     /**
@@ -437,11 +530,8 @@ class Novu
     /**
      * Trigger event
      *
-     *
-     *     Trigger event is the main (and only) way to send notifications to subscribers. 
-     *     The trigger identifier is used to match the particular workflow associated with it. 
-     *     Additional information can be passed according the body interface below.
-     *     
+     *     Trigger event is the main (and only) way to send notifications to subscribers. The trigger identifier is used to match the particular workflow associated with it. Additional information can be passed according the body interface below.
+     *     To prevent duplicate triggers, you can optionally pass a **transactionId** in the request body. If the same **transactionId** is used again, the trigger will be ignored. The retention period depends on your billing tier.
      *
      * @param  Components\TriggerEventRequestDto  $triggerEventRequestDto
      * @param  ?string  $idempotencyKey
