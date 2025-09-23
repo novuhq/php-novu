@@ -1,32 +1,9 @@
 # One
 
 
-## Supported Types
+## Fields
 
-### `Components\SubscriberPayloadDto`
-
-```php
-/**
-* @var Components\SubscriberPayloadDto
-*/
-Components\SubscriberPayloadDto $value = /* values here */
-```
-
-### `Components\TopicPayloadDto`
-
-```php
-/**
-* @var Components\TopicPayloadDto
-*/
-Components\TopicPayloadDto $value = /* values here */
-```
-
-### `string`
-
-```php
-/**
-* @var string
-*/
-string $value = /* values here */
-```
-
+| Field                                                                                     | Type                                                                                      | Required                                                                                  | Description                                                                               |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `type`                                                                                    | [?Components\ResultType](../../Models/Components/ResultType.md)                           | :heavy_minus_sign:                                                                        | N/A                                                                                       |
+| `preview`                                                                                 | [?Components\EmailLayoutRenderOutput](../../Models/Components/EmailLayoutRenderOutput.md) | :heavy_minus_sign:                                                                        | N/A                                                                                       |

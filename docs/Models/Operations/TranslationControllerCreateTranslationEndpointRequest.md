@@ -1,0 +1,9 @@
+# TranslationControllerCreateTranslationEndpointRequest
+
+
+## Fields
+
+| Field                                                                                            | Type                                                                                             | Required                                                                                         | Description                                                                                      |
+| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
+| `idempotencyKey`                                                                                 | *?string*                                                                                        | :heavy_minus_sign:                                                                               | A header for idempotency purposes                                                                |
+| `createTranslationRequestDto`                                                                    | [Components\CreateTranslationRequestDto](../../Models/Components/CreateTranslationRequestDto.md) | :heavy_check_mark:                                                                               | N/A                                                                                              |

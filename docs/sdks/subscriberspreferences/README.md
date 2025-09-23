@@ -14,12 +14,14 @@ Retrieve subscriber channel preferences by its unique key identifier **subscribe
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="SubscribersController_getSubscriberPreferences" method="get" path="/v2/subscribers/{subscriberId}/preferences" -->
 ```php
 declare(strict_types=1);
 
 require 'vendor/autoload.php';
 
 use novu;
+use novu\Models\Operations;
 
 $sdk = novu\Novu::builder()
     ->setSecurity(
@@ -30,7 +32,9 @@ $sdk = novu\Novu::builder()
 
 
 $response = $sdk->subscribersPreferences->list(
-    subscriberId: '<id>'
+    subscriberId: '<id>',
+    criticality: Operations\Criticality::NonCritical
+
 );
 
 if ($response->getSubscriberPreferencesDto !== null) {
@@ -40,10 +44,11 @@ if ($response->getSubscriberPreferencesDto !== null) {
 
 ### Parameters
 
-| Parameter                         | Type                              | Required                          | Description                       |
-| --------------------------------- | --------------------------------- | --------------------------------- | --------------------------------- |
-| `subscriberId`                    | *string*                          | :heavy_check_mark:                | N/A                               |
-| `idempotencyKey`                  | *?string*                         | :heavy_minus_sign:                | A header for idempotency purposes |
+| Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
+| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `subscriberId`                                                    | *string*                                                          | :heavy_check_mark:                                                | N/A                                                               |
+| `criticality`                                                     | [?Operations\Criticality](../../Models/Operations/Criticality.md) | :heavy_minus_sign:                                                | N/A                                                               |
+| `idempotencyKey`                                                  | *?string*                                                         | :heavy_minus_sign:                                                | A header for idempotency purposes                                 |
 
 ### Response
 

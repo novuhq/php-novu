@@ -9,21 +9,69 @@ Novu Documentation
 
 ### Available Operations
 
+* [inboundWebhooksControllerHandleWebhook](#inboundwebhookscontrollerhandlewebhook)
 * [trigger](#trigger) - Trigger event
 * [cancel](#cancel) - Cancel triggered event
 * [triggerBroadcast](#triggerbroadcast) - Broadcast event to all
 * [triggerBulk](#triggerbulk) - Bulk trigger event
 
-## trigger
-
-
-    Trigger event is the main (and only) way to send notifications to subscribers. 
-    The trigger identifier is used to match the particular workflow associated with it. 
-    Additional information can be passed according the body interface below.
-    
+## inboundWebhooksControllerHandleWebhook
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="InboundWebhooksController_handleWebhook" method="post" path="/v2/inbound-webhooks/delivery-providers/{environmentId}/{integrationId}" -->
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use novu;
+
+$sdk = novu\Novu::builder()
+    ->setSecurity(
+        'YOUR_SECRET_KEY_HERE'
+    )
+    ->build();
+
+
+
+$response = $sdk->inboundWebhooksControllerHandleWebhook(
+    environmentId: '<id>',
+    integrationId: '<id>'
+
+);
+
+if ($response->statusCode === 200) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                         | Type                              | Required                          | Description                       |
+| --------------------------------- | --------------------------------- | --------------------------------- | --------------------------------- |
+| `environmentId`                   | *string*                          | :heavy_check_mark:                | N/A                               |
+| `integrationId`                   | *string*                          | :heavy_check_mark:                | N/A                               |
+| `idempotencyKey`                  | *?string*                         | :heavy_minus_sign:                | A header for idempotency purposes |
+
+### Response
+
+**[?Operations\InboundWebhooksControllerHandleWebhookResponse](../../Models/Operations/InboundWebhooksControllerHandleWebhookResponse.md)**
+
+### Errors
+
+| Error Type          | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| Errors\APIException | 4XX, 5XX            | \*/\*               |
+
+## trigger
+
+    Trigger event is the main (and only) way to send notifications to subscribers. The trigger identifier is used to match the particular workflow associated with it. Additional information can be passed according the body interface below.
+    To prevent duplicate triggers, you can optionally pass a **transactionId** in the request body. If the same **transactionId** is used again, the trigger will be ignored. The retention period depends on your billing tier.
+
+### Example Usage
+
+<!-- UsageSnippet language="php" operationID="EventsController_trigger" method="post" path="/v1/events/trigger" -->
 ```php
 declare(strict_types=1);
 
@@ -90,6 +138,7 @@ if ($response->triggerEventResponseDto !== null) {
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="EventsController_cancel" method="delete" path="/v1/events/trigger/{transactionId}" -->
 ```php
 declare(strict_types=1);
 
@@ -143,6 +192,7 @@ Trigger a broadcast event to all existing subscribers, could be used to send ann
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="EventsController_broadcastEventToAll" method="post" path="/v1/events/trigger/broadcast" -->
 ```php
 declare(strict_types=1);
 
@@ -216,6 +266,7 @@ if ($response->triggerEventResponseDto !== null) {
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="EventsController_triggerBulk" method="post" path="/v1/events/trigger/bulk" -->
 ```php
 declare(strict_types=1);
 

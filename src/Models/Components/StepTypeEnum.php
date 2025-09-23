@@ -20,5 +20,6 @@ enum StepTypeEnum: string
     case Digest = 'digest';
     case Trigger = 'trigger';
     case Delay = 'delay';
+    case Throttle = 'throttle';
     case Custom = 'custom';
 }

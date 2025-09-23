@@ -53,15 +53,6 @@ class ActivityNotificationExecutionDetailResponseDto
     public bool $isTest;
 
     /**
-     * Provider ID of the job
-     *
-     * @var ProvidersIdEnum $providerId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('providerId')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ProvidersIdEnum')]
-    public ProvidersIdEnum $providerId;
-
-    /**
      * Source of the execution detail
      *
      * @var ExecutionDetailsSourceEnum $source
@@ -80,6 +71,16 @@ class ActivityNotificationExecutionDetailResponseDto
     public ?string $createdAt = null;
 
     /**
+     * Provider ID of the job
+     *
+     * @var ?ProvidersIdEnum $providerId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('providerId')]
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ProvidersIdEnum|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?ProvidersIdEnum $providerId = null;
+
+    /**
      * Raw data of the execution
      *
      * @var ?string $raw
@@ -94,22 +95,22 @@ class ActivityNotificationExecutionDetailResponseDto
      * @param  string  $detail
      * @param  bool  $isRetry
      * @param  bool  $isTest
-     * @param  ProvidersIdEnum  $providerId
      * @param  ExecutionDetailsSourceEnum  $source
      * @param  ?string  $createdAt
+     * @param  ?ProvidersIdEnum  $providerId
      * @param  ?string  $raw
      * @phpstan-pure
      */
-    public function __construct(string $id, ExecutionDetailsStatusEnum $status, string $detail, bool $isRetry, bool $isTest, ProvidersIdEnum $providerId, ExecutionDetailsSourceEnum $source, ?string $createdAt = null, ?string $raw = null)
+    public function __construct(string $id, ExecutionDetailsStatusEnum $status, string $detail, bool $isRetry, bool $isTest, ExecutionDetailsSourceEnum $source, ?string $createdAt = null, ?ProvidersIdEnum $providerId = null, ?string $raw = null)
     {
         $this->id = $id;
         $this->status = $status;
         $this->detail = $detail;
         $this->isRetry = $isRetry;
         $this->isTest = $isTest;
-        $this->providerId = $providerId;
         $this->source = $source;
         $this->createdAt = $createdAt;
+        $this->providerId = $providerId;
         $this->raw = $raw;
     }
 }

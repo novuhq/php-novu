@@ -13,6 +13,7 @@ Retrieve unseen in-app (inbox) notifications count for a subscriber by its uniqu
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="SubscribersV1Controller_getUnseenCount" method="get" path="/v1/subscribers/{subscriberId}/notifications/unseen" -->
 ```php
 declare(strict_types=1);
 

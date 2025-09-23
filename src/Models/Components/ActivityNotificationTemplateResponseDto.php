@@ -38,7 +38,7 @@ class ActivityNotificationTemplateResponseDto
     public ?string $id = null;
 
     /**
-     * Origin of the workflow
+     * Origin of the layout
      *
      * @var ?ResourceOriginEnum $origin
      */

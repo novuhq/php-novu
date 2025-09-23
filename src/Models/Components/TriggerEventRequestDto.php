@@ -52,7 +52,9 @@ class TriggerEventRequestDto
     public ?Overrides $overrides = null;
 
     /**
-     * A unique identifier for this transaction, we will generate a UUID if not provided.
+     * A unique identifier for deduplication. If the same **transactionId** is sent again, 
+     *
+     *       the trigger is ignored. Useful to prevent duplicate notifications. The retention period depends on your billing tier.
      *
      * @var ?string $transactionId
      */

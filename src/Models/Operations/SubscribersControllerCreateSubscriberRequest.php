@@ -20,6 +20,14 @@ class SubscribersControllerCreateSubscriberRequest
     public Components\CreateSubscriberRequestDto $createSubscriberRequestDto;
 
     /**
+     * If true, the request will fail if a subscriber with the same subscriberId already exists
+     *
+     * @var ?bool $failIfExists
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=failIfExists')]
+    public ?bool $failIfExists = null;
+
+    /**
      * A header for idempotency purposes
      *
      * @var ?string $idempotencyKey
@@ -29,12 +37,14 @@ class SubscribersControllerCreateSubscriberRequest
 
     /**
      * @param  Components\CreateSubscriberRequestDto  $createSubscriberRequestDto
+     * @param  ?bool  $failIfExists
      * @param  ?string  $idempotencyKey
      * @phpstan-pure
      */
-    public function __construct(Components\CreateSubscriberRequestDto $createSubscriberRequestDto, ?string $idempotencyKey = null)
+    public function __construct(Components\CreateSubscriberRequestDto $createSubscriberRequestDto, ?bool $failIfExists = null, ?string $idempotencyKey = null)
     {
         $this->createSubscriberRequestDto = $createSubscriberRequestDto;
+        $this->failIfExists = $failIfExists;
         $this->idempotencyKey = $idempotencyKey;
     }
 }

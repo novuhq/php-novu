@@ -20,6 +20,14 @@ class TopicsControllerUpsertTopicRequest
     public Components\CreateUpdateTopicRequestDto $createUpdateTopicRequestDto;
 
     /**
+     * If true, the request will fail if a topic with the same key already exists
+     *
+     * @var ?bool $failIfExists
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=failIfExists')]
+    public ?bool $failIfExists = null;
+
+    /**
      * A header for idempotency purposes
      *
      * @var ?string $idempotencyKey
@@ -29,12 +37,14 @@ class TopicsControllerUpsertTopicRequest
 
     /**
      * @param  Components\CreateUpdateTopicRequestDto  $createUpdateTopicRequestDto
+     * @param  ?bool  $failIfExists
      * @param  ?string  $idempotencyKey
      * @phpstan-pure
      */
-    public function __construct(Components\CreateUpdateTopicRequestDto $createUpdateTopicRequestDto, ?string $idempotencyKey = null)
+    public function __construct(Components\CreateUpdateTopicRequestDto $createUpdateTopicRequestDto, ?bool $failIfExists = null, ?string $idempotencyKey = null)
     {
         $this->createUpdateTopicRequestDto = $createUpdateTopicRequestDto;
+        $this->failIfExists = $failIfExists;
         $this->idempotencyKey = $idempotencyKey;
     }
 }

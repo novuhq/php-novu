@@ -14,11 +14,11 @@ class StepContentIssueDto
     /**
      * Type of step content issue
      *
-     * @var StepContentIssueEnum $issueType
+     * @var ContentIssueEnum $issueType
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('issueType')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\StepContentIssueEnum')]
-    public StepContentIssueEnum $issueType;
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ContentIssueEnum')]
+    public ContentIssueEnum $issueType;
 
     /**
      * Detailed message describing the issue
@@ -38,12 +38,12 @@ class StepContentIssueDto
     public ?string $variableName = null;
 
     /**
-     * @param  StepContentIssueEnum  $issueType
+     * @param  ContentIssueEnum  $issueType
      * @param  string  $message
      * @param  ?string  $variableName
      * @phpstan-pure
      */
-    public function __construct(StepContentIssueEnum $issueType, string $message, ?string $variableName = null)
+    public function __construct(ContentIssueEnum $issueType, string $message, ?string $variableName = null)
     {
         $this->issueType = $issueType;
         $this->message = $message;

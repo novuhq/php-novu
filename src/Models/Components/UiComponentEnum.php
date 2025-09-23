@@ -32,6 +32,13 @@ enum UiComponentEnum: string
     case DelayType = 'DELAY_TYPE';
     case DelayAmount = 'DELAY_AMOUNT';
     case DelayUnit = 'DELAY_UNIT';
+    case ThrottleType = 'THROTTLE_TYPE';
+    case ThrottleWindow = 'THROTTLE_WINDOW';
+    case ThrottleUnit = 'THROTTLE_UNIT';
+    case ThrottleDynamicKey = 'THROTTLE_DYNAMIC_KEY';
+    case ThrottleThreshold = 'THROTTLE_THRESHOLD';
+    case ThrottleKey = 'THROTTLE_KEY';
+    case ExtendToSchedule = 'EXTEND_TO_SCHEDULE';
     case SmsBody = 'SMS_BODY';
     case ChatBody = 'CHAT_BODY';
     case PushBody = 'PUSH_BODY';

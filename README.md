@@ -280,7 +280,6 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use novu;
-use novu\Models\Components;
 
 $sdk = novu\Novu::builder()
     ->setSecurity(
@@ -288,23 +287,15 @@ $sdk = novu\Novu::builder()
     )
     ->build();
 
-$triggerEventRequestDto = new Components\TriggerEventRequestDto(
-    workflowId: 'workflow_identifier',
-    payload: [
-        'comment_id' => 'string',
-        'post' => [
-            'text' => 'string',
-        ],
-    ],
-    overrides: new Components\Overrides(),
-    to: 'SUBSCRIBER_ID',
+
+
+$response = $sdk->inboundWebhooksControllerHandleWebhook(
+    environmentId: '<id>',
+    integrationId: '<id>'
+
 );
 
-$response = $sdk->trigger(
-    triggerEventRequestDto: $triggerEventRequestDto
-);
-
-if ($response->triggerEventResponseDto !== null) {
+if ($response->statusCode === 200) {
     // handle response
 }
 ```
@@ -318,6 +309,7 @@ if ($response->triggerEventResponseDto !== null) {
 
 ### [environments](docs/sdks/environments/README.md)
 
+* [getTags](docs/sdks/environments/README.md#gettags) - Get environment tags
 * [create](docs/sdks/environments/README.md#create) - Create an environment
 * [list](docs/sdks/environments/README.md#list) - List all environments
 * [update](docs/sdks/environments/README.md#update) - Update an environment
@@ -329,8 +321,20 @@ if ($response->triggerEventResponseDto !== null) {
 * [create](docs/sdks/integrations/README.md#create) - Create an integration
 * [update](docs/sdks/integrations/README.md#update) - Update an integration
 * [delete](docs/sdks/integrations/README.md#delete) - Delete an integration
+* [integrationsControllerAutoConfigureIntegration](docs/sdks/integrations/README.md#integrationscontrollerautoconfigureintegration) - Auto-configure an integration for inbound webhooks
 * [setAsPrimary](docs/sdks/integrations/README.md#setasprimary) - Update integration as primary
 * [listActive](docs/sdks/integrations/README.md#listactive) - List active integrations
+
+### [layouts](docs/sdks/layouts/README.md)
+
+* [create](docs/sdks/layouts/README.md#create) - Create a layout
+* [list](docs/sdks/layouts/README.md#list) - List all layouts
+* [update](docs/sdks/layouts/README.md#update) - Update a layout
+* [retrieve](docs/sdks/layouts/README.md#retrieve) - Retrieve a layout
+* [delete](docs/sdks/layouts/README.md#delete) - Delete a layout
+* [duplicate](docs/sdks/layouts/README.md#duplicate) - Duplicate a layout
+* [generatePreview](docs/sdks/layouts/README.md#generatepreview) - Generate layout preview
+* [usage](docs/sdks/layouts/README.md#usage) - Get layout usage
 
 ### [messages](docs/sdks/messages/README.md)
 
@@ -345,6 +349,7 @@ if ($response->triggerEventResponseDto !== null) {
 
 ### [Novu SDK](docs/sdks/novu/README.md)
 
+* [inboundWebhooksControllerHandleWebhook](docs/sdks/novu/README.md#inboundwebhookscontrollerhandlewebhook)
 * [trigger](docs/sdks/novu/README.md#trigger) - Trigger event
 * [cancel](docs/sdks/novu/README.md#cancel) - Cancel triggered event
 * [triggerBroadcast](docs/sdks/novu/README.md#triggerbroadcast) - Broadcast event to all
@@ -359,7 +364,7 @@ if ($response->triggerEventResponseDto !== null) {
 * [delete](docs/sdks/subscribers/README.md#delete) - Delete a subscriber
 * [createBulk](docs/sdks/subscribers/README.md#createbulk) - Bulk create subscribers
 * [updatePreferences](docs/sdks/subscribers/README.md#updatepreferences) - Update subscriber preferences
-* [updateCredentials](docs/sdks/subscribers/README.md#updatecredentials) - Update provider credentials
+* [updateCredentials](docs/sdks/subscribers/README.md#updatecredentials) - Upsert provider credentials
 * [updateOnlineStatus](docs/sdks/subscribers/README.md#updateonlinestatus) - Update subscriber online status
 
 #### [subscribers->messages](docs/sdks/novumessages/README.md)
@@ -371,13 +376,17 @@ if ($response->triggerEventResponseDto !== null) {
 
 * [getFeed](docs/sdks/novunotifications/README.md#getfeed) - Retrieve subscriber notifications
 
+#### [subscribers->preferences](docs/sdks/preferences/README.md)
+
+* [bulkUpdate](docs/sdks/preferences/README.md#bulkupdate) - Bulk update subscriber preferences
+
 #### [subscribers->topics](docs/sdks/novutopics/README.md)
 
 * [list](docs/sdks/novutopics/README.md#list) - Retrieve subscriber subscriptions
 
 ### [subscribersCredentials](docs/sdks/subscriberscredentials/README.md)
 
-* [append](docs/sdks/subscriberscredentials/README.md#append) - Upsert provider credentials
+* [append](docs/sdks/subscriberscredentials/README.md#append) - Update provider credentials
 * [deleteProvider](docs/sdks/subscriberscredentials/README.md#deleteprovider) - Delete provider credentials
 
 ### [subscribersMessages](docs/sdks/subscribersmessages/README.md)
@@ -410,6 +419,24 @@ if ($response->triggerEventResponseDto !== null) {
 
 * [check](docs/sdks/topicssubscribers/README.md#check) - Check topic subscriber
 
+### [translations](docs/sdks/translations/README.md)
+
+* [create](docs/sdks/translations/README.md#create) - Create a translation
+* [retrieve](docs/sdks/translations/README.md#retrieve) - Retrieve a translation
+* [delete](docs/sdks/translations/README.md#delete) - Delete a translation
+* [upload](docs/sdks/translations/README.md#upload) - Upload translation files
+
+#### [translations->groups](docs/sdks/groups/README.md)
+
+* [delete](docs/sdks/groups/README.md#delete) - Delete a translation group
+* [retrieve](docs/sdks/groups/README.md#retrieve) - Retrieve a translation group
+
+#### [translations->master](docs/sdks/master/README.md)
+
+* [retrieve](docs/sdks/master/README.md#retrieve) - Retrieve master translations JSON
+* [import](docs/sdks/master/README.md#import) - Import master translations JSON
+* [upload](docs/sdks/master/README.md#upload) - Upload master translations JSON file
+
 ### [workflows](docs/sdks/workflows/README.md)
 
 * [create](docs/sdks/workflows/README.md#create) - Create a workflow
@@ -439,7 +466,6 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use novu;
-use novu\Models\Components;
 use novu\Utils\Retry;
 
 $sdk = novu\Novu::builder()
@@ -448,20 +474,11 @@ $sdk = novu\Novu::builder()
     )
     ->build();
 
-$triggerEventRequestDto = new Components\TriggerEventRequestDto(
-    workflowId: 'workflow_identifier',
-    payload: [
-        'comment_id' => 'string',
-        'post' => [
-            'text' => 'string',
-        ],
-    ],
-    overrides: new Components\Overrides(),
-    to: 'SUBSCRIBER_ID',
-);
 
-$response = $sdk->trigger(
-    triggerEventRequestDto: $triggerEventRequestDto,
+
+$response = $sdk->inboundWebhooksControllerHandleWebhook(
+    environmentId: '<id>',
+    integrationId: '<id>',
     options: Utils\Options->builder()->setRetryConfig(
         new Retry\RetryConfigBackoff(
             initialInterval: 1,
@@ -473,7 +490,7 @@ $response = $sdk->trigger(
 
 );
 
-if ($response->triggerEventResponseDto !== null) {
+if ($response->statusCode === 200) {
     // handle response
 }
 ```
@@ -485,7 +502,6 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use novu;
-use novu\Models\Components;
 use novu\Utils\Retry;
 
 $sdk = novu\Novu::builder()
@@ -503,23 +519,15 @@ $sdk = novu\Novu::builder()
     )
     ->build();
 
-$triggerEventRequestDto = new Components\TriggerEventRequestDto(
-    workflowId: 'workflow_identifier',
-    payload: [
-        'comment_id' => 'string',
-        'post' => [
-            'text' => 'string',
-        ],
-    ],
-    overrides: new Components\Overrides(),
-    to: 'SUBSCRIBER_ID',
+
+
+$response = $sdk->inboundWebhooksControllerHandleWebhook(
+    environmentId: '<id>',
+    integrationId: '<id>'
+
 );
 
-$response = $sdk->trigger(
-    triggerEventRequestDto: $triggerEventRequestDto
-);
-
-if ($response->triggerEventResponseDto !== null) {
+if ($response->statusCode === 200) {
     // handle response
 }
 ```
@@ -629,7 +637,6 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use novu;
-use novu\Models\Components;
 
 $sdk = novu\Novu::builder()
     ->setServerIndex(1)
@@ -638,23 +645,15 @@ $sdk = novu\Novu::builder()
     )
     ->build();
 
-$triggerEventRequestDto = new Components\TriggerEventRequestDto(
-    workflowId: 'workflow_identifier',
-    payload: [
-        'comment_id' => 'string',
-        'post' => [
-            'text' => 'string',
-        ],
-    ],
-    overrides: new Components\Overrides(),
-    to: 'SUBSCRIBER_ID',
+
+
+$response = $sdk->inboundWebhooksControllerHandleWebhook(
+    environmentId: '<id>',
+    integrationId: '<id>'
+
 );
 
-$response = $sdk->trigger(
-    triggerEventRequestDto: $triggerEventRequestDto
-);
-
-if ($response->triggerEventResponseDto !== null) {
+if ($response->statusCode === 200) {
     // handle response
 }
 ```
@@ -668,7 +667,6 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use novu;
-use novu\Models\Components;
 
 $sdk = novu\Novu::builder()
     ->setServerURL('https://eu.api.novu.co')
@@ -677,23 +675,15 @@ $sdk = novu\Novu::builder()
     )
     ->build();
 
-$triggerEventRequestDto = new Components\TriggerEventRequestDto(
-    workflowId: 'workflow_identifier',
-    payload: [
-        'comment_id' => 'string',
-        'post' => [
-            'text' => 'string',
-        ],
-    ],
-    overrides: new Components\Overrides(),
-    to: 'SUBSCRIBER_ID',
+
+
+$response = $sdk->inboundWebhooksControllerHandleWebhook(
+    environmentId: '<id>',
+    integrationId: '<id>'
+
 );
 
-$response = $sdk->trigger(
-    triggerEventRequestDto: $triggerEventRequestDto
-);
-
-if ($response->triggerEventResponseDto !== null) {
+if ($response->statusCode === 200) {
     // handle response
 }
 ```

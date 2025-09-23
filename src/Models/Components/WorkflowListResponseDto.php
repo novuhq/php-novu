@@ -69,7 +69,7 @@ class WorkflowListResponseDto
     public WorkflowStatusEnum $status;
 
     /**
-     * Origin of the workflow
+     * Origin of the layout
      *
      * @var ResourceOriginEnum $origin
      */
@@ -87,6 +87,15 @@ class WorkflowListResponseDto
     public array $stepTypeOverviews;
 
     /**
+     * Steps of the workflow
+     *
+     * @var array<StepListResponseDto> $steps
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('steps')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\StepListResponseDto>')]
+    public array $steps;
+
+    /**
      * Tags associated with the workflow
      *
      * @var ?array<string> $tags
@@ -95,6 +104,44 @@ class WorkflowListResponseDto
     #[\Speakeasy\Serializer\Annotation\Type('array<string>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $tags = null;
+
+    /**
+     * Is translation enabled for the workflow
+     *
+     * @var ?bool $isTranslationEnabled
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('isTranslationEnabled')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?bool $isTranslationEnabled = null;
+
+    /**
+     * User who last updated the workflow
+     *
+     * @var ?WorkflowListResponseDtoUpdatedBy $updatedBy
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('updatedBy')]
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\WorkflowListResponseDtoUpdatedBy|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?WorkflowListResponseDtoUpdatedBy $updatedBy = null;
+
+    /**
+     * Timestamp of the last workflow publication
+     *
+     * @var ?string $lastPublishedAt
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('lastPublishedAt')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $lastPublishedAt = null;
+
+    /**
+     * User who last published the workflow
+     *
+     * @var ?WorkflowListResponseDtoLastPublishedBy $lastPublishedBy
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('lastPublishedBy')]
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\WorkflowListResponseDtoLastPublishedBy|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?WorkflowListResponseDtoLastPublishedBy $lastPublishedBy = null;
 
     /**
      * Timestamp of the last workflow trigger
@@ -115,11 +162,16 @@ class WorkflowListResponseDto
      * @param  WorkflowStatusEnum  $status
      * @param  ResourceOriginEnum  $origin
      * @param  array<StepTypeEnum>  $stepTypeOverviews
+     * @param  array<StepListResponseDto>  $steps
      * @param  ?array<string>  $tags
+     * @param  ?bool  $isTranslationEnabled
+     * @param  ?WorkflowListResponseDtoUpdatedBy  $updatedBy
+     * @param  ?string  $lastPublishedAt
+     * @param  ?WorkflowListResponseDtoLastPublishedBy  $lastPublishedBy
      * @param  ?string  $lastTriggeredAt
      * @phpstan-pure
      */
-    public function __construct(string $name, string $updatedAt, string $createdAt, string $id, string $workflowId, string $slug, WorkflowStatusEnum $status, ResourceOriginEnum $origin, array $stepTypeOverviews, ?array $tags = null, ?string $lastTriggeredAt = null)
+    public function __construct(string $name, string $updatedAt, string $createdAt, string $id, string $workflowId, string $slug, WorkflowStatusEnum $status, ResourceOriginEnum $origin, array $stepTypeOverviews, array $steps, ?array $tags = null, ?bool $isTranslationEnabled = null, ?WorkflowListResponseDtoUpdatedBy $updatedBy = null, ?string $lastPublishedAt = null, ?WorkflowListResponseDtoLastPublishedBy $lastPublishedBy = null, ?string $lastTriggeredAt = null)
     {
         $this->name = $name;
         $this->updatedAt = $updatedAt;
@@ -130,7 +182,12 @@ class WorkflowListResponseDto
         $this->status = $status;
         $this->origin = $origin;
         $this->stepTypeOverviews = $stepTypeOverviews;
+        $this->steps = $steps;
         $this->tags = $tags;
+        $this->isTranslationEnabled = $isTranslationEnabled;
+        $this->updatedBy = $updatedBy;
+        $this->lastPublishedAt = $lastPublishedAt;
+        $this->lastPublishedBy = $lastPublishedBy;
         $this->lastTriggeredAt = $lastTriggeredAt;
     }
 }

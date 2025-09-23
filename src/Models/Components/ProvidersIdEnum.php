@@ -64,6 +64,9 @@ enum ProvidersIdEnum: string
     case EazySms = 'eazy-sms';
     case Mobishastra = 'mobishastra';
     case AfroMessage = 'afro-message';
+    case Unifonic = 'unifonic';
+    case Smsmode = 'smsmode';
+    case Imedia = 'imedia';
     case Fcm = 'fcm';
     case Apns = 'apns';
     case Expo = 'expo';
@@ -83,4 +86,5 @@ enum ProvidersIdEnum: string
     case RocketChat = 'rocket-chat';
     case WhatsappBusiness = 'whatsapp-business';
     case ChatWebhook = 'chat-webhook';
+    case NovuSlack = 'novu-slack';
 }

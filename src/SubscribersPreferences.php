@@ -53,11 +53,12 @@ class SubscribersPreferences
      *     This API returns all five channels preferences for all workflows and global preferences.
      *
      * @param  string  $subscriberId
+     * @param  ?Operations\Criticality  $criticality
      * @param  ?string  $idempotencyKey
      * @return Operations\SubscribersControllerGetSubscriberPreferencesResponse
      * @throws \novu\Models\Errors\APIException
      */
-    public function list(string $subscriberId, ?string $idempotencyKey = null, ?Options $options = null): Operations\SubscribersControllerGetSubscriberPreferencesResponse
+    public function list(string $subscriberId, ?Operations\Criticality $criticality = null, ?string $idempotencyKey = null, ?Options $options = null): Operations\SubscribersControllerGetSubscriberPreferencesResponse
     {
         $retryConfig = null;
         if ($options) {
@@ -88,12 +89,15 @@ class SubscribersPreferences
         }
         $request = new Operations\SubscribersControllerGetSubscriberPreferencesRequest(
             subscriberId: $subscriberId,
+            criticality: $criticality,
             idempotencyKey: $idempotencyKey,
         );
         $baseUrl = $this->sdkConfiguration->getTemplatedServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/v2/subscribers/{subscriberId}/preferences', Operations\SubscribersControllerGetSubscriberPreferencesRequest::class, $request);
         $urlOverride = null;
         $httpOptions = ['http_errors' => false];
+
+        $qp = Utils\Utils::getQueryParams(Operations\SubscribersControllerGetSubscriberPreferencesRequest::class, $request, $urlOverride);
         $httpOptions = array_merge_recursive($httpOptions, Utils\Utils::getHeaders($request));
         if (! array_key_exists('headers', $httpOptions)) {
             $httpOptions['headers'] = [];
@@ -103,6 +107,7 @@ class SubscribersPreferences
         $httpRequest = new \GuzzleHttp\Psr7\Request('GET', $url);
         $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'SubscribersController_getSubscriberPreferences', [], $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
+        $httpOptions['query'] = Utils\QueryParameters::standardizeQueryParams($httpRequest, $qp);
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
         $httpRequest = Utils\Utils::removeHeaders($httpRequest);
         try {

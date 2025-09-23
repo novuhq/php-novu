@@ -13,6 +13,7 @@ Retrieve subscriber in-app (inbox) notifications by its unique key identifier **
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="SubscribersV1Controller_getNotificationsFeed" method="get" path="/v1/subscribers/{subscriberId}/notifications/feed" -->
 ```php
 declare(strict_types=1);
 

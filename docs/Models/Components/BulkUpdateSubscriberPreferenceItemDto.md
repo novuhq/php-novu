@@ -1,0 +1,9 @@
+# BulkUpdateSubscriberPreferenceItemDto
+
+
+## Fields
+
+| Field                                                                                          | Type                                                                                           | Required                                                                                       | Description                                                                                    |
+| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `channels`                                                                                     | [Components\PatchPreferenceChannelsDto](../../Models/Components/PatchPreferenceChannelsDto.md) | :heavy_check_mark:                                                                             | Channel-specific preference settings                                                           |
+| `workflowId`                                                                                   | *string*                                                                                       | :heavy_check_mark:                                                                             | Workflow internal _id, identifier or slug                                                      |

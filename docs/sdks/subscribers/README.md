@@ -12,7 +12,7 @@
 * [delete](#delete) - Delete a subscriber
 * [createBulk](#createbulk) - Bulk create subscribers
 * [updatePreferences](#updatepreferences) - Update subscriber preferences
-* [updateCredentials](#updatecredentials) - Update provider credentials
+* [updateCredentials](#updatecredentials) - Upsert provider credentials
 * [updateOnlineStatus](#updateonlinestatus) - Update subscriber online status
 
 ## search
@@ -22,6 +22,7 @@ Search subscribers by their **email**, **phone**, **subscriberId** and **name**.
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="SubscribersController_searchSubscribers" method="get" path="/v2/subscribers" -->
 ```php
 declare(strict_types=1);
 
@@ -73,6 +74,7 @@ Create a subscriber with the subscriber attributes.
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="SubscribersController_createSubscriber" method="post" path="/v2/subscribers" -->
 ```php
 declare(strict_types=1);
 
@@ -105,6 +107,7 @@ if ($response->subscriberResponseDto !== null) {
 | Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
 | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
 | `createSubscriberRequestDto`                                                                   | [Components\CreateSubscriberRequestDto](../../Models/Components/CreateSubscriberRequestDto.md) | :heavy_check_mark:                                                                             | N/A                                                                                            |
+| `failIfExists`                                                                                 | *?bool*                                                                                        | :heavy_minus_sign:                                                                             | If true, the request will fail if a subscriber with the same subscriberId already exists       |
 | `idempotencyKey`                                                                               | *?string*                                                                                      | :heavy_minus_sign:                                                                             | A header for idempotency purposes                                                              |
 
 ### Response
@@ -113,13 +116,14 @@ if ($response->subscriberResponseDto !== null) {
 
 ### Errors
 
-| Error Type                             | Status Code                            | Content Type                           |
-| -------------------------------------- | -------------------------------------- | -------------------------------------- |
-| Errors\ErrorDto                        | 414                                    | application/json                       |
-| Errors\ErrorDto                        | 400, 401, 403, 404, 405, 409, 413, 415 | application/json                       |
-| Errors\ValidationErrorDto              | 422                                    | application/json                       |
-| Errors\ErrorDto                        | 500                                    | application/json                       |
-| Errors\APIException                    | 4XX, 5XX                               | \*/\*                                  |
+| Error Type                        | Status Code                       | Content Type                      |
+| --------------------------------- | --------------------------------- | --------------------------------- |
+| Errors\SubscriberResponseDto      | 409                               | application/json                  |
+| Errors\ErrorDto                   | 414                               | application/json                  |
+| Errors\ErrorDto                   | 400, 401, 403, 404, 405, 413, 415 | application/json                  |
+| Errors\ValidationErrorDto         | 422                               | application/json                  |
+| Errors\ErrorDto                   | 500                               | application/json                  |
+| Errors\APIException               | 4XX, 5XX                          | \*/\*                             |
 
 ## get
 
@@ -128,6 +132,7 @@ Retrieve a subscriber by its unique key identifier **subscriberId**.
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="SubscribersController_getSubscriber" method="get" path="/v2/subscribers/{subscriberId}" -->
 ```php
 declare(strict_types=1);
 
@@ -180,6 +185,7 @@ Update a subscriber by its unique key identifier **subscriberId**.
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="SubscribersController_patchSubscriber" method="patch" path="/v2/subscribers/{subscriberId}" -->
 ```php
 declare(strict_types=1);
 
@@ -236,6 +242,7 @@ Deletes a subscriber entity from the Novu platform along with associated message
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="SubscribersController_removeSubscriber" method="delete" path="/v2/subscribers/{subscriberId}" -->
 ```php
 declare(strict_types=1);
 
@@ -289,6 +296,7 @@ if ($response->removeSubscriberResponseDto !== null) {
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="SubscribersV1Controller_bulkCreateSubscribers" method="post" path="/v1/subscribers/bulk" -->
 ```php
 declare(strict_types=1);
 
@@ -349,6 +357,7 @@ Update subscriber preferences by its unique key identifier **subscriberId**.
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="SubscribersController_updateSubscriberPreferences" method="patch" path="/v2/subscribers/{subscriberId}/preferences" -->
 ```php
 declare(strict_types=1);
 
@@ -364,7 +373,74 @@ $sdk = novu\Novu::builder()
     ->build();
 
 $patchSubscriberPreferencesDto = new Components\PatchSubscriberPreferencesDto(
-    channels: new Components\PatchPreferenceChannelsDto(),
+    schedule: new Components\ScheduleDto(
+        isEnabled: true,
+        weeklySchedule: new Components\WeeklySchedule(
+            monday: new Components\Monday(
+                isEnabled: true,
+                hours: [
+                    new Components\TimeRangeDto(
+                        start: '09:00 AM',
+                        end: '05:00 PM',
+                    ),
+                ],
+            ),
+            tuesday: new Components\Tuesday(
+                isEnabled: true,
+                hours: [
+                    new Components\TimeRangeDto(
+                        start: '09:00 AM',
+                        end: '05:00 PM',
+                    ),
+                ],
+            ),
+            wednesday: new Components\Wednesday(
+                isEnabled: true,
+                hours: [
+                    new Components\TimeRangeDto(
+                        start: '09:00 AM',
+                        end: '05:00 PM',
+                    ),
+                ],
+            ),
+            thursday: new Components\Thursday(
+                isEnabled: true,
+                hours: [
+                    new Components\TimeRangeDto(
+                        start: '09:00 AM',
+                        end: '05:00 PM',
+                    ),
+                ],
+            ),
+            friday: new Components\Friday(
+                isEnabled: true,
+                hours: [
+                    new Components\TimeRangeDto(
+                        start: '09:00 AM',
+                        end: '05:00 PM',
+                    ),
+                ],
+            ),
+            saturday: new Components\Saturday(
+                isEnabled: true,
+                hours: [
+                    new Components\TimeRangeDto(
+                        start: '09:00 AM',
+                        end: '05:00 PM',
+                    ),
+                ],
+            ),
+            sunday: new Components\Sunday(
+                isEnabled: true,
+                hours: [
+                    new Components\TimeRangeDto(
+                        start: '09:00 AM',
+                        end: '05:00 PM',
+                    ),
+                ],
+            ),
+        ),
+    ),
 );
 
 $response = $sdk->subscribers->updatePreferences(
@@ -402,11 +478,12 @@ if ($response->getSubscriberPreferencesDto !== null) {
 
 ## updateCredentials
 
-Update credentials for a provider such as slack and push tokens. 
-      **providerId** is required field. This API appends the **deviceTokens** to the existing ones.
+Upsert credentials for a provider such as slack and push tokens. 
+      **providerId** is required field. This API creates **deviceTokens** or appends to the existing ones.
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="SubscribersV1Controller_updateSubscriberChannel" method="put" path="/v1/subscribers/{subscriberId}/credentials" -->
 ```php
 declare(strict_types=1);
 
@@ -478,6 +555,7 @@ Update the subscriber online status by its unique key identifier **subscriberId*
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="SubscribersV1Controller_updateSubscriberOnlineFlag" method="patch" path="/v1/subscribers/{subscriberId}/online-status" -->
 ```php
 declare(strict_types=1);
 
