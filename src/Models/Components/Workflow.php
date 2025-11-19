@@ -9,35 +9,88 @@ declare(strict_types=1);
 namespace novu\Models\Components;
 
 
-/** Workflow - Workflow-specific preferences */
+/** Workflow - Workflow information if this is a template-level preference */
 class Workflow
 {
     /**
-     * A preference for the workflow. The values specified here will be used if no preference is specified for a channel.
+     * Unique identifier of the workflow
      *
-     * @var WorkflowPreferenceDto $all
+     * @var string $id
      */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('all')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\WorkflowPreferenceDto')]
-    public WorkflowPreferenceDto $all;
+    #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
+    public string $id;
 
     /**
-     * Preferences for different communication channels
+     * Workflow identifier used for triggering
      *
-     * @var array<string, ChannelPreferenceDto> $channels
+     * @var string $identifier
      */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('channels')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<string, \novu\Models\Components\ChannelPreferenceDto>')]
-    public array $channels;
+    #[\Speakeasy\Serializer\Annotation\SerializedName('identifier')]
+    public string $identifier;
 
     /**
-     * @param  WorkflowPreferenceDto  $all
-     * @param  array<string, ChannelPreferenceDto>  $channels
+     * Human-readable name of the workflow
+     *
+     * @var string $name
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('name')]
+    public string $name;
+
+    /**
+     * Whether this workflow is marked as critical
+     *
+     * @var bool $critical
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('critical')]
+    public bool $critical;
+
+    /**
+     * Severity of the workflow
+     *
+     * @var SeverityLevelEnum $severity
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('severity')]
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\SeverityLevelEnum')]
+    public SeverityLevelEnum $severity;
+
+    /**
+     * Tags associated with the workflow
+     *
+     * @var ?array<string> $tags
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('tags')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $tags = null;
+
+    /**
+     * Custom data associated with the workflow
+     *
+     * @var ?GetPreferencesResponseDtoData $data
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\GetPreferencesResponseDtoData|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?GetPreferencesResponseDtoData $data = null;
+
+    /**
+     * @param  string  $id
+     * @param  string  $identifier
+     * @param  string  $name
+     * @param  bool  $critical
+     * @param  SeverityLevelEnum  $severity
+     * @param  ?array<string>  $tags
+     * @param  ?GetPreferencesResponseDtoData  $data
      * @phpstan-pure
      */
-    public function __construct(WorkflowPreferenceDto $all, array $channels)
+    public function __construct(string $id, string $identifier, string $name, bool $critical, SeverityLevelEnum $severity, ?array $tags = null, ?GetPreferencesResponseDtoData $data = null)
     {
-        $this->all = $all;
-        $this->channels = $channels;
+        $this->id = $id;
+        $this->identifier = $identifier;
+        $this->name = $name;
+        $this->critical = $critical;
+        $this->severity = $severity;
+        $this->tags = $tags;
+        $this->data = $data;
     }
 }

@@ -104,7 +104,7 @@ class SubscribersCredentials
         $httpOptions['headers']['Accept'] = 'application/json';
         $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('DELETE', $url);
-        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'SubscribersV1Controller_deleteSubscriberCredentials', [], $this->sdkConfiguration->securitySource);
+        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'SubscribersV1Controller_deleteSubscriberCredentials', null, $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
         $httpRequest = Utils\Utils::removeHeaders($httpRequest);
@@ -189,8 +189,8 @@ class SubscribersCredentials
     /**
      * Upsert provider credentials
      *
-     * Update credentials for a provider such as **slack** and **FCM**. 
-     *       **providerId** is required field. This API replaces the existing deviceTokens with the provided ones.
+     * Upsert credentials for a provider such as **slack** and **FCM**. 
+     *       **providerId** is required field. This API creates **deviceTokens** or appends to the existing ones.
      *
      * @param  Components\UpdateSubscriberChannelRequestDto  $updateSubscriberChannelRequestDto
      * @param  string  $subscriberId
@@ -248,7 +248,7 @@ class SubscribersCredentials
         $httpOptions['headers']['Accept'] = 'application/json';
         $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('PATCH', $url);
-        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'SubscribersV1Controller_modifySubscriberChannel', [], $this->sdkConfiguration->securitySource);
+        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'SubscribersV1Controller_modifySubscriberChannel', null, $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
         $httpRequest = Utils\Utils::removeHeaders($httpRequest);

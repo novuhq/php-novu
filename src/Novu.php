@@ -30,6 +30,24 @@ class Novu
         'https://eu.api.novu.co',
     ];
 
+    public Contexts $contexts;
+
+    /**
+     * Environments allow you to manage different stages of your application development lifecycle. Each environment has its own set of API keys and configurations, enabling you to separate development, staging, and production workflows.
+     *
+     * @var Environments $$environments
+     */
+    public Environments $environments;
+
+    public Activity $activity;
+
+    /**
+     * Layouts are reusable wrappers for your email notifications.
+     *
+     * @var Layouts $$layouts
+     */
+    public Layouts $layouts;
+
     public Subscribers $subscribers;
 
     public SubscribersPreferences $subscribersPreferences;
@@ -42,18 +60,18 @@ class Novu
     public Topics $topics;
 
     /**
+     * Used to localize your notifications to different languages.
+     *
+     * @var Translations $$translations
+     */
+    public Translations $translations;
+
+    /**
      * All notifications are sent via a workflow. Each workflow acts as a container for the logic and blueprint that are associated with a type of notification in your system.
      *
      * @var Workflows $$workflows
      */
     public Workflows $workflows;
-
-    /**
-     * Environments allow you to manage different stages of your application development lifecycle. Each environment has its own set of API keys and configurations, enabling you to separate development, staging, and production workflows.
-     *
-     * @var Environments $$environments
-     */
-    public Environments $environments;
 
     /**
      * With the help of the Integration Store, you can easily integrate your favorite delivery provider. During the runtime of the API, the Integrations Store is responsible for storing the configurations of all the providers.
@@ -95,11 +113,15 @@ class Novu
     public function __construct(
         public SDKConfiguration $sdkConfiguration,
     ) {
+        $this->contexts = new Contexts($this->sdkConfiguration);
+        $this->environments = new Environments($this->sdkConfiguration);
+        $this->activity = new Activity($this->sdkConfiguration);
+        $this->layouts = new Layouts($this->sdkConfiguration);
         $this->subscribers = new Subscribers($this->sdkConfiguration);
         $this->subscribersPreferences = new SubscribersPreferences($this->sdkConfiguration);
         $this->topics = new Topics($this->sdkConfiguration);
+        $this->translations = new Translations($this->sdkConfiguration);
         $this->workflows = new Workflows($this->sdkConfiguration);
-        $this->environments = new Environments($this->sdkConfiguration);
         $this->integrations = new Integrations($this->sdkConfiguration);
         $this->messages = new Messages($this->sdkConfiguration);
         $this->notifications = new Notifications($this->sdkConfiguration);
@@ -182,7 +204,7 @@ class Novu
         $httpOptions['headers']['Accept'] = 'application/json';
         $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('POST', $url);
-        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'EventsController_broadcastEventToAll', [], $this->sdkConfiguration->securitySource);
+        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'EventsController_broadcastEventToAll', null, $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
         $httpRequest = Utils\Utils::removeHeaders($httpRequest);
@@ -342,7 +364,7 @@ class Novu
         $httpOptions['headers']['Accept'] = 'application/json';
         $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('DELETE', $url);
-        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'EventsController_cancel', [], $this->sdkConfiguration->securitySource);
+        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'EventsController_cancel', null, $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
         $httpRequest = Utils\Utils::removeHeaders($httpRequest);
@@ -437,11 +459,8 @@ class Novu
     /**
      * Trigger event
      *
-     *
-     *     Trigger event is the main (and only) way to send notifications to subscribers. 
-     *     The trigger identifier is used to match the particular workflow associated with it. 
-     *     Additional information can be passed according the body interface below.
-     *     
+     *     Trigger event is the main (and only) way to send notifications to subscribers. The trigger identifier is used to match the particular workflow associated with it. Additional information can be passed according the body interface below.
+     *     To prevent duplicate triggers, you can optionally pass a **transactionId** in the request body. If the same **transactionId** is used again, the trigger will be ignored. The retention period depends on your billing tier.
      *
      * @param  Components\TriggerEventRequestDto  $triggerEventRequestDto
      * @param  ?string  $idempotencyKey
@@ -497,7 +516,7 @@ class Novu
         $httpOptions['headers']['Accept'] = 'application/json';
         $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('POST', $url);
-        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'EventsController_trigger', [], $this->sdkConfiguration->securitySource);
+        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'EventsController_trigger', null, $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
         $httpRequest = Utils\Utils::removeHeaders($httpRequest);
@@ -662,7 +681,7 @@ class Novu
         $httpOptions['headers']['Accept'] = 'application/json';
         $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('POST', $url);
-        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'EventsController_triggerBulk', [], $this->sdkConfiguration->securitySource);
+        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'EventsController_triggerBulk', null, $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
         $httpRequest = Utils\Utils::removeHeaders($httpRequest);

@@ -22,11 +22,11 @@ class TriggerEventResponseDto
     /**
      * Status of the trigger
      *
-     * @var Status $status
+     * @var TriggerEventResponseDtoStatus $status
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\Status')]
-    public Status $status;
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\TriggerEventResponseDtoStatus')]
+    public TriggerEventResponseDtoStatus $status;
 
     /**
      * In case of an error, this field will contain the error message(s)
@@ -49,12 +49,12 @@ class TriggerEventResponseDto
 
     /**
      * @param  bool  $acknowledged
-     * @param  Status  $status
+     * @param  TriggerEventResponseDtoStatus  $status
      * @param  ?array<string>  $error
      * @param  ?string  $transactionId
      * @phpstan-pure
      */
-    public function __construct(bool $acknowledged, Status $status, ?array $error = null, ?string $transactionId = null)
+    public function __construct(bool $acknowledged, TriggerEventResponseDtoStatus $status, ?array $error = null, ?string $transactionId = null)
     {
         $this->acknowledged = $acknowledged;
         $this->status = $status;

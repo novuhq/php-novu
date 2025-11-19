@@ -13,4 +13,5 @@ namespace novu\Models\Components;
 enum DelayStepResponseDtoType: string
 {
     case Regular = 'regular';
+    case Timed = 'timed';
 }

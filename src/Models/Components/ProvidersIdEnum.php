@@ -64,6 +64,11 @@ enum ProvidersIdEnum: string
     case EazySms = 'eazy-sms';
     case Mobishastra = 'mobishastra';
     case AfroMessage = 'afro-message';
+    case Unifonic = 'unifonic';
+    case Smsmode = 'smsmode';
+    case Imedia = 'imedia';
+    case Sinch = 'sinch';
+    case IsendproSms = 'isendpro-sms';
     case Fcm = 'fcm';
     case Apns = 'apns';
     case Expo = 'expo';
@@ -71,6 +76,7 @@ enum ProvidersIdEnum: string
     case Pushpad = 'pushpad';
     case PushWebhook = 'push-webhook';
     case PusherBeams = 'pusher-beams';
+    case Appio = 'appio';
     case Novu = 'novu';
     case Slack = 'slack';
     case Discord = 'discord';
@@ -83,4 +89,5 @@ enum ProvidersIdEnum: string
     case RocketChat = 'rocket-chat';
     case WhatsappBusiness = 'whatsapp-business';
     case ChatWebhook = 'chat-webhook';
+    case NovuSlack = 'novu-slack';
 }

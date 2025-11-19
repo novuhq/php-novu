@@ -27,13 +27,25 @@ class TopicPayloadDto
     public TriggerRecipientsTypeEnum $type;
 
     /**
+     * Optional array of subscriber IDs to exclude from the topic trigger
+     *
+     * @var ?array<string> $exclude
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('exclude')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $exclude = null;
+
+    /**
      * @param  string  $topicKey
      * @param  TriggerRecipientsTypeEnum  $type
+     * @param  ?array<string>  $exclude
      * @phpstan-pure
      */
-    public function __construct(string $topicKey, TriggerRecipientsTypeEnum $type)
+    public function __construct(string $topicKey, TriggerRecipientsTypeEnum $type, ?array $exclude = null)
     {
         $this->topicKey = $topicKey;
         $this->type = $type;
+        $this->exclude = $exclude;
     }
 }

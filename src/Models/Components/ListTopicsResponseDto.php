@@ -21,6 +21,22 @@ class ListTopicsResponseDto
     public array $data;
 
     /**
+     * The total count of items (up to 50,000)
+     *
+     * @var float $totalCount
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('totalCount')]
+    public float $totalCount;
+
+    /**
+     * Whether there are more than 50,000 results available
+     *
+     * @var bool $totalCountCapped
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('totalCountCapped')]
+    public bool $totalCountCapped;
+
+    /**
      * The cursor for the next page of results, or null if there are no more pages.
      *
      * @var ?string $next
@@ -38,13 +54,17 @@ class ListTopicsResponseDto
 
     /**
      * @param  array<TopicResponseDto>  $data
+     * @param  float  $totalCount
+     * @param  bool  $totalCountCapped
      * @param  ?string  $next
      * @param  ?string  $previous
      * @phpstan-pure
      */
-    public function __construct(array $data, ?string $next = null, ?string $previous = null)
+    public function __construct(array $data, float $totalCount, bool $totalCountCapped, ?string $next = null, ?string $previous = null)
     {
         $this->data = $data;
+        $this->totalCount = $totalCount;
+        $this->totalCountCapped = $totalCountCapped;
         $this->next = $next;
         $this->previous = $previous;
     }

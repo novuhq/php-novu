@@ -349,6 +349,30 @@ class CredentialsDto
     public ?string $accessKey = null;
 
     /**
+     *
+     * @var ?string $appSid
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('appSid')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $appSid = null;
+
+    /**
+     *
+     * @var ?string $senderId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('senderId')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $senderId = null;
+
+    /**
+     *
+     * @var ?string $appIOBaseUrl
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('AppIOBaseUrl')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $appIOBaseUrl = null;
+
+    /**
      * @param  ?string  $apiKey
      * @param  ?string  $user
      * @param  ?string  $secretKey
@@ -391,9 +415,12 @@ class CredentialsDto
      * @param  ?string  $channelId
      * @param  ?string  $phoneNumberIdentification
      * @param  ?string  $accessKey
+     * @param  ?string  $appSid
+     * @param  ?string  $senderId
+     * @param  ?string  $appIOBaseUrl
      * @phpstan-pure
      */
-    public function __construct(?string $apiKey = null, ?string $user = null, ?string $secretKey = null, ?string $domain = null, ?string $password = null, ?string $host = null, ?string $port = null, ?bool $secure = null, ?string $region = null, ?string $accountSid = null, ?string $messageProfileId = null, ?string $token = null, ?string $from = null, ?string $senderName = null, ?string $projectName = null, ?string $applicationId = null, ?string $clientId = null, ?bool $requireTls = null, ?bool $ignoreTls = null, ?TlsOptions $tlsOptions = null, ?string $baseUrl = null, ?string $webhookUrl = null, ?string $redirectUrl = null, ?bool $hmac = null, ?string $serviceAccount = null, ?string $ipPoolName = null, ?string $apiKeyRequestHeader = null, ?string $secretKeyRequestHeader = null, ?string $idPath = null, ?string $datePath = null, ?string $apiToken = null, ?bool $authenticateByToken = null, ?string $authenticationTokenKey = null, ?string $instanceId = null, ?string $alertUid = null, ?string $title = null, ?string $imageUrl = null, ?string $state = null, ?string $externalLink = null, ?string $channelId = null, ?string $phoneNumberIdentification = null, ?string $accessKey = null)
+    public function __construct(?string $apiKey = null, ?string $user = null, ?string $secretKey = null, ?string $domain = null, ?string $password = null, ?string $host = null, ?string $port = null, ?bool $secure = null, ?string $region = null, ?string $accountSid = null, ?string $messageProfileId = null, ?string $token = null, ?string $from = null, ?string $senderName = null, ?string $projectName = null, ?string $applicationId = null, ?string $clientId = null, ?bool $requireTls = null, ?bool $ignoreTls = null, ?TlsOptions $tlsOptions = null, ?string $baseUrl = null, ?string $webhookUrl = null, ?string $redirectUrl = null, ?bool $hmac = null, ?string $serviceAccount = null, ?string $ipPoolName = null, ?string $apiKeyRequestHeader = null, ?string $secretKeyRequestHeader = null, ?string $idPath = null, ?string $datePath = null, ?string $apiToken = null, ?bool $authenticateByToken = null, ?string $authenticationTokenKey = null, ?string $instanceId = null, ?string $alertUid = null, ?string $title = null, ?string $imageUrl = null, ?string $state = null, ?string $externalLink = null, ?string $channelId = null, ?string $phoneNumberIdentification = null, ?string $accessKey = null, ?string $appSid = null, ?string $senderId = null, ?string $appIOBaseUrl = null)
     {
         $this->apiKey = $apiKey;
         $this->user = $user;
@@ -437,5 +464,8 @@ class CredentialsDto
         $this->channelId = $channelId;
         $this->phoneNumberIdentification = $phoneNumberIdentification;
         $this->accessKey = $accessKey;
+        $this->appSid = $appSid;
+        $this->senderId = $senderId;
+        $this->appIOBaseUrl = $appIOBaseUrl;
     }
 }

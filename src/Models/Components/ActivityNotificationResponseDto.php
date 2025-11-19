@@ -131,12 +131,12 @@ class ActivityNotificationResponseDto
     /**
      * Payload of the notification
      *
-     * @var ?ActivityNotificationResponseDtoPayload $payload
+     * @var ?array<string, mixed> $payload
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('payload')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ActivityNotificationResponseDtoPayload|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?ActivityNotificationResponseDtoPayload $payload = null;
+    public ?array $payload = null;
 
     /**
      * Tags associated with the notification
@@ -151,22 +151,22 @@ class ActivityNotificationResponseDto
     /**
      * Controls associated with the notification
      *
-     * @var ?Controls $controls
+     * @var ?array<string, mixed> $controls
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('controls')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\Controls|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?Controls $controls = null;
+    public ?array $controls = null;
 
     /**
      * To field for subscriber definition
      *
-     * @var ?ActivityNotificationResponseDtoTo $to
+     * @var ?array<string, mixed> $to
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('to')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ActivityNotificationResponseDtoTo|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?ActivityNotificationResponseDtoTo $to = null;
+    public ?array $to = null;
 
     /**
      * Topics of the notification
@@ -177,6 +177,35 @@ class ActivityNotificationResponseDto
     #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\ActivityTopicDto>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $topics = null;
+
+    /**
+     * Severity of the workflow
+     *
+     * @var ?SeverityLevelEnum $severity
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('severity')]
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\SeverityLevelEnum|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?SeverityLevelEnum $severity = null;
+
+    /**
+     * Criticality of the notification
+     *
+     * @var ?bool $critical
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('critical')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?bool $critical = null;
+
+    /**
+     * Context (single or multi) in which the notification was sent
+     *
+     * @var ?array<string> $contextKeys
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('contextKeys')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $contextKeys = null;
 
     /**
      * @param  string  $environmentId
@@ -192,14 +221,17 @@ class ActivityNotificationResponseDto
      * @param  ?ActivityNotificationSubscriberResponseDto  $subscriber
      * @param  ?ActivityNotificationTemplateResponseDto  $template
      * @param  ?array<ActivityNotificationJobResponseDto>  $jobs
-     * @param  ?ActivityNotificationResponseDtoPayload  $payload
+     * @param  ?array<string, mixed>  $payload
      * @param  ?array<string>  $tags
-     * @param  ?Controls  $controls
-     * @param  ?ActivityNotificationResponseDtoTo  $to
+     * @param  ?array<string, mixed>  $controls
+     * @param  ?array<string, mixed>  $to
      * @param  ?array<ActivityTopicDto>  $topics
+     * @param  ?SeverityLevelEnum  $severity
+     * @param  ?bool  $critical
+     * @param  ?array<string>  $contextKeys
      * @phpstan-pure
      */
-    public function __construct(string $environmentId, string $organizationId, string $subscriberId, string $transactionId, ?string $id = null, ?string $templateId = null, ?string $digestedNotificationId = null, ?string $createdAt = null, ?string $updatedAt = null, ?array $channels = null, ?ActivityNotificationSubscriberResponseDto $subscriber = null, ?ActivityNotificationTemplateResponseDto $template = null, ?array $jobs = null, ?ActivityNotificationResponseDtoPayload $payload = null, ?array $tags = null, ?Controls $controls = null, ?ActivityNotificationResponseDtoTo $to = null, ?array $topics = null)
+    public function __construct(string $environmentId, string $organizationId, string $subscriberId, string $transactionId, ?string $id = null, ?string $templateId = null, ?string $digestedNotificationId = null, ?string $createdAt = null, ?string $updatedAt = null, ?array $channels = null, ?ActivityNotificationSubscriberResponseDto $subscriber = null, ?ActivityNotificationTemplateResponseDto $template = null, ?array $jobs = null, ?array $payload = null, ?array $tags = null, ?array $controls = null, ?array $to = null, ?array $topics = null, ?SeverityLevelEnum $severity = null, ?bool $critical = null, ?array $contextKeys = null)
     {
         $this->environmentId = $environmentId;
         $this->organizationId = $organizationId;
@@ -219,5 +251,8 @@ class ActivityNotificationResponseDto
         $this->controls = $controls;
         $this->to = $to;
         $this->topics = $topics;
+        $this->severity = $severity;
+        $this->critical = $critical;
+        $this->contextKeys = $contextKeys;
     }
 }

@@ -1,0 +1,10 @@
+# GenerateLayoutPreviewResponseDto
+
+
+## Fields
+
+| Field                                                                                    | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `previewPayloadExample`                                                                  | [Components\LayoutPreviewPayloadDto](../../Models/Components/LayoutPreviewPayloadDto.md) | :heavy_check_mark:                                                                       | Preview payload example                                                                  |
+| `schema`                                                                                 | array<string, *mixed*>                                                                   | :heavy_minus_sign:                                                                       | The payload schema that was used to generate the preview payload example                 |
+| `result`                                                                                 | [Components\One](../../Models/Components/Result.md)                                      | :heavy_check_mark:                                                                       | Preview result                                                                           |

@@ -20,6 +20,7 @@ List all messages for the current environment.
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="MessagesController_getMessages" method="get" path="/v1/messages" -->
 ```php
 declare(strict_types=1);
 
@@ -34,7 +35,12 @@ $sdk = novu\Novu::builder()
     )
     ->build();
 
-$request = new Operations\MessagesControllerGetMessagesRequest();
+$request = new Operations\MessagesControllerGetMessagesRequest(
+    contextKeys: [
+        'tenant:org-123',
+        'region:us-east-1',
+    ],
+);
 
 $response = $sdk->messages->get(
     request: $request
@@ -72,6 +78,7 @@ Delete a message entity from the Novu platform by **messageId**.
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="MessagesController_deleteMessage" method="delete" path="/v1/messages/{messageId}" -->
 ```php
 declare(strict_types=1);
 
@@ -124,6 +131,7 @@ Delete multiple messages from the Novu platform using **transactionId** of trigg
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="MessagesController_deleteMessagesByTransactionId" method="delete" path="/v1/messages/transaction/{transactionId}" -->
 ```php
 declare(strict_types=1);
 

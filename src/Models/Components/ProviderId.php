@@ -23,6 +23,7 @@ enum ProviderId: string
     case RocketChat = 'rocket-chat';
     case WhatsappBusiness = 'whatsapp-business';
     case ChatWebhook = 'chat-webhook';
+    case NovuSlack = 'novu-slack';
     case Fcm = 'fcm';
     case Apns = 'apns';
     case Expo = 'expo';
@@ -30,4 +31,5 @@ enum ProviderId: string
     case Pushpad = 'pushpad';
     case PushWebhook = 'push-webhook';
     case PusherBeams = 'pusher-beams';
+    case Appio = 'appio';
 }

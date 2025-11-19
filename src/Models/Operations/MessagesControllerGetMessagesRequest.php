@@ -36,6 +36,14 @@ class MessagesControllerGetMessagesRequest
     public ?array $transactionId = null;
 
     /**
+     * Filter by exact context keys, order insensitive (format: "type:id")
+     *
+     * @var ?array<string> $contextKeys
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=contextKeys')]
+    public ?array $contextKeys = null;
+
+    /**
      * A header for idempotency purposes
      *
      * @var ?string $idempotencyKey
@@ -61,16 +69,18 @@ class MessagesControllerGetMessagesRequest
      * @param  ?Components\ChannelTypeEnum  $channel
      * @param  ?string  $subscriberId
      * @param  ?array<string>  $transactionId
+     * @param  ?array<string>  $contextKeys
      * @param  ?float  $page
      * @param  ?float  $limit
      * @param  ?string  $idempotencyKey
      * @phpstan-pure
      */
-    public function __construct(?Components\ChannelTypeEnum $channel = null, ?string $subscriberId = null, ?array $transactionId = null, ?string $idempotencyKey = null, ?float $page = 0, ?float $limit = 10)
+    public function __construct(?Components\ChannelTypeEnum $channel = null, ?string $subscriberId = null, ?array $transactionId = null, ?array $contextKeys = null, ?string $idempotencyKey = null, ?float $page = 0, ?float $limit = 10)
     {
         $this->channel = $channel;
         $this->subscriberId = $subscriberId;
         $this->transactionId = $transactionId;
+        $this->contextKeys = $contextKeys;
         $this->idempotencyKey = $idempotencyKey;
         $this->page = $page;
         $this->limit = $limit;

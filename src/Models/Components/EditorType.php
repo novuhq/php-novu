@@ -9,9 +9,9 @@ declare(strict_types=1);
 namespace novu\Models\Components;
 
 
-/** Type of editor to use for the body. */
+/** Editor type of the layout. */
 enum EditorType: string
 {
-    case Block = 'block';
     case Html = 'html';
+    case Block = 'block';
 }

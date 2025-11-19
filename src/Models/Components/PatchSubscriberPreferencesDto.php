@@ -14,11 +14,12 @@ class PatchSubscriberPreferencesDto
     /**
      * Channel-specific preference settings
      *
-     * @var PatchPreferenceChannelsDto $channels
+     * @var ?PatchPreferenceChannelsDto $channels
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('channels')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\PatchPreferenceChannelsDto')]
-    public PatchPreferenceChannelsDto $channels;
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\PatchPreferenceChannelsDto|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?PatchPreferenceChannelsDto $channels = null;
 
     /**
      * Workflow internal _id, identifier or slug. If provided, update workflow specific preferences, otherwise update global preferences
@@ -30,13 +31,25 @@ class PatchSubscriberPreferencesDto
     public ?string $workflowId = null;
 
     /**
-     * @param  PatchPreferenceChannelsDto  $channels
+     * Subscriber schedule
+     *
+     * @var ?ScheduleDto $schedule
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('schedule')]
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ScheduleDto|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?ScheduleDto $schedule = null;
+
+    /**
+     * @param  ?PatchPreferenceChannelsDto  $channels
      * @param  ?string  $workflowId
+     * @param  ?ScheduleDto  $schedule
      * @phpstan-pure
      */
-    public function __construct(PatchPreferenceChannelsDto $channels, ?string $workflowId = null)
+    public function __construct(?PatchPreferenceChannelsDto $channels = null, ?string $workflowId = null, ?ScheduleDto $schedule = null)
     {
         $this->channels = $channels;
         $this->workflowId = $workflowId;
+        $this->schedule = $schedule;
     }
 }

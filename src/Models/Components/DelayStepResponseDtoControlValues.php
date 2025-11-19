@@ -13,23 +13,6 @@ namespace novu\Models\Components;
 class DelayStepResponseDtoControlValues
 {
     /**
-     * Amount of time to delay.
-     *
-     * @var float $amount
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('amount')]
-    public float $amount;
-
-    /**
-     * Unit of time for the delay amount.
-     *
-     * @var DelayStepResponseDtoUnit $unit
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('unit')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\DelayStepResponseDtoUnit')]
-    public DelayStepResponseDtoUnit $unit;
-
-    /**
      * JSONLogic filter conditions for conditionally skipping the step execution. Supports complex logical operations with AND, OR, and comparison operators. See https://jsonlogic.com/ for full typing reference.
      *
      * @var ?array<string, mixed> $skip
@@ -38,6 +21,34 @@ class DelayStepResponseDtoControlValues
     #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $skip = null;
+
+    /**
+     * Amount of time to delay.
+     *
+     * @var ?float $amount
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('amount')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?float $amount = null;
+
+    /**
+     * Unit of time for the delay amount.
+     *
+     * @var ?DelayStepResponseDtoUnit $unit
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('unit')]
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\DelayStepResponseDtoUnit|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?DelayStepResponseDtoUnit $unit = null;
+
+    /**
+     * Cron expression for the delay. Min length 1.
+     *
+     * @var ?string $cron
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('cron')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $cron = null;
 
     /**
      * $additionalProperties
@@ -60,18 +71,20 @@ class DelayStepResponseDtoControlValues
     public ?DelayStepResponseDtoType $type = null;
 
     /**
-     * @param  float  $amount
-     * @param  DelayStepResponseDtoUnit  $unit
      * @param  ?array<string, mixed>  $skip
      * @param  ?DelayStepResponseDtoType  $type
+     * @param  ?float  $amount
+     * @param  ?DelayStepResponseDtoUnit  $unit
+     * @param  ?string  $cron
      * @param  ?array<string, mixed>  $additionalProperties
      * @phpstan-pure
      */
-    public function __construct(float $amount, DelayStepResponseDtoUnit $unit, ?array $skip = null, ?array $additionalProperties = null, ?DelayStepResponseDtoType $type = DelayStepResponseDtoType::Regular)
+    public function __construct(?array $skip = null, ?float $amount = null, ?DelayStepResponseDtoUnit $unit = null, ?string $cron = null, ?array $additionalProperties = null, ?DelayStepResponseDtoType $type = DelayStepResponseDtoType::Regular)
     {
+        $this->skip = $skip;
         $this->amount = $amount;
         $this->unit = $unit;
-        $this->skip = $skip;
+        $this->cron = $cron;
         $this->additionalProperties = $additionalProperties;
         $this->type = $type;
     }

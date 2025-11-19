@@ -12,23 +12,6 @@ namespace novu\Models\Components;
 class DelayControlDto
 {
     /**
-     * Amount of time to delay.
-     *
-     * @var float $amount
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('amount')]
-    public float $amount;
-
-    /**
-     * Unit of time for the delay amount.
-     *
-     * @var Unit $unit
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('unit')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\Unit')]
-    public Unit $unit;
-
-    /**
      * JSONLogic filter conditions for conditionally skipping the step execution. Supports complex logical operations with AND, OR, and comparison operators. See https://jsonlogic.com/ for full typing reference.
      *
      * @var ?array<string, mixed> $skip
@@ -37,6 +20,34 @@ class DelayControlDto
     #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $skip = null;
+
+    /**
+     * Amount of time to delay.
+     *
+     * @var ?float $amount
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('amount')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?float $amount = null;
+
+    /**
+     * Unit of time for the delay amount.
+     *
+     * @var ?Unit $unit
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('unit')]
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\Unit|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?Unit $unit = null;
+
+    /**
+     * Cron expression for the delay. Min length 1.
+     *
+     * @var ?string $cron
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('cron')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $cron = null;
 
     /**
      * Type of the delay. Currently only 'regular' is supported by the schema.
@@ -49,17 +60,19 @@ class DelayControlDto
     public ?Type $type = null;
 
     /**
-     * @param  float  $amount
-     * @param  Unit  $unit
      * @param  ?array<string, mixed>  $skip
      * @param  ?Type  $type
+     * @param  ?float  $amount
+     * @param  ?Unit  $unit
+     * @param  ?string  $cron
      * @phpstan-pure
      */
-    public function __construct(float $amount, Unit $unit, ?array $skip = null, ?Type $type = Type::Regular)
+    public function __construct(?array $skip = null, ?float $amount = null, ?Unit $unit = null, ?string $cron = null, ?Type $type = Type::Regular)
     {
+        $this->skip = $skip;
         $this->amount = $amount;
         $this->unit = $unit;
-        $this->skip = $skip;
+        $this->cron = $cron;
         $this->type = $type;
     }
 }

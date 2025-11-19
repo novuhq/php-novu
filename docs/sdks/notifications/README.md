@@ -11,12 +11,13 @@
 ## list
 
 List all notification events (triggered events) for the current environment. 
-    This API supports filtering by **channels**, **templates**, **emails**, **subscriberIds**, **transactionId**, **topicKey**. 
+    This API supports filtering by **channels**, **templates**, **emails**, **subscriberIds**, **transactionId**, **topicKey**, **severity**, **contextKeys**. 
     Checkout all available filters in the query section.
     This API returns event triggers, to list each channel notifications, check messages APIs.
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="NotificationsController_listNotifications" method="get" path="/v1/notifications" -->
 ```php
 declare(strict_types=1);
 
@@ -70,6 +71,7 @@ Retrieve an event by its unique key identifier **notificationId**.
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="NotificationsController_getNotification" method="get" path="/v1/notifications/{notificationId}" -->
 ```php
 declare(strict_types=1);
 

@@ -10,11 +10,12 @@
 
 ## append
 
-Update credentials for a provider such as **slack** and **FCM**. 
-      **providerId** is required field. This API replaces the existing deviceTokens with the provided ones.
+Upsert credentials for a provider such as **slack** and **FCM**. 
+      **providerId** is required field. This API creates **deviceTokens** or appends to the existing ones.
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="SubscribersV1Controller_modifySubscriberChannel" method="patch" path="/v1/subscribers/{subscriberId}/credentials" -->
 ```php
 declare(strict_types=1);
 
@@ -87,6 +88,7 @@ Delete subscriber credentials for a provider such as **slack** and **FCM** by **
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="SubscribersV1Controller_deleteSubscriberCredentials" method="delete" path="/v1/subscribers/{subscriberId}/credentials/{providerId}" -->
 ```php
 declare(strict_types=1);
 

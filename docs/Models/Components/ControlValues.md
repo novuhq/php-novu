@@ -1,25 +1,10 @@
 # ControlValues
 
-Control values for the In-App step.
+Control values for the layout
 
 
-## Supported Types
+## Fields
 
-### `Components\InAppControlDto`
-
-```php
-/**
-* @var Components\InAppControlDto
-*/
-Components\InAppControlDto $value = /* values here */
-```
-
-### `array`
-
-```php
-/**
-* @var array<string, mixed>
-*/
-array $value = /* values here */
-```
-
+| Field                                                                       | Type                                                                        | Required                                                                    | Description                                                                 |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `email`                                                                     | [?Components\EmailControlsDto](../../Models/Components/EmailControlsDto.md) | :heavy_minus_sign:                                                          | Email layout controls                                                       |

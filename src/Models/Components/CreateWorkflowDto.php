@@ -30,10 +30,10 @@ class CreateWorkflowDto
     /**
      * Steps of the workflow
      *
-     * @var array<InAppStepUpsertDto|EmailStepUpsertDto|SmsStepUpsertDto|PushStepUpsertDto|ChatStepUpsertDto|DelayStepUpsertDto|DigestStepUpsertDto|CustomStepUpsertDto> $steps
+     * @var array<InAppStepUpsertDto|EmailStepUpsertDto|SmsStepUpsertDto|PushStepUpsertDto|ChatStepUpsertDto|DelayStepUpsertDto|DigestStepUpsertDto|ThrottleStepUpsertDto|CustomStepUpsertDto> $steps
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('steps')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\InAppStepUpsertDto|\novu\Models\Components\EmailStepUpsertDto|\novu\Models\Components\SmsStepUpsertDto|\novu\Models\Components\PushStepUpsertDto|\novu\Models\Components\ChatStepUpsertDto|\novu\Models\Components\DelayStepUpsertDto|\novu\Models\Components\DigestStepUpsertDto|\novu\Models\Components\CustomStepUpsertDto>')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\InAppStepUpsertDto|\novu\Models\Components\EmailStepUpsertDto|\novu\Models\Components\SmsStepUpsertDto|\novu\Models\Components\PushStepUpsertDto|\novu\Models\Components\ChatStepUpsertDto|\novu\Models\Components\DelayStepUpsertDto|\novu\Models\Components\DigestStepUpsertDto|\novu\Models\Components\ThrottleStepUpsertDto|\novu\Models\Components\CustomStepUpsertDto>')]
     public array $steps;
 
     /**
@@ -56,6 +56,15 @@ class CreateWorkflowDto
     public ?array $tags = null;
 
     /**
+     * Enable or disable payload schema validation
+     *
+     * @var ?bool $validatePayload
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('validatePayload')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?bool $validatePayload = null;
+
+    /**
      * Workflow preferences
      *
      * @var ?PreferencesRequestDto $preferences
@@ -64,6 +73,16 @@ class CreateWorkflowDto
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\PreferencesRequestDto|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?PreferencesRequestDto $preferences = null;
+
+    /**
+     * Severity of the workflow
+     *
+     * @var ?SeverityLevelEnum $severity
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('severity')]
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\SeverityLevelEnum|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?SeverityLevelEnum $severity = null;
 
     /**
      * The payload JSON Schema for the workflow
@@ -76,15 +95,6 @@ class CreateWorkflowDto
     public ?array $payloadSchema = null;
 
     /**
-     * Enable or disable payload schema validation
-     *
-     * @var ?bool $validatePayload
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('validatePayload')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?bool $validatePayload = null;
-
-    /**
      * Whether the workflow is active
      *
      * @var ?bool $active
@@ -92,6 +102,15 @@ class CreateWorkflowDto
     #[\Speakeasy\Serializer\Annotation\SerializedName('active')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?bool $active = null;
+
+    /**
+     * Enable or disable translations for this workflow
+     *
+     * @var ?bool $isTranslationEnabled
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('isTranslationEnabled')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?bool $isTranslationEnabled = null;
 
     /**
      * Source of workflow creation
@@ -106,27 +125,31 @@ class CreateWorkflowDto
     /**
      * @param  string  $name
      * @param  string  $workflowId
-     * @param  array<InAppStepUpsertDto|EmailStepUpsertDto|SmsStepUpsertDto|PushStepUpsertDto|ChatStepUpsertDto|DelayStepUpsertDto|DigestStepUpsertDto|CustomStepUpsertDto>  $steps
+     * @param  array<InAppStepUpsertDto|EmailStepUpsertDto|SmsStepUpsertDto|PushStepUpsertDto|ChatStepUpsertDto|DelayStepUpsertDto|DigestStepUpsertDto|ThrottleStepUpsertDto|CustomStepUpsertDto>  $steps
      * @param  ?string  $description
      * @param  ?array<string>  $tags
      * @param  ?bool  $active
+     * @param  ?bool  $validatePayload
+     * @param  ?bool  $isTranslationEnabled
      * @param  ?WorkflowCreationSourceEnum  $source
      * @param  ?PreferencesRequestDto  $preferences
+     * @param  ?SeverityLevelEnum  $severity
      * @param  ?array<string, mixed>  $payloadSchema
-     * @param  ?bool  $validatePayload
      * @phpstan-pure
      */
-    public function __construct(string $name, string $workflowId, array $steps, ?string $description = null, ?array $tags = null, ?PreferencesRequestDto $preferences = null, ?array $payloadSchema = null, ?bool $validatePayload = null, ?bool $active = false, ?WorkflowCreationSourceEnum $source = WorkflowCreationSourceEnum::Editor)
+    public function __construct(string $name, string $workflowId, array $steps, ?string $description = null, ?array $tags = null, ?bool $validatePayload = null, ?PreferencesRequestDto $preferences = null, ?SeverityLevelEnum $severity = null, ?array $payloadSchema = null, ?bool $active = false, ?bool $isTranslationEnabled = false, ?WorkflowCreationSourceEnum $source = WorkflowCreationSourceEnum::Editor)
     {
         $this->name = $name;
         $this->workflowId = $workflowId;
         $this->steps = $steps;
         $this->description = $description;
         $this->tags = $tags;
-        $this->preferences = $preferences;
-        $this->payloadSchema = $payloadSchema;
         $this->validatePayload = $validatePayload;
+        $this->preferences = $preferences;
+        $this->severity = $severity;
+        $this->payloadSchema = $payloadSchema;
         $this->active = $active;
+        $this->isTranslationEnabled = $isTranslationEnabled;
         $this->source = $source;
     }
 }

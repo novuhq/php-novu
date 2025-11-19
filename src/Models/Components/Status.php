@@ -9,14 +9,27 @@ declare(strict_types=1);
 namespace novu\Models\Components;
 
 
-/** Status of the trigger */
+/** Status of the event */
 enum Status: string
 {
-    case Error = 'error';
-    case TriggerNotActive = 'trigger_not_active';
-    case NoWorkflowActiveStepsDefined = 'no_workflow_active_steps_defined';
-    case NoWorkflowStepsDefined = 'no_workflow_steps_defined';
-    case Processed = 'processed';
-    case NoTenantFound = 'no_tenant_found';
-    case InvalidRecipients = 'invalid_recipients';
+    case Opened = 'opened';
+    case Rejected = 'rejected';
+    case Sent = 'sent';
+    case Deferred = 'deferred';
+    case Delivered = 'delivered';
+    case Bounced = 'bounced';
+    case Dropped = 'dropped';
+    case Clicked = 'clicked';
+    case Blocked = 'blocked';
+    case Spam = 'spam';
+    case Unsubscribed = 'unsubscribed';
+    case Delayed = 'delayed';
+    case Complaint = 'complaint';
+    case Created = 'created';
+    case Accepted = 'accepted';
+    case Queued = 'queued';
+    case Sending = 'sending';
+    case Failed = 'failed';
+    case Undelivered = 'undelivered';
+    case Dismissed = 'dismissed';
 }

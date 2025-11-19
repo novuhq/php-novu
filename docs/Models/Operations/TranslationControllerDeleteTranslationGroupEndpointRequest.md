@@ -1,0 +1,10 @@
+# TranslationControllerDeleteTranslationGroupEndpointRequest
+
+
+## Fields
+
+| Field                                                              | Type                                                               | Required                                                           | Description                                                        | Example                                                            |
+| ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
+| `resourceType`                                                     | [Operations\ResourceType](../../Models/Operations/ResourceType.md) | :heavy_check_mark:                                                 | Resource type                                                      | workflow                                                           |
+| `resourceId`                                                       | *string*                                                           | :heavy_check_mark:                                                 | Resource ID                                                        | welcome-email                                                      |
+| `idempotencyKey`                                                   | *?string*                                                          | :heavy_minus_sign:                                                 | A header for idempotency purposes                                  |                                                                    |

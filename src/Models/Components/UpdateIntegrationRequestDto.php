@@ -72,6 +72,16 @@ class UpdateIntegrationRequestDto
     public ?array $conditions = null;
 
     /**
+     * Configurations for the integration
+     *
+     * @var ?UpdateIntegrationRequestDtoConfigurations $configurations
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('configurations')]
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\UpdateIntegrationRequestDtoConfigurations|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?UpdateIntegrationRequestDtoConfigurations $configurations = null;
+
+    /**
      * @param  ?string  $name
      * @param  ?string  $identifier
      * @param  ?string  $environmentId
@@ -79,9 +89,10 @@ class UpdateIntegrationRequestDto
      * @param  ?CredentialsDto  $credentials
      * @param  ?bool  $check
      * @param  ?array<StepFilterDto>  $conditions
+     * @param  ?UpdateIntegrationRequestDtoConfigurations  $configurations
      * @phpstan-pure
      */
-    public function __construct(?string $name = null, ?string $identifier = null, ?string $environmentId = null, ?bool $active = null, ?CredentialsDto $credentials = null, ?bool $check = null, ?array $conditions = null)
+    public function __construct(?string $name = null, ?string $identifier = null, ?string $environmentId = null, ?bool $active = null, ?CredentialsDto $credentials = null, ?bool $check = null, ?array $conditions = null, ?UpdateIntegrationRequestDtoConfigurations $configurations = null)
     {
         $this->name = $name;
         $this->identifier = $identifier;
@@ -90,5 +101,6 @@ class UpdateIntegrationRequestDto
         $this->credentials = $credentials;
         $this->check = $check;
         $this->conditions = $conditions;
+        $this->configurations = $configurations;
     }
 }

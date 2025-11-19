@@ -14,11 +14,11 @@ class StepIntegrationIssue
     /**
      * Type of integration issue
      *
-     * @var StepIntegrationIssueEnum $issueType
+     * @var IntegrationIssueEnum $issueType
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('issueType')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\StepIntegrationIssueEnum')]
-    public StepIntegrationIssueEnum $issueType;
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\IntegrationIssueEnum')]
+    public IntegrationIssueEnum $issueType;
 
     /**
      * Detailed message describing the issue
@@ -38,12 +38,12 @@ class StepIntegrationIssue
     public ?string $variableName = null;
 
     /**
-     * @param  StepIntegrationIssueEnum  $issueType
+     * @param  IntegrationIssueEnum  $issueType
      * @param  string  $message
      * @param  ?string  $variableName
      * @phpstan-pure
      */
-    public function __construct(StepIntegrationIssueEnum $issueType, string $message, ?string $variableName = null)
+    public function __construct(IntegrationIssueEnum $issueType, string $message, ?string $variableName = null)
     {
         $this->issueType = $issueType;
         $this->message = $message;

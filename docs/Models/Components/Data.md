@@ -1,41 +1,9 @@
 # Data
 
+Optional custom data to associate with this context.
 
-## Supported Types
 
-### `string`
+## Fields
 
-```php
-/**
-* @var string
-*/
-string $value = /* values here */
-```
-
-### `array`
-
-```php
-/**
-* @var array<string>
-*/
-array $value = /* values here */
-```
-
-### `bool`
-
-```php
-/**
-* @var bool
-*/
-bool $value = /* values here */
-```
-
-### `float`
-
-```php
-/**
-* @var float
-*/
-float $value = /* values here */
-```
-
+| Field       | Type        | Required    | Description |
+| ----------- | ----------- | ----------- | ----------- |
