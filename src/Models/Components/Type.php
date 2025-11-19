@@ -13,4 +13,5 @@ namespace novu\Models\Components;
 enum Type: string
 {
     case Regular = 'regular';
+    case Timed = 'timed';
 }

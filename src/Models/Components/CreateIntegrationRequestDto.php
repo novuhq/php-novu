@@ -94,6 +94,16 @@ class CreateIntegrationRequestDto
     public ?array $conditions = null;
 
     /**
+     * Configurations for the integration
+     *
+     * @var ?Configurations $configurations
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('configurations')]
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\Configurations|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?Configurations $configurations = null;
+
+    /**
      * @param  string  $providerId
      * @param  CreateIntegrationRequestDtoChannel  $channel
      * @param  ?string  $name
@@ -103,9 +113,10 @@ class CreateIntegrationRequestDto
      * @param  ?bool  $active
      * @param  ?bool  $check
      * @param  ?array<StepFilterDto>  $conditions
+     * @param  ?Configurations  $configurations
      * @phpstan-pure
      */
-    public function __construct(string $providerId, CreateIntegrationRequestDtoChannel $channel, ?string $name = null, ?string $identifier = null, ?string $environmentId = null, ?CredentialsDto $credentials = null, ?bool $active = null, ?bool $check = null, ?array $conditions = null)
+    public function __construct(string $providerId, CreateIntegrationRequestDtoChannel $channel, ?string $name = null, ?string $identifier = null, ?string $environmentId = null, ?CredentialsDto $credentials = null, ?bool $active = null, ?bool $check = null, ?array $conditions = null, ?Configurations $configurations = null)
     {
         $this->providerId = $providerId;
         $this->channel = $channel;
@@ -116,5 +127,6 @@ class CreateIntegrationRequestDto
         $this->active = $active;
         $this->check = $check;
         $this->conditions = $conditions;
+        $this->configurations = $configurations;
     }
 }

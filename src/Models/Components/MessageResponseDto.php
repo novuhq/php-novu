@@ -12,28 +12,12 @@ namespace novu\Models\Components;
 class MessageResponseDto
 {
     /**
-     * Template ID associated with the message
-     *
-     * @var string $templateId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('_templateId')]
-    public string $templateId;
-
-    /**
      * Environment ID where the message is sent
      *
      * @var string $environmentId
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('_environmentId')]
     public string $environmentId;
-
-    /**
-     * Message template ID
-     *
-     * @var string $messageTemplateId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('_messageTemplateId')]
-    public string $messageTemplateId;
 
     /**
      * Organization ID associated with the message
@@ -66,15 +50,6 @@ class MessageResponseDto
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('createdAt')]
     public string $createdAt;
-
-    /**
-     * Content of the message, can be an email block or a string
-     *
-     * @var array<EmailBlock>|string $content
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('content')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\EmailBlock>|string')]
-    public array|string $content;
 
     /**
      * Transaction ID associated with the message
@@ -305,6 +280,44 @@ class MessageResponseDto
     public ?MessageResponseDtoOverrides $overrides = null;
 
     /**
+     * Context (single or multi) in which the message was sent
+     *
+     * @var ?array<string> $contextKeys
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('contextKeys')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $contextKeys = null;
+
+    /**
+     * Template ID associated with the message
+     *
+     * @var ?string $templateId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('_templateId')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $templateId = null;
+
+    /**
+     * Message template ID
+     *
+     * @var ?string $messageTemplateId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('_messageTemplateId')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $messageTemplateId = null;
+
+    /**
+     * Content of the message, can be an email block or a string
+     *
+     * @var array<EmailBlock>|string|null $content
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('content')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\EmailBlock>|string|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public array|string|null $content = null;
+
+    /**
      * Feed ID associated with the message, if applicable
      *
      * @var ?string $feedId
@@ -314,14 +327,11 @@ class MessageResponseDto
     public ?string $feedId = null;
 
     /**
-     * @param  string  $templateId
      * @param  string  $environmentId
-     * @param  string  $messageTemplateId
      * @param  string  $organizationId
      * @param  string  $notificationId
      * @param  string  $subscriberId
      * @param  string  $createdAt
-     * @param  array<EmailBlock>|string  $content
      * @param  string  $transactionId
      * @param  ChannelTypeEnum  $channel
      * @param  bool  $read
@@ -347,19 +357,20 @@ class MessageResponseDto
      * @param  ?string  $errorText
      * @param  ?MessageResponseDtoPayload  $payload
      * @param  ?MessageResponseDtoOverrides  $overrides
+     * @param  ?array<string>  $contextKeys
+     * @param  ?string  $templateId
+     * @param  ?string  $messageTemplateId
+     * @param  array<EmailBlock>|string|null  $content
      * @param  ?string  $feedId
      * @phpstan-pure
      */
-    public function __construct(string $templateId, string $environmentId, string $messageTemplateId, string $organizationId, string $notificationId, string $subscriberId, string $createdAt, array|string $content, string $transactionId, ChannelTypeEnum $channel, bool $read, bool $seen, MessageCTA $cta, MessageStatusEnum $status, ?string $id = null, ?SubscriberResponseDto $subscriber = null, ?WorkflowResponse $template = null, ?string $templateIdentifier = null, ?array $deliveredAt = null, ?string $lastSeenDate = null, ?string $lastReadDate = null, ?string $subject = null, ?string $snoozedUntil = null, ?string $email = null, ?string $phone = null, ?string $directWebhookUrl = null, ?string $providerId = null, ?array $deviceTokens = null, ?string $title = null, ?string $errorId = null, ?string $errorText = null, ?MessageResponseDtoPayload $payload = null, ?MessageResponseDtoOverrides $overrides = null, ?string $feedId = null)
+    public function __construct(string $environmentId, string $organizationId, string $notificationId, string $subscriberId, string $createdAt, string $transactionId, ChannelTypeEnum $channel, bool $read, bool $seen, MessageCTA $cta, MessageStatusEnum $status, ?string $id = null, ?SubscriberResponseDto $subscriber = null, ?WorkflowResponse $template = null, ?string $templateIdentifier = null, ?array $deliveredAt = null, ?string $lastSeenDate = null, ?string $lastReadDate = null, ?string $subject = null, ?string $snoozedUntil = null, ?string $email = null, ?string $phone = null, ?string $directWebhookUrl = null, ?string $providerId = null, ?array $deviceTokens = null, ?string $title = null, ?string $errorId = null, ?string $errorText = null, ?MessageResponseDtoPayload $payload = null, ?MessageResponseDtoOverrides $overrides = null, ?array $contextKeys = null, ?string $templateId = null, ?string $messageTemplateId = null, array|string|null $content = null, ?string $feedId = null)
     {
-        $this->templateId = $templateId;
         $this->environmentId = $environmentId;
-        $this->messageTemplateId = $messageTemplateId;
         $this->organizationId = $organizationId;
         $this->notificationId = $notificationId;
         $this->subscriberId = $subscriberId;
         $this->createdAt = $createdAt;
-        $this->content = $content;
         $this->transactionId = $transactionId;
         $this->channel = $channel;
         $this->read = $read;
@@ -385,6 +396,10 @@ class MessageResponseDto
         $this->errorText = $errorText;
         $this->payload = $payload;
         $this->overrides = $overrides;
+        $this->contextKeys = $contextKeys;
+        $this->templateId = $templateId;
+        $this->messageTemplateId = $messageTemplateId;
+        $this->content = $content;
         $this->feedId = $feedId;
     }
 }

@@ -103,6 +103,15 @@ class ActivityNotificationJobResponseDto
     public ?string $updatedAt = null;
 
     /**
+     * The number of times the digest/delay job has been extended to align with the subscribers schedule
+     *
+     * @var ?float $scheduleExtensionsCount
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('scheduleExtensionsCount')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?float $scheduleExtensionsCount = null;
+
+    /**
      * @param  string  $id
      * @param  ActivityNotificationJobResponseDtoType  $type
      * @param  array<ActivityNotificationExecutionDetailResponseDto>  $executionDetails
@@ -113,9 +122,10 @@ class ActivityNotificationJobResponseDto
      * @param  ?array<string, mixed>  $overrides
      * @param  ?ActivityNotificationJobResponseDtoPayload  $payload
      * @param  ?string  $updatedAt
+     * @param  ?float  $scheduleExtensionsCount
      * @phpstan-pure
      */
-    public function __construct(string $id, ActivityNotificationJobResponseDtoType $type, array $executionDetails, ActivityNotificationStepResponseDto $step, ProvidersIdEnum $providerId, string $status, ?DigestMetadataDto $digest = null, ?array $overrides = null, ?ActivityNotificationJobResponseDtoPayload $payload = null, ?string $updatedAt = null)
+    public function __construct(string $id, ActivityNotificationJobResponseDtoType $type, array $executionDetails, ActivityNotificationStepResponseDto $step, ProvidersIdEnum $providerId, string $status, ?DigestMetadataDto $digest = null, ?array $overrides = null, ?ActivityNotificationJobResponseDtoPayload $payload = null, ?string $updatedAt = null, ?float $scheduleExtensionsCount = null)
     {
         $this->id = $id;
         $this->type = $type;
@@ -127,5 +137,6 @@ class ActivityNotificationJobResponseDto
         $this->overrides = $overrides;
         $this->payload = $payload;
         $this->updatedAt = $updatedAt;
+        $this->scheduleExtensionsCount = $scheduleExtensionsCount;
     }
 }

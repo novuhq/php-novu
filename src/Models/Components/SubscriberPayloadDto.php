@@ -20,70 +20,6 @@ class SubscriberPayloadDto
     public string $subscriberId;
 
     /**
-     * The email address of the subscriber.
-     *
-     * @var ?string $email
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('email')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $email = null;
-
-    /**
-     * The first name of the subscriber.
-     *
-     * @var ?string $firstName
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('firstName')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $firstName = null;
-
-    /**
-     * The last name of the subscriber.
-     *
-     * @var ?string $lastName
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('lastName')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $lastName = null;
-
-    /**
-     * The phone number of the subscriber.
-     *
-     * @var ?string $phone
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('phone')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $phone = null;
-
-    /**
-     * An HTTP URL to the profile image of your subscriber.
-     *
-     * @var ?string $avatar
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('avatar')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $avatar = null;
-
-    /**
-     * The locale of the subscriber.
-     *
-     * @var ?string $locale
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('locale')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $locale = null;
-
-    /**
-     * An optional payload object that can contain any properties.
-     *
-     * @var ?array<string, string|array<string>|bool|float> $data
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<string, string|array<string>|bool|float>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $data = null;
-
-    /**
      * An optional array of subscriber channels.
      *
      * @var ?array<SubscriberChannelDto> $channels
@@ -94,7 +30,61 @@ class SubscriberPayloadDto
     public ?array $channels = null;
 
     /**
-     * The timezone of the subscriber.
+     * First name of the subscriber
+     *
+     * @var ?string $firstName
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('firstName')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $firstName = null;
+
+    /**
+     * Last name of the subscriber
+     *
+     * @var ?string $lastName
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('lastName')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $lastName = null;
+
+    /**
+     * Email address of the subscriber
+     *
+     * @var ?string $email
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('email')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $email = null;
+
+    /**
+     * Phone number of the subscriber
+     *
+     * @var ?string $phone
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('phone')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $phone = null;
+
+    /**
+     * Avatar URL or identifier
+     *
+     * @var ?string $avatar
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('avatar')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $avatar = null;
+
+    /**
+     * Locale of the subscriber
+     *
+     * @var ?string $locale
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('locale')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $locale = null;
+
+    /**
+     * Timezone of the subscriber
      *
      * @var ?string $timezone
      */
@@ -103,29 +93,39 @@ class SubscriberPayloadDto
     public ?string $timezone = null;
 
     /**
+     * Additional custom data associated with the subscriber
+     *
+     * @var ?array<string, mixed> $data
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $data = null;
+
+    /**
      * @param  string  $subscriberId
-     * @param  ?string  $email
+     * @param  ?array<SubscriberChannelDto>  $channels
      * @param  ?string  $firstName
      * @param  ?string  $lastName
+     * @param  ?string  $email
      * @param  ?string  $phone
      * @param  ?string  $avatar
      * @param  ?string  $locale
-     * @param  ?array<string, string|array<string>|bool|float>  $data
-     * @param  ?array<SubscriberChannelDto>  $channels
      * @param  ?string  $timezone
+     * @param  ?array<string, mixed>  $data
      * @phpstan-pure
      */
-    public function __construct(string $subscriberId, ?string $email = null, ?string $firstName = null, ?string $lastName = null, ?string $phone = null, ?string $avatar = null, ?string $locale = null, ?array $data = null, ?array $channels = null, ?string $timezone = null)
+    public function __construct(string $subscriberId, ?array $channels = null, ?string $firstName = null, ?string $lastName = null, ?string $email = null, ?string $phone = null, ?string $avatar = null, ?string $locale = null, ?string $timezone = null, ?array $data = null)
     {
         $this->subscriberId = $subscriberId;
-        $this->email = $email;
+        $this->channels = $channels;
         $this->firstName = $firstName;
         $this->lastName = $lastName;
+        $this->email = $email;
         $this->phone = $phone;
         $this->avatar = $avatar;
         $this->locale = $locale;
-        $this->data = $data;
-        $this->channels = $channels;
         $this->timezone = $timezone;
+        $this->data = $data;
     }
 }

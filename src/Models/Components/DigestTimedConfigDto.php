@@ -80,6 +80,15 @@ class DigestTimedConfigDto
     public ?string $cronExpression = null;
 
     /**
+     * Until date for scheduling
+     *
+     * @var ?string $untilDate
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('untilDate')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $untilDate = null;
+
+    /**
      * @param  ?string  $atTime
      * @param  ?array<DigestTimedConfigDtoWeekDays>  $weekDays
      * @param  ?array<float>  $monthDays
@@ -87,9 +96,10 @@ class DigestTimedConfigDto
      * @param  ?OrdinalValueEnum  $ordinalValue
      * @param  ?MonthlyTypeEnum  $monthlyType
      * @param  ?string  $cronExpression
+     * @param  ?string  $untilDate
      * @phpstan-pure
      */
-    public function __construct(?string $atTime = null, ?array $weekDays = null, ?array $monthDays = null, ?OrdinalEnum $ordinal = null, ?OrdinalValueEnum $ordinalValue = null, ?MonthlyTypeEnum $monthlyType = null, ?string $cronExpression = null)
+    public function __construct(?string $atTime = null, ?array $weekDays = null, ?array $monthDays = null, ?OrdinalEnum $ordinal = null, ?OrdinalValueEnum $ordinalValue = null, ?MonthlyTypeEnum $monthlyType = null, ?string $cronExpression = null, ?string $untilDate = null)
     {
         $this->atTime = $atTime;
         $this->weekDays = $weekDays;
@@ -98,5 +108,6 @@ class DigestTimedConfigDto
         $this->ordinalValue = $ordinalValue;
         $this->monthlyType = $monthlyType;
         $this->cronExpression = $cronExpression;
+        $this->untilDate = $untilDate;
     }
 }

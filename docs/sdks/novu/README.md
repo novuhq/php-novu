@@ -16,14 +16,12 @@ Novu Documentation
 
 ## trigger
 
-
-    Trigger event is the main (and only) way to send notifications to subscribers. 
-    The trigger identifier is used to match the particular workflow associated with it. 
-    Additional information can be passed according the body interface below.
-    
+    Trigger event is the main (and only) way to send notifications to subscribers. The trigger identifier is used to match the particular workflow associated with it. Additional information can be passed according the body interface below.
+    To prevent duplicate triggers, you can optionally pass a **transactionId** in the request body. If the same **transactionId** is used again, the trigger will be ignored. The retention period depends on your billing tier.
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="EventsController_trigger" method="post" path="/v1/events/trigger" -->
 ```php
 declare(strict_types=1);
 
@@ -48,6 +46,10 @@ $triggerEventRequestDto = new Components\TriggerEventRequestDto(
     ],
     overrides: new Components\Overrides(),
     to: 'SUBSCRIBER_ID',
+    actor: '<value>',
+    context: [
+        'key' => 'org-acme',
+    ],
 );
 
 $response = $sdk->trigger(
@@ -90,6 +92,7 @@ if ($response->triggerEventResponseDto !== null) {
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="EventsController_cancel" method="delete" path="/v1/events/trigger/{transactionId}" -->
 ```php
 declare(strict_types=1);
 
@@ -143,6 +146,7 @@ Trigger a broadcast event to all existing subscribers, could be used to send ann
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="EventsController_broadcastEventToAll" method="post" path="/v1/events/trigger/broadcast" -->
 ```php
 declare(strict_types=1);
 
@@ -173,6 +177,16 @@ $triggerEventToAllRequestDto = new Components\TriggerEventToAllRequestDto(
                 ],
             ],
         ],
+    ),
+    actor: new Components\SubscriberPayloadDto(
+        firstName: 'John',
+        lastName: 'Doe',
+        email: 'john.doe@example.com',
+        phone: '+1234567890',
+        avatar: 'https://example.com/avatar.jpg',
+        locale: 'en-US',
+        timezone: 'America/New_York',
+        subscriberId: '<id>',
     ),
 );
 
@@ -216,6 +230,7 @@ if ($response->triggerEventResponseDto !== null) {
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="EventsController_triggerBulk" method="post" path="/v1/events/trigger/bulk" -->
 ```php
 declare(strict_types=1);
 

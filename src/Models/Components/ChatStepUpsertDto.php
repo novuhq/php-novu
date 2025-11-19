@@ -29,13 +29,22 @@ class ChatStepUpsertDto
     public StepTypeEnum $type;
 
     /**
-     * Unique identifier of the step
+     * Database identifier of the step. Used for updating the step.
      *
      * @var ?string $id
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('_id')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $id = null;
+
+    /**
+     * Unique identifier for the step
+     *
+     * @var ?string $stepId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('stepId')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $stepId = null;
 
     /**
      * Control values for the Chat step.
@@ -51,14 +60,16 @@ class ChatStepUpsertDto
      * @param  string  $name
      * @param  StepTypeEnum  $type
      * @param  ?string  $id
+     * @param  ?string  $stepId
      * @param  ChatControlDto|array<string, mixed>|null  $controlValues
      * @phpstan-pure
      */
-    public function __construct(string $name, StepTypeEnum $type, ?string $id = null, ChatControlDto|array|null $controlValues = null)
+    public function __construct(string $name, StepTypeEnum $type, ?string $id = null, ?string $stepId = null, ChatControlDto|array|null $controlValues = null)
     {
         $this->name = $name;
         $this->type = $type;
         $this->id = $id;
+        $this->stepId = $stepId;
         $this->controlValues = $controlValues;
     }
 }

@@ -27,13 +27,22 @@ class SubscribersControllerGetSubscriberPreferencesRequest
     public ?string $idempotencyKey = null;
 
     /**
+     *
+     * @var ?Criticality $criticality
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=criticality')]
+    public ?Criticality $criticality = null;
+
+    /**
      * @param  string  $subscriberId
+     * @param  ?Criticality  $criticality
      * @param  ?string  $idempotencyKey
      * @phpstan-pure
      */
-    public function __construct(string $subscriberId, ?string $idempotencyKey = null)
+    public function __construct(string $subscriberId, ?string $idempotencyKey = null, ?Criticality $criticality = Criticality::NonCritical)
     {
         $this->subscriberId = $subscriberId;
         $this->idempotencyKey = $idempotencyKey;
+        $this->criticality = $criticality;
     }
 }

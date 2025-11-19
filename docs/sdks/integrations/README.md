@@ -12,6 +12,7 @@ With the help of the Integration Store, you can easily integrate your favorite d
 * [create](#create) - Create an integration
 * [update](#update) - Update an integration
 * [delete](#delete) - Delete an integration
+* [integrationsControllerAutoConfigureIntegration](#integrationscontrollerautoconfigureintegration) - Auto-configure an integration for inbound webhooks
 * [setAsPrimary](#setasprimary) - Update integration as primary
 * [listActive](#listactive) - List active integrations
 
@@ -21,6 +22,7 @@ List all the channels integrations created in the organization
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="IntegrationsController_listIntegrations" method="get" path="/v1/integrations" -->
 ```php
 declare(strict_types=1);
 
@@ -72,6 +74,7 @@ Create an integration for the current environment the user is based on the API k
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="IntegrationsController_createIntegration" method="post" path="/v1/integrations" -->
 ```php
 declare(strict_types=1);
 
@@ -128,6 +131,7 @@ Update an integration by its unique key identifier **integrationId**.
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="IntegrationsController_updateIntegrationById" method="put" path="/v1/integrations/{integrationId}" -->
 ```php
 declare(strict_types=1);
 
@@ -184,6 +188,7 @@ Delete an integration by its unique key identifier **integrationId**.
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="IntegrationsController_removeIntegration" method="delete" path="/v1/integrations/{integrationId}" -->
 ```php
 declare(strict_types=1);
 
@@ -229,6 +234,59 @@ if ($response->integrationResponseDtos !== null) {
 | Errors\ErrorDto                        | 500                                    | application/json                       |
 | Errors\APIException                    | 4XX, 5XX                               | \*/\*                                  |
 
+## integrationsControllerAutoConfigureIntegration
+
+Auto-configure an integration by its unique key identifier **integrationId** for inbound webhook support. 
+    This will automatically generate required webhook signing keys and configure webhook endpoints.
+
+### Example Usage
+
+<!-- UsageSnippet language="php" operationID="IntegrationsController_autoConfigureIntegration" method="post" path="/v1/integrations/{integrationId}/auto-configure" -->
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use novu;
+
+$sdk = novu\Novu::builder()
+    ->setSecurity(
+        'YOUR_SECRET_KEY_HERE'
+    )
+    ->build();
+
+
+
+$response = $sdk->integrations->integrationsControllerAutoConfigureIntegration(
+    integrationId: '<id>'
+);
+
+if ($response->autoConfigureIntegrationResponseDto !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                         | Type                              | Required                          | Description                       |
+| --------------------------------- | --------------------------------- | --------------------------------- | --------------------------------- |
+| `integrationId`                   | *string*                          | :heavy_check_mark:                | N/A                               |
+| `idempotencyKey`                  | *?string*                         | :heavy_minus_sign:                | A header for idempotency purposes |
+
+### Response
+
+**[?Operations\IntegrationsControllerAutoConfigureIntegrationResponse](../../Models/Operations/IntegrationsControllerAutoConfigureIntegrationResponse.md)**
+
+### Errors
+
+| Error Type                        | Status Code                       | Content Type                      |
+| --------------------------------- | --------------------------------- | --------------------------------- |
+| Errors\ErrorDto                   | 414                               | application/json                  |
+| Errors\ErrorDto                   | 400, 401, 403, 405, 409, 413, 415 | application/json                  |
+| Errors\ValidationErrorDto         | 422                               | application/json                  |
+| Errors\ErrorDto                   | 500                               | application/json                  |
+| Errors\APIException               | 4XX, 5XX                          | \*/\*                             |
+
 ## setAsPrimary
 
 Update an integration as **primary** by its unique key identifier **integrationId**. 
@@ -237,6 +295,7 @@ Update an integration as **primary** by its unique key identifier **integrationI
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="IntegrationsController_setIntegrationAsPrimary" method="post" path="/v1/integrations/{integrationId}/set-primary" -->
 ```php
 declare(strict_types=1);
 
@@ -288,6 +347,7 @@ List all the active integrations created in the organization
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="IntegrationsController_getActiveIntegrations" method="get" path="/v1/integrations/active" -->
 ```php
 declare(strict_types=1);
 

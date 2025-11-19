@@ -56,11 +56,10 @@ class CustomStepResponseDto
     /**
      * Slug of the step
      *
-     * @var CustomStepResponseDtoSlug $slug
+     * @var string $slug
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('slug')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\CustomStepResponseDtoSlug')]
-    public CustomStepResponseDtoSlug $slug;
+    public string $slug;
 
     /**
      * Type of the step
@@ -72,7 +71,7 @@ class CustomStepResponseDto
     public StepTypeEnum $type;
 
     /**
-     * Origin of the workflow
+     * Origin of the layout
      *
      * @var ResourceOriginEnum $origin
      */
@@ -122,7 +121,7 @@ class CustomStepResponseDto
      * @param  string  $stepId
      * @param  string  $id
      * @param  string  $name
-     * @param  CustomStepResponseDtoSlug  $slug
+     * @param  string  $slug
      * @param  StepTypeEnum  $type
      * @param  ResourceOriginEnum  $origin
      * @param  string  $workflowId
@@ -131,7 +130,7 @@ class CustomStepResponseDto
      * @param  ?StepIssuesDto  $issues
      * @phpstan-pure
      */
-    public function __construct(CustomControlsMetadataResponseDto $controls, array $variables, string $stepId, string $id, string $name, CustomStepResponseDtoSlug $slug, StepTypeEnum $type, ResourceOriginEnum $origin, string $workflowId, string $workflowDatabaseId, ?CustomStepResponseDtoControlValues $controlValues = null, ?StepIssuesDto $issues = null)
+    public function __construct(CustomControlsMetadataResponseDto $controls, array $variables, string $stepId, string $id, string $name, string $slug, StepTypeEnum $type, ResourceOriginEnum $origin, string $workflowId, string $workflowDatabaseId, ?CustomStepResponseDtoControlValues $controlValues = null, ?StepIssuesDto $issues = null)
     {
         $this->controls = $controls;
         $this->variables = $variables;

@@ -38,10 +38,10 @@ class SubscribersControllerSearchSubscribersRequest
     /**
      * Direction of sorting
      *
-     * @var ?OrderDirection $orderDirection
+     * @var ?QueryParamOrderDirection $orderDirection
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=orderDirection')]
-    public ?OrderDirection $orderDirection = null;
+    public ?QueryParamOrderDirection $orderDirection = null;
 
     /**
      * Field to order by
@@ -103,7 +103,7 @@ class SubscribersControllerSearchSubscribersRequest
      * @param  ?string  $after
      * @param  ?string  $before
      * @param  ?float  $limit
-     * @param  ?OrderDirection  $orderDirection
+     * @param  ?QueryParamOrderDirection  $orderDirection
      * @param  ?string  $orderBy
      * @param  ?bool  $includeCursor
      * @param  ?string  $email
@@ -113,7 +113,7 @@ class SubscribersControllerSearchSubscribersRequest
      * @param  ?string  $idempotencyKey
      * @phpstan-pure
      */
-    public function __construct(?string $after = null, ?string $before = null, ?float $limit = null, ?OrderDirection $orderDirection = null, ?string $orderBy = null, ?bool $includeCursor = null, ?string $email = null, ?string $name = null, ?string $phone = null, ?string $subscriberId = null, ?string $idempotencyKey = null)
+    public function __construct(?string $after = null, ?string $before = null, ?float $limit = null, ?QueryParamOrderDirection $orderDirection = null, ?string $orderBy = null, ?bool $includeCursor = null, ?string $email = null, ?string $name = null, ?string $phone = null, ?string $subscriberId = null, ?string $idempotencyKey = null)
     {
         $this->after = $after;
         $this->before = $before;

@@ -13,7 +13,7 @@ namespace novu\Models\Components;
 class TriggerEventToAllRequestDtoOverrides
 {
     /**
-     * This could be used to override provider specific configurations
+     * This could be used to override provider specific configurations or layout at the step level
      *
      * @var ?array<string, StepsOverrides> $steps
      */
@@ -21,6 +21,16 @@ class TriggerEventToAllRequestDtoOverrides
     #[\Speakeasy\Serializer\Annotation\Type('array<string, \novu\Models\Components\StepsOverrides>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $steps = null;
+
+    /**
+     * Channel-specific overrides that apply to all steps of a particular channel type. Step-level overrides take precedence over channel-level overrides.
+     *
+     * @var ?TriggerEventToAllRequestDtoChannels $channels
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('channels')]
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\TriggerEventToAllRequestDtoChannels|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?TriggerEventToAllRequestDtoChannels $channels = null;
 
     /**
      * Overrides the provider configuration for the entire workflow and all steps
@@ -87,6 +97,16 @@ class TriggerEventToAllRequestDtoOverrides
     public ?string $layoutIdentifier = null;
 
     /**
+     * Severity of the workflow
+     *
+     * @var ?SeverityLevelEnum $severity
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('severity')]
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\SeverityLevelEnum|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?SeverityLevelEnum $severity = null;
+
+    /**
      * $additionalProperties
      *
      * @var ?array<string, array<string, mixed>> $additionalProperties
@@ -98,24 +118,28 @@ class TriggerEventToAllRequestDtoOverrides
 
     /**
      * @param  ?array<string, StepsOverrides>  $steps
+     * @param  ?TriggerEventToAllRequestDtoChannels  $channels
      * @param  ?array<string, array<string, mixed>>  $providers
      * @param  ?array<string, mixed>  $email
      * @param  ?array<string, mixed>  $push
      * @param  ?array<string, mixed>  $sms
      * @param  ?array<string, mixed>  $chat
      * @param  ?string  $layoutIdentifier
+     * @param  ?SeverityLevelEnum  $severity
      * @param  ?array<string, array<string, mixed>>  $additionalProperties
      * @phpstan-pure
      */
-    public function __construct(?array $steps = null, ?array $providers = null, ?array $email = null, ?array $push = null, ?array $sms = null, ?array $chat = null, ?string $layoutIdentifier = null, ?array $additionalProperties = null)
+    public function __construct(?array $steps = null, ?TriggerEventToAllRequestDtoChannels $channels = null, ?array $providers = null, ?array $email = null, ?array $push = null, ?array $sms = null, ?array $chat = null, ?string $layoutIdentifier = null, ?SeverityLevelEnum $severity = null, ?array $additionalProperties = null)
     {
         $this->steps = $steps;
+        $this->channels = $channels;
         $this->providers = $providers;
         $this->email = $email;
         $this->push = $push;
         $this->sms = $sms;
         $this->chat = $chat;
         $this->layoutIdentifier = $layoutIdentifier;
+        $this->severity = $severity;
         $this->additionalProperties = $additionalProperties;
     }
 }

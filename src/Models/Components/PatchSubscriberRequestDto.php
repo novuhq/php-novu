@@ -57,15 +57,6 @@ class PatchSubscriberRequestDto
     public ?string $avatar = null;
 
     /**
-     * Timezone of the subscriber
-     *
-     * @var ?string $timezone
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('timezone')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $timezone = null;
-
-    /**
      * Locale of the subscriber
      *
      * @var ?string $locale
@@ -75,7 +66,16 @@ class PatchSubscriberRequestDto
     public ?string $locale = null;
 
     /**
-     * Additional custom data for the subscriber
+     * Timezone of the subscriber
+     *
+     * @var ?string $timezone
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('timezone')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $timezone = null;
+
+    /**
+     * Additional custom data associated with the subscriber
      *
      * @var ?array<string, mixed> $data
      */
@@ -90,20 +90,20 @@ class PatchSubscriberRequestDto
      * @param  ?string  $email
      * @param  ?string  $phone
      * @param  ?string  $avatar
-     * @param  ?string  $timezone
      * @param  ?string  $locale
+     * @param  ?string  $timezone
      * @param  ?array<string, mixed>  $data
      * @phpstan-pure
      */
-    public function __construct(?string $firstName = null, ?string $lastName = null, ?string $email = null, ?string $phone = null, ?string $avatar = null, ?string $timezone = null, ?string $locale = null, ?array $data = null)
+    public function __construct(?string $firstName = null, ?string $lastName = null, ?string $email = null, ?string $phone = null, ?string $avatar = null, ?string $locale = null, ?string $timezone = null, ?array $data = null)
     {
         $this->firstName = $firstName;
         $this->lastName = $lastName;
         $this->email = $email;
         $this->phone = $phone;
         $this->avatar = $avatar;
-        $this->timezone = $timezone;
         $this->locale = $locale;
+        $this->timezone = $timezone;
         $this->data = $data;
     }
 }

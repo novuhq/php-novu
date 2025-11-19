@@ -103,6 +103,16 @@ class IntegrationResponseDto
     public ?string $id = null;
 
     /**
+     * The configurations required for enabling the additional configurations of the integration.
+     *
+     * @var ?ConfigurationsDto $configurations
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('configurations')]
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ConfigurationsDto|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?ConfigurationsDto $configurations = null;
+
+    /**
      * The timestamp indicating when the integration was deleted. This is set when the integration is soft deleted.
      *
      * @var ?string $deletedAt
@@ -142,12 +152,13 @@ class IntegrationResponseDto
      * @param  bool  $deleted
      * @param  bool  $primary
      * @param  ?string  $id
+     * @param  ?ConfigurationsDto  $configurations
      * @param  ?string  $deletedAt
      * @param  ?string  $deletedBy
      * @param  ?array<StepFilterDto>  $conditions
      * @phpstan-pure
      */
-    public function __construct(string $environmentId, string $organizationId, string $name, string $identifier, string $providerId, Channel $channel, CredentialsDto $credentials, bool $active, bool $deleted, bool $primary, ?string $id = null, ?string $deletedAt = null, ?string $deletedBy = null, ?array $conditions = null)
+    public function __construct(string $environmentId, string $organizationId, string $name, string $identifier, string $providerId, Channel $channel, CredentialsDto $credentials, bool $active, bool $deleted, bool $primary, ?string $id = null, ?ConfigurationsDto $configurations = null, ?string $deletedAt = null, ?string $deletedBy = null, ?array $conditions = null)
     {
         $this->environmentId = $environmentId;
         $this->organizationId = $organizationId;
@@ -160,6 +171,7 @@ class IntegrationResponseDto
         $this->deleted = $deleted;
         $this->primary = $primary;
         $this->id = $id;
+        $this->configurations = $configurations;
         $this->deletedAt = $deletedAt;
         $this->deletedBy = $deletedBy;
         $this->conditions = $conditions;

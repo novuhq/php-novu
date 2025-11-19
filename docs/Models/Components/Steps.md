@@ -66,6 +66,15 @@ Components\DelayStepUpsertDto $value = /* values here */
 Components\DigestStepUpsertDto $value = /* values here */
 ```
 
+### `Components\ThrottleStepUpsertDto`
+
+```php
+/**
+* @var Components\ThrottleStepUpsertDto
+*/
+Components\ThrottleStepUpsertDto $value = /* values here */
+```
+
 ### `Components\CustomStepUpsertDto`
 
 ```php

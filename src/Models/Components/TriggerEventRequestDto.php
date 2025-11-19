@@ -52,7 +52,9 @@ class TriggerEventRequestDto
     public ?Overrides $overrides = null;
 
     /**
-     * A unique identifier for this transaction, we will generate a UUID if not provided.
+     * A unique identifier for deduplication. If the same **transactionId** is sent again, 
+     *
+     *       the trigger is ignored. Useful to prevent duplicate notifications. The retention period depends on your billing tier.
      *
      * @var ?string $transactionId
      */
@@ -86,6 +88,16 @@ class TriggerEventRequestDto
     public string|TenantPayloadDto|null $tenant = null;
 
     /**
+     * $context
+     *
+     * @var ?array<string, string|Two> $context
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('context')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, string|\novu\Models\Components\Two>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $context = null;
+
+    /**
      * @param  string  $workflowId
      * @param  array<SubscriberPayloadDto|TopicPayloadDto|string>|string|SubscriberPayloadDto|TopicPayloadDto  $to
      * @param  ?array<string, mixed>  $payload
@@ -93,9 +105,10 @@ class TriggerEventRequestDto
      * @param  ?string  $transactionId
      * @param  string|SubscriberPayloadDto|null  $actor
      * @param  string|TenantPayloadDto|null  $tenant
+     * @param  ?array<string, string|Two>  $context
      * @phpstan-pure
      */
-    public function __construct(string $workflowId, array|string|SubscriberPayloadDto|TopicPayloadDto $to, ?array $payload = null, ?Overrides $overrides = null, ?string $transactionId = null, string|SubscriberPayloadDto|null $actor = null, string|TenantPayloadDto|null $tenant = null)
+    public function __construct(string $workflowId, array|string|SubscriberPayloadDto|TopicPayloadDto $to, ?array $payload = null, ?Overrides $overrides = null, ?string $transactionId = null, string|SubscriberPayloadDto|null $actor = null, string|TenantPayloadDto|null $tenant = null, ?array $context = null)
     {
         $this->workflowId = $workflowId;
         $this->to = $to;
@@ -104,5 +117,6 @@ class TriggerEventRequestDto
         $this->transactionId = $transactionId;
         $this->actor = $actor;
         $this->tenant = $tenant;
+        $this->context = $context;
     }
 }

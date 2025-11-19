@@ -16,6 +16,7 @@ enum UiSchemaGroupEnum: string
     case Email = 'EMAIL';
     case Digest = 'DIGEST';
     case Delay = 'DELAY';
+    case Throttle = 'THROTTLE';
     case Sms = 'SMS';
     case Chat = 'CHAT';
     case Push = 'PUSH';

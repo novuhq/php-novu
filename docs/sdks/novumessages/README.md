@@ -15,6 +15,7 @@ Update in-app (inbox) notification's action status by its unique key identifier 
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="SubscribersV1Controller_markActionAsSeen" method="post" path="/v1/subscribers/{subscriberId}/messages/{messageId}/actions/{type}" -->
 ```php
 declare(strict_types=1);
 
@@ -75,6 +76,7 @@ Update subscriber's multiple in-app (inbox) notifications state such as seen, re
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="SubscribersV1Controller_markMessagesAs" method="post" path="/v1/subscribers/{subscriberId}/messages/mark-as" -->
 ```php
 declare(strict_types=1);
 

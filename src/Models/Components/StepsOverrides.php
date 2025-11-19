@@ -14,18 +14,30 @@ class StepsOverrides
     /**
      * Passing the provider id and the provider specific configurations
      *
-     * @var array<string, array<string, mixed>> $providers
+     * @var ?array<string, array<string, mixed>> $providers
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('providers')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<string, array<string, mixed>>')]
-    public array $providers;
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, array<string, mixed>>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $providers = null;
 
     /**
-     * @param  array<string, array<string, mixed>>  $providers
+     * Override the or remove the layout for this specific step
+     *
+     * @var ?string $layoutId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('layoutId')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $layoutId = null;
+
+    /**
+     * @param  ?array<string, array<string, mixed>>  $providers
+     * @param  ?string  $layoutId
      * @phpstan-pure
      */
-    public function __construct(array $providers)
+    public function __construct(?array $providers = null, ?string $layoutId = null)
     {
         $this->providers = $providers;
+        $this->layoutId = $layoutId;
     }
 }

@@ -46,10 +46,10 @@ class SubscribersControllerListSubscriberTopicsRequest
     /**
      * Direction of sorting
      *
-     * @var ?QueryParamOrderDirection $orderDirection
+     * @var ?SubscribersControllerListSubscriberTopicsQueryParamOrderDirection $orderDirection
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=orderDirection')]
-    public ?QueryParamOrderDirection $orderDirection = null;
+    public ?SubscribersControllerListSubscriberTopicsQueryParamOrderDirection $orderDirection = null;
 
     /**
      * Field to order by
@@ -88,14 +88,14 @@ class SubscribersControllerListSubscriberTopicsRequest
      * @param  ?string  $after
      * @param  ?string  $before
      * @param  ?float  $limit
-     * @param  ?QueryParamOrderDirection  $orderDirection
+     * @param  ?SubscribersControllerListSubscriberTopicsQueryParamOrderDirection  $orderDirection
      * @param  ?string  $orderBy
      * @param  ?bool  $includeCursor
      * @param  ?string  $key
      * @param  ?string  $idempotencyKey
      * @phpstan-pure
      */
-    public function __construct(string $subscriberId, ?string $after = null, ?string $before = null, ?float $limit = null, ?QueryParamOrderDirection $orderDirection = null, ?string $orderBy = null, ?bool $includeCursor = null, ?string $key = null, ?string $idempotencyKey = null)
+    public function __construct(string $subscriberId, ?string $after = null, ?string $before = null, ?float $limit = null, ?SubscribersControllerListSubscriberTopicsQueryParamOrderDirection $orderDirection = null, ?string $orderBy = null, ?bool $includeCursor = null, ?string $key = null, ?string $idempotencyKey = null)
     {
         $this->subscriberId = $subscriberId;
         $this->after = $after;

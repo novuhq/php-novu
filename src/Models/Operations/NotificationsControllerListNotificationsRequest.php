@@ -54,7 +54,15 @@ class NotificationsControllerListNotificationsRequest
     public ?array $subscriberIds = null;
 
     /**
-     * Transaction ID for filtering
+     * Array of severity levels or a single severity level
+     *
+     * @var ?array<string> $severity
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=severity')]
+    public ?array $severity = null;
+
+    /**
+     * The transaction ID to filter by
      *
      * @var ?string $transactionId
      */
@@ -68,6 +76,14 @@ class NotificationsControllerListNotificationsRequest
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=topicKey')]
     public ?string $topicKey = null;
+
+    /**
+     * Filter by exact context keys, order insensitive (format: "type:id")
+     *
+     * @var ?array<string> $contextKeys
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=contextKeys')]
+    public ?array $contextKeys = null;
 
     /**
      * Date filter for records after this timestamp. Defaults to earliest date allowed by subscription plan
@@ -115,24 +131,28 @@ class NotificationsControllerListNotificationsRequest
      * @param  ?array<string>  $emails
      * @param  ?string  $search
      * @param  ?array<string>  $subscriberIds
+     * @param  ?array<string>  $severity
      * @param  ?float  $page
      * @param  ?float  $limit
      * @param  ?string  $transactionId
      * @param  ?string  $topicKey
+     * @param  ?array<string>  $contextKeys
      * @param  ?string  $after
      * @param  ?string  $before
      * @param  ?string  $idempotencyKey
      * @phpstan-pure
      */
-    public function __construct(?array $channels = null, ?array $templates = null, ?array $emails = null, ?string $search = null, ?array $subscriberIds = null, ?string $transactionId = null, ?string $topicKey = null, ?string $after = null, ?string $before = null, ?string $idempotencyKey = null, ?float $page = 0, ?float $limit = 10)
+    public function __construct(?array $channels = null, ?array $templates = null, ?array $emails = null, ?string $search = null, ?array $subscriberIds = null, ?array $severity = null, ?string $transactionId = null, ?string $topicKey = null, ?array $contextKeys = null, ?string $after = null, ?string $before = null, ?string $idempotencyKey = null, ?float $page = 0, ?float $limit = 10)
     {
         $this->channels = $channels;
         $this->templates = $templates;
         $this->emails = $emails;
         $this->search = $search;
         $this->subscriberIds = $subscriberIds;
+        $this->severity = $severity;
         $this->transactionId = $transactionId;
         $this->topicKey = $topicKey;
+        $this->contextKeys = $contextKeys;
         $this->after = $after;
         $this->before = $before;
         $this->idempotencyKey = $idempotencyKey;

@@ -117,6 +117,10 @@ $triggerEventRequestDto = new Components\TriggerEventRequestDto(
     ],
     overrides: new Components\Overrides(),
     to: 'SUBSCRIBER_ID',
+    actor: '<value>',
+    context: [
+        'key' => 'org-acme',
+    ],
 );
 
 $response = $sdk->trigger(
@@ -186,6 +190,16 @@ $triggerEventToAllRequestDto = new Components\TriggerEventToAllRequestDto(
                 ],
             ],
         ],
+    ),
+    actor: new Components\SubscriberPayloadDto(
+        firstName: 'John',
+        lastName: 'Doe',
+        email: 'john.doe@example.com',
+        phone: '+1234567890',
+        avatar: 'https://example.com/avatar.jpg',
+        locale: 'en-US',
+        timezone: 'America/New_York',
+        subscriberId: '<id>',
     ),
 );
 
@@ -298,6 +312,10 @@ $triggerEventRequestDto = new Components\TriggerEventRequestDto(
     ],
     overrides: new Components\Overrides(),
     to: 'SUBSCRIBER_ID',
+    actor: '<value>',
+    context: [
+        'key' => 'org-acme',
+    ],
 );
 
 $response = $sdk->trigger(
@@ -316,8 +334,21 @@ if ($response->triggerEventResponseDto !== null) {
 <details open>
 <summary>Available methods</summary>
 
+### [activity](docs/sdks/activity/README.md)
+
+* [track](docs/sdks/activity/README.md#track) - Track activity and engagement events
+
+### [contexts](docs/sdks/contexts/README.md)
+
+* [create](docs/sdks/contexts/README.md#create) - Create a context
+* [list](docs/sdks/contexts/README.md#list) - List all contexts
+* [update](docs/sdks/contexts/README.md#update) - Update a context
+* [retrieve](docs/sdks/contexts/README.md#retrieve) - Retrieve a context
+* [delete](docs/sdks/contexts/README.md#delete) - Delete a context
+
 ### [environments](docs/sdks/environments/README.md)
 
+* [getTags](docs/sdks/environments/README.md#gettags) - Get environment tags
 * [create](docs/sdks/environments/README.md#create) - Create an environment
 * [list](docs/sdks/environments/README.md#list) - List all environments
 * [update](docs/sdks/environments/README.md#update) - Update an environment
@@ -329,8 +360,20 @@ if ($response->triggerEventResponseDto !== null) {
 * [create](docs/sdks/integrations/README.md#create) - Create an integration
 * [update](docs/sdks/integrations/README.md#update) - Update an integration
 * [delete](docs/sdks/integrations/README.md#delete) - Delete an integration
+* [integrationsControllerAutoConfigureIntegration](docs/sdks/integrations/README.md#integrationscontrollerautoconfigureintegration) - Auto-configure an integration for inbound webhooks
 * [setAsPrimary](docs/sdks/integrations/README.md#setasprimary) - Update integration as primary
 * [listActive](docs/sdks/integrations/README.md#listactive) - List active integrations
+
+### [layouts](docs/sdks/layouts/README.md)
+
+* [create](docs/sdks/layouts/README.md#create) - Create a layout
+* [list](docs/sdks/layouts/README.md#list) - List all layouts
+* [update](docs/sdks/layouts/README.md#update) - Update a layout
+* [retrieve](docs/sdks/layouts/README.md#retrieve) - Retrieve a layout
+* [delete](docs/sdks/layouts/README.md#delete) - Delete a layout
+* [duplicate](docs/sdks/layouts/README.md#duplicate) - Duplicate a layout
+* [generatePreview](docs/sdks/layouts/README.md#generatepreview) - Generate layout preview
+* [usage](docs/sdks/layouts/README.md#usage) - Get layout usage
 
 ### [messages](docs/sdks/messages/README.md)
 
@@ -371,6 +414,10 @@ if ($response->triggerEventResponseDto !== null) {
 
 * [getFeed](docs/sdks/novunotifications/README.md#getfeed) - Retrieve subscriber notifications
 
+#### [subscribers->preferences](docs/sdks/preferences/README.md)
+
+* [bulkUpdate](docs/sdks/preferences/README.md#bulkupdate) - Bulk update subscriber preferences
+
 #### [subscribers->topics](docs/sdks/novutopics/README.md)
 
 * [list](docs/sdks/novutopics/README.md#list) - Retrieve subscriber subscriptions
@@ -409,6 +456,24 @@ if ($response->triggerEventResponseDto !== null) {
 ### [topicsSubscribers](docs/sdks/topicssubscribers/README.md)
 
 * [check](docs/sdks/topicssubscribers/README.md#check) - Check topic subscriber
+
+### [translations](docs/sdks/translations/README.md)
+
+* [create](docs/sdks/translations/README.md#create) - Create a translation
+* [retrieve](docs/sdks/translations/README.md#retrieve) - Retrieve a translation
+* [delete](docs/sdks/translations/README.md#delete) - Delete a translation
+* [upload](docs/sdks/translations/README.md#upload) - Upload translation files
+
+#### [translations->groups](docs/sdks/groups/README.md)
+
+* [delete](docs/sdks/groups/README.md#delete) - Delete a translation group
+* [retrieve](docs/sdks/groups/README.md#retrieve) - Retrieve a translation group
+
+#### [translations->master](docs/sdks/master/README.md)
+
+* [retrieve](docs/sdks/master/README.md#retrieve) - Retrieve master translations JSON
+* [import](docs/sdks/master/README.md#import) - Import master translations JSON
+* [upload](docs/sdks/master/README.md#upload) - Upload master translations JSON file
 
 ### [workflows](docs/sdks/workflows/README.md)
 
@@ -458,6 +523,10 @@ $triggerEventRequestDto = new Components\TriggerEventRequestDto(
     ],
     overrides: new Components\Overrides(),
     to: 'SUBSCRIBER_ID',
+    actor: '<value>',
+    context: [
+        'key' => 'org-acme',
+    ],
 );
 
 $response = $sdk->trigger(
@@ -513,6 +582,10 @@ $triggerEventRequestDto = new Components\TriggerEventRequestDto(
     ],
     overrides: new Components\Overrides(),
     to: 'SUBSCRIBER_ID',
+    actor: '<value>',
+    context: [
+        'key' => 'org-acme',
+    ],
 );
 
 $response = $sdk->trigger(
@@ -578,6 +651,10 @@ try {
         ],
         overrides: new Components\Overrides(),
         to: 'SUBSCRIBER_ID',
+        actor: '<value>',
+        context: [
+            'key' => 'org-acme',
+        ],
     );
 
     $response = $sdk->trigger(
@@ -632,7 +709,7 @@ use novu;
 use novu\Models\Components;
 
 $sdk = novu\Novu::builder()
-    ->setServerIndex(1)
+    ->setServerIndex(0)
     ->setSecurity(
         'YOUR_SECRET_KEY_HERE'
     )
@@ -648,6 +725,10 @@ $triggerEventRequestDto = new Components\TriggerEventRequestDto(
     ],
     overrides: new Components\Overrides(),
     to: 'SUBSCRIBER_ID',
+    actor: '<value>',
+    context: [
+        'key' => 'org-acme',
+    ],
 );
 
 $response = $sdk->trigger(
@@ -687,6 +768,10 @@ $triggerEventRequestDto = new Components\TriggerEventRequestDto(
     ],
     overrides: new Components\Overrides(),
     to: 'SUBSCRIBER_ID',
+    actor: '<value>',
+    context: [
+        'key' => 'org-acme',
+    ],
 );
 
 $response = $sdk->trigger(

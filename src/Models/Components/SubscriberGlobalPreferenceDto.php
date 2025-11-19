@@ -29,13 +29,25 @@ class SubscriberGlobalPreferenceDto
     public SubscriberPreferenceChannels $channels;
 
     /**
+     * Subscriber schedule
+     *
+     * @var ?ScheduleDto $schedule
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('schedule')]
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ScheduleDto|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?ScheduleDto $schedule = null;
+
+    /**
      * @param  bool  $enabled
      * @param  SubscriberPreferenceChannels  $channels
+     * @param  ?ScheduleDto  $schedule
      * @phpstan-pure
      */
-    public function __construct(bool $enabled, SubscriberPreferenceChannels $channels)
+    public function __construct(bool $enabled, SubscriberPreferenceChannels $channels, ?ScheduleDto $schedule = null)
     {
         $this->enabled = $enabled;
         $this->channels = $channels;
+        $this->schedule = $schedule;
     }
 }
