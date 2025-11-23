@@ -12,6 +12,13 @@ use novu\Utils\SpeakeasyMetadata;
 class TranslationControllerUploadMasterJsonEndpointRequest
 {
     /**
+     *
+     * @var TranslationControllerUploadMasterJsonEndpointRequestBody $requestBody
+     */
+    #[SpeakeasyMetadata('request:mediaType=multipart/form-data')]
+    public TranslationControllerUploadMasterJsonEndpointRequestBody $requestBody;
+
+    /**
      * A header for idempotency purposes
      *
      * @var ?string $idempotencyKey
@@ -20,11 +27,13 @@ class TranslationControllerUploadMasterJsonEndpointRequest
     public ?string $idempotencyKey = null;
 
     /**
+     * @param  TranslationControllerUploadMasterJsonEndpointRequestBody  $requestBody
      * @param  ?string  $idempotencyKey
      * @phpstan-pure
      */
-    public function __construct(?string $idempotencyKey = null)
+    public function __construct(TranslationControllerUploadMasterJsonEndpointRequestBody $requestBody, ?string $idempotencyKey = null)
     {
+        $this->requestBody = $requestBody;
         $this->idempotencyKey = $idempotencyKey;
     }
 }

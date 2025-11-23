@@ -1,6 +1,6 @@
-# UploadTranslationsRequestDtoResourceType
+# TranslationControllerDeleteTranslationGroupEndpointPathParamResourceType
 
-The resource type to associate localizations with
+Resource type
 
 
 ## Values

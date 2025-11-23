@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 4286f3ad-fa54-4c63-a599-e5773b27ae7b
 management:
-  docChecksum: 45a80e3f57adc3a9efb305554c1a707b
+  docChecksum: 26e770ade1ad65f336a13c6cd66b92cd
   docVersion: 3.11.0
-  speakeasyVersion: 1.658.2
-  generationVersion: 2.755.9
-  releaseVersion: 3.11.0
-  configChecksum: dde5e90aa9163e0cec1ab531127dd735
+  speakeasyVersion: 1.660.0
+  generationVersion: 2.760.2
+  releaseVersion: 3.11.1
+  configChecksum: 11b895db031a710ea9a8885b030d5da1
   repoURL: https://github.com/novuhq/php-novu.git
   installationURL: https://github.com/novuhq/php-novu
   published: true
@@ -81,6 +81,7 @@ generatedFiles:
   - docs/Models/Components/Content.md
   - docs/Models/Components/ContentIssueEnum.md
   - docs/Models/Components/Context.md
+  - docs/Models/Components/Context2.md
   - docs/Models/Components/ControlValues.md
   - docs/Models/Components/ControlVariables.md
   - docs/Models/Components/ControlsMetadataDto.md
@@ -196,6 +197,7 @@ generatedFiles:
   - docs/Models/Components/IntegrationResponseDto.md
   - docs/Models/Components/IssueType.md
   - docs/Models/Components/Issues.md
+  - docs/Models/Components/JobData.md
   - docs/Models/Components/LastPublishedBy.md
   - docs/Models/Components/LayoutControlValuesDto.md
   - docs/Models/Components/LayoutControlsDto.md
@@ -204,7 +206,6 @@ generatedFiles:
   - docs/Models/Components/LayoutPreviewRequestDto.md
   - docs/Models/Components/LayoutResponseDto.md
   - docs/Models/Components/LayoutResponseDtoSortField.md
-  - docs/Models/Components/Layouts.md
   - docs/Models/Components/ListContextsResponseDto.md
   - docs/Models/Components/ListLayoutResponseDto.md
   - docs/Models/Components/ListSubscribersResponseDto.md
@@ -218,7 +219,6 @@ generatedFiles:
   - docs/Models/Components/MarkMessageActionAsSeenDto.md
   - docs/Models/Components/MarkMessageActionAsSeenDtoPayload.md
   - docs/Models/Components/MarkMessageActionAsSeenDtoStatus.md
-  - docs/Models/Components/MasterJson.md
   - docs/Models/Components/MessageAction.md
   - docs/Models/Components/MessageActionResult.md
   - docs/Models/Components/MessageActionStatusEnum.md
@@ -229,7 +229,6 @@ generatedFiles:
   - docs/Models/Components/MessageMarkAsRequestDto.md
   - docs/Models/Components/MessageMarkAsRequestDtoMarkAs.md
   - docs/Models/Components/MessageResponseDto.md
-  - docs/Models/Components/MessageResponseDtoContent.md
   - docs/Models/Components/MessageResponseDtoOverrides.md
   - docs/Models/Components/MessageResponseDtoPayload.md
   - docs/Models/Components/MessageStatusEnum.md
@@ -358,7 +357,6 @@ generatedFiles:
   - docs/Models/Components/TranslationGroupDto.md
   - docs/Models/Components/TranslationGroupDtoResourceType.md
   - docs/Models/Components/TranslationResponseDto.md
-  - docs/Models/Components/TranslationResponseDtoContent.md
   - docs/Models/Components/TranslationResponseDtoResourceType.md
   - docs/Models/Components/TriggerEventRequestDto.md
   - docs/Models/Components/TriggerEventResponseDto.md
@@ -366,6 +364,7 @@ generatedFiles:
   - docs/Models/Components/TriggerEventToAllRequestDto.md
   - docs/Models/Components/TriggerEventToAllRequestDtoActor.md
   - docs/Models/Components/TriggerEventToAllRequestDtoChannels.md
+  - docs/Models/Components/TriggerEventToAllRequestDtoContext.md
   - docs/Models/Components/TriggerEventToAllRequestDtoOverrides.md
   - docs/Models/Components/TriggerEventToAllRequestDtoTenant.md
   - docs/Models/Components/TriggerRecipientsTypeEnum.md
@@ -391,8 +390,6 @@ generatedFiles:
   - docs/Models/Components/UpdateWorkflowDtoSteps.md
   - docs/Models/Components/UpdatedBy.md
   - docs/Models/Components/UpdatedSubscriberDto.md
-  - docs/Models/Components/UploadTranslationsRequestDto.md
-  - docs/Models/Components/UploadTranslationsRequestDtoResourceType.md
   - docs/Models/Components/UploadTranslationsResponseDto.md
   - docs/Models/Components/User.md
   - docs/Models/Components/UserAll.md
@@ -423,7 +420,6 @@ generatedFiles:
   - docs/Models/Components/WorkflowResponseDtoSteps.md
   - docs/Models/Components/WorkflowResponseDtoUpdatedBy.md
   - docs/Models/Components/WorkflowStatusEnum.md
-  - docs/Models/Components/Workflows.md
   - docs/Models/Errors/ErrorDto.md
   - docs/Models/Errors/Five.md
   - docs/Models/Errors/Four.md
@@ -469,6 +465,8 @@ generatedFiles:
   - docs/Models/Operations/EventsControllerTriggerBulkResponse.md
   - docs/Models/Operations/EventsControllerTriggerRequest.md
   - docs/Models/Operations/EventsControllerTriggerResponse.md
+  - docs/Models/Operations/File.md
+  - docs/Models/Operations/Files.md
   - docs/Models/Operations/InboundWebhooksControllerHandleWebhookRequest.md
   - docs/Models/Operations/InboundWebhooksControllerHandleWebhookResponse.md
   - docs/Models/Operations/IntegrationsControllerAutoConfigureIntegrationRequest.md
@@ -579,6 +577,7 @@ generatedFiles:
   - docs/Models/Operations/TranslationControllerDeleteTranslationEndpointPathParamResourceType.md
   - docs/Models/Operations/TranslationControllerDeleteTranslationEndpointRequest.md
   - docs/Models/Operations/TranslationControllerDeleteTranslationEndpointResponse.md
+  - docs/Models/Operations/TranslationControllerDeleteTranslationGroupEndpointPathParamResourceType.md
   - docs/Models/Operations/TranslationControllerDeleteTranslationGroupEndpointRequest.md
   - docs/Models/Operations/TranslationControllerDeleteTranslationGroupEndpointResponse.md
   - docs/Models/Operations/TranslationControllerGetMasterJsonEndpointRequest.md
@@ -591,8 +590,10 @@ generatedFiles:
   - docs/Models/Operations/TranslationControllerImportMasterJsonEndpointRequest.md
   - docs/Models/Operations/TranslationControllerImportMasterJsonEndpointResponse.md
   - docs/Models/Operations/TranslationControllerUploadMasterJsonEndpointRequest.md
+  - docs/Models/Operations/TranslationControllerUploadMasterJsonEndpointRequestBody.md
   - docs/Models/Operations/TranslationControllerUploadMasterJsonEndpointResponse.md
   - docs/Models/Operations/TranslationControllerUploadTranslationFilesRequest.md
+  - docs/Models/Operations/TranslationControllerUploadTranslationFilesRequestBody.md
   - docs/Models/Operations/TranslationControllerUploadTranslationFilesResponse.md
   - docs/Models/Operations/WorkflowControllerCreateRequest.md
   - docs/Models/Operations/WorkflowControllerCreateResponse.md
@@ -706,8 +707,8 @@ generatedFiles:
   - src/Models/Components/Configurations.php
   - src/Models/Components/ConfigurationsDto.php
   - src/Models/Components/ConstraintValidation.php
-  - src/Models/Components/Content.php
   - src/Models/Components/ContentIssueEnum.php
+  - src/Models/Components/Context2.php
   - src/Models/Components/ControlValues.php
   - src/Models/Components/ControlVariables.php
   - src/Models/Components/ControlsMetadataDto.php
@@ -816,6 +817,7 @@ generatedFiles:
   - src/Models/Components/IntegrationResponseDto.php
   - src/Models/Components/IssueType.php
   - src/Models/Components/Issues.php
+  - src/Models/Components/JobData.php
   - src/Models/Components/LastPublishedBy.php
   - src/Models/Components/LayoutControlValuesDto.php
   - src/Models/Components/LayoutControlsDto.php
@@ -824,7 +826,6 @@ generatedFiles:
   - src/Models/Components/LayoutPreviewRequestDto.php
   - src/Models/Components/LayoutResponseDto.php
   - src/Models/Components/LayoutResponseDtoSortField.php
-  - src/Models/Components/Layouts.php
   - src/Models/Components/ListContextsResponseDto.php
   - src/Models/Components/ListLayoutResponseDto.php
   - src/Models/Components/ListSubscribersResponseDto.php
@@ -838,7 +839,6 @@ generatedFiles:
   - src/Models/Components/MarkMessageActionAsSeenDto.php
   - src/Models/Components/MarkMessageActionAsSeenDtoPayload.php
   - src/Models/Components/MarkMessageActionAsSeenDtoStatus.php
-  - src/Models/Components/MasterJson.php
   - src/Models/Components/MessageAction.php
   - src/Models/Components/MessageActionResult.php
   - src/Models/Components/MessageActionStatusEnum.php
@@ -962,7 +962,6 @@ generatedFiles:
   - src/Models/Components/TranslationGroupDto.php
   - src/Models/Components/TranslationGroupDtoResourceType.php
   - src/Models/Components/TranslationResponseDto.php
-  - src/Models/Components/TranslationResponseDtoContent.php
   - src/Models/Components/TranslationResponseDtoResourceType.php
   - src/Models/Components/TriggerEventRequestDto.php
   - src/Models/Components/TriggerEventResponseDto.php
@@ -992,8 +991,6 @@ generatedFiles:
   - src/Models/Components/UpdateWorkflowDto.php
   - src/Models/Components/UpdatedBy.php
   - src/Models/Components/UpdatedSubscriberDto.php
-  - src/Models/Components/UploadTranslationsRequestDto.php
-  - src/Models/Components/UploadTranslationsRequestDtoResourceType.php
   - src/Models/Components/UploadTranslationsResponseDto.php
   - src/Models/Components/UserWorkflowPreferencesDto.php
   - src/Models/Components/Value4.php
@@ -1018,7 +1015,6 @@ generatedFiles:
   - src/Models/Components/WorkflowResponseDtoSortField.php
   - src/Models/Components/WorkflowResponseDtoUpdatedBy.php
   - src/Models/Components/WorkflowStatusEnum.php
-  - src/Models/Components/Workflows.php
   - src/Models/Errors/APIException.php
   - src/Models/Errors/ErrorDto.php
   - src/Models/Errors/ErrorDtoThrowable.php
@@ -1064,6 +1060,8 @@ generatedFiles:
   - src/Models/Operations/EventsControllerTriggerBulkResponse.php
   - src/Models/Operations/EventsControllerTriggerRequest.php
   - src/Models/Operations/EventsControllerTriggerResponse.php
+  - src/Models/Operations/File.php
+  - src/Models/Operations/Files.php
   - src/Models/Operations/InboundWebhooksControllerHandleWebhookRequest.php
   - src/Models/Operations/InboundWebhooksControllerHandleWebhookResponse.php
   - src/Models/Operations/IntegrationsControllerAutoConfigureIntegrationRequest.php
@@ -1174,6 +1172,7 @@ generatedFiles:
   - src/Models/Operations/TranslationControllerDeleteTranslationEndpointPathParamResourceType.php
   - src/Models/Operations/TranslationControllerDeleteTranslationEndpointRequest.php
   - src/Models/Operations/TranslationControllerDeleteTranslationEndpointResponse.php
+  - src/Models/Operations/TranslationControllerDeleteTranslationGroupEndpointPathParamResourceType.php
   - src/Models/Operations/TranslationControllerDeleteTranslationGroupEndpointRequest.php
   - src/Models/Operations/TranslationControllerDeleteTranslationGroupEndpointResponse.php
   - src/Models/Operations/TranslationControllerGetMasterJsonEndpointRequest.php
@@ -1186,8 +1185,10 @@ generatedFiles:
   - src/Models/Operations/TranslationControllerImportMasterJsonEndpointRequest.php
   - src/Models/Operations/TranslationControllerImportMasterJsonEndpointResponse.php
   - src/Models/Operations/TranslationControllerUploadMasterJsonEndpointRequest.php
+  - src/Models/Operations/TranslationControllerUploadMasterJsonEndpointRequestBody.php
   - src/Models/Operations/TranslationControllerUploadMasterJsonEndpointResponse.php
   - src/Models/Operations/TranslationControllerUploadTranslationFilesRequest.php
+  - src/Models/Operations/TranslationControllerUploadTranslationFilesRequestBody.php
   - src/Models/Operations/TranslationControllerUploadTranslationFilesResponse.php
   - src/Models/Operations/WorkflowControllerCreateRequest.php
   - src/Models/Operations/WorkflowControllerCreateResponse.php
@@ -1296,7 +1297,7 @@ examples:
   EventsController_broadcastEventToAll:
     speakeasy-default-events-controller-broadcast-event-to-all:
       requestBody:
-        application/json: {"name": "<value>", "payload": {"comment_id": "string", "post": {"text": "string"}}, "overrides": {"fcm": {"data": {"key": "value"}}}, "actor": {"firstName": "John", "lastName": "Doe", "email": "john.doe@example.com", "phone": "+1234567890", "avatar": "https://example.com/avatar.jpg", "locale": "en-US", "timezone": "America/New_York", "subscriberId": "<id>"}}
+        application/json: {"name": "<value>", "payload": {"comment_id": "string", "post": {"text": "string"}}, "overrides": {"fcm": {"data": {"key": "value"}}}, "actor": {"firstName": "John", "lastName": "Doe", "email": "john.doe@example.com", "phone": "+1234567890", "avatar": "https://example.com/avatar.jpg", "locale": "en-US", "timezone": "America/New_York", "subscriberId": "<id>"}, "context": {"key": "org-acme"}}
       responses:
         "200":
           application/json: {"acknowledged": false, "status": "invalid_recipients"}
@@ -2452,10 +2453,10 @@ examples:
   TranslationController_createTranslationEndpoint:
     speakeasy-default-translation-controller-create-translation-endpoint:
       requestBody:
-        application/json: {"resourceId": "welcome-email", "resourceType": "layout", "locale": "en_US", "content": {}}
+        application/json: {"resourceId": "welcome-email", "resourceType": "layout", "locale": "en_US", "content": {"welcome.title": "Welcome", "welcome.message": "Hello there!"}}
       responses:
         "200":
-          application/json: {"resourceId": "welcome-email", "resourceType": "workflow", "locale": "en_US", "content": {}, "createdAt": "2024-01-01T00:00:00.000Z", "updatedAt": "2024-01-01T00:00:00.000Z"}
+          application/json: {"resourceId": "welcome-email", "resourceType": "workflow", "locale": "en_US", "content": {"welcome.title": "Welcome", "welcome.message": "Hello there!"}, "createdAt": "2024-01-01T00:00:00.000Z", "updatedAt": "2024-01-01T00:00:00.000Z"}
   TranslationController_getSingleTranslation:
     speakeasy-default-translation-controller-get-single-translation:
       parameters:
@@ -2465,7 +2466,7 @@ examples:
           locale: "en_US"
       responses:
         "200":
-          application/json: {"resourceId": "welcome-email", "resourceType": "workflow", "locale": "en_US", "content": {}, "createdAt": "2024-01-01T00:00:00.000Z", "updatedAt": "2024-01-01T00:00:00.000Z"}
+          application/json: {"resourceId": "welcome-email", "resourceType": "workflow", "locale": "en_US", "content": {"welcome.title": "Welcome", "welcome.message": "Hello there!"}, "createdAt": "2024-01-01T00:00:00.000Z", "updatedAt": "2024-01-01T00:00:00.000Z"}
   TranslationController_deleteTranslationEndpoint:
     speakeasy-default-translation-controller-delete-translation-endpoint:
       parameters:
@@ -2476,7 +2477,7 @@ examples:
   TranslationController_uploadTranslationFiles:
     speakeasy-default-translation-controller-upload-translation-files:
       requestBody:
-        multipart/form-data: {"resourceId": "welcome-email", "resourceType": "workflow"}
+        multipart/form-data: {"resourceId": "welcome-email", "resourceType": "workflow", "files": []}
       responses:
         "200":
           application/json: {"totalFiles": 3, "successfulUploads": 2, "failedUploads": 1, "errors": ["Invalid JSON in file: es-ES.json"]}
@@ -2502,16 +2503,18 @@ examples:
           locale: "en_US"
       responses:
         "200":
-          application/json: {"workflows": {}, "layouts": {}}
+          application/json: {"workflows": {"welcome-email": {"welcome.title": "Welcome to our platform", "welcome.message": "Hello there!"}, "password-reset": {"reset.title": "Reset your password", "reset.message": "Click the link to reset"}}, "layouts": {"default-layout": {"layout.title": "Default layout", "layout.message": "Hello there!"}}}
   TranslationController_importMasterJsonEndpoint:
     speakeasy-default-translation-controller-import-master-json-endpoint:
       requestBody:
-        application/json: {"locale": "en_US", "masterJson": {}}
+        application/json: {"locale": "en_US", "masterJson": {"workflows": {"welcome-email": {"welcome.title": "Welcome to our platform", "welcome.message": "Hello there!"}, "password-reset": {"reset.title": "Reset your password", "reset.message": "Click the link to reset"}}}}
       responses:
         "200":
           application/json: {"success": true, "message": "Successfully imported translations for 2 resources: welcome-email, password-reset", "successful": ["welcome-email", "password-reset"], "failed": ["missing-workflow"]}
   TranslationController_uploadMasterJsonEndpoint:
     speakeasy-default-translation-controller-upload-master-json-endpoint:
+      requestBody:
+        multipart/form-data: {"file": "x-file: example.file"}
       responses:
         "200":
           application/json: {"success": true, "message": "Successfully imported translations for 2 resources: welcome-email, password-reset", "successful": ["welcome-email", "password-reset"], "failed": ["missing-workflow"]}
@@ -2533,4 +2536,4 @@ examples:
           application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Php SDK Changes Detected:\n* `novu->workflows->get()`:  `response` **Changed** **Breaking** :warning:\n* `novu->subscribers->create()`: \n  *  `request.failIfExists` **Added**\n  *  `error` **Changed** **Breaking** :warning:\n* `novu->notifications->get()`:  `response` **Changed** **Breaking** :warning:\n* `novu->notifications->list()`: \n  *  `request` **Changed**\n  *  `response.data->[]` **Changed** **Breaking** :warning:\n* `novu->messages->get()`: \n  *  `request->contextKeys` **Added**\n  *  `response.data->[]` **Changed** **Breaking** :warning:\n* `novu->workflows->steps->retrieve()`:  `response.slug` **Changed** **Breaking** :warning:\n* `novu->workflows->sync()`:  `response` **Changed** **Breaking** :warning:\n* `novu->workflows->patch()`: \n  *  `request.patchWorkflowDto` **Changed**\n  *  `response` **Changed** **Breaking** :warning:\n* `novu->workflows->update()`: \n  *  `request.updateWorkflowDto` **Changed**\n  *  `response` **Changed** **Breaking** :warning:\n* `novu->workflows->create()`: \n  *  `request.createWorkflowDto` **Changed**\n  *  `response` **Changed** **Breaking** :warning:\n* `novu->topics->create()`: \n  *  `request.failIfExists` **Added**\n  *  `error` **Changed** **Breaking** :warning:\n* `novu->subscribers->messages->markAllAs()`:  `response.[]` **Changed** **Breaking** :warning:\n* `novu->subscribers->messages->updateAsSeen()`:  `response` **Changed** **Breaking** :warning:\n* `novu->triggerbroadcast()`:  `request.triggerEventToAllRequestDto` **Changed** **Breaking** :warning:\n* `novu->trigger()`:  `request.triggerEventRequestDto` **Changed** **Breaking** :warning:\n* `novu->triggerbulk()`: \n  *  `request.bulkTriggerEventDto->events->[]` **Changed** **Breaking** :warning:\n* `novu->subscribers->preferences->bulkUpdate()`: **Added**\n* `novu->layouts->retrieve()`: **Added**\n* `novu->translations->create()`: **Added**\n* `novu->translations->upload()`: **Added**\n* `novu->translations->groups->delete()`: **Added**\n* `novu->translations->groups->retrieve()`: **Added**\n* `novu->translations->master->retrieve()`: **Added**\n* `novu->translations->master->import()`: **Added**\n* `novu->translations->master->upload()`: **Added**\n* `novu->integrations->integrationsControllerAutoConfigureIntegration()`: **Added**\n* `novu->layouts->usage()`: **Added**\n* `novu->layouts->generatePreview()`: **Added**\n* `novu->contexts->list()`: **Added**\n* `novu->topics->subscriptions->list()`:  `response` **Changed**\n* `novu->translations->delete()`: **Added**\n* `novu->subscribers->updatePreferences()`: \n  *  `request.patchSubscriberPreferencesDto` **Changed**\n  *  `response.global->schedule` **Added**\n* `novu->subscribers->topics->list()`:  `response` **Changed**\n* `novu->layouts->duplicate()`: **Added**\n* `novu->layouts->delete()`: **Added**\n* `novu->subscriberspreferences->list()`: \n  *  `request.criticality` **Added**\n  *  `response.global->schedule` **Added**\n* `novu->topics->list()`:  `response` **Changed**\n* `novu->translations->retrieve()`: **Added**\n* `novu->subscribers->search()`:  `response` **Changed**\n* `novu->layouts->update()`: **Added**\n* `novu->workflows->list()`:  `response.workflows->[]` **Changed**\n* `novu->layouts->list()`: **Added**\n* `novu->contexts->create()`: **Added**\n* `novu->layouts->create()`: **Added**\n* `novu->activity->track()`: **Added**\n* `novu->environments->getTags()`: **Added**\n* `novu->environments->create()`:  `response.type` **Added**\n* `novu->environments->list()`:  `response.[]->type` **Added**\n* `novu->environments->update()`:  `response.type` **Added**\n* `novu->integrations->list()`:  `response.[]` **Changed**\n* `novu->integrations->create()`: \n  *  `request.createIntegrationRequestDto` **Changed**\n  *  `response` **Changed**\n* `novu->integrations->update()`: \n  *  `request.updateIntegrationRequestDto` **Changed**\n  *  `response` **Changed**\n* `novu->integrations->delete()`:  `response.[]` **Changed**\n* `novu->integrations->setAsPrimary()`:  `response` **Changed**\n* `novu->integrations->listActive()`:  `response.[]` **Changed**\n* `novu->contexts->delete()`: **Added**\n* `novu->contexts->retrieve()`: **Added**\n* `novu->contexts->update()`: **Added**\n"
+releaseNotes: "## Php SDK Changes Detected:\n* `novu->translations->create()`: \n  *  `request.createTranslationRequestDto->content` **Changed** **Breaking** :warning:\n  *  `response.content` **Changed** **Breaking** :warning:\n* `novu->translations->retrieve()`:  `response.content` **Changed** **Breaking** :warning:\n* `novu->translations->upload()`:  `request` **Changed** **Breaking** :warning:\n* `novu->translations->master->retrieve()`:  `response` **Changed** **Breaking** :warning:\n* `novu->translations->master->import()`: \n  *  `request.importMasterJsonRequestDto->masterJson` **Changed** **Breaking** :warning:\n* `novu->translations->master->upload()`:  `requestBody` **Added** **Breaking** :warning:\n* `novu->trigger()`:  `response.jobData` **Added**\n* `novu->triggerbroadcast()`: \n  *  `request.triggerEventToAllRequestDto->context` **Added**\n  *  `response.jobData` **Added**\n* `novu->triggerbulk()`:  `response.[]->jobData` **Added**\n"

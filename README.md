@@ -201,6 +201,9 @@ $triggerEventToAllRequestDto = new Components\TriggerEventToAllRequestDto(
         timezone: 'America/New_York',
         subscriberId: '<id>',
     ),
+    context: [
+        'key' => 'org-acme',
+    ],
 );
 
 $response = $sdk->triggerBroadcast(

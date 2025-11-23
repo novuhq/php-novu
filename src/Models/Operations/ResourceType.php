@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace novu\Models\Operations;
 
 
-/** Resource type */
+/** The resource type to associate localizations with */
 enum ResourceType: string
 {
     case Workflow = 'workflow';

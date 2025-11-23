@@ -254,11 +254,12 @@ class Master
      *
      * Upload a master JSON file containing translations for multiple workflows. Locale is automatically detected from filename (e.g., en_US.json)
      *
+     * @param  Operations\TranslationControllerUploadMasterJsonEndpointRequestBody  $requestBody
      * @param  ?string  $idempotencyKey
      * @return Operations\TranslationControllerUploadMasterJsonEndpointResponse
      * @throws \novu\Models\Errors\APIException
      */
-    public function upload(?string $idempotencyKey = null, ?Options $options = null): Operations\TranslationControllerUploadMasterJsonEndpointResponse
+    public function upload(Operations\TranslationControllerUploadMasterJsonEndpointRequestBody $requestBody, ?string $idempotencyKey = null, ?Options $options = null): Operations\TranslationControllerUploadMasterJsonEndpointResponse
     {
         $retryConfig = null;
         if ($options) {
@@ -288,12 +289,18 @@ class Master
             ];
         }
         $request = new Operations\TranslationControllerUploadMasterJsonEndpointRequest(
+            requestBody: $requestBody,
             idempotencyKey: $idempotencyKey,
         );
         $baseUrl = $this->sdkConfiguration->getTemplatedServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/v2/translations/master-json/upload');
         $urlOverride = null;
         $httpOptions = ['http_errors' => false];
+        $body = Utils\Utils::serializeRequestBody($request, 'requestBody', 'multipart');
+        if ($body === null) {
+            throw new \Exception('Request body is required');
+        }
+        $httpOptions = array_merge_recursive($httpOptions, $body);
         $httpOptions = array_merge_recursive($httpOptions, Utils\Utils::getHeaders($request));
         if (! array_key_exists('headers', $httpOptions)) {
             $httpOptions['headers'] = [];

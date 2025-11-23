@@ -51,13 +51,13 @@ class Groups
      *
      * Delete an entire translation group and all its translations
      *
-     * @param  Operations\ResourceType  $resourceType
+     * @param  Operations\TranslationControllerDeleteTranslationGroupEndpointPathParamResourceType  $resourceType
      * @param  string  $resourceId
      * @param  ?string  $idempotencyKey
      * @return Operations\TranslationControllerDeleteTranslationGroupEndpointResponse
      * @throws \novu\Models\Errors\APIException
      */
-    public function delete(Operations\ResourceType $resourceType, string $resourceId, ?string $idempotencyKey = null, ?Options $options = null): Operations\TranslationControllerDeleteTranslationGroupEndpointResponse
+    public function delete(Operations\TranslationControllerDeleteTranslationGroupEndpointPathParamResourceType $resourceType, string $resourceId, ?string $idempotencyKey = null, ?Options $options = null): Operations\TranslationControllerDeleteTranslationGroupEndpointResponse
     {
         $retryConfig = null;
         if ($options) {
