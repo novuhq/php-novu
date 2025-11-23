@@ -22,18 +22,18 @@ class ImportMasterJsonRequestDto
     /**
      * Master JSON object containing all translations organized by workflow identifier
      *
-     * @var MasterJson $masterJson
+     * @var array<string, mixed> $masterJson
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('masterJson')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\MasterJson')]
-    public MasterJson $masterJson;
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>')]
+    public array $masterJson;
 
     /**
      * @param  string  $locale
-     * @param  MasterJson  $masterJson
+     * @param  array<string, mixed>  $masterJson
      * @phpstan-pure
      */
-    public function __construct(string $locale, MasterJson $masterJson)
+    public function __construct(string $locale, array $masterJson)
     {
         $this->locale = $locale;
         $this->masterJson = $masterJson;

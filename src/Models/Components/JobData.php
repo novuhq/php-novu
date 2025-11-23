@@ -9,8 +9,7 @@ declare(strict_types=1);
 namespace novu\Models\Components;
 
 
-/** MasterJson - Master JSON object containing all translations organized by workflow identifier */
-class MasterJson
+class JobData
 {
 
     public function __construct()

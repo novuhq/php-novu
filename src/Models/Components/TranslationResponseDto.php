@@ -39,11 +39,11 @@ class TranslationResponseDto
     /**
      * Translation content as JSON object
      *
-     * @var TranslationResponseDtoContent $content
+     * @var array<string, mixed> $content
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('content')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\TranslationResponseDtoContent')]
-    public TranslationResponseDtoContent $content;
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>')]
+    public array $content;
 
     /**
      * Creation timestamp
@@ -65,12 +65,12 @@ class TranslationResponseDto
      * @param  string  $resourceId
      * @param  TranslationResponseDtoResourceType  $resourceType
      * @param  string  $locale
-     * @param  TranslationResponseDtoContent  $content
+     * @param  array<string, mixed>  $content
      * @param  string  $createdAt
      * @param  string  $updatedAt
      * @phpstan-pure
      */
-    public function __construct(string $resourceId, TranslationResponseDtoResourceType $resourceType, string $locale, TranslationResponseDtoContent $content, string $createdAt, string $updatedAt)
+    public function __construct(string $resourceId, TranslationResponseDtoResourceType $resourceType, string $locale, array $content, string $createdAt, string $updatedAt)
     {
         $this->resourceId = $resourceId;
         $this->resourceType = $resourceType;

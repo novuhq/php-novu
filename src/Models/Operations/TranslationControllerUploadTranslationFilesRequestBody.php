@@ -6,10 +6,10 @@
 
 declare(strict_types=1);
 
-namespace novu\Models\Components;
+namespace novu\Models\Operations;
 
 use novu\Utils\SpeakeasyMetadata;
-class UploadTranslationsRequestDto
+class TranslationControllerUploadTranslationFilesRequestBody
 {
     /**
      * The resource ID to associate localizations with. Accepts identifier or slug format
@@ -22,19 +22,29 @@ class UploadTranslationsRequestDto
     /**
      * The resource type to associate localizations with
      *
-     * @var UploadTranslationsRequestDtoResourceType $resourceType
+     * @var ResourceType $resourceType
      */
     #[SpeakeasyMetadata('multipartForm:name=resourceType')]
-    public UploadTranslationsRequestDtoResourceType $resourceType;
+    public ResourceType $resourceType;
+
+    /**
+     * One or more JSON translation files. Filenames must match locale format (e.g., en_US.json, fr_FR.json). Field name can be "files" or "files[]".
+     *
+     * @var array<Files> $files
+     */
+    #[SpeakeasyMetadata('multipartForm:file=true,name=files')]
+    public array $files;
 
     /**
      * @param  string  $resourceId
-     * @param  UploadTranslationsRequestDtoResourceType  $resourceType
+     * @param  ResourceType  $resourceType
+     * @param  array<Files>  $files
      * @phpstan-pure
      */
-    public function __construct(string $resourceId, UploadTranslationsRequestDtoResourceType $resourceType)
+    public function __construct(string $resourceId, ResourceType $resourceType, array $files)
     {
         $this->resourceId = $resourceId;
         $this->resourceType = $resourceType;
+        $this->files = $files;
     }
 }

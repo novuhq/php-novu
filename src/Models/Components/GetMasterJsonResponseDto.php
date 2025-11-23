@@ -14,27 +14,27 @@ class GetMasterJsonResponseDto
     /**
      * All translations for given locale organized by workflow identifier
      *
-     * @var Workflows $workflows
+     * @var array<string, mixed> $workflows
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('workflows')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\Workflows')]
-    public Workflows $workflows;
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>')]
+    public array $workflows;
 
     /**
      * All translations for given locale organized by layout identifier
      *
-     * @var Layouts $layouts
+     * @var array<string, mixed> $layouts
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('layouts')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\Layouts')]
-    public Layouts $layouts;
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>')]
+    public array $layouts;
 
     /**
-     * @param  Workflows  $workflows
-     * @param  Layouts  $layouts
+     * @param  array<string, mixed>  $workflows
+     * @param  array<string, mixed>  $layouts
      * @phpstan-pure
      */
-    public function __construct(Workflows $workflows, Layouts $layouts)
+    public function __construct(array $workflows, array $layouts)
     {
         $this->workflows = $workflows;
         $this->layouts = $layouts;

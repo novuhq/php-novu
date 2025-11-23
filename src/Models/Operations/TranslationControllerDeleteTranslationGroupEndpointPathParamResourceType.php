@@ -6,11 +6,11 @@
 
 declare(strict_types=1);
 
-namespace novu\Models\Components;
+namespace novu\Models\Operations;
 
 
-/** The resource type to associate localizations with */
-enum UploadTranslationsRequestDtoResourceType: string
+/** Resource type */
+enum TranslationControllerDeleteTranslationGroupEndpointPathParamResourceType: string
 {
     case Workflow = 'workflow';
     case Layout = 'layout';
