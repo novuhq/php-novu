@@ -39,20 +39,20 @@ class CreateTranslationRequestDto
     /**
      * Translation content as JSON object
      *
-     * @var Content $content
+     * @var array<string, mixed> $content
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('content')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\Content')]
-    public Content $content;
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>')]
+    public array $content;
 
     /**
      * @param  string  $resourceId
      * @param  ResourceType  $resourceType
      * @param  string  $locale
-     * @param  Content  $content
+     * @param  array<string, mixed>  $content
      * @phpstan-pure
      */
-    public function __construct(string $resourceId, ResourceType $resourceType, string $locale, Content $content)
+    public function __construct(string $resourceId, ResourceType $resourceType, string $locale, array $content)
     {
         $this->resourceId = $resourceId;
         $this->resourceType = $resourceType;

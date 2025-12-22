@@ -1,5 +1,4 @@
 # Contexts
-(*contexts*)
 
 ## Overview
 
@@ -37,7 +36,13 @@ $sdk = novu\Novu::builder()
 $createContextRequestDto = new Components\CreateContextRequestDto(
     type: 'tenant',
     id: 'org-acme',
-    data: new Components\Data(),
+    data: [
+        'tenantName' => 'Acme Corp',
+        'region' => 'us-east-1',
+        'settings' => [
+            'theme' => 'dark',
+        ],
+    ],
 );
 
 $response = $sdk->contexts->create(
@@ -96,6 +101,7 @@ $sdk = novu\Novu::builder()
     ->build();
 
 $request = new Operations\ContextsControllerListContextsRequest(
+    limit: 10,
     id: 'tenant-prod-123',
     search: 'tenant',
 );
@@ -153,7 +159,13 @@ $sdk = novu\Novu::builder()
     ->build();
 
 $updateContextRequestDto = new Components\UpdateContextRequestDto(
-    data: new Components\UpdateContextRequestDtoData(),
+    data: [
+        'tenantName' => 'Acme Corp',
+        'region' => 'us-east-1',
+        'settings' => [
+            'theme' => 'dark',
+        ],
+    ],
 );
 
 $response = $sdk->contexts->update(

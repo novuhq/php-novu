@@ -1,5 +1,4 @@
-# Master
-(*translations->master*)
+# Translations.Master
 
 ## Overview
 
@@ -80,7 +79,18 @@ $sdk = novu\Novu::builder()
 
 $importMasterJsonRequestDto = new Components\ImportMasterJsonRequestDto(
     locale: 'en_US',
-    masterJson: new Components\MasterJson(),
+    masterJson: [
+        'workflows' => [
+            'welcome-email' => [
+                'welcome.title' => 'Welcome to our platform',
+                'welcome.message' => 'Hello there!',
+            ],
+            'password-reset' => [
+                'reset.title' => 'Reset your password',
+                'reset.message' => 'Click the link to reset',
+            ],
+        ],
+    ],
 );
 
 $response = $sdk->translations->master->import(
@@ -122,6 +132,7 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use novu;
+use novu\Models\Operations;
 
 $sdk = novu\Novu::builder()
     ->setSecurity(
@@ -129,10 +140,15 @@ $sdk = novu\Novu::builder()
     )
     ->build();
 
-
+$requestBody = new Operations\TranslationControllerUploadMasterJsonEndpointRequestBody(
+    file: new Operations\File(
+        fileName: 'example.file',
+        content: file_get_contents('example.file');,
+    ),
+);
 
 $response = $sdk->translations->master->upload(
-
+    requestBody: $requestBody
 );
 
 if ($response->importMasterJsonResponseDto !== null) {
@@ -142,9 +158,10 @@ if ($response->importMasterJsonResponseDto !== null) {
 
 ### Parameters
 
-| Parameter                         | Type                              | Required                          | Description                       |
-| --------------------------------- | --------------------------------- | --------------------------------- | --------------------------------- |
-| `idempotencyKey`                  | *?string*                         | :heavy_minus_sign:                | A header for idempotency purposes |
+| Parameter                                                                                                                                                  | Type                                                                                                                                                       | Required                                                                                                                                                   | Description                                                                                                                                                |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `requestBody`                                                                                                                                              | [Operations\TranslationControllerUploadMasterJsonEndpointRequestBody](../../Models/Operations/TranslationControllerUploadMasterJsonEndpointRequestBody.md) | :heavy_check_mark:                                                                                                                                         | N/A                                                                                                                                                        |
+| `idempotencyKey`                                                                                                                                           | *?string*                                                                                                                                                  | :heavy_minus_sign:                                                                                                                                         | A header for idempotency purposes                                                                                                                          |
 
 ### Response
 

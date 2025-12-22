@@ -48,17 +48,29 @@ class GetPreferencesResponseDto
     public ?Workflow $workflow = null;
 
     /**
+     * Condition using JSON Logic rules
+     *
+     * @var ?Condition $condition
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('condition')]
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\Condition|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?Condition $condition = null;
+
+    /**
      * @param  PreferenceLevelEnum  $level
      * @param  bool  $enabled
      * @param  SubscriberPreferenceChannels  $channels
      * @param  ?Workflow  $workflow
+     * @param  ?Condition  $condition
      * @phpstan-pure
      */
-    public function __construct(PreferenceLevelEnum $level, bool $enabled, SubscriberPreferenceChannels $channels, ?Workflow $workflow = null)
+    public function __construct(PreferenceLevelEnum $level, bool $enabled, SubscriberPreferenceChannels $channels, ?Workflow $workflow = null, ?Condition $condition = null)
     {
         $this->level = $level;
         $this->enabled = $enabled;
         $this->channels = $channels;
         $this->workflow = $workflow;
+        $this->condition = $condition;
     }
 }

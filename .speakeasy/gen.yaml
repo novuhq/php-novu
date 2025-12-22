@@ -20,12 +20,13 @@ generation:
   schemas:
     allOfMergeStrategy: shallowMerge
   requestBodyFieldName: ""
+  persistentEdits: {}
   tests:
     generateTests: true
     generateNewTests: false
     skipResponseBodyAssertions: false
 php:
-  version: 3.11.0
+  version: 3.11.1
   additionalDependencies:
     autoload: {}
     autoload-dev: {}
@@ -43,12 +44,14 @@ php:
       operations: Models/Operations
       shared: Models/Components
       webhooks: Models/Webhooks
+  inferUnionDiscriminators: false
   inputModelSuffix: input
   laravelServiceProvider:
     enabled: false
     svcName: openapi
   maxMethodParams: 4
   methodArguments: infer-optional-args
+  multipartArrayFormat: legacy
   namespace: novu
   outputModelSuffix: output
   packageName: novuhq/novu

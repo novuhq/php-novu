@@ -30,20 +30,20 @@ class CreateContextRequestDto
     /**
      * Optional custom data to associate with this context.
      *
-     * @var ?Data $data
+     * @var ?array<string, mixed> $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\Data|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?Data $data = null;
+    public ?array $data = null;
 
     /**
      * @param  string  $type
      * @param  string  $id
-     * @param  ?Data  $data
+     * @param  ?array<string, mixed>  $data
      * @phpstan-pure
      */
-    public function __construct(string $type, string $id, ?Data $data = null)
+    public function __construct(string $type, string $id, ?array $data = null)
     {
         $this->type = $type;
         $this->id = $id;

@@ -12,20 +12,57 @@ namespace novu\Models\Components;
 class CreateTopicSubscriptionsRequestDto
 {
     /**
-     * List of subscriber identifiers to subscribe to the topic (max: 100)
+     * List of subscriber IDs to subscribe to the topic (max: 100). @deprecated Use the "subscriptions" property instead.
      *
-     * @var array<string> $subscriberIds
+     * @var ?array<string> $subscriberIds
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('subscriberIds')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<string>')]
-    public array $subscriberIds;
+    #[\Speakeasy\Serializer\Annotation\Type('array<string>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $subscriberIds = null;
 
     /**
-     * @param  array<string>  $subscriberIds
+     * List of subscriptions to subscribe to the topic (max: 100). Can be either a string array of subscriber IDs or an array of objects with identifier and subscriberId
+     *
+     * @var ?array<string|TopicSubscriberIdentifierDto> $subscriptions
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('subscriptions')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string|\novu\Models\Components\TopicSubscriberIdentifierDto>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $subscriptions = null;
+
+    /**
+     * The name of the topic
+     *
+     * @var ?string $name
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('name')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $name = null;
+
+    /**
+     * The preferences of the topic. Can be a simple workflow ID string, workflow preference object, or group filter object
+     *
+     * @var ?array<string|WorkflowPreferenceRequestDto|GroupPreferenceFilterDto> $preferences
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('preferences')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string|\novu\Models\Components\WorkflowPreferenceRequestDto|\novu\Models\Components\GroupPreferenceFilterDto>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $preferences = null;
+
+    /**
+     * @param  ?array<string>  $subscriberIds
+     * @param  ?array<string|TopicSubscriberIdentifierDto>  $subscriptions
+     * @param  ?string  $name
+     * @param  ?array<string|WorkflowPreferenceRequestDto|GroupPreferenceFilterDto>  $preferences
      * @phpstan-pure
      */
-    public function __construct(array $subscriberIds)
+    public function __construct(?array $subscriberIds = null, ?array $subscriptions = null, ?string $name = null, ?array $preferences = null)
     {
         $this->subscriberIds = $subscriberIds;
+        $this->subscriptions = $subscriptions;
+        $this->name = $name;
+        $this->preferences = $preferences;
     }
 }

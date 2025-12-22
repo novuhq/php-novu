@@ -20,6 +20,14 @@ class TopicSubscriptionResponseDto
     public string $id;
 
     /**
+     * The identifier of the subscription
+     *
+     * @var string $identifier
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('identifier')]
+    public string $identifier;
+
+    /**
      * The date and time the subscription was created
      *
      * @var string $createdAt
@@ -47,14 +55,16 @@ class TopicSubscriptionResponseDto
 
     /**
      * @param  string  $id
+     * @param  string  $identifier
      * @param  string  $createdAt
      * @param  TopicResponseDto  $topic
      * @param  SubscriberDto  $subscriber
      * @phpstan-pure
      */
-    public function __construct(string $id, string $createdAt, TopicResponseDto $topic, SubscriberDto $subscriber)
+    public function __construct(string $id, string $identifier, string $createdAt, TopicResponseDto $topic, SubscriberDto $subscriber)
     {
         $this->id = $id;
+        $this->identifier = $identifier;
         $this->createdAt = $createdAt;
         $this->topic = $topic;
         $this->subscriber = $subscriber;

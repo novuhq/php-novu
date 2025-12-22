@@ -1,5 +1,4 @@
 # Integrations
-(*integrations*)
 
 ## Overview
 
@@ -15,6 +14,7 @@ With the help of the Integration Store, you can easily integrate your favorite d
 * [integrationsControllerAutoConfigureIntegration](#integrationscontrollerautoconfigureintegration) - Auto-configure an integration for inbound webhooks
 * [setAsPrimary](#setasprimary) - Update integration as primary
 * [listActive](#listactive) - List active integrations
+* [generateChatOAuthUrl](#generatechatoauthurl) - Generate chat OAuth URL
 
 ## list
 
@@ -381,6 +381,76 @@ if ($response->integrationResponseDtos !== null) {
 ### Response
 
 **[?Operations\IntegrationsControllerGetActiveIntegrationsResponse](../../Models/Operations/IntegrationsControllerGetActiveIntegrationsResponse.md)**
+
+### Errors
+
+| Error Type                             | Status Code                            | Content Type                           |
+| -------------------------------------- | -------------------------------------- | -------------------------------------- |
+| Errors\ErrorDto                        | 414                                    | application/json                       |
+| Errors\ErrorDto                        | 400, 401, 403, 404, 405, 409, 413, 415 | application/json                       |
+| Errors\ValidationErrorDto              | 422                                    | application/json                       |
+| Errors\ErrorDto                        | 500                                    | application/json                       |
+| Errors\APIException                    | 4XX, 5XX                               | \*/\*                                  |
+
+## generateChatOAuthUrl
+
+Generate an OAuth URL for chat integrations like Slack and MS Teams. 
+    This URL allows subscribers to authorize the integration, enabling the system to send messages 
+    through their chat workspace. The generated URL expires after 5 minutes.
+
+### Example Usage
+
+<!-- UsageSnippet language="php" operationID="IntegrationsController_getChatOAuthUrl" method="post" path="/v1/integrations/chat/oauth" -->
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use novu;
+use novu\Models\Components;
+
+$sdk = novu\Novu::builder()
+    ->setSecurity(
+        'YOUR_SECRET_KEY_HERE'
+    )
+    ->build();
+
+$generateChatOauthUrlRequestDto = new Components\GenerateChatOauthUrlRequestDto(
+    subscriberId: 'subscriber-123',
+    integrationIdentifier: '<value>',
+    context: [
+        'key' => 'org-acme',
+    ],
+    scope: [
+        'chat:write',
+        'chat:write.public',
+        'channels:read',
+        'groups:read',
+        'users:read',
+        'users:read.email',
+        'incoming-webhook',
+    ],
+);
+
+$response = $sdk->integrations->generateChatOAuthUrl(
+    generateChatOauthUrlRequestDto: $generateChatOauthUrlRequestDto
+);
+
+if ($response->generateChatOAuthUrlResponseDto !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| `generateChatOauthUrlRequestDto`                                                                       | [Components\GenerateChatOauthUrlRequestDto](../../Models/Components/GenerateChatOauthUrlRequestDto.md) | :heavy_check_mark:                                                                                     | N/A                                                                                                    |
+| `idempotencyKey`                                                                                       | *?string*                                                                                              | :heavy_minus_sign:                                                                                     | A header for idempotency purposes                                                                      |
+
+### Response
+
+**[?Operations\IntegrationsControllerGetChatOAuthUrlResponse](../../Models/Operations/IntegrationsControllerGetChatOAuthUrlResponse.md)**
 
 ### Errors
 

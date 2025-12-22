@@ -14,17 +14,17 @@ class UpdateContextRequestDto
     /**
      * Custom data to associate with this context. Replaces existing data.
      *
-     * @var UpdateContextRequestDtoData $data
+     * @var array<string, mixed> $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\UpdateContextRequestDtoData')]
-    public UpdateContextRequestDtoData $data;
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>')]
+    public array $data;
 
     /**
-     * @param  UpdateContextRequestDtoData  $data
+     * @param  array<string, mixed>  $data
      * @phpstan-pure
      */
-    public function __construct(UpdateContextRequestDtoData $data)
+    public function __construct(array $data)
     {
         $this->data = $data;
     }

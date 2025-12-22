@@ -29,20 +29,20 @@ class TenantPayloadDto
 
     /**
      *
-     * @var ?TenantPayloadDtoData $data
+     * @var ?Data $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\TenantPayloadDtoData|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\Data|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?TenantPayloadDtoData $data = null;
+    public ?Data $data = null;
 
     /**
      * @param  ?string  $identifier
      * @param  ?string  $name
-     * @param  ?TenantPayloadDtoData  $data
+     * @param  ?Data  $data
      * @phpstan-pure
      */
-    public function __construct(?string $identifier = null, ?string $name = null, ?TenantPayloadDtoData $data = null)
+    public function __construct(?string $identifier = null, ?string $name = null, ?Data $data = null)
     {
         $this->identifier = $identifier;
         $this->name = $name;

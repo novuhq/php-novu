@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace novu\Models\Operations;
 
 
-/** The channel of the message to be deleted */
+/** Filter by channel type (email, sms, push, chat, etc.). */
 enum Channel: string
 {
     case InApp = 'in_app';

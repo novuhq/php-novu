@@ -12,6 +12,7 @@ namespace novu\Models\Components;
 class GetContextResponseDto
 {
     /**
+     * Context type (e.g., tenant, app, workspace)
      *
      * @var string $type
      */
@@ -19,6 +20,7 @@ class GetContextResponseDto
     public string $type;
 
     /**
+     * Unique identifier for this context
      *
      * @var string $id
      */
@@ -26,14 +28,16 @@ class GetContextResponseDto
     public string $id;
 
     /**
+     * Custom data associated with this context
      *
-     * @var GetContextResponseDtoData $data
+     * @var array<string, mixed> $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\GetContextResponseDtoData')]
-    public GetContextResponseDtoData $data;
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>')]
+    public array $data;
 
     /**
+     * Creation timestamp
      *
      * @var string $createdAt
      */
@@ -41,6 +45,7 @@ class GetContextResponseDto
     public string $createdAt;
 
     /**
+     * Last update timestamp
      *
      * @var string $updatedAt
      */
@@ -50,12 +55,12 @@ class GetContextResponseDto
     /**
      * @param  string  $type
      * @param  string  $id
-     * @param  GetContextResponseDtoData  $data
+     * @param  array<string, mixed>  $data
      * @param  string  $createdAt
      * @param  string  $updatedAt
      * @phpstan-pure
      */
-    public function __construct(string $type, string $id, GetContextResponseDtoData $data, string $createdAt, string $updatedAt)
+    public function __construct(string $type, string $id, array $data, string $createdAt, string $updatedAt)
     {
         $this->type = $type;
         $this->id = $id;

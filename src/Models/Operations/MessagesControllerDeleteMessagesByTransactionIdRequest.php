@@ -21,10 +21,10 @@ class MessagesControllerDeleteMessagesByTransactionIdRequest
     /**
      * The channel of the message to be deleted
      *
-     * @var ?Channel $channel
+     * @var ?MessagesControllerDeleteMessagesByTransactionIdQueryParamChannel $channel
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=channel')]
-    public ?Channel $channel = null;
+    public ?MessagesControllerDeleteMessagesByTransactionIdQueryParamChannel $channel = null;
 
     /**
      * A header for idempotency purposes
@@ -36,11 +36,11 @@ class MessagesControllerDeleteMessagesByTransactionIdRequest
 
     /**
      * @param  string  $transactionId
-     * @param  ?Channel  $channel
+     * @param  ?MessagesControllerDeleteMessagesByTransactionIdQueryParamChannel  $channel
      * @param  ?string  $idempotencyKey
      * @phpstan-pure
      */
-    public function __construct(string $transactionId, ?Channel $channel = null, ?string $idempotencyKey = null)
+    public function __construct(string $transactionId, ?MessagesControllerDeleteMessagesByTransactionIdQueryParamChannel $channel = null, ?string $idempotencyKey = null)
     {
         $this->transactionId = $transactionId;
         $this->channel = $channel;

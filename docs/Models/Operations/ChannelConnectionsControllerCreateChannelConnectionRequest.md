@@ -1,0 +1,9 @@
+# ChannelConnectionsControllerCreateChannelConnectionRequest
+
+
+## Fields
+
+| Field                                                                                                        | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| `idempotencyKey`                                                                                             | *?string*                                                                                                    | :heavy_minus_sign:                                                                                           | A header for idempotency purposes                                                                            |
+| `createChannelConnectionRequestDto`                                                                          | [Components\CreateChannelConnectionRequestDto](../../Models/Components/CreateChannelConnectionRequestDto.md) | :heavy_check_mark:                                                                                           | N/A                                                                                                          |

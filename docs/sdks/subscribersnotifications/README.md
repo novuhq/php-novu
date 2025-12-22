@@ -1,5 +1,4 @@
 # SubscribersNotifications
-(*subscribersNotifications*)
 
 ## Overview
 

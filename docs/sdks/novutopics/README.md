@@ -1,5 +1,4 @@
-# NovuTopics
-(*subscribers->topics*)
+# Subscribers.Topics
 
 ## Overview
 
@@ -31,6 +30,7 @@ $sdk = novu\Novu::builder()
 
 $request = new Operations\SubscribersControllerListSubscriberTopicsRequest(
     subscriberId: '<id>',
+    limit: 10,
 );
 
 $response = $sdk->subscribers->topics->list(

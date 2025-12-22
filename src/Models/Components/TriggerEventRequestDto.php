@@ -90,10 +90,10 @@ class TriggerEventRequestDto
     /**
      * $context
      *
-     * @var ?array<string, string|Two> $context
+     * @var ?array<string, string|TriggerEventRequestDtoContext2> $context
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('context')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<string, string|\novu\Models\Components\Two>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, string|\novu\Models\Components\TriggerEventRequestDtoContext2>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $context = null;
 
@@ -105,7 +105,7 @@ class TriggerEventRequestDto
      * @param  ?string  $transactionId
      * @param  string|SubscriberPayloadDto|null  $actor
      * @param  string|TenantPayloadDto|null  $tenant
-     * @param  ?array<string, string|Two>  $context
+     * @param  ?array<string, string|TriggerEventRequestDtoContext2>  $context
      * @phpstan-pure
      */
     public function __construct(string $workflowId, array|string|SubscriberPayloadDto|TopicPayloadDto $to, ?array $payload = null, ?Overrides $overrides = null, ?string $transactionId = null, string|SubscriberPayloadDto|null $actor = null, string|TenantPayloadDto|null $tenant = null, ?array $context = null)

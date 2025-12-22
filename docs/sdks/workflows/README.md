@@ -1,5 +1,4 @@
 # Workflows
-(*workflows*)
 
 ## Overview
 
@@ -106,6 +105,7 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use novu;
+use novu\Models\Operations;
 
 $sdk = novu\Novu::builder()
     ->setSecurity(
@@ -113,7 +113,10 @@ $sdk = novu\Novu::builder()
     )
     ->build();
 
-
+$request = new Operations\WorkflowControllerSearchWorkflowsRequest(
+    limit: 10,
+    offset: 0,
+);
 
 $response = $sdk->workflows->list(
     request: $request

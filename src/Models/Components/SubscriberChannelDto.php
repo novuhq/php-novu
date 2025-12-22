@@ -14,11 +14,11 @@ class SubscriberChannelDto
     /**
      * The ID of the chat or push provider.
      *
-     * @var ProviderId $providerId
+     * @var SubscriberChannelDtoProviderId $providerId
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('providerId')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ProviderId')]
-    public ProviderId $providerId;
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\SubscriberChannelDtoProviderId')]
+    public SubscriberChannelDtoProviderId $providerId;
 
     /**
      * Credentials for the channel.
@@ -39,12 +39,12 @@ class SubscriberChannelDto
     public ?string $integrationIdentifier = null;
 
     /**
-     * @param  ProviderId  $providerId
+     * @param  SubscriberChannelDtoProviderId  $providerId
      * @param  ChannelCredentialsDto  $credentials
      * @param  ?string  $integrationIdentifier
      * @phpstan-pure
      */
-    public function __construct(ProviderId $providerId, ChannelCredentialsDto $credentials, ?string $integrationIdentifier = null)
+    public function __construct(SubscriberChannelDtoProviderId $providerId, ChannelCredentialsDto $credentials, ?string $integrationIdentifier = null)
     {
         $this->providerId = $providerId;
         $this->credentials = $credentials;

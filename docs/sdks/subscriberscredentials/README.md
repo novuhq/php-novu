@@ -1,5 +1,4 @@
 # SubscribersCredentials
-(*subscribersCredentials*)
 
 ## Overview
 

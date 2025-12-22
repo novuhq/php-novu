@@ -1,9 +1,25 @@
 # Content
 
-Translation content as JSON object
+Content of the message, can be an email block or a string
 
 
-## Fields
+## Supported Types
 
-| Field       | Type        | Required    | Description |
-| ----------- | ----------- | ----------- | ----------- |
+### `array`
+
+```php
+/**
+* @var array<Components\EmailBlock>
+*/
+array $value = /* values here */
+```
+
+### `string`
+
+```php
+/**
+* @var string
+*/
+string $value = /* values here */
+```
+

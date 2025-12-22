@@ -48,17 +48,28 @@ class TriggerEventResponseDto
     public ?string $transactionId = null;
 
     /**
+     *
+     * @var ?JobData $jobData
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('jobData')]
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\JobData|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?JobData $jobData = null;
+
+    /**
      * @param  bool  $acknowledged
      * @param  TriggerEventResponseDtoStatus  $status
      * @param  ?array<string>  $error
      * @param  ?string  $transactionId
+     * @param  ?JobData  $jobData
      * @phpstan-pure
      */
-    public function __construct(bool $acknowledged, TriggerEventResponseDtoStatus $status, ?array $error = null, ?string $transactionId = null)
+    public function __construct(bool $acknowledged, TriggerEventResponseDtoStatus $status, ?array $error = null, ?string $transactionId = null, ?JobData $jobData = null)
     {
         $this->acknowledged = $acknowledged;
         $this->status = $status;
         $this->error = $error;
         $this->transactionId = $transactionId;
+        $this->jobData = $jobData;
     }
 }
