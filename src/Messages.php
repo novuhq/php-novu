@@ -200,12 +200,12 @@ class Messages
      *     This API supports filtering by **channel** and delete all messages associated with the **transactionId**.
      *
      * @param  string  $transactionId
-     * @param  ?Operations\Channel  $channel
+     * @param  ?Operations\MessagesControllerDeleteMessagesByTransactionIdQueryParamChannel  $channel
      * @param  ?string  $idempotencyKey
      * @return Operations\MessagesControllerDeleteMessagesByTransactionIdResponse
      * @throws \novu\Models\Errors\APIException
      */
-    public function deleteByTransactionId(string $transactionId, ?Operations\Channel $channel = null, ?string $idempotencyKey = null, ?Options $options = null): Operations\MessagesControllerDeleteMessagesByTransactionIdResponse
+    public function deleteByTransactionId(string $transactionId, ?Operations\MessagesControllerDeleteMessagesByTransactionIdQueryParamChannel $channel = null, ?string $idempotencyKey = null, ?Options $options = null): Operations\MessagesControllerDeleteMessagesByTransactionIdResponse
     {
         $retryConfig = null;
         if ($options) {

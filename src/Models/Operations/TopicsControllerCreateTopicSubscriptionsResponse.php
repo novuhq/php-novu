@@ -42,24 +42,24 @@ class TopicsControllerCreateTopicSubscriptionsResponse
     /**
      * Subscriptions created successfully
      *
-     * @var ?Components\CreateTopicSubscriptionsResponseDto $createTopicSubscriptionsResponseDto
+     * @var ?Components\CreateSubscriptionsResponseDto $createSubscriptionsResponseDto
      */
-    public ?Components\CreateTopicSubscriptionsResponseDto $createTopicSubscriptionsResponseDto = null;
+    public ?Components\CreateSubscriptionsResponseDto $createSubscriptionsResponseDto = null;
 
     /**
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
-     * @param  ?Components\CreateTopicSubscriptionsResponseDto  $createTopicSubscriptionsResponseDto
+     * @param  ?Components\CreateSubscriptionsResponseDto  $createSubscriptionsResponseDto
      * @phpstan-pure
      */
-    public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\CreateTopicSubscriptionsResponseDto $createTopicSubscriptionsResponseDto = null, ?array $headers = [])
+    public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\CreateSubscriptionsResponseDto $createSubscriptionsResponseDto = null, ?array $headers = [])
     {
         $this->contentType = $contentType;
         $this->statusCode = $statusCode;
         $this->rawResponse = $rawResponse;
         $this->headers = $headers;
-        $this->createTopicSubscriptionsResponseDto = $createTopicSubscriptionsResponseDto;
+        $this->createSubscriptionsResponseDto = $createSubscriptionsResponseDto;
     }
 }

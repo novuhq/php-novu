@@ -37,10 +37,14 @@ class MixedJSONHandler implements SubscribingHandlerInterface
     }
 
     /** @phpstan-ignore-next-line */
-    public function serializeMixedToJson(JsonSerializationVisitor $visitor, mixed $any, array $type, Context $context): mixed
+    public function serializeMixedToJson(JsonSerializationVisitor $visitor, mixed $any, array $type, Context $context): string
     {
+        $serializer = JSON::createSerializer();
+        $s = $serializer->serialize($any, 'json');
+        $s = ltrim($s, '"');
+        $s = rtrim($s, '"');
 
-        return $any;
+        return $s;
     }
 
     /** @phpstan-ignore-next-line */

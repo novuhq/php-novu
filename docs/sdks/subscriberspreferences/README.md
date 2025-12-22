@@ -1,5 +1,4 @@
 # SubscribersPreferences
-(*subscribersPreferences*)
 
 ## Overview
 

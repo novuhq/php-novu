@@ -1,0 +1,9 @@
+# IntegrationsControllerGetChatOAuthUrlRequest
+
+
+## Fields
+
+| Field                                                                                                  | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| `idempotencyKey`                                                                                       | *?string*                                                                                              | :heavy_minus_sign:                                                                                     | A header for idempotency purposes                                                                      |
+| `generateChatOauthUrlRequestDto`                                                                       | [Components\GenerateChatOauthUrlRequestDto](../../Models/Components/GenerateChatOauthUrlRequestDto.md) | :heavy_check_mark:                                                                                     | N/A                                                                                                    |

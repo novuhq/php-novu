@@ -1,5 +1,4 @@
-# NovuNotifications
-(*subscribers->notifications*)
+# Subscribers.Notifications
 
 ## Overview
 
@@ -30,6 +29,7 @@ $sdk = novu\Novu::builder()
 
 $request = new Operations\SubscribersV1ControllerGetNotificationsFeedRequest(
     subscriberId: '<id>',
+    page: 0,
     payload: 'btoa(JSON.stringify({ foo: 123 })) results in base64 encoded string like eyJmb28iOjEyM30=',
 );
 

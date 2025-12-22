@@ -8,17 +8,15 @@ declare(strict_types=1);
 
 namespace novu\Models\Operations;
 
-use novu\Models\Components;
 use novu\Utils\SpeakeasyMetadata;
 class TranslationControllerUploadTranslationFilesRequest
 {
     /**
-     * Translation files upload body details
      *
-     * @var Components\UploadTranslationsRequestDto $uploadTranslationsRequestDto
+     * @var TranslationControllerUploadTranslationFilesRequestBody $requestBody
      */
     #[SpeakeasyMetadata('request:mediaType=multipart/form-data')]
-    public Components\UploadTranslationsRequestDto $uploadTranslationsRequestDto;
+    public TranslationControllerUploadTranslationFilesRequestBody $requestBody;
 
     /**
      * A header for idempotency purposes
@@ -29,13 +27,13 @@ class TranslationControllerUploadTranslationFilesRequest
     public ?string $idempotencyKey = null;
 
     /**
-     * @param  Components\UploadTranslationsRequestDto  $uploadTranslationsRequestDto
+     * @param  TranslationControllerUploadTranslationFilesRequestBody  $requestBody
      * @param  ?string  $idempotencyKey
      * @phpstan-pure
      */
-    public function __construct(Components\UploadTranslationsRequestDto $uploadTranslationsRequestDto, ?string $idempotencyKey = null)
+    public function __construct(TranslationControllerUploadTranslationFilesRequestBody $requestBody, ?string $idempotencyKey = null)
     {
-        $this->uploadTranslationsRequestDto = $uploadTranslationsRequestDto;
+        $this->requestBody = $requestBody;
         $this->idempotencyKey = $idempotencyKey;
     }
 }

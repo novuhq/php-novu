@@ -9,7 +9,6 @@ declare(strict_types=1);
 namespace novu\Models\Components;
 
 
-/** Data - Optional custom data to associate with this context. */
 class Data
 {
 

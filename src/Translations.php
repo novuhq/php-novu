@@ -351,14 +351,14 @@ class Translations
     /**
      * Upload translation files
      *
-     * Upload one or more JSON translation files for a specific workflow. Files name must match the locale, e.g. en_US.json
+     * Upload one or more JSON translation files for a specific workflow. Files name must match the locale, e.g. en_US.json. Supports both "files" and "files[]" field names for backwards compatibility.
      *
-     * @param  Components\UploadTranslationsRequestDto  $uploadTranslationsRequestDto
+     * @param  Operations\TranslationControllerUploadTranslationFilesRequestBody  $requestBody
      * @param  ?string  $idempotencyKey
      * @return Operations\TranslationControllerUploadTranslationFilesResponse
      * @throws \novu\Models\Errors\APIException
      */
-    public function upload(Components\UploadTranslationsRequestDto $uploadTranslationsRequestDto, ?string $idempotencyKey = null, ?Options $options = null): Operations\TranslationControllerUploadTranslationFilesResponse
+    public function upload(Operations\TranslationControllerUploadTranslationFilesRequestBody $requestBody, ?string $idempotencyKey = null, ?Options $options = null): Operations\TranslationControllerUploadTranslationFilesResponse
     {
         $retryConfig = null;
         if ($options) {
@@ -388,14 +388,14 @@ class Translations
             ];
         }
         $request = new Operations\TranslationControllerUploadTranslationFilesRequest(
-            uploadTranslationsRequestDto: $uploadTranslationsRequestDto,
+            requestBody: $requestBody,
             idempotencyKey: $idempotencyKey,
         );
         $baseUrl = $this->sdkConfiguration->getTemplatedServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/v2/translations/upload');
         $urlOverride = null;
         $httpOptions = ['http_errors' => false];
-        $body = Utils\Utils::serializeRequestBody($request, 'uploadTranslationsRequestDto', 'multipart');
+        $body = Utils\Utils::serializeRequestBody($request, 'requestBody', 'multipart');
         if ($body === null) {
             throw new \Exception('Request body is required');
         }

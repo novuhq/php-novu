@@ -1,5 +1,4 @@
 # Subscribers
-(*subscribers*)
 
 ## Overview
 
@@ -29,6 +28,7 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use novu;
+use novu\Models\Operations;
 
 $sdk = novu\Novu::builder()
     ->setSecurity(
@@ -36,7 +36,9 @@ $sdk = novu\Novu::builder()
     )
     ->build();
 
-
+$request = new Operations\SubscribersControllerSearchSubscribersRequest(
+    limit: 10,
+);
 
 $response = $sdk->subscribers->search(
     request: $request

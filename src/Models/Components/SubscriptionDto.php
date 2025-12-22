@@ -45,28 +45,39 @@ class SubscriptionDto
     public string $updatedAt;
 
     /**
+     * The identifier of the subscription
+     *
+     * @var ?string $identifier
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('identifier')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $identifier = null;
+
+    /**
      * The subscriber information
      *
-     * @var ?Subscriber $subscriber
+     * @var ?SubscriptionDtoSubscriber $subscriber
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('subscriber')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\Subscriber|null')]
-    public ?Subscriber $subscriber;
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\SubscriptionDtoSubscriber|null')]
+    public ?SubscriptionDtoSubscriber $subscriber;
 
     /**
      * @param  string  $id
      * @param  TopicDto  $topic
      * @param  string  $createdAt
      * @param  string  $updatedAt
-     * @param  ?Subscriber  $subscriber
+     * @param  ?string  $identifier
+     * @param  ?SubscriptionDtoSubscriber  $subscriber
      * @phpstan-pure
      */
-    public function __construct(string $id, TopicDto $topic, string $createdAt, string $updatedAt, ?Subscriber $subscriber = null)
+    public function __construct(string $id, TopicDto $topic, string $createdAt, string $updatedAt, ?string $identifier = null, ?SubscriptionDtoSubscriber $subscriber = null)
     {
         $this->id = $id;
         $this->topic = $topic;
         $this->createdAt = $createdAt;
         $this->updatedAt = $updatedAt;
+        $this->identifier = $identifier;
         $this->subscriber = $subscriber;
     }
 }

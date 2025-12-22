@@ -12,20 +12,34 @@ namespace novu\Models\Components;
 class DeleteTopicSubscriptionsRequestDto
 {
     /**
-     * List of subscriber identifiers to unsubscribe from the topic (max: 100)
+     * List of subscriber identifiers to unsubscribe from the topic (max: 100). @deprecated Use the "subscriptions" property instead.
      *
-     * @var array<string> $subscriberIds
+     * @var ?array<string> $subscriberIds
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('subscriberIds')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<string>')]
-    public array $subscriberIds;
+    #[\Speakeasy\Serializer\Annotation\Type('array<string>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $subscriberIds = null;
 
     /**
-     * @param  array<string>  $subscriberIds
+     * List of subscriptions to unsubscribe from the topic (max: 100). Can be either a string array of subscriber IDs or an array of objects with identifier and/or subscriberId. If only subscriberId is provided, all subscriptions for that subscriber within the topic will be deleted.
+     *
+     * @var ?array<string|DeleteTopicSubscriberIdentifierDto> $subscriptions
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('subscriptions')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string|\novu\Models\Components\DeleteTopicSubscriberIdentifierDto>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $subscriptions = null;
+
+    /**
+     * @param  ?array<string>  $subscriberIds
+     * @param  ?array<string|DeleteTopicSubscriberIdentifierDto>  $subscriptions
      * @phpstan-pure
      */
-    public function __construct(array $subscriberIds)
+    public function __construct(?array $subscriberIds = null, ?array $subscriptions = null)
     {
         $this->subscriberIds = $subscriberIds;
+        $this->subscriptions = $subscriptions;
     }
 }

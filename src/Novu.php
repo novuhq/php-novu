@@ -73,6 +73,10 @@ class Novu
      */
     public Workflows $workflows;
 
+    public ChannelConnections $channelConnections;
+
+    public ChannelEndpoints $channelEndpoints;
+
     /**
      * With the help of the Integration Store, you can easily integrate your favorite delivery provider. During the runtime of the API, the Integrations Store is responsible for storing the configurations of all the providers.
      *
@@ -122,6 +126,8 @@ class Novu
         $this->topics = new Topics($this->sdkConfiguration);
         $this->translations = new Translations($this->sdkConfiguration);
         $this->workflows = new Workflows($this->sdkConfiguration);
+        $this->channelConnections = new ChannelConnections($this->sdkConfiguration);
+        $this->channelEndpoints = new ChannelEndpoints($this->sdkConfiguration);
         $this->integrations = new Integrations($this->sdkConfiguration);
         $this->messages = new Messages($this->sdkConfiguration);
         $this->notifications = new Notifications($this->sdkConfiguration);

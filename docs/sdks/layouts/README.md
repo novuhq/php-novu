@@ -1,5 +1,4 @@
 # Layouts
-(*layouts*)
 
 ## Overview
 
@@ -86,6 +85,7 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use novu;
+use novu\Models\Operations;
 
 $sdk = novu\Novu::builder()
     ->setSecurity(
@@ -93,7 +93,10 @@ $sdk = novu\Novu::builder()
     )
     ->build();
 
-
+$request = new Operations\LayoutsControllerListRequest(
+    limit: 10,
+    offset: 0,
+);
 
 $response = $sdk->layouts->list(
     request: $request

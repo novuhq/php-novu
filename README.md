@@ -201,6 +201,9 @@ $triggerEventToAllRequestDto = new Components\TriggerEventToAllRequestDto(
         timezone: 'America/New_York',
         subscriberId: '<id>',
     ),
+    context: [
+        'key' => 'org-acme',
+    ],
 );
 
 $response = $sdk->triggerBroadcast(
@@ -334,11 +337,34 @@ if ($response->triggerEventResponseDto !== null) {
 <details open>
 <summary>Available methods</summary>
 
-### [activity](docs/sdks/activity/README.md)
+### [Novu SDK](docs/sdks/novu/README.md)
+
+* [trigger](docs/sdks/novu/README.md#trigger) - Trigger event
+* [cancel](docs/sdks/novu/README.md#cancel) - Cancel triggered event
+* [triggerBroadcast](docs/sdks/novu/README.md#triggerbroadcast) - Broadcast event to all
+* [triggerBulk](docs/sdks/novu/README.md#triggerbulk) - Bulk trigger event
+
+### [Activity](docs/sdks/activity/README.md)
 
 * [track](docs/sdks/activity/README.md#track) - Track activity and engagement events
 
-### [contexts](docs/sdks/contexts/README.md)
+### [ChannelConnections](docs/sdks/channelconnections/README.md)
+
+* [list](docs/sdks/channelconnections/README.md#list) - List channel connections
+* [create](docs/sdks/channelconnections/README.md#create) - Create channel connection for a resource and integration
+* [retrieve](docs/sdks/channelconnections/README.md#retrieve) - Retrieve channel connection by identifier
+* [update](docs/sdks/channelconnections/README.md#update) - Update channel connection
+* [delete](docs/sdks/channelconnections/README.md#delete) - Delete channel connection
+
+### [ChannelEndpoints](docs/sdks/channelendpoints/README.md)
+
+* [list](docs/sdks/channelendpoints/README.md#list) - List channel endpoints
+* [create](docs/sdks/channelendpoints/README.md#create) - Create channel endpoint for a resource
+* [retrieve](docs/sdks/channelendpoints/README.md#retrieve) - Retrieve channel endpoint by identifier
+* [update](docs/sdks/channelendpoints/README.md#update) - Update channel endpoint
+* [delete](docs/sdks/channelendpoints/README.md#delete) - Delete channel endpoint by identifier
+
+### [Contexts](docs/sdks/contexts/README.md)
 
 * [create](docs/sdks/contexts/README.md#create) - Create a context
 * [list](docs/sdks/contexts/README.md#list) - List all contexts
@@ -346,7 +372,7 @@ if ($response->triggerEventResponseDto !== null) {
 * [retrieve](docs/sdks/contexts/README.md#retrieve) - Retrieve a context
 * [delete](docs/sdks/contexts/README.md#delete) - Delete a context
 
-### [environments](docs/sdks/environments/README.md)
+### [Environments](docs/sdks/environments/README.md)
 
 * [getTags](docs/sdks/environments/README.md#gettags) - Get environment tags
 * [create](docs/sdks/environments/README.md#create) - Create an environment
@@ -354,7 +380,7 @@ if ($response->triggerEventResponseDto !== null) {
 * [update](docs/sdks/environments/README.md#update) - Update an environment
 * [delete](docs/sdks/environments/README.md#delete) - Delete an environment
 
-### [integrations](docs/sdks/integrations/README.md)
+### [Integrations](docs/sdks/integrations/README.md)
 
 * [list](docs/sdks/integrations/README.md#list) - List all integrations
 * [create](docs/sdks/integrations/README.md#create) - Create an integration
@@ -363,8 +389,9 @@ if ($response->triggerEventResponseDto !== null) {
 * [integrationsControllerAutoConfigureIntegration](docs/sdks/integrations/README.md#integrationscontrollerautoconfigureintegration) - Auto-configure an integration for inbound webhooks
 * [setAsPrimary](docs/sdks/integrations/README.md#setasprimary) - Update integration as primary
 * [listActive](docs/sdks/integrations/README.md#listactive) - List active integrations
+* [generateChatOAuthUrl](docs/sdks/integrations/README.md#generatechatoauthurl) - Generate chat OAuth URL
 
-### [layouts](docs/sdks/layouts/README.md)
+### [Layouts](docs/sdks/layouts/README.md)
 
 * [create](docs/sdks/layouts/README.md#create) - Create a layout
 * [list](docs/sdks/layouts/README.md#list) - List all layouts
@@ -375,25 +402,18 @@ if ($response->triggerEventResponseDto !== null) {
 * [generatePreview](docs/sdks/layouts/README.md#generatepreview) - Generate layout preview
 * [usage](docs/sdks/layouts/README.md#usage) - Get layout usage
 
-### [messages](docs/sdks/messages/README.md)
+### [Messages](docs/sdks/messages/README.md)
 
 * [get](docs/sdks/messages/README.md#get) - List all messages
 * [delete](docs/sdks/messages/README.md#delete) - Delete a message
 * [deleteByTransactionId](docs/sdks/messages/README.md#deletebytransactionid) - Delete messages by transactionId
 
-### [notifications](docs/sdks/notifications/README.md)
+### [Notifications](docs/sdks/notifications/README.md)
 
 * [list](docs/sdks/notifications/README.md#list) - List all events
 * [get](docs/sdks/notifications/README.md#get) - Retrieve an event
 
-### [Novu SDK](docs/sdks/novu/README.md)
-
-* [trigger](docs/sdks/novu/README.md#trigger) - Trigger event
-* [cancel](docs/sdks/novu/README.md#cancel) - Cancel triggered event
-* [triggerBroadcast](docs/sdks/novu/README.md#triggerbroadcast) - Broadcast event to all
-* [triggerBulk](docs/sdks/novu/README.md#triggerbulk) - Bulk trigger event
-
-### [subscribers](docs/sdks/subscribers/README.md)
+### [Subscribers](docs/sdks/subscribers/README.md)
 
 * [search](docs/sdks/subscribers/README.md#search) - Search subscribers
 * [create](docs/sdks/subscribers/README.md#create) - Create a subscriber
@@ -405,41 +425,41 @@ if ($response->triggerEventResponseDto !== null) {
 * [updateCredentials](docs/sdks/subscribers/README.md#updatecredentials) - Update provider credentials
 * [updateOnlineStatus](docs/sdks/subscribers/README.md#updateonlinestatus) - Update subscriber online status
 
-#### [subscribers->messages](docs/sdks/novumessages/README.md)
+#### [Subscribers.Preferences](docs/sdks/preferences/README.md)
+
+* [bulkUpdate](docs/sdks/preferences/README.md#bulkupdate) - Bulk update subscriber preferences
+
+#### [Subscribers.Topics](docs/sdks/novutopics/README.md)
+
+* [list](docs/sdks/novutopics/README.md#list) - Retrieve subscriber subscriptions
+
+### [Subscribers.Messages](docs/sdks/novumessages/README.md)
 
 * [updateAsSeen](docs/sdks/novumessages/README.md#updateasseen) - Update notification action status
 * [markAllAs](docs/sdks/novumessages/README.md#markallas) - Update notifications state
 
-#### [subscribers->notifications](docs/sdks/novunotifications/README.md)
+### [Subscribers.Notifications](docs/sdks/novunotifications/README.md)
 
 * [getFeed](docs/sdks/novunotifications/README.md#getfeed) - Retrieve subscriber notifications
 
-#### [subscribers->preferences](docs/sdks/preferences/README.md)
-
-* [bulkUpdate](docs/sdks/preferences/README.md#bulkupdate) - Bulk update subscriber preferences
-
-#### [subscribers->topics](docs/sdks/novutopics/README.md)
-
-* [list](docs/sdks/novutopics/README.md#list) - Retrieve subscriber subscriptions
-
-### [subscribersCredentials](docs/sdks/subscriberscredentials/README.md)
+### [SubscribersCredentials](docs/sdks/subscriberscredentials/README.md)
 
 * [append](docs/sdks/subscriberscredentials/README.md#append) - Upsert provider credentials
 * [deleteProvider](docs/sdks/subscriberscredentials/README.md#deleteprovider) - Delete provider credentials
 
-### [subscribersMessages](docs/sdks/subscribersmessages/README.md)
+### [SubscribersMessages](docs/sdks/subscribersmessages/README.md)
 
 * [markAll](docs/sdks/subscribersmessages/README.md#markall) - Update all notifications state
 
-### [subscribersNotifications](docs/sdks/subscribersnotifications/README.md)
+### [SubscribersNotifications](docs/sdks/subscribersnotifications/README.md)
 
 * [getUnseenCount](docs/sdks/subscribersnotifications/README.md#getunseencount) - Retrieve unseen notifications count
 
-### [subscribersPreferences](docs/sdks/subscriberspreferences/README.md)
+### [SubscribersPreferences](docs/sdks/subscriberspreferences/README.md)
 
 * [list](docs/sdks/subscriberspreferences/README.md#list) - Retrieve subscriber preferences
 
-### [topics](docs/sdks/topics/README.md)
+### [Topics](docs/sdks/topics/README.md)
 
 * [list](docs/sdks/topics/README.md#list) - List all topics
 * [create](docs/sdks/topics/README.md#create) - Create a topic
@@ -447,35 +467,37 @@ if ($response->triggerEventResponseDto !== null) {
 * [update](docs/sdks/topics/README.md#update) - Update a topic
 * [delete](docs/sdks/topics/README.md#delete) - Delete a topic
 
-#### [topics->subscriptions](docs/sdks/subscriptions/README.md)
+#### [Topics.Subscriptions](docs/sdks/subscriptions/README.md)
 
 * [list](docs/sdks/subscriptions/README.md#list) - List topic subscriptions
 * [create](docs/sdks/subscriptions/README.md#create) - Create topic subscriptions
 * [delete](docs/sdks/subscriptions/README.md#delete) - Delete topic subscriptions
+* [getSubscription](docs/sdks/subscriptions/README.md#getsubscription) - Get a topic subscription
+* [update](docs/sdks/subscriptions/README.md#update) - Update a topic subscription
 
-### [topicsSubscribers](docs/sdks/topicssubscribers/README.md)
+### [TopicsSubscribers](docs/sdks/topicssubscribers/README.md)
 
 * [check](docs/sdks/topicssubscribers/README.md#check) - Check topic subscriber
 
-### [translations](docs/sdks/translations/README.md)
+### [Translations](docs/sdks/translations/README.md)
 
 * [create](docs/sdks/translations/README.md#create) - Create a translation
 * [retrieve](docs/sdks/translations/README.md#retrieve) - Retrieve a translation
 * [delete](docs/sdks/translations/README.md#delete) - Delete a translation
 * [upload](docs/sdks/translations/README.md#upload) - Upload translation files
 
-#### [translations->groups](docs/sdks/groups/README.md)
+#### [Translations.Groups](docs/sdks/groups/README.md)
 
 * [delete](docs/sdks/groups/README.md#delete) - Delete a translation group
 * [retrieve](docs/sdks/groups/README.md#retrieve) - Retrieve a translation group
 
-#### [translations->master](docs/sdks/master/README.md)
+#### [Translations.Master](docs/sdks/master/README.md)
 
 * [retrieve](docs/sdks/master/README.md#retrieve) - Retrieve master translations JSON
 * [import](docs/sdks/master/README.md#import) - Import master translations JSON
 * [upload](docs/sdks/master/README.md#upload) - Upload master translations JSON file
 
-### [workflows](docs/sdks/workflows/README.md)
+### [Workflows](docs/sdks/workflows/README.md)
 
 * [create](docs/sdks/workflows/README.md#create) - Create a workflow
 * [list](docs/sdks/workflows/README.md#list) - List all workflows
@@ -485,7 +507,7 @@ if ($response->triggerEventResponseDto !== null) {
 * [patch](docs/sdks/workflows/README.md#patch) - Update a workflow
 * [sync](docs/sdks/workflows/README.md#sync) - Sync a workflow
 
-#### [workflows->steps](docs/sdks/steps/README.md)
+#### [Workflows.Steps](docs/sdks/steps/README.md)
 
 * [retrieve](docs/sdks/steps/README.md#retrieve) - Retrieve workflow step
 

@@ -14,10 +14,10 @@ class TranslationControllerDeleteTranslationGroupEndpointRequest
     /**
      * Resource type
      *
-     * @var ResourceType $resourceType
+     * @var TranslationControllerDeleteTranslationGroupEndpointPathParamResourceType $resourceType
      */
     #[SpeakeasyMetadata('pathParam:style=simple,explode=false,name=resourceType')]
-    public ResourceType $resourceType;
+    public TranslationControllerDeleteTranslationGroupEndpointPathParamResourceType $resourceType;
 
     /**
      * Resource ID
@@ -36,12 +36,12 @@ class TranslationControllerDeleteTranslationGroupEndpointRequest
     public ?string $idempotencyKey = null;
 
     /**
-     * @param  ResourceType  $resourceType
+     * @param  TranslationControllerDeleteTranslationGroupEndpointPathParamResourceType  $resourceType
      * @param  string  $resourceId
      * @param  ?string  $idempotencyKey
      * @phpstan-pure
      */
-    public function __construct(ResourceType $resourceType, string $resourceId, ?string $idempotencyKey = null)
+    public function __construct(TranslationControllerDeleteTranslationGroupEndpointPathParamResourceType $resourceType, string $resourceId, ?string $idempotencyKey = null)
     {
         $this->resourceType = $resourceType;
         $this->resourceId = $resourceId;

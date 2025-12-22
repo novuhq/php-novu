@@ -1,5 +1,4 @@
 # Translations
-(*translations*)
 
 ## Overview
 
@@ -38,7 +37,10 @@ $createTranslationRequestDto = new Components\CreateTranslationRequestDto(
     resourceId: 'welcome-email',
     resourceType: Components\ResourceType::Layout,
     locale: 'en_US',
-    content: new Components\Content(),
+    content: [
+        'welcome.title' => 'Welcome',
+        'welcome.message' => 'Hello there!',
+    ],
 );
 
 $response = $sdk->translations->create(
@@ -177,7 +179,7 @@ if ($response->statusCode === 200) {
 
 ## upload
 
-Upload one or more JSON translation files for a specific workflow. Files name must match the locale, e.g. en_US.json
+Upload one or more JSON translation files for a specific workflow. Files name must match the locale, e.g. en_US.json. Supports both "files" and "files[]" field names for backwards compatibility.
 
 ### Example Usage
 
@@ -188,7 +190,7 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use novu;
-use novu\Models\Components;
+use novu\Models\Operations;
 
 $sdk = novu\Novu::builder()
     ->setSecurity(
@@ -196,13 +198,14 @@ $sdk = novu\Novu::builder()
     )
     ->build();
 
-$uploadTranslationsRequestDto = new Components\UploadTranslationsRequestDto(
+$requestBody = new Operations\TranslationControllerUploadTranslationFilesRequestBody(
     resourceId: 'welcome-email',
-    resourceType: Components\UploadTranslationsRequestDtoResourceType::Workflow,
+    resourceType: Operations\ResourceType::Workflow,
+    files: [],
 );
 
 $response = $sdk->translations->upload(
-    uploadTranslationsRequestDto: $uploadTranslationsRequestDto
+    requestBody: $requestBody
 );
 
 if ($response->uploadTranslationsResponseDto !== null) {
@@ -212,10 +215,10 @@ if ($response->uploadTranslationsResponseDto !== null) {
 
 ### Parameters
 
-| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
-| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| `uploadTranslationsRequestDto`                                                                     | [Components\UploadTranslationsRequestDto](../../Models/Components/UploadTranslationsRequestDto.md) | :heavy_check_mark:                                                                                 | Translation files upload body details                                                              |
-| `idempotencyKey`                                                                                   | *?string*                                                                                          | :heavy_minus_sign:                                                                                 | A header for idempotency purposes                                                                  |
+| Parameter                                                                                                                                              | Type                                                                                                                                                   | Required                                                                                                                                               | Description                                                                                                                                            |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `requestBody`                                                                                                                                          | [Operations\TranslationControllerUploadTranslationFilesRequestBody](../../Models/Operations/TranslationControllerUploadTranslationFilesRequestBody.md) | :heavy_check_mark:                                                                                                                                     | N/A                                                                                                                                                    |
+| `idempotencyKey`                                                                                                                                       | *?string*                                                                                                                                              | :heavy_minus_sign:                                                                                                                                     | A header for idempotency purposes                                                                                                                      |
 
 ### Response
 

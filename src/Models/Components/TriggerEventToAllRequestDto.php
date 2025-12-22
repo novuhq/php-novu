@@ -77,15 +77,26 @@ class TriggerEventToAllRequestDto
     public string|TenantPayloadDto|null $tenant = null;
 
     /**
+     * $context
+     *
+     * @var ?array<string, string|TriggerEventToAllRequestDtoContext2> $context
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('context')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, string|\novu\Models\Components\TriggerEventToAllRequestDtoContext2>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $context = null;
+
+    /**
      * @param  string  $name
      * @param  array<string, mixed>  $payload
      * @param  ?TriggerEventToAllRequestDtoOverrides  $overrides
      * @param  ?string  $transactionId
      * @param  string|SubscriberPayloadDto|null  $actor
      * @param  string|TenantPayloadDto|null  $tenant
+     * @param  ?array<string, string|TriggerEventToAllRequestDtoContext2>  $context
      * @phpstan-pure
      */
-    public function __construct(string $name, array $payload, ?TriggerEventToAllRequestDtoOverrides $overrides = null, ?string $transactionId = null, string|SubscriberPayloadDto|null $actor = null, string|TenantPayloadDto|null $tenant = null)
+    public function __construct(string $name, array $payload, ?TriggerEventToAllRequestDtoOverrides $overrides = null, ?string $transactionId = null, string|SubscriberPayloadDto|null $actor = null, string|TenantPayloadDto|null $tenant = null, ?array $context = null)
     {
         $this->name = $name;
         $this->payload = $payload;
@@ -93,5 +104,6 @@ class TriggerEventToAllRequestDto
         $this->transactionId = $transactionId;
         $this->actor = $actor;
         $this->tenant = $tenant;
+        $this->context = $context;
     }
 }
