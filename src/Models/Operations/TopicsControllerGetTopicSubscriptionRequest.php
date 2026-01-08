@@ -22,10 +22,10 @@ class TopicsControllerGetTopicSubscriptionRequest
     /**
      * The unique identifier of the subscription
      *
-     * @var string $subscriptionIdOrIdentifier
+     * @var string $identifier
      */
-    #[SpeakeasyMetadata('pathParam:style=simple,explode=false,name=subscriptionIdOrIdentifier')]
-    public string $subscriptionIdOrIdentifier;
+    #[SpeakeasyMetadata('pathParam:style=simple,explode=false,name=identifier')]
+    public string $identifier;
 
     /**
      * A header for idempotency purposes
@@ -37,14 +37,14 @@ class TopicsControllerGetTopicSubscriptionRequest
 
     /**
      * @param  string  $topicKey
-     * @param  string  $subscriptionIdOrIdentifier
+     * @param  string  $identifier
      * @param  ?string  $idempotencyKey
      * @phpstan-pure
      */
-    public function __construct(string $topicKey, string $subscriptionIdOrIdentifier, ?string $idempotencyKey = null)
+    public function __construct(string $topicKey, string $identifier, ?string $idempotencyKey = null)
     {
         $this->topicKey = $topicKey;
-        $this->subscriptionIdOrIdentifier = $subscriptionIdOrIdentifier;
+        $this->identifier = $identifier;
         $this->idempotencyKey = $idempotencyKey;
     }
 }

@@ -78,6 +78,14 @@ class NotificationsControllerListNotificationsRequest
     public ?string $topicKey = null;
 
     /**
+     * Subscription ID for filtering notifications by subscription
+     *
+     * @var ?string $subscriptionId
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=subscriptionId')]
+    public ?string $subscriptionId = null;
+
+    /**
      * Filter by exact context keys, order insensitive (format: "type:id")
      *
      * @var ?array<string> $contextKeys
@@ -136,13 +144,14 @@ class NotificationsControllerListNotificationsRequest
      * @param  ?float  $limit
      * @param  ?string  $transactionId
      * @param  ?string  $topicKey
+     * @param  ?string  $subscriptionId
      * @param  ?array<string>  $contextKeys
      * @param  ?string  $after
      * @param  ?string  $before
      * @param  ?string  $idempotencyKey
      * @phpstan-pure
      */
-    public function __construct(?array $channels = null, ?array $templates = null, ?array $emails = null, ?string $search = null, ?array $subscriberIds = null, ?array $severity = null, ?string $transactionId = null, ?string $topicKey = null, ?array $contextKeys = null, ?string $after = null, ?string $before = null, ?string $idempotencyKey = null, ?float $page = 0, ?float $limit = 10)
+    public function __construct(?array $channels = null, ?array $templates = null, ?array $emails = null, ?string $search = null, ?array $subscriberIds = null, ?array $severity = null, ?string $transactionId = null, ?string $topicKey = null, ?string $subscriptionId = null, ?array $contextKeys = null, ?string $after = null, ?string $before = null, ?string $idempotencyKey = null, ?float $page = 0, ?float $limit = 10)
     {
         $this->channels = $channels;
         $this->templates = $templates;
@@ -152,6 +161,7 @@ class NotificationsControllerListNotificationsRequest
         $this->severity = $severity;
         $this->transactionId = $transactionId;
         $this->topicKey = $topicKey;
+        $this->subscriptionId = $subscriptionId;
         $this->contextKeys = $contextKeys;
         $this->after = $after;
         $this->before = $before;

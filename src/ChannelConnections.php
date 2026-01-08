@@ -48,7 +48,7 @@ class ChannelConnections
     }
 
     /**
-     * Create channel connection for a resource and integration
+     * Create a channel connection
      *
      * Create a new channel connection for a resource for given integration. Only one channel connection is allowed per resource and integration.
      *
@@ -199,7 +199,7 @@ class ChannelConnections
     }
 
     /**
-     * Delete channel connection
+     * Delete a channel connection
      *
      * Delete a specific channel connection by its unique identifier.
      *
@@ -335,7 +335,7 @@ class ChannelConnections
     }
 
     /**
-     * Retrieve channel connection by identifier
+     * Retrieve a channel connection
      *
      * Retrieve a specific channel connection by its unique identifier.
      *
@@ -481,9 +481,9 @@ class ChannelConnections
     }
 
     /**
-     * List channel connections
+     * List all channel connections
      *
-     * Retrieve all channel connections for a resource.
+     * List all channel connections for a resource.
      *
      * @param  ?Operations\ChannelConnectionsControllerListChannelConnectionsRequest  $request
      * @return Operations\ChannelConnectionsControllerListChannelConnectionsResponse
@@ -625,7 +625,7 @@ class ChannelConnections
     }
 
     /**
-     * Update channel connection
+     * Update a channel connection
      *
      * Update an existing channel connection by its unique identifier.
      *

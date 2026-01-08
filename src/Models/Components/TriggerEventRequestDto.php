@@ -20,7 +20,7 @@ class TriggerEventRequestDto
     public string $workflowId;
 
     /**
-     * The recipients list of people who will receive the notification.
+     * The recipients list of people who will receive the notification. Maximum number of recipients can be 100.
      *
      * @var array<SubscriberPayloadDto|TopicPayloadDto|string>|string|SubscriberPayloadDto|TopicPayloadDto $to
      */
