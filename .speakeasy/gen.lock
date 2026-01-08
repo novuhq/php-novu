@@ -5,15 +5,15 @@ management:
   docVersion: 3.11.0
   speakeasyVersion: 1.683.0
   generationVersion: 2.792.0
-  releaseVersion: 3.11.2
-  configChecksum: c17cdd02a6256e870a09b0720421ef1c
+  releaseVersion: 3.12.0
+  configChecksum: ffb702307268df5d403c04b7868f41c9
   repoURL: https://github.com/novuhq/php-novu.git
   installationURL: https://github.com/novuhq/php-novu
   published: true
 persistentEdits:
-  generation_id: 981633f3-0aa2-4691-9be5-74ae19ab230b
-  pristine_commit_hash: 846b72ed64668a76ca8d33d753a1f9aaae097548
-  pristine_tree_hash: 3d791181d196d7d255dadb35581d243c109dcf0d
+  generation_id: 66642d13-4fe0-47f0-8df0-83888af5edf8
+  pristine_commit_hash: d4217acb12c940cb01aa85e8abb4077bbe71f663
+  pristine_tree_hash: 34e629ec7fc3ce9f7746b2eb452393a585d73798
 features:
   php:
     additionalProperties: 0.1.0
@@ -5495,8 +5495,8 @@ trackedFiles:
     pristine_git_object: b48407cddc057c08520d1db020504b4331cc3933
   src/SDKConfiguration.php:
     id: 9d60ab0bec0b
-    last_write_checksum: sha1:c695a3790a5b79434ee62f9ff9abb46fdcb6c682
-    pristine_git_object: 60bdeeee8eea5fc12df71c033dac424f4156ef97
+    last_write_checksum: sha1:45e5ae005634f550d5e1746c77837bf05c05456c
+    pristine_git_object: 3f0b2ec1b4f10c203dafae1b07f69ad94ff38ae8
   src/Steps.php:
     id: 9ae87f15c136
     last_write_checksum: sha1:069bd65c3e5e2d74f8b67910bd8e501e5d42be4d
@@ -7198,7 +7198,6 @@ examples:
           application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Php SDK Changes:\n* `novu->topics->subscriptions->getSubscription()`:  `request` **Changed** **Breaking** :warning:\n* `novu->topics->subscriptions->update()`:  `request` **Changed** **Breaking** :warning:\n* `novu->subscribers->notifications->getFeed()`:  `response.data->[]->archived` **Added**\n* `novu->notifications->list()`: \n  *  `request->subscriptionId` **Added**\n"
 generatedFiles:
   - .gitattributes
   - USAGE.md

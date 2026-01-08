@@ -6,7 +6,7 @@ sources:
         sourceBlobDigest: sha256:c969f8ed2e5f83d0ce338781eef67ec77c8a069996eba46e478f9fe84c685e9a
         tags:
             - latest
-            - speakeasy-sdk-regen-1767893064
+            - speakeasy-sdk-regen-1767906000
             - 3.11.0
 targets:
     novu:
@@ -15,7 +15,7 @@ targets:
         sourceRevisionDigest: sha256:e6225c033a24465b5cac2bd2c874fa8fb257ae4011a4e27581e4f42e2ce045a7
         sourceBlobDigest: sha256:c969f8ed2e5f83d0ce338781eef67ec77c8a069996eba46e478f9fe84c685e9a
         codeSamplesNamespace: novu-oas-php-code-samples
-        codeSamplesRevisionDigest: sha256:ee5c7dc514f94e67c9d94257f00952a20a2a4e743d598d08b111dbc8702db584
+        codeSamplesRevisionDigest: sha256:39f6f12998c642d84f7f2feeb480c1f739038e869f043d21a76f3d8d56effe65
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
