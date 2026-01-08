@@ -350,19 +350,19 @@ if ($response->triggerEventResponseDto !== null) {
 
 ### [ChannelConnections](docs/sdks/channelconnections/README.md)
 
-* [list](docs/sdks/channelconnections/README.md#list) - List channel connections
-* [create](docs/sdks/channelconnections/README.md#create) - Create channel connection for a resource and integration
-* [retrieve](docs/sdks/channelconnections/README.md#retrieve) - Retrieve channel connection by identifier
-* [update](docs/sdks/channelconnections/README.md#update) - Update channel connection
-* [delete](docs/sdks/channelconnections/README.md#delete) - Delete channel connection
+* [list](docs/sdks/channelconnections/README.md#list) - List all channel connections
+* [create](docs/sdks/channelconnections/README.md#create) - Create a channel connection
+* [retrieve](docs/sdks/channelconnections/README.md#retrieve) - Retrieve a channel connection
+* [update](docs/sdks/channelconnections/README.md#update) - Update a channel connection
+* [delete](docs/sdks/channelconnections/README.md#delete) - Delete a channel connection
 
 ### [ChannelEndpoints](docs/sdks/channelendpoints/README.md)
 
-* [list](docs/sdks/channelendpoints/README.md#list) - List channel endpoints
-* [create](docs/sdks/channelendpoints/README.md#create) - Create channel endpoint for a resource
-* [retrieve](docs/sdks/channelendpoints/README.md#retrieve) - Retrieve channel endpoint by identifier
-* [update](docs/sdks/channelendpoints/README.md#update) - Update channel endpoint
-* [delete](docs/sdks/channelendpoints/README.md#delete) - Delete channel endpoint by identifier
+* [list](docs/sdks/channelendpoints/README.md#list) - List all channel endpoints
+* [create](docs/sdks/channelendpoints/README.md#create) - Create a channel endpoint
+* [retrieve](docs/sdks/channelendpoints/README.md#retrieve) - Retrieve a channel endpoint
+* [update](docs/sdks/channelendpoints/README.md#update) - Update a channel endpoint
+* [delete](docs/sdks/channelendpoints/README.md#delete) - Delete a channel endpoint
 
 ### [Contexts](docs/sdks/contexts/README.md)
 

@@ -109,6 +109,14 @@ class NotificationFeedItemDto
     public bool $seen;
 
     /**
+     * Indicates whether the notification has been archived by the subscriber.
+     *
+     * @var bool $archived
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('archived')]
+    public bool $archived;
+
+    /**
      * Call-to-action information associated with the notification.
      *
      * @var MessageCTA $cta
@@ -272,6 +280,7 @@ class NotificationFeedItemDto
      * @param  ChannelTypeEnum  $channel
      * @param  bool  $read
      * @param  bool  $seen
+     * @param  bool  $archived
      * @param  MessageCTA  $cta
      * @param  NotificationFeedItemDtoStatus  $status
      * @param  ?string  $messageTemplateId
@@ -290,7 +299,7 @@ class NotificationFeedItemDto
      * @param  ?array<string>  $tags
      * @phpstan-pure
      */
-    public function __construct(string $id, string $templateId, string $environmentId, string $organizationId, string $notificationId, string $subscriberId, string $jobId, string $transactionId, string $content, ChannelTypeEnum $channel, bool $read, bool $seen, MessageCTA $cta, NotificationFeedItemDtoStatus $status, ?string $messageTemplateId = null, ?ActorFeedItemDto $actor = null, ?SubscriberFeedResponseDto $subscriber = null, ?array $payload = null, ?array $overrides = null, ?string $feedId = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null, ?string $templateIdentifier = null, ?string $providerId = null, ?string $subject = null, ?array $deviceTokens = null, ?array $data = null, ?array $tags = null)
+    public function __construct(string $id, string $templateId, string $environmentId, string $organizationId, string $notificationId, string $subscriberId, string $jobId, string $transactionId, string $content, ChannelTypeEnum $channel, bool $read, bool $seen, bool $archived, MessageCTA $cta, NotificationFeedItemDtoStatus $status, ?string $messageTemplateId = null, ?ActorFeedItemDto $actor = null, ?SubscriberFeedResponseDto $subscriber = null, ?array $payload = null, ?array $overrides = null, ?string $feedId = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null, ?string $templateIdentifier = null, ?string $providerId = null, ?string $subject = null, ?array $deviceTokens = null, ?array $data = null, ?array $tags = null)
     {
         $this->id = $id;
         $this->templateId = $templateId;
@@ -304,6 +313,7 @@ class NotificationFeedItemDto
         $this->channel = $channel;
         $this->read = $read;
         $this->seen = $seen;
+        $this->archived = $archived;
         $this->cta = $cta;
         $this->status = $status;
         $this->messageTemplateId = $messageTemplateId;

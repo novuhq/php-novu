@@ -12,7 +12,7 @@ namespace novu\Models\Components;
 class RedirectDto
 {
     /**
-     * URL for redirection. Must be a valid URL or start with / or {{"{{"}} variable }}.
+     * URL for redirection. Must be a valid URL or start with / or {{ variable }}.
      *
      * @var ?string $url
      */

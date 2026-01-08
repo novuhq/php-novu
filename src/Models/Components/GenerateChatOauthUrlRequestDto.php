@@ -29,7 +29,7 @@ class GenerateChatOauthUrlRequestDto
     public ?string $subscriberId = null;
 
     /**
-     * Identifier of the channel connection that will be created
+     * Identifier of the channel connection that will be created. It is generated automatically if not provided.
      *
      * @var ?string $connectionIdentifier
      */

@@ -1,24 +1,24 @@
 lockVersion: 2.0.0
 id: 4286f3ad-fa54-4c63-a599-e5773b27ae7b
 management:
-  docChecksum: 5cf1522c70fba412381decdb6066ff71
+  docChecksum: 55f191ca81248689054a3ec9d34ce1b5
   docVersion: 3.11.0
-  speakeasyVersion: 1.680.3
-  generationVersion: 2.788.5
-  releaseVersion: 3.11.1
-  configChecksum: 3aa168131131b00c09ff0514bf41a0d5
+  speakeasyVersion: 1.683.0
+  generationVersion: 2.792.0
+  releaseVersion: 3.11.2
+  configChecksum: c17cdd02a6256e870a09b0720421ef1c
   repoURL: https://github.com/novuhq/php-novu.git
   installationURL: https://github.com/novuhq/php-novu
   published: true
 persistentEdits:
-  generation_id: a807ab82-2ea2-4408-a3eb-01913008f4bf
-  pristine_commit_hash: 202c65cc12bdd3552c2839fa59bf032e96815c60
-  pristine_tree_hash: cb7d55bc3ed31003f63e9c7d90f0b53513c5b0f8
+  generation_id: 981633f3-0aa2-4691-9be5-74ae19ab230b
+  pristine_commit_hash: 846b72ed64668a76ca8d33d753a1f9aaae097548
+  pristine_tree_hash: 3d791181d196d7d255dadb35581d243c109dcf0d
 features:
   php:
     additionalProperties: 0.1.0
     constsAndDefaults: 0.2.0
-    core: 3.9.5
+    core: 3.9.7
     deprecations: 2.81.1
     examples: 2.81.6
     flattening: 2.81.1
@@ -735,8 +735,8 @@ trackedFiles:
     pristine_git_object: ef958897f11995631b8af850cbbc05dcbf39ee29
   docs/Models/Components/GenerateChatOauthUrlRequestDto.md:
     id: 17906ecbae7c
-    last_write_checksum: sha1:ae9b3d074757ab32380ce3aa1ce38514f2bb13c0
-    pristine_git_object: c5495b27642d97f9b4f1ef20868e98086e5f93a4
+    last_write_checksum: sha1:63225722ce1167e663a46c134813fa1b6d2f84d3
+    pristine_git_object: 9dca24c61b8bd4c56a7cb0e06981294377d0b1fb
   docs/Models/Components/GenerateChatOauthUrlRequestDtoContext.md:
     id: e537c240997c
     last_write_checksum: sha1:38100b63531a81257b487f36e1650efc11320c1c
@@ -1055,8 +1055,8 @@ trackedFiles:
     pristine_git_object: ae7273c83fbf9e6e53ee6b0c520fb5d9aea5dddd
   docs/Models/Components/NotificationFeedItemDto.md:
     id: e3261b36abec
-    last_write_checksum: sha1:9ce99f20ee66d943e641c8ffc8582541044c26a8
-    pristine_git_object: 0a5885365fe42943fafeb668b7b9a8a0f8b168d2
+    last_write_checksum: sha1:4427a39517d223303c68b9d2c3697860a49f4ad4
+    pristine_git_object: 6358e08ff522f2ef2cec70645330ae2d0cbb5d53
   docs/Models/Components/NotificationFeedItemDtoStatus.md:
     id: 70c6db5bdb8d
     last_write_checksum: sha1:a6ab4cad4ac75b283060ff476b9efe92835af32a
@@ -1523,8 +1523,8 @@ trackedFiles:
     pristine_git_object: fdc793836a2bebbcbfb2c6454c21a1f625655b0f
   docs/Models/Components/To.md:
     id: b73f39a24e35
-    last_write_checksum: sha1:2306dd09cb1374f279316307bf66bf22e0953f63
-    pristine_git_object: e975ca0c7c9c4283a156e82a3aa7f23f41c256a3
+    last_write_checksum: sha1:84dcf8339b062381521849d17ec1a273683cea85
+    pristine_git_object: 59e427c9ce731b94eff035809fc22ce9fbf39a2a
   docs/Models/Components/To1.md:
     id: dd254b2a7b4e
     last_write_checksum: sha1:ae8eaa6118368c955288497fb031cf1ff5f43643
@@ -1571,8 +1571,8 @@ trackedFiles:
     pristine_git_object: 09eed7d33102d53eb0a4f6b1959f10e737ae716f
   docs/Models/Components/TriggerEventRequestDto.md:
     id: a489497a4181
-    last_write_checksum: sha1:1a6fd7cecda8d8a3d0e9d0073512bffeaa15e8a3
-    pristine_git_object: f19113a11f819cfa6b9aa0b1084d30f2ba83bbd9
+    last_write_checksum: sha1:14bc5c1018214e16b45e71cefd35365d59f01bff
+    pristine_git_object: edd7d0a76cf0625361b2b03cd3eb3adf9ec00bf9
   docs/Models/Components/TriggerEventRequestDtoContext.md:
     id: 05762fceeede
     last_write_checksum: sha1:00964f2297a8cf4cf1b56183ba36753fac050418
@@ -2311,8 +2311,8 @@ trackedFiles:
     pristine_git_object: 3dd433b2e2832dcb8a6d58b3609a300de3d01f70
   docs/Models/Operations/NotificationsControllerListNotificationsRequest.md:
     id: 12ab32d05a86
-    last_write_checksum: sha1:dde22774ef0be5796e1b1eca2e4be2dd05265cca
-    pristine_git_object: 2846bc377c6e9128639d523bdc60ea530e5571fb
+    last_write_checksum: sha1:7cbbdc8ea3a03e0959ad402b1534e3e3d439508d
+    pristine_git_object: 9de2470c079bf8edc52a3fa426fee1ede216471c
   docs/Models/Operations/NotificationsControllerListNotificationsResponse.md:
     id: f7d08d648c92
     last_write_checksum: sha1:f6fa578853fb798d576373d4fca6fc03b656311a
@@ -2527,8 +2527,8 @@ trackedFiles:
     pristine_git_object: b207ba8d3127b8a991c3e5548d959be618e44ba7
   docs/Models/Operations/TopicsControllerGetTopicSubscriptionRequest.md:
     id: 22883b416b67
-    last_write_checksum: sha1:d642741a290f3c46ea2b16f0fbf159243810761e
-    pristine_git_object: 8caebb15a1d2653d959b8ef8f7f77fbe8d627d46
+    last_write_checksum: sha1:40e32352f06b116f4134cd87ecf96c2ccbca5a55
+    pristine_git_object: 086e77f6f3786638249f2fd43f9d0ce7d9fe6c42
   docs/Models/Operations/TopicsControllerGetTopicSubscriptionResponse.md:
     id: 483459eeea5a
     last_write_checksum: sha1:65d9618c4beff21d32c57d91f5588106d32139ee
@@ -2567,8 +2567,8 @@ trackedFiles:
     pristine_git_object: 26f2fa1f86aa73f760758e20d6697fc3a4c8d9e7
   docs/Models/Operations/TopicsControllerUpdateTopicSubscriptionRequest.md:
     id: 135a526fe165
-    last_write_checksum: sha1:ec443120d2e6795cca5cf7b4a9d1b3530be9aaf2
-    pristine_git_object: 45b18cb08780bb4b7d66da63e9750a32c50584ce
+    last_write_checksum: sha1:058e573fa7e08040543eb3c176b71cb331db3653
+    pristine_git_object: 64a215a20d41ba8ac85f84c1d275a2425641e68d
   docs/Models/Operations/TopicsControllerUpdateTopicSubscriptionResponse.md:
     id: 50e37e4cfe8e
     last_write_checksum: sha1:c614c0dc731d797e003da61bfa77f9ecdb8bcb20
@@ -2751,12 +2751,12 @@ trackedFiles:
     pristine_git_object: b58b2af24840a605acb8059cc489c58e056353d2
   docs/sdks/channelconnections/README.md:
     id: b38f46c2a1f7
-    last_write_checksum: sha1:3f8841de0fea914b8ef69958cad799dba2f8cd53
-    pristine_git_object: cece552ca2f2f4307739109c01385ead1811f33f
+    last_write_checksum: sha1:36c0433544b784c5b28ae44ffac6517e438fa935
+    pristine_git_object: 8f4600cf8816eb6e90a23cc5bb2e2fd19700c723
   docs/sdks/channelendpoints/README.md:
     id: 597f23f5fd73
-    last_write_checksum: sha1:7118e2ffd9d8366d21c9ec2db14d2249876dfbee
-    pristine_git_object: 52b7f3a409112745eed927174d2d976314276837
+    last_write_checksum: sha1:41b54bce988af75c344ea53935d8dda54f592e5c
+    pristine_git_object: e64d1a757f91a969976b817d3f89a508a94786e8
   docs/sdks/contexts/README.md:
     id: d8fd381b7d65
     last_write_checksum: sha1:e4a471d7aa49e9c68986b1bbda6c9b7525f6a983
@@ -2771,8 +2771,8 @@ trackedFiles:
     pristine_git_object: 90f9b05b4b27ca00a2924ac9b63a2a065539911f
   docs/sdks/integrations/README.md:
     id: 7b29664808c0
-    last_write_checksum: sha1:59758a1abf2c22edd9ba714386949be8867d2734
-    pristine_git_object: 53961cf3f68aacc49f1136501564b3170a60a010
+    last_write_checksum: sha1:5a625932b157824ffc98276e9d6ec66554d27423
+    pristine_git_object: e801d195beafdadc39f4d24dae38eac1b7c76d21
   docs/sdks/layouts/README.md:
     id: 9cae4f89dc39
     last_write_checksum: sha1:e180ddf3c946f611fa1bfc75e6df0ae3f8979000
@@ -2791,8 +2791,8 @@ trackedFiles:
     pristine_git_object: 90ef9f0d6b773ad579ce91d2cfeab0a491dd4d8a
   docs/sdks/novu/README.md:
     id: b25d764fd1ca
-    last_write_checksum: sha1:f79e2783e9655f00c8d37d4cdce019ce479d1d23
-    pristine_git_object: 3568c27133ec0e9f9b81142fe39f0f0320983bdf
+    last_write_checksum: sha1:8080574590d17c2f4f86f352ed67b32a2b40cb32
+    pristine_git_object: 1fb49dd3fd435bee94593563d53e376157758ca9
   docs/sdks/novumessages/README.md:
     id: 0ed543e2b6a6
     last_write_checksum: sha1:cbf79c08a42836be8e4e87c3d511e0b6387f66e6
@@ -2835,8 +2835,8 @@ trackedFiles:
     pristine_git_object: 396d32e4c5e2d11da5d6ae4c4d94dae9f4123116
   docs/sdks/subscriptions/README.md:
     id: 298b9ab3c3e0
-    last_write_checksum: sha1:0c01f148fd888ac9539725d1022e37ac5216d9c9
-    pristine_git_object: 564a5178c109859d82ff6232b76273885e6d5195
+    last_write_checksum: sha1:95e9d638c77fefe0bfc5a90ab7a136730e6f8614
+    pristine_git_object: 4642f7fa91fbc14519b81d2cc4ec70b916015251
   docs/sdks/topics/README.md:
     id: db4aff1adac3
     last_write_checksum: sha1:b8c9c35b576fe2d1e0b35bc6fe121b32cd570b9c
@@ -2875,12 +2875,12 @@ trackedFiles:
     pristine_git_object: f53ab51cec8f34815de7035e9f829fd9e8c3f347
   src/ChannelConnections.php:
     id: c013925fa884
-    last_write_checksum: sha1:422e5c866cae96e7e67940a97f8c7f41c7af652c
-    pristine_git_object: 0a7dddd2b656d31fd57c2546f5dfc329884baee5
+    last_write_checksum: sha1:8c3823e01e37e6cccec2bd6e8bfa785d3567627f
+    pristine_git_object: b577deba7d8bb5c75f68b113a15962a29a85010f
   src/ChannelEndpoints.php:
     id: 49c03e3ebd7a
-    last_write_checksum: sha1:bef64bfe6b286abecb6d1407c277d6bf8270c3cc
-    pristine_git_object: e6752603a2abcb2c0040348d2ebd9c5ff1f3a575
+    last_write_checksum: sha1:7a36ad710c4046cfda96a1cb9b31d2137729bff9
+    pristine_git_object: 3e7fd898af1aa0c591096d1fa27c630c8ac1200e
   src/Contexts.php:
     id: bf79611bdfd4
     last_write_checksum: sha1:11c547f45684269a636bd9e5f8a0efda3efc8dad
@@ -3587,8 +3587,8 @@ trackedFiles:
     pristine_git_object: 2d9d23c5ea50a186164581e0e261cb63d3a7e5e5
   src/Models/Components/GenerateChatOauthUrlRequestDto.php:
     id: 7058780aa8f4
-    last_write_checksum: sha1:c0d37eaf680610a9b67984e006e32b0fee711b0c
-    pristine_git_object: 4bb3087ea8071772a31436c13e46f065eeca517b
+    last_write_checksum: sha1:17bd385c07bc14ac74bfc61b9181f2201572d5c9
+    pristine_git_object: 67d379f366a15f6e9d8266a63e9a7c8e213f7159
   src/Models/Components/GenerateChatOauthUrlRequestDtoContext2.php:
     id: d09dae5f407e
     last_write_checksum: sha1:58417a2be61295543077403a9d19c50a9f59bc00
@@ -3663,8 +3663,8 @@ trackedFiles:
     pristine_git_object: 1e95a647169ad096fc884bc1a266f68ca92a0630
   src/Models/Components/InAppControlDto.php:
     id: 6748cd11dc6c
-    last_write_checksum: sha1:dfd2c7dec0233cfcaa91f1441cfb9766d175ac15
-    pristine_git_object: 3bdce56866fd7d02e7dfb72edfe4d95f6cd79d07
+    last_write_checksum: sha1:019460445ee31838a36e013e083f280886b047ea
+    pristine_git_object: 69cf3060a4a64db9f54cd474deb08f93621cd2d6
   src/Models/Components/InAppControlsMetadataResponseDto.php:
     id: f3a390ef957b
     last_write_checksum: sha1:6c5e6be1b390b3bd83977f2c6db91ac6b01e5aea
@@ -3675,8 +3675,8 @@ trackedFiles:
     pristine_git_object: 74cddf907a5a484bc91c42ef80d73b1d7e19a0ae
   src/Models/Components/InAppStepResponseDtoControlValues.php:
     id: 7d7019e792ac
-    last_write_checksum: sha1:bb569a415bf5c43c2518e3676c98dfc6fd472402
-    pristine_git_object: f45523ab3ed60a36e9608cf5cd2815dc05c2c1f6
+    last_write_checksum: sha1:a8e513e91ca1800e6723100148961e0ad12e7d62
+    pristine_git_object: 9298c29425624b77086f34615343d7d58d2dbd5d
   src/Models/Components/InAppStepUpsertDto.php:
     id: 5189322140fa
     last_write_checksum: sha1:bc9b72c6d3ba2c878a1477b40bc1881db1963668
@@ -3891,8 +3891,8 @@ trackedFiles:
     pristine_git_object: 3bdc29c934b7f7a93f5bb7521fd0de2bb9409de3
   src/Models/Components/NotificationFeedItemDto.php:
     id: 4d5a84a449f6
-    last_write_checksum: sha1:5036e4fc31037d35c7044ee6d34500bc1e06a25b
-    pristine_git_object: 881dabfbf2a58dfbdcb3e2fc6ccd6df09c40a0ca
+    last_write_checksum: sha1:a05a9a9a3a84d8df65997961d891cc251013074a
+    pristine_git_object: e3134f2ded1d76f2a8ca001c77d7a63450bff62a
   src/Models/Components/NotificationFeedItemDtoStatus.php:
     id: c96e99ac9718
     last_write_checksum: sha1:d9021f8e685fdc94d25e476a72c3af13002d5d8b
@@ -4035,8 +4035,8 @@ trackedFiles:
     pristine_git_object: f7634a4b7ac9ce566d167da9c6dbc7340bc8fb8b
   src/Models/Components/RedirectDto.php:
     id: ac280e29ad7e
-    last_write_checksum: sha1:24252d9cf7e31d474b8f429fe33aabe813e53719
-    pristine_git_object: ca03fc0f779012ca70d174a25e699802590eee05
+    last_write_checksum: sha1:2feb7d9530a3b14e8a8ea6e7c81d1c3f82c63bd6
+    pristine_git_object: 3152861ccbe0da5d91cf4bfd4f99c5f8000baab5
   src/Models/Components/RemoveSubscriberResponseDto.php:
     id: 24d2b261b01d
     last_write_checksum: sha1:94459f73d026620d91f29a12181f82c78e73ee16
@@ -4347,8 +4347,8 @@ trackedFiles:
     pristine_git_object: 50c8e53c99fd30e8fb8385729b395a2824e6e139
   src/Models/Components/TriggerEventRequestDto.php:
     id: 5bcd0022ac4b
-    last_write_checksum: sha1:3757b5598f09e14ebdb85090b099ea8253b98026
-    pristine_git_object: 57a2c65c370c865d99cf8e9e168aeff66239b11c
+    last_write_checksum: sha1:0e47c536de5cdbe3c5142bf64a7f1762daf5df79
+    pristine_git_object: 2f1fe3b65d71d85f443388033be31c04f4108d04
   src/Models/Components/TriggerEventRequestDtoContext2.php:
     id: a2fd2e4d71bc
     last_write_checksum: sha1:32b0afc662d7c8e34eddc6add26cdc7d0f3de4d7
@@ -5031,8 +5031,8 @@ trackedFiles:
     pristine_git_object: 5e0402b00e373b284b8e1798cbeaa1e77aa04b42
   src/Models/Operations/NotificationsControllerListNotificationsRequest.php:
     id: 01a7169094b5
-    last_write_checksum: sha1:eba54da1d57a2525aa7a7021f72be85f2069f151
-    pristine_git_object: 2cd2fdcaf6b852472119472edd1ab2ec80b07066
+    last_write_checksum: sha1:af7c8a923cd7e5dfedab9ddab91554bc8d874597
+    pristine_git_object: e27d6991bdaa09d9a4f5d930aba0ce50f7f0944c
   src/Models/Operations/NotificationsControllerListNotificationsResponse.php:
     id: 3eb9dc652427
     last_write_checksum: sha1:958587680b7c02f47f666b8de8b9b2e5c240dcea
@@ -5247,8 +5247,8 @@ trackedFiles:
     pristine_git_object: 2c5debb6f812ef9eb51c0f9d2cf766ace294c065
   src/Models/Operations/TopicsControllerGetTopicSubscriptionRequest.php:
     id: 9e5dffc666e4
-    last_write_checksum: sha1:81c68970413260008323af02ab124486595cfadb
-    pristine_git_object: ec66bd45039966894b762df61d4cf99374dcbcc4
+    last_write_checksum: sha1:feee8ae1ab628463a434ad5a08d10a792ee77c59
+    pristine_git_object: 530bcaa218f191c462a7ff779f999bda1f0d49c6
   src/Models/Operations/TopicsControllerGetTopicSubscriptionResponse.php:
     id: 2fe3d42b87c7
     last_write_checksum: sha1:a2ff7022bcdcaebf65ddc7aa21eca5b60866cc02
@@ -5287,8 +5287,8 @@ trackedFiles:
     pristine_git_object: 82f9349f7a9b4ed381bd7b84e82e8b76f403b7b5
   src/Models/Operations/TopicsControllerUpdateTopicSubscriptionRequest.php:
     id: 239524e610eb
-    last_write_checksum: sha1:b2d7e67a9d1983ae163fdd24161adaf6e0d846c6
-    pristine_git_object: 7b4fce207d53b2cff9d04d7f95cd86e2a7cd8d41
+    last_write_checksum: sha1:a78d4b0779cf67092d973b49e398162a62704daf
+    pristine_git_object: 3d7f65d55b4e6b82052ad653d36e99a6e1c769f9
   src/Models/Operations/TopicsControllerUpdateTopicSubscriptionResponse.php:
     id: c627e38cba13
     last_write_checksum: sha1:97a6b1eddcb31646dbef0f4b11d719298268906e
@@ -5471,8 +5471,8 @@ trackedFiles:
     pristine_git_object: c7d110efdb064bf596bd53ae65bf2ad7edfdd96e
   src/Novu.php:
     id: b59e8315cc3a
-    last_write_checksum: sha1:31cfb5993ee6b24b3fac64e5f8c8ce4c260ed3cb
-    pristine_git_object: df1dd33d007900b84c7876c7c6459b4261916fe3
+    last_write_checksum: sha1:7dda5f17e99f88fc022cc5ad78b0e7623cff5a5b
+    pristine_git_object: 9bf9104f3d39dda7c2c35dfd0af10422fcdbca1d
   src/NovuBuilder.php:
     id: 69e3d953f1ec
     last_write_checksum: sha1:d0d94056275dc9472891ccf52df1947758736428
@@ -5495,8 +5495,8 @@ trackedFiles:
     pristine_git_object: b48407cddc057c08520d1db020504b4331cc3933
   src/SDKConfiguration.php:
     id: 9d60ab0bec0b
-    last_write_checksum: sha1:ff7c53e290e36de5c3a249199b00d4a34aa78bf7
-    pristine_git_object: 00158be93a727761ed329c0f650304cd567ecfc0
+    last_write_checksum: sha1:c695a3790a5b79434ee62f9ff9abb46fdcb6c682
+    pristine_git_object: 60bdeeee8eea5fc12df71c033dac424f4156ef97
   src/Steps.php:
     id: 9ae87f15c136
     last_write_checksum: sha1:069bd65c3e5e2d74f8b67910bd8e501e5d42be4d
@@ -5523,8 +5523,8 @@ trackedFiles:
     pristine_git_object: fc1dbcaec56110fb05a73aedf966f17efe242652
   src/Subscriptions.php:
     id: 682323fa5228
-    last_write_checksum: sha1:66ddcb8549decc14975b51b8d274ed75b8377490
-    pristine_git_object: bd243b34655b45bc38143ec4ad215b4be3afaba3
+    last_write_checksum: sha1:bf6d94c4b1acf6fdb08d9cc0aaafb85ae2320d9e
+    pristine_git_object: ea97a1acb2210d8ded65b4b585060b3a18a0820a
   src/Topics.php:
     id: 2f5c9343954e
     last_write_checksum: sha1:5ff896ab528109490b3b4c357ea5010cdd219c8c
@@ -5587,8 +5587,8 @@ trackedFiles:
     pristine_git_object: df5fadaed9ca783f6a902948272c51bb23cbb933
   src/Utils/MixedJSONHandler.php:
     id: ceb58b45ce9f
-    last_write_checksum: sha1:3aaa81a77e2ef4fae23756e5cce260aa9df75de1
-    pristine_git_object: c72e2a72354f05c74eb004cd1846f5e5da151c32
+    last_write_checksum: sha1:3045a90c7147fff18d04db576dd19f7dd17abd34
+    pristine_git_object: a478f79626e267b4756fcbada56d62ae1d062620
   src/Utils/MultipartMetadata.php:
     id: 4b6a976cbd33
     last_write_checksum: sha1:73e590b239c8f5e5c0527a31009381b6810a1f0e
@@ -6981,6 +6981,7 @@ examples:
         path:
           topicKey: "<value>"
           subscriptionIdOrIdentifier: "<value>"
+          identifier: "<value>"
       responses:
         "200":
           application/json: {"_id": "64f5e95d3d7946d80d0cb679", "identifier": "tk=product-updates:si=subscriber-123", "name": "My Subscription", "topic": {"_id": "64f5e95d3d7946d80d0cb677", "key": "product-updates", "name": "Product Updates"}, "subscriber": {"_id": "64da692e9a94fb2e6449ad07", "subscriberId": "user-123", "avatar": "https://example.com/avatar.png", "firstName": "John", "lastName": "Doe", "email": "john@example.com"}, "preferences": [{"subscriptionId": "64f5e95d3d7946d80d0cb679", "workflow": {"id": "64a1b2c3d4e5f6g7h8i9j0k1", "identifier": "welcome-email", "name": "Welcome Email Workflow", "critical": false, "tags": ["user-onboarding", "email"], "data": {}, "severity": "none"}, "enabled": true, "condition": {"and": [{"===": [{"var": "tier"}, "premium"]}]}}], "createdAt": "2025-04-24T05:40:21Z", "updatedAt": "2025-04-24T05:40:21Z"}
@@ -6998,6 +6999,7 @@ examples:
         path:
           topicKey: "<value>"
           subscriptionIdOrIdentifier: "<value>"
+          identifier: "<value>"
       requestBody:
         application/json: {"name": "My Subscription", "preferences": [{"condition": {"===": [{"var": "tier"}, "premium"]}, "workflowId": "workflow-123"}]}
       responses:
@@ -7182,7 +7184,7 @@ examples:
   IntegrationsController_getChatOAuthUrl:
     speakeasy-default-integrations-controller-get-chat-O-auth-url:
       requestBody:
-        application/json: {"subscriberId": "subscriber-123", "integrationIdentifier": "<value>", "context": {"key": "org-acme"}, "scope": ["chat:write", "chat:write.public", "channels:read", "groups:read", "users:read", "users:read.email", "incoming-webhook"]}
+        application/json: {"subscriberId": "subscriber-123", "integrationIdentifier": "<value>", "connectionIdentifier": "slack-connection-abc123", "context": {"key": "org-acme"}, "scope": ["chat:write", "chat:write.public", "channels:read", "groups:read", "users:read", "users:read.email", "incoming-webhook"]}
       responses:
         "201":
           application/json: {"url": "https://slack.com/oauth/v2/authorize?state=..."}
@@ -7196,7 +7198,7 @@ examples:
           application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Php SDK Changes:\n* `novu->translations->upload()`:  `request` **Changed** **Breaking** :warning:\n* `novu->translations->master->retrieve()`:  `response` **Changed** **Breaking** :warning:\n* `novu->translations->master->upload()`:  `requestBody` **Added** **Breaking** :warning:\n* `novu->translations->master->import()`: \n  *  `request.importMasterJsonRequestDto->masterJson` **Changed** **Breaking** :warning:\n* `novu->contexts->update()`: \n  *  `request.updateContextRequestDto->data` **Changed** **Breaking** :warning:\n  *  `response.data` **Changed** **Breaking** :warning:\n* `novu->translations->retrieve()`:  `response.content` **Changed** **Breaking** :warning:\n* `novu->translations->create()`: \n  *  `request.createTranslationRequestDto->content` **Changed** **Breaking** :warning:\n  *  `response.content` **Changed** **Breaking** :warning:\n* `novu->contexts->retrieve()`:  `response.data` **Changed** **Breaking** :warning:\n* `novu->contexts->list()`:  `response.data->[]->data` **Changed** **Breaking** :warning:\n* `novu->contexts->create()`: \n  *  `request.createContextRequestDto->data` **Changed** **Breaking** :warning:\n  *  `response.data` **Changed** **Breaking** :warning:\n* `novu->integrations->create()`: \n  *  `request.createIntegrationRequestDto->credentials->tenantId` **Added**\n  *  `response.credentials->tenantId` **Added**\n* `novu->integrations->delete()`:  `response.[]->credentials->tenantId` **Added**\n* `novu->integrations->generateChatOAuthUrl()`: **Added**\n* `novu->topics->subscriptions->create()`: \n  *  `request.createTopicSubscriptionsRequestDto` **Changed**\n  *  `response.data->[]` **Changed**\n* `novu->triggerbroadcast()`: \n  *  `request.triggerEventToAllRequestDto->context` **Added**\n  *  `response.jobData` **Added**\n* `novu->triggerbulk()`:  `response.[]->jobData` **Added**\n* `novu->channel endpoints->retrieve()`: **Added**\n* `novu->channel endpoints->create()`: **Added**\n* `novu->topics->subscriptions->update()`: **Added**\n* `novu->channel endpoints->list()`: **Added**\n* `novu->channel connections->update()`: **Added**\n* `novu->topics->subscriptions->delete()`: \n  *  `request.deleteTopicSubscriptionsRequestDto` **Changed**\n  *  `response.data->[]->identifier` **Added**\n* `novu->channel endpoints->delete()`: **Added**\n* `novu->subscribers->topics->list()`:  `response.data->[]->identifier` **Added**\n* `novu->channel endpoints->update()`: **Added**\n* `novu->channel connections->delete()`: **Added**\n* `novu->subscribers->preferences->bulkUpdate()`:  `response.[]->condition` **Added**\n* `novu->topics->subscriptions->getSubscription()`: **Added**\n* `novu->channel connections->retrieve()`: **Added**\n* `novu->channel connections->create()`: **Added**\n* `novu->channel connections->list()`: **Added**\n* `novu->integrations->list()`:  `response.[]->credentials->tenantId` **Added**\n* `novu->topics->subscriptions->list()`:  `response.data->[]->identifier` **Added**\n* `novu->integrations->update()`: \n  *  `request.updateIntegrationRequestDto->credentials->tenantId` **Added**\n  *  `response.credentials->tenantId` **Added**\n* `novu->trigger()`:  `response.jobData` **Added**\n* `novu->integrations->setAsPrimary()`:  `response.credentials->tenantId` **Added**\n* `novu->integrations->listActive()`:  `response.[]->credentials->tenantId` **Added**\n"
+releaseNotes: "## Php SDK Changes:\n* `novu->topics->subscriptions->getSubscription()`:  `request` **Changed** **Breaking** :warning:\n* `novu->topics->subscriptions->update()`:  `request` **Changed** **Breaking** :warning:\n* `novu->subscribers->notifications->getFeed()`:  `response.data->[]->archived` **Added**\n* `novu->notifications->list()`: \n  *  `request->subscriptionId` **Added**\n"
 generatedFiles:
   - .gitattributes
   - USAGE.md

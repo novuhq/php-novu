@@ -357,15 +357,15 @@ class Subscriptions
     /**
      * Get a topic subscription
      *
-     * Get a subscription by its unique identifier **subscriptionIdOrIdentifier** for a topic.
+     * Get a subscription by its unique identifier for a topic.
      *
      * @param  string  $topicKey
-     * @param  string  $subscriptionIdOrIdentifier
+     * @param  string  $identifier
      * @param  ?string  $idempotencyKey
      * @return Operations\TopicsControllerGetTopicSubscriptionResponse
      * @throws \novu\Models\Errors\APIException
      */
-    public function getSubscription(string $topicKey, string $subscriptionIdOrIdentifier, ?string $idempotencyKey = null, ?Options $options = null): Operations\TopicsControllerGetTopicSubscriptionResponse
+    public function getSubscription(string $topicKey, string $identifier, ?string $idempotencyKey = null, ?Options $options = null): Operations\TopicsControllerGetTopicSubscriptionResponse
     {
         $retryConfig = null;
         if ($options) {
@@ -396,11 +396,11 @@ class Subscriptions
         }
         $request = new Operations\TopicsControllerGetTopicSubscriptionRequest(
             topicKey: $topicKey,
-            subscriptionIdOrIdentifier: $subscriptionIdOrIdentifier,
+            identifier: $identifier,
             idempotencyKey: $idempotencyKey,
         );
         $baseUrl = $this->sdkConfiguration->getTemplatedServerUrl();
-        $url = Utils\Utils::generateUrl($baseUrl, '/v2/topics/{topicKey}/subscriptions/{subscriptionIdOrIdentifier}', Operations\TopicsControllerGetTopicSubscriptionRequest::class, $request);
+        $url = Utils\Utils::generateUrl($baseUrl, '/v2/topics/{topicKey}/subscriptions/{identifier}', Operations\TopicsControllerGetTopicSubscriptionRequest::class, $request);
         $urlOverride = null;
         $httpOptions = ['http_errors' => false];
         $httpOptions = array_merge_recursive($httpOptions, Utils\Utils::getHeaders($request));
@@ -650,16 +650,16 @@ class Subscriptions
     /**
      * Update a topic subscription
      *
-     * Update a subscription by its unique identifier **subscriptionIdOrIdentifier** for a topic. You can update the preferences and name associated with the subscription.
+     * Update a subscription by its unique identifier for a topic. You can update the preferences and name associated with the subscription.
      *
      * @param  Components\UpdateTopicSubscriptionRequestDto  $updateTopicSubscriptionRequestDto
      * @param  string  $topicKey
-     * @param  string  $subscriptionIdOrIdentifier
+     * @param  string  $identifier
      * @param  ?string  $idempotencyKey
      * @return Operations\TopicsControllerUpdateTopicSubscriptionResponse
      * @throws \novu\Models\Errors\APIException
      */
-    public function update(Components\UpdateTopicSubscriptionRequestDto $updateTopicSubscriptionRequestDto, string $topicKey, string $subscriptionIdOrIdentifier, ?string $idempotencyKey = null, ?Options $options = null): Operations\TopicsControllerUpdateTopicSubscriptionResponse
+    public function update(Components\UpdateTopicSubscriptionRequestDto $updateTopicSubscriptionRequestDto, string $topicKey, string $identifier, ?string $idempotencyKey = null, ?Options $options = null): Operations\TopicsControllerUpdateTopicSubscriptionResponse
     {
         $retryConfig = null;
         if ($options) {
@@ -690,12 +690,12 @@ class Subscriptions
         }
         $request = new Operations\TopicsControllerUpdateTopicSubscriptionRequest(
             topicKey: $topicKey,
-            subscriptionIdOrIdentifier: $subscriptionIdOrIdentifier,
+            identifier: $identifier,
             updateTopicSubscriptionRequestDto: $updateTopicSubscriptionRequestDto,
             idempotencyKey: $idempotencyKey,
         );
         $baseUrl = $this->sdkConfiguration->getTemplatedServerUrl();
-        $url = Utils\Utils::generateUrl($baseUrl, '/v2/topics/{topicKey}/subscriptions/{subscriptionIdOrIdentifier}', Operations\TopicsControllerUpdateTopicSubscriptionRequest::class, $request);
+        $url = Utils\Utils::generateUrl($baseUrl, '/v2/topics/{topicKey}/subscriptions/{identifier}', Operations\TopicsControllerUpdateTopicSubscriptionRequest::class, $request);
         $urlOverride = null;
         $httpOptions = ['http_errors' => false];
         $body = Utils\Utils::serializeRequestBody($request, 'updateTopicSubscriptionRequestDto', 'json');
