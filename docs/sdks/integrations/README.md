@@ -418,6 +418,7 @@ $sdk = novu\Novu::builder()
 $generateChatOauthUrlRequestDto = new Components\GenerateChatOauthUrlRequestDto(
     subscriberId: 'subscriber-123',
     integrationIdentifier: '<value>',
+    connectionIdentifier: 'slack-connection-abc123',
     context: [
         'key' => 'org-acme',
     ],

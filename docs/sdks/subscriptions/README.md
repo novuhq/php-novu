@@ -219,11 +219,11 @@ if ($response->deleteTopicSubscriptionsResponseDto !== null) {
 
 ## getSubscription
 
-Get a subscription by its unique identifier **subscriptionIdOrIdentifier** for a topic.
+Get a subscription by its unique identifier for a topic.
 
 ### Example Usage
 
-<!-- UsageSnippet language="php" operationID="TopicsController_getTopicSubscription" method="get" path="/v2/topics/{topicKey}/subscriptions/{subscriptionIdOrIdentifier}" -->
+<!-- UsageSnippet language="php" operationID="TopicsController_getTopicSubscription" method="get" path="/v2/topics/{topicKey}/subscriptions/{identifier}" -->
 ```php
 declare(strict_types=1);
 
@@ -241,7 +241,7 @@ $sdk = novu\Novu::builder()
 
 $response = $sdk->topics->subscriptions->getSubscription(
     topicKey: '<value>',
-    subscriptionIdOrIdentifier: '<value>'
+    identifier: '<value>'
 
 );
 
@@ -255,7 +255,7 @@ if ($response->subscriptionResponseDto !== null) {
 | Parameter                                 | Type                                      | Required                                  | Description                               |
 | ----------------------------------------- | ----------------------------------------- | ----------------------------------------- | ----------------------------------------- |
 | `topicKey`                                | *string*                                  | :heavy_check_mark:                        | The key identifier of the topic           |
-| `subscriptionIdOrIdentifier`              | *string*                                  | :heavy_check_mark:                        | The unique identifier of the subscription |
+| `identifier`                              | *string*                                  | :heavy_check_mark:                        | The unique identifier of the subscription |
 | `idempotencyKey`                          | *?string*                                 | :heavy_minus_sign:                        | A header for idempotency purposes         |
 
 ### Response
@@ -274,11 +274,11 @@ if ($response->subscriptionResponseDto !== null) {
 
 ## update
 
-Update a subscription by its unique identifier **subscriptionIdOrIdentifier** for a topic. You can update the preferences and name associated with the subscription.
+Update a subscription by its unique identifier for a topic. You can update the preferences and name associated with the subscription.
 
 ### Example Usage
 
-<!-- UsageSnippet language="php" operationID="TopicsController_updateTopicSubscription" method="patch" path="/v2/topics/{topicKey}/subscriptions/{subscriptionIdOrIdentifier}" -->
+<!-- UsageSnippet language="php" operationID="TopicsController_updateTopicSubscription" method="patch" path="/v2/topics/{topicKey}/subscriptions/{identifier}" -->
 ```php
 declare(strict_types=1);
 
@@ -312,7 +312,7 @@ $updateTopicSubscriptionRequestDto = new Components\UpdateTopicSubscriptionReque
 
 $response = $sdk->topics->subscriptions->update(
     topicKey: '<value>',
-    subscriptionIdOrIdentifier: '<value>',
+    identifier: '<value>',
     updateTopicSubscriptionRequestDto: $updateTopicSubscriptionRequestDto
 
 );
@@ -327,7 +327,7 @@ if ($response->subscriptionResponseDto !== null) {
 | Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
 | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
 | `topicKey`                                                                                                   | *string*                                                                                                     | :heavy_check_mark:                                                                                           | The key identifier of the topic                                                                              |
-| `subscriptionIdOrIdentifier`                                                                                 | *string*                                                                                                     | :heavy_check_mark:                                                                                           | The unique identifier of the subscription                                                                    |
+| `identifier`                                                                                                 | *string*                                                                                                     | :heavy_check_mark:                                                                                           | The unique identifier of the subscription                                                                    |
 | `updateTopicSubscriptionRequestDto`                                                                          | [Components\UpdateTopicSubscriptionRequestDto](../../Models/Components/UpdateTopicSubscriptionRequestDto.md) | :heavy_check_mark:                                                                                           | N/A                                                                                                          |
 | `idempotencyKey`                                                                                             | *?string*                                                                                                    | :heavy_minus_sign:                                                                                           | A header for idempotency purposes                                                                            |
 

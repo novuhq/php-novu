@@ -48,7 +48,7 @@ class ChannelEndpoints
     }
 
     /**
-     * Create channel endpoint for a resource
+     * Create a channel endpoint
      *
      * Create a new channel endpoint for a resource.
      *
@@ -199,7 +199,7 @@ class ChannelEndpoints
     }
 
     /**
-     * Delete channel endpoint by identifier
+     * Delete a channel endpoint
      *
      * Delete a specific channel endpoint by its unique identifier.
      *
@@ -335,7 +335,7 @@ class ChannelEndpoints
     }
 
     /**
-     * Retrieve channel endpoint by identifier
+     * Retrieve a channel endpoint
      *
      * Retrieve a specific channel endpoint by its unique identifier.
      *
@@ -481,9 +481,9 @@ class ChannelEndpoints
     }
 
     /**
-     * List channel endpoints
+     * List all channel endpoints
      *
-     * Retrieve all channel endpoints for a resource based on query filters.
+     * List all channel endpoints for a resource based on query filters.
      *
      * @param  ?Operations\ChannelEndpointsControllerListChannelEndpointsRequest  $request
      * @return Operations\ChannelEndpointsControllerListChannelEndpointsResponse
@@ -625,7 +625,7 @@ class ChannelEndpoints
     }
 
     /**
-     * Update channel endpoint
+     * Update a channel endpoint
      *
      * Update an existing channel endpoint by its unique identifier.
      *
