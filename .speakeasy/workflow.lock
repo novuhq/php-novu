@@ -1,4 +1,4 @@
-speakeasyVersion: 1.680.3
+speakeasyVersion: 1.680.4
 sources:
     novu-OAS:
         sourceNamespace: novu-oas
