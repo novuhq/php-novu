@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 4286f3ad-fa54-4c63-a599-e5773b27ae7b
 management:
-  docChecksum: 55f191ca81248689054a3ec9d34ce1b5
-  docVersion: 3.11.0
+  docChecksum: 646aa3048591512108391564065fa52f
+  docVersion: 3.12.0
   speakeasyVersion: 1.683.0
   generationVersion: 2.792.0
-  releaseVersion: 3.12.0
-  configChecksum: ffb702307268df5d403c04b7868f41c9
+  releaseVersion: 3.13.0
+  configChecksum: b1e98d41a7fc0ff45517c01c61b1482a
   repoURL: https://github.com/novuhq/php-novu.git
   installationURL: https://github.com/novuhq/php-novu
   published: true
 persistentEdits:
-  generation_id: 66642d13-4fe0-47f0-8df0-83888af5edf8
-  pristine_commit_hash: d4217acb12c940cb01aa85e8abb4077bbe71f663
-  pristine_tree_hash: 34e629ec7fc3ce9f7746b2eb452393a585d73798
+  generation_id: ea2bc8d0-dab0-423e-a012-9cfd75d1a620
+  pristine_commit_hash: d6e129d4df3545c0f1daa186cb8c0a826290cfa1
+  pristine_tree_hash: fd33abeb10ebe2d0898811ea6dfeb58e4bdf5f4d
 features:
   php:
     additionalProperties: 0.1.0
@@ -1403,8 +1403,8 @@ trackedFiles:
     pristine_git_object: a23d14de5a90333aefbd7d7dd08aa8055b02b080
   docs/Models/Components/SubscriberWorkflowPreferenceDto.md:
     id: c34ff68ea4e0
-    last_write_checksum: sha1:64e7eb1b7692185410e6174c54171fee9122f089
-    pristine_git_object: ee588367682b2b08a3fc3804f673f02d71616962
+    last_write_checksum: sha1:1a1a0c3588bfccd268b8cce07689387ad5973485
+    pristine_git_object: 9fbc6efe5af24d0b60573fc78bf8ee12da80073c
   docs/Models/Components/SubscriptionDto.md:
     id: a7b6d279197e
     last_write_checksum: sha1:59f38728c9a4a7c063c039bdd2b5a30447320d52
@@ -4199,8 +4199,8 @@ trackedFiles:
     pristine_git_object: fe4861080f4343ed06006adc3501d9a2e38f9715
   src/Models/Components/SubscriberWorkflowPreferenceDto.php:
     id: db8c24c7a358
-    last_write_checksum: sha1:58a3a8eefd7b7280c8fceebcde91ce30254af645
-    pristine_git_object: 4c028a0c490eac767a7e19ee8f4e1f0e5caf44a7
+    last_write_checksum: sha1:69c046c42b4426496f7944034c4824d6acfc3140
+    pristine_git_object: 6568157210196112dfa3f5be4cee9ae9e83cfe37
   src/Models/Components/SubscriptionDto.php:
     id: 2fb469696ed7
     last_write_checksum: sha1:e9ed4446a2200f7b1c45b1fac79589f013f0462b
@@ -5495,8 +5495,8 @@ trackedFiles:
     pristine_git_object: b48407cddc057c08520d1db020504b4331cc3933
   src/SDKConfiguration.php:
     id: 9d60ab0bec0b
-    last_write_checksum: sha1:45e5ae005634f550d5e1746c77837bf05c05456c
-    pristine_git_object: 3f0b2ec1b4f10c203dafae1b07f69ad94ff38ae8
+    last_write_checksum: sha1:1f77e541744b96f8e6a4d9686da2a6edbb93c771
+    pristine_git_object: 98e11fec482feb703f6bb29cba241e3be474d114
   src/Steps.php:
     id: 9ae87f15c136
     last_write_checksum: sha1:069bd65c3e5e2d74f8b67910bd8e501e5d42be4d
@@ -7198,6 +7198,10 @@ examples:
           application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
 examplesVersion: 1.0.2
 generatedTests: {}
+releaseNotes: |
+  ## Php SDK Changes:
+  * `novu->subscribers->updatePreferences()`:  `response.workflows->[]->updatedAt` **Added**
+  * `novu->subscriberspreferences->list()`:  `response.workflows->[]->updatedAt` **Added**
 generatedFiles:
   - .gitattributes
   - USAGE.md
