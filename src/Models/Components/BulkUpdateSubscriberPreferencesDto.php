@@ -21,11 +21,23 @@ class BulkUpdateSubscriberPreferencesDto
     public array $preferences;
 
     /**
+     * $context
+     *
+     * @var ?array<string, string|Context2> $context
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('context')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, string|\novu\Models\Components\Context2>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $context = null;
+
+    /**
      * @param  array<BulkUpdateSubscriberPreferenceItemDto>  $preferences
+     * @param  ?array<string, string|Context2>  $context
      * @phpstan-pure
      */
-    public function __construct(array $preferences)
+    public function __construct(array $preferences, ?array $context = null)
     {
         $this->preferences = $preferences;
+        $this->context = $context;
     }
 }

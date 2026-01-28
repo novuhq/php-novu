@@ -19,6 +19,14 @@ class SubscribersControllerGetSubscriberPreferencesRequest
     public string $subscriberId;
 
     /**
+     * Context keys for filtering preferences (e.g., ["tenant:acme"])
+     *
+     * @var ?array<string> $contextKeys
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=contextKeys')]
+    public ?array $contextKeys = null;
+
+    /**
      * A header for idempotency purposes
      *
      * @var ?string $idempotencyKey
@@ -36,12 +44,14 @@ class SubscribersControllerGetSubscriberPreferencesRequest
     /**
      * @param  string  $subscriberId
      * @param  ?Criticality  $criticality
+     * @param  ?array<string>  $contextKeys
      * @param  ?string  $idempotencyKey
      * @phpstan-pure
      */
-    public function __construct(string $subscriberId, ?string $idempotencyKey = null, ?Criticality $criticality = Criticality::NonCritical)
+    public function __construct(string $subscriberId, ?array $contextKeys = null, ?string $idempotencyKey = null, ?Criticality $criticality = Criticality::NonCritical)
     {
         $this->subscriberId = $subscriberId;
+        $this->contextKeys = $contextKeys;
         $this->idempotencyKey = $idempotencyKey;
         $this->criticality = $criticality;
     }

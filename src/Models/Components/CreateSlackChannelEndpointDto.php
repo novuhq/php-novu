@@ -57,10 +57,10 @@ class CreateSlackChannelEndpointDto
     /**
      * $context
      *
-     * @var ?array<string, string|Context2> $context
+     * @var ?array<string, string|CreateSlackChannelEndpointDtoContext2> $context
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('context')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<string, string|\novu\Models\Components\Context2>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, string|\novu\Models\Components\CreateSlackChannelEndpointDtoContext2>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $context = null;
 
@@ -79,7 +79,7 @@ class CreateSlackChannelEndpointDto
      * @param  CreateSlackChannelEndpointDtoType  $type
      * @param  SlackChannelEndpointDto  $endpoint
      * @param  ?string  $identifier
-     * @param  ?array<string, string|Context2>  $context
+     * @param  ?array<string, string|CreateSlackChannelEndpointDtoContext2>  $context
      * @param  ?string  $connectionIdentifier
      * @phpstan-pure
      */

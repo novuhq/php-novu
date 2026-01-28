@@ -30,6 +30,9 @@ $sdk = novu\Novu::builder()
 
 $bulkUpdateSubscriberPreferencesDto = new Components\BulkUpdateSubscriberPreferencesDto(
     preferences: [],
+    context: [
+        'key' => 'org-acme',
+    ],
 );
 
 $response = $sdk->subscribers->preferences->bulkUpdate(

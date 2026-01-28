@@ -76,6 +76,14 @@ class TopicsControllerListTopicSubscriptionsRequest
     public ?string $subscriberId = null;
 
     /**
+     * Filter by exact context keys, order insensitive (format: "type:id")
+     *
+     * @var ?array<string> $contextKeys
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=contextKeys')]
+    public ?array $contextKeys = null;
+
+    /**
      * A header for idempotency purposes
      *
      * @var ?string $idempotencyKey
@@ -92,10 +100,11 @@ class TopicsControllerListTopicSubscriptionsRequest
      * @param  ?string  $orderBy
      * @param  ?bool  $includeCursor
      * @param  ?string  $subscriberId
+     * @param  ?array<string>  $contextKeys
      * @param  ?string  $idempotencyKey
      * @phpstan-pure
      */
-    public function __construct(string $topicKey, ?string $after = null, ?string $before = null, ?float $limit = null, ?TopicsControllerListTopicSubscriptionsQueryParamOrderDirection $orderDirection = null, ?string $orderBy = null, ?bool $includeCursor = null, ?string $subscriberId = null, ?string $idempotencyKey = null)
+    public function __construct(string $topicKey, ?string $after = null, ?string $before = null, ?float $limit = null, ?TopicsControllerListTopicSubscriptionsQueryParamOrderDirection $orderDirection = null, ?string $orderBy = null, ?bool $includeCursor = null, ?string $subscriberId = null, ?array $contextKeys = null, ?string $idempotencyKey = null)
     {
         $this->topicKey = $topicKey;
         $this->after = $after;
@@ -105,6 +114,7 @@ class TopicsControllerListTopicSubscriptionsRequest
         $this->orderBy = $orderBy;
         $this->includeCursor = $includeCursor;
         $this->subscriberId = $subscriberId;
+        $this->contextKeys = $contextKeys;
         $this->idempotencyKey = $idempotencyKey;
     }
 }

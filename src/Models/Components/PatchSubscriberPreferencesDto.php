@@ -41,15 +41,27 @@ class PatchSubscriberPreferencesDto
     public ?ScheduleDto $schedule = null;
 
     /**
+     * $context
+     *
+     * @var ?array<string, string|Two> $context
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('context')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, string|\novu\Models\Components\Two>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $context = null;
+
+    /**
      * @param  ?PatchPreferenceChannelsDto  $channels
      * @param  ?string  $workflowId
      * @param  ?ScheduleDto  $schedule
+     * @param  ?array<string, string|Two>  $context
      * @phpstan-pure
      */
-    public function __construct(?PatchPreferenceChannelsDto $channels = null, ?string $workflowId = null, ?ScheduleDto $schedule = null)
+    public function __construct(?PatchPreferenceChannelsDto $channels = null, ?string $workflowId = null, ?ScheduleDto $schedule = null, ?array $context = null)
     {
         $this->channels = $channels;
         $this->workflowId = $workflowId;
         $this->schedule = $schedule;
+        $this->context = $context;
     }
 }

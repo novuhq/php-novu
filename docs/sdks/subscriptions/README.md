@@ -35,6 +35,10 @@ $sdk = novu\Novu::builder()
 $request = new Operations\TopicsControllerListTopicSubscriptionsRequest(
     topicKey: '<value>',
     limit: 10,
+    contextKeys: [
+        'tenant:org-123',
+        'region:us-east-1',
+    ],
 );
 
 $response = $sdk->topics->subscriptions->list(
@@ -100,6 +104,9 @@ $createTopicSubscriptionsRequestDto = new Components\CreateTopicSubscriptionsReq
         ),
     ],
     name: 'My Topic',
+    context: [
+        'key' => 'org-acme',
+    ],
     preferences: [
         new Components\WorkflowPreferenceRequestDto(
             condition: [
@@ -245,7 +252,7 @@ $response = $sdk->topics->subscriptions->getSubscription(
 
 );
 
-if ($response->subscriptionResponseDto !== null) {
+if ($response->subscriptionDetailsResponseDto !== null) {
     // handle response
 }
 ```

@@ -63,15 +63,26 @@ class SubscriptionDto
     public ?SubscriptionDtoSubscriber $subscriber;
 
     /**
+     * Context keys that scope this subscription (e.g., tenant:org-a, project:proj-123)
+     *
+     * @var ?array<string> $contextKeys
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('contextKeys')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $contextKeys = null;
+
+    /**
      * @param  string  $id
      * @param  TopicDto  $topic
      * @param  string  $createdAt
      * @param  string  $updatedAt
      * @param  ?string  $identifier
      * @param  ?SubscriptionDtoSubscriber  $subscriber
+     * @param  ?array<string>  $contextKeys
      * @phpstan-pure
      */
-    public function __construct(string $id, TopicDto $topic, string $createdAt, string $updatedAt, ?string $identifier = null, ?SubscriptionDtoSubscriber $subscriber = null)
+    public function __construct(string $id, TopicDto $topic, string $createdAt, string $updatedAt, ?string $identifier = null, ?SubscriptionDtoSubscriber $subscriber = null, ?array $contextKeys = null)
     {
         $this->id = $id;
         $this->topic = $topic;
@@ -79,5 +90,6 @@ class SubscriptionDto
         $this->updatedAt = $updatedAt;
         $this->identifier = $identifier;
         $this->subscriber = $subscriber;
+        $this->contextKeys = $contextKeys;
     }
 }

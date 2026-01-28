@@ -31,6 +31,10 @@ $sdk = novu\Novu::builder()
 $request = new Operations\SubscribersControllerListSubscriberTopicsRequest(
     subscriberId: '<id>',
     limit: 10,
+    contextKeys: [
+        'tenant:org-123',
+        'region:us-east-1',
+    ],
 );
 
 $response = $sdk->subscribers->topics->list(

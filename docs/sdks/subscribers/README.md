@@ -458,6 +458,9 @@ $patchSubscriberPreferencesDto = new Components\PatchSubscriberPreferencesDto(
             ),
         ),
     ),
+    context: [
+        'key' => 'org-acme',
+    ],
 );
 
 $response = $sdk->subscribers->updatePreferences(

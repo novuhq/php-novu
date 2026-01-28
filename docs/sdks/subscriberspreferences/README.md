@@ -32,7 +32,10 @@ $sdk = novu\Novu::builder()
 
 $response = $sdk->subscribersPreferences->list(
     subscriberId: '<id>',
-    criticality: Operations\Criticality::NonCritical
+    criticality: Operations\Criticality::NonCritical,
+    contextKeys: [
+        'tenant:acme',
+    ]
 
 );
 
@@ -43,11 +46,12 @@ if ($response->getSubscriberPreferencesDto !== null) {
 
 ### Parameters
 
-| Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
-| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
-| `subscriberId`                                                    | *string*                                                          | :heavy_check_mark:                                                | N/A                                                               |
-| `criticality`                                                     | [?Operations\Criticality](../../Models/Operations/Criticality.md) | :heavy_minus_sign:                                                | N/A                                                               |
-| `idempotencyKey`                                                  | *?string*                                                         | :heavy_minus_sign:                                                | A header for idempotency purposes                                 |
+| Parameter                                                         | Type                                                              | Required                                                          | Description                                                       | Example                                                           |
+| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `subscriberId`                                                    | *string*                                                          | :heavy_check_mark:                                                | N/A                                                               |                                                                   |
+| `criticality`                                                     | [?Operations\Criticality](../../Models/Operations/Criticality.md) | :heavy_minus_sign:                                                | N/A                                                               |                                                                   |
+| `contextKeys`                                                     | array<*string*>                                                   | :heavy_minus_sign:                                                | Context keys for filtering preferences (e.g., ["tenant:acme"])    | [<br/>"tenant:acme"<br/>]                                         |
+| `idempotencyKey`                                                  | *?string*                                                         | :heavy_minus_sign:                                                | A header for idempotency purposes                                 |                                                                   |
 
 ### Response
 

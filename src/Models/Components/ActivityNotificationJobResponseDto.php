@@ -86,12 +86,12 @@ class ActivityNotificationJobResponseDto
     /**
      * Optional payload for the job
      *
-     * @var ?ActivityNotificationJobResponseDtoPayload $payload
+     * @var ?Payload $payload
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('payload')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ActivityNotificationJobResponseDtoPayload|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\Payload|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?ActivityNotificationJobResponseDtoPayload $payload = null;
+    public ?Payload $payload = null;
 
     /**
      * Updated time of the notification
@@ -120,12 +120,12 @@ class ActivityNotificationJobResponseDto
      * @param  string  $status
      * @param  ?DigestMetadataDto  $digest
      * @param  ?array<string, mixed>  $overrides
-     * @param  ?ActivityNotificationJobResponseDtoPayload  $payload
+     * @param  ?Payload  $payload
      * @param  ?string  $updatedAt
      * @param  ?float  $scheduleExtensionsCount
      * @phpstan-pure
      */
-    public function __construct(string $id, ActivityNotificationJobResponseDtoType $type, array $executionDetails, ActivityNotificationStepResponseDto $step, ProvidersIdEnum $providerId, string $status, ?DigestMetadataDto $digest = null, ?array $overrides = null, ?ActivityNotificationJobResponseDtoPayload $payload = null, ?string $updatedAt = null, ?float $scheduleExtensionsCount = null)
+    public function __construct(string $id, ActivityNotificationJobResponseDtoType $type, array $executionDetails, ActivityNotificationStepResponseDto $step, ProvidersIdEnum $providerId, string $status, ?DigestMetadataDto $digest = null, ?array $overrides = null, ?Payload $payload = null, ?string $updatedAt = null, ?float $scheduleExtensionsCount = null)
     {
         $this->id = $id;
         $this->type = $type;

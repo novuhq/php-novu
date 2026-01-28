@@ -56,10 +56,10 @@ class CreateChannelConnectionRequestDto
     /**
      * $context
      *
-     * @var ?array<string, string|Two> $context
+     * @var ?array<string, string|CreateChannelConnectionRequestDtoContext2> $context
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('context')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<string, string|\novu\Models\Components\Two>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, string|\novu\Models\Components\CreateChannelConnectionRequestDtoContext2>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $context = null;
 
@@ -69,7 +69,7 @@ class CreateChannelConnectionRequestDto
      * @param  AuthDto  $auth
      * @param  ?string  $identifier
      * @param  ?string  $subscriberId
-     * @param  ?array<string, string|Two>  $context
+     * @param  ?array<string, string|CreateChannelConnectionRequestDtoContext2>  $context
      * @phpstan-pure
      */
     public function __construct(string $integrationIdentifier, WorkspaceDto $workspace, AuthDto $auth, ?string $identifier = null, ?string $subscriberId = null, ?array $context = null)
