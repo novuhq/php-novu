@@ -47,17 +47,28 @@ class SubscriberWorkflowPreferenceDto
     public SubscriberPreferencesWorkflowInfoDto $workflow;
 
     /**
+     * Timestamp when the subscriber last updated their preference. Only present if subscriber explicitly set preferences.
+     *
+     * @var ?string $updatedAt
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('updatedAt')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $updatedAt = null;
+
+    /**
      * @param  bool  $enabled
      * @param  SubscriberPreferenceChannels  $channels
      * @param  array<SubscriberPreferenceOverrideDto>  $overrides
      * @param  SubscriberPreferencesWorkflowInfoDto  $workflow
+     * @param  ?string  $updatedAt
      * @phpstan-pure
      */
-    public function __construct(bool $enabled, SubscriberPreferenceChannels $channels, array $overrides, SubscriberPreferencesWorkflowInfoDto $workflow)
+    public function __construct(bool $enabled, SubscriberPreferenceChannels $channels, array $overrides, SubscriberPreferencesWorkflowInfoDto $workflow, ?string $updatedAt = null)
     {
         $this->enabled = $enabled;
         $this->channels = $channels;
         $this->overrides = $overrides;
         $this->workflow = $workflow;
+        $this->updatedAt = $updatedAt;
     }
 }

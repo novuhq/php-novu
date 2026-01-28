@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace novu\Models\Components;
 
 
-/** Payload - Payload of the action result */
+/** Payload - Optional payload for the job */
 class Payload
 {
 

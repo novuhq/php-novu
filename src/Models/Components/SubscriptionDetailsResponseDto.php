@@ -9,40 +9,15 @@ declare(strict_types=1);
 namespace novu\Models\Components;
 
 
-class SubscriptionResponseDto
+class SubscriptionDetailsResponseDto
 {
     /**
      * The unique identifier of the subscription
      *
      * @var string $id
      */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('_id')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
     public string $id;
-
-    /**
-     * The topic information
-     *
-     * @var TopicDto $topic
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('topic')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\TopicDto')]
-    public TopicDto $topic;
-
-    /**
-     * The creation date of the subscription
-     *
-     * @var string $createdAt
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('createdAt')]
-    public string $createdAt;
-
-    /**
-     * The last update date of the subscription
-     *
-     * @var string $updatedAt
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('updatedAt')]
-    public string $updatedAt;
 
     /**
      * The identifier of the subscription
@@ -63,16 +38,7 @@ class SubscriptionResponseDto
     public ?string $name = null;
 
     /**
-     * The subscriber information
-     *
-     * @var ?Subscriber $subscriber
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('subscriber')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\Subscriber|null')]
-    public ?Subscriber $subscriber;
-
-    /**
-     * The preferences for workflows in this subscription
+     * The preferences/rules for the subscription
      *
      * @var ?array<SubscriptionPreferenceDto> $preferences
      */
@@ -93,25 +59,17 @@ class SubscriptionResponseDto
 
     /**
      * @param  string  $id
-     * @param  TopicDto  $topic
-     * @param  string  $createdAt
-     * @param  string  $updatedAt
      * @param  ?string  $identifier
      * @param  ?string  $name
-     * @param  ?Subscriber  $subscriber
      * @param  ?array<SubscriptionPreferenceDto>  $preferences
      * @param  ?array<string>  $contextKeys
      * @phpstan-pure
      */
-    public function __construct(string $id, TopicDto $topic, string $createdAt, string $updatedAt, ?string $identifier = null, ?string $name = null, ?Subscriber $subscriber = null, ?array $preferences = null, ?array $contextKeys = null)
+    public function __construct(string $id, ?string $identifier = null, ?string $name = null, ?array $preferences = null, ?array $contextKeys = null)
     {
         $this->id = $id;
-        $this->topic = $topic;
-        $this->createdAt = $createdAt;
-        $this->updatedAt = $updatedAt;
         $this->identifier = $identifier;
         $this->name = $name;
-        $this->subscriber = $subscriber;
         $this->preferences = $preferences;
         $this->contextKeys = $contextKeys;
     }

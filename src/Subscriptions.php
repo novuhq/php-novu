@@ -433,13 +433,13 @@ class Subscriptions
 
                 $serializer = Utils\JSON::createSerializer();
                 $responseData = (string) $httpResponse->getBody();
-                $obj = $serializer->deserialize($responseData, '\novu\Models\Components\SubscriptionResponseDto', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
+                $obj = $serializer->deserialize($responseData, '\novu\Models\Components\SubscriptionDetailsResponseDto', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
                 $response = new Operations\TopicsControllerGetTopicSubscriptionResponse(
                     statusCode: $statusCode,
                     contentType: $contentType,
                     rawResponse: $httpResponse,
                     headers: $httpResponse->getHeaders(),
-                    subscriptionResponseDto: $obj);
+                    subscriptionDetailsResponseDto: $obj);
 
                 return $response;
             } else {

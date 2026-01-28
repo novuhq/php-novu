@@ -42,24 +42,24 @@ class TopicsControllerGetTopicSubscriptionResponse
     /**
      * OK
      *
-     * @var ?Components\SubscriptionResponseDto $subscriptionResponseDto
+     * @var ?Components\SubscriptionDetailsResponseDto $subscriptionDetailsResponseDto
      */
-    public ?Components\SubscriptionResponseDto $subscriptionResponseDto = null;
+    public ?Components\SubscriptionDetailsResponseDto $subscriptionDetailsResponseDto = null;
 
     /**
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
-     * @param  ?Components\SubscriptionResponseDto  $subscriptionResponseDto
+     * @param  ?Components\SubscriptionDetailsResponseDto  $subscriptionDetailsResponseDto
      * @phpstan-pure
      */
-    public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\SubscriptionResponseDto $subscriptionResponseDto = null, ?array $headers = [])
+    public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\SubscriptionDetailsResponseDto $subscriptionDetailsResponseDto = null, ?array $headers = [])
     {
         $this->contentType = $contentType;
         $this->statusCode = $statusCode;
         $this->rawResponse = $rawResponse;
         $this->headers = $headers;
-        $this->subscriptionResponseDto = $subscriptionResponseDto;
+        $this->subscriptionDetailsResponseDto = $subscriptionDetailsResponseDto;
     }
 }

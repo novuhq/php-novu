@@ -31,7 +31,9 @@ $sdk = novu\Novu::builder()
 $response = $sdk->activity->track(
     environmentId: '<id>',
     integrationId: '<id>',
-    requestBody: '<value>'
+    requestBody: [
+
+    ]
 
 );
 
@@ -46,7 +48,7 @@ if ($response->webhookResultDtos !== null) {
 | ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- |
 | `environmentId`                                      | *string*                                             | :heavy_check_mark:                                   | The environment identifier                           |
 | `integrationId`                                      | *string*                                             | :heavy_check_mark:                                   | The integration identifier for the delivery provider |
-| `requestBody`                                        | *mixed*                                              | :heavy_check_mark:                                   | Webhook event payload from the delivery provider     |
+| `requestBody`                                        | array<string, *mixed*>                               | :heavy_check_mark:                                   | Webhook event payload from the delivery provider     |
 | `idempotencyKey`                                     | *?string*                                            | :heavy_minus_sign:                                   | A header for idempotency purposes                    |
 
 ### Response

@@ -54,11 +54,12 @@ class SubscribersPreferences
      *
      * @param  string  $subscriberId
      * @param  ?Operations\Criticality  $criticality
+     * @param  ?array<string>  $contextKeys
      * @param  ?string  $idempotencyKey
      * @return Operations\SubscribersControllerGetSubscriberPreferencesResponse
      * @throws \novu\Models\Errors\APIException
      */
-    public function list(string $subscriberId, ?Operations\Criticality $criticality = null, ?string $idempotencyKey = null, ?Options $options = null): Operations\SubscribersControllerGetSubscriberPreferencesResponse
+    public function list(string $subscriberId, ?Operations\Criticality $criticality = null, ?array $contextKeys = null, ?string $idempotencyKey = null, ?Options $options = null): Operations\SubscribersControllerGetSubscriberPreferencesResponse
     {
         $retryConfig = null;
         if ($options) {
@@ -90,6 +91,7 @@ class SubscribersPreferences
         $request = new Operations\SubscribersControllerGetSubscriberPreferencesRequest(
             subscriberId: $subscriberId,
             criticality: $criticality,
+            contextKeys: $contextKeys,
             idempotencyKey: $idempotencyKey,
         );
         $baseUrl = $this->sdkConfiguration->getTemplatedServerUrl();

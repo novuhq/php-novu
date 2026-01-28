@@ -30,10 +30,10 @@ class InboundWebhooksControllerHandleWebhookRequest
     /**
      * Webhook event payload from the delivery provider
      *
-     * @var mixed $requestBody
+     * @var array<string, mixed> $requestBody
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
-    public mixed $requestBody;
+    public array $requestBody;
 
     /**
      * A header for idempotency purposes
@@ -46,11 +46,11 @@ class InboundWebhooksControllerHandleWebhookRequest
     /**
      * @param  string  $environmentId
      * @param  string  $integrationId
-     * @param  mixed  $requestBody
+     * @param  array<string, mixed>  $requestBody
      * @param  ?string  $idempotencyKey
      * @phpstan-pure
      */
-    public function __construct(string $environmentId, string $integrationId, mixed $requestBody, ?string $idempotencyKey = null)
+    public function __construct(string $environmentId, string $integrationId, array $requestBody, ?string $idempotencyKey = null)
     {
         $this->environmentId = $environmentId;
         $this->integrationId = $integrationId;

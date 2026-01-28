@@ -262,22 +262,22 @@ class MessageResponseDto
     /**
      * The payload that was used to send the notification trigger
      *
-     * @var ?MessageResponseDtoPayload $payload
+     * @var ?array<string, mixed> $payload
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('payload')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\MessageResponseDtoPayload|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?MessageResponseDtoPayload $payload = null;
+    public ?array $payload = null;
 
     /**
      * Provider specific overrides used when triggering the notification
      *
-     * @var ?MessageResponseDtoOverrides $overrides
+     * @var ?array<string, mixed> $overrides
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('overrides')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\MessageResponseDtoOverrides|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?MessageResponseDtoOverrides $overrides = null;
+    public ?array $overrides = null;
 
     /**
      * Context (single or multi) in which the message was sent
@@ -355,8 +355,8 @@ class MessageResponseDto
      * @param  ?string  $title
      * @param  ?string  $errorId
      * @param  ?string  $errorText
-     * @param  ?MessageResponseDtoPayload  $payload
-     * @param  ?MessageResponseDtoOverrides  $overrides
+     * @param  ?array<string, mixed>  $payload
+     * @param  ?array<string, mixed>  $overrides
      * @param  ?array<string>  $contextKeys
      * @param  ?string  $templateId
      * @param  ?string  $messageTemplateId
@@ -364,7 +364,7 @@ class MessageResponseDto
      * @param  ?string  $feedId
      * @phpstan-pure
      */
-    public function __construct(string $environmentId, string $organizationId, string $notificationId, string $subscriberId, string $createdAt, string $transactionId, ChannelTypeEnum $channel, bool $read, bool $seen, MessageCTA $cta, MessageStatusEnum $status, ?string $id = null, ?SubscriberResponseDto $subscriber = null, ?WorkflowResponse $template = null, ?string $templateIdentifier = null, ?array $deliveredAt = null, ?string $lastSeenDate = null, ?string $lastReadDate = null, ?string $subject = null, ?string $snoozedUntil = null, ?string $email = null, ?string $phone = null, ?string $directWebhookUrl = null, ?string $providerId = null, ?array $deviceTokens = null, ?string $title = null, ?string $errorId = null, ?string $errorText = null, ?MessageResponseDtoPayload $payload = null, ?MessageResponseDtoOverrides $overrides = null, ?array $contextKeys = null, ?string $templateId = null, ?string $messageTemplateId = null, array|string|null $content = null, ?string $feedId = null)
+    public function __construct(string $environmentId, string $organizationId, string $notificationId, string $subscriberId, string $createdAt, string $transactionId, ChannelTypeEnum $channel, bool $read, bool $seen, MessageCTA $cta, MessageStatusEnum $status, ?string $id = null, ?SubscriberResponseDto $subscriber = null, ?WorkflowResponse $template = null, ?string $templateIdentifier = null, ?array $deliveredAt = null, ?string $lastSeenDate = null, ?string $lastReadDate = null, ?string $subject = null, ?string $snoozedUntil = null, ?string $email = null, ?string $phone = null, ?string $directWebhookUrl = null, ?string $providerId = null, ?array $deviceTokens = null, ?string $title = null, ?string $errorId = null, ?string $errorText = null, ?array $payload = null, ?array $overrides = null, ?array $contextKeys = null, ?string $templateId = null, ?string $messageTemplateId = null, array|string|null $content = null, ?string $feedId = null)
     {
         $this->environmentId = $environmentId;
         $this->organizationId = $organizationId;

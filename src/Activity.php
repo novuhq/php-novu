@@ -51,14 +51,14 @@ class Activity
      *
      * Track activity and engagement events for a specific delivery provider
      *
-     * @param  mixed  $requestBody
+     * @param  array<string, mixed>  $requestBody
      * @param  string  $environmentId
      * @param  string  $integrationId
      * @param  ?string  $idempotencyKey
      * @return Operations\InboundWebhooksControllerHandleWebhookResponse
      * @throws \novu\Models\Errors\APIException
      */
-    public function track(mixed $requestBody, string $environmentId, string $integrationId, ?string $idempotencyKey = null, ?Options $options = null): Operations\InboundWebhooksControllerHandleWebhookResponse
+    public function track(array $requestBody, string $environmentId, string $integrationId, ?string $idempotencyKey = null, ?Options $options = null): Operations\InboundWebhooksControllerHandleWebhookResponse
     {
         $retryConfig = null;
         if ($options) {

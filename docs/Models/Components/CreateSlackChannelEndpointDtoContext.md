@@ -12,12 +12,12 @@
 string $value = /* values here */
 ```
 
-### `Components\Context2`
+### `Components\CreateSlackChannelEndpointDtoContext2`
 
 ```php
 /**
-* @var Components\Context2
+* @var Components\CreateSlackChannelEndpointDtoContext2
 */
-Components\Context2 $value = /* values here */
+Components\CreateSlackChannelEndpointDtoContext2 $value = /* values here */
 ```
 
