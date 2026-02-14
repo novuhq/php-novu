@@ -48,6 +48,11 @@ class Novu
      */
     public Layouts $layouts;
 
+    /**
+     * A subscriber in Novu represents someone who should receive a message. A subscriber's profile information contains important attributes about the subscriber that will be used in messages (name, email). The subscriber object can contain other key-value pairs that can be used to further personalize your messages.
+     *
+     * @var Subscribers $$subscribers
+     */
     public Subscribers $subscribers;
 
     public SubscribersPreferences $subscribersPreferences;

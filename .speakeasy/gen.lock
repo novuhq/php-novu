@@ -1,28 +1,28 @@
 lockVersion: 2.0.0
 id: 4286f3ad-fa54-4c63-a599-e5773b27ae7b
 management:
-  docChecksum: a23897e1e65dfe7272b2da656faa7b2f
-  docVersion: 3.12.0
-  speakeasyVersion: 1.700.2
-  generationVersion: 2.801.2
-  releaseVersion: 3.13.0
-  configChecksum: a06b9b29ec1fde7787fb12c14eb0191b
+  docChecksum: fcc404c403c32d18f65258d721e35c12
+  docVersion: 3.13.0
+  speakeasyVersion: 1.716.0
+  generationVersion: 2.823.1
+  releaseVersion: 3.14.0
+  configChecksum: 7c688c460baeb996a6b99e1fa08d64aa
   repoURL: https://github.com/novuhq/php-novu.git
   installationURL: https://github.com/novuhq/php-novu
   published: true
 persistentEdits:
-  generation_id: 662313ca-99d4-47da-a660-68e5844fdc34
-  pristine_commit_hash: 5f326f8d1836226122893ace649f47e25d93aa49
-  pristine_tree_hash: e3f1dceaa592358d3d5f31e3256bc1b314248501
+  generation_id: ba8a9b4c-8080-4b3b-99b3-2c3fd2334cc1
+  pristine_commit_hash: 6282abd6e10d1da504a658a9594d5cda72c333c5
+  pristine_tree_hash: 1205f2a9c15d07ed5f3b3373871e073ba4f11b4b
 features:
   php:
     additionalProperties: 0.1.0
-    constsAndDefaults: 0.2.0
-    core: 3.9.9
+    constsAndDefaults: 0.2.1
+    core: 3.9.11
     deprecations: 2.81.1
     examples: 2.81.6
     flattening: 2.81.1
-    globalSecurity: 2.81.9
+    globalSecurity: 2.81.10
     globalSecurityFlattening: 0.1.2
     globalServerURLs: 2.83.0
     groups: 2.81.3
@@ -2779,8 +2779,8 @@ trackedFiles:
     pristine_git_object: 073a6e4351f9f4ea95cbcd7ec5da04d30d6a89b2
   docs/sdks/environments/README.md:
     id: d15fc95481b6
-    last_write_checksum: sha1:b58ac75fd56f669d26f6e2cf26b1c9a7a20d53c8
-    pristine_git_object: 38e3195a89e9133f05136dfc4c2771656e6b1b1d
+    last_write_checksum: sha1:5aa6fc14c74b5fc0070131802c49a6d20ddd96b7
+    pristine_git_object: d384db8ba7c410851e91f6eaf18ba43fcea056b8
   docs/sdks/groups/README.md:
     id: 3336939a71e4
     last_write_checksum: sha1:e3c739184f8dca56cdaf016bbdce4c000d7436e2
@@ -2831,8 +2831,8 @@ trackedFiles:
     pristine_git_object: caa68a88fc7c1a08b169498c0bbb907ff84a2c7b
   docs/sdks/subscribers/README.md:
     id: 14c599d74195
-    last_write_checksum: sha1:f866ee32abef70b664f25820e5025eb9bf81d11b
-    pristine_git_object: 41e4e52bf61824f59e5725f148da6cdcedd2f56f
+    last_write_checksum: sha1:91faa6095326d06f11157276b44fd11ef80ce1e9
+    pristine_git_object: c541d575e7ca44f1aa7f207764bc0d7be9f69416
   docs/sdks/subscriberscredentials/README.md:
     id: 4cd1d050441b
     last_write_checksum: sha1:576dc373a81750f407107ee65564ec0a10301483
@@ -2851,8 +2851,8 @@ trackedFiles:
     pristine_git_object: 634d765869052e957a8337054595a159d83460c6
   docs/sdks/subscriptions/README.md:
     id: 298b9ab3c3e0
-    last_write_checksum: sha1:d20329507f0f817202a15b0d07234ac5c3628922
-    pristine_git_object: af37450fe46e5c4a3e9f1b6da51203d91eb59000
+    last_write_checksum: sha1:76f30c4b8d3235479324d5d2edb51c14abd4b0ec
+    pristine_git_object: 46677c31892b8427e20bc3a079c47b10ce2574a6
   docs/sdks/topics/README.md:
     id: db4aff1adac3
     last_write_checksum: sha1:b8c9c35b576fe2d1e0b35bc6fe121b32cd570b9c
@@ -2903,8 +2903,8 @@ trackedFiles:
     pristine_git_object: 43710af78ed80804b3afe47d60807fb1fbc1cee1
   src/Environments.php:
     id: a2e99120de00
-    last_write_checksum: sha1:f547d75f0c2b60978d3abe701390e17daefc9d82
-    pristine_git_object: d964dc25cbb366782f22da53a7ffce85ccf5ddf3
+    last_write_checksum: sha1:bf375e8b94ff1f2f55740d60676f10e1b1b80f4d
+    pristine_git_object: e98ccc1862057e6a25b26469208777cfdabdc43d
   src/Groups.php:
     id: 947145e876d4
     last_write_checksum: sha1:b1ab3c3fbe2fa8c602db5dff682329d7cbac0906
@@ -5491,8 +5491,8 @@ trackedFiles:
     pristine_git_object: c7d110efdb064bf596bd53ae65bf2ad7edfdd96e
   src/Novu.php:
     id: b59e8315cc3a
-    last_write_checksum: sha1:7dda5f17e99f88fc022cc5ad78b0e7623cff5a5b
-    pristine_git_object: 9bf9104f3d39dda7c2c35dfd0af10422fcdbca1d
+    last_write_checksum: sha1:843b038950a63e0db5ef66e8fd47ff48bc777c10
+    pristine_git_object: 6c7c35e3bdf239590d6218ffd38ee672f9f50b04
   src/NovuBuilder.php:
     id: 69e3d953f1ec
     last_write_checksum: sha1:d0d94056275dc9472891ccf52df1947758736428
@@ -5515,8 +5515,8 @@ trackedFiles:
     pristine_git_object: b48407cddc057c08520d1db020504b4331cc3933
   src/SDKConfiguration.php:
     id: 9d60ab0bec0b
-    last_write_checksum: sha1:8565e030236d236398682b4ab412623bcd13f26e
-    pristine_git_object: bf020df26a0564fc48c6c85f62e676b625cd42f0
+    last_write_checksum: sha1:5b2115dba2fb55a25d96dce1733bf9c514c971fd
+    pristine_git_object: 23381f49a15a8d8175edb3fd4e976bc28b64bb77
   src/Steps.php:
     id: 9ae87f15c136
     last_write_checksum: sha1:069bd65c3e5e2d74f8b67910bd8e501e5d42be4d
@@ -5543,8 +5543,8 @@ trackedFiles:
     pristine_git_object: abf7ea0497f27d931a29dfe076bab97bc5a3e529
   src/Subscriptions.php:
     id: 682323fa5228
-    last_write_checksum: sha1:c6bf9c6f307f933a85df34db600d9863e0696559
-    pristine_git_object: e80e301ff87f4f838884a59f329855e94ceb5404
+    last_write_checksum: sha1:270d38226ef0b3bad3654696498e6b1d1c26c781
+    pristine_git_object: 5a1d8bfbd4bec5a9c5c8eb30d235277567893e71
   src/Topics.php:
     id: 2f5c9343954e
     last_write_checksum: sha1:5ff896ab528109490b3b4c357ea5010cdd219c8c
