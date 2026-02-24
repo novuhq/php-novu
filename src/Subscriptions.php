@@ -355,9 +355,9 @@ class Subscriptions
     }
 
     /**
-     * Get a topic subscription
+     * Retrieve a topic subscription
      *
-     * Get a subscription by its unique identifier for a topic.
+     * Retrieve a subscription by its unique identifier for a topic.
      *
      * @param  string  $topicKey
      * @param  string  $identifier
