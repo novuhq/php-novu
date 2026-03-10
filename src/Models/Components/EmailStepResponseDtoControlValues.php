@@ -69,6 +69,16 @@ class EmailStepResponseDtoControlValues
     public ?EmailStepResponseDtoEditorType $editorType = null;
 
     /**
+     * Type of renderer to use (raw HTML or React Email step resolver)
+     *
+     * @var ?EmailStepResponseDtoRendererType $rendererType
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('rendererType')]
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\EmailStepResponseDtoRendererType|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?EmailStepResponseDtoRendererType $rendererType = null;
+
+    /**
      * Disable sanitization of the output.
      *
      * @var ?bool $disableOutputSanitization
@@ -82,12 +92,13 @@ class EmailStepResponseDtoControlValues
      * @param  ?array<string, mixed>  $skip
      * @param  ?string  $body
      * @param  ?EmailStepResponseDtoEditorType  $editorType
+     * @param  ?EmailStepResponseDtoRendererType  $rendererType
      * @param  ?bool  $disableOutputSanitization
      * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $layoutId
      * @phpstan-pure
      */
-    public function __construct(string $subject, ?array $skip = null, ?array $additionalProperties = null, ?string $layoutId = null, ?string $body = '', ?EmailStepResponseDtoEditorType $editorType = EmailStepResponseDtoEditorType::Block, ?bool $disableOutputSanitization = false)
+    public function __construct(string $subject, ?array $skip = null, ?array $additionalProperties = null, ?string $layoutId = null, ?string $body = '', ?EmailStepResponseDtoEditorType $editorType = EmailStepResponseDtoEditorType::Block, ?EmailStepResponseDtoRendererType $rendererType = EmailStepResponseDtoRendererType::Html, ?bool $disableOutputSanitization = false)
     {
         $this->subject = $subject;
         $this->skip = $skip;
@@ -95,6 +106,7 @@ class EmailStepResponseDtoControlValues
         $this->layoutId = $layoutId;
         $this->body = $body;
         $this->editorType = $editorType;
+        $this->rendererType = $rendererType;
         $this->disableOutputSanitization = $disableOutputSanitization;
     }
 }

@@ -58,6 +58,16 @@ class EmailControlDto
     public ?EmailControlDtoEditorType $editorType = null;
 
     /**
+     * Type of renderer to use (raw HTML or React Email step resolver)
+     *
+     * @var ?RendererType $rendererType
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('rendererType')]
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\RendererType|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?RendererType $rendererType = null;
+
+    /**
      * Disable sanitization of the output.
      *
      * @var ?bool $disableOutputSanitization
@@ -71,17 +81,19 @@ class EmailControlDto
      * @param  ?array<string, mixed>  $skip
      * @param  ?string  $body
      * @param  ?EmailControlDtoEditorType  $editorType
+     * @param  ?RendererType  $rendererType
      * @param  ?bool  $disableOutputSanitization
      * @param  ?string  $layoutId
      * @phpstan-pure
      */
-    public function __construct(string $subject, ?array $skip = null, ?string $layoutId = null, ?string $body = '', ?EmailControlDtoEditorType $editorType = EmailControlDtoEditorType::Block, ?bool $disableOutputSanitization = false)
+    public function __construct(string $subject, ?array $skip = null, ?string $layoutId = null, ?string $body = '', ?EmailControlDtoEditorType $editorType = EmailControlDtoEditorType::Block, ?RendererType $rendererType = RendererType::Html, ?bool $disableOutputSanitization = false)
     {
         $this->subject = $subject;
         $this->skip = $skip;
         $this->layoutId = $layoutId;
         $this->body = $body;
         $this->editorType = $editorType;
+        $this->rendererType = $rendererType;
         $this->disableOutputSanitization = $disableOutputSanitization;
     }
 }
