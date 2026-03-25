@@ -52,7 +52,7 @@ class IntegrationResponseDto
     public string $providerId;
 
     /**
-     * The channel type for the integration, which defines how the integration communicates (e.g., email, SMS).
+     * The channel type for the integration, which defines how it communicates (e.g., email, SMS).
      *
      * @var IntegrationResponseDtoChannel $channel
      */
@@ -68,6 +68,15 @@ class IntegrationResponseDto
     #[\Speakeasy\Serializer\Annotation\SerializedName('credentials')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\CredentialsDto')]
     public CredentialsDto $credentials;
+
+    /**
+     * The configurations required for enabling the additional configurations of the integration.
+     *
+     * @var ConfigurationsDto $configurations
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('configurations')]
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ConfigurationsDto')]
+    public ConfigurationsDto $configurations;
 
     /**
      * Indicates whether the integration is currently active. An active integration will process events and messages.
@@ -101,16 +110,6 @@ class IntegrationResponseDto
     #[\Speakeasy\Serializer\Annotation\SerializedName('_id')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $id = null;
-
-    /**
-     * The configurations required for enabling the additional configurations of the integration.
-     *
-     * @var ?ConfigurationsDto $configurations
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('configurations')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ConfigurationsDto|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?ConfigurationsDto $configurations = null;
 
     /**
      * The timestamp indicating when the integration was deleted. This is set when the integration is soft deleted.
@@ -148,17 +147,17 @@ class IntegrationResponseDto
      * @param  string  $providerId
      * @param  IntegrationResponseDtoChannel  $channel
      * @param  CredentialsDto  $credentials
+     * @param  ConfigurationsDto  $configurations
      * @param  bool  $active
      * @param  bool  $deleted
      * @param  bool  $primary
      * @param  ?string  $id
-     * @param  ?ConfigurationsDto  $configurations
      * @param  ?string  $deletedAt
      * @param  ?string  $deletedBy
      * @param  ?array<StepFilterDto>  $conditions
      * @phpstan-pure
      */
-    public function __construct(string $environmentId, string $organizationId, string $name, string $identifier, string $providerId, IntegrationResponseDtoChannel $channel, CredentialsDto $credentials, bool $active, bool $deleted, bool $primary, ?string $id = null, ?ConfigurationsDto $configurations = null, ?string $deletedAt = null, ?string $deletedBy = null, ?array $conditions = null)
+    public function __construct(string $environmentId, string $organizationId, string $name, string $identifier, string $providerId, IntegrationResponseDtoChannel $channel, CredentialsDto $credentials, ConfigurationsDto $configurations, bool $active, bool $deleted, bool $primary, ?string $id = null, ?string $deletedAt = null, ?string $deletedBy = null, ?array $conditions = null)
     {
         $this->environmentId = $environmentId;
         $this->organizationId = $organizationId;
@@ -167,11 +166,11 @@ class IntegrationResponseDto
         $this->providerId = $providerId;
         $this->channel = $channel;
         $this->credentials = $credentials;
+        $this->configurations = $configurations;
         $this->active = $active;
         $this->deleted = $deleted;
         $this->primary = $primary;
         $this->id = $id;
-        $this->configurations = $configurations;
         $this->deletedAt = $deletedAt;
         $this->deletedBy = $deletedBy;
         $this->conditions = $conditions;

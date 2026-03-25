@@ -150,6 +150,12 @@ $sdk = novu\Novu::builder()
 
 $updateLayoutDto = new Components\UpdateLayoutDto(
     name: '<value>',
+    controlValues: new Components\LayoutControlValuesDto(
+        email: new Components\EmailControlsDto(
+            body: '<value>',
+            editorType: Components\EditorType::Html,
+        ),
+    ),
 );
 
 $response = $sdk->layouts->update(
@@ -371,9 +377,12 @@ $sdk = novu\Novu::builder()
 $layoutPreviewRequestDto = new Components\LayoutPreviewRequestDto(
     previewPayload: new Components\LayoutPreviewPayloadDto(
         subscriber: new Components\SubscriberResponseDtoOptional(
+            firstName: 'Marion',
+            lastName: 'Kirlin',
             channels: [
                 new Components\ChannelSettingsDto(
                     providerId: Components\ChatOrPushProviderEnum::Mattermost,
+                    integrationIdentifier: '<value>',
                     credentials: new Components\ChannelCredentials(
                         webhookUrl: 'https://example.com/webhook',
                         channel: 'general',
@@ -391,6 +400,8 @@ $layoutPreviewRequestDto = new Components\LayoutPreviewRequestDto(
                     integrationId: '<id>',
                 ),
             ],
+            isOnline: false,
+            lastOnlineAt: '<value>',
         ),
     ),
 );

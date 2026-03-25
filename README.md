@@ -375,6 +375,8 @@ if ($response->triggerEventResponseDto !== null) {
 ### [Environments](docs/sdks/environments/README.md)
 
 * [getTags](docs/sdks/environments/README.md#gettags) - List environment tags
+* [diff](docs/sdks/environments/README.md#diff) - Compare resources between environments
+* [publish](docs/sdks/environments/README.md#publish) - Publish resources to target environment
 * [create](docs/sdks/environments/README.md#create) - Create an environment
 * [list](docs/sdks/environments/README.md#list) - List all environments
 * [update](docs/sdks/environments/README.md#update) - Update an environment
@@ -509,6 +511,7 @@ if ($response->triggerEventResponseDto !== null) {
 
 #### [Workflows.Steps](docs/sdks/steps/README.md)
 
+* [generatePreview](docs/sdks/steps/README.md#generatepreview) - Generate step preview
 * [retrieve](docs/sdks/steps/README.md#retrieve) - Retrieve workflow step
 
 </details>

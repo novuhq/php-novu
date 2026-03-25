@@ -27,8 +27,7 @@ class SubscriberResponseDto
      * @var ?string $firstName
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('firstName')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $firstName = null;
+    public ?string $firstName;
 
     /**
      * The last name of the subscriber.
@@ -36,8 +35,7 @@ class SubscriberResponseDto
      * @var ?string $lastName
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('lastName')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $lastName = null;
+    public ?string $lastName;
 
     /**
      * The email address of the subscriber.
@@ -102,8 +100,7 @@ class SubscriberResponseDto
      * @var ?bool $isOnline
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('isOnline')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?bool $isOnline = null;
+    public ?bool $isOnline;
 
     /**
      * The timestamp indicating when the subscriber was last online, in ISO 8601 format.
@@ -111,8 +108,7 @@ class SubscriberResponseDto
      * @var ?string $lastOnlineAt
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('lastOnlineAt')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $lastOnlineAt = null;
+    public ?string $lastOnlineAt;
 
     /**
      * The version of the subscriber document.
@@ -198,22 +194,22 @@ class SubscriberResponseDto
      * @param  string  $createdAt
      * @param  string  $updatedAt
      * @param  ?string  $id
-     * @param  ?array<Components\ChannelSettingsDto>  $channels
-     * @param  ?array<string>  $topics
-     * @param  ?float  $v
      * @param  ?string  $firstName
      * @param  ?string  $lastName
+     * @param  ?array<Components\ChannelSettingsDto>  $channels
+     * @param  ?array<string>  $topics
+     * @param  ?bool  $isOnline
+     * @param  ?string  $lastOnlineAt
+     * @param  ?float  $v
      * @param  ?string  $email
      * @param  ?string  $phone
      * @param  ?string  $avatar
      * @param  ?string  $locale
-     * @param  ?bool  $isOnline
-     * @param  ?string  $lastOnlineAt
      * @param  ?array<string, mixed>  $data
      * @param  ?string  $timezone
      * @phpstan-pure
      */
-    public function __construct(string $subscriberId, string $organizationId, string $environmentId, bool $deleted, string $createdAt, string $updatedAt, ?string $id = null, ?array $channels = null, ?array $topics = null, ?float $v = null, ?string $firstName = null, ?string $lastName = null, ?string $email = null, ?string $phone = null, ?string $avatar = null, ?string $locale = null, ?bool $isOnline = null, ?string $lastOnlineAt = null, ?array $data = null, ?string $timezone = null)
+    public function __construct(string $subscriberId, string $organizationId, string $environmentId, bool $deleted, string $createdAt, string $updatedAt, ?string $id = null, ?string $firstName = null, ?string $lastName = null, ?array $channels = null, ?array $topics = null, ?bool $isOnline = null, ?string $lastOnlineAt = null, ?float $v = null, ?string $email = null, ?string $phone = null, ?string $avatar = null, ?string $locale = null, ?array $data = null, ?string $timezone = null)
     {
         $this->id = $id;
         $this->firstName = $firstName;

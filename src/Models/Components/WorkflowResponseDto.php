@@ -62,10 +62,10 @@ class WorkflowResponseDto
     /**
      * Steps of the workflow
      *
-     * @var array<InAppStepResponseDto|EmailStepResponseDto|SmsStepResponseDto|PushStepResponseDto|ChatStepResponseDto|DelayStepResponseDto|DigestStepResponseDto|CustomStepResponseDto|ThrottleStepResponseDto> $steps
+     * @var array<InAppStepResponseDto|EmailStepResponseDto|SmsStepResponseDto|PushStepResponseDto|ChatStepResponseDto|DelayStepResponseDto|DigestStepResponseDto|CustomStepResponseDto|ThrottleStepResponseDto|HttpRequestStepResponseDto> $steps
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('steps')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\InAppStepResponseDto|\novu\Models\Components\EmailStepResponseDto|\novu\Models\Components\SmsStepResponseDto|\novu\Models\Components\PushStepResponseDto|\novu\Models\Components\ChatStepResponseDto|\novu\Models\Components\DelayStepResponseDto|\novu\Models\Components\DigestStepResponseDto|\novu\Models\Components\CustomStepResponseDto|\novu\Models\Components\ThrottleStepResponseDto>')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\InAppStepResponseDto|\novu\Models\Components\EmailStepResponseDto|\novu\Models\Components\SmsStepResponseDto|\novu\Models\Components\PushStepResponseDto|\novu\Models\Components\ChatStepResponseDto|\novu\Models\Components\DelayStepResponseDto|\novu\Models\Components\DigestStepResponseDto|\novu\Models\Components\CustomStepResponseDto|\novu\Models\Components\ThrottleStepResponseDto|\novu\Models\Components\HttpRequestStepResponseDto>')]
     public array $steps;
 
     /**
@@ -225,7 +225,7 @@ class WorkflowResponseDto
      * @param  string  $slug
      * @param  string  $updatedAt
      * @param  string  $createdAt
-     * @param  array<InAppStepResponseDto|EmailStepResponseDto|SmsStepResponseDto|PushStepResponseDto|ChatStepResponseDto|DelayStepResponseDto|DigestStepResponseDto|CustomStepResponseDto|ThrottleStepResponseDto>  $steps
+     * @param  array<InAppStepResponseDto|EmailStepResponseDto|SmsStepResponseDto|PushStepResponseDto|ChatStepResponseDto|DelayStepResponseDto|DigestStepResponseDto|CustomStepResponseDto|ThrottleStepResponseDto|HttpRequestStepResponseDto>  $steps
      * @param  ResourceOriginEnum  $origin
      * @param  WorkflowPreferencesResponseDto  $preferences
      * @param  WorkflowStatusEnum  $status

@@ -11,39 +11,8 @@ namespace novu\Models\Components;
 
 class RuntimeIssueDto
 {
-    /**
-     *
-     * @var IssueType $issueType
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('issueType')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\IssueType')]
-    public IssueType $issueType;
 
-    /**
-     *
-     * @var string $message
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('message')]
-    public string $message;
-
-    /**
-     *
-     * @var ?string $variableName
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('variableName')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $variableName = null;
-
-    /**
-     * @param  IssueType  $issueType
-     * @param  string  $message
-     * @param  ?string  $variableName
-     * @phpstan-pure
-     */
-    public function __construct(IssueType $issueType, string $message, ?string $variableName = null)
+    public function __construct()
     {
-        $this->issueType = $issueType;
-        $this->message = $message;
-        $this->variableName = $variableName;
     }
 }

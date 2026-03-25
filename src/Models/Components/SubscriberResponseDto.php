@@ -69,6 +69,22 @@ class SubscriberResponseDto
     public ?string $id = null;
 
     /**
+     * The first name of the subscriber.
+     *
+     * @var ?string $firstName
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('firstName')]
+    public ?string $firstName;
+
+    /**
+     * The last name of the subscriber.
+     *
+     * @var ?string $lastName
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('lastName')]
+    public ?string $lastName;
+
+    /**
      * An array of channel settings associated with the subscriber.
      *
      * @var ?array<ChannelSettingsDto> $channels
@@ -90,6 +106,22 @@ class SubscriberResponseDto
     public ?array $topics = null;
 
     /**
+     * Indicates whether the subscriber is currently online.
+     *
+     * @var ?bool $isOnline
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('isOnline')]
+    public ?bool $isOnline;
+
+    /**
+     * The timestamp indicating when the subscriber was last online, in ISO 8601 format.
+     *
+     * @var ?string $lastOnlineAt
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('lastOnlineAt')]
+    public ?string $lastOnlineAt;
+
+    /**
      * The version of the subscriber document.
      *
      * @var ?float $v
@@ -97,24 +129,6 @@ class SubscriberResponseDto
     #[\Speakeasy\Serializer\Annotation\SerializedName('__v')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?float $v = null;
-
-    /**
-     * The first name of the subscriber.
-     *
-     * @var ?string $firstName
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('firstName')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $firstName = null;
-
-    /**
-     * The last name of the subscriber.
-     *
-     * @var ?string $lastName
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('lastName')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $lastName = null;
 
     /**
      * The email address of the subscriber.
@@ -153,24 +167,6 @@ class SubscriberResponseDto
     public ?string $locale = null;
 
     /**
-     * Indicates whether the subscriber is currently online.
-     *
-     * @var ?bool $isOnline
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('isOnline')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?bool $isOnline = null;
-
-    /**
-     * The timestamp indicating when the subscriber was last online, in ISO 8601 format.
-     *
-     * @var ?string $lastOnlineAt
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('lastOnlineAt')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $lastOnlineAt = null;
-
-    /**
      * Additional custom data for the subscriber
      *
      * @var ?array<string, mixed> $data
@@ -197,22 +193,22 @@ class SubscriberResponseDto
      * @param  string  $createdAt
      * @param  string  $updatedAt
      * @param  ?string  $id
-     * @param  ?array<ChannelSettingsDto>  $channels
-     * @param  ?array<string>  $topics
-     * @param  ?float  $v
      * @param  ?string  $firstName
      * @param  ?string  $lastName
+     * @param  ?array<ChannelSettingsDto>  $channels
+     * @param  ?array<string>  $topics
+     * @param  ?bool  $isOnline
+     * @param  ?string  $lastOnlineAt
+     * @param  ?float  $v
      * @param  ?string  $email
      * @param  ?string  $phone
      * @param  ?string  $avatar
      * @param  ?string  $locale
-     * @param  ?bool  $isOnline
-     * @param  ?string  $lastOnlineAt
      * @param  ?array<string, mixed>  $data
      * @param  ?string  $timezone
      * @phpstan-pure
      */
-    public function __construct(string $subscriberId, string $organizationId, string $environmentId, bool $deleted, string $createdAt, string $updatedAt, ?string $id = null, ?array $channels = null, ?array $topics = null, ?float $v = null, ?string $firstName = null, ?string $lastName = null, ?string $email = null, ?string $phone = null, ?string $avatar = null, ?string $locale = null, ?bool $isOnline = null, ?string $lastOnlineAt = null, ?array $data = null, ?string $timezone = null)
+    public function __construct(string $subscriberId, string $organizationId, string $environmentId, bool $deleted, string $createdAt, string $updatedAt, ?string $id = null, ?string $firstName = null, ?string $lastName = null, ?array $channels = null, ?array $topics = null, ?bool $isOnline = null, ?string $lastOnlineAt = null, ?float $v = null, ?string $email = null, ?string $phone = null, ?string $avatar = null, ?string $locale = null, ?array $data = null, ?string $timezone = null)
     {
         $this->subscriberId = $subscriberId;
         $this->organizationId = $organizationId;
@@ -221,17 +217,17 @@ class SubscriberResponseDto
         $this->createdAt = $createdAt;
         $this->updatedAt = $updatedAt;
         $this->id = $id;
-        $this->channels = $channels;
-        $this->topics = $topics;
-        $this->v = $v;
         $this->firstName = $firstName;
         $this->lastName = $lastName;
+        $this->channels = $channels;
+        $this->topics = $topics;
+        $this->isOnline = $isOnline;
+        $this->lastOnlineAt = $lastOnlineAt;
+        $this->v = $v;
         $this->email = $email;
         $this->phone = $phone;
         $this->avatar = $avatar;
         $this->locale = $locale;
-        $this->isOnline = $isOnline;
-        $this->lastOnlineAt = $lastOnlineAt;
         $this->data = $data;
         $this->timezone = $timezone;
     }

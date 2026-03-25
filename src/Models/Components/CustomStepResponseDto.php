@@ -116,6 +116,15 @@ class CustomStepResponseDto
     public ?StepIssuesDto $issues = null;
 
     /**
+     * Hash identifying the deployed Cloudflare Worker for this step
+     *
+     * @var ?string $stepResolverHash
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('stepResolverHash')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $stepResolverHash = null;
+
+    /**
      * @param  CustomControlsMetadataResponseDto  $controls
      * @param  array<string, mixed>  $variables
      * @param  string  $stepId
@@ -128,9 +137,10 @@ class CustomStepResponseDto
      * @param  string  $workflowDatabaseId
      * @param  ?CustomStepResponseDtoControlValues  $controlValues
      * @param  ?StepIssuesDto  $issues
+     * @param  ?string  $stepResolverHash
      * @phpstan-pure
      */
-    public function __construct(CustomControlsMetadataResponseDto $controls, array $variables, string $stepId, string $id, string $name, string $slug, StepTypeEnum $type, ResourceOriginEnum $origin, string $workflowId, string $workflowDatabaseId, ?CustomStepResponseDtoControlValues $controlValues = null, ?StepIssuesDto $issues = null)
+    public function __construct(CustomControlsMetadataResponseDto $controls, array $variables, string $stepId, string $id, string $name, string $slug, StepTypeEnum $type, ResourceOriginEnum $origin, string $workflowId, string $workflowDatabaseId, ?CustomStepResponseDtoControlValues $controlValues = null, ?StepIssuesDto $issues = null, ?string $stepResolverHash = null)
     {
         $this->controls = $controls;
         $this->variables = $variables;
@@ -144,5 +154,6 @@ class CustomStepResponseDto
         $this->workflowDatabaseId = $workflowDatabaseId;
         $this->controlValues = $controlValues;
         $this->issues = $issues;
+        $this->stepResolverHash = $stepResolverHash;
     }
 }

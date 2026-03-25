@@ -30,10 +30,10 @@ class CreateWorkflowDto
     /**
      * Steps of the workflow
      *
-     * @var array<InAppStepUpsertDto|EmailStepUpsertDto|SmsStepUpsertDto|PushStepUpsertDto|ChatStepUpsertDto|DelayStepUpsertDto|DigestStepUpsertDto|ThrottleStepUpsertDto|CustomStepUpsertDto> $steps
+     * @var array<InAppStepUpsertDto|EmailStepUpsertDto|SmsStepUpsertDto|PushStepUpsertDto|ChatStepUpsertDto|DelayStepUpsertDto|DigestStepUpsertDto|ThrottleStepUpsertDto|CustomStepUpsertDto|HttpRequestStepUpsertDto> $steps
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('steps')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\InAppStepUpsertDto|\novu\Models\Components\EmailStepUpsertDto|\novu\Models\Components\SmsStepUpsertDto|\novu\Models\Components\PushStepUpsertDto|\novu\Models\Components\ChatStepUpsertDto|\novu\Models\Components\DelayStepUpsertDto|\novu\Models\Components\DigestStepUpsertDto|\novu\Models\Components\ThrottleStepUpsertDto|\novu\Models\Components\CustomStepUpsertDto>')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\InAppStepUpsertDto|\novu\Models\Components\EmailStepUpsertDto|\novu\Models\Components\SmsStepUpsertDto|\novu\Models\Components\PushStepUpsertDto|\novu\Models\Components\ChatStepUpsertDto|\novu\Models\Components\DelayStepUpsertDto|\novu\Models\Components\DigestStepUpsertDto|\novu\Models\Components\ThrottleStepUpsertDto|\novu\Models\Components\CustomStepUpsertDto|\novu\Models\Components\HttpRequestStepUpsertDto>')]
     public array $steps;
 
     /**
@@ -125,7 +125,7 @@ class CreateWorkflowDto
     /**
      * @param  string  $name
      * @param  string  $workflowId
-     * @param  array<InAppStepUpsertDto|EmailStepUpsertDto|SmsStepUpsertDto|PushStepUpsertDto|ChatStepUpsertDto|DelayStepUpsertDto|DigestStepUpsertDto|ThrottleStepUpsertDto|CustomStepUpsertDto>  $steps
+     * @param  array<InAppStepUpsertDto|EmailStepUpsertDto|SmsStepUpsertDto|PushStepUpsertDto|ChatStepUpsertDto|DelayStepUpsertDto|DigestStepUpsertDto|ThrottleStepUpsertDto|CustomStepUpsertDto|HttpRequestStepUpsertDto>  $steps
      * @param  ?string  $description
      * @param  ?array<string>  $tags
      * @param  ?bool  $active

@@ -75,3 +75,12 @@ Components\DigestStepUpsertDto $value = /* values here */
 Components\CustomStepUpsertDto $value = /* values here */
 ```
 
+### `Components\HttpRequestStepUpsertDto`
+
+```php
+/**
+* @var Components\HttpRequestStepUpsertDto
+*/
+Components\HttpRequestStepUpsertDto $value = /* values here */
+```
+

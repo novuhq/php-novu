@@ -21,6 +21,14 @@ class ChannelSettingsDto
     public ChatOrPushProviderEnum $providerId;
 
     /**
+     * The integration identifier
+     *
+     * @var string $integrationIdentifier
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('integrationIdentifier')]
+    public string $integrationIdentifier;
+
+    /**
      * Credentials payload for the specified provider
      *
      * @var ChannelCredentials $credentials
@@ -38,26 +46,17 @@ class ChannelSettingsDto
     public string $integrationId;
 
     /**
-     * The integration identifier
-     *
-     * @var ?string $integrationIdentifier
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('integrationIdentifier')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $integrationIdentifier = null;
-
-    /**
      * @param  ChatOrPushProviderEnum  $providerId
+     * @param  string  $integrationIdentifier
      * @param  ChannelCredentials  $credentials
      * @param  string  $integrationId
-     * @param  ?string  $integrationIdentifier
      * @phpstan-pure
      */
-    public function __construct(ChatOrPushProviderEnum $providerId, ChannelCredentials $credentials, string $integrationId, ?string $integrationIdentifier = null)
+    public function __construct(ChatOrPushProviderEnum $providerId, string $integrationIdentifier, ChannelCredentials $credentials, string $integrationId)
     {
         $this->providerId = $providerId;
+        $this->integrationIdentifier = $integrationIdentifier;
         $this->credentials = $credentials;
         $this->integrationId = $integrationId;
-        $this->integrationIdentifier = $integrationIdentifier;
     }
 }

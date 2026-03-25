@@ -22,12 +22,11 @@ class UpdateLayoutDto
     /**
      * Control values for the layout
      *
-     * @var ?ControlValues $controlValues
+     * @var LayoutControlValuesDto $controlValues
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('controlValues')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ControlValues|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?ControlValues $controlValues = null;
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\LayoutControlValuesDto')]
+    public LayoutControlValuesDto $controlValues;
 
     /**
      * Enable or disable translations for this layout
@@ -40,11 +39,11 @@ class UpdateLayoutDto
 
     /**
      * @param  string  $name
+     * @param  LayoutControlValuesDto  $controlValues
      * @param  ?bool  $isTranslationEnabled
-     * @param  ?ControlValues  $controlValues
      * @phpstan-pure
      */
-    public function __construct(string $name, ?ControlValues $controlValues = null, ?bool $isTranslationEnabled = false)
+    public function __construct(string $name, LayoutControlValuesDto $controlValues, ?bool $isTranslationEnabled = false)
     {
         $this->name = $name;
         $this->controlValues = $controlValues;

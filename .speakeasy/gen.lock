@@ -1,30 +1,30 @@
 lockVersion: 2.0.0
 id: 4286f3ad-fa54-4c63-a599-e5773b27ae7b
 management:
-  docChecksum: fcc404c403c32d18f65258d721e35c12
-  docVersion: 3.13.0
-  speakeasyVersion: 1.725.0
-  generationVersion: 2.836.5
-  releaseVersion: 3.14.0
-  configChecksum: 064fbef0e9fd856c2ac03a45b45266b8
+  docChecksum: 643ee20afaa82f0a46ccf1ff4c3a131c
+  docVersion: 3.14.0
+  speakeasyVersion: 1.759.2
+  generationVersion: 2.869.23
+  releaseVersion: 3.15.0
+  configChecksum: e5f01dbae19a00c8e9c856345681e141
   repoURL: https://github.com/novuhq/php-novu.git
-  installationURL: https://github.com/novuhq/php-novu
+  installationURL: https://github.com/novuhq/php-novu.git
   published: true
 persistentEdits:
-  generation_id: cab8b727-860a-4401-b342-5ca60d2632cf
-  pristine_commit_hash: 4b84aea74c891742c5139b5b0766906ee41553eb
-  pristine_tree_hash: 3ff92b1acfdce358cad593b64a342d4bc982ad22
+  generation_id: 08be278b-e78c-47e7-8836-0f84cb01c1e5
+  pristine_commit_hash: 48cfa939c6502dc8a893a792e265404f11778f6b
+  pristine_tree_hash: 694be3e6a6782a2e357c9dcc57039023277df560
 features:
   php:
     additionalProperties: 0.1.0
-    constsAndDefaults: 0.2.1
-    core: 3.9.14
+    constsAndDefaults: 0.2.2
+    core: 3.9.20
     deprecations: 2.81.1
-    examples: 2.81.6
+    examples: 2.81.7
     flattening: 2.81.1
     globalSecurity: 2.81.10
     globalSecurityFlattening: 0.1.2
-    globalServerURLs: 2.83.0
+    globalServerURLs: 2.83.1
     groups: 2.81.3
     methodArguments: 0.1.0
     nameOverrides: 2.81.4
@@ -43,8 +43,8 @@ trackedFiles:
     pristine_git_object: 54685b2d5c52197d62c125e5702b65bd56356517
   composer.json:
     id: 3957b91a0d84
-    last_write_checksum: sha1:e9d52914c550d3fe551afdb91f3f2d4015fe5c1e
-    pristine_git_object: 42280a4d306b1b1827e5c906831ed4e4e28b6e6c
+    last_write_checksum: sha1:6697a6293f194cc5303d55cdc65756557d24f318
+    pristine_git_object: c978a664c6e04e04f417441d6433da124304ada8
   docs/Models/Components/ActionDto.md:
     id: 8e2aa529106d
     last_write_checksum: sha1:ad07f1dd54fe8ecc80a958a229b60ccabf2bb6b9
@@ -63,8 +63,8 @@ trackedFiles:
     pristine_git_object: cb846028c73b65cba2ce8cc84847289925d97cc1
   docs/Models/Components/ActivityNotificationJobResponseDtoType.md:
     id: 0166d147c69f
-    last_write_checksum: sha1:bd037d511fdda0288d5ddadf29405289a45701ff
-    pristine_git_object: 47c10483a7a57b9440e7563c18c6c1317cb5db7d
+    last_write_checksum: sha1:4a4c09b040a319f0b21abb52396bc7b98e9a215f
+    pristine_git_object: 3f99611634ce3a616e0ec44fc563b9d368774346
   docs/Models/Components/ActivityNotificationResponseDto.md:
     id: eee05f5fe70f
     last_write_checksum: sha1:717eba99916b17eb7f4f9fefb5544a8e94ff0056
@@ -183,8 +183,8 @@ trackedFiles:
     pristine_git_object: c2dfb3b5e68917d0148faa9bfa43ea5a58154808
   docs/Models/Components/ChannelSettingsDto.md:
     id: f62d0b09a55a
-    last_write_checksum: sha1:4b6fa99c7a421ffd80cbcd4fde1855c1235d4358
-    pristine_git_object: 0e95e896d4f7cb1eb4c83d2e919b2091721e2ea2
+    last_write_checksum: sha1:9b65ce3fc409ad8efda2b62e776856c04b2c02d8
+    pristine_git_object: 593a6d33762ff03091a7bb914152b7cff0886650
   docs/Models/Components/ChannelTypeEnum.md:
     id: 74d7b0e2cf4b
     last_write_checksum: sha1:6f2ef3f2adac707659a34b403467f9adef88f8a5
@@ -205,10 +205,14 @@ trackedFiles:
     id: ffee92b15a1f
     last_write_checksum: sha1:9302973d14fdc0f8ace1eb032bd243b7ec75fba8
     pristine_git_object: f7baaae29738c61d97d79daafc15088d8a78ae78
+  docs/Models/Components/ChatRenderOutput.md:
+    id: 7dc219f3f8c5
+    last_write_checksum: sha1:f6b86c2f487199fe5bc21f2b449e96cea00c1f29
+    pristine_git_object: cc46cae67ab38b2a33cc26e4cf64c53f85fbb8c4
   docs/Models/Components/ChatStepResponseDto.md:
     id: bb6cc13ce634
-    last_write_checksum: sha1:c904dc3af91d1f6d053caae89a6a7be140a0a4ee
-    pristine_git_object: 1942fd8a8c5da0bcc77c92e26f7ef62fceaf6e6e
+    last_write_checksum: sha1:0a84ec2c17282b2ca19c35912cc95fe3f4287a05
+    pristine_git_object: ca9181dfb5a6853e118cf1f5b0bc4f96eacd85d9
   docs/Models/Components/ChatStepResponseDtoControlValues.md:
     id: 22564c4f3183
     last_write_checksum: sha1:34730520004149bb4889bb96c691e2b5cc16e50a
@@ -255,8 +259,8 @@ trackedFiles:
     pristine_git_object: b96566a242d4459fa9d3d35ea3d1edd8fb970816
   docs/Models/Components/ControlValues.md:
     id: 31cca04c4c9a
-    last_write_checksum: sha1:86a7d3a4da1d47535cb0813a5dacd1dd45848090
-    pristine_git_object: 16d72f5762678be9ba9a6b33428099606661de65
+    last_write_checksum: sha1:71596fb8a150ada97189a8e27fe3fca5ff1ceb84
+    pristine_git_object: 4e980379e6e4eeb95686ab01aba54160b9e27c72
   docs/Models/Components/ControlVariables.md:
     id: 12a6d918c86f
     last_write_checksum: sha1:3add6f9f5465555bd98b4925afadea58796c6c98
@@ -423,8 +427,8 @@ trackedFiles:
     pristine_git_object: 41ab638ecb44410eea9f7db9b18eb9b7e8d33388
   docs/Models/Components/CreateWorkflowDto.md:
     id: 18e9c352a599
-    last_write_checksum: sha1:e8183dc5784c0fb5f78db6857f74528b9bf79bba
-    pristine_git_object: 1c9ad99cba569e4479291d8d74a4cefc4cf65b10
+    last_write_checksum: sha1:3b483a7180f4d711783a402e676ecf8002592e02
+    pristine_git_object: a217bbfd158a1b3f9d746b57e89c99923f9f8b22
   docs/Models/Components/CreatedSubscriberDto.md:
     id: 40270e092678
     last_write_checksum: sha1:eac5aaee85b71490e6c3f3442c353064140d04bc
@@ -443,8 +447,8 @@ trackedFiles:
     pristine_git_object: 6e63ce6c3838371dc578943e059d73d602778229
   docs/Models/Components/CustomStepResponseDto.md:
     id: 36233232ba3f
-    last_write_checksum: sha1:d9030dcb0094d40808e33291d90896d27b9695f5
-    pristine_git_object: 4737798cf31561749d74283dd47dc0e326e5ecf0
+    last_write_checksum: sha1:3b4afc2ad7b27d9ef161a5fde030ae950cdca8d5
+    pristine_git_object: 12a505fe92d793fa747db29eb57e2ebf7959b136
   docs/Models/Components/CustomStepResponseDtoControlValues.md:
     id: 7c32e5c080f3
     last_write_checksum: sha1:dfa8e612e6f507628a75b26d8136c338c3043c95
@@ -491,8 +495,8 @@ trackedFiles:
     pristine_git_object: 26aa5b3bf3f24a32e3d51bc88c45544c5df50b7d
   docs/Models/Components/DelayStepResponseDto.md:
     id: 993866463a1f
-    last_write_checksum: sha1:9ec44de4ffc7a275e3c8715355c2dbbba7a3d2ec
-    pristine_git_object: 8705a8acf75a35d6fed93cc73477da395e928495
+    last_write_checksum: sha1:b000633f624efe68dfca76ad653dc2394703dfce
+    pristine_git_object: 7e60ed384672b31914e5fecfd48b56b950513e2b
   docs/Models/Components/DelayStepResponseDtoControlValues.md:
     id: ac4bf1b7d0bc
     last_write_checksum: sha1:dd51cee9c9b171f00cd7434233a3fb4d1cf52485
@@ -541,6 +545,30 @@ trackedFiles:
     id: 1e67148b9bb4
     last_write_checksum: sha1:a440c7a3e51dbc15c385ebb747b659491769d3e1
     pristine_git_object: 3f870a6fa1d655d2521e6e88d9dcac0cd36b6a34
+  docs/Models/Components/DependencyReasonEnum.md:
+    id: c566c5b8b8ce
+    last_write_checksum: sha1:76fd8ed4671bb29bee2d4a007d18e07d12c8023e
+    pristine_git_object: f3c1360bb63d91afb8497180cfb49e269695b420
+  docs/Models/Components/DiffActionEnum.md:
+    id: 1b21bc44c7df
+    last_write_checksum: sha1:d8f0de7c959c2d13a4a3a0fdbae0cfe822f75a78
+    pristine_git_object: aaccf3ded294f31e34414252f09bf6a841cc7cb6
+  docs/Models/Components/DiffEnvironmentRequestDto.md:
+    id: 922aac62de1c
+    last_write_checksum: sha1:472a832d45f0193875f6a8b3987db3f732823241
+    pristine_git_object: 1aaba2147365f29b9f0b9965ddec700e6d7f75f5
+  docs/Models/Components/DiffEnvironmentResponseDto.md:
+    id: b3bbd1a23670
+    last_write_checksum: sha1:fa9e1f65dd7bd6504158c627aedf0d3805a13b9f
+    pristine_git_object: 6bd8d0a8940c50acf64b2ae10a10a8b1e30eac5d
+  docs/Models/Components/DiffSummaryDto.md:
+    id: 4436d7ffa641
+    last_write_checksum: sha1:cf5aa7721f54536d231c1db119bdb3cc8bf6389f
+    pristine_git_object: c6988e7c78ca97a71a028508d53e1d6aed10e72e
+  docs/Models/Components/Diffs.md:
+    id: 773ecb2c7940
+    last_write_checksum: sha1:613f5381d0f2f1c7e995641b180d2a1477a378f2
+    pristine_git_object: ba5fa3f0d1a2e08da4c4ac32123239cd86c38a81
   docs/Models/Components/DigestControlDto.md:
     id: d2d32db4fe0b
     last_write_checksum: sha1:ef5793de634000b4340d9d69911c246aff2ec2d0
@@ -577,10 +605,14 @@ trackedFiles:
     id: 5e4981d8b1ae
     last_write_checksum: sha1:d7c59bdd0308720c54fdbbc48d3199005ec4457c
     pristine_git_object: 63b32cdd0a6ca0a89a0266f35e3e822ebd6e4557
+  docs/Models/Components/DigestRegularOutput.md:
+    id: 7879b24a258d
+    last_write_checksum: sha1:22f55580a82ceaa0138f43b10d4681c8ac0fc24b
+    pristine_git_object: 48354197e357ef1a7ea5ecfee8933bd062e72263
   docs/Models/Components/DigestStepResponseDto.md:
     id: f3c59cc31809
-    last_write_checksum: sha1:633dea62bf5846536228d24698baa3f1772fade2
-    pristine_git_object: 9d37eb29c3fce637f04644485b1dceb2d78666ef
+    last_write_checksum: sha1:0bfb9ed7b1adc0a67b2c7daa814e3aff6b192736
+    pristine_git_object: deeab1ca0dc50bd49fd11532662d8f96a733f955
   docs/Models/Components/DigestStepResponseDtoControlValues.md:
     id: 7af55e6f2558
     last_write_checksum: sha1:3f98c281d2170786e3a351ec47a32d1013e57033
@@ -641,6 +673,10 @@ trackedFiles:
     id: 4a4926244146
     last_write_checksum: sha1:ce72f0ad5e526a58bf996f3cfb44d2adc580d364
     pristine_git_object: 9b1e20de247539e73d5ce836ad8cd495072a4d76
+  docs/Models/Components/Eight.md:
+    id: b8fe85b30138
+    last_write_checksum: sha1:84b750b09ea082fc8072a0544167e79ff286d58f
+    pristine_git_object: e25ef1704eaede254fd30cd2d67f4ac3ce6dd3cd
   docs/Models/Components/EmailBlock.md:
     id: 3af09e0eba45
     last_write_checksum: sha1:e70b0350dab71f25ac344e40ebf4b1e5f2947f0b
@@ -677,10 +713,14 @@ trackedFiles:
     id: 749e627baa4c
     last_write_checksum: sha1:d353834c05c8d2a0b51d2a9ef6d260b4b39e3e3c
     pristine_git_object: 541088c9e941cc0404d2f9ac6d7efdcfabe2f64c
+  docs/Models/Components/EmailRenderOutput.md:
+    id: 763ceba48c24
+    last_write_checksum: sha1:84c37a58a4facc051cf0bfc3d53bc2f5b27be431
+    pristine_git_object: 802903e1e51703d98f57f18c5043a975707c226a
   docs/Models/Components/EmailStepResponseDto.md:
     id: dc7ba95d81cb
-    last_write_checksum: sha1:a0625ac73dcf48972f22577a120b6c74017c84e9
-    pristine_git_object: 2affcf64f843e5c7267d327843672885f03916ea
+    last_write_checksum: sha1:482ff1b4531d1bee2bd29e31079bc722d56a1f82
+    pristine_git_object: 9e0c5c6e054ecd584cf8ba7e99a4d370dd61c051
   docs/Models/Components/EmailStepResponseDtoControlValues.md:
     id: abc53779b465
     last_write_checksum: sha1:7536700d60201e36d425e026b020f873e2339f03
@@ -701,6 +741,10 @@ trackedFiles:
     id: 80b730ab8248
     last_write_checksum: sha1:c978ebac8ee6f4cc12a848ff503ac0234df15fb5
     pristine_git_object: 4822d90ae522f52cd672d10cea4ad2afc3f503c8
+  docs/Models/Components/EnvironmentDiffSummaryDto.md:
+    id: 30728f4b5a53
+    last_write_checksum: sha1:fef051d8a758013e0d6b9658ec748ea6d402e816
+    pristine_git_object: d03c8a5258cba7d26cd9375e4840b13341f69b97
   docs/Models/Components/EnvironmentResponseDto.md:
     id: eb9a6d5d891a
     last_write_checksum: sha1:f70e601eb0883f03b3d4610ece9def03fe6dfe30
@@ -725,6 +769,10 @@ trackedFiles:
     id: dfc986ae3d11
     last_write_checksum: sha1:7c476c87c62f70537c58c97bcfc0ba9b5f4a3741
     pristine_git_object: d80aa6789cd85c8c6ca4117c97737ac33a03662f
+  docs/Models/Components/FailedWorkflowDto.md:
+    id: a21d618f6ee5
+    last_write_checksum: sha1:f3de403c0988d30b9eade8028913a52654cf8dfb
+    pristine_git_object: 1474ccd282f6b05d22d6251a9b76e8144ced6e61
   docs/Models/Components/FeedIdentifier.md:
     id: 080a6e6a05dd
     last_write_checksum: sha1:9ace3de5d8c4099b6f0b1c5707fb7f638d33cfbd
@@ -769,6 +817,50 @@ trackedFiles:
     id: 5e27398faf1f
     last_write_checksum: sha1:dc3495792c114ca840679c6e7c557ddc4240e8f5
     pristine_git_object: af4989737db5a8f97f3a296b6bf35fb40ee44508
+  docs/Models/Components/GeneratePreviewRequestDto.md:
+    id: 68b35d53d591
+    last_write_checksum: sha1:60ef113f51c6bb3acd9f2855b22154d0107900a5
+    pristine_git_object: 99afd1973e29f1c3246ec708befb91085fe57b26
+  docs/Models/Components/GeneratePreviewResponseDto.md:
+    id: c9ae90d55256
+    last_write_checksum: sha1:722f58d13eadedc039ff8eb16f152d6aaedc2233
+    pristine_git_object: 2c29d85f2f1fcbb2f90a88e679a22de5ef3c8765
+  docs/Models/Components/GeneratePreviewResponseDtoResult.md:
+    id: fe53d4a5fdf2
+    last_write_checksum: sha1:18e22fad0bfbcd2a392f8a4776594de3eb94b2ec
+    pristine_git_object: b00da8104f0c0b2532e2ba5194f8c10004957d54
+  docs/Models/Components/GeneratePreviewResponseDtoResult3Type.md:
+    id: 8b8efb0d62a5
+    last_write_checksum: sha1:6be0ac431613634ca6592ac1f8802e6a9c85df5b
+    pristine_git_object: e14c63bf5ec13c0f6da022b586d38edd46e1ff79
+  docs/Models/Components/GeneratePreviewResponseDtoResult4Type.md:
+    id: 71926e46ee3b
+    last_write_checksum: sha1:9597ed21c2a5aa23226fdd1ee2209d9b0023e2d8
+    pristine_git_object: 7086be7768b06fef98cccc506a9bff20546e0989
+  docs/Models/Components/GeneratePreviewResponseDtoResult5Type.md:
+    id: 9494dadf34de
+    last_write_checksum: sha1:a52daf60c63f4ff427baf5d47c6a816096aacc5d
+    pristine_git_object: fd13c3a80fd0c9c21021ce6b0f497eb0c8333460
+  docs/Models/Components/GeneratePreviewResponseDtoResult6Type.md:
+    id: e8d32d001637
+    last_write_checksum: sha1:38a09f7c188023373bfda8437cf539e37eaff101
+    pristine_git_object: 8b29c70ed254907abf5b5d558df57bdfb00a7e44
+  docs/Models/Components/GeneratePreviewResponseDtoResult7Type.md:
+    id: 3da9d1bda4b4
+    last_write_checksum: sha1:e77fe139f642c3cb125b87ff3622a07941a2094e
+    pristine_git_object: 551d804fc8efd07fd1f3fb57eb4c8b6573d5cf21
+  docs/Models/Components/GeneratePreviewResponseDtoResult8Type.md:
+    id: a7d29fa44f69
+    last_write_checksum: sha1:6a4dbe450ad8b320b93d1808df0cd7e387c3c85a
+    pristine_git_object: 2b7c97c75d976d8a8b1b30608a194feef0d76d17
+  docs/Models/Components/GeneratePreviewResponseDtoResult9Type.md:
+    id: 7ed012b37bab
+    last_write_checksum: sha1:9bd472109c63e3b07ba36259c91e501b13fbe246
+    pristine_git_object: ecf818997d17ab11fde706f6c4d6b132ecdd6d86
+  docs/Models/Components/GeneratePreviewResponseDtoResultType.md:
+    id: 7be57d0115fe
+    last_write_checksum: sha1:f7bac9dc39848a9c1c2e83b6bc8fbad5d689a099
+    pristine_git_object: 714b81a96eda37ffa308348cef5b4c36e098758d
   docs/Models/Components/GetChannelConnectionResponseDto.md:
     id: 7993c9a91f35
     last_write_checksum: sha1:4190b2d80d8cbec0a0d34b76cab8d41a8d771576
@@ -825,6 +917,38 @@ trackedFiles:
     id: e457a4789fb7
     last_write_checksum: sha1:314029c3831f7975c672fffe6c4dbf8c5c15140c
     pristine_git_object: f31e797cfb6ae5ba479a576e53b675aeb9d75215
+  docs/Models/Components/HttpMethodEnum.md:
+    id: 20c34115e8d3
+    last_write_checksum: sha1:23032eb4e30aed4f44c010d88180abaca5aa36b0
+    pristine_git_object: e29fed3bd80a0e2123f7c37c924a056707176c92
+  docs/Models/Components/HttpRequestControlDto.md:
+    id: 29d1e4e492dd
+    last_write_checksum: sha1:f58783f96ddd7da16ebfb39345a0d7a68735489c
+    pristine_git_object: 6e6f426ef03411fec57e86d8d1dcdf814e86d824
+  docs/Models/Components/HttpRequestControlsMetadataResponseDto.md:
+    id: eaf5c34b7e14
+    last_write_checksum: sha1:6bcfcc0423f76b8596c2a6395b5a263526320c0b
+    pristine_git_object: f941aef5170384deadbd0d59383302574084f88a
+  docs/Models/Components/HttpRequestKeyValuePairDto.md:
+    id: 944487e28196
+    last_write_checksum: sha1:2cbf976524df6197acdbbe06694df9843f78a0b0
+    pristine_git_object: d84d2408824b5ab0ffe504cc03f1d07ff2879fa8
+  docs/Models/Components/HttpRequestStepResponseDto.md:
+    id: 4a2616b4cd38
+    last_write_checksum: sha1:5c03d61c4c96f09e5bb925c1fcaafbfe422ecefd
+    pristine_git_object: 808ecc9944bac92b7dbcc81a8c40cb9373f40367
+  docs/Models/Components/HttpRequestStepResponseDtoControlValues.md:
+    id: a71d4f1b3a88
+    last_write_checksum: sha1:d583aaca7e78b56343a19a930e30d7666178fef0
+    pristine_git_object: 0a208ba73e267b4627ec26c998682841f505bc5c
+  docs/Models/Components/HttpRequestStepUpsertDto.md:
+    id: ee8178b699fc
+    last_write_checksum: sha1:6eb4409b5b6692fb096456444d12bfa01a9ecb01
+    pristine_git_object: 0304082d0cc9803923f11dac199f0d8298de0d08
+  docs/Models/Components/HttpRequestStepUpsertDtoControlValues.md:
+    id: 46ae0afd07f9
+    last_write_checksum: sha1:bf75f3519a67deb6fe92ac41dfd40a44e0a9e55d
+    pristine_git_object: d67810f65d3b293f1848549d445af4c638c98049
   docs/Models/Components/ImportMasterJsonRequestDto.md:
     id: e2ed3c722f02
     last_write_checksum: sha1:69defc4e1f80f843b6b03a4178dc04a817fa8478
@@ -841,22 +965,22 @@ trackedFiles:
     id: 4623358e0fa3
     last_write_checksum: sha1:1daa577068099fb85dda8996d5aa69e64680f9a2
     pristine_git_object: 17bf13122ba1e0392b8b33dc7b3a46f1d0683e15
+  docs/Models/Components/InAppRenderOutput.md:
+    id: 82d69d350efa
+    last_write_checksum: sha1:8bd1f5358022df7a4204bd614c15da5eecd47f5b
+    pristine_git_object: e74c6f69ee9464e8470689c1e9f790d8fab0eb2b
   docs/Models/Components/InAppStepResponseDto.md:
     id: 102a0b1fafe8
-    last_write_checksum: sha1:0977bbe0feeadd280319e7cf38b75f2d6d7b0c62
-    pristine_git_object: 66f37ada5581192cc3af883f356527a7e4b27916
+    last_write_checksum: sha1:43d4a20dbc826e10b30350eb57f3103031d0fc3e
+    pristine_git_object: 5cfcee67dc6e9636e140518a71b4dbad1c1fdd08
   docs/Models/Components/InAppStepResponseDtoControlValues.md:
     id: 55bfb4bb0949
     last_write_checksum: sha1:73a14426fb221b57ef813e0504d447d81f61a262
     pristine_git_object: 4dabc35ed141bdaafd08d5d4dc98d45341d19fd4
   docs/Models/Components/InAppStepUpsertDto.md:
     id: 809fba98de51
-    last_write_checksum: sha1:3c3eed3cf85228e6b90da582e63e6e1d187423ea
-    pristine_git_object: 0d17f74bf153362a1d6ed9e7d55901105b560d93
-  docs/Models/Components/InAppStepUpsertDtoControlValues.md:
-    id: 30e09b3a588d
-    last_write_checksum: sha1:233e834a8f25c565b1f2fc67dc9b16e7ba800a56
-    pristine_git_object: 986ecfd9f96ea7d7feaa43cd57df582619a360e7
+    last_write_checksum: sha1:30c06c81d102d12a17bf6d610fafd351550e65a1
+    pristine_git_object: c725f973af0eaaf142cb27c1e1852377168d1d9f
   docs/Models/Components/InBoundParseDomainDto.md:
     id: 59ddccbcc58d
     last_write_checksum: sha1:f8cdee7b829da740774d147f9ae601a34f55f354
@@ -871,16 +995,12 @@ trackedFiles:
     pristine_git_object: 1292c4adfb0d64212124445bdbbea07fc61ab6fc
   docs/Models/Components/IntegrationResponseDto.md:
     id: bfa704ecb23a
-    last_write_checksum: sha1:4fa881f44fcf210f68d543361c3ce33e810e9e90
-    pristine_git_object: 93fed375f6a6e51931b155d07474117779127e87
+    last_write_checksum: sha1:c22508535f33428e1ccf10aa6be4a08afdd7943d
+    pristine_git_object: c3ab06b593182b472d6c0dc28ef6c784aecead1d
   docs/Models/Components/IntegrationResponseDtoChannel.md:
     id: 8d2a42b0cd14
-    last_write_checksum: sha1:4140f95c72c21e9ce000c9c02df9a93560411132
-    pristine_git_object: ee2622a6cde00524ff2150daed243fa96f7dcbee
-  docs/Models/Components/IssueType.md:
-    id: 6a6800652f1d
-    last_write_checksum: sha1:d85623090de8cd974145a507894c9e0ffe86dd94
-    pristine_git_object: b7862225d0060ea97ec15bc4353a45e4cb6dd606
+    last_write_checksum: sha1:49f30fa6158ae4355e7373c95706f096813863df
+    pristine_git_object: f285f10fe41b213dc42ab8e3c8a28b077d224680
   docs/Models/Components/Issues.md:
     id: 97806ba75be0
     last_write_checksum: sha1:923b707ed29ee23268c0fef17bdc859f04e798b5
@@ -895,8 +1015,8 @@ trackedFiles:
     pristine_git_object: b28d0b88d40d1b766efcb04416eaab159eda79d3
   docs/Models/Components/LayoutControlValuesDto.md:
     id: cfab6322ddee
-    last_write_checksum: sha1:2a0359f2a0ad0eae037feac9a832d9cb194b13c1
-    pristine_git_object: f995f63bb8554eddd1b662a7aa08ac3d30e2933e
+    last_write_checksum: sha1:78682f91209d62ae4d199f9edfbb8e76cc1cffb7
+    pristine_git_object: bd2d5484f640bbc16e09628a2dec2c21544e2397
   docs/Models/Components/LayoutControlsDto.md:
     id: 28249388fe54
     last_write_checksum: sha1:0d7d34beeb7ed4e5426b3a0945d623eec20efaf2
@@ -953,6 +1073,10 @@ trackedFiles:
     id: 89190346cdc6
     last_write_checksum: sha1:815bc6d0a25c1941fa956430e74eead8af29eda2
     pristine_git_object: bcdf98795792f312aa251f6489d4ca3bb2f41022
+  docs/Models/Components/LookBackWindow.md:
+    id: df52e0b771d3
+    last_write_checksum: sha1:906c26a03475ebb6720fbdbb1cfefc4af198939b
+    pristine_git_object: 958bf272d85ee808f06bd5e0fed5e083234c1bce
   docs/Models/Components/LookBackWindowDto.md:
     id: b3e985cceeec
     last_write_checksum: sha1:c25e3f52745ec33bc4965c3a09d8e58b2682928d
@@ -1065,6 +1189,10 @@ trackedFiles:
     id: 8ee1f82b49fa
     last_write_checksum: sha1:1b17906595eb8a4196c10fcbc151f45718608c04
     pristine_git_object: ae7273c83fbf9e6e53ee6b0c520fb5d9aea5dddd
+  docs/Models/Components/Nine.md:
+    id: bfb2008b6392
+    last_write_checksum: sha1:20d3a4902757f339e3089723564c7669760fc6d3
+    pristine_git_object: 125fd51487f7944c931a7f98fba59dbda1afe85a
   docs/Models/Components/NotificationFeedItemDto.md:
     id: e3261b36abec
     last_write_checksum: sha1:4427a39517d223303c68b9d2c3697860a49f4ad4
@@ -1205,6 +1333,22 @@ trackedFiles:
     id: 3367357f914c
     last_write_checksum: sha1:0d73edfd96d50d6dd02e644808ab21cd5c28c161
     pristine_git_object: e8e909984e018af8250f1c5d2de742ad1b5d0cc3
+  docs/Models/Components/PreviewErrorDto.md:
+    id: f344f1830e2d
+    last_write_checksum: sha1:fdecd08bcb95fa5dbed752f7177261ceecefd72e
+    pristine_git_object: 0562c39bfb2d9c3623db2f880d2299e898ce963e
+  docs/Models/Components/PreviewPayloadDto.md:
+    id: af92701cd7a1
+    last_write_checksum: sha1:e68df5eafdf70b200a84afc394ccc33c9aaa2dcb
+    pristine_git_object: 9e780d74554f179437167edbe529e61af5a9140a
+  docs/Models/Components/PreviewPayloadDtoContext.md:
+    id: 19ce8a7f0c8f
+    last_write_checksum: sha1:6e934258c3f94e848e579ba04c1554a78f906cce
+    pristine_git_object: b1b0970bf4dd9528b4ab2f955f0829595540bd03
+  docs/Models/Components/PreviewPayloadDtoContext2.md:
+    id: ba784b4d4722
+    last_write_checksum: sha1:ea0bc15266761ad3b08691ff18edb2bc94f15068
+    pristine_git_object: 48f54c29ba3b0eaa8e66f453d1d547a74a36bde7
   docs/Models/Components/ProviderId.md:
     id: 361b14554a90
     last_write_checksum: sha1:9144b46a845709a316c503bd9a2f4f2771457fd8
@@ -1213,6 +1357,18 @@ trackedFiles:
     id: c91ad58326a2
     last_write_checksum: sha1:6149149a998b56f5bcae64183db8f1739b4e20ef
     pristine_git_object: 0592d34955619a73213c977a071a578ec5f2393c
+  docs/Models/Components/PublishEnvironmentRequestDto.md:
+    id: 0033d29bfc48
+    last_write_checksum: sha1:525e2b4ba9922dadc77ab0499514415078e68fab
+    pristine_git_object: f14c150757328c1cb0eed835dac58ea88cb724f8
+  docs/Models/Components/PublishEnvironmentResponseDto.md:
+    id: fe648f9cdd26
+    last_write_checksum: sha1:624132e1ac3b6e8ea4dfc5697fe5c99bcea486fe
+    pristine_git_object: 3a502118acd52ef43a0ed19011ec98c5fa68ba38
+  docs/Models/Components/PublishSummaryDto.md:
+    id: d3c49a726996
+    last_write_checksum: sha1:dc42f7ebcb894332279455741ef33ec4af8995d9
+    pristine_git_object: b618ce845e27f0331d45ff4bbfb5995d3091217c
   docs/Models/Components/PushControlDto.md:
     id: 4319d97819bb
     last_write_checksum: sha1:b4688fb78a11b30c7fee97ddde2452d4b2e15e99
@@ -1221,10 +1377,14 @@ trackedFiles:
     id: ae9541bafc3d
     last_write_checksum: sha1:ee2fbd33d45414c906ab64a18407f08d0179e946
     pristine_git_object: c4ceaed8cbb1c3691d6e6af55fae1821af8ea020
+  docs/Models/Components/PushRenderOutput.md:
+    id: 8ff888fb84af
+    last_write_checksum: sha1:fb090158e0ab897bb62ae7397756e4afc029540d
+    pristine_git_object: 22401aca1ac7fdb3f3bf88a7022ba1ceed09ceca
   docs/Models/Components/PushStepResponseDto.md:
     id: 5e74188008ad
-    last_write_checksum: sha1:91862e9c15fcc923bacb0e105ac886c514a41284
-    pristine_git_object: 5d31dddeb1188642eff30f6a06036cbb08d7f3f9
+    last_write_checksum: sha1:5e869daa5e6d9be2c717ddc4420e2a08272c1962
+    pristine_git_object: c734009f31d5045b0413c9671d94590b4941bd75
   docs/Models/Components/PushStepResponseDtoControlValues.md:
     id: 506bd96b0fdb
     last_write_checksum: sha1:b3f7d5e8f7a4820ddb45fab81cecc886906da002
@@ -1249,10 +1409,50 @@ trackedFiles:
     id: 2581cdc7691e
     last_write_checksum: sha1:02d5f6b1b4d46e0caf37d2fac7a4a8760493cb62
     pristine_git_object: 977f39dbd8cb7a6a8e901849974b0de477769bd8
+  docs/Models/Components/ResourceDependencyDto.md:
+    id: 9c5610138866
+    last_write_checksum: sha1:8299c3fba19e795df4988346c2da71b1791a9c9a
+    pristine_git_object: 46db76120221bdbf3d78fc4c3554cef7def32151
+  docs/Models/Components/ResourceDiffDto.md:
+    id: be5df01539a2
+    last_write_checksum: sha1:0ef9d9c227a80e61ce55d9421f25a48adc5c75f8
+    pristine_git_object: 47a0fcfe682573443a4accac2d705ea678d5552d
+  docs/Models/Components/ResourceDiffDtoSourceResource.md:
+    id: 2adeef7a38de
+    last_write_checksum: sha1:cb02d2d0ae3c23a54be11a658fffc1b1176ff808
+    pristine_git_object: 5955624097b449924dcd823065ebd8577dc9e92b
+  docs/Models/Components/ResourceDiffDtoTargetResource.md:
+    id: 9c7aaceac788
+    last_write_checksum: sha1:eee1720036021297e9db35a642237aacb69c0cea
+    pristine_git_object: 96494ee23d8a3724e8f7b3a59d7125e5251a403e
+  docs/Models/Components/ResourceDiffDtoTargetResourceUpdatedBy.md:
+    id: 90b39b0625c2
+    last_write_checksum: sha1:c38f43ca48786d13e97660f8f573bae0c8e196a7
+    pristine_git_object: 85793e70e195231d4294769cdd67c959346addb9
+  docs/Models/Components/ResourceDiffDtoUpdatedBy.md:
+    id: 9d3afb28b40b
+    last_write_checksum: sha1:601909099af6a8241944154d1a63e59b8bf912a4
+    pristine_git_object: b1b4eddbea881adaad1448ab0e9ed74cf62a008f
+  docs/Models/Components/ResourceDiffResultDto.md:
+    id: fdd338165681
+    last_write_checksum: sha1:0bbf022e7158d7460cbdb57b98c56d0a87b33436
+    pristine_git_object: d91c846a11312f10ce3fea27e21f94ccebe883dd
+  docs/Models/Components/ResourceDiffResultDtoSourceResourceUpdatedBy.md:
+    id: baa18f49056a
+    last_write_checksum: sha1:f0e1e8b3687356c9119a52d4a6986e437132526f
+    pristine_git_object: 74803c057e79987acf595f830be0e583f0821d1a
+  docs/Models/Components/ResourceDiffResultDtoUpdatedBy.md:
+    id: 9c42cff98412
+    last_write_checksum: sha1:5af21933a2bc89f0f890de3dfa823e5ece80d5cf
+    pristine_git_object: a38fa9f62fa073b99b91595e654f3d9758d25a0c
   docs/Models/Components/ResourceOriginEnum.md:
     id: 75402fad685f
     last_write_checksum: sha1:380f9c7f4b35be5d5d8affa9b5ae4bb1135a00fb
     pristine_git_object: 0c82bd42689ba694ba6240d3deac85e3436e6a95
+  docs/Models/Components/ResourceToPublishDto.md:
+    id: ebe3e79149a9
+    last_write_checksum: sha1:25362d163df15c00c213b163346ba8c11a094421
+    pristine_git_object: c8e0eba11bbcc69f77c82154dea26e70b5d26b89
   docs/Models/Components/ResourceType.md:
     id: eed4cb6267b7
     last_write_checksum: sha1:fc0907e9ab4f20cda385d0bfed2cd294b954ae92
@@ -1265,14 +1465,26 @@ trackedFiles:
     id: 06d80ebb42bc
     last_write_checksum: sha1:a749d1b9356a0df7703993771dc92fdd134d8d9f
     pristine_git_object: b678e48c20f921e24b2d5764f7c1d59d6cfd4f87
+  docs/Models/Components/Result2.md:
+    id: 2a0951e86ea6
+    last_write_checksum: sha1:f9ea9f2258626f175ee3417ca479f350c288f6de
+    pristine_git_object: c6b5f4faba70d15de27996d5616eefe8bd784e55
+  docs/Models/Components/Result4.md:
+    id: 4ddf1353e15b
+    last_write_checksum: sha1:8721a55cc9364d375ef117e884a64df82fceb8dd
+    pristine_git_object: 451cd976d24806e06110bf4161ad84681a0321e7
+  docs/Models/Components/Result5.md:
+    id: 7abc236164fb
+    last_write_checksum: sha1:35fe24b22f719c8ab8b81d1242165196e7c2e6af
+    pristine_git_object: 6bb46522c1146b31a45a1b60a44fb9519c74c132
   docs/Models/Components/ResultType.md:
     id: a1a908d8a7dd
     last_write_checksum: sha1:c3ae8600e893c7fd23837196bec5d223fd3f47c9
     pristine_git_object: 3e5a5b18cf85470d32ae43e3cc2482a744f9f1cb
   docs/Models/Components/RuntimeIssueDto.md:
     id: ca8ad6e5994a
-    last_write_checksum: sha1:4363c80ff4ff0c31d75322c6762f8c9dff83449c
-    pristine_git_object: d56ee9e2dda1893607628c2e54c53f27490d0861
+    last_write_checksum: sha1:98cb96fde0416c3d41fd082403aeb7551bc1b75a
+    pristine_git_object: ad21f87d9312c4010d5bdc2309819a4c8bc3dc5b
   docs/Models/Components/Saturday.md:
     id: 9f9d5f5d344e
     last_write_checksum: sha1:cccd338accf409e7683694182ab4f05142210eef
@@ -1285,10 +1497,22 @@ trackedFiles:
     id: 7bcd54fda13a
     last_write_checksum: sha1:0c0a4300c9be586d2260050492d4c880e24969e9
     pristine_git_object: 903e84f424b19bab84bf8c144cea2fe58a2ef6d3
+  docs/Models/Components/Seven.md:
+    id: 13bf11c70823
+    last_write_checksum: sha1:2c16d919db760c23233fd5d4ef209a957b38404b
+    pristine_git_object: 96e9d4dfc6cb398ebc8f33b02023ab40a0e8aff5
   docs/Models/Components/SeverityLevelEnum.md:
     id: 6307aa5948f3
     last_write_checksum: sha1:04dd790d4c0b65af70fd4d9291a63fe4c99a20c2
     pristine_git_object: f90d60d9eff44ae380c0d0e80a941958fbe455f9
+  docs/Models/Components/Six.md:
+    id: 0cca44db5b20
+    last_write_checksum: sha1:853876e641e95d9f808ee3e8824308aa4da896b5
+    pristine_git_object: ae25023db90a2014c48a9ca423335b79d2d90d8c
+  docs/Models/Components/SkippedWorkflowDto.md:
+    id: 61d12573445d
+    last_write_checksum: sha1:b2a9ba8cc241fe59636c520a195d660e8daeec06
+    pristine_git_object: 2cea3fa36518af72a7f386d04f9d9e4cebb00f6d
   docs/Models/Components/SlackChannelEndpointDto.md:
     id: 568003a741f2
     last_write_checksum: sha1:91bb20cf197d8d56b9fa4caefb3c31f2296b06c5
@@ -1305,10 +1529,14 @@ trackedFiles:
     id: 1773d638e3bf
     last_write_checksum: sha1:6e18c327e105181dec9db6f4feb7e313a16b52c7
     pristine_git_object: 0cb6221add99ed8e483069dc1583cd5d446506c1
+  docs/Models/Components/SmsRenderOutput.md:
+    id: 9edbad437122
+    last_write_checksum: sha1:204726b28e3dc95335e44807c42b87bf9dacf4e4
+    pristine_git_object: ab847f88e5624a0ff55e5d3d1088a841c6c0cf79
   docs/Models/Components/SmsStepResponseDto.md:
     id: 9dc84a009fbb
-    last_write_checksum: sha1:752a1114a431e50cefd43cd4b5c5a86f9247b713
-    pristine_git_object: e1d6e3e5a630dba66b4aca53b7990313eb198d4d
+    last_write_checksum: sha1:4677dea7022afe19120e055d73bc55325e89486c
+    pristine_git_object: 7cf4eb081b956fa481e5ea530b6a2f89cac1053e
   docs/Models/Components/SmsStepResponseDtoControlValues.md:
     id: e0aa121c8cce
     last_write_checksum: sha1:9073dbee950a60a4f24277c10e88b04a61b548ee
@@ -1321,6 +1549,10 @@ trackedFiles:
     id: 232647d345c8
     last_write_checksum: sha1:2e5140d2f81af087a9a7b6b8d65e1c3566689b76
     pristine_git_object: 23e05587a44af458069de0a0f9741eaeb0570242
+  docs/Models/Components/SourceResource.md:
+    id: d9d799eeddf4
+    last_write_checksum: sha1:f8535fb5450be3121a7e039426bf204f47b93485
+    pristine_git_object: b2a1c6485d2ab4afb1faa0650f471781f4ee4f0d
   docs/Models/Components/Status.md:
     id: 71d0264ee613
     last_write_checksum: sha1:f7b3fabcd496bc8ac346a0105f0c65f10a739f83
@@ -1351,16 +1583,16 @@ trackedFiles:
     pristine_git_object: 13814760d51b14d520750211fb79188b5693909f
   docs/Models/Components/StepResponseDto.md:
     id: 691f4143aeaf
-    last_write_checksum: sha1:797f7ba7e10cb7da0f5ffd26175bc0abc489e07b
-    pristine_git_object: 68419894b9de426d662a1f729e16d6714f7b00f2
+    last_write_checksum: sha1:6ccb5598e5e5bebcb2b807d0598fef9b18a7dcb9
+    pristine_git_object: d5a12e8c14e94c0c9091f188542d2748fbb03f40
   docs/Models/Components/StepTypeEnum.md:
     id: 0421701cdb70
-    last_write_checksum: sha1:c8f885e57891a873fc0f4d4c4d2310474ca53f58
-    pristine_git_object: 55aab8034e997f5f8fdf84627d2e4e4e63357dcf
+    last_write_checksum: sha1:12134c2e32f7612cddd86ca3edba60bcef13cc8a
+    pristine_git_object: ec900c58de9ef146373a783b835bb69b071e4f02
   docs/Models/Components/Steps.md:
     id: 0d23b8aa361c
-    last_write_checksum: sha1:d5c7edc8f2d294eb5e40b1e6704fb12edb772bae
-    pristine_git_object: 40e3d440fe9e38d1197a65fe26af6c2c35d51b78
+    last_write_checksum: sha1:37b8571b9033ea637d70acaf09ac9c33d902e6f1
+    pristine_git_object: 439bc9c35bce6e45420e8e40f178045288c76143
   docs/Models/Components/StepsOverrides.md:
     id: f58a1d9743f6
     last_write_checksum: sha1:048bb47b70e2dad4f6e0cda52198b8afa6432b57
@@ -1407,12 +1639,12 @@ trackedFiles:
     pristine_git_object: 59b49f40f878aa587f037d88f74fdfefb4efca2d
   docs/Models/Components/SubscriberResponseDto.md:
     id: a08e204f4143
-    last_write_checksum: sha1:28a61b403862a5b15a19bbe7064d5e4f02bed930
-    pristine_git_object: 9143230d572840a721f6e449729c7e2b26870e46
+    last_write_checksum: sha1:d2960bc01afad0208f51e6ad2bd18d3a72782c93
+    pristine_git_object: a8acf464bd06496b007ca4f9d81643e61d8df385
   docs/Models/Components/SubscriberResponseDtoOptional.md:
     id: fc2457703643
-    last_write_checksum: sha1:e05813b9bfae2f040a13c99cac330076b3d9b4d2
-    pristine_git_object: a23d14de5a90333aefbd7d7dd08aa8055b02b080
+    last_write_checksum: sha1:b3e046e1825d5bd9f10b7df84fc431091349c0c3
+    pristine_git_object: 6427c3fc9c1f0d275fb0820ee2c1f53e33fa3561
   docs/Models/Components/SubscriberWorkflowPreferenceDto.md:
     id: c34ff68ea4e0
     last_write_checksum: sha1:1a1a0c3588bfccd268b8cce07689387ad5973485
@@ -1461,14 +1693,30 @@ trackedFiles:
     id: 94ba5fa177e1
     last_write_checksum: sha1:5ffd10fbcbaa091a433ee36d430a9dbd64d128c4
     pristine_git_object: 8247f8cfffed2201a0bd3e532eef28b8b158f9dd
+  docs/Models/Components/SyncActionEnum.md:
+    id: 4d88c25f17ba
+    last_write_checksum: sha1:6dfbc6f1ea4efc5f492f876a17140bcbc7b59997
+    pristine_git_object: 0f42d2e84b4ad9fb5349821f2e3861e09d48d532
+  docs/Models/Components/SyncResultDto.md:
+    id: c6ba8b148e58
+    last_write_checksum: sha1:72fd718c12ecf6ca8278e64b264b2fbe90d88c63
+    pristine_git_object: 597c77dec69fc40d8f26c893d8a59cd55bf50af9
   docs/Models/Components/SyncWorkflowDto.md:
     id: 0c7a0b6d8f7e
     last_write_checksum: sha1:b8d4820b9f171439310ddbde9e2cab2a94217297
     pristine_git_object: c91cd6483ec12f6007c130592b3e630872c41122
+  docs/Models/Components/SyncedWorkflowDto.md:
+    id: 8f7b67b099f8
+    last_write_checksum: sha1:4f15d5efd7e8a389e6138df55153362300472c7d
+    pristine_git_object: 6124260367cde0110cf4350606a6cf602a435f63
   docs/Models/Components/Target.md:
     id: 3bb2eba0af6b
     last_write_checksum: sha1:c1bf7234cbd0889bf9bb38c846da720e9d635800
     pristine_git_object: 1acfe0f3f769123b1f22ff9f8deaa517e6288ed0
+  docs/Models/Components/TargetResource.md:
+    id: 20bfb186634a
+    last_write_checksum: sha1:487a470b31dfc9d08250c88eb6ed6cbf6afd5da6
+    pristine_git_object: 2449e8837e9376944b3785d6a51c982c50b656a5
   docs/Models/Components/Tenant.md:
     id: d573f77a70e0
     last_write_checksum: sha1:42dd07d6b5425492fbd9075532f35a565fbe785a
@@ -1481,6 +1729,10 @@ trackedFiles:
     id: f5bc61f33147
     last_write_checksum: sha1:f02c315043bf3bcc05f309290fdb63d9ab427659
     pristine_git_object: d771203c913a1645059254498fab765449239f65
+  docs/Models/Components/Three.md:
+    id: 3f27362616f5
+    last_write_checksum: sha1:45dd1722fb6c313febbb49a55fe3c0fd2b7847f7
+    pristine_git_object: 8c7e0760838eb7bbf6ba9c006e2dc37fdeb5aece
   docs/Models/Components/ThrottleControlDto.md:
     id: 0be83ef81295
     last_write_checksum: sha1:8ba7135ac42e7685e4535faa11cf7b58336d94ea
@@ -1499,8 +1751,8 @@ trackedFiles:
     pristine_git_object: d4272e606c84abd890ae3dc6fc965c5d2c2a5b68
   docs/Models/Components/ThrottleStepResponseDto.md:
     id: d05a7edc6280
-    last_write_checksum: sha1:f2ec79e76c2216bc21c96bd72821cc930290851f
-    pristine_git_object: 81171f6c05bf8bc73ebd2683ea68f91021fc794c
+    last_write_checksum: sha1:d57f69482de5de325c3cb6023bd3d48592bdfa2f
+    pristine_git_object: 4d2b486b9e3049293ca280993405eab5d77dfb92
   docs/Models/Components/ThrottleStepResponseDtoControlValues.md:
     id: 4d1e9fc4a37d
     last_write_checksum: sha1:b8ebe4445379fc4a1b91831f0116dc6b7d579af3
@@ -1529,6 +1781,10 @@ trackedFiles:
     id: dfc7e1f05374
     last_write_checksum: sha1:1e87cd2cf8d3135e4192a2ba9ed54e8de0fef01c
     pristine_git_object: 887fc01035d7f59110311e2b0ac8929014d18e4d
+  docs/Models/Components/TimeUnitEnum.md:
+    id: b159685fa3a4
+    last_write_checksum: sha1:8d1ddfd1d062c21d7d79682961a1ae9743e98f32
+    pristine_git_object: 8e708ed965a8eef7122f749c1b95aa2a93683c4d
   docs/Models/Components/TimedConfig.md:
     id: 9ab8b7adcf12
     last_write_checksum: sha1:ac2947d7135f144f17e8e60b0499cca0e009fad3
@@ -1651,16 +1907,16 @@ trackedFiles:
     pristine_git_object: b3bd5307afe912dc142d1be44274d4c73fece32a
   docs/Models/Components/UiComponentEnum.md:
     id: 493e50fef773
-    last_write_checksum: sha1:f39ffbd86d672dd428b8683b1147d7a6f90510cd
-    pristine_git_object: 04e77f5515b62f581e3531b4008932334eaa407e
+    last_write_checksum: sha1:3436b401f94de4198e724d9c6e0a37670c485b07
+    pristine_git_object: b3338e1a50e08d239cbfbf9d0218a8c00318ec8f
   docs/Models/Components/UiSchema.md:
     id: e4e61a5dbb28
     last_write_checksum: sha1:c1dc98660f7f219074e8c3aa8b58d4dcf765d644
     pristine_git_object: cb450d4ae8f6e38bd5c370746be0494fd0c923b5
   docs/Models/Components/UiSchemaGroupEnum.md:
     id: 334d284085e2
-    last_write_checksum: sha1:f0985c9a614c3ece600d1782be0836fa404a65e8
-    pristine_git_object: 154b8f5dade9ff8718cd0dd03e8b9f77ce1412d6
+    last_write_checksum: sha1:c5d21ab7cbb3e79a5b64b90f44bbd866b486027f
+    pristine_git_object: 7d7f4ce79545118687728c2ed8b8b0a06ab3651d
   docs/Models/Components/UiSchemaProperty.md:
     id: f49c4f6cc70b
     last_write_checksum: sha1:189d4a651108e967efe623f7d48224d96f50eeef
@@ -1703,12 +1959,12 @@ trackedFiles:
     pristine_git_object: 2db02a155b7b37e19721d26eda564434bf476dbd
   docs/Models/Components/UpdateLayoutDto.md:
     id: c1d6f275986b
-    last_write_checksum: sha1:d8a25e25261a5ebe9b4941eb23d005b73cf46c3f
-    pristine_git_object: 10ee05735cb44a7bd523782d68f6052d758ab43e
+    last_write_checksum: sha1:35eb14f5eb6d98984f7a7385ba1e9b706fd7d94d
+    pristine_git_object: d4bac33fd4dedf3c7ce16bcb54ebc16b49d9555b
   docs/Models/Components/UpdateSubscriberChannelRequestDto.md:
     id: 9be76c5d50cf
-    last_write_checksum: sha1:51971c225473dffd2fbd0b6729b84e78d0fa6c0f
-    pristine_git_object: 243fa42ee23251c707e98e94b352862ff1fa96fd
+    last_write_checksum: sha1:60d210e5e6be3c064277ad275d6ff8c9f298397d
+    pristine_git_object: 4cbb0ffc8a793300bd67a388f95353a699bd62e3
   docs/Models/Components/UpdateSubscriberOnlineFlagRequestDto.md:
     id: cc24c5c5f1af
     last_write_checksum: sha1:6606c4e89d2aecc215b060b5ac6b120e00fb677e
@@ -1727,12 +1983,12 @@ trackedFiles:
     pristine_git_object: 0e284c0871439c33fc63c14ce7afb632a946c894
   docs/Models/Components/UpdateWorkflowDto.md:
     id: cca298004bd9
-    last_write_checksum: sha1:0b2b7a5904cd0d27ddfd9a026f51be28291aef5b
-    pristine_git_object: 97d24bcfcde5fd058dcfbf8b4b85857fe81fe74c
+    last_write_checksum: sha1:59cb6ccbf484e178bdf50ac893a0617323420844
+    pristine_git_object: 2b383bec319a7f7ead2ce480446a7a9dc51a849b
   docs/Models/Components/UpdateWorkflowDtoSteps.md:
     id: ee9757a7bfac
-    last_write_checksum: sha1:c18a6c91d6df69ff238a89fba5c8dd5240605a6c
-    pristine_git_object: 2123568c7d4f48afb526e73fe8e71cdc28110a03
+    last_write_checksum: sha1:6806d55dcd28892e24a03957c376e60d7fdd78d2
+    pristine_git_object: fc1b622eed69694a082ce408fc3908484d4147de
   docs/Models/Components/UpdatedBy.md:
     id: f2cf360c400f
     last_write_checksum: sha1:fe5a1c0f9a1aabfdfa6c433b48f25c9385a6e09f
@@ -1795,8 +2051,8 @@ trackedFiles:
     pristine_git_object: 3adc88d2125c631c1303d2583817be0c54bb5b79
   docs/Models/Components/WorkflowCreationSourceEnum.md:
     id: 2f9a96566a36
-    last_write_checksum: sha1:caacbc9422c9618510305f473be05fa9dff6ea53
-    pristine_git_object: cae733aba173b96b8d884f94d46956afc11c3662
+    last_write_checksum: sha1:1250035f4cbb7b5010482dfd9c4b2ab32f7457b3
+    pristine_git_object: 9ee699bb0779328cb1e4dc6479b62f56b3d74360
   docs/Models/Components/WorkflowInfoDto.md:
     id: 980e9eac213c
     last_write_checksum: sha1:0ab5619eaab41cbfe40679a3bedeb7ea5851e675
@@ -1851,16 +2107,16 @@ trackedFiles:
     pristine_git_object: d61e7133d36557e2c23c0644e8842c581441c27a
   docs/Models/Components/WorkflowResponseDto.md:
     id: 3a710e807698
-    last_write_checksum: sha1:c335151bf81486fd1305fba2c099f00c5b98a780
-    pristine_git_object: 04cc794f9f3daef67febc197cf437523e9cd46ab
+    last_write_checksum: sha1:24e3d8e94f158c82d4efb97e99025447155bb9bd
+    pristine_git_object: d87e3df6c33574cfed61b7f1057b0e1370982f38
   docs/Models/Components/WorkflowResponseDtoSortField.md:
     id: af36f15269a6
     last_write_checksum: sha1:d750244e8369d881d370a33e462f190d530c1037
     pristine_git_object: b5ce14da6cdbcf10ce5e4362cd28b0d0836e83eb
   docs/Models/Components/WorkflowResponseDtoSteps.md:
     id: 8c61e0b5e257
-    last_write_checksum: sha1:5a56ab068df8084fc093db6201723303e206427d
-    pristine_git_object: 0ace91da65ee906f34f87a7a951bb8e6cbd06f2e
+    last_write_checksum: sha1:df71edc686ddcae865cfca4eb782ed388fa717fa
+    pristine_git_object: 23778a502dc10f52b3275b94410a9d47d36546dd
   docs/Models/Components/WorkflowResponseDtoUpdatedBy.md:
     id: 2d31ca5eacd4
     last_write_checksum: sha1:7114cdfadf1433296099c52ef5679a0c93af8fe8
@@ -1919,8 +2175,8 @@ trackedFiles:
     pristine_git_object: 315e139af491f4b02d062ac144ef129d9722048c
   docs/Models/Errors/SubscriberResponseDto.md:
     id: 3309423e11ef
-    last_write_checksum: sha1:28a61b403862a5b15a19bbe7064d5e4f02bed930
-    pristine_git_object: 9143230d572840a721f6e449729c7e2b26870e46
+    last_write_checksum: sha1:d2960bc01afad0208f51e6ad2bd18d3a72782c93
+    pristine_git_object: a8acf464bd06496b007ca4f9d81643e61d8df385
   docs/Models/Errors/TopicResponseDto.md:
     id: b239666f7776
     last_write_checksum: sha1:360b16a290bf115c4c534a18860ca11930b15b8f
@@ -2073,6 +2329,14 @@ trackedFiles:
     id: 95fdb755b371
     last_write_checksum: sha1:2c468175c2e4d39cb7d8206400558b8e85120761
     pristine_git_object: b6be648fb0735bcfac5bea6c970d053ee082eead
+  docs/Models/Operations/EnvironmentsControllerDiffEnvironmentRequest.md:
+    id: ae9432f800d0
+    last_write_checksum: sha1:b5c004ac11d9a9fdc9a213d362c8dc2698a813f3
+    pristine_git_object: 9825d02909e8f1ce3be1dd260bb16e5d0fab6e35
+  docs/Models/Operations/EnvironmentsControllerDiffEnvironmentResponse.md:
+    id: 74814d52bdea
+    last_write_checksum: sha1:fca73d968ba8d2db60dd6c6df4ed12af78d1bfca
+    pristine_git_object: 03fb95e9f4d104fb6e80af9e1d62460861cd7c02
   docs/Models/Operations/EnvironmentsControllerGetEnvironmentTagsRequest.md:
     id: e778907ae5df
     last_write_checksum: sha1:9c88317369dbf65c1338eac1652c5dd9cf6adecb
@@ -2081,6 +2345,14 @@ trackedFiles:
     id: f7d1fee8fee4
     last_write_checksum: sha1:8e666b7d0c379f24867aef096ad9010163ce2848
     pristine_git_object: df0eabe3dc95bc48a3c8b43b826771dfeb0be923
+  docs/Models/Operations/EnvironmentsControllerPublishEnvironmentRequest.md:
+    id: 8cd50021e8ef
+    last_write_checksum: sha1:17719c7195aadd0864f949b25853e57373ed0b42
+    pristine_git_object: 2bff643bf0d8af1bdd6cb2bebc369a179a0f430d
+  docs/Models/Operations/EnvironmentsControllerPublishEnvironmentResponse.md:
+    id: b983fc7f2e21
+    last_write_checksum: sha1:a6db3ed2dedb88600a538280cef4bbaac9aba889
+    pristine_git_object: 98b30a3604858222301b792801f376bda02d2f33
   docs/Models/Operations/EnvironmentsControllerV1CreateEnvironmentRequest.md:
     id: 3474dd190b3f
     last_write_checksum: sha1:4efb00335866147454e1a51a79f9e9fa7a157a16
@@ -2705,6 +2977,14 @@ trackedFiles:
     id: b6c6f71d3159
     last_write_checksum: sha1:54a1e105c3bff38c4ef28c17570cfb04f2e77ae7
     pristine_git_object: c47797eebef2df9a76acedd96e0ac5a7b370cdc0
+  docs/Models/Operations/WorkflowControllerGeneratePreviewRequest.md:
+    id: f1e6a8c3d1c2
+    last_write_checksum: sha1:e2db00b72359e2a549f15d6ef6012856f08c330e
+    pristine_git_object: efb088f15ca244af325d0ef589e6dab5bd820a15
+  docs/Models/Operations/WorkflowControllerGeneratePreviewResponse.md:
+    id: 83e04779b454
+    last_write_checksum: sha1:5217b10104c87cb3cfd899227b0ea4bcf603a8a2
+    pristine_git_object: 4831347e76939c3f649a5fc5734c907330dd7d69
   docs/Models/Operations/WorkflowControllerGetWorkflowRequest.md:
     id: 24f84e33450b
     last_write_checksum: sha1:def4e24dab92ae3ded89354c55ec12936f194e5d
@@ -2779,8 +3059,8 @@ trackedFiles:
     pristine_git_object: 073a6e4351f9f4ea95cbcd7ec5da04d30d6a89b2
   docs/sdks/environments/README.md:
     id: d15fc95481b6
-    last_write_checksum: sha1:5aa6fc14c74b5fc0070131802c49a6d20ddd96b7
-    pristine_git_object: d384db8ba7c410851e91f6eaf18ba43fcea056b8
+    last_write_checksum: sha1:b6043bb37df9c00bed02438e1d42ef45cb6d15f7
+    pristine_git_object: f4be7ca8ffeafa5025cf651a14a206eac6a22c21
   docs/sdks/groups/README.md:
     id: 3336939a71e4
     last_write_checksum: sha1:e3c739184f8dca56cdaf016bbdce4c000d7436e2
@@ -2791,8 +3071,8 @@ trackedFiles:
     pristine_git_object: e801d195beafdadc39f4d24dae38eac1b7c76d21
   docs/sdks/layouts/README.md:
     id: 9cae4f89dc39
-    last_write_checksum: sha1:e180ddf3c946f611fa1bfc75e6df0ae3f8979000
-    pristine_git_object: b47344b54f6414990fd7278bb9942d36f1564ef2
+    last_write_checksum: sha1:b7f3f9c109ba60cca00894bc67b3f54293ac7884
+    pristine_git_object: b6f2e52eff76e5498295621877eb36644fabc22a
   docs/sdks/master/README.md:
     id: 231dfd929df7
     last_write_checksum: sha1:68935c6c191af4602d78e60a9775edce8585eeeb
@@ -2827,16 +3107,16 @@ trackedFiles:
     pristine_git_object: 212e762a9d091237fcc014be7e1fa17e3759b591
   docs/sdks/steps/README.md:
     id: 39cb94746ff0
-    last_write_checksum: sha1:7b7b7bf5b4ae76955aad6d5677abb4cc8c8f469b
-    pristine_git_object: caa68a88fc7c1a08b169498c0bbb907ff84a2c7b
+    last_write_checksum: sha1:515cdabcaacf5f884add953d316e9554f08e90cc
+    pristine_git_object: d950e6af89af828458f27bc9fee4e5f4f49f64f5
   docs/sdks/subscribers/README.md:
     id: 14c599d74195
-    last_write_checksum: sha1:91faa6095326d06f11157276b44fd11ef80ce1e9
-    pristine_git_object: c541d575e7ca44f1aa7f207764bc0d7be9f69416
+    last_write_checksum: sha1:b58280c75272b36059b214682e43e05e7c3f8530
+    pristine_git_object: d00a695bb36c8d4af0effc4a591ea519543058be
   docs/sdks/subscriberscredentials/README.md:
     id: 4cd1d050441b
-    last_write_checksum: sha1:576dc373a81750f407107ee65564ec0a10301483
-    pristine_git_object: 20aa83c2df65a45d09060ce4b7dbdefc8a126594
+    last_write_checksum: sha1:5d94176470a9d543fd936c7fd380b68a497caf78
+    pristine_git_object: 18339bdc42d936f75c8d1bd8bc56366357e94b91
   docs/sdks/subscribersmessages/README.md:
     id: dfd6797670e7
     last_write_checksum: sha1:881f036006e6c817b37f9c413fed954acd98173e
@@ -2863,8 +3143,8 @@ trackedFiles:
     pristine_git_object: 67e93c90531f8c8935a5ea19601ef3124d2563bb
   docs/sdks/translations/README.md:
     id: 0452749a3d5d
-    last_write_checksum: sha1:b0e6ca29c9dc74038242e54edd11a6058ee1c73a
-    pristine_git_object: f5184e179a8e10313dbb2b5f2c0c42703de26cfd
+    last_write_checksum: sha1:d67086d576299a372452dc82f28d26b6836d591f
+    pristine_git_object: 02528af9bed60b5326f7dd16c75c83338dbac694
   docs/sdks/workflows/README.md:
     id: 80c76ce944c0
     last_write_checksum: sha1:0e19980ac0fa18b247e7b07de3e486031e3fbe93
@@ -2903,8 +3183,8 @@ trackedFiles:
     pristine_git_object: 43710af78ed80804b3afe47d60807fb1fbc1cee1
   src/Environments.php:
     id: a2e99120de00
-    last_write_checksum: sha1:bf375e8b94ff1f2f55740d60676f10e1b1b80f4d
-    pristine_git_object: e98ccc1862057e6a25b26469208777cfdabdc43d
+    last_write_checksum: sha1:6fd2c2a11c0fcd204e2a71ce37f0f33779719a6c
+    pristine_git_object: 6f0cd2acb6958034209dea0a116979324e1f423a
   src/Groups.php:
     id: 947145e876d4
     last_write_checksum: sha1:b1ab3c3fbe2fa8c602db5dff682329d7cbac0906
@@ -2951,8 +3231,8 @@ trackedFiles:
     pristine_git_object: 1db45041b9a0f1ef1e6a3c2f38d9267170e3a53a
   src/Hooks/Hooks.php:
     id: 6cf174b736b4
-    last_write_checksum: sha1:e40a2e3fefbb5b175f954aa36fe6a7a51da5d983
-    pristine_git_object: 1603ee283dac0e10a60e96d98ff2a84efca81821
+    last_write_checksum: sha1:2b2fa85c53d56e9fbf5b0430a8863eafc2056b7b
+    pristine_git_object: d2c7a2dc1fc93d654312ebc39a98fab1be87c6f8
   src/Hooks/SDKHooks.php:
     id: d31b27b84f0b
     last_write_checksum: sha1:3eab692511821db96d9e549e96adb25f3075ba68
@@ -3007,8 +3287,8 @@ trackedFiles:
     pristine_git_object: 6178c3fa9e0fed6be50b04935433a5a6dab89a15
   src/Models/Components/ActivityNotificationJobResponseDtoType.php:
     id: c5749c9e18f5
-    last_write_checksum: sha1:d5c15f62c5f1ca7e18f31fd60395b03d662c2926
-    pristine_git_object: a27bb3f8a49285852d36a005be9f304d167b2181
+    last_write_checksum: sha1:e9754f4cd0bb7dc9bb5178e8ea993ce72f627bed
+    pristine_git_object: 873a5a70e866250708c3f8389fdcf322ac9f013d
   src/Models/Components/ActivityNotificationResponseDto.php:
     id: a05aa50fd7e4
     last_write_checksum: sha1:d5b15ecfd98b77c006555931e244e3176b772d30
@@ -3115,8 +3395,8 @@ trackedFiles:
     pristine_git_object: ea70d69f8e4fcce48f432c26a346bd1025dea276
   src/Models/Components/ChannelSettingsDto.php:
     id: d46b3b870c49
-    last_write_checksum: sha1:33c6813f568a5249a331461cd109afc6e34a3b98
-    pristine_git_object: 4181980aaf155cf5b7bd647ff03bdf2def3ec472
+    last_write_checksum: sha1:18c490ef16d007118e4c63894ddb8d60b47f04de
+    pristine_git_object: dad972ba9f8dd91d6a4f884bbae36fb4b8ad8d02
   src/Models/Components/ChannelTypeEnum.php:
     id: 2efa9051fbe4
     last_write_checksum: sha1:608dd9ffe3b2361146d5d3d87f055fca9372cb7a
@@ -3137,10 +3417,14 @@ trackedFiles:
     id: b36f7f8e8d4f
     last_write_checksum: sha1:58a22fb32f7900d4c1f33d31b37cf9fb0a15cafd
     pristine_git_object: 4359418c461ea1b0c6a55e7ab3316e8c51d37d67
+  src/Models/Components/ChatRenderOutput.php:
+    id: 23095cf8900a
+    last_write_checksum: sha1:e44bdf8929d95646e1bc395d363595657a2f13b9
+    pristine_git_object: efc428de8ee5eb07f50a846f8799a556f75a3caa
   src/Models/Components/ChatStepResponseDto.php:
     id: 021a91b7da35
-    last_write_checksum: sha1:1e5ed9d0c3655ac9479e07edd25f61b1448248e5
-    pristine_git_object: 3006ff547bdd7fc8baab266a448c3bef9f0c70ca
+    last_write_checksum: sha1:a0b8cbfbc50ad3a86c00e8dfc52c1a2a3fbd2d21
+    pristine_git_object: 3eba01498491b0a60493a71e8c522acca7560b92
   src/Models/Components/ChatStepResponseDtoControlValues.php:
     id: d94a140772eb
     last_write_checksum: sha1:a1f0cbd65705a4482a4a90a584e2e7d31f1ff0c9
@@ -3173,10 +3457,6 @@ trackedFiles:
     id: 1f665f9ba680
     last_write_checksum: sha1:ae2e6142c6680053f4dda4909afef27b9b00ff9e
     pristine_git_object: cf4941b58035f33b887c68667fd5545e4ec2b166
-  src/Models/Components/ControlValues.php:
-    id: 3bedef1ae7bf
-    last_write_checksum: sha1:2de340688ff7ab9571a6d6122744fb8969152d11
-    pristine_git_object: af590265d5ac7df27dfe710f76573823d751a9f7
   src/Models/Components/ControlVariables.php:
     id: 365732906f86
     last_write_checksum: sha1:a492a21a5bf7189f046668fd9c0c4cfb42d6b1ab
@@ -3311,8 +3591,8 @@ trackedFiles:
     pristine_git_object: 0db84bc6971c2868c969a3ba28c47984e4f4f8a6
   src/Models/Components/CreateWorkflowDto.php:
     id: 150c38de8f0e
-    last_write_checksum: sha1:07a63cd484d66ef0ce469fec18ccbe0886b20e80
-    pristine_git_object: b41e36b0805a186a021e625882e5d072d1d3c217
+    last_write_checksum: sha1:0765e0cc5f9c5d5d53a6ede402328749060142e4
+    pristine_git_object: c76d8fe258a502143a41531e940fc38d3e42b40d
   src/Models/Components/CreatedSubscriberDto.php:
     id: 4a89d25a1017
     last_write_checksum: sha1:19ae8b079e66512c731572d06143da306e25b3f9
@@ -3331,8 +3611,8 @@ trackedFiles:
     pristine_git_object: 67831bd5918e2e69bb5285880b384d71a30d4bef
   src/Models/Components/CustomStepResponseDto.php:
     id: c43512342f4d
-    last_write_checksum: sha1:2c5f153c02c18ff3a6d29623e0f5cf5734c65f4b
-    pristine_git_object: 688d6dad127cfb282d7bb875a7fbf8cf20e9f029
+    last_write_checksum: sha1:95cb6601043739b0eb326d5a82af924c10a6e8ba
+    pristine_git_object: 80f3cbf310ff3079e216ea1e203cd1672892b11f
   src/Models/Components/CustomStepResponseDtoControlValues.php:
     id: e7d223458834
     last_write_checksum: sha1:1ef3a284c01011579fc1e6b3e65b6bb00204c87a
@@ -3375,8 +3655,8 @@ trackedFiles:
     pristine_git_object: 03b91f6b8d8ecd75af39abc3ab8dc31102e29bc5
   src/Models/Components/DelayStepResponseDto.php:
     id: 42218949e17c
-    last_write_checksum: sha1:0310dcd8f898c827e839829e0a2130ef198f6089
-    pristine_git_object: 4d21dc1f960a413e2df14dff562b1e3c415f2699
+    last_write_checksum: sha1:0fb6a13c52ce12d1bb76569863fa313ed2319bcb
+    pristine_git_object: 67cb45cf629858455bd1f44681d58545ab0e685a
   src/Models/Components/DelayStepResponseDtoControlValues.php:
     id: 2134ec3abe2d
     last_write_checksum: sha1:3939538c697a6cef97a9243369b4bdeaa32f136a
@@ -3417,6 +3697,30 @@ trackedFiles:
     id: a433f98022a9
     last_write_checksum: sha1:e28bf647db9c64aa677ca9f4fe911056a601f65a
     pristine_git_object: e397d5e79fa9ae9b7dac3180eea81c4d407e8af9
+  src/Models/Components/DependencyReasonEnum.php:
+    id: 51dfb681d357
+    last_write_checksum: sha1:fcf656c823ce771869b2bb57f128e6f12483a2c6
+    pristine_git_object: 687e065844dd51ba4c523cae04b4f2c09a19554f
+  src/Models/Components/DiffActionEnum.php:
+    id: 400a5a31e32e
+    last_write_checksum: sha1:5624d7362015b6fe1cd7ff4c3ee63460ccd7e5ba
+    pristine_git_object: 34ceb6a6e001ff12674093e064910d4f9808a663
+  src/Models/Components/DiffEnvironmentRequestDto.php:
+    id: 03607ee50680
+    last_write_checksum: sha1:57db36d9e8b9fff3b0348a542425988fa8768694
+    pristine_git_object: 4c9b061f97b3eb95d5d225fbfb74b233788f7ea1
+  src/Models/Components/DiffEnvironmentResponseDto.php:
+    id: cf51a29e6461
+    last_write_checksum: sha1:eab88059d20be45b3d880b8aad6f79d73a2e3de2
+    pristine_git_object: 6ebfeb28f266f155651bbd5cd92d8fc9de26679f
+  src/Models/Components/DiffSummaryDto.php:
+    id: 4267bc1232e1
+    last_write_checksum: sha1:28fa04a22385442e5776413ebd00d4cc9dab6beb
+    pristine_git_object: 44550716eebea024b644f79ff123073ecfdcd090
+  src/Models/Components/Diffs.php:
+    id: b5f1480fb634
+    last_write_checksum: sha1:8241f421ecb54795879c87c2abc7320878b3de63
+    pristine_git_object: 0b819c68170bc83b3a1b44487d6c08d003f210cd
   src/Models/Components/DigestControlDto.php:
     id: f758c2dda5a5
     last_write_checksum: sha1:58f7fa9000c8c039306ac2b478e7a4486424928b
@@ -3453,10 +3757,14 @@ trackedFiles:
     id: a9243c2f3fe9
     last_write_checksum: sha1:ccad9f558c52ce0ec53b5a0ff1bef41013aa547f
     pristine_git_object: bb18b09914d46fa776d8590e0f1d0eb89fef0666
+  src/Models/Components/DigestRegularOutput.php:
+    id: 13357da207fe
+    last_write_checksum: sha1:95aa4a7ce004469069944fe8b7f53a0ccb34f03c
+    pristine_git_object: 6ea598cc34226184a0b1895e5226d60ea56567bd
   src/Models/Components/DigestStepResponseDto.php:
     id: 379a35cd62c8
-    last_write_checksum: sha1:7bc9e53ed7625412ab308a00731969d39b902f2c
-    pristine_git_object: 6b35acd8a3711c0872e1219879b80d825d23fb09
+    last_write_checksum: sha1:583be9680c4712ddc28b7266a86d6276f969b61f
+    pristine_git_object: 0cbd46501991b12791c1f79100bfcde3f2870cb3
   src/Models/Components/DigestStepResponseDtoControlValues.php:
     id: 7f69681c607d
     last_write_checksum: sha1:aaedc2ef72c8ae005fbd6052f95bcaf15224f23f
@@ -3513,6 +3821,10 @@ trackedFiles:
     id: fe48908d3b80
     last_write_checksum: sha1:859f9186bc6d1b9ed3e128aca7c3ede0b05aee6a
     pristine_git_object: ed15fa1ca754e87994be691ecd326bd812721350
+  src/Models/Components/Eight.php:
+    id: 3159c14ffa25
+    last_write_checksum: sha1:ddbf351ae958133ba0c06ac1dc3230e6f8f34292
+    pristine_git_object: 22f95940f88e5225fa5ea60f687361ff51eb1260
   src/Models/Components/EmailBlock.php:
     id: b6974083b904
     last_write_checksum: sha1:82ec54244af0aeee2a3f7cd751e029bb9eee92ed
@@ -3549,10 +3861,14 @@ trackedFiles:
     id: 12f39ac1fe70
     last_write_checksum: sha1:ceb0ee5502abdec4bd9a77d7e0fd1f29719fc115
     pristine_git_object: 6036bd29860a8ab910c427393fefd937c09b7b87
+  src/Models/Components/EmailRenderOutput.php:
+    id: cfc628de2d8c
+    last_write_checksum: sha1:c60a4ee628aed06a593164917355daa83821d91d
+    pristine_git_object: f085213004fdd1186b71c7b1d2efe7d4569a210b
   src/Models/Components/EmailStepResponseDto.php:
     id: 77982bf55b27
-    last_write_checksum: sha1:0bbd0a0095b393ed2af9e966134ef4753e829ca9
-    pristine_git_object: f50963f53b8908210cadac747e6369e4f775fad1
+    last_write_checksum: sha1:c58fe4c3e5b0ae7b49f1031bf8c6daf5eff7cbcb
+    pristine_git_object: 6463b8edf54195afc1740e4039a390c2a59929d5
   src/Models/Components/EmailStepResponseDtoControlValues.php:
     id: 143d856a4769
     last_write_checksum: sha1:fe2625b2b37e79364c7434fd9a925c0b499762b4
@@ -3565,6 +3881,10 @@ trackedFiles:
     id: 610a9e7755c7
     last_write_checksum: sha1:7c6fe49f886c90eab74c35f602dcb0b72e3f6ef8
     pristine_git_object: 71fe39b96004dbfe92320a569235465fe498862e
+  src/Models/Components/EnvironmentDiffSummaryDto.php:
+    id: 70340bb3f3f6
+    last_write_checksum: sha1:118f3090cbf59f331eb819b05140de208aeded12
+    pristine_git_object: 8c5d90e83d65b654b27582e0160ac4596536044e
   src/Models/Components/EnvironmentResponseDto.php:
     id: 455bb7925fdd
     last_write_checksum: sha1:06a355893c5f21a3a75ee0d2be7a289964a4f060
@@ -3589,6 +3909,10 @@ trackedFiles:
     id: 7eb9673e07a0
     last_write_checksum: sha1:c6aec54907d7f0d30a3cf6b1f939296ab3468b87
     pristine_git_object: 09c5a31b70723c20c6a902857198f278a1e97373
+  src/Models/Components/FailedWorkflowDto.php:
+    id: 0729870d4458
+    last_write_checksum: sha1:f87be6957ac5716d9d2dd2f137f28ee7a5c2246f
+    pristine_git_object: 1e000ffab54c9932e92cac749155a02313029f69
   src/Models/Components/FeedResponseDto.php:
     id: 8f4e29413aea
     last_write_checksum: sha1:0c69a97cfeecc3345d6cc482e81df36c4b71ab44
@@ -3621,6 +3945,46 @@ trackedFiles:
     id: 6a8dd13e3979
     last_write_checksum: sha1:7b4af66c1b6f643db28f03446cf29164cad68364
     pristine_git_object: a664701c6f9e63ca98a0071866cba05c8e4185db
+  src/Models/Components/GeneratePreviewRequestDto.php:
+    id: 11f067398fbd
+    last_write_checksum: sha1:508f631139be0658e3a0d6a47ab61ea71d7ae77b
+    pristine_git_object: 6c305a60795d80ca119a867728f045fca2b5aa9a
+  src/Models/Components/GeneratePreviewResponseDto.php:
+    id: ea49bfed7024
+    last_write_checksum: sha1:e90425ffcd45b8e316bb4f70a75f9196fd6527aa
+    pristine_git_object: 8d0613d64d70f54f65764d99da72a08744e1a254
+  src/Models/Components/GeneratePreviewResponseDtoResult3Type.php:
+    id: 8c4c8d5b1478
+    last_write_checksum: sha1:1ef7b2a34136a1ffc20169654000f6b6e62b0845
+    pristine_git_object: e1ca093e9e8a43bb96a1e101c7c32eabe84da60d
+  src/Models/Components/GeneratePreviewResponseDtoResult4Type.php:
+    id: 48e513cf0397
+    last_write_checksum: sha1:7faff9d215e66958f77999203c8ba94fd67b061b
+    pristine_git_object: b49edfab801b1be3c2b0be52bba686ff5c00001e
+  src/Models/Components/GeneratePreviewResponseDtoResult5Type.php:
+    id: 8a00677c5e01
+    last_write_checksum: sha1:0887ec0f4516228b312c0ff72e209b50415c8201
+    pristine_git_object: fd3ac7e399e139688608447ffb57f69a6c58cace
+  src/Models/Components/GeneratePreviewResponseDtoResult6Type.php:
+    id: ccf738637504
+    last_write_checksum: sha1:13468547be8818fb92977bda983918542f5830a2
+    pristine_git_object: 713d84a1845ea523135ec2572be1b8a603f724f8
+  src/Models/Components/GeneratePreviewResponseDtoResult7Type.php:
+    id: 74811f7face5
+    last_write_checksum: sha1:a3cbb7ba11ee2002a12ef03d6a8c474d93d1905a
+    pristine_git_object: 87fa9831bdee93f272b4bdba13d22d8cd95dd424
+  src/Models/Components/GeneratePreviewResponseDtoResult8Type.php:
+    id: 800ea56efe17
+    last_write_checksum: sha1:48fa3246f9941db27de25127205cb27bb851fa9b
+    pristine_git_object: 0395cd8983dcc9c97ab95651247eb1de100ca831
+  src/Models/Components/GeneratePreviewResponseDtoResult9Type.php:
+    id: 15fe30d4afa7
+    last_write_checksum: sha1:0f66de749b317abbc742ee4da98d748593ff7ca9
+    pristine_git_object: ad8efabd03d116dc6d9b38b66b6678d44af80f6d
+  src/Models/Components/GeneratePreviewResponseDtoResultType.php:
+    id: a3e5f0613681
+    last_write_checksum: sha1:2d7bf7fabda74373d4ab114aaf07e86ee1ed0224
+    pristine_git_object: 33a84ad554327daba5ad43e6030ad27e20d1f0e8
   src/Models/Components/GetChannelConnectionResponseDto.php:
     id: b71828aff7ef
     last_write_checksum: sha1:7e3e36253e5597608c7b780f14eb3f45735a76a0
@@ -3677,6 +4041,34 @@ trackedFiles:
     id: ad02256c5c96
     last_write_checksum: sha1:a1501c9715ec7533223aa607296899263f4e1a83
     pristine_git_object: b649930286201bd8c7aee3f38c5ca8842efc39cf
+  src/Models/Components/HttpMethodEnum.php:
+    id: eddb57781ecc
+    last_write_checksum: sha1:964d145724c31d23587e219671c63f109a85870d
+    pristine_git_object: 9498def92fa336e1778165b462829cec14b825f7
+  src/Models/Components/HttpRequestControlDto.php:
+    id: 74f9c3d00ba6
+    last_write_checksum: sha1:ca5dad29cfec31166b6354a5d557d2dd5ab7e206
+    pristine_git_object: cf4cfd4135fa528637501203d828f46a880721f1
+  src/Models/Components/HttpRequestControlsMetadataResponseDto.php:
+    id: 2c7df4816209
+    last_write_checksum: sha1:742e17fdafd046648143779ec3e16f55705996eb
+    pristine_git_object: 9eafbc3425c18de5cfb4a04ec6e69fa0ff194442
+  src/Models/Components/HttpRequestKeyValuePairDto.php:
+    id: f322bc8aac67
+    last_write_checksum: sha1:f138a617f6f9829d274c1ada0c676261bfe778e5
+    pristine_git_object: 4f9ebca1f1ecbcbc5485f1cad6976132fc173982
+  src/Models/Components/HttpRequestStepResponseDto.php:
+    id: 854f8457ddee
+    last_write_checksum: sha1:c8a35a99f85bd715fea78f28dc181a29a105962a
+    pristine_git_object: a7376500ec93e8b62547f76b0be8a752ae75442c
+  src/Models/Components/HttpRequestStepResponseDtoControlValues.php:
+    id: 26e945175553
+    last_write_checksum: sha1:e02a315a250c44bb8850c01e567ffadb584fcbda
+    pristine_git_object: f1a80d7e9dafe572908fa93a60b4f7ca43b5c753
+  src/Models/Components/HttpRequestStepUpsertDto.php:
+    id: fdac41090d30
+    last_write_checksum: sha1:0c35e292cc185705237ca5622fd976b175026e00
+    pristine_git_object: fcd2c067ffbbc3be4376012e3b11efc2b2a1350e
   src/Models/Components/ImportMasterJsonRequestDto.php:
     id: 8175c2db2903
     last_write_checksum: sha1:a95829af6d96e08b0eebeca07f6324ee6ce24f4e
@@ -3693,10 +4085,14 @@ trackedFiles:
     id: f3a390ef957b
     last_write_checksum: sha1:6c5e6be1b390b3bd83977f2c6db91ac6b01e5aea
     pristine_git_object: e61fd574463dac2f55c726eb7bdd37f575712777
+  src/Models/Components/InAppRenderOutput.php:
+    id: 858d336a4e36
+    last_write_checksum: sha1:fc54e6dd8e0c13685cb50cb9e1ca6f67a37bbad8
+    pristine_git_object: 70b2eb786077c5278b28b16c8676fd0a3cdfebd2
   src/Models/Components/InAppStepResponseDto.php:
     id: 33b3b956b0a7
-    last_write_checksum: sha1:270287d8b8a32a9d5c61250045720127dec39c79
-    pristine_git_object: 74cddf907a5a484bc91c42ef80d73b1d7e19a0ae
+    last_write_checksum: sha1:2c62ed48c2d4319fd0c551d15bb71a8eddb16d67
+    pristine_git_object: 3661718d7b736c7e52089cd6d09a6f18878b7a95
   src/Models/Components/InAppStepResponseDtoControlValues.php:
     id: 7d7019e792ac
     last_write_checksum: sha1:a8e513e91ca1800e6723100148961e0ad12e7d62
@@ -3719,16 +4115,12 @@ trackedFiles:
     pristine_git_object: 9624bf9fc57c97eb24951644b973bc28785233fd
   src/Models/Components/IntegrationResponseDto.php:
     id: 57476af2a153
-    last_write_checksum: sha1:209e3c1afdea4dba2ad9b852e8061b7e83547556
-    pristine_git_object: bbb710020eacbaa07db62872b11272c4e702f459
+    last_write_checksum: sha1:3ea1359a7c9c2132c093852b9a169f7727ea74aa
+    pristine_git_object: e50e7eb2881868a4c314dc9e06cf1b24e4c8dc6f
   src/Models/Components/IntegrationResponseDtoChannel.php:
     id: d4ac0709bf8c
-    last_write_checksum: sha1:5e8845608cdac77114f13cb209237568b46ff894
-    pristine_git_object: c05057b6ee8c3694792f4a98b4eadcff4705c18d
-  src/Models/Components/IssueType.php:
-    id: 741a44bd2e3d
-    last_write_checksum: sha1:f023ad49cca49ce76c93d04fd3c4aaf683998e1f
-    pristine_git_object: bb2ea4b890c6172536275f3c423f9bf770b71758
+    last_write_checksum: sha1:b363ee237f8a04ae3ea8ed39531dd45e667cf6ab
+    pristine_git_object: c5153e97d74f775ae1d5758d0aa04837fb886b31
   src/Models/Components/Issues.php:
     id: a8685a011d71
     last_write_checksum: sha1:9eb349b32ce56611d37969527086c1564afac69a
@@ -3743,8 +4135,8 @@ trackedFiles:
     pristine_git_object: a096b549610394c7db4fc67bd11025bb62650b72
   src/Models/Components/LayoutControlValuesDto.php:
     id: 8cf277f1dc2a
-    last_write_checksum: sha1:d114b923a35a552c4f971d582761ce09f98c73cc
-    pristine_git_object: 8a0d646e17b48084eee8f114cef9437a3534a4a9
+    last_write_checksum: sha1:3fad715eb63b1cc2471cdbbd45b7fe5a5875f9a4
+    pristine_git_object: 3553e0b7598e0b79d77ee055a68090cfb5c4f494
   src/Models/Components/LayoutControlsDto.php:
     id: c90d10a8aec5
     last_write_checksum: sha1:959ab78ab371cd09f6e17e91f704864de7493542
@@ -3801,6 +4193,10 @@ trackedFiles:
     id: a5049129029a
     last_write_checksum: sha1:9a6281a9d297a5d46998f3250aae8eb25cfe575b
     pristine_git_object: 91dc9a55ba599702b3f55d5c3ddccb0938cea140
+  src/Models/Components/LookBackWindow.php:
+    id: d99a58dd4d35
+    last_write_checksum: sha1:6bd8e4078bdf16cbad8447715f9dbdbb79bfaba1
+    pristine_git_object: ac74d3b0ef1db955cd3c71defaf300279ab1de8c
   src/Models/Components/LookBackWindowDto.php:
     id: a7f096f77a7e
     last_write_checksum: sha1:44766cea6e30494f91ad46ba9f798d78ce05b171
@@ -3905,6 +4301,10 @@ trackedFiles:
     id: f73bcf9e9acc
     last_write_checksum: sha1:d2a7b5101b4a7ba62934dd62bd50694978efa666
     pristine_git_object: 3bdc29c934b7f7a93f5bb7521fd0de2bb9409de3
+  src/Models/Components/Nine.php:
+    id: 7aa971cf4dc5
+    last_write_checksum: sha1:9625673a3c79e3f9560652b00aed4497b7a9b972
+    pristine_git_object: bbb7130707b5ee3acba404fbe3347b62482f542a
   src/Models/Components/NotificationFeedItemDto.php:
     id: 4d5a84a449f6
     last_write_checksum: sha1:a05a9a9a3a84d8df65997961d891cc251013074a
@@ -4021,6 +4421,18 @@ trackedFiles:
     id: 2436cf18dd65
     last_write_checksum: sha1:e746c1de2df1d447e83dec2d511bb8bf4f8ce1a6
     pristine_git_object: 3edf4cab1d3103413afa0ab5a6261793b30b779f
+  src/Models/Components/PreviewErrorDto.php:
+    id: 5df1560a136f
+    last_write_checksum: sha1:fc5b02440e8fb627b9e620cf56aaa2bc49fe2c1e
+    pristine_git_object: 4113d8bae4ddd91b1fbcb05867437fe6ee868d37
+  src/Models/Components/PreviewPayloadDto.php:
+    id: bd1a4fb2f45e
+    last_write_checksum: sha1:d0d667c96667cce8e6c0d9b72cd20b3491d8d093
+    pristine_git_object: ab8ff5fa84453fa524b1132e30646cd65dd964c4
+  src/Models/Components/PreviewPayloadDtoContext2.php:
+    id: f1f7e8b6d8ca
+    last_write_checksum: sha1:7b35cb27657888bac2d42b8b8b5ca37342a16dac
+    pristine_git_object: f8da85533d849178ad46675dc45c96f8bd9c354e
   src/Models/Components/ProviderId.php:
     id: 47280a7bc1ea
     last_write_checksum: sha1:ed1c632b5802410348c09fff16ce311cc8e3a24b
@@ -4029,6 +4441,18 @@ trackedFiles:
     id: 7edec4907f84
     last_write_checksum: sha1:82309e7dde66b8e3a0688e464e10cbe519de9a59
     pristine_git_object: 2ced2c0afab26a2fb1ca80d5b73d724ed263e6ca
+  src/Models/Components/PublishEnvironmentRequestDto.php:
+    id: 738637c697c3
+    last_write_checksum: sha1:a13cd48b10e0439f32754b275fc4572abb5fcd5a
+    pristine_git_object: 8c3eb0f375435218e3b43eb0a033360f9a846968
+  src/Models/Components/PublishEnvironmentResponseDto.php:
+    id: f01fb6b43053
+    last_write_checksum: sha1:9285114e9fe658b72c03102dd1f37351519e2e3f
+    pristine_git_object: ac3a607ef9d3ece7c5897c0d1d26d55e3e9f0265
+  src/Models/Components/PublishSummaryDto.php:
+    id: 024578a84e9f
+    last_write_checksum: sha1:867c11df3c855a399f8c9e78c48baf5b4516b609
+    pristine_git_object: 328be1b0b1df6b721c67d30f9cde920d7821d9ec
   src/Models/Components/PushControlDto.php:
     id: 7f5e8359c94d
     last_write_checksum: sha1:7e0d52a18c24f45857b7f19d3c1e34a72b9e560c
@@ -4037,10 +4461,14 @@ trackedFiles:
     id: ef877aa37fb2
     last_write_checksum: sha1:a51510cf5045762537233cd1f9cffd50bace3659
     pristine_git_object: 8b8d47abe41d54f6802fd617947217cdcfcd4e23
+  src/Models/Components/PushRenderOutput.php:
+    id: f9fdaed728f4
+    last_write_checksum: sha1:8910da6dcd0d60c45c3acdd38217d4187cf670d4
+    pristine_git_object: c680ea5157c01a2b064a0e4076ff02cbdd37c3b1
   src/Models/Components/PushStepResponseDto.php:
     id: bd530c8ba497
-    last_write_checksum: sha1:05b2291d3a63693b1a0394619389c5b1ed14a6ec
-    pristine_git_object: 6fcd8465fc7fe5b42cb6135869a25f4ed1f8171f
+    last_write_checksum: sha1:556fdd72e64bbafe550a31f0ca4e2867f8fa03d0
+    pristine_git_object: 2d6d6776c08e8cd30b70380fb1fc2a0b1ac0b86a
   src/Models/Components/PushStepResponseDtoControlValues.php:
     id: a42518eafee6
     last_write_checksum: sha1:bee2974727ba978dcab8c5dee2732587f8093a73
@@ -4061,10 +4489,50 @@ trackedFiles:
     id: 64fb9269a806
     last_write_checksum: sha1:93e576b74330a9cee59c91f3085129fafd314fc0
     pristine_git_object: f3de73cd402af95c241c815071cd8ee735986c1c
+  src/Models/Components/ResourceDependencyDto.php:
+    id: 364c75c3954b
+    last_write_checksum: sha1:efe07a00eaf9bd8b4b97644612dfc8e669668211
+    pristine_git_object: 7bdf4189869a97f663faa3414d25b312aaaffdf2
+  src/Models/Components/ResourceDiffDto.php:
+    id: ec2b8a6ae8bc
+    last_write_checksum: sha1:b2c36fd8701b65332d4ccabad051221c0f96eb6f
+    pristine_git_object: fa41f2a821287579c27697a86277431f7706291a
+  src/Models/Components/ResourceDiffDtoSourceResource.php:
+    id: ff97c9eb86f9
+    last_write_checksum: sha1:cb9c0335a3453cdc2d585092bedeceb90f3d5929
+    pristine_git_object: 7a554afe946db7ca46c938aa0b1c8c82dbc63ee9
+  src/Models/Components/ResourceDiffDtoTargetResource.php:
+    id: 1d0afb39ee69
+    last_write_checksum: sha1:1d90955951fcb09429429d0761de81bf975b9526
+    pristine_git_object: 591c2658ac4ecc05cacd49b25db84210c802e7bf
+  src/Models/Components/ResourceDiffDtoTargetResourceUpdatedBy.php:
+    id: c68a3ecfa137
+    last_write_checksum: sha1:2a0dba555199c31be045d0dbb41067382bf9883c
+    pristine_git_object: 0073c728f4b327582c787cc33387e9faab532302
+  src/Models/Components/ResourceDiffDtoUpdatedBy.php:
+    id: 6c7f6b6dff8b
+    last_write_checksum: sha1:236cd24fe0a12c35360329891f8150a2d07a5bcf
+    pristine_git_object: dc588dafc64b14ffd37017753c09a4e69d1ffd20
+  src/Models/Components/ResourceDiffResultDto.php:
+    id: 911aef9ab2e0
+    last_write_checksum: sha1:2225e5e9ee0dc4a6a3799d01ed1df6058bfd7e02
+    pristine_git_object: affe9fd008936aa9d9fbd05b6f95f97d1cdb007e
+  src/Models/Components/ResourceDiffResultDtoSourceResourceUpdatedBy.php:
+    id: 238ec3b5d2d9
+    last_write_checksum: sha1:26d626bc978d0aa2b1b75015add81797b7e8e4a7
+    pristine_git_object: 50d1defbf900fa38c9666a6026df886f41d848cf
+  src/Models/Components/ResourceDiffResultDtoUpdatedBy.php:
+    id: dd9be7c90840
+    last_write_checksum: sha1:690ae243f2b6464f50b7717aa9c2d4ec330964f9
+    pristine_git_object: b9a096b2ba714eee9eb6654376d10e76f6bfe042
   src/Models/Components/ResourceOriginEnum.php:
     id: 278af4c917aa
     last_write_checksum: sha1:9616eadd00ecbfb46d49b5294569bc18dea78436
     pristine_git_object: 4f7f377dcc133f426d48a2c34ea141843c7285c2
+  src/Models/Components/ResourceToPublishDto.php:
+    id: b40a80d03967
+    last_write_checksum: sha1:f99072fe0052b207842acf3f3c6ce2e78d16cff0
+    pristine_git_object: f3b4f352079821122b36b9edb71a343b74bfb2fa
   src/Models/Components/ResourceType.php:
     id: c4764600afd7
     last_write_checksum: sha1:208718fbc4a447e101288db811ae298077cc3a0e
@@ -4073,14 +4541,26 @@ trackedFiles:
     id: d092b5138f2f
     last_write_checksum: sha1:a1e6478dc2c7bd43865c09370cf148eef89aaf48
     pristine_git_object: 3ced2e7acc58c32728fa5b2a20ffa3f88694b0e0
+  src/Models/Components/Result2.php:
+    id: 268890940bc1
+    last_write_checksum: sha1:117a50a48497bf1be4148db37ec82aed030b3a03
+    pristine_git_object: c369cc5a439b1a7af3c11bae14ad426656d169bd
+  src/Models/Components/Result4.php:
+    id: 414140636ef2
+    last_write_checksum: sha1:edf2d5a63315b2079b87518ff072a64a1807a42b
+    pristine_git_object: 8326a8284257f606d72b67c71fe02b706e9a6b73
+  src/Models/Components/Result5.php:
+    id: 580ac8a2b286
+    last_write_checksum: sha1:6b5f7a03b9e0042019af9777cbd053a4c7c95aec
+    pristine_git_object: a54dd99bf56d51c3d375c7c0456be3924715bb9e
   src/Models/Components/ResultType.php:
     id: 0f25144d6ed9
     last_write_checksum: sha1:2c019ac8d8e0424ed753baeb12c8d0e3d3bbd745
     pristine_git_object: 6665a273d6b0dc3a44755ef73e541da9779233d7
   src/Models/Components/RuntimeIssueDto.php:
     id: 9deffc09fe30
-    last_write_checksum: sha1:5ed4ff7a1a919355ebd614afc03f45e7ea551ff6
-    pristine_git_object: e23e37217838cc2907d58e75373fbffb037a6833
+    last_write_checksum: sha1:b03f3831dac03f287618360fbaa77d2c652d2563
+    pristine_git_object: c5e930feb954459454440409f32106af3eb3a6ac
   src/Models/Components/Saturday.php:
     id: f9b7ded3fb93
     last_write_checksum: sha1:147ece08bc8b6389aa34cbc011cea5f37d1485c5
@@ -4093,10 +4573,22 @@ trackedFiles:
     id: 7c1ef2c6cbb3
     last_write_checksum: sha1:1f1e3c42caedf81716ddf5ec603ede8064fc7b2f
     pristine_git_object: 6e3709b58a161554689238f4c408afa279fe759a
+  src/Models/Components/Seven.php:
+    id: 6955c1f2db71
+    last_write_checksum: sha1:84c0587bb107067a0a3f063482cd008cac4a769b
+    pristine_git_object: 43972f0c705eae43ff6f86c96ed7f1a683ac08d0
   src/Models/Components/SeverityLevelEnum.php:
     id: 515700b15b57
     last_write_checksum: sha1:0caa07cf4070b34a1042f6f6d4807f7779ef5112
     pristine_git_object: b04f52b26eb7d27eb416667ee12eab52b7f70412
+  src/Models/Components/Six.php:
+    id: 46b99923a2e5
+    last_write_checksum: sha1:795995156c9413bf60de511b385ef9955298c27e
+    pristine_git_object: cbd9a5e880e81430af0900a8f0b611f20bb12bd3
+  src/Models/Components/SkippedWorkflowDto.php:
+    id: 32ef75733cbe
+    last_write_checksum: sha1:de3042a6b71049263355a1ce755151486748211c
+    pristine_git_object: f607a026165d237543264304c229ec8dd34b78be
   src/Models/Components/SlackChannelEndpointDto.php:
     id: 6df630a36d4c
     last_write_checksum: sha1:53facd526c30a7537b39a6da3d4e1acd89a7d952
@@ -4113,10 +4605,14 @@ trackedFiles:
     id: eb7b2f693f1d
     last_write_checksum: sha1:bfc6951f78de8081e825ca304ec0faa445973170
     pristine_git_object: 086d84e6e4ab63735963901766678eda119a77c9
+  src/Models/Components/SmsRenderOutput.php:
+    id: 7b901a31fdd6
+    last_write_checksum: sha1:7b3e02ba35156ffe1054a5e9ec0e32fc2763f2cb
+    pristine_git_object: efdeb390b9a64eb0d4da576f048c4adea3f26ab3
   src/Models/Components/SmsStepResponseDto.php:
     id: 81a007a2fe52
-    last_write_checksum: sha1:59e0a5c70a269f21ec69138a56689dda7394dc2d
-    pristine_git_object: 06ebb8be77ab931ed32874f32abce127802793de
+    last_write_checksum: sha1:37330edb77d504b0feaa09d75824bd7ce955933a
+    pristine_git_object: 4c9def314660edd117527ef321cd9ba5a10b864d
   src/Models/Components/SmsStepResponseDtoControlValues.php:
     id: f6232a0e3e98
     last_write_checksum: sha1:b7887f0b9a3582c00375c8bc45758940d5209703
@@ -4125,6 +4621,10 @@ trackedFiles:
     id: b66ced50b1d1
     last_write_checksum: sha1:493fdd1ca325364802a91acde2e45947db02ed1b
     pristine_git_object: bc9dd0e5feae5614a8515d0b5c9dc183eba7187a
+  src/Models/Components/SourceResource.php:
+    id: b669798b0618
+    last_write_checksum: sha1:ddec7541ebeae40dfb4202562a5ba080ab61f25b
+    pristine_git_object: 66fa5dca6a107e9b9d746da976d585bc181205bb
   src/Models/Components/Status.php:
     id: acaeb52457b8
     last_write_checksum: sha1:552e232d18e35d13b4efa923a61f3a2821e00654
@@ -4155,12 +4655,12 @@ trackedFiles:
     pristine_git_object: 87ee655fbd92b7e322455d15696cfe625ec7e8eb
   src/Models/Components/StepResponseDto.php:
     id: 2f95d691d3d0
-    last_write_checksum: sha1:f3b459d6943e01ede2b983f5dd43843cf1639e62
-    pristine_git_object: eeeb2a0a9b5702abb201226ea109aa8707fe1f49
+    last_write_checksum: sha1:54c4f56c0e3ce1562337435b8483b133df239731
+    pristine_git_object: bdc1792372880778366f9c21322517f1c7cb1e6a
   src/Models/Components/StepTypeEnum.php:
     id: 2faf2feed84d
-    last_write_checksum: sha1:14a75504a63af5e819fcffe62690a3bef849b60f
-    pristine_git_object: 3e9de62d018c1a6331c0cb1d7c88be968deb67ff
+    last_write_checksum: sha1:8617b4a88f771040bf5403cd683a5424b8aab551
+    pristine_git_object: a9bb9dd8bc5a4b944d3e65ea93027ff1bcf980f0
   src/Models/Components/StepsOverrides.php:
     id: c6c7174895d8
     last_write_checksum: sha1:5b394557ff58be668eb66c1e85060ed876620b9c
@@ -4207,12 +4707,12 @@ trackedFiles:
     pristine_git_object: f669e6ad98f1abe40262cd63dabe0459de81c4d7
   src/Models/Components/SubscriberResponseDto.php:
     id: 6b6a64a2aa82
-    last_write_checksum: sha1:4a34243c236bd99f38003ddac793c58c340096d3
-    pristine_git_object: 0f68005db3f0ee54fa7faff11483c6967bf90d3d
+    last_write_checksum: sha1:99ae1c2415ddcacca9b31a19b48b2fc3e15296b4
+    pristine_git_object: 3f96657965c515cccd12a7483730b91fca9e52f7
   src/Models/Components/SubscriberResponseDtoOptional.php:
     id: c9831b62ac2e
-    last_write_checksum: sha1:727c1946d82bd9a9ebf035ad5d73517b7cba92e3
-    pristine_git_object: fe4861080f4343ed06006adc3501d9a2e38f9715
+    last_write_checksum: sha1:e0c412a882cb95e18b6bad772e260e912901c18b
+    pristine_git_object: 311c2d765202f86241062bc68c0abd6b3811de8a
   src/Models/Components/SubscriberWorkflowPreferenceDto.php:
     id: db8c24c7a358
     last_write_checksum: sha1:69c046c42b4426496f7944034c4824d6acfc3140
@@ -4257,14 +4757,30 @@ trackedFiles:
     id: 0ecafdbd841e
     last_write_checksum: sha1:ab6cefbae10f5db3e9d291538f0d095d6781193d
     pristine_git_object: 7da172643e2ad41ebc96852f22e61ce8be1d08af
+  src/Models/Components/SyncActionEnum.php:
+    id: f6f1b968d259
+    last_write_checksum: sha1:bb21a1cc5d9c6694bf50a990d7927325bf528726
+    pristine_git_object: 32c5d03db0f6b831edf3a49f9794577e4347e462
+  src/Models/Components/SyncResultDto.php:
+    id: bc9bdd684f49
+    last_write_checksum: sha1:dc4da0d2455f253d50169eecdd680e0e7404c71a
+    pristine_git_object: 2d9f5941f5aea47d19843d384de100ca58edd707
   src/Models/Components/SyncWorkflowDto.php:
     id: 30ce3d86c0a0
     last_write_checksum: sha1:16ca3ce8bd7f1c5efbb3180b523642c1ce7d28ab
     pristine_git_object: 6d7bee8f46a6f2f8f86ef15761665e5037a22cab
+  src/Models/Components/SyncedWorkflowDto.php:
+    id: b19ab52b8f2e
+    last_write_checksum: sha1:8d2899acc466f3f10f71ecdf9e010f8765cc615a
+    pristine_git_object: 0c055a44087c938803a62d92bf4cd67de989aa8a
   src/Models/Components/Target.php:
     id: 20717fa50cf6
     last_write_checksum: sha1:78c2aa53fd76b4b0a10f2f8ebd9e57c99577f3fa
     pristine_git_object: f7b4c2aa6b125b20d79bf5ac58e9893c43cea429
+  src/Models/Components/TargetResource.php:
+    id: ba1e6b3ff23b
+    last_write_checksum: sha1:6fe7ce4ab73e43c75bf0cd0b0e4095105a36881a
+    pristine_git_object: 9e52831b5c7416149de69286802103b36a103c25
   src/Models/Components/TenantPayloadDto.php:
     id: e69b5d9c512f
     last_write_checksum: sha1:a9d67258e42e7aa1c3f135a5d0258524d3d254cb
@@ -4273,6 +4789,10 @@ trackedFiles:
     id: b4076d84e119
     last_write_checksum: sha1:baadbb4b92f57139c6acbb97927fc711da205a5c
     pristine_git_object: 69ec62212a661ea9b7c9dcd83581a8cedefb9c07
+  src/Models/Components/Three.php:
+    id: df35fd181164
+    last_write_checksum: sha1:fb404d8140fe26300da49a2c72c954284459b6d9
+    pristine_git_object: 33bbba6e14787c4a5b835b14be88f6f51d95def0
   src/Models/Components/ThrottleControlDto.php:
     id: a1688799ccc1
     last_write_checksum: sha1:3593e79553f98b041209be77b67955239badcbc7
@@ -4291,8 +4811,8 @@ trackedFiles:
     pristine_git_object: 2715e95af8410cf8063e29915539b680f6f52f41
   src/Models/Components/ThrottleStepResponseDto.php:
     id: 186b05bf6f60
-    last_write_checksum: sha1:c8ce541f8f5973621c561806f84c5928715608f7
-    pristine_git_object: e4b351f3aa8a758554864119382234187d2ac93f
+    last_write_checksum: sha1:7822dcbcc00e2e67845cefd2ae771aa7856e82b8
+    pristine_git_object: 04f47b56a400b49381ee29403a9a7a1a4ebda231
   src/Models/Components/ThrottleStepResponseDtoControlValues.php:
     id: d825fc640a26
     last_write_checksum: sha1:794c4d73c6091b2e784c98c5dffca3065be5ea01
@@ -4317,6 +4837,10 @@ trackedFiles:
     id: be39baa4d2b6
     last_write_checksum: sha1:b920b3a4d8c2aa0a6022f325ba0d30bf0fa0ab83
     pristine_git_object: abc072671c3f3dbae115de8929422ce701920452
+  src/Models/Components/TimeUnitEnum.php:
+    id: d0043d1e6350
+    last_write_checksum: sha1:fa48fc26d44f06dc0e4dd44eb60da025fffaad34
+    pristine_git_object: cbaf94644082a1f674d3f60f5f66b245550ffbbf
   src/Models/Components/TimedConfig.php:
     id: 15df6b7228fc
     last_write_checksum: sha1:64e72a393c404bf50dc0af4119771f5efbfa3960
@@ -4415,16 +4939,16 @@ trackedFiles:
     pristine_git_object: 2891bec45e015ee14280175661fd551e0523e494
   src/Models/Components/UiComponentEnum.php:
     id: 538c5d2c0420
-    last_write_checksum: sha1:9e6a6cb5207d44e94c9ef09e8ad9763ae1b2c230
-    pristine_git_object: f478118cc03858cfbdae9c9b2fd542d54927b140
+    last_write_checksum: sha1:64ed9c184557461de7aa22ecf8057450e9b8956b
+    pristine_git_object: 6a2db47b09c4e24ce90f4ebc75cfd132639a2b6c
   src/Models/Components/UiSchema.php:
     id: feec459787b0
     last_write_checksum: sha1:64128672cb39336bb5d778d255143fd3ab00c561
     pristine_git_object: 4d2703edc9d7fe3785e1e44121d93b88c2874821
   src/Models/Components/UiSchemaGroupEnum.php:
     id: 08fe0b41938b
-    last_write_checksum: sha1:4ac1d8a47dc031f3276427bbbfaf87ba662afe68
-    pristine_git_object: 3582cd38a4e484d4005657a7d4c3e18ed767b992
+    last_write_checksum: sha1:f9cd5467f3e884308dddc9a05ba04ed076f6de28
+    pristine_git_object: 1739fb2390822cec7b8b4ed81a828c9d612e0312
   src/Models/Components/UiSchemaProperty.php:
     id: 2e9d6b5971aa
     last_write_checksum: sha1:cb4be798db1cf278175040ee25a9b93e96dbbaf8
@@ -4463,12 +4987,12 @@ trackedFiles:
     pristine_git_object: f9193016df68e136ff36f4e659ff9860c56b3b98
   src/Models/Components/UpdateLayoutDto.php:
     id: 75bc484829c0
-    last_write_checksum: sha1:282c7e250e19c59ec2a23f6595dd9b75e7979519
-    pristine_git_object: f284dae22649ac7f657b79ea672d50965e2fc9b4
+    last_write_checksum: sha1:59e58bffaa84cd45aa9c5a029eb9bb6fdc3764d2
+    pristine_git_object: bca261e838a0555cf2a4705ca17b9ea17a8bfa5b
   src/Models/Components/UpdateSubscriberChannelRequestDto.php:
     id: 36821a853287
-    last_write_checksum: sha1:db6f1f0f0cecff1a24eb945ee9897e45e1f8fad6
-    pristine_git_object: 04913d7cb416c3f6dd0160cae103118ec37f7657
+    last_write_checksum: sha1:16402aa1e1b215e6cc3ef69350c9cf946bd3deda
+    pristine_git_object: 1d70835309107736f6cdbfe609f39e918ea903a0
   src/Models/Components/UpdateSubscriberOnlineFlagRequestDto.php:
     id: 6e5bc0d2da58
     last_write_checksum: sha1:9a31856ec01d6448d3dfa9583c0b6a545e4fc419
@@ -4483,8 +5007,8 @@ trackedFiles:
     pristine_git_object: 65ab374bed25c5504bc563fc7c62e041b69a904d
   src/Models/Components/UpdateWorkflowDto.php:
     id: 5c173b056a5c
-    last_write_checksum: sha1:0fb7c5b105ab972d4d2c1ca8485604f0cf4a6964
-    pristine_git_object: 6dbba7aa047831af16741bcb4e4005e6ba2ae7f3
+    last_write_checksum: sha1:86a9859ce81c64e2b68c3c7a73e0619cf472804b
+    pristine_git_object: 212181241964199d64d45924e3f4728afad59ff5
   src/Models/Components/UpdatedBy.php:
     id: 198dc129bc85
     last_write_checksum: sha1:49716cf380aa243b317025ad5df0fe748da7d812
@@ -4531,8 +5055,8 @@ trackedFiles:
     pristine_git_object: 2e8f185702687b8cefc8b53460a78c8bc27dadbe
   src/Models/Components/WorkflowCreationSourceEnum.php:
     id: c06a919ebdf0
-    last_write_checksum: sha1:1b7381c28033ab3945ec96cf5c54f3f7d4f872b3
-    pristine_git_object: c13ec8adeb9cc46602ebc0ce73f91fd4df7c673d
+    last_write_checksum: sha1:fd18b9ae3a459fca5050d247ef08cb282030c768
+    pristine_git_object: bf4c51d736b3888058d9f7788e8c27da25765cfe
   src/Models/Components/WorkflowInfoDto.php:
     id: 91e93cf03a29
     last_write_checksum: sha1:79619f36d885fc9dcb5b041033f58ca73c2b830d
@@ -4583,8 +5107,8 @@ trackedFiles:
     pristine_git_object: b8bbe38f7e605e1571de773ba31482691d751640
   src/Models/Components/WorkflowResponseDto.php:
     id: 967e8d7c9749
-    last_write_checksum: sha1:cef1406db1e0f2ff03b820b68dc03aec4daa2295
-    pristine_git_object: 453504f2e6aec5b40b589d6c4bef87fd508fdce5
+    last_write_checksum: sha1:fb400251a07754bb6a3f8301262d492db3c426fb
+    pristine_git_object: 2cca8609aaf3513fae6081e462ac066d10e03abc
   src/Models/Components/WorkflowResponseDtoSortField.php:
     id: 5afb364e7aaf
     last_write_checksum: sha1:c541f399388fe02419ffccb89d451fdf1a7bc1c4
@@ -4639,8 +5163,8 @@ trackedFiles:
     pristine_git_object: f0510d363391e33845a14513744b90c50c80a2a2
   src/Models/Errors/SubscriberResponseDto.php:
     id: bf51d7693698
-    last_write_checksum: sha1:c427b11ab15f088dabb7981f0947e70aff878bcf
-    pristine_git_object: b13976b54b64cbe510fa5588b6cc4b186d64e940
+    last_write_checksum: sha1:5dd487c4da7cd69947f6814adf195eeb27c487a6
+    pristine_git_object: 9be82f718c45c73ff3c42a68c3b2221fd79954fd
   src/Models/Errors/SubscriberResponseDtoThrowable.php:
     id: 79ac18eb534d
     last_write_checksum: sha1:a558335628f0ab044cc448a4d8178b5cb6c8c916
@@ -4797,6 +5321,14 @@ trackedFiles:
     id: a10a40e848e0
     last_write_checksum: sha1:2f24b67c9f18fbf599b11ceb458516d195779b58
     pristine_git_object: 5ce10d953f0e6e3fbfc792bb5b1f6d4aba5bb24f
+  src/Models/Operations/EnvironmentsControllerDiffEnvironmentRequest.php:
+    id: b89460b3c3c1
+    last_write_checksum: sha1:81b66e0a022b357f4f3efa62c68ab0bce0c72ee3
+    pristine_git_object: f76b5d3d1f730cffb2ab1a0a799484af44ad8fd8
+  src/Models/Operations/EnvironmentsControllerDiffEnvironmentResponse.php:
+    id: d66441667723
+    last_write_checksum: sha1:314a18150cb0f70928e72ec86a436cd539ab18f1
+    pristine_git_object: 18f22cf6392eac07513699e3298cc5a126c3aaae
   src/Models/Operations/EnvironmentsControllerGetEnvironmentTagsRequest.php:
     id: 2866563340be
     last_write_checksum: sha1:c43d3f4e4a03b398875de5c4319e550818380b4c
@@ -4805,6 +5337,14 @@ trackedFiles:
     id: e1b89cc604e2
     last_write_checksum: sha1:9328ab61dd67cba8f8f515f3a98da9bf46548bfc
     pristine_git_object: 3121fef183aa65ed56afa8b29b8367bdc99c8b50
+  src/Models/Operations/EnvironmentsControllerPublishEnvironmentRequest.php:
+    id: ec305703a6c2
+    last_write_checksum: sha1:72fd3ab41e9cf43ef4744e0f19ce01bc246b2093
+    pristine_git_object: 22503c652234d7e57f9009e358210ac117af24b2
+  src/Models/Operations/EnvironmentsControllerPublishEnvironmentResponse.php:
+    id: 3f38237a5535
+    last_write_checksum: sha1:3683a205822aa489af1fccfaa434b55c79332c33
+    pristine_git_object: 8404529e75f293dfd6b0801d368a83600cee880f
   src/Models/Operations/EnvironmentsControllerV1CreateEnvironmentRequest.php:
     id: a676819f2459
     last_write_checksum: sha1:4a9f60eb70a1ffbdf31f10dda662932c5292fde5
@@ -5429,6 +5969,14 @@ trackedFiles:
     id: 19792dfea31c
     last_write_checksum: sha1:7f038be95012f39b476638e60e3d5526a0e9e480
     pristine_git_object: 6956e4e98babf2ff7c9a554bf2b4f60583884175
+  src/Models/Operations/WorkflowControllerGeneratePreviewRequest.php:
+    id: 6d4e22cffe13
+    last_write_checksum: sha1:859a7f339a30b492c05e0ef0131e909078ebfe49
+    pristine_git_object: d6b9e4adf587b55c849b88ba7f279502d9cb0e0d
+  src/Models/Operations/WorkflowControllerGeneratePreviewResponse.php:
+    id: cd96585db23e
+    last_write_checksum: sha1:6ed1ea7268412127632c7f77a81508c9718ffa39
+    pristine_git_object: d907f35397fa1dcf483f11e7d772c98f5b29ad09
   src/Models/Operations/WorkflowControllerGetWorkflowRequest.php:
     id: 2d6455b9b55b
     last_write_checksum: sha1:f3ceb76737d467094057f170b52ab60a6a9141ea
@@ -5515,12 +6063,12 @@ trackedFiles:
     pristine_git_object: b48407cddc057c08520d1db020504b4331cc3933
   src/SDKConfiguration.php:
     id: 9d60ab0bec0b
-    last_write_checksum: sha1:a53f56fc5abcac0f17b07edac51ba4a6277dc8ab
-    pristine_git_object: 2bd7080b2eefd201f5b3bc71bcecf2894357491b
+    last_write_checksum: sha1:6d47c4f15813b8d60b3fefbf7e39ff9888eae82e
+    pristine_git_object: 0a1642d72a46761e3a73bb51738693ebbef679b1
   src/Steps.php:
     id: 9ae87f15c136
-    last_write_checksum: sha1:069bd65c3e5e2d74f8b67910bd8e501e5d42be4d
-    pristine_git_object: c99e5121c403407ee05d2cc0a2f78431ae5fd929
+    last_write_checksum: sha1:ce93ef958b2f392b0e30cd6e0dd893a607ae1353
+    pristine_git_object: 002392d981f26903be18ffdc7efe56ac41b68f97
   src/Subscribers.php:
     id: 8e91b5d62429
     last_write_checksum: sha1:f2a00363c415c3b60dfd43b1867cff37cd3b0211
@@ -5559,8 +6107,8 @@ trackedFiles:
     pristine_git_object: a2dedfadb0a46bf9d8e353032870bcc4829b347e
   src/Utils/BigDecimalHandler.php:
     id: cdcca3718e2e
-    last_write_checksum: sha1:f9095a229fab43178d64443e6e4f57a04fb25df8
-    pristine_git_object: cd06b3a751d4ad387231e5d933f6a948c7679929
+    last_write_checksum: sha1:c19546ef41ec8b6ff0ca081f70f5216be382d8f9
+    pristine_git_object: b9fd9eebe53050437f10487050df7eea04f4ec23
   src/Utils/BigIntHandler.php:
     id: 190c4d16fa85
     last_write_checksum: sha1:22ae132e6f5d3da76e6bbd0f67071c9ed24bd7f2
@@ -5776,7 +6324,7 @@ examples:
           limit: 10
       responses:
         "200":
-          application/json: {"data": [{"channels": [{"providerId": "pusher-beams", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}, {"providerId": "pusher-beams", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}], "subscriberId": "<id>", "_organizationId": "<id>", "_environmentId": "<id>", "deleted": false, "createdAt": "1723832108589", "updatedAt": "1735636837621"}, {"channels": [{"providerId": "pusher-beams", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}, {"providerId": "pusher-beams", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}], "subscriberId": "<id>", "_organizationId": "<id>", "_environmentId": "<id>", "deleted": false, "createdAt": "1723832108589", "updatedAt": "1735636837621"}, {"channels": [{"providerId": "pusher-beams", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}, {"providerId": "pusher-beams", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}], "subscriberId": "<id>", "_organizationId": "<id>", "_environmentId": "<id>", "deleted": false, "createdAt": "1723832108589", "updatedAt": "1735636837621"}], "next": "<value>", "previous": null, "totalCount": 9050.11, "totalCountCapped": false}
+          application/json: {"data": [{"firstName": "Maegan", "lastName": "Muller", "channels": [{"providerId": "pusher-beams", "integrationIdentifier": "<value>", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}, {"providerId": "pusher-beams", "integrationIdentifier": "<value>", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}], "isOnline": true, "lastOnlineAt": null, "subscriberId": "<id>", "_organizationId": "<id>", "_environmentId": "<id>", "deleted": false, "createdAt": "1723832108589", "updatedAt": "1735636837621"}, {"firstName": null, "lastName": "Satterfield", "channels": [{"providerId": "pusher-beams", "integrationIdentifier": "<value>", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}, {"providerId": "pusher-beams", "integrationIdentifier": "<value>", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}], "isOnline": true, "lastOnlineAt": "<value>", "subscriberId": "<id>", "_organizationId": "<id>", "_environmentId": "<id>", "deleted": false, "createdAt": "1723832108589", "updatedAt": "1735636837621"}, {"firstName": "Nolan", "lastName": "Nicolas", "channels": [{"providerId": "pusher-beams", "integrationIdentifier": "<value>", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}, {"providerId": "pusher-beams", "integrationIdentifier": "<value>", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}], "isOnline": true, "lastOnlineAt": "<value>", "subscriberId": "<id>", "_organizationId": "<id>", "_environmentId": "<id>", "deleted": false, "createdAt": "1723832108589", "updatedAt": "1735636837621"}], "next": "<value>", "previous": null, "totalCount": 9050.11, "totalCountCapped": false}
         "414":
           application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
         "400":
@@ -5791,7 +6339,7 @@ examples:
         application/json: {"firstName": "John", "lastName": "Doe", "email": "john.doe@example.com", "phone": "+1234567890", "avatar": "https://example.com/avatar.jpg", "locale": "en-US", "timezone": "America/New_York", "subscriberId": "<id>"}
       responses:
         "201":
-          application/json: {"channels": [{"providerId": "zulip", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}, {"providerId": "zulip", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}], "subscriberId": "<id>", "_organizationId": "<id>", "_environmentId": "<id>", "deleted": true, "createdAt": "1714470810745", "updatedAt": "1735674320193"}
+          application/json: {"firstName": "Eli", "lastName": "Senger", "channels": [{"providerId": "zulip", "integrationIdentifier": "<value>", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}, {"providerId": "zulip", "integrationIdentifier": "<value>", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}], "isOnline": true, "lastOnlineAt": "<value>", "subscriberId": "<id>", "_organizationId": "<id>", "_environmentId": "<id>", "deleted": true, "createdAt": "1714470810745", "updatedAt": "1735674320193"}
         "414":
           application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
         "400":
@@ -5801,7 +6349,7 @@ examples:
         "500":
           application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
         "409":
-          application/json: {"channels": [{"providerId": "novu-slack", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}], "subscriberId": "<id>", "_organizationId": "<id>", "_environmentId": "<id>", "deleted": true, "createdAt": "1714911393177", "updatedAt": "1735631466004"}
+          application/json: {"firstName": "Terence", "lastName": "Schulist", "channels": [{"providerId": "novu-slack", "integrationIdentifier": "<value>", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}], "isOnline": false, "lastOnlineAt": "<value>", "subscriberId": "<id>", "_organizationId": "<id>", "_environmentId": "<id>", "deleted": true, "createdAt": "1714911393177", "updatedAt": "1735631466004"}
   SubscribersController_getSubscriber:
     speakeasy-default-subscribers-controller-get-subscriber:
       parameters:
@@ -5809,7 +6357,7 @@ examples:
           subscriberId: "<id>"
       responses:
         "200":
-          application/json: {"channels": [{"providerId": "slack", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}], "subscriberId": "<id>", "_organizationId": "<id>", "_environmentId": "<id>", "deleted": true, "createdAt": "1727316522922", "updatedAt": "1735624846579"}
+          application/json: {"firstName": "Ali", "lastName": null, "channels": [{"providerId": "slack", "integrationIdentifier": "<value>", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}], "isOnline": true, "lastOnlineAt": "<value>", "subscriberId": "<id>", "_organizationId": "<id>", "_environmentId": "<id>", "deleted": true, "createdAt": "1727316522922", "updatedAt": "1735624846579"}
         "414":
           application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
         "400":
@@ -5827,7 +6375,7 @@ examples:
         application/json: {"firstName": "John", "lastName": "Doe", "email": "john.doe@example.com", "phone": "+1234567890", "avatar": "https://example.com/avatar.jpg", "locale": "en-US", "timezone": "America/New_York"}
       responses:
         "200":
-          application/json: {"channels": [{"providerId": "fcm", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}, {"providerId": "fcm", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}], "subscriberId": "<id>", "_organizationId": "<id>", "_environmentId": "<id>", "deleted": false, "createdAt": "1732490680659", "updatedAt": "1735674157313"}
+          application/json: {"firstName": "Lenore", "lastName": "Schuster", "channels": [{"providerId": "fcm", "integrationIdentifier": "<value>", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}, {"providerId": "fcm", "integrationIdentifier": "<value>", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}], "isOnline": false, "lastOnlineAt": "<value>", "subscriberId": "<id>", "_organizationId": "<id>", "_environmentId": "<id>", "deleted": false, "createdAt": "1732490680659", "updatedAt": "1735674157313"}
         "414":
           application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
         "400":
@@ -5891,10 +6439,10 @@ examples:
         path:
           subscriberId: "<id>"
       requestBody:
-        application/json: {"providerId": "slack", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}}
+        application/json: {"providerId": "slack", "integrationIdentifier": "<value>", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}}
       responses:
         "200":
-          application/json: {"channels": [{"providerId": "zulip", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}, {"providerId": "zulip", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}, {"providerId": "zulip", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}], "subscriberId": "<id>", "_organizationId": "<id>", "_environmentId": "<id>", "deleted": false, "createdAt": "1720451246282", "updatedAt": "1735627699916"}
+          application/json: {"firstName": null, "lastName": "Willms", "channels": [{"providerId": "zulip", "integrationIdentifier": "<value>", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}, {"providerId": "zulip", "integrationIdentifier": "<value>", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}, {"providerId": "zulip", "integrationIdentifier": "<value>", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}], "isOnline": true, "lastOnlineAt": null, "subscriberId": "<id>", "_organizationId": "<id>", "_environmentId": "<id>", "deleted": false, "createdAt": "1720451246282", "updatedAt": "1735627699916"}
         "414":
           application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
         "400":
@@ -5912,7 +6460,7 @@ examples:
         application/json: {"isOnline": false}
       responses:
         "200":
-          application/json: {"channels": [{"providerId": "whatsapp-business", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}, {"providerId": "whatsapp-business", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}], "subscriberId": "<id>", "_organizationId": "<id>", "_environmentId": "<id>", "deleted": false, "createdAt": "1734987954011", "updatedAt": "1735680893525"}
+          application/json: {"firstName": "Larry", "lastName": "Wolff", "channels": [{"providerId": "whatsapp-business", "integrationIdentifier": "<value>", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}, {"providerId": "whatsapp-business", "integrationIdentifier": "<value>", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}], "isOnline": true, "lastOnlineAt": null, "subscriberId": "<id>", "_organizationId": "<id>", "_environmentId": "<id>", "deleted": false, "createdAt": "1734987954011", "updatedAt": "1735680893525"}
         "414":
           application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
         "400":
@@ -5951,7 +6499,7 @@ examples:
         application/json: {"status": "pending"}
       responses:
         "201":
-          application/json: {"_environmentId": "<id>", "_organizationId": "<id>", "_notificationId": "<id>", "_subscriberId": "<id>", "subscriber": {"channels": [{"providerId": "getstream", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}, {"providerId": "getstream", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}], "subscriberId": "<id>", "_organizationId": "<id>", "_environmentId": "<id>", "deleted": false, "createdAt": "1718333764322", "updatedAt": "1735651735471"}, "template": {"name": "<value>", "description": "loaf than of familiarize puppet transom worth", "active": true, "draft": true, "preferenceSettings": {"email": true, "sms": false, "in_app": true, "chat": false, "push": true}, "critical": true, "tags": [], "steps": [{}, {}, {}], "_organizationId": "<id>", "_creatorId": "<id>", "_environmentId": "<id>", "triggers": [{"type": "event", "identifier": "<value>", "variables": [{"name": "<value>"}, {"name": "<value>"}]}, {"type": "event", "identifier": "<value>", "variables": [{"name": "<value>"}, {"name": "<value>"}]}, {"type": "event", "identifier": "<value>", "variables": [{"name": "<value>"}, {"name": "<value>"}]}], "_notificationGroupId": "<id>", "deleted": true, "deletedAt": "<value>", "deletedBy": "<value>"}, "createdAt": "1712367103281", "transactionId": "<id>", "channel": "in_app", "read": false, "seen": false, "cta": {}, "status": "sent", "contextKeys": ["tenant:org-123", "region:us-east-1"]}
+          application/json: {"_environmentId": "<id>", "_organizationId": "<id>", "_notificationId": "<id>", "_subscriberId": "<id>", "subscriber": {"firstName": "Kody", "lastName": "Kirlin", "channels": [{"providerId": "getstream", "integrationIdentifier": "<value>", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}, {"providerId": "getstream", "integrationIdentifier": "<value>", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}], "isOnline": false, "lastOnlineAt": "<value>", "subscriberId": "<id>", "_organizationId": "<id>", "_environmentId": "<id>", "deleted": false, "createdAt": "1718333764322", "updatedAt": "1735651735471"}, "template": {"name": "<value>", "description": "loaf than of familiarize puppet transom worth", "active": true, "draft": true, "preferenceSettings": {"email": true, "sms": false, "in_app": true, "chat": false, "push": true}, "critical": true, "tags": [], "steps": [{}, {}, {}], "_organizationId": "<id>", "_creatorId": "<id>", "_environmentId": "<id>", "triggers": [{"type": "event", "identifier": "<value>", "variables": [{"name": "<value>"}, {"name": "<value>"}]}, {"type": "event", "identifier": "<value>", "variables": [{"name": "<value>"}, {"name": "<value>"}]}, {"type": "event", "identifier": "<value>", "variables": [{"name": "<value>"}, {"name": "<value>"}]}], "_notificationGroupId": "<id>", "deleted": true, "deletedAt": "<value>", "deletedBy": "<value>"}, "createdAt": "1712367103281", "transactionId": "<id>", "channel": "in_app", "read": false, "seen": false, "cta": {}, "status": "sent", "contextKeys": ["tenant:org-123", "region:us-east-1"]}
         "414":
           application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
         "400":
@@ -5969,7 +6517,7 @@ examples:
         application/json: {"messageId": [], "markAs": "seen"}
       responses:
         "201":
-          application/json: [{"_templateId": "<id>", "_environmentId": "<id>", "_messageTemplateId": "<id>", "_organizationId": "<id>", "_notificationId": "<id>", "_subscriberId": "<id>", "subscriber": {"channels": [{"providerId": "pushpad", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}, {"providerId": "pushpad", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}, {"providerId": "pushpad", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}], "subscriberId": "<id>", "_organizationId": "<id>", "_environmentId": "<id>", "deleted": false, "createdAt": "1725589939815", "updatedAt": "1735615487347"}, "template": {"name": "<value>", "description": "aircraft gadzooks lawmaker shaft", "active": true, "draft": true, "preferenceSettings": {"email": true, "sms": false, "in_app": true, "chat": false, "push": true}, "critical": true, "tags": ["<value 1>", "<value 2>", "<value 3>"], "steps": [{}], "_organizationId": "<id>", "_creatorId": "<id>", "_environmentId": "<id>", "triggers": [{"type": "event", "identifier": "<value>", "variables": []}], "_notificationGroupId": "<id>", "deleted": true, "deletedAt": "<value>", "deletedBy": "<value>"}, "createdAt": "1710273627479", "content": [{"type": "text", "content": "<value>"}], "transactionId": "<id>", "channel": "email", "read": true, "seen": true, "cta": {}, "status": "error"}, {"_templateId": "<id>", "_environmentId": "<id>", "_messageTemplateId": "<id>", "_organizationId": "<id>", "_notificationId": "<id>", "_subscriberId": "<id>", "subscriber": {"channels": [{"providerId": "pushpad", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}, {"providerId": "pushpad", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}, {"providerId": "pushpad", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}], "subscriberId": "<id>", "_organizationId": "<id>", "_environmentId": "<id>", "deleted": false, "createdAt": "1725589939815", "updatedAt": "1735615487347"}, "template": {"name": "<value>", "description": "aircraft gadzooks lawmaker shaft", "active": true, "draft": true, "preferenceSettings": {"email": true, "sms": false, "in_app": true, "chat": false, "push": true}, "critical": true, "tags": ["<value 1>", "<value 2>", "<value 3>"], "steps": [{}], "_organizationId": "<id>", "_creatorId": "<id>", "_environmentId": "<id>", "triggers": [{"type": "event", "identifier": "<value>", "variables": []}], "_notificationGroupId": "<id>", "deleted": true, "deletedAt": "<value>", "deletedBy": "<value>"}, "createdAt": "1710273627479", "content": [{"type": "text", "content": "<value>"}], "transactionId": "<id>", "channel": "email", "read": true, "seen": true, "cta": {}, "status": "error"}, {"_templateId": "<id>", "_environmentId": "<id>", "_messageTemplateId": "<id>", "_organizationId": "<id>", "_notificationId": "<id>", "_subscriberId": "<id>", "subscriber": {"channels": [{"providerId": "pushpad", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}, {"providerId": "pushpad", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}, {"providerId": "pushpad", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}], "subscriberId": "<id>", "_organizationId": "<id>", "_environmentId": "<id>", "deleted": false, "createdAt": "1725589939815", "updatedAt": "1735615487347"}, "template": {"name": "<value>", "description": "aircraft gadzooks lawmaker shaft", "active": true, "draft": true, "preferenceSettings": {"email": true, "sms": false, "in_app": true, "chat": false, "push": true}, "critical": true, "tags": ["<value 1>", "<value 2>", "<value 3>"], "steps": [{}], "_organizationId": "<id>", "_creatorId": "<id>", "_environmentId": "<id>", "triggers": [{"type": "event", "identifier": "<value>", "variables": []}], "_notificationGroupId": "<id>", "deleted": true, "deletedAt": "<value>", "deletedBy": "<value>"}, "createdAt": "1710273627479", "content": [{"type": "text", "content": "<value>"}], "transactionId": "<id>", "channel": "email", "read": true, "seen": true, "cta": {}, "status": "error"}]
+          application/json: [{"_templateId": "<id>", "_environmentId": "<id>", "_messageTemplateId": "<id>", "_organizationId": "<id>", "_notificationId": "<id>", "_subscriberId": "<id>", "subscriber": {"firstName": "Autumn", "lastName": "Yost", "channels": [{"providerId": "pushpad", "integrationIdentifier": "<value>", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}, {"providerId": "pushpad", "integrationIdentifier": "<value>", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}, {"providerId": "pushpad", "integrationIdentifier": "<value>", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}], "isOnline": false, "lastOnlineAt": "<value>", "subscriberId": "<id>", "_organizationId": "<id>", "_environmentId": "<id>", "deleted": false, "createdAt": "1725589939815", "updatedAt": "1735615487347"}, "template": {"name": "<value>", "description": "aircraft gadzooks lawmaker shaft", "active": true, "draft": true, "preferenceSettings": {"email": true, "sms": false, "in_app": true, "chat": false, "push": true}, "critical": true, "tags": ["<value 1>", "<value 2>", "<value 3>"], "steps": [{}], "_organizationId": "<id>", "_creatorId": "<id>", "_environmentId": "<id>", "triggers": [{"type": "event", "identifier": "<value>", "variables": []}], "_notificationGroupId": "<id>", "deleted": true, "deletedAt": "<value>", "deletedBy": "<value>"}, "createdAt": "1710273627479", "content": [{"type": "text", "content": "<value>"}], "transactionId": "<id>", "channel": "email", "read": true, "seen": true, "cta": {}, "status": "error"}, {"_templateId": "<id>", "_environmentId": "<id>", "_messageTemplateId": "<id>", "_organizationId": "<id>", "_notificationId": "<id>", "_subscriberId": "<id>", "subscriber": {"firstName": "Cecile", "lastName": "Rutherford", "channels": [{"providerId": "pushpad", "integrationIdentifier": "<value>", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}, {"providerId": "pushpad", "integrationIdentifier": "<value>", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}, {"providerId": "pushpad", "integrationIdentifier": "<value>", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}], "isOnline": true, "lastOnlineAt": "<value>", "subscriberId": "<id>", "_organizationId": "<id>", "_environmentId": "<id>", "deleted": false, "createdAt": "1725589939815", "updatedAt": "1735615487347"}, "template": {"name": "<value>", "description": "aircraft gadzooks lawmaker shaft", "active": true, "draft": true, "preferenceSettings": {"email": true, "sms": false, "in_app": true, "chat": false, "push": true}, "critical": true, "tags": ["<value 1>", "<value 2>", "<value 3>"], "steps": [{}], "_organizationId": "<id>", "_creatorId": "<id>", "_environmentId": "<id>", "triggers": [{"type": "event", "identifier": "<value>", "variables": []}], "_notificationGroupId": "<id>", "deleted": true, "deletedAt": "<value>", "deletedBy": "<value>"}, "createdAt": "1710273627479", "content": [{"type": "text", "content": "<value>"}], "transactionId": "<id>", "channel": "email", "read": true, "seen": true, "cta": {}, "status": "error"}, {"_templateId": "<id>", "_environmentId": "<id>", "_messageTemplateId": "<id>", "_organizationId": "<id>", "_notificationId": "<id>", "_subscriberId": "<id>", "subscriber": {"firstName": null, "lastName": "Conroy", "channels": [{"providerId": "pushpad", "integrationIdentifier": "<value>", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}, {"providerId": "pushpad", "integrationIdentifier": "<value>", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}, {"providerId": "pushpad", "integrationIdentifier": "<value>", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}], "isOnline": false, "lastOnlineAt": "<value>", "subscriberId": "<id>", "_organizationId": "<id>", "_environmentId": "<id>", "deleted": false, "createdAt": "1725589939815", "updatedAt": "1735615487347"}, "template": {"name": "<value>", "description": "aircraft gadzooks lawmaker shaft", "active": true, "draft": true, "preferenceSettings": {"email": true, "sms": false, "in_app": true, "chat": false, "push": true}, "critical": true, "tags": ["<value 1>", "<value 2>", "<value 3>"], "steps": [{}], "_organizationId": "<id>", "_creatorId": "<id>", "_environmentId": "<id>", "triggers": [{"type": "event", "identifier": "<value>", "variables": []}], "_notificationGroupId": "<id>", "deleted": true, "deletedAt": "<value>", "deletedBy": "<value>"}, "createdAt": "1710273627479", "content": [{"type": "text", "content": "<value>"}], "transactionId": "<id>", "channel": "email", "read": true, "seen": true, "cta": {}, "status": "error"}]
         "414":
           application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
         "400":
@@ -6177,7 +6725,7 @@ examples:
     speakeasy-default-integrations-controller-list-integrations:
       responses:
         "200":
-          application/json: [{"_environmentId": "<id>", "_organizationId": "<id>", "name": "<value>", "identifier": "<value>", "providerId": "<id>", "channel": "push", "credentials": {}, "active": true, "deleted": false, "primary": false}]
+          application/json: [{"_environmentId": "<id>", "_organizationId": "<id>", "name": "<value>", "identifier": "<value>", "providerId": "<id>", "channel": "push", "credentials": {}, "configurations": {}, "active": true, "deleted": false, "primary": false}]
         "414":
           application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
         "400":
@@ -6192,7 +6740,7 @@ examples:
         application/json: {"providerId": "<id>", "channel": "email"}
       responses:
         "201":
-          application/json: {"_environmentId": "<id>", "_organizationId": "<id>", "name": "<value>", "identifier": "<value>", "providerId": "<id>", "channel": "chat", "credentials": {}, "active": false, "deleted": false, "primary": true}
+          application/json: {"_environmentId": "<id>", "_organizationId": "<id>", "name": "<value>", "identifier": "<value>", "providerId": "<id>", "channel": "chat", "credentials": {}, "configurations": {}, "active": false, "deleted": false, "primary": true}
         "414":
           application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
         "400":
@@ -6210,7 +6758,7 @@ examples:
         application/json: {}
       responses:
         "200":
-          application/json: {"_environmentId": "<id>", "_organizationId": "<id>", "name": "<value>", "identifier": "<value>", "providerId": "<id>", "channel": "push", "credentials": {}, "active": false, "deleted": false, "primary": true}
+          application/json: {"_environmentId": "<id>", "_organizationId": "<id>", "name": "<value>", "identifier": "<value>", "providerId": "<id>", "channel": "push", "credentials": {}, "configurations": {}, "active": false, "deleted": false, "primary": true}
         "414":
           application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
         "400":
@@ -6226,7 +6774,7 @@ examples:
           integrationId: "<id>"
       responses:
         "200":
-          application/json: [{"_environmentId": "<id>", "_organizationId": "<id>", "name": "<value>", "identifier": "<value>", "providerId": "<id>", "channel": "sms", "credentials": {}, "active": true, "deleted": false, "primary": false}, {"_environmentId": "<id>", "_organizationId": "<id>", "name": "<value>", "identifier": "<value>", "providerId": "<id>", "channel": "sms", "credentials": {}, "active": true, "deleted": false, "primary": false}]
+          application/json: [{"_environmentId": "<id>", "_organizationId": "<id>", "name": "<value>", "identifier": "<value>", "providerId": "<id>", "channel": "sms", "credentials": {}, "configurations": {}, "active": true, "deleted": false, "primary": false}, {"_environmentId": "<id>", "_organizationId": "<id>", "name": "<value>", "identifier": "<value>", "providerId": "<id>", "channel": "sms", "credentials": {}, "configurations": {}, "active": true, "deleted": false, "primary": false}]
         "414":
           application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
         "400":
@@ -6242,7 +6790,7 @@ examples:
           integrationId: "<id>"
       responses:
         "200":
-          application/json: {"_environmentId": "<id>", "_organizationId": "<id>", "name": "<value>", "identifier": "<value>", "providerId": "<id>", "channel": "in_app", "credentials": {}, "active": false, "deleted": false, "primary": false}
+          application/json: {"_environmentId": "<id>", "_organizationId": "<id>", "name": "<value>", "identifier": "<value>", "providerId": "<id>", "channel": "in_app", "credentials": {}, "configurations": {}, "active": false, "deleted": false, "primary": false}
         "414":
           application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
         "400":
@@ -6255,7 +6803,7 @@ examples:
     speakeasy-default-integrations-controller-get-active-integrations:
       responses:
         "200":
-          application/json: [{"_environmentId": "<id>", "_organizationId": "<id>", "name": "<value>", "identifier": "<value>", "providerId": "<id>", "channel": "push", "credentials": {}, "active": false, "deleted": false, "primary": false}, {"_environmentId": "<id>", "_organizationId": "<id>", "name": "<value>", "identifier": "<value>", "providerId": "<id>", "channel": "push", "credentials": {}, "active": false, "deleted": false, "primary": false}]
+          application/json: [{"_environmentId": "<id>", "_organizationId": "<id>", "name": "<value>", "identifier": "<value>", "providerId": "<id>", "channel": "push", "credentials": {}, "configurations": {}, "active": false, "deleted": false, "primary": false}, {"_environmentId": "<id>", "_organizationId": "<id>", "name": "<value>", "identifier": "<value>", "providerId": "<id>", "channel": "push", "credentials": {}, "configurations": {}, "active": false, "deleted": false, "primary": false}]
         "414":
           application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
         "400":
@@ -6273,7 +6821,7 @@ examples:
           contextKeys: ["tenant:org-123", "region:us-east-1"]
       responses:
         "200":
-          application/json: {"hasMore": true, "data": [{"_templateId": "<id>", "_environmentId": "<id>", "_messageTemplateId": "<id>", "_organizationId": "<id>", "_notificationId": "<id>", "_subscriberId": "<id>", "subscriber": {"channels": [{"providerId": "pushpad", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}, {"providerId": "pushpad", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}, {"providerId": "pushpad", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}], "subscriberId": "<id>", "_organizationId": "<id>", "_environmentId": "<id>", "deleted": true, "createdAt": "1719298308933", "updatedAt": "1735648395125"}, "template": {"name": "<value>", "description": "ack what ceramics", "active": false, "draft": true, "preferenceSettings": {"email": true, "sms": false, "in_app": true, "chat": false, "push": true}, "critical": true, "tags": ["<value 1>", "<value 2>"], "steps": [{}, {}, {}], "_organizationId": "<id>", "_creatorId": "<id>", "_environmentId": "<id>", "triggers": [{"type": "event", "identifier": "<value>", "variables": []}, {"type": "event", "identifier": "<value>", "variables": []}], "_notificationGroupId": "<id>", "deleted": true, "deletedAt": "<value>", "deletedBy": "<value>"}, "createdAt": "1734200353431", "content": [{"type": "text", "content": "<value>"}, {"type": "text", "content": "<value>"}], "transactionId": "<id>", "channel": "push", "read": false, "seen": false, "cta": {}, "status": "error"}, {"_templateId": "<id>", "_environmentId": "<id>", "_messageTemplateId": "<id>", "_organizationId": "<id>", "_notificationId": "<id>", "_subscriberId": "<id>", "subscriber": {"channels": [{"providerId": "pushpad", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}, {"providerId": "pushpad", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}, {"providerId": "pushpad", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}], "subscriberId": "<id>", "_organizationId": "<id>", "_environmentId": "<id>", "deleted": true, "createdAt": "1719298308933", "updatedAt": "1735648395125"}, "template": {"name": "<value>", "description": "ack what ceramics", "active": false, "draft": true, "preferenceSettings": {"email": true, "sms": false, "in_app": true, "chat": false, "push": true}, "critical": true, "tags": ["<value 1>", "<value 2>"], "steps": [{}, {}, {}], "_organizationId": "<id>", "_creatorId": "<id>", "_environmentId": "<id>", "triggers": [{"type": "event", "identifier": "<value>", "variables": []}, {"type": "event", "identifier": "<value>", "variables": []}], "_notificationGroupId": "<id>", "deleted": true, "deletedAt": "<value>", "deletedBy": "<value>"}, "createdAt": "1734200353431", "content": [{"type": "text", "content": "<value>"}, {"type": "text", "content": "<value>"}], "transactionId": "<id>", "channel": "push", "read": false, "seen": false, "cta": {}, "status": "error"}, {"_templateId": "<id>", "_environmentId": "<id>", "_messageTemplateId": "<id>", "_organizationId": "<id>", "_notificationId": "<id>", "_subscriberId": "<id>", "subscriber": {"channels": [{"providerId": "pushpad", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}, {"providerId": "pushpad", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}, {"providerId": "pushpad", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}], "subscriberId": "<id>", "_organizationId": "<id>", "_environmentId": "<id>", "deleted": true, "createdAt": "1719298308933", "updatedAt": "1735648395125"}, "template": {"name": "<value>", "description": "ack what ceramics", "active": false, "draft": true, "preferenceSettings": {"email": true, "sms": false, "in_app": true, "chat": false, "push": true}, "critical": true, "tags": ["<value 1>", "<value 2>"], "steps": [{}, {}, {}], "_organizationId": "<id>", "_creatorId": "<id>", "_environmentId": "<id>", "triggers": [{"type": "event", "identifier": "<value>", "variables": []}, {"type": "event", "identifier": "<value>", "variables": []}], "_notificationGroupId": "<id>", "deleted": true, "deletedAt": "<value>", "deletedBy": "<value>"}, "createdAt": "1734200353431", "content": [{"type": "text", "content": "<value>"}, {"type": "text", "content": "<value>"}], "transactionId": "<id>", "channel": "push", "read": false, "seen": false, "cta": {}, "status": "error"}], "pageSize": 3755.69, "page": 3670.04}
+          application/json: {"hasMore": true, "data": [{"_templateId": "<id>", "_environmentId": "<id>", "_messageTemplateId": "<id>", "_organizationId": "<id>", "_notificationId": "<id>", "_subscriberId": "<id>", "subscriber": {"firstName": "Reymundo", "lastName": "Beatty", "channels": [{"providerId": "pushpad", "integrationIdentifier": "<value>", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}, {"providerId": "pushpad", "integrationIdentifier": "<value>", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}, {"providerId": "pushpad", "integrationIdentifier": "<value>", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}], "isOnline": false, "lastOnlineAt": null, "subscriberId": "<id>", "_organizationId": "<id>", "_environmentId": "<id>", "deleted": true, "createdAt": "1719298308933", "updatedAt": "1735648395125"}, "template": {"name": "<value>", "description": "ack what ceramics", "active": false, "draft": true, "preferenceSettings": {"email": true, "sms": false, "in_app": true, "chat": false, "push": true}, "critical": true, "tags": ["<value 1>", "<value 2>"], "steps": [{}, {}, {}], "_organizationId": "<id>", "_creatorId": "<id>", "_environmentId": "<id>", "triggers": [{"type": "event", "identifier": "<value>", "variables": []}, {"type": "event", "identifier": "<value>", "variables": []}], "_notificationGroupId": "<id>", "deleted": true, "deletedAt": "<value>", "deletedBy": "<value>"}, "createdAt": "1734200353431", "content": [{"type": "text", "content": "<value>"}, {"type": "text", "content": "<value>"}], "transactionId": "<id>", "channel": "push", "read": false, "seen": false, "cta": {}, "status": "error"}, {"_templateId": "<id>", "_environmentId": "<id>", "_messageTemplateId": "<id>", "_organizationId": "<id>", "_notificationId": "<id>", "_subscriberId": "<id>", "subscriber": {"firstName": "Porter", "lastName": "Bogan", "channels": [{"providerId": "pushpad", "integrationIdentifier": "<value>", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}, {"providerId": "pushpad", "integrationIdentifier": "<value>", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}, {"providerId": "pushpad", "integrationIdentifier": "<value>", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}], "isOnline": false, "lastOnlineAt": "<value>", "subscriberId": "<id>", "_organizationId": "<id>", "_environmentId": "<id>", "deleted": true, "createdAt": "1719298308933", "updatedAt": "1735648395125"}, "template": {"name": "<value>", "description": "ack what ceramics", "active": false, "draft": true, "preferenceSettings": {"email": true, "sms": false, "in_app": true, "chat": false, "push": true}, "critical": true, "tags": ["<value 1>", "<value 2>"], "steps": [{}, {}, {}], "_organizationId": "<id>", "_creatorId": "<id>", "_environmentId": "<id>", "triggers": [{"type": "event", "identifier": "<value>", "variables": []}, {"type": "event", "identifier": "<value>", "variables": []}], "_notificationGroupId": "<id>", "deleted": true, "deletedAt": "<value>", "deletedBy": "<value>"}, "createdAt": "1734200353431", "content": [{"type": "text", "content": "<value>"}, {"type": "text", "content": "<value>"}], "transactionId": "<id>", "channel": "push", "read": false, "seen": false, "cta": {}, "status": "error"}, {"_templateId": "<id>", "_environmentId": "<id>", "_messageTemplateId": "<id>", "_organizationId": "<id>", "_notificationId": "<id>", "_subscriberId": "<id>", "subscriber": {"firstName": "Magdalen", "lastName": "Schuppe", "channels": [{"providerId": "pushpad", "integrationIdentifier": "<value>", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}, {"providerId": "pushpad", "integrationIdentifier": "<value>", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}, {"providerId": "pushpad", "integrationIdentifier": "<value>", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}], "isOnline": false, "lastOnlineAt": "<value>", "subscriberId": "<id>", "_organizationId": "<id>", "_environmentId": "<id>", "deleted": true, "createdAt": "1719298308933", "updatedAt": "1735648395125"}, "template": {"name": "<value>", "description": "ack what ceramics", "active": false, "draft": true, "preferenceSettings": {"email": true, "sms": false, "in_app": true, "chat": false, "push": true}, "critical": true, "tags": ["<value 1>", "<value 2>"], "steps": [{}, {}, {}], "_organizationId": "<id>", "_creatorId": "<id>", "_environmentId": "<id>", "triggers": [{"type": "event", "identifier": "<value>", "variables": []}, {"type": "event", "identifier": "<value>", "variables": []}], "_notificationGroupId": "<id>", "deleted": true, "deletedAt": "<value>", "deletedBy": "<value>"}, "createdAt": "1734200353431", "content": [{"type": "text", "content": "<value>"}, {"type": "text", "content": "<value>"}], "transactionId": "<id>", "channel": "push", "read": false, "seen": false, "cta": {}, "status": "error"}], "pageSize": 3755.69, "page": 3670.04}
         "414":
           application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
         "400":
@@ -6379,10 +6927,10 @@ examples:
         path:
           subscriberId: "<id>"
       requestBody:
-        application/json: {"providerId": "one-signal", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}}
+        application/json: {"providerId": "one-signal", "integrationIdentifier": "<value>", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}}
       responses:
         "200":
-          application/json: {"channels": [{"providerId": "msteams", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}, {"providerId": "msteams", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}, {"providerId": "msteams", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}], "subscriberId": "<id>", "_organizationId": "<id>", "_environmentId": "<id>", "deleted": false, "createdAt": "1733544020906", "updatedAt": "1735604004137"}
+          application/json: {"firstName": "Rylan", "lastName": "Waters", "channels": [{"providerId": "msteams", "integrationIdentifier": "<value>", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}, {"providerId": "msteams", "integrationIdentifier": "<value>", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}, {"providerId": "msteams", "integrationIdentifier": "<value>", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}], "isOnline": null, "lastOnlineAt": "<value>", "subscriberId": "<id>", "_organizationId": "<id>", "_environmentId": "<id>", "deleted": false, "createdAt": "1733544020906", "updatedAt": "1735604004137"}
         "414":
           application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
         "400":
@@ -6770,7 +7318,7 @@ examples:
         application/json: {"layoutId": "<id>", "name": "<value>", "isTranslationEnabled": false, "__source": "dashboard"}
       responses:
         "201":
-          application/json: {"_id": "<id>", "layoutId": "<id>", "slug": "<value>", "name": "<value>", "isDefault": true, "isTranslationEnabled": false, "updatedAt": "1735674274664", "createdAt": "1724722350004", "origin": "external", "type": "BRIDGE", "controls": {"values": {}}}
+          application/json: {"_id": "<id>", "layoutId": "<id>", "slug": "<value>", "name": "<value>", "isDefault": true, "isTranslationEnabled": false, "updatedAt": "1735674274664", "createdAt": "1724722350004", "origin": "external", "type": "BRIDGE", "controls": {"values": {"email": {"body": "<value>", "editorType": "html"}}}}
         "414":
           application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
         "400":
@@ -6787,7 +7335,7 @@ examples:
           offset: 0
       responses:
         "200":
-          application/json: {"layouts": [{"_id": "<id>", "layoutId": "<id>", "slug": "<value>", "name": "<value>", "isDefault": false, "isTranslationEnabled": true, "updatedAt": "1735681034060", "createdAt": "1725690003700", "origin": "novu-cloud-v1", "type": "BRIDGE", "controls": {"values": {}}}], "totalCount": 2739.33}
+          application/json: {"layouts": [{"_id": "<id>", "layoutId": "<id>", "slug": "<value>", "name": "<value>", "isDefault": false, "isTranslationEnabled": true, "updatedAt": "1735681034060", "createdAt": "1725690003700", "origin": "novu-cloud-v1", "type": "BRIDGE", "controls": {"values": {"email": {"body": "<value>", "editorType": "block"}}}}], "totalCount": 2739.33}
         "414":
           application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
         "400":
@@ -6802,10 +7350,10 @@ examples:
         path:
           layoutId: "<id>"
       requestBody:
-        application/json: {"name": "<value>", "isTranslationEnabled": false}
+        application/json: {"name": "<value>", "isTranslationEnabled": false, "controlValues": {"email": {"body": "<value>", "editorType": "html"}}}
       responses:
         "200":
-          application/json: {"_id": "<id>", "layoutId": "<id>", "slug": "<value>", "name": "<value>", "isDefault": true, "isTranslationEnabled": true, "updatedAt": "1735626712855", "createdAt": "1721640680654", "origin": "external", "type": "ECHO", "controls": {"values": {}}}
+          application/json: {"_id": "<id>", "layoutId": "<id>", "slug": "<value>", "name": "<value>", "isDefault": true, "isTranslationEnabled": true, "updatedAt": "1735626712855", "createdAt": "1721640680654", "origin": "external", "type": "ECHO", "controls": {"values": {"email": {"body": "<value>", "editorType": "html"}}}}
         "414":
           application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
         "400":
@@ -6821,7 +7369,7 @@ examples:
           layoutId: "<id>"
       responses:
         "200":
-          application/json: {"_id": "<id>", "layoutId": "<id>", "slug": "<value>", "name": "<value>", "isDefault": false, "isTranslationEnabled": false, "updatedAt": "1735667479798", "createdAt": "1732982999986", "origin": "novu-cloud-v1", "type": "BRIDGE", "controls": {"values": {}}}
+          application/json: {"_id": "<id>", "layoutId": "<id>", "slug": "<value>", "name": "<value>", "isDefault": false, "isTranslationEnabled": false, "updatedAt": "1735667479798", "createdAt": "1732982999986", "origin": "novu-cloud-v1", "type": "BRIDGE", "controls": {"values": {"email": {"body": "<value>", "editorType": "block"}}}}
         "414":
           application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
         "400":
@@ -6853,7 +7401,7 @@ examples:
         application/json: {"name": "<value>", "isTranslationEnabled": false}
       responses:
         "201":
-          application/json: {"_id": "<id>", "layoutId": "<id>", "slug": "<value>", "name": "<value>", "isDefault": true, "isTranslationEnabled": true, "updatedAt": "1735605867320", "createdAt": "1709332117452", "origin": "external", "type": "BRIDGE", "controls": {"values": {}}}
+          application/json: {"_id": "<id>", "layoutId": "<id>", "slug": "<value>", "name": "<value>", "isDefault": true, "isTranslationEnabled": true, "updatedAt": "1735605867320", "createdAt": "1709332117452", "origin": "external", "type": "BRIDGE", "controls": {"values": {"email": {"body": "<value>", "editorType": "html"}}}}
         "414":
           application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
         "400":
@@ -6868,10 +7416,10 @@ examples:
         path:
           layoutId: "<id>"
       requestBody:
-        application/json: {"previewPayload": {"subscriber": {"channels": [{"providerId": "mattermost", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}]}}}
+        application/json: {"previewPayload": {"subscriber": {"firstName": "Marion", "lastName": "Kirlin", "channels": [{"providerId": "mattermost", "integrationIdentifier": "<value>", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}], "isOnline": false, "lastOnlineAt": "<value>"}}}
       responses:
         "201":
-          application/json: {"previewPayloadExample": {"subscriber": {"channels": [{"providerId": "mattermost", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}]}}, "result": {}}
+          application/json: {"previewPayloadExample": {"subscriber": {"firstName": "Marion", "lastName": "Kirlin", "channels": [{"providerId": "mattermost", "integrationIdentifier": "<value>", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}], "isOnline": false, "lastOnlineAt": "<value>"}}, "result": {}}
         "414":
           application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
         "400":
@@ -7219,8 +7767,64 @@ examples:
           application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123", "errors": {"fieldName1": {"messages": ["Field is required", "Must be a valid email address"], "value": "invalidEmail"}, "fieldName2": {"messages": ["Must be at least 18 years old"], "value": 17}, "fieldName3": {"messages": ["Must be a boolean value"], "value": true}, "fieldName4": {"messages": ["Must be a valid object"], "value": {}}, "fieldName5": {"messages": ["Field is missing"], "value": null}, "fieldName6": {"messages": ["Undefined value"]}}}
         "500":
           application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
+  EnvironmentsController_diffEnvironment:
+    speakeasy-default-environments-controller-diff-environment:
+      parameters:
+        path:
+          targetEnvironmentId: "6615943e7ace93b0540ae377"
+      requestBody:
+        application/json: {"sourceEnvironmentId": "507f1f77bcf86cd799439011"}
+      responses:
+        "200":
+          application/json: {"sourceEnvironmentId": "<id>", "targetEnvironmentId": "<id>", "resources": [{"resourceType": "BRIDGE", "sourceResource": {"updatedAt": "2024-01-15T10:30:00.000Z"}, "targetResource": {"updatedAt": "2024-01-15T10:30:00.000Z"}, "changes": [{"sourceResource": {"updatedAt": "2024-01-15T10:30:00.000Z"}, "targetResource": {"updatedAt": "2024-01-15T10:30:00.000Z"}, "resourceType": "ECHO", "action": "deleted"}], "summary": {"added": 4536.9, "modified": 4715.06, "deleted": 7919.8, "unchanged": 7466.34}}], "summary": {"totalEntities": 2495.22, "totalChanges": 5911.44, "hasChanges": true}}
+        "414":
+          application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
+        "400":
+          application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
+        "422":
+          application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123", "errors": {"fieldName1": {"messages": ["Field is required", "Must be a valid email address"], "value": "invalidEmail"}, "fieldName2": {"messages": ["Must be at least 18 years old"], "value": 17}, "fieldName3": {"messages": ["Must be a boolean value"], "value": true}, "fieldName4": {"messages": ["Must be a valid object"], "value": 8798.18}, "fieldName5": {"messages": ["Field is missing"], "value": null}, "fieldName6": {"messages": ["Undefined value"]}}}
+        "500":
+          application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
+  EnvironmentsController_publishEnvironment:
+    speakeasy-default-environments-controller-publish-environment:
+      parameters:
+        path:
+          targetEnvironmentId: "6615943e7ace93b0540ae377"
+      requestBody:
+        application/json: {"sourceEnvironmentId": "507f1f77bcf86cd799439011", "dryRun": false, "resources": [{"resourceType": "REGULAR", "resourceId": "workflow-id-1"}]}
+      responses:
+        "200":
+          application/json: {"results": [{"resourceType": "REGULAR", "successful": [], "failed": [{"resourceType": "ECHO", "resourceId": "<id>", "resourceName": "<value>", "error": "<value>"}], "skipped": [{"resourceType": "BRIDGE", "resourceId": "<id>", "resourceName": "<value>", "reason": "<value>"}], "totalProcessed": 3977.33}], "summary": {"resources": 1548.2, "successful": 1186.4, "failed": 5607.1, "skipped": 8053.79}}
+        "414":
+          application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
+        "400":
+          application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
+        "422":
+          application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123", "errors": {"fieldName1": {"messages": ["Field is required", "Must be a valid email address"], "value": "invalidEmail"}, "fieldName2": {"messages": ["Must be at least 18 years old"], "value": 17}, "fieldName3": {"messages": ["Must be a boolean value"], "value": true}, "fieldName4": {"messages": ["Must be a valid object"], "value": false}, "fieldName5": {"messages": ["Field is missing"], "value": null}, "fieldName6": {"messages": ["Undefined value"]}}}
+        "500":
+          application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
+  WorkflowController_generatePreview:
+    speakeasy-default-workflow-controller-generate-preview:
+      parameters:
+        path:
+          workflowId: "<id>"
+          stepId: "<id>"
+      requestBody:
+        application/json: {"previewPayload": {"subscriber": {"firstName": "Kennith", "lastName": "Schneider", "channels": [{"providerId": "slack", "integrationIdentifier": "<value>", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}], "isOnline": false, "lastOnlineAt": "<value>"}, "context": {"key": "org-acme"}}}
+      responses:
+        "201":
+          application/json: {"previewPayloadExample": {"subscriber": {"firstName": "Kennith", "lastName": "Schneider", "channels": [{"providerId": "slack", "integrationIdentifier": "<value>", "credentials": {"webhookUrl": "https://example.com/webhook", "channel": "general", "deviceTokens": ["token1", "token2", "token3"], "alertUid": "12345-abcde", "title": "Critical Alert", "imageUrl": "https://example.com/image.png", "state": "resolved", "externalUrl": "https://example.com/details"}, "_integrationId": "<id>"}], "isOnline": false, "lastOnlineAt": "<value>"}, "context": {"key": "org-acme"}}, "result": {}}
+        "414":
+          application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
+        "400":
+          application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
+        "422":
+          application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123", "errors": {"fieldName1": {"messages": ["Field is required", "Must be a valid email address"], "value": "invalidEmail"}, "fieldName2": {"messages": ["Must be at least 18 years old"], "value": 17}, "fieldName3": {"messages": ["Must be a boolean value"], "value": true}, "fieldName4": {"messages": ["Must be a valid object"], "value": [7306.66]}, "fieldName5": {"messages": ["Field is missing"], "value": null}, "fieldName6": {"messages": ["Undefined value"]}}}
+        "500":
+          application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
 examplesVersion: 1.0.2
 generatedTests: {}
+releaseNotes: "## Php SDK Changes:\n* `novu->layouts->generatePreview()`: \n  *  `request.layoutPreviewRequestDto->previewPayload->subscriber` **Changed** (Breaking ⚠️)\n  *  `response.previewPayloadExample->subscriber` **Changed**\n* `novu->notifications->list()`:  `response.data[]` **Changed** (Breaking ⚠️)\n* `novu->notifications->get()`:  `response` **Changed** (Breaking ⚠️)\n* `novu->layouts->create()`:  `response.controls` **Changed** (Breaking ⚠️)\n* `novu->layouts->list()`:  `response.layouts[]->controls` **Changed** (Breaking ⚠️)\n* `novu->layouts->update()`: \n  *  `request.updateLayoutDto->controlValues` **Changed** (Breaking ⚠️)\n  *  `response.controls` **Changed** (Breaking ⚠️)\n* `novu->layouts->retrieve()`:  `response.controls` **Changed** (Breaking ⚠️)\n* `novu->layouts->duplicate()`:  `response.controls` **Changed** (Breaking ⚠️)\n* `novu->subscriberscredentials->append()`: \n  *  `request.updateSubscriberChannelRequestDto->integrationIdentifier` **Changed** (Breaking ⚠️)\n  *  `response` **Changed**\n* `novu->workflows->steps->retrieve()`:  `response` **Changed** (Breaking ⚠️)\n* `novu->workflows->create()`: \n  *  `request.createWorkflowDto` **Changed**\n  *  `response` **Changed** (Breaking ⚠️)\n* `novu->workflows->sync()`:  `response` **Changed** (Breaking ⚠️)\n* `novu->workflows->patch()`:  `response` **Changed** (Breaking ⚠️)\n* `novu->subscribers->updateCredentials()`: \n  *  `request.updateSubscriberChannelRequestDto->integrationIdentifier` **Changed** (Breaking ⚠️)\n  *  `response` **Changed**\n* `novu->workflows->get()`:  `response` **Changed** (Breaking ⚠️)\n* `novu->workflows->update()`: \n  *  `request.updateWorkflowDto->steps[]` **Changed**\n  *  `response` **Changed** (Breaking ⚠️)\n* `novu->workflows->list()`:  `response.workflows[]->stepTypeOverviews[]->enum(httpRequest)` **Added** (Breaking ⚠️)\n* `novu->subscribers->messages->markAllAs()`:  `response.[]->subscriber` **Changed**\n* `novu->environments->diff()`: **Added**\n* `novu->subscribers->messages->updateAsSeen()`:  `response.subscriber` **Changed**\n* `novu->subscribers->updateOnlineStatus()`:  `response` **Changed**\n* `novu->subscribers->patch()`:  `response` **Changed**\n* `novu->subscribers->get()`:  `response` **Changed**\n* `novu->subscribers->create()`: \n  *  `response` **Changed**\n  *  `error` **Changed**\n* `novu->integrations->list()`:  `response.[]->configurations` **Changed**\n* `novu->integrations->create()`:  `response.configurations` **Changed**\n* `novu->integrations->update()`:  `response.configurations` **Changed**\n* `novu->integrations->delete()`:  `response.[]->configurations` **Changed**\n* `novu->integrations->setAsPrimary()`:  `response.configurations` **Changed**\n* `novu->integrations->listActive()`:  `response.[]->configurations` **Changed**\n* `novu->messages->get()`:  `response.data[]->subscriber` **Changed**\n* `novu->subscribers->search()`:  `response.data[]` **Changed**\n* `novu->workflows->steps->generatePreview()`: **Added**\n* `novu->environments->publish()`: **Added**\n"
 generatedFiles:
   - .gitattributes
   - USAGE.md

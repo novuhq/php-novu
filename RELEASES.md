@@ -139,3 +139,13 @@ Based on:
 - [php v3.14.0] .
 ### Releases
 - [Composer v3.14.0] https://packagist.org/packages/novuhq/novu#v3.14.0 - .
+
+## 2026-03-25 00:22:09
+### Changes
+Based on:
+- OpenAPI Doc  
+- Speakeasy CLI 1.759.2 (2.869.23) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [php v3.15.0] .
+### Releases
+- [Composer v3.15.0] https://packagist.org/packages/novuhq/novu#v3.15.0 - .

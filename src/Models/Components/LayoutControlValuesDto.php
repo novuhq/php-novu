@@ -14,18 +14,17 @@ class LayoutControlValuesDto
     /**
      * Email layout controls
      *
-     * @var ?EmailControlsDto $email
+     * @var EmailControlsDto $email
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('email')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\EmailControlsDto|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?EmailControlsDto $email = null;
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\EmailControlsDto')]
+    public EmailControlsDto $email;
 
     /**
-     * @param  ?EmailControlsDto  $email
+     * @param  EmailControlsDto  $email
      * @phpstan-pure
      */
-    public function __construct(?EmailControlsDto $email = null)
+    public function __construct(EmailControlsDto $email)
     {
         $this->email = $email;
     }

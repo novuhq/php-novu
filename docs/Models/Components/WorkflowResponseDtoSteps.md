@@ -84,3 +84,12 @@ Components\CustomStepResponseDto $value = /* values here */
 Components\ThrottleStepResponseDto $value = /* values here */
 ```
 
+### `Components\HttpRequestStepResponseDto`
+
+```php
+/**
+* @var Components\HttpRequestStepResponseDto
+*/
+Components\HttpRequestStepResponseDto $value = /* values here */
+```
+

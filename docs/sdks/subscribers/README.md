@@ -523,6 +523,7 @@ $sdk = novu\Novu::builder()
 
 $updateSubscriberChannelRequestDto = new Components\UpdateSubscriberChannelRequestDto(
     providerId: Components\ChatOrPushProviderEnum::Slack,
+    integrationIdentifier: '<value>',
     credentials: new Components\ChannelCredentials(
         webhookUrl: 'https://example.com/webhook',
         channel: 'general',
