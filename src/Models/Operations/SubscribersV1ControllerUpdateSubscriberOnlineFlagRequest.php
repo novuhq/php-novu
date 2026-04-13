@@ -21,7 +21,7 @@ class SubscribersV1ControllerUpdateSubscriberOnlineFlagRequest
 
     /**
      *
-     * @var Components\UpdateSubscriberOnlineFlagRequestDto $updateSubscriberOnlineFlagRequestDto
+     * @var \novu\Models\Components\UpdateSubscriberOnlineFlagRequestDto $updateSubscriberOnlineFlagRequestDto
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\UpdateSubscriberOnlineFlagRequestDto $updateSubscriberOnlineFlagRequestDto;
@@ -36,7 +36,7 @@ class SubscribersV1ControllerUpdateSubscriberOnlineFlagRequest
 
     /**
      * @param  string  $subscriberId
-     * @param  Components\UpdateSubscriberOnlineFlagRequestDto  $updateSubscriberOnlineFlagRequestDto
+     * @param  \novu\Models\Components\UpdateSubscriberOnlineFlagRequestDto  $updateSubscriberOnlineFlagRequestDto
      * @param  ?string  $idempotencyKey
      * @phpstan-pure
      */

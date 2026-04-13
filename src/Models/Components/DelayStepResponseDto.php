@@ -14,7 +14,7 @@ class DelayStepResponseDto
     /**
      * Controls metadata for the delay step
      *
-     * @var DelayControlsMetadataResponseDto $controls
+     * @var \novu\Models\Components\DelayControlsMetadataResponseDto $controls
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('controls')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\DelayControlsMetadataResponseDto')]
@@ -64,7 +64,7 @@ class DelayStepResponseDto
     /**
      * Type of the step
      *
-     * @var StepTypeEnum $type
+     * @var \novu\Models\Components\StepTypeEnum $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\StepTypeEnum')]
@@ -73,7 +73,7 @@ class DelayStepResponseDto
     /**
      * Origin of the layout
      *
-     * @var ResourceOriginEnum $origin
+     * @var \novu\Models\Components\ResourceOriginEnum $origin
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('origin')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ResourceOriginEnum')]
@@ -98,7 +98,7 @@ class DelayStepResponseDto
     /**
      * Control values for the delay step
      *
-     * @var ?DelayStepResponseDtoControlValues $controlValues
+     * @var ?\novu\Models\Components\DelayStepResponseDtoControlValues $controlValues
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('controlValues')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\DelayStepResponseDtoControlValues|null')]
@@ -108,7 +108,7 @@ class DelayStepResponseDto
     /**
      * Issues associated with the step
      *
-     * @var ?StepIssuesDto $issues
+     * @var ?\novu\Models\Components\StepIssuesDto $issues
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('issues')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\StepIssuesDto|null')]
@@ -116,21 +116,31 @@ class DelayStepResponseDto
     public ?StepIssuesDto $issues = null;
 
     /**
-     * @param  DelayControlsMetadataResponseDto  $controls
+     * Hash identifying the deployed Cloudflare Worker for this step
+     *
+     * @var ?string $stepResolverHash
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('stepResolverHash')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $stepResolverHash = null;
+
+    /**
+     * @param  \novu\Models\Components\DelayControlsMetadataResponseDto  $controls
      * @param  array<string, mixed>  $variables
      * @param  string  $stepId
      * @param  string  $id
      * @param  string  $name
      * @param  string  $slug
-     * @param  StepTypeEnum  $type
-     * @param  ResourceOriginEnum  $origin
+     * @param  \novu\Models\Components\StepTypeEnum  $type
+     * @param  \novu\Models\Components\ResourceOriginEnum  $origin
      * @param  string  $workflowId
      * @param  string  $workflowDatabaseId
-     * @param  ?DelayStepResponseDtoControlValues  $controlValues
-     * @param  ?StepIssuesDto  $issues
+     * @param  ?\novu\Models\Components\DelayStepResponseDtoControlValues  $controlValues
+     * @param  ?\novu\Models\Components\StepIssuesDto  $issues
+     * @param  ?string  $stepResolverHash
      * @phpstan-pure
      */
-    public function __construct(DelayControlsMetadataResponseDto $controls, array $variables, string $stepId, string $id, string $name, string $slug, StepTypeEnum $type, ResourceOriginEnum $origin, string $workflowId, string $workflowDatabaseId, ?DelayStepResponseDtoControlValues $controlValues = null, ?StepIssuesDto $issues = null)
+    public function __construct(DelayControlsMetadataResponseDto $controls, array $variables, string $stepId, string $id, string $name, string $slug, StepTypeEnum $type, ResourceOriginEnum $origin, string $workflowId, string $workflowDatabaseId, ?DelayStepResponseDtoControlValues $controlValues = null, ?StepIssuesDto $issues = null, ?string $stepResolverHash = null)
     {
         $this->controls = $controls;
         $this->variables = $variables;
@@ -144,5 +154,6 @@ class DelayStepResponseDto
         $this->workflowDatabaseId = $workflowDatabaseId;
         $this->controlValues = $controlValues;
         $this->issues = $issues;
+        $this->stepResolverHash = $stepResolverHash;
     }
 }

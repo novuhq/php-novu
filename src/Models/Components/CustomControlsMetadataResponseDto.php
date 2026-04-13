@@ -14,7 +14,7 @@ class CustomControlsMetadataResponseDto
     /**
      * Control values specific to Custom step
      *
-     * @var CustomControlDto $values
+     * @var \novu\Models\Components\CustomControlDto $values
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('values')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\CustomControlDto')]
@@ -33,7 +33,7 @@ class CustomControlsMetadataResponseDto
     /**
      * UI Schema for rendering
      *
-     * @var ?UiSchema $uiSchema
+     * @var ?\novu\Models\Components\UiSchema $uiSchema
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('uiSchema')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\UiSchema|null')]
@@ -41,9 +41,9 @@ class CustomControlsMetadataResponseDto
     public ?UiSchema $uiSchema = null;
 
     /**
-     * @param  CustomControlDto  $values
+     * @param  \novu\Models\Components\CustomControlDto  $values
      * @param  ?array<string, mixed>  $dataSchema
-     * @param  ?UiSchema  $uiSchema
+     * @param  ?\novu\Models\Components\UiSchema  $uiSchema
      * @phpstan-pure
      */
     public function __construct(CustomControlDto $values, ?array $dataSchema = null, ?UiSchema $uiSchema = null)

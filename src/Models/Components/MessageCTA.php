@@ -14,7 +14,7 @@ class MessageCTA
     /**
      * Type of call to action
      *
-     * @var ?ChannelCTATypeEnum $type
+     * @var ?\novu\Models\Components\ChannelCTATypeEnum $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ChannelCTATypeEnum|null')]
@@ -24,7 +24,7 @@ class MessageCTA
     /**
      * Data associated with the call to action
      *
-     * @var ?MessageCTAData $data
+     * @var ?\novu\Models\Components\MessageCTAData $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\MessageCTAData|null')]
@@ -34,7 +34,7 @@ class MessageCTA
     /**
      * Action associated with the call to action
      *
-     * @var ?MessageAction $action
+     * @var ?\novu\Models\Components\MessageAction $action
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('action')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\MessageAction|null')]
@@ -42,9 +42,9 @@ class MessageCTA
     public ?MessageAction $action = null;
 
     /**
-     * @param  ?ChannelCTATypeEnum  $type
-     * @param  ?MessageCTAData  $data
-     * @param  ?MessageAction  $action
+     * @param  ?\novu\Models\Components\ChannelCTATypeEnum  $type
+     * @param  ?\novu\Models\Components\MessageCTAData  $data
+     * @param  ?\novu\Models\Components\MessageAction  $action
      * @phpstan-pure
      */
     public function __construct(?ChannelCTATypeEnum $type = null, ?MessageCTAData $data = null, ?MessageAction $action = null)

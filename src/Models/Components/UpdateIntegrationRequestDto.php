@@ -46,7 +46,7 @@ class UpdateIntegrationRequestDto
 
     /**
      *
-     * @var ?CredentialsDto $credentials
+     * @var ?\novu\Models\Components\CredentialsDto $credentials
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('credentials')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\CredentialsDto|null')]
@@ -64,7 +64,7 @@ class UpdateIntegrationRequestDto
     /**
      * $conditions
      *
-     * @var ?array<StepFilterDto> $conditions
+     * @var ?array<\novu\Models\Components\StepFilterDto> $conditions
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('conditions')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\StepFilterDto>|null')]
@@ -74,7 +74,7 @@ class UpdateIntegrationRequestDto
     /**
      * Configurations for the integration
      *
-     * @var ?UpdateIntegrationRequestDtoConfigurations $configurations
+     * @var ?\novu\Models\Components\UpdateIntegrationRequestDtoConfigurations $configurations
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('configurations')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\UpdateIntegrationRequestDtoConfigurations|null')]
@@ -86,10 +86,10 @@ class UpdateIntegrationRequestDto
      * @param  ?string  $identifier
      * @param  ?string  $environmentId
      * @param  ?bool  $active
-     * @param  ?CredentialsDto  $credentials
+     * @param  ?\novu\Models\Components\CredentialsDto  $credentials
      * @param  ?bool  $check
-     * @param  ?array<StepFilterDto>  $conditions
-     * @param  ?UpdateIntegrationRequestDtoConfigurations  $configurations
+     * @param  ?array<\novu\Models\Components\StepFilterDto>  $conditions
+     * @param  ?\novu\Models\Components\UpdateIntegrationRequestDtoConfigurations  $configurations
      * @phpstan-pure
      */
     public function __construct(?string $name = null, ?string $identifier = null, ?string $environmentId = null, ?bool $active = null, ?CredentialsDto $credentials = null, ?bool $check = null, ?array $conditions = null, ?UpdateIntegrationRequestDtoConfigurations $configurations = null)

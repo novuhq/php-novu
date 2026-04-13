@@ -42,7 +42,7 @@ class LayoutsControllerListResponse
     /**
      * OK
      *
-     * @var ?Components\ListLayoutResponseDto $listLayoutResponseDto
+     * @var ?\novu\Models\Components\ListLayoutResponseDto $listLayoutResponseDto
      */
     public ?Components\ListLayoutResponseDto $listLayoutResponseDto = null;
 
@@ -51,7 +51,7 @@ class LayoutsControllerListResponse
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
-     * @param  ?Components\ListLayoutResponseDto  $listLayoutResponseDto
+     * @param  ?\novu\Models\Components\ListLayoutResponseDto  $listLayoutResponseDto
      * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\ListLayoutResponseDto $listLayoutResponseDto = null, ?array $headers = [])

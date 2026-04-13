@@ -13,7 +13,7 @@ class DelayScheduledMetadata
 {
     /**
      *
-     * @var DelayScheduledMetadataType $type
+     * @var \novu\Models\Components\DelayScheduledMetadataType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\DelayScheduledMetadataType')]
@@ -27,7 +27,7 @@ class DelayScheduledMetadata
     public string $delayPath;
 
     /**
-     * @param  DelayScheduledMetadataType  $type
+     * @param  \novu\Models\Components\DelayScheduledMetadataType  $type
      * @param  string  $delayPath
      * @phpstan-pure
      */

@@ -21,7 +21,7 @@ class CreateChannelConnectionRequestDto
 
     /**
      *
-     * @var WorkspaceDto $workspace
+     * @var \novu\Models\Components\WorkspaceDto $workspace
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('workspace')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\WorkspaceDto')]
@@ -29,7 +29,7 @@ class CreateChannelConnectionRequestDto
 
     /**
      *
-     * @var AuthDto $auth
+     * @var \novu\Models\Components\AuthDto $auth
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('auth')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\AuthDto')]
@@ -56,7 +56,7 @@ class CreateChannelConnectionRequestDto
     /**
      * $context
      *
-     * @var ?array<string, string|CreateChannelConnectionRequestDtoContext2> $context
+     * @var ?array<string, string|\novu\Models\Components\CreateChannelConnectionRequestDtoContext2> $context
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('context')]
     #[\Speakeasy\Serializer\Annotation\Type('array<string, string|\novu\Models\Components\CreateChannelConnectionRequestDtoContext2>|null')]
@@ -65,11 +65,11 @@ class CreateChannelConnectionRequestDto
 
     /**
      * @param  string  $integrationIdentifier
-     * @param  WorkspaceDto  $workspace
-     * @param  AuthDto  $auth
+     * @param  \novu\Models\Components\WorkspaceDto  $workspace
+     * @param  \novu\Models\Components\AuthDto  $auth
      * @param  ?string  $identifier
      * @param  ?string  $subscriberId
-     * @param  ?array<string, string|CreateChannelConnectionRequestDtoContext2>  $context
+     * @param  ?array<string, string|\novu\Models\Components\CreateChannelConnectionRequestDtoContext2>  $context
      * @phpstan-pure
      */
     public function __construct(string $integrationIdentifier, WorkspaceDto $workspace, AuthDto $auth, ?string $identifier = null, ?string $subscriberId = null, ?array $context = null)

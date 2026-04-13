@@ -42,7 +42,7 @@ class SubscribersControllerGetSubscriberPreferencesResponse
     /**
      * OK
      *
-     * @var ?Components\GetSubscriberPreferencesDto $getSubscriberPreferencesDto
+     * @var ?\novu\Models\Components\GetSubscriberPreferencesDto $getSubscriberPreferencesDto
      */
     public ?Components\GetSubscriberPreferencesDto $getSubscriberPreferencesDto = null;
 
@@ -51,7 +51,7 @@ class SubscribersControllerGetSubscriberPreferencesResponse
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
-     * @param  ?Components\GetSubscriberPreferencesDto  $getSubscriberPreferencesDto
+     * @param  ?\novu\Models\Components\GetSubscriberPreferencesDto  $getSubscriberPreferencesDto
      * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\GetSubscriberPreferencesDto $getSubscriberPreferencesDto = null, ?array $headers = [])

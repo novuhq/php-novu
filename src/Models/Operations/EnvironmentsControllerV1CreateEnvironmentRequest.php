@@ -14,7 +14,7 @@ class EnvironmentsControllerV1CreateEnvironmentRequest
 {
     /**
      *
-     * @var Components\CreateEnvironmentRequestDto $createEnvironmentRequestDto
+     * @var \novu\Models\Components\CreateEnvironmentRequestDto $createEnvironmentRequestDto
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\CreateEnvironmentRequestDto $createEnvironmentRequestDto;
@@ -28,7 +28,7 @@ class EnvironmentsControllerV1CreateEnvironmentRequest
     public ?string $idempotencyKey = null;
 
     /**
-     * @param  Components\CreateEnvironmentRequestDto  $createEnvironmentRequestDto
+     * @param  \novu\Models\Components\CreateEnvironmentRequestDto  $createEnvironmentRequestDto
      * @param  ?string  $idempotencyKey
      * @phpstan-pure
      */

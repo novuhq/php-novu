@@ -14,7 +14,7 @@ class SubscribersControllerCreateSubscriberRequest
 {
     /**
      *
-     * @var Components\CreateSubscriberRequestDto $createSubscriberRequestDto
+     * @var \novu\Models\Components\CreateSubscriberRequestDto $createSubscriberRequestDto
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\CreateSubscriberRequestDto $createSubscriberRequestDto;
@@ -36,7 +36,7 @@ class SubscribersControllerCreateSubscriberRequest
     public ?string $idempotencyKey = null;
 
     /**
-     * @param  Components\CreateSubscriberRequestDto  $createSubscriberRequestDto
+     * @param  \novu\Models\Components\CreateSubscriberRequestDto  $createSubscriberRequestDto
      * @param  ?bool  $failIfExists
      * @param  ?string  $idempotencyKey
      * @phpstan-pure

@@ -22,7 +22,7 @@ class SubscriberWorkflowPreferenceDto
     /**
      * Channel-specific preference settings for this workflow
      *
-     * @var SubscriberPreferenceChannels $channels
+     * @var \novu\Models\Components\SubscriberPreferenceChannels $channels
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('channels')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\SubscriberPreferenceChannels')]
@@ -31,7 +31,7 @@ class SubscriberWorkflowPreferenceDto
     /**
      * List of preference overrides
      *
-     * @var array<SubscriberPreferenceOverrideDto> $overrides
+     * @var array<\novu\Models\Components\SubscriberPreferenceOverrideDto> $overrides
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('overrides')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\SubscriberPreferenceOverrideDto>')]
@@ -40,7 +40,7 @@ class SubscriberWorkflowPreferenceDto
     /**
      * Workflow information
      *
-     * @var SubscriberPreferencesWorkflowInfoDto $workflow
+     * @var \novu\Models\Components\SubscriberPreferencesWorkflowInfoDto $workflow
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('workflow')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\SubscriberPreferencesWorkflowInfoDto')]
@@ -57,9 +57,9 @@ class SubscriberWorkflowPreferenceDto
 
     /**
      * @param  bool  $enabled
-     * @param  SubscriberPreferenceChannels  $channels
-     * @param  array<SubscriberPreferenceOverrideDto>  $overrides
-     * @param  SubscriberPreferencesWorkflowInfoDto  $workflow
+     * @param  \novu\Models\Components\SubscriberPreferenceChannels  $channels
+     * @param  array<\novu\Models\Components\SubscriberPreferenceOverrideDto>  $overrides
+     * @param  \novu\Models\Components\SubscriberPreferencesWorkflowInfoDto  $workflow
      * @param  ?string  $updatedAt
      * @phpstan-pure
      */

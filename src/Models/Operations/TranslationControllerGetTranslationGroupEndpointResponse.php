@@ -35,7 +35,7 @@ class TranslationControllerGetTranslationGroupEndpointResponse
     /**
      * Translation group details
      *
-     * @var ?Components\TranslationGroupDto $translationGroupDto
+     * @var ?\novu\Models\Components\TranslationGroupDto $translationGroupDto
      */
     public ?Components\TranslationGroupDto $translationGroupDto = null;
 
@@ -43,7 +43,7 @@ class TranslationControllerGetTranslationGroupEndpointResponse
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
-     * @param  ?Components\TranslationGroupDto  $translationGroupDto
+     * @param  ?\novu\Models\Components\TranslationGroupDto  $translationGroupDto
      * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\TranslationGroupDto $translationGroupDto = null)

@@ -52,9 +52,11 @@ class ChannelEndpoints
      *
      * Create a new channel endpoint for a resource.
      *
-     * @param  Components\CreateSlackChannelEndpointDto|Components\CreateSlackUserEndpointDto|Components\CreateWebhookEndpointDto|Components\CreatePhoneEndpointDto|Components\CreateMsTeamsChannelEndpointDto|Components\CreateMsTeamsUserEndpointDto  $requestBody
+     * This operation requires either `secretKey` or `secretKey` to be set via `setSecurity` on the SDK builder.
+     *
+     * @param  \novu\Models\Components\CreateSlackChannelEndpointDto|\novu\Models\Components\CreateSlackUserEndpointDto|\novu\Models\Components\CreateWebhookEndpointDto|\novu\Models\Components\CreatePhoneEndpointDto|\novu\Models\Components\CreateMsTeamsChannelEndpointDto|\novu\Models\Components\CreateMsTeamsUserEndpointDto  $requestBody
      * @param  ?string  $idempotencyKey
-     * @return Operations\ChannelEndpointsControllerCreateChannelEndpointResponse
+     * @return \novu\Models\Operations\ChannelEndpointsControllerCreateChannelEndpointResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function create(Components\CreateSlackChannelEndpointDto|Components\CreateSlackUserEndpointDto|Components\CreateWebhookEndpointDto|Components\CreatePhoneEndpointDto|Components\CreateMsTeamsChannelEndpointDto|Components\CreateMsTeamsUserEndpointDto $requestBody, ?string $idempotencyKey = null, ?Options $options = null): Operations\ChannelEndpointsControllerCreateChannelEndpointResponse
@@ -106,12 +108,15 @@ class ChannelEndpoints
         $httpOptions['headers']['Accept'] = 'application/json';
         $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('POST', $url);
+        $client = $this->sdkConfiguration->securitySource !== null
+            ? Utils\Utils::configureSecurityClient($this->sdkConfiguration->defaultClient, $this->sdkConfiguration->getSecurity(), ['secretKey', 'secretKey'])
+            : $this->sdkConfiguration->defaultClient;
         $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'ChannelEndpointsController_createChannelEndpoint', null, $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
         $httpRequest = Utils\Utils::removeHeaders($httpRequest);
         try {
-            $httpResponse = RetryUtils::retryWrapper(fn () => $this->sdkConfiguration->client->send($httpRequest, $httpOptions), $retryConfig, $retryCodes);
+            $httpResponse = RetryUtils::retryWrapper(fn () => $client->send($httpRequest, $httpOptions), $retryConfig, $retryCodes);
         } catch (\GuzzleHttp\Exception\GuzzleException $error) {
             $res = $this->sdkConfiguration->hooks->afterError(new Hooks\AfterErrorContext($hookContext), null, $error);
             $httpResponse = $res;
@@ -203,9 +208,11 @@ class ChannelEndpoints
      *
      * Delete a specific channel endpoint by its unique identifier.
      *
+     * This operation requires either `secretKey` or `secretKey` to be set via `setSecurity` on the SDK builder.
+     *
      * @param  string  $identifier
      * @param  ?string  $idempotencyKey
-     * @return Operations\ChannelEndpointsControllerDeleteChannelEndpointResponse
+     * @return \novu\Models\Operations\ChannelEndpointsControllerDeleteChannelEndpointResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function delete(string $identifier, ?string $idempotencyKey = null, ?Options $options = null): Operations\ChannelEndpointsControllerDeleteChannelEndpointResponse
@@ -252,12 +259,15 @@ class ChannelEndpoints
         $httpOptions['headers']['Accept'] = 'application/json';
         $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('DELETE', $url);
+        $client = $this->sdkConfiguration->securitySource !== null
+            ? Utils\Utils::configureSecurityClient($this->sdkConfiguration->defaultClient, $this->sdkConfiguration->getSecurity(), ['secretKey', 'secretKey'])
+            : $this->sdkConfiguration->defaultClient;
         $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'ChannelEndpointsController_deleteChannelEndpoint', null, $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
         $httpRequest = Utils\Utils::removeHeaders($httpRequest);
         try {
-            $httpResponse = RetryUtils::retryWrapper(fn () => $this->sdkConfiguration->client->send($httpRequest, $httpOptions), $retryConfig, $retryCodes);
+            $httpResponse = RetryUtils::retryWrapper(fn () => $client->send($httpRequest, $httpOptions), $retryConfig, $retryCodes);
         } catch (\GuzzleHttp\Exception\GuzzleException $error) {
             $res = $this->sdkConfiguration->hooks->afterError(new Hooks\AfterErrorContext($hookContext), null, $error);
             $httpResponse = $res;
@@ -339,9 +349,11 @@ class ChannelEndpoints
      *
      * Retrieve a specific channel endpoint by its unique identifier.
      *
+     * This operation requires either `secretKey` or `secretKey` to be set via `setSecurity` on the SDK builder.
+     *
      * @param  string  $identifier
      * @param  ?string  $idempotencyKey
-     * @return Operations\ChannelEndpointsControllerGetChannelEndpointResponse
+     * @return \novu\Models\Operations\ChannelEndpointsControllerGetChannelEndpointResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function retrieve(string $identifier, ?string $idempotencyKey = null, ?Options $options = null): Operations\ChannelEndpointsControllerGetChannelEndpointResponse
@@ -388,12 +400,15 @@ class ChannelEndpoints
         $httpOptions['headers']['Accept'] = 'application/json';
         $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('GET', $url);
+        $client = $this->sdkConfiguration->securitySource !== null
+            ? Utils\Utils::configureSecurityClient($this->sdkConfiguration->defaultClient, $this->sdkConfiguration->getSecurity(), ['secretKey', 'secretKey'])
+            : $this->sdkConfiguration->defaultClient;
         $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'ChannelEndpointsController_getChannelEndpoint', null, $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
         $httpRequest = Utils\Utils::removeHeaders($httpRequest);
         try {
-            $httpResponse = RetryUtils::retryWrapper(fn () => $this->sdkConfiguration->client->send($httpRequest, $httpOptions), $retryConfig, $retryCodes);
+            $httpResponse = RetryUtils::retryWrapper(fn () => $client->send($httpRequest, $httpOptions), $retryConfig, $retryCodes);
         } catch (\GuzzleHttp\Exception\GuzzleException $error) {
             $res = $this->sdkConfiguration->hooks->afterError(new Hooks\AfterErrorContext($hookContext), null, $error);
             $httpResponse = $res;
@@ -485,8 +500,10 @@ class ChannelEndpoints
      *
      * List all channel endpoints for a resource based on query filters.
      *
-     * @param  ?Operations\ChannelEndpointsControllerListChannelEndpointsRequest  $request
-     * @return Operations\ChannelEndpointsControllerListChannelEndpointsResponse
+     * This operation requires either `secretKey` or `secretKey` to be set via `setSecurity` on the SDK builder.
+     *
+     * @param  ?\novu\Models\Operations\ChannelEndpointsControllerListChannelEndpointsRequest  $request
+     * @return \novu\Models\Operations\ChannelEndpointsControllerListChannelEndpointsResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function list(?Operations\ChannelEndpointsControllerListChannelEndpointsRequest $request = null, ?Options $options = null): Operations\ChannelEndpointsControllerListChannelEndpointsResponse
@@ -531,13 +548,16 @@ class ChannelEndpoints
         $httpOptions['headers']['Accept'] = 'application/json';
         $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('GET', $url);
+        $client = $this->sdkConfiguration->securitySource !== null
+            ? Utils\Utils::configureSecurityClient($this->sdkConfiguration->defaultClient, $this->sdkConfiguration->getSecurity(), ['secretKey', 'secretKey'])
+            : $this->sdkConfiguration->defaultClient;
         $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'ChannelEndpointsController_listChannelEndpoints', null, $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
         $httpOptions['query'] = Utils\QueryParameters::standardizeQueryParams($httpRequest, $qp);
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
         $httpRequest = Utils\Utils::removeHeaders($httpRequest);
         try {
-            $httpResponse = RetryUtils::retryWrapper(fn () => $this->sdkConfiguration->client->send($httpRequest, $httpOptions), $retryConfig, $retryCodes);
+            $httpResponse = RetryUtils::retryWrapper(fn () => $client->send($httpRequest, $httpOptions), $retryConfig, $retryCodes);
         } catch (\GuzzleHttp\Exception\GuzzleException $error) {
             $res = $this->sdkConfiguration->hooks->afterError(new Hooks\AfterErrorContext($hookContext), null, $error);
             $httpResponse = $res;
@@ -629,10 +649,12 @@ class ChannelEndpoints
      *
      * Update an existing channel endpoint by its unique identifier.
      *
-     * @param  Components\UpdateChannelEndpointRequestDto  $updateChannelEndpointRequestDto
+     * This operation requires either `secretKey` or `secretKey` to be set via `setSecurity` on the SDK builder.
+     *
+     * @param  \novu\Models\Components\UpdateChannelEndpointRequestDto  $updateChannelEndpointRequestDto
      * @param  string  $identifier
      * @param  ?string  $idempotencyKey
-     * @return Operations\ChannelEndpointsControllerUpdateChannelEndpointResponse
+     * @return \novu\Models\Operations\ChannelEndpointsControllerUpdateChannelEndpointResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function update(Components\UpdateChannelEndpointRequestDto $updateChannelEndpointRequestDto, string $identifier, ?string $idempotencyKey = null, ?Options $options = null): Operations\ChannelEndpointsControllerUpdateChannelEndpointResponse
@@ -685,12 +707,15 @@ class ChannelEndpoints
         $httpOptions['headers']['Accept'] = 'application/json';
         $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('PATCH', $url);
+        $client = $this->sdkConfiguration->securitySource !== null
+            ? Utils\Utils::configureSecurityClient($this->sdkConfiguration->defaultClient, $this->sdkConfiguration->getSecurity(), ['secretKey', 'secretKey'])
+            : $this->sdkConfiguration->defaultClient;
         $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'ChannelEndpointsController_updateChannelEndpoint', null, $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
         $httpRequest = Utils\Utils::removeHeaders($httpRequest);
         try {
-            $httpResponse = RetryUtils::retryWrapper(fn () => $this->sdkConfiguration->client->send($httpRequest, $httpOptions), $retryConfig, $retryCodes);
+            $httpResponse = RetryUtils::retryWrapper(fn () => $client->send($httpRequest, $httpOptions), $retryConfig, $retryCodes);
         } catch (\GuzzleHttp\Exception\GuzzleException $error) {
             $res = $this->sdkConfiguration->hooks->afterError(new Hooks\AfterErrorContext($hookContext), null, $error);
             $httpResponse = $res;

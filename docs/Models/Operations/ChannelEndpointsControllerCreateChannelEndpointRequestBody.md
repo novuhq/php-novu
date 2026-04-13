@@ -9,7 +9,7 @@ Channel endpoint creation request. The structure varies based on the type field.
 
 ```php
 /**
-* @var Components\CreateSlackChannelEndpointDto
+* @var \novu\Models\Components\CreateSlackChannelEndpointDto
 */
 Components\CreateSlackChannelEndpointDto $value = /* values here */
 ```
@@ -18,7 +18,7 @@ Components\CreateSlackChannelEndpointDto $value = /* values here */
 
 ```php
 /**
-* @var Components\CreateSlackUserEndpointDto
+* @var \novu\Models\Components\CreateSlackUserEndpointDto
 */
 Components\CreateSlackUserEndpointDto $value = /* values here */
 ```
@@ -27,7 +27,7 @@ Components\CreateSlackUserEndpointDto $value = /* values here */
 
 ```php
 /**
-* @var Components\CreateWebhookEndpointDto
+* @var \novu\Models\Components\CreateWebhookEndpointDto
 */
 Components\CreateWebhookEndpointDto $value = /* values here */
 ```
@@ -36,7 +36,7 @@ Components\CreateWebhookEndpointDto $value = /* values here */
 
 ```php
 /**
-* @var Components\CreatePhoneEndpointDto
+* @var \novu\Models\Components\CreatePhoneEndpointDto
 */
 Components\CreatePhoneEndpointDto $value = /* values here */
 ```
@@ -45,7 +45,7 @@ Components\CreatePhoneEndpointDto $value = /* values here */
 
 ```php
 /**
-* @var Components\CreateMsTeamsChannelEndpointDto
+* @var \novu\Models\Components\CreateMsTeamsChannelEndpointDto
 */
 Components\CreateMsTeamsChannelEndpointDto $value = /* values here */
 ```
@@ -54,7 +54,7 @@ Components\CreateMsTeamsChannelEndpointDto $value = /* values here */
 
 ```php
 /**
-* @var Components\CreateMsTeamsUserEndpointDto
+* @var \novu\Models\Components\CreateMsTeamsUserEndpointDto
 */
 Components\CreateMsTeamsUserEndpointDto $value = /* values here */
 ```

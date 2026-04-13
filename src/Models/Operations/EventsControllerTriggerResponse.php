@@ -42,7 +42,7 @@ class EventsControllerTriggerResponse
     /**
      * Created
      *
-     * @var ?Components\TriggerEventResponseDto $triggerEventResponseDto
+     * @var ?\novu\Models\Components\TriggerEventResponseDto $triggerEventResponseDto
      */
     public ?Components\TriggerEventResponseDto $triggerEventResponseDto = null;
 
@@ -51,7 +51,7 @@ class EventsControllerTriggerResponse
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
-     * @param  ?Components\TriggerEventResponseDto  $triggerEventResponseDto
+     * @param  ?\novu\Models\Components\TriggerEventResponseDto  $triggerEventResponseDto
      * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\TriggerEventResponseDto $triggerEventResponseDto = null, ?array $headers = [])

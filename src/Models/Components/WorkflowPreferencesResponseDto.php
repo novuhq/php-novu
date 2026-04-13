@@ -14,7 +14,7 @@ class WorkflowPreferencesResponseDto
     /**
      * Default workflow preferences
      *
-     * @var WorkflowPreferencesDto $default
+     * @var \novu\Models\Components\WorkflowPreferencesDto $default
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('default')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\WorkflowPreferencesDto')]
@@ -23,7 +23,7 @@ class WorkflowPreferencesResponseDto
     /**
      * User-specific workflow preferences
      *
-     * @var ?WorkflowPreferencesResponseDtoUser $user
+     * @var ?\novu\Models\Components\WorkflowPreferencesResponseDtoUser $user
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('user')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\WorkflowPreferencesResponseDtoUser|null')]
@@ -31,8 +31,8 @@ class WorkflowPreferencesResponseDto
     public ?WorkflowPreferencesResponseDtoUser $user = null;
 
     /**
-     * @param  WorkflowPreferencesDto  $default
-     * @param  ?WorkflowPreferencesResponseDtoUser  $user
+     * @param  \novu\Models\Components\WorkflowPreferencesDto  $default
+     * @param  ?\novu\Models\Components\WorkflowPreferencesResponseDtoUser  $user
      * @phpstan-pure
      */
     public function __construct(WorkflowPreferencesDto $default, ?WorkflowPreferencesResponseDtoUser $user = null)

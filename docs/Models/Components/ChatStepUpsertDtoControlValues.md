@@ -9,7 +9,7 @@ Control values for the Chat step.
 
 ```php
 /**
-* @var Components\ChatControlDto
+* @var \novu\Models\Components\ChatControlDto
 */
 Components\ChatControlDto $value = /* values here */
 ```

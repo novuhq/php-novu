@@ -7,7 +7,7 @@
 
 ```php
 /**
-* @var Components\InAppStepUpsertDto
+* @var \novu\Models\Components\InAppStepUpsertDto
 */
 Components\InAppStepUpsertDto $value = /* values here */
 ```
@@ -16,7 +16,7 @@ Components\InAppStepUpsertDto $value = /* values here */
 
 ```php
 /**
-* @var Components\EmailStepUpsertDto
+* @var \novu\Models\Components\EmailStepUpsertDto
 */
 Components\EmailStepUpsertDto $value = /* values here */
 ```
@@ -25,7 +25,7 @@ Components\EmailStepUpsertDto $value = /* values here */
 
 ```php
 /**
-* @var Components\SmsStepUpsertDto
+* @var \novu\Models\Components\SmsStepUpsertDto
 */
 Components\SmsStepUpsertDto $value = /* values here */
 ```
@@ -34,7 +34,7 @@ Components\SmsStepUpsertDto $value = /* values here */
 
 ```php
 /**
-* @var Components\PushStepUpsertDto
+* @var \novu\Models\Components\PushStepUpsertDto
 */
 Components\PushStepUpsertDto $value = /* values here */
 ```
@@ -43,7 +43,7 @@ Components\PushStepUpsertDto $value = /* values here */
 
 ```php
 /**
-* @var Components\ChatStepUpsertDto
+* @var \novu\Models\Components\ChatStepUpsertDto
 */
 Components\ChatStepUpsertDto $value = /* values here */
 ```
@@ -52,7 +52,7 @@ Components\ChatStepUpsertDto $value = /* values here */
 
 ```php
 /**
-* @var Components\DelayStepUpsertDto
+* @var \novu\Models\Components\DelayStepUpsertDto
 */
 Components\DelayStepUpsertDto $value = /* values here */
 ```
@@ -61,7 +61,7 @@ Components\DelayStepUpsertDto $value = /* values here */
 
 ```php
 /**
-* @var Components\DigestStepUpsertDto
+* @var \novu\Models\Components\DigestStepUpsertDto
 */
 Components\DigestStepUpsertDto $value = /* values here */
 ```
@@ -70,8 +70,17 @@ Components\DigestStepUpsertDto $value = /* values here */
 
 ```php
 /**
-* @var Components\CustomStepUpsertDto
+* @var \novu\Models\Components\CustomStepUpsertDto
 */
 Components\CustomStepUpsertDto $value = /* values here */
+```
+
+### `Components\HttpRequestStepUpsertDto`
+
+```php
+/**
+* @var \novu\Models\Components\HttpRequestStepUpsertDto
+*/
+Components\HttpRequestStepUpsertDto $value = /* values here */
 ```
 

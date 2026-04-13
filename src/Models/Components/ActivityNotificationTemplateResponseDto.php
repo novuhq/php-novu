@@ -22,7 +22,7 @@ class ActivityNotificationTemplateResponseDto
     /**
      * Triggers of the template
      *
-     * @var array<NotificationTriggerDto> $triggers
+     * @var array<\novu\Models\Components\NotificationTriggerDto> $triggers
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('triggers')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\NotificationTriggerDto>')]
@@ -40,7 +40,7 @@ class ActivityNotificationTemplateResponseDto
     /**
      * Origin of the layout
      *
-     * @var ?ResourceOriginEnum $origin
+     * @var ?\novu\Models\Components\ResourceOriginEnum $origin
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('origin')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ResourceOriginEnum|null')]
@@ -49,9 +49,9 @@ class ActivityNotificationTemplateResponseDto
 
     /**
      * @param  string  $name
-     * @param  array<NotificationTriggerDto>  $triggers
+     * @param  array<\novu\Models\Components\NotificationTriggerDto>  $triggers
      * @param  ?string  $id
-     * @param  ?ResourceOriginEnum  $origin
+     * @param  ?\novu\Models\Components\ResourceOriginEnum  $origin
      * @phpstan-pure
      */
     public function __construct(string $name, array $triggers, ?string $id = null, ?ResourceOriginEnum $origin = null)

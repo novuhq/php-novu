@@ -9,7 +9,7 @@ Preview result
 
 ```php
 /**
-* @var Components\One
+* @var \novu\Models\Components\One
 */
 Components\One $value = /* values here */
 ```

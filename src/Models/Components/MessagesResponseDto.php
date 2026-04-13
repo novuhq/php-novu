@@ -22,7 +22,7 @@ class MessagesResponseDto
     /**
      * List of messages
      *
-     * @var array<MessageResponseDto> $data
+     * @var array<\novu\Models\Components\MessageResponseDto> $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\MessageResponseDto>')]
@@ -55,7 +55,7 @@ class MessagesResponseDto
 
     /**
      * @param  bool  $hasMore
-     * @param  array<MessageResponseDto>  $data
+     * @param  array<\novu\Models\Components\MessageResponseDto>  $data
      * @param  float  $pageSize
      * @param  float  $page
      * @param  ?float  $totalCount

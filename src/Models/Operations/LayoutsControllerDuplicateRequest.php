@@ -21,7 +21,7 @@ class LayoutsControllerDuplicateRequest
 
     /**
      *
-     * @var Components\DuplicateLayoutDto $duplicateLayoutDto
+     * @var \novu\Models\Components\DuplicateLayoutDto $duplicateLayoutDto
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\DuplicateLayoutDto $duplicateLayoutDto;
@@ -36,7 +36,7 @@ class LayoutsControllerDuplicateRequest
 
     /**
      * @param  string  $layoutId
-     * @param  Components\DuplicateLayoutDto  $duplicateLayoutDto
+     * @param  \novu\Models\Components\DuplicateLayoutDto  $duplicateLayoutDto
      * @param  ?string  $idempotencyKey
      * @phpstan-pure
      */

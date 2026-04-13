@@ -13,7 +13,7 @@ class DelayRegularMetadata
 {
     /**
      *
-     * @var DelayRegularMetadataType $type
+     * @var \novu\Models\Components\DelayRegularMetadataType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\DelayRegularMetadataType')]
@@ -29,7 +29,7 @@ class DelayRegularMetadata
 
     /**
      *
-     * @var ?DelayRegularMetadataUnit $unit
+     * @var ?\novu\Models\Components\DelayRegularMetadataUnit $unit
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('unit')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\DelayRegularMetadataUnit|null')]
@@ -37,9 +37,9 @@ class DelayRegularMetadata
     public ?DelayRegularMetadataUnit $unit = null;
 
     /**
-     * @param  DelayRegularMetadataType  $type
+     * @param  \novu\Models\Components\DelayRegularMetadataType  $type
      * @param  ?float  $amount
-     * @param  ?DelayRegularMetadataUnit  $unit
+     * @param  ?\novu\Models\Components\DelayRegularMetadataUnit  $unit
      * @phpstan-pure
      */
     public function __construct(DelayRegularMetadataType $type, ?float $amount = null, ?DelayRegularMetadataUnit $unit = null)

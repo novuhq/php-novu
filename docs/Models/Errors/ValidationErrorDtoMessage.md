@@ -36,7 +36,7 @@ bool $value = /* values here */
 
 ```php
 /**
-* @var Errors\Message4
+* @var \novu\Models\Errors\Message4
 */
 Errors\Message4 $value = /* values here */
 ```

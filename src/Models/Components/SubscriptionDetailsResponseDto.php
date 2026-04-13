@@ -40,7 +40,7 @@ class SubscriptionDetailsResponseDto
     /**
      * The preferences/rules for the subscription
      *
-     * @var ?array<SubscriptionPreferenceDto> $preferences
+     * @var ?array<\novu\Models\Components\SubscriptionPreferenceDto> $preferences
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('preferences')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\SubscriptionPreferenceDto>|null')]
@@ -61,7 +61,7 @@ class SubscriptionDetailsResponseDto
      * @param  string  $id
      * @param  ?string  $identifier
      * @param  ?string  $name
-     * @param  ?array<SubscriptionPreferenceDto>  $preferences
+     * @param  ?array<\novu\Models\Components\SubscriptionPreferenceDto>  $preferences
      * @param  ?array<string>  $contextKeys
      * @phpstan-pure
      */

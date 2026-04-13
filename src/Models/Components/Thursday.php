@@ -23,7 +23,7 @@ class Thursday
     /**
      * Hours
      *
-     * @var ?array<TimeRangeDto> $hours
+     * @var ?array<\novu\Models\Components\TimeRangeDto> $hours
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('hours')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\TimeRangeDto>|null')]
@@ -32,7 +32,7 @@ class Thursday
 
     /**
      * @param  bool  $isEnabled
-     * @param  ?array<TimeRangeDto>  $hours
+     * @param  ?array<\novu\Models\Components\TimeRangeDto>  $hours
      * @phpstan-pure
      */
     public function __construct(bool $isEnabled, ?array $hours = null)

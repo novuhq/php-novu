@@ -54,7 +54,7 @@ class Layouts
      *
      * @param  string  $layoutId
      * @param  ?string  $idempotencyKey
-     * @return Operations\LayoutsControllerDeleteResponse
+     * @return \novu\Models\Operations\LayoutsControllerDeleteResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function delete(string $layoutId, ?string $idempotencyKey = null, ?Options $options = null): Operations\LayoutsControllerDeleteResponse
@@ -188,9 +188,9 @@ class Layouts
      *
      * Creates a new layout in the Novu Cloud environment
      *
-     * @param  Components\CreateLayoutDto  $createLayoutDto
+     * @param  \novu\Models\Components\CreateLayoutDto  $createLayoutDto
      * @param  ?string  $idempotencyKey
-     * @return Operations\LayoutsControllerCreateResponse
+     * @return \novu\Models\Operations\LayoutsControllerCreateResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function create(Components\CreateLayoutDto $createLayoutDto, ?string $idempotencyKey = null, ?Options $options = null): Operations\LayoutsControllerCreateResponse
@@ -339,10 +339,10 @@ class Layouts
      *
      * Duplicates a layout by its unique identifier **layoutId**. This will create a new layout with the content of the original layout.
      *
-     * @param  Components\DuplicateLayoutDto  $duplicateLayoutDto
+     * @param  \novu\Models\Components\DuplicateLayoutDto  $duplicateLayoutDto
      * @param  string  $layoutId
      * @param  ?string  $idempotencyKey
-     * @return Operations\LayoutsControllerDuplicateResponse
+     * @return \novu\Models\Operations\LayoutsControllerDuplicateResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function duplicate(Components\DuplicateLayoutDto $duplicateLayoutDto, string $layoutId, ?string $idempotencyKey = null, ?Options $options = null): Operations\LayoutsControllerDuplicateResponse
@@ -492,10 +492,10 @@ class Layouts
      *
      * Generates a preview for a layout by its unique identifier **layoutId**
      *
-     * @param  Components\LayoutPreviewRequestDto  $layoutPreviewRequestDto
+     * @param  \novu\Models\Components\LayoutPreviewRequestDto  $layoutPreviewRequestDto
      * @param  string  $layoutId
      * @param  ?string  $idempotencyKey
-     * @return Operations\LayoutsControllerGeneratePreviewResponse
+     * @return \novu\Models\Operations\LayoutsControllerGeneratePreviewResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function generatePreview(Components\LayoutPreviewRequestDto $layoutPreviewRequestDto, string $layoutId, ?string $idempotencyKey = null, ?Options $options = null): Operations\LayoutsControllerGeneratePreviewResponse
@@ -647,7 +647,7 @@ class Layouts
      *
      * @param  string  $layoutId
      * @param  ?string  $idempotencyKey
-     * @return Operations\LayoutsControllerGetResponse
+     * @return \novu\Models\Operations\LayoutsControllerGetResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function retrieve(string $layoutId, ?string $idempotencyKey = null, ?Options $options = null): Operations\LayoutsControllerGetResponse
@@ -793,7 +793,7 @@ class Layouts
      *
      * @param  string  $layoutId
      * @param  ?string  $idempotencyKey
-     * @return Operations\LayoutsControllerGetUsageResponse
+     * @return \novu\Models\Operations\LayoutsControllerGetUsageResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function usage(string $layoutId, ?string $idempotencyKey = null, ?Options $options = null): Operations\LayoutsControllerGetUsageResponse
@@ -937,8 +937,8 @@ class Layouts
      *
      * Retrieves a list of layouts with optional filtering and pagination
      *
-     * @param  ?Operations\LayoutsControllerListRequest  $request
-     * @return Operations\LayoutsControllerListResponse
+     * @param  ?\novu\Models\Operations\LayoutsControllerListRequest  $request
+     * @return \novu\Models\Operations\LayoutsControllerListResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function list(?Operations\LayoutsControllerListRequest $request = null, ?Options $options = null): Operations\LayoutsControllerListResponse
@@ -1081,10 +1081,10 @@ class Layouts
      *
      * Updates the details of an existing layout, here **layoutId** is the identifier of the layout
      *
-     * @param  Components\UpdateLayoutDto  $updateLayoutDto
+     * @param  \novu\Models\Components\UpdateLayoutDto  $updateLayoutDto
      * @param  string  $layoutId
      * @param  ?string  $idempotencyKey
-     * @return Operations\LayoutsControllerUpdateResponse
+     * @return \novu\Models\Operations\LayoutsControllerUpdateResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function update(Components\UpdateLayoutDto $updateLayoutDto, string $layoutId, ?string $idempotencyKey = null, ?Options $options = null): Operations\LayoutsControllerUpdateResponse

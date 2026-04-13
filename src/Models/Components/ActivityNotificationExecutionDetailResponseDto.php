@@ -22,7 +22,7 @@ class ActivityNotificationExecutionDetailResponseDto
     /**
      * Status of the execution detail
      *
-     * @var ExecutionDetailsStatusEnum $status
+     * @var \novu\Models\Components\ExecutionDetailsStatusEnum $status
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ExecutionDetailsStatusEnum')]
@@ -55,7 +55,7 @@ class ActivityNotificationExecutionDetailResponseDto
     /**
      * Source of the execution detail
      *
-     * @var ExecutionDetailsSourceEnum $source
+     * @var \novu\Models\Components\ExecutionDetailsSourceEnum $source
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('source')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ExecutionDetailsSourceEnum')]
@@ -73,7 +73,7 @@ class ActivityNotificationExecutionDetailResponseDto
     /**
      * Provider ID of the job
      *
-     * @var ?ProvidersIdEnum $providerId
+     * @var ?\novu\Models\Components\ProvidersIdEnum $providerId
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('providerId')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ProvidersIdEnum|null')]
@@ -91,13 +91,13 @@ class ActivityNotificationExecutionDetailResponseDto
 
     /**
      * @param  string  $id
-     * @param  ExecutionDetailsStatusEnum  $status
+     * @param  \novu\Models\Components\ExecutionDetailsStatusEnum  $status
      * @param  string  $detail
      * @param  bool  $isRetry
      * @param  bool  $isTest
-     * @param  ExecutionDetailsSourceEnum  $source
+     * @param  \novu\Models\Components\ExecutionDetailsSourceEnum  $source
      * @param  ?string  $createdAt
-     * @param  ?ProvidersIdEnum  $providerId
+     * @param  ?\novu\Models\Components\ProvidersIdEnum  $providerId
      * @param  ?string  $raw
      * @phpstan-pure
      */

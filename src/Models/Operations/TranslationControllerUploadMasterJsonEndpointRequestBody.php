@@ -14,13 +14,13 @@ class TranslationControllerUploadMasterJsonEndpointRequestBody
     /**
      * Master JSON file with locale as filename (e.g., en_US.json)
      *
-     * @var File $file
+     * @var \novu\Models\Operations\File $file
      */
     #[SpeakeasyMetadata('multipartForm:file=true,name=file')]
     public File $file;
 
     /**
-     * @param  File  $file
+     * @param  \novu\Models\Operations\File  $file
      * @phpstan-pure
      */
     public function __construct(File $file)

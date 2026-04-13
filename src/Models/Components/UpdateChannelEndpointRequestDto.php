@@ -14,14 +14,14 @@ class UpdateChannelEndpointRequestDto
     /**
      * Updated endpoint data. The structure must match the existing channel endpoint type.
      *
-     * @var SlackChannelEndpointDto|SlackUserEndpointDto|WebhookEndpointDto|PhoneEndpointDto $endpoint
+     * @var \novu\Models\Components\SlackChannelEndpointDto|\novu\Models\Components\SlackUserEndpointDto|\novu\Models\Components\WebhookEndpointDto|\novu\Models\Components\PhoneEndpointDto $endpoint
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('endpoint')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\SlackChannelEndpointDto|\novu\Models\Components\SlackUserEndpointDto|\novu\Models\Components\WebhookEndpointDto|\novu\Models\Components\PhoneEndpointDto')]
     public SlackChannelEndpointDto|SlackUserEndpointDto|WebhookEndpointDto|PhoneEndpointDto $endpoint;
 
     /**
-     * @param  SlackChannelEndpointDto|SlackUserEndpointDto|WebhookEndpointDto|PhoneEndpointDto  $endpoint
+     * @param  \novu\Models\Components\SlackChannelEndpointDto|\novu\Models\Components\SlackUserEndpointDto|\novu\Models\Components\WebhookEndpointDto|\novu\Models\Components\PhoneEndpointDto  $endpoint
      * @phpstan-pure
      */
     public function __construct(SlackChannelEndpointDto|SlackUserEndpointDto|WebhookEndpointDto|PhoneEndpointDto $endpoint)

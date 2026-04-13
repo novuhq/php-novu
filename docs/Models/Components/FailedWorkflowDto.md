@@ -1,0 +1,12 @@
+# FailedWorkflowDto
+
+
+## Fields
+
+| Field                                                                      | Type                                                                       | Required                                                                   | Description                                                                |
+| -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| `resourceType`                                                             | [Components\ResourceTypeEnum](../../Models/Components/ResourceTypeEnum.md) | :heavy_check_mark:                                                         | Type of the layout                                                         |
+| `resourceId`                                                               | *string*                                                                   | :heavy_check_mark:                                                         | Resource ID                                                                |
+| `resourceName`                                                             | *string*                                                                   | :heavy_check_mark:                                                         | Resource name                                                              |
+| `error`                                                                    | *string*                                                                   | :heavy_check_mark:                                                         | Error message                                                              |
+| `stack`                                                                    | *?string*                                                                  | :heavy_minus_sign:                                                         | Error stack trace                                                          |

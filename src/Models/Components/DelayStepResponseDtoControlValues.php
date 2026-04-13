@@ -34,7 +34,7 @@ class DelayStepResponseDtoControlValues
     /**
      * Unit of time for the delay amount.
      *
-     * @var ?DelayStepResponseDtoUnit $unit
+     * @var ?\novu\Models\Components\DelayStepResponseDtoUnit $unit
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('unit')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\DelayStepResponseDtoUnit|null')]
@@ -63,7 +63,7 @@ class DelayStepResponseDtoControlValues
     /**
      * Type of the delay. Currently only 'regular' is supported by the schema.
      *
-     * @var ?DelayStepResponseDtoType $type
+     * @var ?\novu\Models\Components\DelayStepResponseDtoType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\DelayStepResponseDtoType|null')]
@@ -72,9 +72,9 @@ class DelayStepResponseDtoControlValues
 
     /**
      * @param  ?array<string, mixed>  $skip
-     * @param  ?DelayStepResponseDtoType  $type
+     * @param  ?\novu\Models\Components\DelayStepResponseDtoType  $type
      * @param  ?float  $amount
-     * @param  ?DelayStepResponseDtoUnit  $unit
+     * @param  ?\novu\Models\Components\DelayStepResponseDtoUnit  $unit
      * @param  ?string  $cron
      * @param  ?array<string, mixed>  $additionalProperties
      * @phpstan-pure

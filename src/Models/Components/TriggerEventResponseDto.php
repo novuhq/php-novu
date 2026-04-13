@@ -22,7 +22,7 @@ class TriggerEventResponseDto
     /**
      * Status of the trigger
      *
-     * @var TriggerEventResponseDtoStatus $status
+     * @var \novu\Models\Components\TriggerEventResponseDtoStatus $status
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\TriggerEventResponseDtoStatus')]
@@ -48,8 +48,17 @@ class TriggerEventResponseDto
     public ?string $transactionId = null;
 
     /**
+     * Link to the activity feed for this trigger event
      *
-     * @var ?JobData $jobData
+     * @var ?string $activityFeedLink
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('activityFeedLink')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $activityFeedLink = null;
+
+    /**
+     *
+     * @var ?\novu\Models\Components\JobData $jobData
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('jobData')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\JobData|null')]
@@ -58,18 +67,20 @@ class TriggerEventResponseDto
 
     /**
      * @param  bool  $acknowledged
-     * @param  TriggerEventResponseDtoStatus  $status
+     * @param  \novu\Models\Components\TriggerEventResponseDtoStatus  $status
      * @param  ?array<string>  $error
      * @param  ?string  $transactionId
-     * @param  ?JobData  $jobData
+     * @param  ?string  $activityFeedLink
+     * @param  ?\novu\Models\Components\JobData  $jobData
      * @phpstan-pure
      */
-    public function __construct(bool $acknowledged, TriggerEventResponseDtoStatus $status, ?array $error = null, ?string $transactionId = null, ?JobData $jobData = null)
+    public function __construct(bool $acknowledged, TriggerEventResponseDtoStatus $status, ?array $error = null, ?string $transactionId = null, ?string $activityFeedLink = null, ?JobData $jobData = null)
     {
         $this->acknowledged = $acknowledged;
         $this->status = $status;
         $this->error = $error;
         $this->transactionId = $transactionId;
+        $this->activityFeedLink = $activityFeedLink;
         $this->jobData = $jobData;
     }
 }

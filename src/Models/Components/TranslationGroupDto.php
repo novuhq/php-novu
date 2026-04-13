@@ -22,7 +22,7 @@ class TranslationGroupDto
     /**
      * Resource type
      *
-     * @var TranslationGroupDtoResourceType $resourceType
+     * @var \novu\Models\Components\TranslationGroupDtoResourceType $resourceType
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('resourceType')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\TranslationGroupDtoResourceType')]
@@ -73,7 +73,7 @@ class TranslationGroupDto
 
     /**
      * @param  string  $resourceId
-     * @param  TranslationGroupDtoResourceType  $resourceType
+     * @param  \novu\Models\Components\TranslationGroupDtoResourceType  $resourceType
      * @param  string  $resourceName
      * @param  array<string>  $locales
      * @param  string  $createdAt

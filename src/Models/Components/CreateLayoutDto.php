@@ -39,7 +39,7 @@ class CreateLayoutDto
     /**
      * Source of layout creation
      *
-     * @var ?LayoutCreationSourceEnum $source
+     * @var ?\novu\Models\Components\LayoutCreationSourceEnum $source
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('__source')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\LayoutCreationSourceEnum|null')]
@@ -50,7 +50,7 @@ class CreateLayoutDto
      * @param  string  $layoutId
      * @param  string  $name
      * @param  ?bool  $isTranslationEnabled
-     * @param  ?LayoutCreationSourceEnum  $source
+     * @param  ?\novu\Models\Components\LayoutCreationSourceEnum  $source
      * @phpstan-pure
      */
     public function __construct(string $layoutId, string $name, ?bool $isTranslationEnabled = false, ?LayoutCreationSourceEnum $source = LayoutCreationSourceEnum::Dashboard)

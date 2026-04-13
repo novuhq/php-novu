@@ -22,7 +22,7 @@ class WebhookResultDto
     /**
      * Event body containing the webhook event data
      *
-     * @var EventBody $event
+     * @var \novu\Models\Components\EventBody $event
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('event')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\EventBody')]
@@ -30,7 +30,7 @@ class WebhookResultDto
 
     /**
      * @param  string  $id
-     * @param  EventBody  $event
+     * @param  \novu\Models\Components\EventBody  $event
      * @phpstan-pure
      */
     public function __construct(string $id, EventBody $event)

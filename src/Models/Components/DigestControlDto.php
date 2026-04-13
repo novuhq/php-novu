@@ -24,7 +24,7 @@ class DigestControlDto
     /**
      * The type of digest strategy. Determines which fields are applicable.
      *
-     * @var ?DigestControlDtoType $type
+     * @var ?\novu\Models\Components\DigestControlDtoType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\DigestControlDtoType|null')]
@@ -43,7 +43,7 @@ class DigestControlDto
     /**
      * The unit of time for the digest interval (for REGULAR type).
      *
-     * @var ?DigestControlDtoUnit $unit
+     * @var ?\novu\Models\Components\DigestControlDtoUnit $unit
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('unit')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\DigestControlDtoUnit|null')]
@@ -53,7 +53,7 @@ class DigestControlDto
     /**
      * Configuration for look-back window (for REGULAR type).
      *
-     * @var ?LookBackWindowDto $lookBackWindow
+     * @var ?\novu\Models\Components\LookBackWindowDto $lookBackWindow
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('lookBackWindow')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\LookBackWindowDto|null')]
@@ -80,10 +80,10 @@ class DigestControlDto
 
     /**
      * @param  ?array<string, mixed>  $skip
-     * @param  ?DigestControlDtoType  $type
+     * @param  ?\novu\Models\Components\DigestControlDtoType  $type
      * @param  ?float  $amount
-     * @param  ?DigestControlDtoUnit  $unit
-     * @param  ?LookBackWindowDto  $lookBackWindow
+     * @param  ?\novu\Models\Components\DigestControlDtoUnit  $unit
+     * @param  ?\novu\Models\Components\LookBackWindowDto  $lookBackWindow
      * @param  ?string  $cron
      * @param  ?string  $digestKey
      * @phpstan-pure

@@ -42,7 +42,7 @@ class SubscribersV1ControllerGetUnseenCountResponse
     /**
      * OK
      *
-     * @var ?Components\UnseenCountResponse $unseenCountResponse
+     * @var ?\novu\Models\Components\UnseenCountResponse $unseenCountResponse
      */
     public ?Components\UnseenCountResponse $unseenCountResponse = null;
 
@@ -51,7 +51,7 @@ class SubscribersV1ControllerGetUnseenCountResponse
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
-     * @param  ?Components\UnseenCountResponse  $unseenCountResponse
+     * @param  ?\novu\Models\Components\UnseenCountResponse  $unseenCountResponse
      * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\UnseenCountResponse $unseenCountResponse = null, ?array $headers = [])

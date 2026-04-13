@@ -14,7 +14,7 @@ class UiSchemaProperty
     /**
      * Component type for the UI Schema Property
      *
-     * @var UiComponentEnum $component
+     * @var \novu\Models\Components\UiComponentEnum $component
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('component')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\UiComponentEnum')]
@@ -23,7 +23,7 @@ class UiSchemaProperty
     /**
      * Properties of the UI Schema
      *
-     * @var ?array<string, UiSchemaProperty> $properties
+     * @var ?array<string, \novu\Models\Components\UiSchemaProperty> $properties
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('properties')]
     #[\Speakeasy\Serializer\Annotation\Type('array<string, \novu\Models\Components\UiSchemaProperty>|null')]
@@ -41,8 +41,8 @@ class UiSchemaProperty
     public string|float|bool|array|null $placeholder = null;
 
     /**
-     * @param  UiComponentEnum  $component
-     * @param  ?array<string, UiSchemaProperty>  $properties
+     * @param  \novu\Models\Components\UiComponentEnum  $component
+     * @param  ?array<string, \novu\Models\Components\UiSchemaProperty>  $properties
      * @param  string|float|bool|array<string, mixed>|array<string|float|bool|array<string, mixed>>|null  $placeholder
      * @phpstan-pure
      */

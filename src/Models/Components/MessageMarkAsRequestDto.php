@@ -21,7 +21,7 @@ class MessageMarkAsRequestDto
 
     /**
      *
-     * @var MessageMarkAsRequestDtoMarkAs $markAs
+     * @var \novu\Models\Components\MessageMarkAsRequestDtoMarkAs $markAs
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('markAs')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\MessageMarkAsRequestDtoMarkAs')]
@@ -29,7 +29,7 @@ class MessageMarkAsRequestDto
 
     /**
      * @param  string|array<string>  $messageId
-     * @param  MessageMarkAsRequestDtoMarkAs  $markAs
+     * @param  \novu\Models\Components\MessageMarkAsRequestDtoMarkAs  $markAs
      * @phpstan-pure
      */
     public function __construct(string|array $messageId, MessageMarkAsRequestDtoMarkAs $markAs)

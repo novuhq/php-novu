@@ -30,7 +30,7 @@ class GetChannelConnectionResponseDto
 
     /**
      *
-     * @var WorkspaceDto $workspace
+     * @var \novu\Models\Components\WorkspaceDto $workspace
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('workspace')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\WorkspaceDto')]
@@ -38,7 +38,7 @@ class GetChannelConnectionResponseDto
 
     /**
      *
-     * @var AuthDto $auth
+     * @var \novu\Models\Components\AuthDto $auth
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('auth')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\AuthDto')]
@@ -63,7 +63,7 @@ class GetChannelConnectionResponseDto
     /**
      * The channel type (email, sms, push, chat, etc.).
      *
-     * @var ?Channel $channel
+     * @var ?\novu\Models\Components\Channel $channel
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('channel')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\Channel|null')]
@@ -72,7 +72,7 @@ class GetChannelConnectionResponseDto
     /**
      * The provider identifier (e.g., sendgrid, twilio, slack, etc.).
      *
-     * @var ?ProviderId $providerId
+     * @var ?\novu\Models\Components\ProviderId $providerId
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('providerId')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ProviderId|null')]
@@ -97,12 +97,12 @@ class GetChannelConnectionResponseDto
     /**
      * @param  string  $identifier
      * @param  array<string>  $contextKeys
-     * @param  WorkspaceDto  $workspace
-     * @param  AuthDto  $auth
+     * @param  \novu\Models\Components\WorkspaceDto  $workspace
+     * @param  \novu\Models\Components\AuthDto  $auth
      * @param  string  $createdAt
      * @param  string  $updatedAt
-     * @param  ?Channel  $channel
-     * @param  ?ProviderId  $providerId
+     * @param  ?\novu\Models\Components\Channel  $channel
+     * @param  ?\novu\Models\Components\ProviderId  $providerId
      * @param  ?string  $integrationIdentifier
      * @param  ?string  $subscriberId
      * @phpstan-pure

@@ -14,7 +14,7 @@ class TopicsControllerUpsertTopicRequest
 {
     /**
      *
-     * @var Components\CreateUpdateTopicRequestDto $createUpdateTopicRequestDto
+     * @var \novu\Models\Components\CreateUpdateTopicRequestDto $createUpdateTopicRequestDto
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\CreateUpdateTopicRequestDto $createUpdateTopicRequestDto;
@@ -36,7 +36,7 @@ class TopicsControllerUpsertTopicRequest
     public ?string $idempotencyKey = null;
 
     /**
-     * @param  Components\CreateUpdateTopicRequestDto  $createUpdateTopicRequestDto
+     * @param  \novu\Models\Components\CreateUpdateTopicRequestDto  $createUpdateTopicRequestDto
      * @param  ?bool  $failIfExists
      * @param  ?string  $idempotencyKey
      * @phpstan-pure

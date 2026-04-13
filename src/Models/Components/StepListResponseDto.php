@@ -22,7 +22,7 @@ class StepListResponseDto
     /**
      * Type of the step
      *
-     * @var StepTypeEnum $type
+     * @var \novu\Models\Components\StepTypeEnum $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\StepTypeEnum')]
@@ -31,7 +31,7 @@ class StepListResponseDto
     /**
      * Issues associated with the step
      *
-     * @var ?StepIssuesDto $issues
+     * @var ?\novu\Models\Components\StepIssuesDto $issues
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('issues')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\StepIssuesDto|null')]
@@ -40,8 +40,8 @@ class StepListResponseDto
 
     /**
      * @param  string  $slug
-     * @param  StepTypeEnum  $type
-     * @param  ?StepIssuesDto  $issues
+     * @param  \novu\Models\Components\StepTypeEnum  $type
+     * @param  ?\novu\Models\Components\StepIssuesDto  $issues
      * @phpstan-pure
      */
     public function __construct(string $slug, StepTypeEnum $type, ?StepIssuesDto $issues = null)

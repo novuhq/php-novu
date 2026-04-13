@@ -14,7 +14,7 @@ class StepIssuesDto
     /**
      * Controls-related issues
      *
-     * @var ?array<string, array<StepContentIssueDto>> $controls
+     * @var ?array<string, array<\novu\Models\Components\StepContentIssueDto>> $controls
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('controls')]
     #[\Speakeasy\Serializer\Annotation\Type('array<string, array<\novu\Models\Components\StepContentIssueDto>>|null')]
@@ -24,7 +24,7 @@ class StepIssuesDto
     /**
      * Integration-related issues
      *
-     * @var ?array<string, array<StepIntegrationIssue>> $integration
+     * @var ?array<string, array<\novu\Models\Components\StepIntegrationIssue>> $integration
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('integration')]
     #[\Speakeasy\Serializer\Annotation\Type('array<string, array<\novu\Models\Components\StepIntegrationIssue>>|null')]
@@ -32,8 +32,8 @@ class StepIssuesDto
     public ?array $integration = null;
 
     /**
-     * @param  ?array<string, array<StepContentIssueDto>>  $controls
-     * @param  ?array<string, array<StepIntegrationIssue>>  $integration
+     * @param  ?array<string, array<\novu\Models\Components\StepContentIssueDto>>  $controls
+     * @param  ?array<string, array<\novu\Models\Components\StepIntegrationIssue>>  $integration
      * @phpstan-pure
      */
     public function __construct(?array $controls = null, ?array $integration = null)

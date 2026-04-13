@@ -30,7 +30,7 @@ class CreateWebhookEndpointDto
     /**
      * Type of channel endpoint
      *
-     * @var CreateWebhookEndpointDtoType $type
+     * @var \novu\Models\Components\CreateWebhookEndpointDtoType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\CreateWebhookEndpointDtoType')]
@@ -39,7 +39,7 @@ class CreateWebhookEndpointDto
     /**
      * Webhook endpoint data
      *
-     * @var WebhookEndpointDto $endpoint
+     * @var \novu\Models\Components\WebhookEndpointDto $endpoint
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('endpoint')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\WebhookEndpointDto')]
@@ -57,7 +57,7 @@ class CreateWebhookEndpointDto
     /**
      * $context
      *
-     * @var ?array<string, string|CreateWebhookEndpointDtoContext2> $context
+     * @var ?array<string, string|\novu\Models\Components\CreateWebhookEndpointDtoContext2> $context
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('context')]
     #[\Speakeasy\Serializer\Annotation\Type('array<string, string|\novu\Models\Components\CreateWebhookEndpointDtoContext2>|null')]
@@ -76,10 +76,10 @@ class CreateWebhookEndpointDto
     /**
      * @param  string  $subscriberId
      * @param  string  $integrationIdentifier
-     * @param  CreateWebhookEndpointDtoType  $type
-     * @param  WebhookEndpointDto  $endpoint
+     * @param  \novu\Models\Components\CreateWebhookEndpointDtoType  $type
+     * @param  \novu\Models\Components\WebhookEndpointDto  $endpoint
      * @param  ?string  $identifier
-     * @param  ?array<string, string|CreateWebhookEndpointDtoContext2>  $context
+     * @param  ?array<string, string|\novu\Models\Components\CreateWebhookEndpointDtoContext2>  $context
      * @param  ?string  $connectionIdentifier
      * @phpstan-pure
      */

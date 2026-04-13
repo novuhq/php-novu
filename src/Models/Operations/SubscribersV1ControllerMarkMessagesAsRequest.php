@@ -21,7 +21,7 @@ class SubscribersV1ControllerMarkMessagesAsRequest
 
     /**
      *
-     * @var Components\MessageMarkAsRequestDto $messageMarkAsRequestDto
+     * @var \novu\Models\Components\MessageMarkAsRequestDto $messageMarkAsRequestDto
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\MessageMarkAsRequestDto $messageMarkAsRequestDto;
@@ -36,7 +36,7 @@ class SubscribersV1ControllerMarkMessagesAsRequest
 
     /**
      * @param  string  $subscriberId
-     * @param  Components\MessageMarkAsRequestDto  $messageMarkAsRequestDto
+     * @param  \novu\Models\Components\MessageMarkAsRequestDto  $messageMarkAsRequestDto
      * @param  ?string  $idempotencyKey
      * @phpstan-pure
      */

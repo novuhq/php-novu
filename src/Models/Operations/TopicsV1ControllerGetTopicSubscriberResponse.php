@@ -41,7 +41,7 @@ class TopicsV1ControllerGetTopicSubscriberResponse
 
     /**
      *
-     * @var ?Components\TopicSubscriberDto $topicSubscriberDto
+     * @var ?\novu\Models\Components\TopicSubscriberDto $topicSubscriberDto
      */
     public ?Components\TopicSubscriberDto $topicSubscriberDto = null;
 
@@ -50,7 +50,7 @@ class TopicsV1ControllerGetTopicSubscriberResponse
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
-     * @param  ?Components\TopicSubscriberDto  $topicSubscriberDto
+     * @param  ?\novu\Models\Components\TopicSubscriberDto  $topicSubscriberDto
      * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\TopicSubscriberDto $topicSubscriberDto = null, ?array $headers = [])

@@ -23,7 +23,7 @@ class UpdateTopicSubscriptionRequestDto
     /**
      * The preferences of the topic. Can be a simple workflow ID string, workflow preference object, or group filter object
      *
-     * @var ?array<string|WorkflowPreferenceRequestDto|GroupPreferenceFilterDto> $preferences
+     * @var ?array<string|\novu\Models\Components\WorkflowPreferenceRequestDto|\novu\Models\Components\GroupPreferenceFilterDto> $preferences
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('preferences')]
     #[\Speakeasy\Serializer\Annotation\Type('array<string|\novu\Models\Components\WorkflowPreferenceRequestDto|\novu\Models\Components\GroupPreferenceFilterDto>|null')]
@@ -32,7 +32,7 @@ class UpdateTopicSubscriptionRequestDto
 
     /**
      * @param  ?string  $name
-     * @param  ?array<string|WorkflowPreferenceRequestDto|GroupPreferenceFilterDto>  $preferences
+     * @param  ?array<string|\novu\Models\Components\WorkflowPreferenceRequestDto|\novu\Models\Components\GroupPreferenceFilterDto>  $preferences
      * @phpstan-pure
      */
     public function __construct(?string $name = null, ?array $preferences = null)

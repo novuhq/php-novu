@@ -22,7 +22,7 @@ class WorkflowControllerSyncRequest
     /**
      * Sync workflow details
      *
-     * @var Components\SyncWorkflowDto $syncWorkflowDto
+     * @var \novu\Models\Components\SyncWorkflowDto $syncWorkflowDto
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\SyncWorkflowDto $syncWorkflowDto;
@@ -37,7 +37,7 @@ class WorkflowControllerSyncRequest
 
     /**
      * @param  string  $workflowId
-     * @param  Components\SyncWorkflowDto  $syncWorkflowDto
+     * @param  \novu\Models\Components\SyncWorkflowDto  $syncWorkflowDto
      * @param  ?string  $idempotencyKey
      * @phpstan-pure
      */

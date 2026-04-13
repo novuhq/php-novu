@@ -20,9 +20,9 @@ class UpdateLayoutDto
     public string $name;
 
     /**
-     * Control values for the layout
+     * Control values for the layout. Omit to leave unchanged, or set to null to clear stored control values.
      *
-     * @var ?ControlValues $controlValues
+     * @var ?\novu\Models\Components\ControlValues $controlValues
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('controlValues')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ControlValues|null')]
@@ -41,7 +41,7 @@ class UpdateLayoutDto
     /**
      * @param  string  $name
      * @param  ?bool  $isTranslationEnabled
-     * @param  ?ControlValues  $controlValues
+     * @param  ?\novu\Models\Components\ControlValues  $controlValues
      * @phpstan-pure
      */
     public function __construct(string $name, ?ControlValues $controlValues = null, ?bool $isTranslationEnabled = false)

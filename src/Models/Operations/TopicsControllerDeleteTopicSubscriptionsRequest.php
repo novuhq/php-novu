@@ -22,7 +22,7 @@ class TopicsControllerDeleteTopicSubscriptionsRequest
 
     /**
      *
-     * @var Components\DeleteTopicSubscriptionsRequestDto $deleteTopicSubscriptionsRequestDto
+     * @var \novu\Models\Components\DeleteTopicSubscriptionsRequestDto $deleteTopicSubscriptionsRequestDto
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\DeleteTopicSubscriptionsRequestDto $deleteTopicSubscriptionsRequestDto;
@@ -37,7 +37,7 @@ class TopicsControllerDeleteTopicSubscriptionsRequest
 
     /**
      * @param  string  $topicKey
-     * @param  Components\DeleteTopicSubscriptionsRequestDto  $deleteTopicSubscriptionsRequestDto
+     * @param  \novu\Models\Components\DeleteTopicSubscriptionsRequestDto  $deleteTopicSubscriptionsRequestDto
      * @param  ?string  $idempotencyKey
      * @phpstan-pure
      */

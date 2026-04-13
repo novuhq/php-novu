@@ -9,7 +9,7 @@ Control values for the SMS step.
 
 ```php
 /**
-* @var Components\SmsControlDto
+* @var \novu\Models\Components\SmsControlDto
 */
 Components\SmsControlDto $value = /* values here */
 ```

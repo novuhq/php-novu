@@ -15,7 +15,7 @@ class WeeklySchedule
     /**
      * Monday schedule
      *
-     * @var ?Monday $monday
+     * @var ?\novu\Models\Components\Monday $monday
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('monday')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\Monday|null')]
@@ -25,7 +25,7 @@ class WeeklySchedule
     /**
      * Tuesday schedule
      *
-     * @var ?Tuesday $tuesday
+     * @var ?\novu\Models\Components\Tuesday $tuesday
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('tuesday')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\Tuesday|null')]
@@ -35,7 +35,7 @@ class WeeklySchedule
     /**
      * Wednesday schedule
      *
-     * @var ?Wednesday $wednesday
+     * @var ?\novu\Models\Components\Wednesday $wednesday
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('wednesday')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\Wednesday|null')]
@@ -45,7 +45,7 @@ class WeeklySchedule
     /**
      * Thursday schedule
      *
-     * @var ?Thursday $thursday
+     * @var ?\novu\Models\Components\Thursday $thursday
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('thursday')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\Thursday|null')]
@@ -55,7 +55,7 @@ class WeeklySchedule
     /**
      * Friday schedule
      *
-     * @var ?Friday $friday
+     * @var ?\novu\Models\Components\Friday $friday
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('friday')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\Friday|null')]
@@ -65,7 +65,7 @@ class WeeklySchedule
     /**
      * Saturday schedule
      *
-     * @var ?Saturday $saturday
+     * @var ?\novu\Models\Components\Saturday $saturday
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('saturday')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\Saturday|null')]
@@ -75,7 +75,7 @@ class WeeklySchedule
     /**
      * Sunday schedule
      *
-     * @var ?Sunday $sunday
+     * @var ?\novu\Models\Components\Sunday $sunday
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('sunday')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\Sunday|null')]
@@ -83,13 +83,13 @@ class WeeklySchedule
     public ?Sunday $sunday = null;
 
     /**
-     * @param  ?Monday  $monday
-     * @param  ?Tuesday  $tuesday
-     * @param  ?Wednesday  $wednesday
-     * @param  ?Thursday  $thursday
-     * @param  ?Friday  $friday
-     * @param  ?Saturday  $saturday
-     * @param  ?Sunday  $sunday
+     * @param  ?\novu\Models\Components\Monday  $monday
+     * @param  ?\novu\Models\Components\Tuesday  $tuesday
+     * @param  ?\novu\Models\Components\Wednesday  $wednesday
+     * @param  ?\novu\Models\Components\Thursday  $thursday
+     * @param  ?\novu\Models\Components\Friday  $friday
+     * @param  ?\novu\Models\Components\Saturday  $saturday
+     * @param  ?\novu\Models\Components\Sunday  $sunday
      * @phpstan-pure
      */
     public function __construct(?Monday $monday = null, ?Tuesday $tuesday = null, ?Wednesday $wednesday = null, ?Thursday $thursday = null, ?Friday $friday = null, ?Saturday $saturday = null, ?Sunday $sunday = null)

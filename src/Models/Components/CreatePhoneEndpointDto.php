@@ -30,7 +30,7 @@ class CreatePhoneEndpointDto
     /**
      * Type of channel endpoint
      *
-     * @var CreatePhoneEndpointDtoType $type
+     * @var \novu\Models\Components\CreatePhoneEndpointDtoType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\CreatePhoneEndpointDtoType')]
@@ -39,7 +39,7 @@ class CreatePhoneEndpointDto
     /**
      * Phone endpoint data
      *
-     * @var PhoneEndpointDto $endpoint
+     * @var \novu\Models\Components\PhoneEndpointDto $endpoint
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('endpoint')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\PhoneEndpointDto')]
@@ -57,7 +57,7 @@ class CreatePhoneEndpointDto
     /**
      * $context
      *
-     * @var ?array<string, string|CreatePhoneEndpointDtoContext2> $context
+     * @var ?array<string, string|\novu\Models\Components\CreatePhoneEndpointDtoContext2> $context
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('context')]
     #[\Speakeasy\Serializer\Annotation\Type('array<string, string|\novu\Models\Components\CreatePhoneEndpointDtoContext2>|null')]
@@ -76,10 +76,10 @@ class CreatePhoneEndpointDto
     /**
      * @param  string  $subscriberId
      * @param  string  $integrationIdentifier
-     * @param  CreatePhoneEndpointDtoType  $type
-     * @param  PhoneEndpointDto  $endpoint
+     * @param  \novu\Models\Components\CreatePhoneEndpointDtoType  $type
+     * @param  \novu\Models\Components\PhoneEndpointDto  $endpoint
      * @param  ?string  $identifier
-     * @param  ?array<string, string|CreatePhoneEndpointDtoContext2>  $context
+     * @param  ?array<string, string|\novu\Models\Components\CreatePhoneEndpointDtoContext2>  $context
      * @param  ?string  $connectionIdentifier
      * @phpstan-pure
      */

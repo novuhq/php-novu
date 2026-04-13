@@ -82,6 +82,8 @@ class Novu
 
     public ChannelEndpoints $channelEndpoints;
 
+    public EnvironmentVariables $environmentVariables;
+
     /**
      * With the help of the Integration Store, you can easily integrate your favorite delivery provider. During the runtime of the API, the Integrations Store is responsible for storing the configurations of all the providers.
      *
@@ -133,6 +135,7 @@ class Novu
         $this->workflows = new Workflows($this->sdkConfiguration);
         $this->channelConnections = new ChannelConnections($this->sdkConfiguration);
         $this->channelEndpoints = new ChannelEndpoints($this->sdkConfiguration);
+        $this->environmentVariables = new EnvironmentVariables($this->sdkConfiguration);
         $this->integrations = new Integrations($this->sdkConfiguration);
         $this->messages = new Messages($this->sdkConfiguration);
         $this->notifications = new Notifications($this->sdkConfiguration);
@@ -161,9 +164,9 @@ class Novu
      *
      *       In the future could be used to trigger events to a subset of subscribers based on defined filters.
      *
-     * @param  Components\TriggerEventToAllRequestDto  $triggerEventToAllRequestDto
+     * @param  \novu\Models\Components\TriggerEventToAllRequestDto  $triggerEventToAllRequestDto
      * @param  ?string  $idempotencyKey
-     * @return Operations\EventsControllerBroadcastEventToAllResponse
+     * @return \novu\Models\Operations\EventsControllerBroadcastEventToAllResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function triggerBroadcast(Components\TriggerEventToAllRequestDto $triggerEventToAllRequestDto, ?string $idempotencyKey = null, ?Options $options = null): Operations\EventsControllerBroadcastEventToAllResponse
@@ -328,7 +331,7 @@ class Novu
      *
      * @param  string  $transactionId
      * @param  ?string  $idempotencyKey
-     * @return Operations\EventsControllerCancelResponse
+     * @return \novu\Models\Operations\EventsControllerCancelResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function cancel(string $transactionId, ?string $idempotencyKey = null, ?Options $options = null): Operations\EventsControllerCancelResponse
@@ -473,9 +476,9 @@ class Novu
      *     Trigger event is the main (and only) way to send notifications to subscribers. The trigger identifier is used to match the particular workflow associated with it. Maximum number of recipients can be 100. Additional information can be passed according the body interface below.
      *     To prevent duplicate triggers, you can optionally pass a **transactionId** in the request body. If the same **transactionId** is used again, the trigger will be ignored. The retention period depends on your billing tier.
      *
-     * @param  Components\TriggerEventRequestDto  $triggerEventRequestDto
+     * @param  \novu\Models\Components\TriggerEventRequestDto  $triggerEventRequestDto
      * @param  ?string  $idempotencyKey
-     * @return Operations\EventsControllerTriggerResponse
+     * @return \novu\Models\Operations\EventsControllerTriggerResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function trigger(Components\TriggerEventRequestDto $triggerEventRequestDto, ?string $idempotencyKey = null, ?Options $options = null): Operations\EventsControllerTriggerResponse
@@ -638,9 +641,9 @@ class Novu
      *       The bulk API is limited to 100 events per request.
      *     
      *
-     * @param  Components\BulkTriggerEventDto  $bulkTriggerEventDto
+     * @param  \novu\Models\Components\BulkTriggerEventDto  $bulkTriggerEventDto
      * @param  ?string  $idempotencyKey
-     * @return Operations\EventsControllerTriggerBulkResponse
+     * @return \novu\Models\Operations\EventsControllerTriggerBulkResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function triggerBulk(Components\BulkTriggerEventDto $bulkTriggerEventDto, ?string $idempotencyKey = null, ?Options $options = null): Operations\EventsControllerTriggerBulkResponse

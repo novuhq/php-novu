@@ -23,7 +23,7 @@ class ConstraintValidation
     /**
      * Value that failed validation
      *
-     * @var string|float|bool|Four|array<string|float|bool|array<string, mixed>|null>|null $value
+     * @var string|float|bool|\novu\Models\Components\Four|array<string|float|bool|array<string, mixed>|null>|null $value
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('value')]
     #[\Speakeasy\Serializer\Annotation\Type('string|float|bool|\novu\Models\Components\Four|array<string|float|bool|array<string, mixed>|null>|null')]
@@ -32,7 +32,7 @@ class ConstraintValidation
 
     /**
      * @param  array<string>  $messages
-     * @param  string|float|bool|Four|array<string|float|bool|array<string, mixed>|null>|null  $value
+     * @param  string|float|bool|\novu\Models\Components\Four|array<string|float|bool|array<string, mixed>|null>|null  $value
      * @phpstan-pure
      */
     public function __construct(array $messages, string|float|bool|Four|array|null $value = null)

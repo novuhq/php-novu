@@ -16,7 +16,7 @@ string $value = /* values here */
 
 ```php
 /**
-* @var Components\WorkflowPreferenceRequestDto
+* @var \novu\Models\Components\WorkflowPreferenceRequestDto
 */
 Components\WorkflowPreferenceRequestDto $value = /* values here */
 ```
@@ -25,7 +25,7 @@ Components\WorkflowPreferenceRequestDto $value = /* values here */
 
 ```php
 /**
-* @var Components\GroupPreferenceFilterDto
+* @var \novu\Models\Components\GroupPreferenceFilterDto
 */
 Components\GroupPreferenceFilterDto $value = /* values here */
 ```

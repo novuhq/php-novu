@@ -9,7 +9,7 @@ Content of the message, can be an email block or a string
 
 ```php
 /**
-* @var array<Components\EmailBlock>
+* @var array<\novu\Models\Components\EmailBlock>
 */
 array $value = /* values here */
 ```

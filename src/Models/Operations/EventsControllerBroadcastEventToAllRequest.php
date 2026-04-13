@@ -14,7 +14,7 @@ class EventsControllerBroadcastEventToAllRequest
 {
     /**
      *
-     * @var Components\TriggerEventToAllRequestDto $triggerEventToAllRequestDto
+     * @var \novu\Models\Components\TriggerEventToAllRequestDto $triggerEventToAllRequestDto
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\TriggerEventToAllRequestDto $triggerEventToAllRequestDto;
@@ -28,7 +28,7 @@ class EventsControllerBroadcastEventToAllRequest
     public ?string $idempotencyKey = null;
 
     /**
-     * @param  Components\TriggerEventToAllRequestDto  $triggerEventToAllRequestDto
+     * @param  \novu\Models\Components\TriggerEventToAllRequestDto  $triggerEventToAllRequestDto
      * @param  ?string  $idempotencyKey
      * @phpstan-pure
      */

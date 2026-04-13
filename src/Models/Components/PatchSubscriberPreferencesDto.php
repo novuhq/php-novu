@@ -14,7 +14,7 @@ class PatchSubscriberPreferencesDto
     /**
      * Channel-specific preference settings
      *
-     * @var ?PatchPreferenceChannelsDto $channels
+     * @var ?\novu\Models\Components\PatchPreferenceChannelsDto $channels
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('channels')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\PatchPreferenceChannelsDto|null')]
@@ -33,7 +33,7 @@ class PatchSubscriberPreferencesDto
     /**
      * Subscriber schedule
      *
-     * @var ?ScheduleDto $schedule
+     * @var ?\novu\Models\Components\ScheduleDto $schedule
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('schedule')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ScheduleDto|null')]
@@ -43,7 +43,7 @@ class PatchSubscriberPreferencesDto
     /**
      * $context
      *
-     * @var ?array<string, string|Two> $context
+     * @var ?array<string, string|\novu\Models\Components\Two> $context
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('context')]
     #[\Speakeasy\Serializer\Annotation\Type('array<string, string|\novu\Models\Components\Two>|null')]
@@ -51,10 +51,10 @@ class PatchSubscriberPreferencesDto
     public ?array $context = null;
 
     /**
-     * @param  ?PatchPreferenceChannelsDto  $channels
+     * @param  ?\novu\Models\Components\PatchPreferenceChannelsDto  $channels
      * @param  ?string  $workflowId
-     * @param  ?ScheduleDto  $schedule
-     * @param  ?array<string, string|Two>  $context
+     * @param  ?\novu\Models\Components\ScheduleDto  $schedule
+     * @param  ?array<string, string|\novu\Models\Components\Two>  $context
      * @phpstan-pure
      */
     public function __construct(?PatchPreferenceChannelsDto $channels = null, ?string $workflowId = null, ?ScheduleDto $schedule = null, ?array $context = null)

@@ -14,7 +14,7 @@ class GenerateLayoutPreviewResponseDto
     /**
      * Preview payload example
      *
-     * @var LayoutPreviewPayloadDto $previewPayloadExample
+     * @var \novu\Models\Components\LayoutPreviewPayloadDto $previewPayloadExample
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('previewPayloadExample')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\LayoutPreviewPayloadDto')]
@@ -23,7 +23,7 @@ class GenerateLayoutPreviewResponseDto
     /**
      * Preview result
      *
-     * @var One $result
+     * @var \novu\Models\Components\One $result
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('result')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\One')]
@@ -40,8 +40,8 @@ class GenerateLayoutPreviewResponseDto
     public ?array $schema = null;
 
     /**
-     * @param  LayoutPreviewPayloadDto  $previewPayloadExample
-     * @param  One  $result
+     * @param  \novu\Models\Components\LayoutPreviewPayloadDto  $previewPayloadExample
+     * @param  \novu\Models\Components\One  $result
      * @param  ?array<string, mixed>  $schema
      * @phpstan-pure
      */

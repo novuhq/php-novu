@@ -14,7 +14,7 @@ class TranslationControllerDeleteTranslationEndpointRequest
     /**
      * Resource type
      *
-     * @var TranslationControllerDeleteTranslationEndpointPathParamResourceType $resourceType
+     * @var \novu\Models\Operations\TranslationControllerDeleteTranslationEndpointPathParamResourceType $resourceType
      */
     #[SpeakeasyMetadata('pathParam:style=simple,explode=false,name=resourceType')]
     public TranslationControllerDeleteTranslationEndpointPathParamResourceType $resourceType;
@@ -44,7 +44,7 @@ class TranslationControllerDeleteTranslationEndpointRequest
     public ?string $idempotencyKey = null;
 
     /**
-     * @param  TranslationControllerDeleteTranslationEndpointPathParamResourceType  $resourceType
+     * @param  \novu\Models\Operations\TranslationControllerDeleteTranslationEndpointPathParamResourceType  $resourceType
      * @param  string  $resourceId
      * @param  string  $locale
      * @param  ?string  $idempotencyKey

@@ -14,7 +14,7 @@ class InAppStepResponseDto
     /**
      * Controls metadata for the in-app step
      *
-     * @var InAppControlsMetadataResponseDto $controls
+     * @var \novu\Models\Components\InAppControlsMetadataResponseDto $controls
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('controls')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\InAppControlsMetadataResponseDto')]
@@ -64,7 +64,7 @@ class InAppStepResponseDto
     /**
      * Type of the step
      *
-     * @var StepTypeEnum $type
+     * @var \novu\Models\Components\StepTypeEnum $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\StepTypeEnum')]
@@ -73,7 +73,7 @@ class InAppStepResponseDto
     /**
      * Origin of the layout
      *
-     * @var ResourceOriginEnum $origin
+     * @var \novu\Models\Components\ResourceOriginEnum $origin
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('origin')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ResourceOriginEnum')]
@@ -98,7 +98,7 @@ class InAppStepResponseDto
     /**
      * Control values for the in-app step
      *
-     * @var ?InAppStepResponseDtoControlValues $controlValues
+     * @var ?\novu\Models\Components\InAppStepResponseDtoControlValues $controlValues
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('controlValues')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\InAppStepResponseDtoControlValues|null')]
@@ -108,7 +108,7 @@ class InAppStepResponseDto
     /**
      * Issues associated with the step
      *
-     * @var ?StepIssuesDto $issues
+     * @var ?\novu\Models\Components\StepIssuesDto $issues
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('issues')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\StepIssuesDto|null')]
@@ -116,21 +116,31 @@ class InAppStepResponseDto
     public ?StepIssuesDto $issues = null;
 
     /**
-     * @param  InAppControlsMetadataResponseDto  $controls
+     * Hash identifying the deployed Cloudflare Worker for this step
+     *
+     * @var ?string $stepResolverHash
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('stepResolverHash')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $stepResolverHash = null;
+
+    /**
+     * @param  \novu\Models\Components\InAppControlsMetadataResponseDto  $controls
      * @param  array<string, mixed>  $variables
      * @param  string  $stepId
      * @param  string  $id
      * @param  string  $name
      * @param  string  $slug
-     * @param  StepTypeEnum  $type
-     * @param  ResourceOriginEnum  $origin
+     * @param  \novu\Models\Components\StepTypeEnum  $type
+     * @param  \novu\Models\Components\ResourceOriginEnum  $origin
      * @param  string  $workflowId
      * @param  string  $workflowDatabaseId
-     * @param  ?InAppStepResponseDtoControlValues  $controlValues
-     * @param  ?StepIssuesDto  $issues
+     * @param  ?\novu\Models\Components\InAppStepResponseDtoControlValues  $controlValues
+     * @param  ?\novu\Models\Components\StepIssuesDto  $issues
+     * @param  ?string  $stepResolverHash
      * @phpstan-pure
      */
-    public function __construct(InAppControlsMetadataResponseDto $controls, array $variables, string $stepId, string $id, string $name, string $slug, StepTypeEnum $type, ResourceOriginEnum $origin, string $workflowId, string $workflowDatabaseId, ?InAppStepResponseDtoControlValues $controlValues = null, ?StepIssuesDto $issues = null)
+    public function __construct(InAppControlsMetadataResponseDto $controls, array $variables, string $stepId, string $id, string $name, string $slug, StepTypeEnum $type, ResourceOriginEnum $origin, string $workflowId, string $workflowDatabaseId, ?InAppStepResponseDtoControlValues $controlValues = null, ?StepIssuesDto $issues = null, ?string $stepResolverHash = null)
     {
         $this->controls = $controls;
         $this->variables = $variables;
@@ -144,5 +154,6 @@ class InAppStepResponseDto
         $this->workflowDatabaseId = $workflowDatabaseId;
         $this->controlValues = $controlValues;
         $this->issues = $issues;
+        $this->stepResolverHash = $stepResolverHash;
     }
 }

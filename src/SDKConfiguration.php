@@ -13,6 +13,8 @@ class SDKConfiguration
 {
     public ?\GuzzleHttp\ClientInterface $client = null;
 
+    public ?\GuzzleHttp\ClientInterface $defaultClient = null;
+
     public Hooks\SDKHooks $hooks;
     /** @var ?pure-Closure(): Models\Components\Security */
     public ?\Closure $securitySource = null;
@@ -22,13 +24,13 @@ class SDKConfiguration
 
     public string $language = 'php';
 
-    public string $openapiDocVersion = '3.13.0';
+    public string $openapiDocVersion = '3.15.0';
 
-    public string $sdkVersion = '3.14.0';
+    public string $sdkVersion = '3.15.0';
 
-    public string $genVersion = '2.836.5';
+    public string $genVersion = '2.879.11';
 
-    public string $userAgent = 'speakeasy-sdk/php 3.14.0 2.836.5 3.13.0 novuhq/novu';
+    public string $userAgent = 'speakeasy-sdk/php 3.15.0 2.879.11 3.15.0 novuhq/novu';
 
     public ?RetryConfig $retryConfig = null;
 

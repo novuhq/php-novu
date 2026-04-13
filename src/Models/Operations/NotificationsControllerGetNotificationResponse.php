@@ -42,7 +42,7 @@ class NotificationsControllerGetNotificationResponse
     /**
      * OK
      *
-     * @var ?Components\ActivityNotificationResponseDto $activityNotificationResponseDto
+     * @var ?\novu\Models\Components\ActivityNotificationResponseDto $activityNotificationResponseDto
      */
     public ?Components\ActivityNotificationResponseDto $activityNotificationResponseDto = null;
 
@@ -51,7 +51,7 @@ class NotificationsControllerGetNotificationResponse
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
-     * @param  ?Components\ActivityNotificationResponseDto  $activityNotificationResponseDto
+     * @param  ?\novu\Models\Components\ActivityNotificationResponseDto  $activityNotificationResponseDto
      * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\ActivityNotificationResponseDto $activityNotificationResponseDto = null, ?array $headers = [])

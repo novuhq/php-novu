@@ -9,7 +9,7 @@ Metadata associated with the workflow step. Can vary based on the type of step.
 
 ```php
 /**
-* @var Components\DigestRegularMetadata
+* @var \novu\Models\Components\DigestRegularMetadata
 */
 Components\DigestRegularMetadata $value = /* values here */
 ```
@@ -18,7 +18,7 @@ Components\DigestRegularMetadata $value = /* values here */
 
 ```php
 /**
-* @var Components\DigestTimedMetadata
+* @var \novu\Models\Components\DigestTimedMetadata
 */
 Components\DigestTimedMetadata $value = /* values here */
 ```
@@ -27,7 +27,7 @@ Components\DigestTimedMetadata $value = /* values here */
 
 ```php
 /**
-* @var Components\DelayRegularMetadata
+* @var \novu\Models\Components\DelayRegularMetadata
 */
 Components\DelayRegularMetadata $value = /* values here */
 ```
@@ -36,7 +36,7 @@ Components\DelayRegularMetadata $value = /* values here */
 
 ```php
 /**
-* @var Components\DelayScheduledMetadata
+* @var \novu\Models\Components\DelayScheduledMetadata
 */
 Components\DelayScheduledMetadata $value = /* values here */
 ```

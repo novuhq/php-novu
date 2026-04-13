@@ -40,7 +40,7 @@ class GenerateChatOauthUrlRequestDto
     /**
      * $context
      *
-     * @var ?array<string, string|GenerateChatOauthUrlRequestDtoContext2> $context
+     * @var ?array<string, string|\novu\Models\Components\GenerateChatOauthUrlRequestDtoContext2> $context
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('context')]
     #[\Speakeasy\Serializer\Annotation\Type('array<string, string|\novu\Models\Components\GenerateChatOauthUrlRequestDtoContext2>|null')]
@@ -61,7 +61,7 @@ class GenerateChatOauthUrlRequestDto
      * @param  string  $integrationIdentifier
      * @param  ?string  $subscriberId
      * @param  ?string  $connectionIdentifier
-     * @param  ?array<string, string|GenerateChatOauthUrlRequestDtoContext2>  $context
+     * @param  ?array<string, string|\novu\Models\Components\GenerateChatOauthUrlRequestDtoContext2>  $context
      * @param  ?array<string>  $scope
      * @phpstan-pure
      */

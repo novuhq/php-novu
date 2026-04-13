@@ -9,7 +9,7 @@ User workflow preferences
 
 ```php
 /**
-* @var Components\UserWorkflowPreferencesDto
+* @var \novu\Models\Components\UserWorkflowPreferencesDto
 */
 Components\UserWorkflowPreferencesDto $value = /* values here */
 ```

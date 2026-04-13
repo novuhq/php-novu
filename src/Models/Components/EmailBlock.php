@@ -14,7 +14,7 @@ class EmailBlock
     /**
      * Type of the email block
      *
-     * @var EmailBlockTypeEnum $type
+     * @var \novu\Models\Components\EmailBlockTypeEnum $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\EmailBlockTypeEnum')]
@@ -40,7 +40,7 @@ class EmailBlock
     /**
      * Styles applied to the email block
      *
-     * @var ?EmailBlockStyles $styles
+     * @var ?\novu\Models\Components\EmailBlockStyles $styles
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('styles')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\EmailBlockStyles|null')]
@@ -48,10 +48,10 @@ class EmailBlock
     public ?EmailBlockStyles $styles = null;
 
     /**
-     * @param  EmailBlockTypeEnum  $type
+     * @param  \novu\Models\Components\EmailBlockTypeEnum  $type
      * @param  string  $content
      * @param  ?string  $url
-     * @param  ?EmailBlockStyles  $styles
+     * @param  ?\novu\Models\Components\EmailBlockStyles  $styles
      * @phpstan-pure
      */
     public function __construct(EmailBlockTypeEnum $type, string $content, ?string $url = null, ?EmailBlockStyles $styles = null)

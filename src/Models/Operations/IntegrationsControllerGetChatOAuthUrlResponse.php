@@ -42,7 +42,7 @@ class IntegrationsControllerGetChatOAuthUrlResponse
     /**
      * Created
      *
-     * @var ?Components\GenerateChatOAuthUrlResponseDto $generateChatOAuthUrlResponseDto
+     * @var ?\novu\Models\Components\GenerateChatOAuthUrlResponseDto $generateChatOAuthUrlResponseDto
      */
     public ?Components\GenerateChatOAuthUrlResponseDto $generateChatOAuthUrlResponseDto = null;
 
@@ -51,7 +51,7 @@ class IntegrationsControllerGetChatOAuthUrlResponse
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
-     * @param  ?Components\GenerateChatOAuthUrlResponseDto  $generateChatOAuthUrlResponseDto
+     * @param  ?\novu\Models\Components\GenerateChatOAuthUrlResponseDto  $generateChatOAuthUrlResponseDto
      * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\GenerateChatOAuthUrlResponseDto $generateChatOAuthUrlResponseDto = null, ?array $headers = [])

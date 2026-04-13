@@ -22,7 +22,7 @@ class TranslationControllerUploadTranslationFilesRequestBody
     /**
      * The resource type to associate localizations with
      *
-     * @var ResourceType $resourceType
+     * @var \novu\Models\Operations\ResourceType $resourceType
      */
     #[SpeakeasyMetadata('multipartForm:name=resourceType')]
     public ResourceType $resourceType;
@@ -30,15 +30,15 @@ class TranslationControllerUploadTranslationFilesRequestBody
     /**
      * One or more JSON translation files. Filenames must match locale format (e.g., en_US.json, fr_FR.json). Field name can be "files" or "files[]".
      *
-     * @var array<Files> $files
+     * @var array<\novu\Models\Operations\Files> $files
      */
     #[SpeakeasyMetadata('multipartForm:file=true,name=files')]
     public array $files;
 
     /**
      * @param  string  $resourceId
-     * @param  ResourceType  $resourceType
-     * @param  array<Files>  $files
+     * @param  \novu\Models\Operations\ResourceType  $resourceType
+     * @param  array<\novu\Models\Operations\Files>  $files
      * @phpstan-pure
      */
     public function __construct(string $resourceId, ResourceType $resourceType, array $files)

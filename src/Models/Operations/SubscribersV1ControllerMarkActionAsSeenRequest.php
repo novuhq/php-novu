@@ -35,7 +35,7 @@ class SubscribersV1ControllerMarkActionAsSeenRequest
 
     /**
      *
-     * @var Components\MarkMessageActionAsSeenDto $markMessageActionAsSeenDto
+     * @var \novu\Models\Components\MarkMessageActionAsSeenDto $markMessageActionAsSeenDto
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\MarkMessageActionAsSeenDto $markMessageActionAsSeenDto;
@@ -52,7 +52,7 @@ class SubscribersV1ControllerMarkActionAsSeenRequest
      * @param  string  $messageId
      * @param  mixed  $type
      * @param  string  $subscriberId
-     * @param  Components\MarkMessageActionAsSeenDto  $markMessageActionAsSeenDto
+     * @param  \novu\Models\Components\MarkMessageActionAsSeenDto  $markMessageActionAsSeenDto
      * @param  ?string  $idempotencyKey
      * @phpstan-pure
      */

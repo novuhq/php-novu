@@ -39,7 +39,7 @@ class PayloadValidationExceptionDto
     /**
      * Value that failed validation
      *
-     * @var string|float|bool|MessagePayloadValidationExceptionDto4|array<string|float|bool|array<string, mixed>|null>|null $message
+     * @var string|float|bool|\novu\Models\Errors\MessagePayloadValidationExceptionDto4|array<string|float|bool|array<string, mixed>|null>|null $message
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('message')]
     #[\Speakeasy\Serializer\Annotation\Type('string|float|bool|\novu\Models\Errors\MessagePayloadValidationExceptionDto4|array<string|float|bool|array<string, mixed>|null>|null')]
@@ -78,7 +78,7 @@ class PayloadValidationExceptionDto
     /**
      * Array of detailed validation errors
      *
-     * @var array<Components\PayloadValidationErrorDto> $errors
+     * @var array<\novu\Models\Components\PayloadValidationErrorDto> $errors
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('errors')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\PayloadValidationErrorDto>')]
@@ -87,7 +87,7 @@ class PayloadValidationExceptionDto
     /**
      * The JSON schema that was used for validation
      *
-     * @var ?Schema $schema
+     * @var ?\novu\Models\Errors\Schema $schema
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('schema')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Errors\Schema|null')]
@@ -99,11 +99,11 @@ class PayloadValidationExceptionDto
      * @param  string  $timestamp
      * @param  string  $path
      * @param  string  $type
-     * @param  array<Components\PayloadValidationErrorDto>  $errors
+     * @param  array<\novu\Models\Components\PayloadValidationErrorDto>  $errors
      * @param  ?array<string, mixed>  $ctx
      * @param  ?string  $errorId
-     * @param  ?Schema  $schema
-     * @param  string|float|bool|MessagePayloadValidationExceptionDto4|array<string|float|bool|array<string, mixed>|null>|null  $message
+     * @param  ?\novu\Models\Errors\Schema  $schema
+     * @param  string|float|bool|\novu\Models\Errors\MessagePayloadValidationExceptionDto4|array<string|float|bool|array<string, mixed>|null>|null  $message
      * @phpstan-pure
      */
     public function __construct(float $statusCode, string $timestamp, string $path, string $type, array $errors, ?array $ctx = null, ?string $errorId = null, ?Schema $schema = null, string|float|bool|MessagePayloadValidationExceptionDto4|array|null $message = null)

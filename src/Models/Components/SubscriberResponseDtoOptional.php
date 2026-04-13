@@ -23,7 +23,7 @@ class SubscriberResponseDtoOptional
     /**
      * An array of channel settings associated with the subscriber.
      *
-     * @var ?array<ChannelSettingsDto> $channels
+     * @var ?array<\novu\Models\Components\ChannelSettingsDto> $channels
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('channels')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\ChannelSettingsDto>|null')]
@@ -143,7 +143,7 @@ class SubscriberResponseDtoOptional
 
     /**
      * @param  ?string  $id
-     * @param  ?array<ChannelSettingsDto>  $channels
+     * @param  ?array<\novu\Models\Components\ChannelSettingsDto>  $channels
      * @param  ?array<string>  $topics
      * @param  ?float  $v
      * @param  ?string  $firstName

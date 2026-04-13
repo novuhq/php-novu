@@ -23,7 +23,7 @@ class DigestTimedConfigDto
     /**
      * Days of the week for the digest
      *
-     * @var ?array<DigestTimedConfigDtoWeekDays> $weekDays
+     * @var ?array<\novu\Models\Components\DigestTimedConfigDtoWeekDays> $weekDays
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('weekDays')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\DigestTimedConfigDtoWeekDays>|null')]
@@ -43,7 +43,7 @@ class DigestTimedConfigDto
     /**
      * Ordinal position for the digest
      *
-     * @var ?OrdinalEnum $ordinal
+     * @var ?\novu\Models\Components\OrdinalEnum $ordinal
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('ordinal')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\OrdinalEnum|null')]
@@ -53,7 +53,7 @@ class DigestTimedConfigDto
     /**
      * Value of the ordinal
      *
-     * @var ?OrdinalValueEnum $ordinalValue
+     * @var ?\novu\Models\Components\OrdinalValueEnum $ordinalValue
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('ordinalValue')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\OrdinalValueEnum|null')]
@@ -63,7 +63,7 @@ class DigestTimedConfigDto
     /**
      * Type of monthly schedule
      *
-     * @var ?MonthlyTypeEnum $monthlyType
+     * @var ?\novu\Models\Components\MonthlyTypeEnum $monthlyType
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('monthlyType')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\MonthlyTypeEnum|null')]
@@ -90,11 +90,11 @@ class DigestTimedConfigDto
 
     /**
      * @param  ?string  $atTime
-     * @param  ?array<DigestTimedConfigDtoWeekDays>  $weekDays
+     * @param  ?array<\novu\Models\Components\DigestTimedConfigDtoWeekDays>  $weekDays
      * @param  ?array<float>  $monthDays
-     * @param  ?OrdinalEnum  $ordinal
-     * @param  ?OrdinalValueEnum  $ordinalValue
-     * @param  ?MonthlyTypeEnum  $monthlyType
+     * @param  ?\novu\Models\Components\OrdinalEnum  $ordinal
+     * @param  ?\novu\Models\Components\OrdinalValueEnum  $ordinalValue
+     * @param  ?\novu\Models\Components\MonthlyTypeEnum  $monthlyType
      * @param  ?string  $cronExpression
      * @param  ?string  $untilDate
      * @phpstan-pure

@@ -52,9 +52,11 @@ class Master
      *
      * Retrieve all translations for a locale in master JSON format organized by resourceId (workflowId)
      *
+     * This operation requires either `secretKey` or `secretKey` to be set via `setSecurity` on the SDK builder.
+     *
      * @param  ?string  $locale
      * @param  ?string  $idempotencyKey
-     * @return Operations\TranslationControllerGetMasterJsonEndpointResponse
+     * @return \novu\Models\Operations\TranslationControllerGetMasterJsonEndpointResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function retrieve(?string $locale = null, ?string $idempotencyKey = null, ?Options $options = null): Operations\TranslationControllerGetMasterJsonEndpointResponse
@@ -103,13 +105,16 @@ class Master
         $httpOptions['headers']['Accept'] = 'application/json';
         $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('GET', $url);
+        $client = $this->sdkConfiguration->securitySource !== null
+            ? Utils\Utils::configureSecurityClient($this->sdkConfiguration->defaultClient, $this->sdkConfiguration->getSecurity(), ['secretKey', 'secretKey'])
+            : $this->sdkConfiguration->defaultClient;
         $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'TranslationController_getMasterJsonEndpoint', null, $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
         $httpOptions['query'] = Utils\QueryParameters::standardizeQueryParams($httpRequest, $qp);
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
         $httpRequest = Utils\Utils::removeHeaders($httpRequest);
         try {
-            $httpResponse = RetryUtils::retryWrapper(fn () => $this->sdkConfiguration->client->send($httpRequest, $httpOptions), $retryConfig, $retryCodes);
+            $httpResponse = RetryUtils::retryWrapper(fn () => $client->send($httpRequest, $httpOptions), $retryConfig, $retryCodes);
         } catch (\GuzzleHttp\Exception\GuzzleException $error) {
             $res = $this->sdkConfiguration->hooks->afterError(new Hooks\AfterErrorContext($hookContext), null, $error);
             $httpResponse = $res;
@@ -152,9 +157,11 @@ class Master
      *
      * Import translations for multiple workflows from master JSON format for a specific locale
      *
-     * @param  Components\ImportMasterJsonRequestDto  $importMasterJsonRequestDto
+     * This operation requires either `secretKey` or `secretKey` to be set via `setSecurity` on the SDK builder.
+     *
+     * @param  \novu\Models\Components\ImportMasterJsonRequestDto  $importMasterJsonRequestDto
      * @param  ?string  $idempotencyKey
-     * @return Operations\TranslationControllerImportMasterJsonEndpointResponse
+     * @return \novu\Models\Operations\TranslationControllerImportMasterJsonEndpointResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function import(Components\ImportMasterJsonRequestDto $importMasterJsonRequestDto, ?string $idempotencyKey = null, ?Options $options = null): Operations\TranslationControllerImportMasterJsonEndpointResponse
@@ -206,12 +213,15 @@ class Master
         $httpOptions['headers']['Accept'] = 'application/json';
         $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('POST', $url);
+        $client = $this->sdkConfiguration->securitySource !== null
+            ? Utils\Utils::configureSecurityClient($this->sdkConfiguration->defaultClient, $this->sdkConfiguration->getSecurity(), ['secretKey', 'secretKey'])
+            : $this->sdkConfiguration->defaultClient;
         $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'TranslationController_importMasterJsonEndpoint', null, $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
         $httpRequest = Utils\Utils::removeHeaders($httpRequest);
         try {
-            $httpResponse = RetryUtils::retryWrapper(fn () => $this->sdkConfiguration->client->send($httpRequest, $httpOptions), $retryConfig, $retryCodes);
+            $httpResponse = RetryUtils::retryWrapper(fn () => $client->send($httpRequest, $httpOptions), $retryConfig, $retryCodes);
         } catch (\GuzzleHttp\Exception\GuzzleException $error) {
             $res = $this->sdkConfiguration->hooks->afterError(new Hooks\AfterErrorContext($hookContext), null, $error);
             $httpResponse = $res;
@@ -254,9 +264,11 @@ class Master
      *
      * Upload a master JSON file containing translations for multiple workflows. Locale is automatically detected from filename (e.g., en_US.json)
      *
-     * @param  Operations\TranslationControllerUploadMasterJsonEndpointRequestBody  $requestBody
+     * This operation requires either `secretKey` or `secretKey` to be set via `setSecurity` on the SDK builder.
+     *
+     * @param  \novu\Models\Operations\TranslationControllerUploadMasterJsonEndpointRequestBody  $requestBody
      * @param  ?string  $idempotencyKey
-     * @return Operations\TranslationControllerUploadMasterJsonEndpointResponse
+     * @return \novu\Models\Operations\TranslationControllerUploadMasterJsonEndpointResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function upload(Operations\TranslationControllerUploadMasterJsonEndpointRequestBody $requestBody, ?string $idempotencyKey = null, ?Options $options = null): Operations\TranslationControllerUploadMasterJsonEndpointResponse
@@ -308,12 +320,15 @@ class Master
         $httpOptions['headers']['Accept'] = 'application/json';
         $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('POST', $url);
+        $client = $this->sdkConfiguration->securitySource !== null
+            ? Utils\Utils::configureSecurityClient($this->sdkConfiguration->defaultClient, $this->sdkConfiguration->getSecurity(), ['secretKey', 'secretKey'])
+            : $this->sdkConfiguration->defaultClient;
         $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'TranslationController_uploadMasterJsonEndpoint', null, $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
         $httpRequest = Utils\Utils::removeHeaders($httpRequest);
         try {
-            $httpResponse = RetryUtils::retryWrapper(fn () => $this->sdkConfiguration->client->send($httpRequest, $httpOptions), $retryConfig, $retryCodes);
+            $httpResponse = RetryUtils::retryWrapper(fn () => $client->send($httpRequest, $httpOptions), $retryConfig, $retryCodes);
         } catch (\GuzzleHttp\Exception\GuzzleException $error) {
             $res = $this->sdkConfiguration->hooks->afterError(new Hooks\AfterErrorContext($hookContext), null, $error);
             $httpResponse = $res;

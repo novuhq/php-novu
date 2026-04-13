@@ -20,7 +20,7 @@ string $value = /* values here */
 
 ```php
 /**
-* @var Components\SubscriberPayloadDto
+* @var \novu\Models\Components\SubscriberPayloadDto
 */
 Components\SubscriberPayloadDto $value = /* values here */
 ```

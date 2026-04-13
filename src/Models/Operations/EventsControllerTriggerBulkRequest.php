@@ -14,7 +14,7 @@ class EventsControllerTriggerBulkRequest
 {
     /**
      *
-     * @var Components\BulkTriggerEventDto $bulkTriggerEventDto
+     * @var \novu\Models\Components\BulkTriggerEventDto $bulkTriggerEventDto
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\BulkTriggerEventDto $bulkTriggerEventDto;
@@ -28,7 +28,7 @@ class EventsControllerTriggerBulkRequest
     public ?string $idempotencyKey = null;
 
     /**
-     * @param  Components\BulkTriggerEventDto  $bulkTriggerEventDto
+     * @param  \novu\Models\Components\BulkTriggerEventDto  $bulkTriggerEventDto
      * @param  ?string  $idempotencyKey
      * @phpstan-pure
      */

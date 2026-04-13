@@ -9,7 +9,7 @@ Control values for the Throttle step.
 
 ```php
 /**
-* @var Components\ThrottleControlDto
+* @var \novu\Models\Components\ThrottleControlDto
 */
 Components\ThrottleControlDto $value = /* values here */
 ```

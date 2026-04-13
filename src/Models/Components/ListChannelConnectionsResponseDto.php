@@ -14,7 +14,7 @@ class ListChannelConnectionsResponseDto
     /**
      * List of returned Channel Connections
      *
-     * @var array<GetChannelConnectionResponseDto> $data
+     * @var array<\novu\Models\Components\GetChannelConnectionResponseDto> $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\GetChannelConnectionResponseDto>')]
@@ -53,7 +53,7 @@ class ListChannelConnectionsResponseDto
     public ?string $previous;
 
     /**
-     * @param  array<GetChannelConnectionResponseDto>  $data
+     * @param  array<\novu\Models\Components\GetChannelConnectionResponseDto>  $data
      * @param  float  $totalCount
      * @param  bool  $totalCountCapped
      * @param  ?string  $next

@@ -14,14 +14,14 @@ class GetLayoutUsageResponseDto
     /**
      * Array of workflows that use this layout
      *
-     * @var array<WorkflowInfoDto> $workflows
+     * @var array<\novu\Models\Components\WorkflowInfoDto> $workflows
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('workflows')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\WorkflowInfoDto>')]
     public array $workflows;
 
     /**
-     * @param  array<WorkflowInfoDto>  $workflows
+     * @param  array<\novu\Models\Components\WorkflowInfoDto>  $workflows
      * @phpstan-pure
      */
     public function __construct(array $workflows)

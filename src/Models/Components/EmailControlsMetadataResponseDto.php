@@ -14,7 +14,7 @@ class EmailControlsMetadataResponseDto
     /**
      * Control values specific to Email
      *
-     * @var EmailControlDto $values
+     * @var \novu\Models\Components\EmailControlDto $values
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('values')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\EmailControlDto')]
@@ -33,7 +33,7 @@ class EmailControlsMetadataResponseDto
     /**
      * UI Schema for rendering
      *
-     * @var ?UiSchema $uiSchema
+     * @var ?\novu\Models\Components\UiSchema $uiSchema
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('uiSchema')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\UiSchema|null')]
@@ -41,9 +41,9 @@ class EmailControlsMetadataResponseDto
     public ?UiSchema $uiSchema = null;
 
     /**
-     * @param  EmailControlDto  $values
+     * @param  \novu\Models\Components\EmailControlDto  $values
      * @param  ?array<string, mixed>  $dataSchema
-     * @param  ?UiSchema  $uiSchema
+     * @param  ?\novu\Models\Components\UiSchema  $uiSchema
      * @phpstan-pure
      */
     public function __construct(EmailControlDto $values, ?array $dataSchema = null, ?UiSchema $uiSchema = null)

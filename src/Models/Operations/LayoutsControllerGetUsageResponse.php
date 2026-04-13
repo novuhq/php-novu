@@ -42,7 +42,7 @@ class LayoutsControllerGetUsageResponse
     /**
      * OK
      *
-     * @var ?Components\GetLayoutUsageResponseDto $getLayoutUsageResponseDto
+     * @var ?\novu\Models\Components\GetLayoutUsageResponseDto $getLayoutUsageResponseDto
      */
     public ?Components\GetLayoutUsageResponseDto $getLayoutUsageResponseDto = null;
 
@@ -51,7 +51,7 @@ class LayoutsControllerGetUsageResponse
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
-     * @param  ?Components\GetLayoutUsageResponseDto  $getLayoutUsageResponseDto
+     * @param  ?\novu\Models\Components\GetLayoutUsageResponseDto  $getLayoutUsageResponseDto
      * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\GetLayoutUsageResponseDto $getLayoutUsageResponseDto = null, ?array $headers = [])

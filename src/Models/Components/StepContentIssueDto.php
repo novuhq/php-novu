@@ -14,7 +14,7 @@ class StepContentIssueDto
     /**
      * Type of step content issue
      *
-     * @var ContentIssueEnum $issueType
+     * @var \novu\Models\Components\ContentIssueEnum $issueType
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('issueType')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ContentIssueEnum')]
@@ -38,7 +38,7 @@ class StepContentIssueDto
     public ?string $variableName = null;
 
     /**
-     * @param  ContentIssueEnum  $issueType
+     * @param  \novu\Models\Components\ContentIssueEnum  $issueType
      * @param  string  $message
      * @param  ?string  $variableName
      * @phpstan-pure

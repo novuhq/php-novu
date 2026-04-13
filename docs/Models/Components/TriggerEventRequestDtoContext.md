@@ -16,7 +16,7 @@ string $value = /* values here */
 
 ```php
 /**
-* @var Components\TriggerEventRequestDtoContext2
+* @var \novu\Models\Components\TriggerEventRequestDtoContext2
 */
 Components\TriggerEventRequestDtoContext2 $value = /* values here */
 ```

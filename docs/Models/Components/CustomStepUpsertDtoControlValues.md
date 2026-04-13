@@ -9,7 +9,7 @@ Control values for the Custom step.
 
 ```php
 /**
-* @var Components\CustomControlDto
+* @var \novu\Models\Components\CustomControlDto
 */
 Components\CustomControlDto $value = /* values here */
 ```

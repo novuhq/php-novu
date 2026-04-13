@@ -42,7 +42,7 @@ class TopicsControllerGetTopicResponse
     /**
      * OK
      *
-     * @var ?Components\TopicResponseDto $topicResponseDto
+     * @var ?\novu\Models\Components\TopicResponseDto $topicResponseDto
      */
     public ?Components\TopicResponseDto $topicResponseDto = null;
 
@@ -51,7 +51,7 @@ class TopicsControllerGetTopicResponse
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
-     * @param  ?Components\TopicResponseDto  $topicResponseDto
+     * @param  ?\novu\Models\Components\TopicResponseDto  $topicResponseDto
      * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\TopicResponseDto $topicResponseDto = null, ?array $headers = [])

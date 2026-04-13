@@ -7,7 +7,7 @@
 
 ```php
 /**
-* @var Components\InAppStepResponseDto
+* @var \novu\Models\Components\InAppStepResponseDto
 */
 Components\InAppStepResponseDto $value = /* values here */
 ```
@@ -16,7 +16,7 @@ Components\InAppStepResponseDto $value = /* values here */
 
 ```php
 /**
-* @var Components\EmailStepResponseDto
+* @var \novu\Models\Components\EmailStepResponseDto
 */
 Components\EmailStepResponseDto $value = /* values here */
 ```
@@ -25,7 +25,7 @@ Components\EmailStepResponseDto $value = /* values here */
 
 ```php
 /**
-* @var Components\SmsStepResponseDto
+* @var \novu\Models\Components\SmsStepResponseDto
 */
 Components\SmsStepResponseDto $value = /* values here */
 ```
@@ -34,7 +34,7 @@ Components\SmsStepResponseDto $value = /* values here */
 
 ```php
 /**
-* @var Components\PushStepResponseDto
+* @var \novu\Models\Components\PushStepResponseDto
 */
 Components\PushStepResponseDto $value = /* values here */
 ```
@@ -43,7 +43,7 @@ Components\PushStepResponseDto $value = /* values here */
 
 ```php
 /**
-* @var Components\ChatStepResponseDto
+* @var \novu\Models\Components\ChatStepResponseDto
 */
 Components\ChatStepResponseDto $value = /* values here */
 ```
@@ -52,7 +52,7 @@ Components\ChatStepResponseDto $value = /* values here */
 
 ```php
 /**
-* @var Components\DelayStepResponseDto
+* @var \novu\Models\Components\DelayStepResponseDto
 */
 Components\DelayStepResponseDto $value = /* values here */
 ```
@@ -61,7 +61,7 @@ Components\DelayStepResponseDto $value = /* values here */
 
 ```php
 /**
-* @var Components\DigestStepResponseDto
+* @var \novu\Models\Components\DigestStepResponseDto
 */
 Components\DigestStepResponseDto $value = /* values here */
 ```
@@ -70,7 +70,7 @@ Components\DigestStepResponseDto $value = /* values here */
 
 ```php
 /**
-* @var Components\CustomStepResponseDto
+* @var \novu\Models\Components\CustomStepResponseDto
 */
 Components\CustomStepResponseDto $value = /* values here */
 ```
@@ -79,8 +79,17 @@ Components\CustomStepResponseDto $value = /* values here */
 
 ```php
 /**
-* @var Components\ThrottleStepResponseDto
+* @var \novu\Models\Components\ThrottleStepResponseDto
 */
 Components\ThrottleStepResponseDto $value = /* values here */
+```
+
+### `Components\HttpRequestStepResponseDto`
+
+```php
+/**
+* @var \novu\Models\Components\HttpRequestStepResponseDto
+*/
+Components\HttpRequestStepResponseDto $value = /* values here */
 ```
 

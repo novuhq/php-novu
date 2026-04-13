@@ -14,7 +14,7 @@ class ContextsControllerCreateContextRequest
 {
     /**
      *
-     * @var Components\CreateContextRequestDto $createContextRequestDto
+     * @var \novu\Models\Components\CreateContextRequestDto $createContextRequestDto
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\CreateContextRequestDto $createContextRequestDto;
@@ -28,7 +28,7 @@ class ContextsControllerCreateContextRequest
     public ?string $idempotencyKey = null;
 
     /**
-     * @param  Components\CreateContextRequestDto  $createContextRequestDto
+     * @param  \novu\Models\Components\CreateContextRequestDto  $createContextRequestDto
      * @param  ?string  $idempotencyKey
      * @phpstan-pure
      */

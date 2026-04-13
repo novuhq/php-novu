@@ -21,7 +21,7 @@ class SubscribersV1ControllerMarkAllUnreadAsReadRequest
 
     /**
      *
-     * @var Components\MarkAllMessageAsRequestDto $markAllMessageAsRequestDto
+     * @var \novu\Models\Components\MarkAllMessageAsRequestDto $markAllMessageAsRequestDto
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\MarkAllMessageAsRequestDto $markAllMessageAsRequestDto;
@@ -36,7 +36,7 @@ class SubscribersV1ControllerMarkAllUnreadAsReadRequest
 
     /**
      * @param  string  $subscriberId
-     * @param  Components\MarkAllMessageAsRequestDto  $markAllMessageAsRequestDto
+     * @param  \novu\Models\Components\MarkAllMessageAsRequestDto  $markAllMessageAsRequestDto
      * @param  ?string  $idempotencyKey
      * @phpstan-pure
      */

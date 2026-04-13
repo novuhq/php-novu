@@ -46,7 +46,7 @@ class SubscribersControllerListSubscriberTopicsRequest
     /**
      * Direction of sorting
      *
-     * @var ?SubscribersControllerListSubscriberTopicsQueryParamOrderDirection $orderDirection
+     * @var ?\novu\Models\Operations\SubscribersControllerListSubscriberTopicsQueryParamOrderDirection $orderDirection
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=orderDirection')]
     public ?SubscribersControllerListSubscriberTopicsQueryParamOrderDirection $orderDirection = null;
@@ -96,7 +96,7 @@ class SubscribersControllerListSubscriberTopicsRequest
      * @param  ?string  $after
      * @param  ?string  $before
      * @param  ?float  $limit
-     * @param  ?SubscribersControllerListSubscriberTopicsQueryParamOrderDirection  $orderDirection
+     * @param  ?\novu\Models\Operations\SubscribersControllerListSubscriberTopicsQueryParamOrderDirection  $orderDirection
      * @param  ?string  $orderBy
      * @param  ?bool  $includeCursor
      * @param  ?string  $key

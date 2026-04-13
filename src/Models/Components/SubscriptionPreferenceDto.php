@@ -40,7 +40,7 @@ class SubscriptionPreferenceDto
     /**
      * Workflow information if this is a template-level preference
      *
-     * @var ?SubscriptionPreferenceDtoWorkflow $workflow
+     * @var ?\novu\Models\Components\SubscriptionPreferenceDtoWorkflow $workflow
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('workflow')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\SubscriptionPreferenceDtoWorkflow|null')]
@@ -51,7 +51,7 @@ class SubscriptionPreferenceDto
      * @param  string  $subscriptionId
      * @param  bool  $enabled
      * @param  ?array<string, mixed>  $condition
-     * @param  ?SubscriptionPreferenceDtoWorkflow  $workflow
+     * @param  ?\novu\Models\Components\SubscriptionPreferenceDtoWorkflow  $workflow
      * @phpstan-pure
      */
     public function __construct(string $subscriptionId, bool $enabled, ?array $condition = null, ?SubscriptionPreferenceDtoWorkflow $workflow = null)

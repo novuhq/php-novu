@@ -38,7 +38,7 @@ class TopicSubscriptionResponseDto
     /**
      * Topic information
      *
-     * @var TopicResponseDto $topic
+     * @var \novu\Models\Components\TopicResponseDto $topic
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('topic')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\TopicResponseDto')]
@@ -47,7 +47,7 @@ class TopicSubscriptionResponseDto
     /**
      * Subscriber information
      *
-     * @var SubscriberDto $subscriber
+     * @var \novu\Models\Components\SubscriberDto $subscriber
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('subscriber')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\SubscriberDto')]
@@ -67,8 +67,8 @@ class TopicSubscriptionResponseDto
      * @param  string  $id
      * @param  string  $identifier
      * @param  string  $createdAt
-     * @param  TopicResponseDto  $topic
-     * @param  SubscriberDto  $subscriber
+     * @param  \novu\Models\Components\TopicResponseDto  $topic
+     * @param  \novu\Models\Components\SubscriberDto  $subscriber
      * @param  ?array<string>  $contextKeys
      * @phpstan-pure
      */

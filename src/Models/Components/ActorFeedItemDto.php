@@ -14,7 +14,7 @@ class ActorFeedItemDto
     /**
      * The type of the actor, indicating the role in the notification process.
      *
-     * @var ActorTypeEnum $type
+     * @var \novu\Models\Components\ActorTypeEnum $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ActorTypeEnum')]
@@ -29,7 +29,7 @@ class ActorFeedItemDto
     public ?string $data;
 
     /**
-     * @param  ActorTypeEnum  $type
+     * @param  \novu\Models\Components\ActorTypeEnum  $type
      * @param  ?string  $data
      * @phpstan-pure
      */

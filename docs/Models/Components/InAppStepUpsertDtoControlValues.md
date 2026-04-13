@@ -9,7 +9,7 @@ Control values for the In-App step.
 
 ```php
 /**
-* @var Components\InAppControlDto
+* @var \novu\Models\Components\InAppControlDto
 */
 Components\InAppControlDto $value = /* values here */
 ```

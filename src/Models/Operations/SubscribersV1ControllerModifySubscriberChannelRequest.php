@@ -21,7 +21,7 @@ class SubscribersV1ControllerModifySubscriberChannelRequest
 
     /**
      *
-     * @var Components\UpdateSubscriberChannelRequestDto $updateSubscriberChannelRequestDto
+     * @var \novu\Models\Components\UpdateSubscriberChannelRequestDto $updateSubscriberChannelRequestDto
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\UpdateSubscriberChannelRequestDto $updateSubscriberChannelRequestDto;
@@ -36,7 +36,7 @@ class SubscribersV1ControllerModifySubscriberChannelRequest
 
     /**
      * @param  string  $subscriberId
-     * @param  Components\UpdateSubscriberChannelRequestDto  $updateSubscriberChannelRequestDto
+     * @param  \novu\Models\Components\UpdateSubscriberChannelRequestDto  $updateSubscriberChannelRequestDto
      * @param  ?string  $idempotencyKey
      * @phpstan-pure
      */

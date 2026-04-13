@@ -8,6 +8,8 @@ Environments allow you to manage different stages of your application developmen
 ### Available Operations
 
 * [getTags](#gettags) - List environment tags
+* [diff](#diff) - Compare resources between environments
+* [publish](#publish) - Publish resources to target environment
 * [create](#create) - Create an environment
 * [list](#list) - List all environments
 * [update](#update) - Update an environment
@@ -54,6 +56,128 @@ if ($response->getEnvironmentTagsDtos !== null) {
 ### Response
 
 **[?Operations\EnvironmentsControllerGetEnvironmentTagsResponse](../../Models/Operations/EnvironmentsControllerGetEnvironmentTagsResponse.md)**
+
+### Errors
+
+| Error Type                             | Status Code                            | Content Type                           |
+| -------------------------------------- | -------------------------------------- | -------------------------------------- |
+| Errors\ErrorDto                        | 414                                    | application/json                       |
+| Errors\ErrorDto                        | 400, 401, 403, 404, 405, 409, 413, 415 | application/json                       |
+| Errors\ValidationErrorDto              | 422                                    | application/json                       |
+| Errors\ErrorDto                        | 500                                    | application/json                       |
+| Errors\APIException                    | 4XX, 5XX                               | \*/\*                                  |
+
+## diff
+
+Compares workflows and other resources between the source and target environments, returning detailed diff information including additions, modifications, and deletions.
+
+### Example Usage
+
+<!-- UsageSnippet language="php" operationID="EnvironmentsController_diffEnvironment" method="post" path="/v2/environments/{targetEnvironmentId}/diff" -->
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use novu;
+use novu\Models\Components;
+
+$sdk = novu\Novu::builder()
+    ->setSecurity(
+        'YOUR_SECRET_KEY_HERE'
+    )
+    ->build();
+
+$diffEnvironmentRequestDto = new Components\DiffEnvironmentRequestDto(
+    sourceEnvironmentId: '507f1f77bcf86cd799439011',
+);
+
+$response = $sdk->environments->diff(
+    targetEnvironmentId: '6615943e7ace93b0540ae377',
+    diffEnvironmentRequestDto: $diffEnvironmentRequestDto
+
+);
+
+if ($response->diffEnvironmentResponseDto !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  | Example                                                                                      |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `targetEnvironmentId`                                                                        | *string*                                                                                     | :heavy_check_mark:                                                                           | Target environment ID (MongoDB ObjectId) to compare against                                  | 6615943e7ace93b0540ae377                                                                     |
+| `diffEnvironmentRequestDto`                                                                  | [Components\DiffEnvironmentRequestDto](../../Models/Components/DiffEnvironmentRequestDto.md) | :heavy_check_mark:                                                                           | Diff request configuration                                                                   |                                                                                              |
+| `idempotencyKey`                                                                             | *?string*                                                                                    | :heavy_minus_sign:                                                                           | A header for idempotency purposes                                                            |                                                                                              |
+
+### Response
+
+**[?Operations\EnvironmentsControllerDiffEnvironmentResponse](../../Models/Operations/EnvironmentsControllerDiffEnvironmentResponse.md)**
+
+### Errors
+
+| Error Type                             | Status Code                            | Content Type                           |
+| -------------------------------------- | -------------------------------------- | -------------------------------------- |
+| Errors\ErrorDto                        | 414                                    | application/json                       |
+| Errors\ErrorDto                        | 400, 401, 403, 404, 405, 409, 413, 415 | application/json                       |
+| Errors\ValidationErrorDto              | 422                                    | application/json                       |
+| Errors\ErrorDto                        | 500                                    | application/json                       |
+| Errors\APIException                    | 4XX, 5XX                               | \*/\*                                  |
+
+## publish
+
+Publishes all workflows and resources from the source environment to the target environment. Optionally specify specific resources to publish or use dryRun mode to preview changes.
+
+### Example Usage
+
+<!-- UsageSnippet language="php" operationID="EnvironmentsController_publishEnvironment" method="post" path="/v2/environments/{targetEnvironmentId}/publish" -->
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use novu;
+use novu\Models\Components;
+
+$sdk = novu\Novu::builder()
+    ->setSecurity(
+        'YOUR_SECRET_KEY_HERE'
+    )
+    ->build();
+
+$publishEnvironmentRequestDto = new Components\PublishEnvironmentRequestDto(
+    sourceEnvironmentId: '507f1f77bcf86cd799439011',
+    resources: [
+        new Components\ResourceToPublishDto(
+            resourceType: Components\ResourceTypeEnum::Regular,
+            resourceId: 'workflow-id-1',
+        ),
+    ],
+);
+
+$response = $sdk->environments->publish(
+    targetEnvironmentId: '6615943e7ace93b0540ae377',
+    publishEnvironmentRequestDto: $publishEnvironmentRequestDto
+
+);
+
+if ($response->publishEnvironmentResponseDto !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        | Example                                                                                            |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `targetEnvironmentId`                                                                              | *string*                                                                                           | :heavy_check_mark:                                                                                 | Target environment ID (MongoDB ObjectId) to publish resources to                                   | 6615943e7ace93b0540ae377                                                                           |
+| `publishEnvironmentRequestDto`                                                                     | [Components\PublishEnvironmentRequestDto](../../Models/Components/PublishEnvironmentRequestDto.md) | :heavy_check_mark:                                                                                 | Publish request configuration                                                                      |                                                                                                    |
+| `idempotencyKey`                                                                                   | *?string*                                                                                          | :heavy_minus_sign:                                                                                 | A header for idempotency purposes                                                                  |                                                                                                    |
+
+### Response
+
+**[?Operations\EnvironmentsControllerPublishEnvironmentResponse](../../Models/Operations/EnvironmentsControllerPublishEnvironmentResponse.md)**
 
 ### Errors
 

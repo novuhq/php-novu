@@ -55,7 +55,7 @@ class SubscribersNotifications
      * @param  ?bool  $seen
      * @param  ?float  $limit
      * @param  ?string  $idempotencyKey
-     * @return Operations\SubscribersV1ControllerGetUnseenCountResponse
+     * @return \novu\Models\Operations\SubscribersV1ControllerGetUnseenCountResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function getUnseenCount(string $subscriberId, ?bool $seen = null, ?float $limit = null, ?string $idempotencyKey = null, ?Options $options = null): Operations\SubscribersV1ControllerGetUnseenCountResponse

@@ -22,7 +22,7 @@ class TopicsControllerUpdateTopicRequest
 
     /**
      *
-     * @var Components\UpdateTopicRequestDto $updateTopicRequestDto
+     * @var \novu\Models\Components\UpdateTopicRequestDto $updateTopicRequestDto
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\UpdateTopicRequestDto $updateTopicRequestDto;
@@ -37,7 +37,7 @@ class TopicsControllerUpdateTopicRequest
 
     /**
      * @param  string  $topicKey
-     * @param  Components\UpdateTopicRequestDto  $updateTopicRequestDto
+     * @param  \novu\Models\Components\UpdateTopicRequestDto  $updateTopicRequestDto
      * @param  ?string  $idempotencyKey
      * @phpstan-pure
      */

@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace novu\Models\Components;
 
 
-/** Target window for the redirection. */
+/** Target attribute for the redirect link */
 enum Target: string
 {
     case Self = '_self';

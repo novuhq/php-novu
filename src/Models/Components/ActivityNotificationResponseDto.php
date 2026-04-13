@@ -91,7 +91,7 @@ class ActivityNotificationResponseDto
     /**
      * $channels
      *
-     * @var ?array<StepTypeEnum> $channels
+     * @var ?array<\novu\Models\Components\StepTypeEnum> $channels
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('channels')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\StepTypeEnum>|null')]
@@ -101,7 +101,7 @@ class ActivityNotificationResponseDto
     /**
      * Subscriber of the notification
      *
-     * @var ?ActivityNotificationSubscriberResponseDto $subscriber
+     * @var ?\novu\Models\Components\ActivityNotificationSubscriberResponseDto $subscriber
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('subscriber')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ActivityNotificationSubscriberResponseDto|null')]
@@ -111,7 +111,7 @@ class ActivityNotificationResponseDto
     /**
      * Template of the notification
      *
-     * @var ?ActivityNotificationTemplateResponseDto $template
+     * @var ?\novu\Models\Components\ActivityNotificationTemplateResponseDto $template
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('template')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ActivityNotificationTemplateResponseDto|null')]
@@ -121,7 +121,7 @@ class ActivityNotificationResponseDto
     /**
      * Jobs of the notification
      *
-     * @var ?array<ActivityNotificationJobResponseDto> $jobs
+     * @var ?array<\novu\Models\Components\ActivityNotificationJobResponseDto> $jobs
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('jobs')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\ActivityNotificationJobResponseDto>|null')]
@@ -171,7 +171,7 @@ class ActivityNotificationResponseDto
     /**
      * Topics of the notification
      *
-     * @var ?array<ActivityTopicDto> $topics
+     * @var ?array<\novu\Models\Components\ActivityTopicDto> $topics
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('topics')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\ActivityTopicDto>|null')]
@@ -181,7 +181,7 @@ class ActivityNotificationResponseDto
     /**
      * Severity of the workflow
      *
-     * @var ?SeverityLevelEnum $severity
+     * @var ?\novu\Models\Components\SeverityLevelEnum $severity
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('severity')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\SeverityLevelEnum|null')]
@@ -217,16 +217,16 @@ class ActivityNotificationResponseDto
      * @param  ?string  $digestedNotificationId
      * @param  ?string  $createdAt
      * @param  ?string  $updatedAt
-     * @param  ?array<StepTypeEnum>  $channels
-     * @param  ?ActivityNotificationSubscriberResponseDto  $subscriber
-     * @param  ?ActivityNotificationTemplateResponseDto  $template
-     * @param  ?array<ActivityNotificationJobResponseDto>  $jobs
+     * @param  ?array<\novu\Models\Components\StepTypeEnum>  $channels
+     * @param  ?\novu\Models\Components\ActivityNotificationSubscriberResponseDto  $subscriber
+     * @param  ?\novu\Models\Components\ActivityNotificationTemplateResponseDto  $template
+     * @param  ?array<\novu\Models\Components\ActivityNotificationJobResponseDto>  $jobs
      * @param  ?array<string, mixed>  $payload
      * @param  ?array<string>  $tags
      * @param  ?array<string, mixed>  $controls
      * @param  ?array<string, mixed>  $to
-     * @param  ?array<ActivityTopicDto>  $topics
-     * @param  ?SeverityLevelEnum  $severity
+     * @param  ?array<\novu\Models\Components\ActivityTopicDto>  $topics
+     * @param  ?\novu\Models\Components\SeverityLevelEnum  $severity
      * @param  ?bool  $critical
      * @param  ?array<string>  $contextKeys
      * @phpstan-pure

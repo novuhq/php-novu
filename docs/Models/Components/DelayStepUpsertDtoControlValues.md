@@ -9,7 +9,7 @@ Control values for the Delay step.
 
 ```php
 /**
-* @var Components\DelayControlDto
+* @var \novu\Models\Components\DelayControlDto
 */
 Components\DelayControlDto $value = /* values here */
 ```

@@ -46,7 +46,7 @@ class EnvironmentResponseDto
     /**
      * List of API keys associated with the environment
      *
-     * @var ?array<ApiKeyDto> $apiKeys
+     * @var ?array<\novu\Models\Components\ApiKeyDto> $apiKeys
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('apiKeys')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\ApiKeyDto>|null')]
@@ -74,7 +74,7 @@ class EnvironmentResponseDto
     /**
      * Type of the environment
      *
-     * @var ?EnvironmentResponseDtoType $type
+     * @var ?\novu\Models\Components\EnvironmentResponseDtoType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\EnvironmentResponseDtoType|null')]
@@ -86,10 +86,10 @@ class EnvironmentResponseDto
      * @param  string  $name
      * @param  string  $organizationId
      * @param  string  $identifier
-     * @param  ?array<ApiKeyDto>  $apiKeys
+     * @param  ?array<\novu\Models\Components\ApiKeyDto>  $apiKeys
      * @param  ?string  $parentId
      * @param  ?string  $slug
-     * @param  ?EnvironmentResponseDtoType  $type
+     * @param  ?\novu\Models\Components\EnvironmentResponseDtoType  $type
      * @phpstan-pure
      */
     public function __construct(string $id, string $name, string $organizationId, string $identifier, ?array $apiKeys = null, ?string $parentId = null, ?string $slug = null, ?EnvironmentResponseDtoType $type = null)

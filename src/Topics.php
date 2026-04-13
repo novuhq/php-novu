@@ -58,7 +58,7 @@ class Topics
      *
      * @param  string  $topicKey
      * @param  ?string  $idempotencyKey
-     * @return Operations\TopicsControllerDeleteTopicResponse
+     * @return \novu\Models\Operations\TopicsControllerDeleteTopicResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function delete(string $topicKey, ?string $idempotencyKey = null, ?Options $options = null): Operations\TopicsControllerDeleteTopicResponse
@@ -204,7 +204,7 @@ class Topics
      *
      * @param  string  $topicKey
      * @param  ?string  $idempotencyKey
-     * @return Operations\TopicsControllerGetTopicResponse
+     * @return \novu\Models\Operations\TopicsControllerGetTopicResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function get(string $topicKey, ?string $idempotencyKey = null, ?Options $options = null): Operations\TopicsControllerGetTopicResponse
@@ -350,8 +350,8 @@ class Topics
      *     Topics can be filtered by **key**, **name**, or **includeCursor** to paginate through the list. 
      *     Checkout all available filters in the query section.
      *
-     * @param  ?Operations\TopicsControllerListTopicsRequest  $request
-     * @return Operations\TopicsControllerListTopicsResponse
+     * @param  ?\novu\Models\Operations\TopicsControllerListTopicsRequest  $request
+     * @return \novu\Models\Operations\TopicsControllerListTopicsResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function list(?Operations\TopicsControllerListTopicsRequest $request = null, ?Options $options = null): Operations\TopicsControllerListTopicsResponse
@@ -494,10 +494,10 @@ class Topics
      *
      * Update a topic name by its unique key identifier **topicKey**
      *
-     * @param  Components\UpdateTopicRequestDto  $updateTopicRequestDto
+     * @param  \novu\Models\Components\UpdateTopicRequestDto  $updateTopicRequestDto
      * @param  string  $topicKey
      * @param  ?string  $idempotencyKey
-     * @return Operations\TopicsControllerUpdateTopicResponse
+     * @return \novu\Models\Operations\TopicsControllerUpdateTopicResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function update(Components\UpdateTopicRequestDto $updateTopicRequestDto, string $topicKey, ?string $idempotencyKey = null, ?Options $options = null): Operations\TopicsControllerUpdateTopicResponse
@@ -647,10 +647,10 @@ class Topics
      *
      * Creates a new topic if it does not exist, or updates an existing topic if it already exists. Use ?failIfExists=true to prevent updates.
      *
-     * @param  Components\CreateUpdateTopicRequestDto  $createUpdateTopicRequestDto
+     * @param  \novu\Models\Components\CreateUpdateTopicRequestDto  $createUpdateTopicRequestDto
      * @param  ?bool  $failIfExists
      * @param  ?string  $idempotencyKey
-     * @return Operations\TopicsControllerUpsertTopicResponse
+     * @return \novu\Models\Operations\TopicsControllerUpsertTopicResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function create(Components\CreateUpdateTopicRequestDto $createUpdateTopicRequestDto, ?bool $failIfExists = null, ?string $idempotencyKey = null, ?Options $options = null): Operations\TopicsControllerUpsertTopicResponse

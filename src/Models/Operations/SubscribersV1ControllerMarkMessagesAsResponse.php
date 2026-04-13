@@ -42,7 +42,7 @@ class SubscribersV1ControllerMarkMessagesAsResponse
     /**
      * Created
      *
-     * @var ?array<Components\MessageResponseDto> $messageResponseDtos
+     * @var ?array<\novu\Models\Components\MessageResponseDto> $messageResponseDtos
      */
     public ?array $messageResponseDtos = null;
 
@@ -51,7 +51,7 @@ class SubscribersV1ControllerMarkMessagesAsResponse
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
-     * @param  ?array<Components\MessageResponseDto>  $messageResponseDtos
+     * @param  ?array<\novu\Models\Components\MessageResponseDto>  $messageResponseDtos
      * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?array $messageResponseDtos = null, ?array $headers = [])

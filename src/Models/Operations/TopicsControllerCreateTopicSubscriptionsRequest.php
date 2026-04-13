@@ -22,7 +22,7 @@ class TopicsControllerCreateTopicSubscriptionsRequest
 
     /**
      *
-     * @var Components\CreateTopicSubscriptionsRequestDto $createTopicSubscriptionsRequestDto
+     * @var \novu\Models\Components\CreateTopicSubscriptionsRequestDto $createTopicSubscriptionsRequestDto
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\CreateTopicSubscriptionsRequestDto $createTopicSubscriptionsRequestDto;
@@ -37,7 +37,7 @@ class TopicsControllerCreateTopicSubscriptionsRequest
 
     /**
      * @param  string  $topicKey
-     * @param  Components\CreateTopicSubscriptionsRequestDto  $createTopicSubscriptionsRequestDto
+     * @param  \novu\Models\Components\CreateTopicSubscriptionsRequestDto  $createTopicSubscriptionsRequestDto
      * @param  ?string  $idempotencyKey
      * @phpstan-pure
      */

@@ -54,9 +54,9 @@ class Contexts
      *
      *       **type** and **id** are required fields, **data** is optional, if the context already exists, it returns the 409 response
      *
-     * @param  Components\CreateContextRequestDto  $createContextRequestDto
+     * @param  \novu\Models\Components\CreateContextRequestDto  $createContextRequestDto
      * @param  ?string  $idempotencyKey
-     * @return Operations\ContextsControllerCreateContextResponse
+     * @return \novu\Models\Operations\ContextsControllerCreateContextResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function create(Components\CreateContextRequestDto $createContextRequestDto, ?string $idempotencyKey = null, ?Options $options = null): Operations\ContextsControllerCreateContextResponse
@@ -209,7 +209,7 @@ class Contexts
      * @param  string  $id
      * @param  string  $type
      * @param  ?string  $idempotencyKey
-     * @return Operations\ContextsControllerDeleteContextResponse
+     * @return \novu\Models\Operations\ContextsControllerDeleteContextResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function delete(string $id, string $type, ?string $idempotencyKey = null, ?Options $options = null): Operations\ContextsControllerDeleteContextResponse
@@ -348,7 +348,7 @@ class Contexts
      * @param  string  $id
      * @param  string  $type
      * @param  ?string  $idempotencyKey
-     * @return Operations\ContextsControllerGetContextResponse
+     * @return \novu\Models\Operations\ContextsControllerGetContextResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function retrieve(string $id, string $type, ?string $idempotencyKey = null, ?Options $options = null): Operations\ContextsControllerGetContextResponse
@@ -497,8 +497,8 @@ class Contexts
      *       **search** is an optional field, if provided, only contexts with the matching key pattern will be returned.
      *       Checkout all possible parameters in the query section below for more details
      *
-     * @param  ?Operations\ContextsControllerListContextsRequest  $request
-     * @return Operations\ContextsControllerListContextsResponse
+     * @param  ?\novu\Models\Operations\ContextsControllerListContextsRequest  $request
+     * @return \novu\Models\Operations\ContextsControllerListContextsResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function list(?Operations\ContextsControllerListContextsRequest $request = null, ?Options $options = null): Operations\ContextsControllerListContextsResponse
@@ -643,11 +643,11 @@ class Contexts
      *       **type** and **id** are required fields, **data** is required. Only the data field is updated, the rest of the context is not affected.
      *       If the context does not exist, it returns the 404 response
      *
-     * @param  Components\UpdateContextRequestDto  $updateContextRequestDto
+     * @param  \novu\Models\Components\UpdateContextRequestDto  $updateContextRequestDto
      * @param  string  $id
      * @param  string  $type
      * @param  ?string  $idempotencyKey
-     * @return Operations\ContextsControllerUpdateContextResponse
+     * @return \novu\Models\Operations\ContextsControllerUpdateContextResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function update(Components\UpdateContextRequestDto $updateContextRequestDto, string $id, string $type, ?string $idempotencyKey = null, ?Options $options = null): Operations\ContextsControllerUpdateContextResponse

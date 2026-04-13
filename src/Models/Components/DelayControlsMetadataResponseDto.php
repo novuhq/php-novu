@@ -14,7 +14,7 @@ class DelayControlsMetadataResponseDto
     /**
      * Control values specific to Delay
      *
-     * @var DelayControlDto $values
+     * @var \novu\Models\Components\DelayControlDto $values
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('values')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\DelayControlDto')]
@@ -33,7 +33,7 @@ class DelayControlsMetadataResponseDto
     /**
      * UI Schema for rendering
      *
-     * @var ?UiSchema $uiSchema
+     * @var ?\novu\Models\Components\UiSchema $uiSchema
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('uiSchema')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\UiSchema|null')]
@@ -41,9 +41,9 @@ class DelayControlsMetadataResponseDto
     public ?UiSchema $uiSchema = null;
 
     /**
-     * @param  DelayControlDto  $values
+     * @param  \novu\Models\Components\DelayControlDto  $values
      * @param  ?array<string, mixed>  $dataSchema
-     * @param  ?UiSchema  $uiSchema
+     * @param  ?\novu\Models\Components\UiSchema  $uiSchema
      * @phpstan-pure
      */
     public function __construct(DelayControlDto $values, ?array $dataSchema = null, ?UiSchema $uiSchema = null)

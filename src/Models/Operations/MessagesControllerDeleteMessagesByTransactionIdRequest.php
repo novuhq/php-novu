@@ -21,7 +21,7 @@ class MessagesControllerDeleteMessagesByTransactionIdRequest
     /**
      * The channel of the message to be deleted
      *
-     * @var ?MessagesControllerDeleteMessagesByTransactionIdQueryParamChannel $channel
+     * @var ?\novu\Models\Operations\MessagesControllerDeleteMessagesByTransactionIdQueryParamChannel $channel
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=channel')]
     public ?MessagesControllerDeleteMessagesByTransactionIdQueryParamChannel $channel = null;
@@ -36,7 +36,7 @@ class MessagesControllerDeleteMessagesByTransactionIdRequest
 
     /**
      * @param  string  $transactionId
-     * @param  ?MessagesControllerDeleteMessagesByTransactionIdQueryParamChannel  $channel
+     * @param  ?\novu\Models\Operations\MessagesControllerDeleteMessagesByTransactionIdQueryParamChannel  $channel
      * @param  ?string  $idempotencyKey
      * @phpstan-pure
      */

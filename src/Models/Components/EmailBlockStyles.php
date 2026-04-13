@@ -14,14 +14,14 @@ class EmailBlockStyles
     /**
      * Text alignment for the email block
      *
-     * @var TextAlignEnum $textAlign
+     * @var \novu\Models\Components\TextAlignEnum $textAlign
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('textAlign')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\TextAlignEnum')]
     public TextAlignEnum $textAlign;
 
     /**
-     * @param  TextAlignEnum  $textAlign
+     * @param  \novu\Models\Components\TextAlignEnum  $textAlign
      * @phpstan-pure
      */
     public function __construct(TextAlignEnum $textAlign)

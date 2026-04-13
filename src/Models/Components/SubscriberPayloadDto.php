@@ -22,7 +22,7 @@ class SubscriberPayloadDto
     /**
      * An optional array of subscriber channels.
      *
-     * @var ?array<SubscriberChannelDto> $channels
+     * @var ?array<\novu\Models\Components\SubscriberChannelDto> $channels
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('channels')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\SubscriberChannelDto>|null')]
@@ -104,7 +104,7 @@ class SubscriberPayloadDto
 
     /**
      * @param  string  $subscriberId
-     * @param  ?array<SubscriberChannelDto>  $channels
+     * @param  ?array<\novu\Models\Components\SubscriberChannelDto>  $channels
      * @param  ?string  $firstName
      * @param  ?string  $lastName
      * @param  ?string  $email

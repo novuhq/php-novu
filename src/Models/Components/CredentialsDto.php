@@ -165,7 +165,7 @@ class CredentialsDto
 
     /**
      *
-     * @var ?TlsOptions $tlsOptions
+     * @var ?\novu\Models\Components\TlsOptions $tlsOptions
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('tlsOptions')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\TlsOptions|null')]
@@ -400,7 +400,7 @@ class CredentialsDto
      * @param  ?string  $clientId
      * @param  ?bool  $requireTls
      * @param  ?bool  $ignoreTls
-     * @param  ?TlsOptions  $tlsOptions
+     * @param  ?\novu\Models\Components\TlsOptions  $tlsOptions
      * @param  ?string  $baseUrl
      * @param  ?string  $webhookUrl
      * @param  ?string  $redirectUrl

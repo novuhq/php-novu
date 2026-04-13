@@ -22,7 +22,7 @@ class SubscriptionResponseDto
     /**
      * The topic information
      *
-     * @var TopicDto $topic
+     * @var \novu\Models\Components\TopicDto $topic
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('topic')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\TopicDto')]
@@ -65,7 +65,7 @@ class SubscriptionResponseDto
     /**
      * The subscriber information
      *
-     * @var ?Subscriber $subscriber
+     * @var ?\novu\Models\Components\Subscriber $subscriber
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('subscriber')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\Subscriber|null')]
@@ -74,7 +74,7 @@ class SubscriptionResponseDto
     /**
      * The preferences for workflows in this subscription
      *
-     * @var ?array<SubscriptionPreferenceDto> $preferences
+     * @var ?array<\novu\Models\Components\SubscriptionPreferenceDto> $preferences
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('preferences')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\SubscriptionPreferenceDto>|null')]
@@ -93,13 +93,13 @@ class SubscriptionResponseDto
 
     /**
      * @param  string  $id
-     * @param  TopicDto  $topic
+     * @param  \novu\Models\Components\TopicDto  $topic
      * @param  string  $createdAt
      * @param  string  $updatedAt
      * @param  ?string  $identifier
      * @param  ?string  $name
-     * @param  ?Subscriber  $subscriber
-     * @param  ?array<SubscriptionPreferenceDto>  $preferences
+     * @param  ?\novu\Models\Components\Subscriber  $subscriber
+     * @param  ?array<\novu\Models\Components\SubscriptionPreferenceDto>  $preferences
      * @param  ?array<string>  $contextKeys
      * @phpstan-pure
      */

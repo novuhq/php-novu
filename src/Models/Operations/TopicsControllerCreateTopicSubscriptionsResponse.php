@@ -42,7 +42,7 @@ class TopicsControllerCreateTopicSubscriptionsResponse
     /**
      * Subscriptions created successfully
      *
-     * @var ?Components\CreateSubscriptionsResponseDto $createSubscriptionsResponseDto
+     * @var ?\novu\Models\Components\CreateSubscriptionsResponseDto $createSubscriptionsResponseDto
      */
     public ?Components\CreateSubscriptionsResponseDto $createSubscriptionsResponseDto = null;
 
@@ -51,7 +51,7 @@ class TopicsControllerCreateTopicSubscriptionsResponse
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
-     * @param  ?Components\CreateSubscriptionsResponseDto  $createSubscriptionsResponseDto
+     * @param  ?\novu\Models\Components\CreateSubscriptionsResponseDto  $createSubscriptionsResponseDto
      * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\CreateSubscriptionsResponseDto $createSubscriptionsResponseDto = null, ?array $headers = [])

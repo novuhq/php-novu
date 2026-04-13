@@ -42,7 +42,7 @@ class LayoutsControllerDuplicateResponse
     /**
      * Created
      *
-     * @var ?Components\LayoutResponseDto $layoutResponseDto
+     * @var ?\novu\Models\Components\LayoutResponseDto $layoutResponseDto
      */
     public ?Components\LayoutResponseDto $layoutResponseDto = null;
 
@@ -51,7 +51,7 @@ class LayoutsControllerDuplicateResponse
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
-     * @param  ?Components\LayoutResponseDto  $layoutResponseDto
+     * @param  ?\novu\Models\Components\LayoutResponseDto  $layoutResponseDto
      * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\LayoutResponseDto $layoutResponseDto = null, ?array $headers = [])

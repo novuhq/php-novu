@@ -14,7 +14,7 @@ class IntegrationsControllerCreateIntegrationRequest
 {
     /**
      *
-     * @var Components\CreateIntegrationRequestDto $createIntegrationRequestDto
+     * @var \novu\Models\Components\CreateIntegrationRequestDto $createIntegrationRequestDto
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\CreateIntegrationRequestDto $createIntegrationRequestDto;
@@ -28,7 +28,7 @@ class IntegrationsControllerCreateIntegrationRequest
     public ?string $idempotencyKey = null;
 
     /**
-     * @param  Components\CreateIntegrationRequestDto  $createIntegrationRequestDto
+     * @param  \novu\Models\Components\CreateIntegrationRequestDto  $createIntegrationRequestDto
      * @param  ?string  $idempotencyKey
      * @phpstan-pure
      */

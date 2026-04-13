@@ -33,7 +33,7 @@ class ThrottleControlDto
     /**
      * The unit of time for the throttle window (required for fixed type).
      *
-     * @var ?ThrottleControlDtoUnit $unit
+     * @var ?\novu\Models\Components\ThrottleControlDtoUnit $unit
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('unit')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ThrottleControlDtoUnit|null')]
@@ -61,7 +61,7 @@ class ThrottleControlDto
     /**
      * The type of throttle window.
      *
-     * @var ?ThrottleControlDtoType $type
+     * @var ?\novu\Models\Components\ThrottleControlDtoType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ThrottleControlDtoType|null')]
@@ -79,9 +79,9 @@ class ThrottleControlDto
 
     /**
      * @param  ?array<string, mixed>  $skip
-     * @param  ?ThrottleControlDtoType  $type
+     * @param  ?\novu\Models\Components\ThrottleControlDtoType  $type
      * @param  ?float  $amount
-     * @param  ?ThrottleControlDtoUnit  $unit
+     * @param  ?\novu\Models\Components\ThrottleControlDtoUnit  $unit
      * @param  ?string  $dynamicKey
      * @param  ?float  $threshold
      * @param  ?string  $throttleKey

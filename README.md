@@ -346,7 +346,7 @@ if ($response->triggerEventResponseDto !== null) {
 
 ### [Activity](docs/sdks/activity/README.md)
 
-* [track](docs/sdks/activity/README.md#track) - Track activity and engagement events
+* [track](docs/sdks/activity/README.md#track) - Track provider activity and engagement events
 
 ### [ChannelConnections](docs/sdks/channelconnections/README.md)
 
@@ -372,9 +372,20 @@ if ($response->triggerEventResponseDto !== null) {
 * [retrieve](docs/sdks/contexts/README.md#retrieve) - Retrieve a context
 * [delete](docs/sdks/contexts/README.md#delete) - Delete a context
 
+### [EnvironmentVariables](docs/sdks/environmentvariables/README.md)
+
+* [list](docs/sdks/environmentvariables/README.md#list) - List all variables
+* [create](docs/sdks/environmentvariables/README.md#create) - Create a variable
+* [retrieve](docs/sdks/environmentvariables/README.md#retrieve) - Get environment variable
+* [update](docs/sdks/environmentvariables/README.md#update) - Update a variable
+* [delete](docs/sdks/environmentvariables/README.md#delete) - Delete environment variable
+* [usage](docs/sdks/environmentvariables/README.md#usage) - Retrieve a variable usage
+
 ### [Environments](docs/sdks/environments/README.md)
 
 * [getTags](docs/sdks/environments/README.md#gettags) - List environment tags
+* [diff](docs/sdks/environments/README.md#diff) - Compare resources between environments
+* [publish](docs/sdks/environments/README.md#publish) - Publish resources to target environment
 * [create](docs/sdks/environments/README.md#create) - Create an environment
 * [list](docs/sdks/environments/README.md#list) - List all environments
 * [update](docs/sdks/environments/README.md#update) - Update an environment
@@ -425,6 +436,26 @@ if ($response->triggerEventResponseDto !== null) {
 * [updateCredentials](docs/sdks/subscribers/README.md#updatecredentials) - Update provider credentials
 * [updateOnlineStatus](docs/sdks/subscribers/README.md#updateonlinestatus) - Update subscriber online status
 
+#### [Subscribers.Notifications](docs/sdks/novunotifications/README.md)
+
+* [list](docs/sdks/novunotifications/README.md#list) - Retrieve subscriber notifications
+* [delete](docs/sdks/novunotifications/README.md#delete) - Delete a notification
+* [completeAction](docs/sdks/novunotifications/README.md#completeaction) - Complete a notification action
+* [revertAction](docs/sdks/novunotifications/README.md#revertaction) - Revert a notification action
+* [archive](docs/sdks/novunotifications/README.md#archive) - Archive a notification
+* [markAsRead](docs/sdks/novunotifications/README.md#markasread) - Mark a notification as read
+* [snooze](docs/sdks/novunotifications/README.md#snooze) - Snooze a notification
+* [unarchive](docs/sdks/novunotifications/README.md#unarchive) - Unarchive a notification
+* [markAsUnread](docs/sdks/novunotifications/README.md#markasunread) - Mark a notification as unread
+* [unsnooze](docs/sdks/novunotifications/README.md#unsnooze) - Unsnooze a notification
+* [archiveAll](docs/sdks/novunotifications/README.md#archiveall) - Archive all notifications
+* [count](docs/sdks/novunotifications/README.md#count) - Retrieve subscriber notifications count
+* [deleteAll](docs/sdks/novunotifications/README.md#deleteall) - Delete all notifications
+* [markAllAsRead](docs/sdks/novunotifications/README.md#markallasread) - Mark all notifications as read
+* [archiveAllRead](docs/sdks/novunotifications/README.md#archiveallread) - Archive all read notifications
+* [markAsSeen](docs/sdks/novunotifications/README.md#markasseen) - Mark notifications as seen
+* [getFeed](docs/sdks/novunotifications/README.md#getfeed) - Retrieve subscriber notifications
+
 #### [Subscribers.Preferences](docs/sdks/preferences/README.md)
 
 * [bulkUpdate](docs/sdks/preferences/README.md#bulkupdate) - Bulk update subscriber preferences
@@ -437,10 +468,6 @@ if ($response->triggerEventResponseDto !== null) {
 
 * [updateAsSeen](docs/sdks/novumessages/README.md#updateasseen) - Update notification action status
 * [markAllAs](docs/sdks/novumessages/README.md#markallas) - Update notifications state
-
-### [Subscribers.Notifications](docs/sdks/novunotifications/README.md)
-
-* [getFeed](docs/sdks/novunotifications/README.md#getfeed) - Retrieve subscriber notifications
 
 ### [SubscribersCredentials](docs/sdks/subscriberscredentials/README.md)
 
@@ -509,6 +536,7 @@ if ($response->triggerEventResponseDto !== null) {
 
 #### [Workflows.Steps](docs/sdks/steps/README.md)
 
+* [generatePreview](docs/sdks/steps/README.md#generatepreview) - Generate a step preview
 * [retrieve](docs/sdks/steps/README.md#retrieve) - Retrieve workflow step
 
 </details>

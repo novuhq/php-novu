@@ -14,6 +14,7 @@ enum ContentIssueEnum: string
 {
     case IllegalVariableInControlValue = 'ILLEGAL_VARIABLE_IN_CONTROL_VALUE';
     case InvalidFilterArgInVariable = 'INVALID_FILTER_ARG_IN_VARIABLE';
+    case InvalidUrl = 'INVALID_URL';
     case MissingValue = 'MISSING_VALUE';
     case TierLimitExceeded = 'TIER_LIMIT_EXCEEDED';
 }

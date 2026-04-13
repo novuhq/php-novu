@@ -22,4 +22,5 @@ enum WorkflowCreationSourceEnum: string
     case OnboardingGetStarted = 'onboarding_get_started';
     case Bridge = 'bridge';
     case Dashboard = 'dashboard';
+    case Ai = 'ai';
 }

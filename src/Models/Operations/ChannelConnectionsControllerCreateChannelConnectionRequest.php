@@ -14,7 +14,7 @@ class ChannelConnectionsControllerCreateChannelConnectionRequest
 {
     /**
      *
-     * @var Components\CreateChannelConnectionRequestDto $createChannelConnectionRequestDto
+     * @var \novu\Models\Components\CreateChannelConnectionRequestDto $createChannelConnectionRequestDto
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\CreateChannelConnectionRequestDto $createChannelConnectionRequestDto;
@@ -28,7 +28,7 @@ class ChannelConnectionsControllerCreateChannelConnectionRequest
     public ?string $idempotencyKey = null;
 
     /**
-     * @param  Components\CreateChannelConnectionRequestDto  $createChannelConnectionRequestDto
+     * @param  \novu\Models\Components\CreateChannelConnectionRequestDto  $createChannelConnectionRequestDto
      * @param  ?string  $idempotencyKey
      * @phpstan-pure
      */

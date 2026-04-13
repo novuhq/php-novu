@@ -22,7 +22,7 @@ class LayoutsControllerGeneratePreviewRequest
     /**
      * Layout preview generation details
      *
-     * @var Components\LayoutPreviewRequestDto $layoutPreviewRequestDto
+     * @var \novu\Models\Components\LayoutPreviewRequestDto $layoutPreviewRequestDto
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\LayoutPreviewRequestDto $layoutPreviewRequestDto;
@@ -37,7 +37,7 @@ class LayoutsControllerGeneratePreviewRequest
 
     /**
      * @param  string  $layoutId
-     * @param  Components\LayoutPreviewRequestDto  $layoutPreviewRequestDto
+     * @param  \novu\Models\Components\LayoutPreviewRequestDto  $layoutPreviewRequestDto
      * @param  ?string  $idempotencyKey
      * @phpstan-pure
      */

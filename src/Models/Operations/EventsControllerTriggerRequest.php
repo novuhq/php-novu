@@ -14,7 +14,7 @@ class EventsControllerTriggerRequest
 {
     /**
      *
-     * @var Components\TriggerEventRequestDto $triggerEventRequestDto
+     * @var \novu\Models\Components\TriggerEventRequestDto $triggerEventRequestDto
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\TriggerEventRequestDto $triggerEventRequestDto;
@@ -28,7 +28,7 @@ class EventsControllerTriggerRequest
     public ?string $idempotencyKey = null;
 
     /**
-     * @param  Components\TriggerEventRequestDto  $triggerEventRequestDto
+     * @param  \novu\Models\Components\TriggerEventRequestDto  $triggerEventRequestDto
      * @param  ?string  $idempotencyKey
      * @phpstan-pure
      */

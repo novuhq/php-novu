@@ -15,7 +15,7 @@ class WorkflowControllerCreateRequest
     /**
      * Workflow creation details
      *
-     * @var Components\CreateWorkflowDto $createWorkflowDto
+     * @var \novu\Models\Components\CreateWorkflowDto $createWorkflowDto
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\CreateWorkflowDto $createWorkflowDto;
@@ -29,7 +29,7 @@ class WorkflowControllerCreateRequest
     public ?string $idempotencyKey = null;
 
     /**
-     * @param  Components\CreateWorkflowDto  $createWorkflowDto
+     * @param  \novu\Models\Components\CreateWorkflowDto  $createWorkflowDto
      * @param  ?string  $idempotencyKey
      * @phpstan-pure
      */

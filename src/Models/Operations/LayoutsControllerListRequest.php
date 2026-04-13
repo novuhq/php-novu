@@ -31,7 +31,7 @@ class LayoutsControllerListRequest
     /**
      * Direction of sorting
      *
-     * @var ?Components\DirectionEnum $orderDirection
+     * @var ?\novu\Models\Components\DirectionEnum $orderDirection
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=orderDirection')]
     public ?Components\DirectionEnum $orderDirection = null;
@@ -39,7 +39,7 @@ class LayoutsControllerListRequest
     /**
      * Field to sort the results by
      *
-     * @var ?Components\LayoutResponseDtoSortField $orderBy
+     * @var ?\novu\Models\Components\LayoutResponseDtoSortField $orderBy
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=orderBy')]
     public ?Components\LayoutResponseDtoSortField $orderBy = null;
@@ -63,8 +63,8 @@ class LayoutsControllerListRequest
     /**
      * @param  ?float  $limit
      * @param  ?float  $offset
-     * @param  ?Components\DirectionEnum  $orderDirection
-     * @param  ?Components\LayoutResponseDtoSortField  $orderBy
+     * @param  ?\novu\Models\Components\DirectionEnum  $orderDirection
+     * @param  ?\novu\Models\Components\LayoutResponseDtoSortField  $orderBy
      * @param  ?string  $query
      * @param  ?string  $idempotencyKey
      * @phpstan-pure

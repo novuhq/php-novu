@@ -55,7 +55,7 @@ class Integrations
      *
      * @param  string  $integrationId
      * @param  ?string  $idempotencyKey
-     * @return Operations\IntegrationsControllerAutoConfigureIntegrationResponse
+     * @return \novu\Models\Operations\IntegrationsControllerAutoConfigureIntegrationResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function integrationsControllerAutoConfigureIntegration(string $integrationId, ?string $idempotencyKey = null, ?Options $options = null): Operations\IntegrationsControllerAutoConfigureIntegrationResponse
@@ -200,9 +200,9 @@ class Integrations
      * Create an integration for the current environment the user is based on the API key provided. 
      *     Each provider supports different credentials, check the provider documentation for more details.
      *
-     * @param  Components\CreateIntegrationRequestDto  $createIntegrationRequestDto
+     * @param  \novu\Models\Components\CreateIntegrationRequestDto  $createIntegrationRequestDto
      * @param  ?string  $idempotencyKey
-     * @return Operations\IntegrationsControllerCreateIntegrationResponse
+     * @return \novu\Models\Operations\IntegrationsControllerCreateIntegrationResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function create(Components\CreateIntegrationRequestDto $createIntegrationRequestDto, ?string $idempotencyKey = null, ?Options $options = null): Operations\IntegrationsControllerCreateIntegrationResponse
@@ -352,7 +352,7 @@ class Integrations
      * List all the active integrations created in the organization
      *
      * @param  ?string  $idempotencyKey
-     * @return Operations\IntegrationsControllerGetActiveIntegrationsResponse
+     * @return \novu\Models\Operations\IntegrationsControllerGetActiveIntegrationsResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function listActive(?string $idempotencyKey = null, ?Options $options = null): Operations\IntegrationsControllerGetActiveIntegrationsResponse
@@ -497,9 +497,9 @@ class Integrations
      *     This URL allows subscribers to authorize the integration, enabling the system to send messages 
      *     through their chat workspace. The generated URL expires after 5 minutes.
      *
-     * @param  Components\GenerateChatOauthUrlRequestDto  $generateChatOauthUrlRequestDto
+     * @param  \novu\Models\Components\GenerateChatOauthUrlRequestDto  $generateChatOauthUrlRequestDto
      * @param  ?string  $idempotencyKey
-     * @return Operations\IntegrationsControllerGetChatOAuthUrlResponse
+     * @return \novu\Models\Operations\IntegrationsControllerGetChatOAuthUrlResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function generateChatOAuthUrl(Components\GenerateChatOauthUrlRequestDto $generateChatOauthUrlRequestDto, ?string $idempotencyKey = null, ?Options $options = null): Operations\IntegrationsControllerGetChatOAuthUrlResponse
@@ -649,7 +649,7 @@ class Integrations
      * List all the channels integrations created in the organization
      *
      * @param  ?string  $idempotencyKey
-     * @return Operations\IntegrationsControllerListIntegrationsResponse
+     * @return \novu\Models\Operations\IntegrationsControllerListIntegrationsResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function list(?string $idempotencyKey = null, ?Options $options = null): Operations\IntegrationsControllerListIntegrationsResponse
@@ -795,7 +795,7 @@ class Integrations
      *
      * @param  string  $integrationId
      * @param  ?string  $idempotencyKey
-     * @return Operations\IntegrationsControllerRemoveIntegrationResponse
+     * @return \novu\Models\Operations\IntegrationsControllerRemoveIntegrationResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function delete(string $integrationId, ?string $idempotencyKey = null, ?Options $options = null): Operations\IntegrationsControllerRemoveIntegrationResponse
@@ -943,7 +943,7 @@ class Integrations
      *
      * @param  string  $integrationId
      * @param  ?string  $idempotencyKey
-     * @return Operations\IntegrationsControllerSetIntegrationAsPrimaryResponse
+     * @return \novu\Models\Operations\IntegrationsControllerSetIntegrationAsPrimaryResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function setAsPrimary(string $integrationId, ?string $idempotencyKey = null, ?Options $options = null): Operations\IntegrationsControllerSetIntegrationAsPrimaryResponse
@@ -1088,10 +1088,10 @@ class Integrations
      * Update an integration by its unique key identifier **integrationId**. 
      *     Each provider supports different credentials, check the provider documentation for more details.
      *
-     * @param  Components\UpdateIntegrationRequestDto  $updateIntegrationRequestDto
+     * @param  \novu\Models\Components\UpdateIntegrationRequestDto  $updateIntegrationRequestDto
      * @param  string  $integrationId
      * @param  ?string  $idempotencyKey
-     * @return Operations\IntegrationsControllerUpdateIntegrationByIdResponse
+     * @return \novu\Models\Operations\IntegrationsControllerUpdateIntegrationByIdResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function update(Components\UpdateIntegrationRequestDto $updateIntegrationRequestDto, string $integrationId, ?string $idempotencyKey = null, ?Options $options = null): Operations\IntegrationsControllerUpdateIntegrationByIdResponse

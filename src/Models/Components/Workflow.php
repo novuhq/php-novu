@@ -47,7 +47,7 @@ class Workflow
     /**
      * Severity of the workflow
      *
-     * @var SeverityLevelEnum $severity
+     * @var \novu\Models\Components\SeverityLevelEnum $severity
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('severity')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\SeverityLevelEnum')]
@@ -66,7 +66,7 @@ class Workflow
     /**
      * Custom data associated with the workflow
      *
-     * @var ?GetPreferencesResponseDtoData $data
+     * @var ?\novu\Models\Components\GetPreferencesResponseDtoData $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\GetPreferencesResponseDtoData|null')]
@@ -78,9 +78,9 @@ class Workflow
      * @param  string  $identifier
      * @param  string  $name
      * @param  bool  $critical
-     * @param  SeverityLevelEnum  $severity
+     * @param  \novu\Models\Components\SeverityLevelEnum  $severity
      * @param  ?array<string>  $tags
-     * @param  ?GetPreferencesResponseDtoData  $data
+     * @param  ?\novu\Models\Components\GetPreferencesResponseDtoData  $data
      * @phpstan-pure
      */
     public function __construct(string $id, string $identifier, string $name, bool $critical, SeverityLevelEnum $severity, ?array $tags = null, ?GetPreferencesResponseDtoData $data = null)

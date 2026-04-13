@@ -22,7 +22,7 @@ class SubscriberGlobalPreferenceDto
     /**
      * Channel-specific preference settings
      *
-     * @var SubscriberPreferenceChannels $channels
+     * @var \novu\Models\Components\SubscriberPreferenceChannels $channels
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('channels')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\SubscriberPreferenceChannels')]
@@ -31,7 +31,7 @@ class SubscriberGlobalPreferenceDto
     /**
      * Subscriber schedule
      *
-     * @var ?ScheduleDto $schedule
+     * @var ?\novu\Models\Components\ScheduleDto $schedule
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('schedule')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ScheduleDto|null')]
@@ -40,8 +40,8 @@ class SubscriberGlobalPreferenceDto
 
     /**
      * @param  bool  $enabled
-     * @param  SubscriberPreferenceChannels  $channels
-     * @param  ?ScheduleDto  $schedule
+     * @param  \novu\Models\Components\SubscriberPreferenceChannels  $channels
+     * @param  ?\novu\Models\Components\ScheduleDto  $schedule
      * @phpstan-pure
      */
     public function __construct(bool $enabled, SubscriberPreferenceChannels $channels, ?ScheduleDto $schedule = null)

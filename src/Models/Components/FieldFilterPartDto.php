@@ -27,7 +27,7 @@ class FieldFilterPartDto
 
     /**
      *
-     * @var Operator $operator
+     * @var \novu\Models\Components\Operator $operator
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('operator')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\Operator')]
@@ -35,7 +35,7 @@ class FieldFilterPartDto
 
     /**
      *
-     * @var On $on
+     * @var \novu\Models\Components\On $on
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('on')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\On')]
@@ -44,8 +44,8 @@ class FieldFilterPartDto
     /**
      * @param  string  $field
      * @param  string  $value
-     * @param  Operator  $operator
-     * @param  On  $on
+     * @param  \novu\Models\Components\Operator  $operator
+     * @param  \novu\Models\Components\On  $on
      * @phpstan-pure
      */
     public function __construct(string $field, string $value, Operator $operator, On $on)

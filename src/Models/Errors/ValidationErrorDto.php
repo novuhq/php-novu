@@ -39,7 +39,7 @@ class ValidationErrorDto
     /**
      * Value that failed validation
      *
-     * @var string|float|bool|Message4|array<string|float|bool|array<string, mixed>|null>|null $message
+     * @var string|float|bool|\novu\Models\Errors\Message4|array<string|float|bool|array<string, mixed>|null>|null $message
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('message')]
     #[\Speakeasy\Serializer\Annotation\Type('string|float|bool|\novu\Models\Errors\Message4|array<string|float|bool|array<string, mixed>|null>|null')]
@@ -70,7 +70,7 @@ class ValidationErrorDto
     /**
      * A record of validation errors keyed by field name
      *
-     * @var array<string, Components\ConstraintValidation> $errors
+     * @var array<string, \novu\Models\Components\ConstraintValidation> $errors
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('errors')]
     #[\Speakeasy\Serializer\Annotation\Type('array<string, \novu\Models\Components\ConstraintValidation>')]
@@ -80,10 +80,10 @@ class ValidationErrorDto
      * @param  float  $statusCode
      * @param  string  $timestamp
      * @param  string  $path
-     * @param  array<string, Components\ConstraintValidation>  $errors
+     * @param  array<string, \novu\Models\Components\ConstraintValidation>  $errors
      * @param  ?array<string, mixed>  $ctx
      * @param  ?string  $errorId
-     * @param  string|float|bool|Message4|array<string|float|bool|array<string, mixed>|null>|null  $message
+     * @param  string|float|bool|\novu\Models\Errors\Message4|array<string|float|bool|array<string, mixed>|null>|null  $message
      * @phpstan-pure
      */
     public function __construct(float $statusCode, string $timestamp, string $path, array $errors, ?array $ctx = null, ?string $errorId = null, string|float|bool|Message4|array|null $message = null)

@@ -42,7 +42,7 @@ class TopicsControllerGetTopicSubscriptionResponse
     /**
      * OK
      *
-     * @var ?Components\SubscriptionDetailsResponseDto $subscriptionDetailsResponseDto
+     * @var ?\novu\Models\Components\SubscriptionDetailsResponseDto $subscriptionDetailsResponseDto
      */
     public ?Components\SubscriptionDetailsResponseDto $subscriptionDetailsResponseDto = null;
 
@@ -51,7 +51,7 @@ class TopicsControllerGetTopicSubscriptionResponse
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
-     * @param  ?Components\SubscriptionDetailsResponseDto  $subscriptionDetailsResponseDto
+     * @param  ?\novu\Models\Components\SubscriptionDetailsResponseDto  $subscriptionDetailsResponseDto
      * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\SubscriptionDetailsResponseDto $subscriptionDetailsResponseDto = null, ?array $headers = [])

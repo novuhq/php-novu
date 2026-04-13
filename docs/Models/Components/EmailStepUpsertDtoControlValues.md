@@ -9,7 +9,7 @@ Control values for the Email step.
 
 ```php
 /**
-* @var Components\EmailControlDto
+* @var \novu\Models\Components\EmailControlDto
 */
 Components\EmailControlDto $value = /* values here */
 ```

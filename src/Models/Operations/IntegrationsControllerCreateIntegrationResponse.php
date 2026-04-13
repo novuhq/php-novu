@@ -42,7 +42,7 @@ class IntegrationsControllerCreateIntegrationResponse
     /**
      * Created
      *
-     * @var ?Components\IntegrationResponseDto $integrationResponseDto
+     * @var ?\novu\Models\Components\IntegrationResponseDto $integrationResponseDto
      */
     public ?Components\IntegrationResponseDto $integrationResponseDto = null;
 
@@ -51,7 +51,7 @@ class IntegrationsControllerCreateIntegrationResponse
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
-     * @param  ?Components\IntegrationResponseDto  $integrationResponseDto
+     * @param  ?\novu\Models\Components\IntegrationResponseDto  $integrationResponseDto
      * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\IntegrationResponseDto $integrationResponseDto = null, ?array $headers = [])

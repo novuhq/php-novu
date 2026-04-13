@@ -14,7 +14,7 @@ class SmsStepResponseDto
     /**
      * Controls metadata for the SMS step
      *
-     * @var SmsControlsMetadataResponseDto $controls
+     * @var \novu\Models\Components\SmsControlsMetadataResponseDto $controls
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('controls')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\SmsControlsMetadataResponseDto')]
@@ -64,7 +64,7 @@ class SmsStepResponseDto
     /**
      * Type of the step
      *
-     * @var StepTypeEnum $type
+     * @var \novu\Models\Components\StepTypeEnum $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\StepTypeEnum')]
@@ -73,7 +73,7 @@ class SmsStepResponseDto
     /**
      * Origin of the layout
      *
-     * @var ResourceOriginEnum $origin
+     * @var \novu\Models\Components\ResourceOriginEnum $origin
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('origin')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ResourceOriginEnum')]
@@ -98,7 +98,7 @@ class SmsStepResponseDto
     /**
      * Control values for the SMS step
      *
-     * @var ?SmsStepResponseDtoControlValues $controlValues
+     * @var ?\novu\Models\Components\SmsStepResponseDtoControlValues $controlValues
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('controlValues')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\SmsStepResponseDtoControlValues|null')]
@@ -108,7 +108,7 @@ class SmsStepResponseDto
     /**
      * Issues associated with the step
      *
-     * @var ?StepIssuesDto $issues
+     * @var ?\novu\Models\Components\StepIssuesDto $issues
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('issues')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\StepIssuesDto|null')]
@@ -116,21 +116,31 @@ class SmsStepResponseDto
     public ?StepIssuesDto $issues = null;
 
     /**
-     * @param  SmsControlsMetadataResponseDto  $controls
+     * Hash identifying the deployed Cloudflare Worker for this step
+     *
+     * @var ?string $stepResolverHash
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('stepResolverHash')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $stepResolverHash = null;
+
+    /**
+     * @param  \novu\Models\Components\SmsControlsMetadataResponseDto  $controls
      * @param  array<string, mixed>  $variables
      * @param  string  $stepId
      * @param  string  $id
      * @param  string  $name
      * @param  string  $slug
-     * @param  StepTypeEnum  $type
-     * @param  ResourceOriginEnum  $origin
+     * @param  \novu\Models\Components\StepTypeEnum  $type
+     * @param  \novu\Models\Components\ResourceOriginEnum  $origin
      * @param  string  $workflowId
      * @param  string  $workflowDatabaseId
-     * @param  ?SmsStepResponseDtoControlValues  $controlValues
-     * @param  ?StepIssuesDto  $issues
+     * @param  ?\novu\Models\Components\SmsStepResponseDtoControlValues  $controlValues
+     * @param  ?\novu\Models\Components\StepIssuesDto  $issues
+     * @param  ?string  $stepResolverHash
      * @phpstan-pure
      */
-    public function __construct(SmsControlsMetadataResponseDto $controls, array $variables, string $stepId, string $id, string $name, string $slug, StepTypeEnum $type, ResourceOriginEnum $origin, string $workflowId, string $workflowDatabaseId, ?SmsStepResponseDtoControlValues $controlValues = null, ?StepIssuesDto $issues = null)
+    public function __construct(SmsControlsMetadataResponseDto $controls, array $variables, string $stepId, string $id, string $name, string $slug, StepTypeEnum $type, ResourceOriginEnum $origin, string $workflowId, string $workflowDatabaseId, ?SmsStepResponseDtoControlValues $controlValues = null, ?StepIssuesDto $issues = null, ?string $stepResolverHash = null)
     {
         $this->controls = $controls;
         $this->variables = $variables;
@@ -144,5 +154,6 @@ class SmsStepResponseDto
         $this->workflowDatabaseId = $workflowDatabaseId;
         $this->controlValues = $controlValues;
         $this->issues = $issues;
+        $this->stepResolverHash = $stepResolverHash;
     }
 }

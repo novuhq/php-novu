@@ -14,7 +14,7 @@ class BulkUpdateSubscriberPreferencesDto
     /**
      * Array of workflow preferences to update (maximum 100 items)
      *
-     * @var array<BulkUpdateSubscriberPreferenceItemDto> $preferences
+     * @var array<\novu\Models\Components\BulkUpdateSubscriberPreferenceItemDto> $preferences
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('preferences')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\BulkUpdateSubscriberPreferenceItemDto>')]
@@ -23,7 +23,7 @@ class BulkUpdateSubscriberPreferencesDto
     /**
      * $context
      *
-     * @var ?array<string, string|Context2> $context
+     * @var ?array<string, string|\novu\Models\Components\Context2> $context
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('context')]
     #[\Speakeasy\Serializer\Annotation\Type('array<string, string|\novu\Models\Components\Context2>|null')]
@@ -31,8 +31,8 @@ class BulkUpdateSubscriberPreferencesDto
     public ?array $context = null;
 
     /**
-     * @param  array<BulkUpdateSubscriberPreferenceItemDto>  $preferences
-     * @param  ?array<string, string|Context2>  $context
+     * @param  array<\novu\Models\Components\BulkUpdateSubscriberPreferenceItemDto>  $preferences
+     * @param  ?array<string, string|\novu\Models\Components\Context2>  $context
      * @phpstan-pure
      */
     public function __construct(array $preferences, ?array $context = null)

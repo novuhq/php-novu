@@ -14,7 +14,7 @@ class SubscriberChannelDto
     /**
      * The ID of the chat or push provider.
      *
-     * @var SubscriberChannelDtoProviderId $providerId
+     * @var \novu\Models\Components\SubscriberChannelDtoProviderId $providerId
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('providerId')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\SubscriberChannelDtoProviderId')]
@@ -23,7 +23,7 @@ class SubscriberChannelDto
     /**
      * Credentials for the channel.
      *
-     * @var ChannelCredentialsDto $credentials
+     * @var \novu\Models\Components\ChannelCredentialsDto $credentials
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('credentials')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ChannelCredentialsDto')]
@@ -39,8 +39,8 @@ class SubscriberChannelDto
     public ?string $integrationIdentifier = null;
 
     /**
-     * @param  SubscriberChannelDtoProviderId  $providerId
-     * @param  ChannelCredentialsDto  $credentials
+     * @param  \novu\Models\Components\SubscriberChannelDtoProviderId  $providerId
+     * @param  \novu\Models\Components\ChannelCredentialsDto  $credentials
      * @param  ?string  $integrationIdentifier
      * @phpstan-pure
      */

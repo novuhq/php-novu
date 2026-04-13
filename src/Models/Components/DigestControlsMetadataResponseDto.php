@@ -14,7 +14,7 @@ class DigestControlsMetadataResponseDto
     /**
      * Control values specific to Digest
      *
-     * @var DigestControlDto $values
+     * @var \novu\Models\Components\DigestControlDto $values
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('values')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\DigestControlDto')]
@@ -33,7 +33,7 @@ class DigestControlsMetadataResponseDto
     /**
      * UI Schema for rendering
      *
-     * @var ?UiSchema $uiSchema
+     * @var ?\novu\Models\Components\UiSchema $uiSchema
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('uiSchema')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\UiSchema|null')]
@@ -41,9 +41,9 @@ class DigestControlsMetadataResponseDto
     public ?UiSchema $uiSchema = null;
 
     /**
-     * @param  DigestControlDto  $values
+     * @param  \novu\Models\Components\DigestControlDto  $values
      * @param  ?array<string, mixed>  $dataSchema
-     * @param  ?UiSchema  $uiSchema
+     * @param  ?\novu\Models\Components\UiSchema  $uiSchema
      * @phpstan-pure
      */
     public function __construct(DigestControlDto $values, ?array $dataSchema = null, ?UiSchema $uiSchema = null)

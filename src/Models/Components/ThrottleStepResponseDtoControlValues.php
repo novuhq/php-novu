@@ -34,7 +34,7 @@ class ThrottleStepResponseDtoControlValues
     /**
      * The unit of time for the throttle window (required for fixed type).
      *
-     * @var ?ThrottleStepResponseDtoUnit $unit
+     * @var ?\novu\Models\Components\ThrottleStepResponseDtoUnit $unit
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('unit')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ThrottleStepResponseDtoUnit|null')]
@@ -72,7 +72,7 @@ class ThrottleStepResponseDtoControlValues
     /**
      * The type of throttle window.
      *
-     * @var ?ThrottleStepResponseDtoType $type
+     * @var ?\novu\Models\Components\ThrottleStepResponseDtoType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ThrottleStepResponseDtoType|null')]
@@ -90,9 +90,9 @@ class ThrottleStepResponseDtoControlValues
 
     /**
      * @param  ?array<string, mixed>  $skip
-     * @param  ?ThrottleStepResponseDtoType  $type
+     * @param  ?\novu\Models\Components\ThrottleStepResponseDtoType  $type
      * @param  ?float  $amount
-     * @param  ?ThrottleStepResponseDtoUnit  $unit
+     * @param  ?\novu\Models\Components\ThrottleStepResponseDtoUnit  $unit
      * @param  ?string  $dynamicKey
      * @param  ?float  $threshold
      * @param  ?string  $throttleKey

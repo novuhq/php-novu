@@ -35,7 +35,7 @@ class InboundWebhooksControllerHandleWebhookResponse
     /**
      * Successfully processed webhook events
      *
-     * @var ?array<Components\WebhookResultDto> $webhookResultDtos
+     * @var ?array<\novu\Models\Components\WebhookResultDto> $webhookResultDtos
      */
     public ?array $webhookResultDtos = null;
 
@@ -43,7 +43,7 @@ class InboundWebhooksControllerHandleWebhookResponse
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
-     * @param  ?array<Components\WebhookResultDto>  $webhookResultDtos
+     * @param  ?array<\novu\Models\Components\WebhookResultDto>  $webhookResultDtos
      * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?array $webhookResultDtos = null)

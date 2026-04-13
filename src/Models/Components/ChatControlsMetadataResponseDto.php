@@ -14,7 +14,7 @@ class ChatControlsMetadataResponseDto
     /**
      * Control values specific to Chat
      *
-     * @var ChatControlDto $values
+     * @var \novu\Models\Components\ChatControlDto $values
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('values')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ChatControlDto')]
@@ -33,7 +33,7 @@ class ChatControlsMetadataResponseDto
     /**
      * UI Schema for rendering
      *
-     * @var ?UiSchema $uiSchema
+     * @var ?\novu\Models\Components\UiSchema $uiSchema
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('uiSchema')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\UiSchema|null')]
@@ -41,9 +41,9 @@ class ChatControlsMetadataResponseDto
     public ?UiSchema $uiSchema = null;
 
     /**
-     * @param  ChatControlDto  $values
+     * @param  \novu\Models\Components\ChatControlDto  $values
      * @param  ?array<string, mixed>  $dataSchema
-     * @param  ?UiSchema  $uiSchema
+     * @param  ?\novu\Models\Components\UiSchema  $uiSchema
      * @phpstan-pure
      */
     public function __construct(ChatControlDto $values, ?array $dataSchema = null, ?UiSchema $uiSchema = null)

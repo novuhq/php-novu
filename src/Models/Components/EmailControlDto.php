@@ -50,7 +50,7 @@ class EmailControlDto
     /**
      * Type of editor to use for the body.
      *
-     * @var ?EmailControlDtoEditorType $editorType
+     * @var ?\novu\Models\Components\EmailControlDtoEditorType $editorType
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('editorType')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\EmailControlDtoEditorType|null')]
@@ -70,7 +70,7 @@ class EmailControlDto
      * @param  string  $subject
      * @param  ?array<string, mixed>  $skip
      * @param  ?string  $body
-     * @param  ?EmailControlDtoEditorType  $editorType
+     * @param  ?\novu\Models\Components\EmailControlDtoEditorType  $editorType
      * @param  ?bool  $disableOutputSanitization
      * @param  ?string  $layoutId
      * @phpstan-pure

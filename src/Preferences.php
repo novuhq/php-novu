@@ -53,10 +53,10 @@ class Preferences
      * Bulk update subscriber preferences by its unique key identifier **subscriberId**. 
      *     This API allows updating multiple workflow preferences in a single request.
      *
-     * @param  Components\BulkUpdateSubscriberPreferencesDto  $bulkUpdateSubscriberPreferencesDto
+     * @param  \novu\Models\Components\BulkUpdateSubscriberPreferencesDto  $bulkUpdateSubscriberPreferencesDto
      * @param  string  $subscriberId
      * @param  ?string  $idempotencyKey
-     * @return Operations\SubscribersControllerBulkUpdateSubscriberPreferencesResponse
+     * @return \novu\Models\Operations\SubscribersControllerBulkUpdateSubscriberPreferencesResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function bulkUpdate(Components\BulkUpdateSubscriberPreferencesDto $bulkUpdateSubscriberPreferencesDto, string $subscriberId, ?string $idempotencyKey = null, ?Options $options = null): Operations\SubscribersControllerBulkUpdateSubscriberPreferencesResponse

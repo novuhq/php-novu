@@ -15,7 +15,7 @@ class LayoutsControllerCreateRequest
     /**
      * Layout creation details
      *
-     * @var Components\CreateLayoutDto $createLayoutDto
+     * @var \novu\Models\Components\CreateLayoutDto $createLayoutDto
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\CreateLayoutDto $createLayoutDto;
@@ -29,7 +29,7 @@ class LayoutsControllerCreateRequest
     public ?string $idempotencyKey = null;
 
     /**
-     * @param  Components\CreateLayoutDto  $createLayoutDto
+     * @param  \novu\Models\Components\CreateLayoutDto  $createLayoutDto
      * @param  ?string  $idempotencyKey
      * @phpstan-pure
      */

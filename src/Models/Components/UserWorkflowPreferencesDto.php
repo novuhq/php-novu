@@ -14,7 +14,7 @@ class UserWorkflowPreferencesDto
     /**
      * A preference for the workflow. The values specified here will be used if no preference is specified for a channel.
      *
-     * @var WorkflowPreferenceDto $all
+     * @var \novu\Models\Components\WorkflowPreferenceDto $all
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('all')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\WorkflowPreferenceDto')]
@@ -23,15 +23,15 @@ class UserWorkflowPreferencesDto
     /**
      * Preferences for different communication channels
      *
-     * @var array<string, ChannelPreferenceDto> $channels
+     * @var array<string, \novu\Models\Components\ChannelPreferenceDto> $channels
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('channels')]
     #[\Speakeasy\Serializer\Annotation\Type('array<string, \novu\Models\Components\ChannelPreferenceDto>')]
     public array $channels;
 
     /**
-     * @param  WorkflowPreferenceDto  $all
-     * @param  array<string, ChannelPreferenceDto>  $channels
+     * @param  \novu\Models\Components\WorkflowPreferenceDto  $all
+     * @param  array<string, \novu\Models\Components\ChannelPreferenceDto>  $channels
      * @phpstan-pure
      */
     public function __construct(WorkflowPreferenceDto $all, array $channels)

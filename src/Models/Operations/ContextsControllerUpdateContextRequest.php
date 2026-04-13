@@ -30,7 +30,7 @@ class ContextsControllerUpdateContextRequest
 
     /**
      *
-     * @var Components\UpdateContextRequestDto $updateContextRequestDto
+     * @var \novu\Models\Components\UpdateContextRequestDto $updateContextRequestDto
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\UpdateContextRequestDto $updateContextRequestDto;
@@ -46,7 +46,7 @@ class ContextsControllerUpdateContextRequest
     /**
      * @param  string  $id
      * @param  string  $type
-     * @param  Components\UpdateContextRequestDto  $updateContextRequestDto
+     * @param  \novu\Models\Components\UpdateContextRequestDto  $updateContextRequestDto
      * @param  ?string  $idempotencyKey
      * @phpstan-pure
      */

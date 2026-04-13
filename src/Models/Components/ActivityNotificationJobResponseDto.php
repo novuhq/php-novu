@@ -22,7 +22,7 @@ class ActivityNotificationJobResponseDto
     /**
      * Type of the job
      *
-     * @var ActivityNotificationJobResponseDtoType $type
+     * @var \novu\Models\Components\ActivityNotificationJobResponseDtoType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ActivityNotificationJobResponseDtoType')]
@@ -31,7 +31,7 @@ class ActivityNotificationJobResponseDto
     /**
      * Execution details of the job
      *
-     * @var array<ActivityNotificationExecutionDetailResponseDto> $executionDetails
+     * @var array<\novu\Models\Components\ActivityNotificationExecutionDetailResponseDto> $executionDetails
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('executionDetails')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\ActivityNotificationExecutionDetailResponseDto>')]
@@ -40,7 +40,7 @@ class ActivityNotificationJobResponseDto
     /**
      * Step details of the job
      *
-     * @var ActivityNotificationStepResponseDto $step
+     * @var \novu\Models\Components\ActivityNotificationStepResponseDto $step
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('step')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ActivityNotificationStepResponseDto')]
@@ -49,7 +49,7 @@ class ActivityNotificationJobResponseDto
     /**
      * Provider ID of the job
      *
-     * @var ProvidersIdEnum $providerId
+     * @var \novu\Models\Components\ProvidersIdEnum $providerId
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('providerId')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ProvidersIdEnum')]
@@ -66,7 +66,7 @@ class ActivityNotificationJobResponseDto
     /**
      * Optional digest for the job, including metadata and events
      *
-     * @var ?DigestMetadataDto $digest
+     * @var ?\novu\Models\Components\DigestMetadataDto $digest
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('digest')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\DigestMetadataDto|null')]
@@ -86,7 +86,7 @@ class ActivityNotificationJobResponseDto
     /**
      * Optional payload for the job
      *
-     * @var ?Payload $payload
+     * @var ?\novu\Models\Components\Payload $payload
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('payload')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\Payload|null')]
@@ -113,14 +113,14 @@ class ActivityNotificationJobResponseDto
 
     /**
      * @param  string  $id
-     * @param  ActivityNotificationJobResponseDtoType  $type
-     * @param  array<ActivityNotificationExecutionDetailResponseDto>  $executionDetails
-     * @param  ActivityNotificationStepResponseDto  $step
-     * @param  ProvidersIdEnum  $providerId
+     * @param  \novu\Models\Components\ActivityNotificationJobResponseDtoType  $type
+     * @param  array<\novu\Models\Components\ActivityNotificationExecutionDetailResponseDto>  $executionDetails
+     * @param  \novu\Models\Components\ActivityNotificationStepResponseDto  $step
+     * @param  \novu\Models\Components\ProvidersIdEnum  $providerId
      * @param  string  $status
-     * @param  ?DigestMetadataDto  $digest
+     * @param  ?\novu\Models\Components\DigestMetadataDto  $digest
      * @param  ?array<string, mixed>  $overrides
-     * @param  ?Payload  $payload
+     * @param  ?\novu\Models\Components\Payload  $payload
      * @param  ?string  $updatedAt
      * @param  ?float  $scheduleExtensionsCount
      * @phpstan-pure

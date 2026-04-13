@@ -14,14 +14,14 @@ class BulkTriggerEventDto
     /**
      * $events
      *
-     * @var array<TriggerEventRequestDto> $events
+     * @var array<\novu\Models\Components\TriggerEventRequestDto> $events
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('events')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\TriggerEventRequestDto>')]
     public array $events;
 
     /**
-     * @param  array<TriggerEventRequestDto>  $events
+     * @param  array<\novu\Models\Components\TriggerEventRequestDto>  $events
      * @phpstan-pure
      */
     public function __construct(array $events)

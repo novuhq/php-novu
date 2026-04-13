@@ -14,7 +14,7 @@ class LayoutControlsDto
     /**
      * Email layout controls
      *
-     * @var LayoutControlValuesDto $values
+     * @var \novu\Models\Components\LayoutControlValuesDto $values
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('values')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\LayoutControlValuesDto')]
@@ -33,7 +33,7 @@ class LayoutControlsDto
     /**
      * UI Schema for rendering
      *
-     * @var ?UiSchema $uiSchema
+     * @var ?\novu\Models\Components\UiSchema $uiSchema
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('uiSchema')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\UiSchema|null')]
@@ -41,9 +41,9 @@ class LayoutControlsDto
     public ?UiSchema $uiSchema = null;
 
     /**
-     * @param  LayoutControlValuesDto  $values
+     * @param  \novu\Models\Components\LayoutControlValuesDto  $values
      * @param  ?array<string, mixed>  $dataSchema
-     * @param  ?UiSchema  $uiSchema
+     * @param  ?\novu\Models\Components\UiSchema  $uiSchema
      * @phpstan-pure
      */
     public function __construct(LayoutControlValuesDto $values, ?array $dataSchema = null, ?UiSchema $uiSchema = null)

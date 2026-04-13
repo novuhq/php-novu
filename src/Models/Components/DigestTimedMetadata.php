@@ -13,7 +13,7 @@ class DigestTimedMetadata
 {
     /**
      *
-     * @var DigestTimedMetadataType $type
+     * @var \novu\Models\Components\DigestTimedMetadataType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\DigestTimedMetadataType')]
@@ -29,7 +29,7 @@ class DigestTimedMetadata
 
     /**
      *
-     * @var ?DigestTimedMetadataUnit $unit
+     * @var ?\novu\Models\Components\DigestTimedMetadataUnit $unit
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('unit')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\DigestTimedMetadataUnit|null')]
@@ -46,7 +46,7 @@ class DigestTimedMetadata
 
     /**
      *
-     * @var ?TimedConfig $timed
+     * @var ?\novu\Models\Components\TimedConfig $timed
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('timed')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\TimedConfig|null')]
@@ -54,11 +54,11 @@ class DigestTimedMetadata
     public ?TimedConfig $timed = null;
 
     /**
-     * @param  DigestTimedMetadataType  $type
+     * @param  \novu\Models\Components\DigestTimedMetadataType  $type
      * @param  ?float  $amount
-     * @param  ?DigestTimedMetadataUnit  $unit
+     * @param  ?\novu\Models\Components\DigestTimedMetadataUnit  $unit
      * @param  ?string  $digestKey
-     * @param  ?TimedConfig  $timed
+     * @param  ?\novu\Models\Components\TimedConfig  $timed
      * @phpstan-pure
      */
     public function __construct(DigestTimedMetadataType $type, ?float $amount = null, ?DigestTimedMetadataUnit $unit = null, ?string $digestKey = null, ?TimedConfig $timed = null)

@@ -12,18 +12,17 @@ namespace novu\Models\Components;
 class RedirectDto
 {
     /**
-     * URL for redirection. Must be a valid URL or start with / or {{ variable }}.
+     * URL to redirect to
      *
-     * @var ?string $url
+     * @var string $url
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('url')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $url = null;
+    public string $url;
 
     /**
-     * Target window for the redirection.
+     * Target attribute for the redirect link
      *
-     * @var ?Target $target
+     * @var ?\novu\Models\Components\Target $target
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('target')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\Target|null')]
@@ -31,11 +30,11 @@ class RedirectDto
     public ?Target $target = null;
 
     /**
-     * @param  ?string  $url
-     * @param  ?Target  $target
+     * @param  string  $url
+     * @param  ?\novu\Models\Components\Target  $target
      * @phpstan-pure
      */
-    public function __construct(?string $url = null, ?Target $target = Target::Self)
+    public function __construct(string $url, ?Target $target = null)
     {
         $this->url = $url;
         $this->target = $target;

@@ -49,4 +49,12 @@ enum UiComponentEnum: string
     case QueryEditor = 'QUERY_EDITOR';
     case Data = 'DATA';
     case LayoutEmail = 'LAYOUT_EMAIL';
+    case DestinationMethod = 'DESTINATION_METHOD';
+    case DestinationUrl = 'DESTINATION_URL';
+    case DestinationHeaders = 'DESTINATION_HEADERS';
+    case DestinationBody = 'DESTINATION_BODY';
+    case DestinationResponseBodySchema = 'DESTINATION_RESPONSE_BODY_SCHEMA';
+    case DestinationEnforceSchemaValidation = 'DESTINATION_ENFORCE_SCHEMA_VALIDATION';
+    case DestinationContinueOnFailure = 'DESTINATION_CONTINUE_ON_FAILURE';
+    case DestinationTimeout = 'DESTINATION_TIMEOUT';
 }

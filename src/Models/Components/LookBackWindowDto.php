@@ -22,7 +22,7 @@ class LookBackWindowDto
     /**
      * Unit of time for the look-back window.
      *
-     * @var LookBackWindowDtoUnit $unit
+     * @var \novu\Models\Components\LookBackWindowDtoUnit $unit
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('unit')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\LookBackWindowDtoUnit')]
@@ -30,7 +30,7 @@ class LookBackWindowDto
 
     /**
      * @param  float  $amount
-     * @param  LookBackWindowDtoUnit  $unit
+     * @param  \novu\Models\Components\LookBackWindowDtoUnit  $unit
      * @phpstan-pure
      */
     public function __construct(float $amount, LookBackWindowDtoUnit $unit)

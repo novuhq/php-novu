@@ -14,7 +14,7 @@ class UpdateSubscriberChannelRequestDto
     /**
      * The provider identifier for the credentials
      *
-     * @var ChatOrPushProviderEnum $providerId
+     * @var \novu\Models\Components\ChatOrPushProviderEnum $providerId
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('providerId')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ChatOrPushProviderEnum')]
@@ -23,7 +23,7 @@ class UpdateSubscriberChannelRequestDto
     /**
      * Credentials payload for the specified provider
      *
-     * @var ChannelCredentials $credentials
+     * @var \novu\Models\Components\ChannelCredentials $credentials
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('credentials')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ChannelCredentials')]
@@ -39,8 +39,8 @@ class UpdateSubscriberChannelRequestDto
     public ?string $integrationIdentifier = null;
 
     /**
-     * @param  ChatOrPushProviderEnum  $providerId
-     * @param  ChannelCredentials  $credentials
+     * @param  \novu\Models\Components\ChatOrPushProviderEnum  $providerId
+     * @param  \novu\Models\Components\ChannelCredentials  $credentials
      * @param  ?string  $integrationIdentifier
      * @phpstan-pure
      */

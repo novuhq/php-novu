@@ -14,7 +14,7 @@ class ThrottleControlsMetadataResponseDto
     /**
      * Control values specific to Throttle
      *
-     * @var ThrottleControlDto $values
+     * @var \novu\Models\Components\ThrottleControlDto $values
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('values')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ThrottleControlDto')]
@@ -33,7 +33,7 @@ class ThrottleControlsMetadataResponseDto
     /**
      * UI Schema for rendering
      *
-     * @var ?UiSchema $uiSchema
+     * @var ?\novu\Models\Components\UiSchema $uiSchema
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('uiSchema')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\UiSchema|null')]
@@ -41,9 +41,9 @@ class ThrottleControlsMetadataResponseDto
     public ?UiSchema $uiSchema = null;
 
     /**
-     * @param  ThrottleControlDto  $values
+     * @param  \novu\Models\Components\ThrottleControlDto  $values
      * @param  ?array<string, mixed>  $dataSchema
-     * @param  ?UiSchema  $uiSchema
+     * @param  ?\novu\Models\Components\UiSchema  $uiSchema
      * @phpstan-pure
      */
     public function __construct(ThrottleControlDto $values, ?array $dataSchema = null, ?UiSchema $uiSchema = null)

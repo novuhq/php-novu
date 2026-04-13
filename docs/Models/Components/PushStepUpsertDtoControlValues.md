@@ -9,7 +9,7 @@ Control values for the Push step.
 
 ```php
 /**
-* @var Components\PushControlDto
+* @var \novu\Models\Components\PushControlDto
 */
 Components\PushControlDto $value = /* values here */
 ```
