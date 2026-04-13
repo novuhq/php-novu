@@ -22,7 +22,7 @@ class DelayStepUpsertDto
     /**
      * Type of the step
      *
-     * @var StepTypeEnum $type
+     * @var \novu\Models\Components\StepTypeEnum $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\StepTypeEnum')]
@@ -49,7 +49,7 @@ class DelayStepUpsertDto
     /**
      * Control values for the Delay step.
      *
-     * @var DelayControlDto|array<string, mixed>|null $controlValues
+     * @var \novu\Models\Components\DelayControlDto|array<string, mixed>|null $controlValues
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('controlValues')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\DelayControlDto|array<string, mixed>|null')]
@@ -58,10 +58,10 @@ class DelayStepUpsertDto
 
     /**
      * @param  string  $name
-     * @param  StepTypeEnum  $type
+     * @param  \novu\Models\Components\StepTypeEnum  $type
      * @param  ?string  $id
      * @param  ?string  $stepId
-     * @param  DelayControlDto|array<string, mixed>|null  $controlValues
+     * @param  \novu\Models\Components\DelayControlDto|array<string, mixed>|null  $controlValues
      * @phpstan-pure
      */
     public function __construct(string $name, StepTypeEnum $type, ?string $id = null, ?string $stepId = null, DelayControlDto|array|null $controlValues = null)

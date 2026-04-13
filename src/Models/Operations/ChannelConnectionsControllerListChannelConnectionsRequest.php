@@ -39,7 +39,7 @@ class ChannelConnectionsControllerListChannelConnectionsRequest
     /**
      * Direction of sorting
      *
-     * @var ?ChannelConnectionsControllerListChannelConnectionsQueryParamOrderDirection $orderDirection
+     * @var ?\novu\Models\Operations\ChannelConnectionsControllerListChannelConnectionsQueryParamOrderDirection $orderDirection
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=orderDirection')]
     public ?ChannelConnectionsControllerListChannelConnectionsQueryParamOrderDirection $orderDirection = null;
@@ -71,7 +71,7 @@ class ChannelConnectionsControllerListChannelConnectionsRequest
     /**
      * Filter by channel type (email, sms, push, chat, etc.).
      *
-     * @var ?Channel $channel
+     * @var ?\novu\Models\Operations\Channel $channel
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=channel')]
     public ?Channel $channel = null;
@@ -79,7 +79,7 @@ class ChannelConnectionsControllerListChannelConnectionsRequest
     /**
      * Filter by provider identifier (e.g., sendgrid, twilio, slack, etc.).
      *
-     * @var ?Components\ProvidersIdEnum $providerId
+     * @var ?\novu\Models\Components\ProvidersIdEnum $providerId
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=providerId')]
     public ?Components\ProvidersIdEnum $providerId = null;
@@ -112,12 +112,12 @@ class ChannelConnectionsControllerListChannelConnectionsRequest
      * @param  ?string  $after
      * @param  ?string  $before
      * @param  ?float  $limit
-     * @param  ?ChannelConnectionsControllerListChannelConnectionsQueryParamOrderDirection  $orderDirection
+     * @param  ?\novu\Models\Operations\ChannelConnectionsControllerListChannelConnectionsQueryParamOrderDirection  $orderDirection
      * @param  ?string  $orderBy
      * @param  ?bool  $includeCursor
      * @param  ?string  $subscriberId
-     * @param  ?Channel  $channel
-     * @param  ?Components\ProvidersIdEnum  $providerId
+     * @param  ?\novu\Models\Operations\Channel  $channel
+     * @param  ?\novu\Models\Components\ProvidersIdEnum  $providerId
      * @param  ?string  $integrationIdentifier
      * @param  ?array<string>  $contextKeys
      * @param  ?string  $idempotencyKey

@@ -14,7 +14,7 @@ class SmsControlsMetadataResponseDto
     /**
      * Control values specific to SMS
      *
-     * @var SmsControlDto $values
+     * @var \novu\Models\Components\SmsControlDto $values
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('values')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\SmsControlDto')]
@@ -33,7 +33,7 @@ class SmsControlsMetadataResponseDto
     /**
      * UI Schema for rendering
      *
-     * @var ?UiSchema $uiSchema
+     * @var ?\novu\Models\Components\UiSchema $uiSchema
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('uiSchema')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\UiSchema|null')]
@@ -41,9 +41,9 @@ class SmsControlsMetadataResponseDto
     public ?UiSchema $uiSchema = null;
 
     /**
-     * @param  SmsControlDto  $values
+     * @param  \novu\Models\Components\SmsControlDto  $values
      * @param  ?array<string, mixed>  $dataSchema
-     * @param  ?UiSchema  $uiSchema
+     * @param  ?\novu\Models\Components\UiSchema  $uiSchema
      * @phpstan-pure
      */
     public function __construct(SmsControlDto $values, ?array $dataSchema = null, ?UiSchema $uiSchema = null)

@@ -13,7 +13,7 @@ class DigestRegularMetadata
 {
     /**
      *
-     * @var DigestRegularMetadataType $type
+     * @var \novu\Models\Components\DigestRegularMetadataType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\DigestRegularMetadataType')]
@@ -29,7 +29,7 @@ class DigestRegularMetadata
 
     /**
      *
-     * @var ?DigestRegularMetadataUnit $unit
+     * @var ?\novu\Models\Components\DigestRegularMetadataUnit $unit
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('unit')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\DigestRegularMetadataUnit|null')]
@@ -62,7 +62,7 @@ class DigestRegularMetadata
 
     /**
      *
-     * @var ?BackoffUnit $backoffUnit
+     * @var ?\novu\Models\Components\BackoffUnit $backoffUnit
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('backoffUnit')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\BackoffUnit|null')]
@@ -78,13 +78,13 @@ class DigestRegularMetadata
     public ?bool $updateMode = null;
 
     /**
-     * @param  DigestRegularMetadataType  $type
+     * @param  \novu\Models\Components\DigestRegularMetadataType  $type
      * @param  ?float  $amount
-     * @param  ?DigestRegularMetadataUnit  $unit
+     * @param  ?\novu\Models\Components\DigestRegularMetadataUnit  $unit
      * @param  ?string  $digestKey
      * @param  ?bool  $backoff
      * @param  ?float  $backoffAmount
-     * @param  ?BackoffUnit  $backoffUnit
+     * @param  ?\novu\Models\Components\BackoffUnit  $backoffUnit
      * @param  ?bool  $updateMode
      * @phpstan-pure
      */

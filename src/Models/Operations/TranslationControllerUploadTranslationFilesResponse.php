@@ -35,7 +35,7 @@ class TranslationControllerUploadTranslationFilesResponse
     /**
      * Upload results
      *
-     * @var ?Components\UploadTranslationsResponseDto $uploadTranslationsResponseDto
+     * @var ?\novu\Models\Components\UploadTranslationsResponseDto $uploadTranslationsResponseDto
      */
     public ?Components\UploadTranslationsResponseDto $uploadTranslationsResponseDto = null;
 
@@ -43,7 +43,7 @@ class TranslationControllerUploadTranslationFilesResponse
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
-     * @param  ?Components\UploadTranslationsResponseDto  $uploadTranslationsResponseDto
+     * @param  ?\novu\Models\Components\UploadTranslationsResponseDto  $uploadTranslationsResponseDto
      * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\UploadTranslationsResponseDto $uploadTranslationsResponseDto = null)

@@ -58,9 +58,11 @@ class Translations
      *
      * Create a translation for a specific workflow and locale, if the translation already exists, it will be updated
      *
-     * @param  Components\CreateTranslationRequestDto  $createTranslationRequestDto
+     * This operation requires either `secretKey` or `secretKey` to be set via `setSecurity` on the SDK builder.
+     *
+     * @param  \novu\Models\Components\CreateTranslationRequestDto  $createTranslationRequestDto
      * @param  ?string  $idempotencyKey
-     * @return Operations\TranslationControllerCreateTranslationEndpointResponse
+     * @return \novu\Models\Operations\TranslationControllerCreateTranslationEndpointResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function create(Components\CreateTranslationRequestDto $createTranslationRequestDto, ?string $idempotencyKey = null, ?Options $options = null): Operations\TranslationControllerCreateTranslationEndpointResponse
@@ -112,12 +114,15 @@ class Translations
         $httpOptions['headers']['Accept'] = 'application/json';
         $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('POST', $url);
+        $client = $this->sdkConfiguration->securitySource !== null
+            ? Utils\Utils::configureSecurityClient($this->sdkConfiguration->defaultClient, $this->sdkConfiguration->getSecurity(), ['secretKey', 'secretKey'])
+            : $this->sdkConfiguration->defaultClient;
         $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'TranslationController_createTranslationEndpoint', null, $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
         $httpRequest = Utils\Utils::removeHeaders($httpRequest);
         try {
-            $httpResponse = RetryUtils::retryWrapper(fn () => $this->sdkConfiguration->client->send($httpRequest, $httpOptions), $retryConfig, $retryCodes);
+            $httpResponse = RetryUtils::retryWrapper(fn () => $client->send($httpRequest, $httpOptions), $retryConfig, $retryCodes);
         } catch (\GuzzleHttp\Exception\GuzzleException $error) {
             $res = $this->sdkConfiguration->hooks->afterError(new Hooks\AfterErrorContext($hookContext), null, $error);
             $httpResponse = $res;
@@ -160,11 +165,13 @@ class Translations
      *
      * Delete a specific translation by resource type, resource ID and locale
      *
-     * @param  Operations\TranslationControllerDeleteTranslationEndpointPathParamResourceType  $resourceType
+     * This operation requires either `secretKey` or `secretKey` to be set via `setSecurity` on the SDK builder.
+     *
+     * @param  \novu\Models\Operations\TranslationControllerDeleteTranslationEndpointPathParamResourceType  $resourceType
      * @param  string  $resourceId
      * @param  string  $locale
      * @param  ?string  $idempotencyKey
-     * @return Operations\TranslationControllerDeleteTranslationEndpointResponse
+     * @return \novu\Models\Operations\TranslationControllerDeleteTranslationEndpointResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function delete(Operations\TranslationControllerDeleteTranslationEndpointPathParamResourceType $resourceType, string $resourceId, string $locale, ?string $idempotencyKey = null, ?Options $options = null): Operations\TranslationControllerDeleteTranslationEndpointResponse
@@ -213,12 +220,15 @@ class Translations
         $httpOptions['headers']['Accept'] = '*/*';
         $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('DELETE', $url);
+        $client = $this->sdkConfiguration->securitySource !== null
+            ? Utils\Utils::configureSecurityClient($this->sdkConfiguration->defaultClient, $this->sdkConfiguration->getSecurity(), ['secretKey', 'secretKey'])
+            : $this->sdkConfiguration->defaultClient;
         $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'TranslationController_deleteTranslationEndpoint', null, $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
         $httpRequest = Utils\Utils::removeHeaders($httpRequest);
         try {
-            $httpResponse = RetryUtils::retryWrapper(fn () => $this->sdkConfiguration->client->send($httpRequest, $httpOptions), $retryConfig, $retryCodes);
+            $httpResponse = RetryUtils::retryWrapper(fn () => $client->send($httpRequest, $httpOptions), $retryConfig, $retryCodes);
         } catch (\GuzzleHttp\Exception\GuzzleException $error) {
             $res = $this->sdkConfiguration->hooks->afterError(new Hooks\AfterErrorContext($hookContext), null, $error);
             $httpResponse = $res;
@@ -252,11 +262,13 @@ class Translations
      *
      * Retrieve a specific translation by resource type, resource ID and locale
      *
-     * @param  Operations\PathParamResourceType  $resourceType
+     * This operation requires either `secretKey` or `secretKey` to be set via `setSecurity` on the SDK builder.
+     *
+     * @param  \novu\Models\Operations\PathParamResourceType  $resourceType
      * @param  string  $resourceId
      * @param  string  $locale
      * @param  ?string  $idempotencyKey
-     * @return Operations\TranslationControllerGetSingleTranslationResponse
+     * @return \novu\Models\Operations\TranslationControllerGetSingleTranslationResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function retrieve(Operations\PathParamResourceType $resourceType, string $resourceId, string $locale, ?string $idempotencyKey = null, ?Options $options = null): Operations\TranslationControllerGetSingleTranslationResponse
@@ -305,12 +317,15 @@ class Translations
         $httpOptions['headers']['Accept'] = 'application/json';
         $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('GET', $url);
+        $client = $this->sdkConfiguration->securitySource !== null
+            ? Utils\Utils::configureSecurityClient($this->sdkConfiguration->defaultClient, $this->sdkConfiguration->getSecurity(), ['secretKey', 'secretKey'])
+            : $this->sdkConfiguration->defaultClient;
         $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'TranslationController_getSingleTranslation', null, $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
         $httpRequest = Utils\Utils::removeHeaders($httpRequest);
         try {
-            $httpResponse = RetryUtils::retryWrapper(fn () => $this->sdkConfiguration->client->send($httpRequest, $httpOptions), $retryConfig, $retryCodes);
+            $httpResponse = RetryUtils::retryWrapper(fn () => $client->send($httpRequest, $httpOptions), $retryConfig, $retryCodes);
         } catch (\GuzzleHttp\Exception\GuzzleException $error) {
             $res = $this->sdkConfiguration->hooks->afterError(new Hooks\AfterErrorContext($hookContext), null, $error);
             $httpResponse = $res;
@@ -353,9 +368,11 @@ class Translations
      *
      * Upload one or more JSON translation files for a specific workflow. Files name must match the locale, e.g. en_US.json. Supports both "files" and "files[]" field names for backwards compatibility.
      *
-     * @param  Operations\TranslationControllerUploadTranslationFilesRequestBody  $requestBody
+     * This operation requires either `secretKey` or `secretKey` to be set via `setSecurity` on the SDK builder.
+     *
+     * @param  \novu\Models\Operations\TranslationControllerUploadTranslationFilesRequestBody  $requestBody
      * @param  ?string  $idempotencyKey
-     * @return Operations\TranslationControllerUploadTranslationFilesResponse
+     * @return \novu\Models\Operations\TranslationControllerUploadTranslationFilesResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function upload(Operations\TranslationControllerUploadTranslationFilesRequestBody $requestBody, ?string $idempotencyKey = null, ?Options $options = null): Operations\TranslationControllerUploadTranslationFilesResponse
@@ -407,12 +424,15 @@ class Translations
         $httpOptions['headers']['Accept'] = 'application/json';
         $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('POST', $url);
+        $client = $this->sdkConfiguration->securitySource !== null
+            ? Utils\Utils::configureSecurityClient($this->sdkConfiguration->defaultClient, $this->sdkConfiguration->getSecurity(), ['secretKey', 'secretKey'])
+            : $this->sdkConfiguration->defaultClient;
         $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'TranslationController_uploadTranslationFiles', null, $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
         $httpRequest = Utils\Utils::removeHeaders($httpRequest);
         try {
-            $httpResponse = RetryUtils::retryWrapper(fn () => $this->sdkConfiguration->client->send($httpRequest, $httpOptions), $retryConfig, $retryCodes);
+            $httpResponse = RetryUtils::retryWrapper(fn () => $client->send($httpRequest, $httpOptions), $retryConfig, $retryCodes);
         } catch (\GuzzleHttp\Exception\GuzzleException $error) {
             $res = $this->sdkConfiguration->hooks->afterError(new Hooks\AfterErrorContext($hookContext), null, $error);
             $httpResponse = $res;

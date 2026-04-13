@@ -29,7 +29,7 @@ class TenantPayloadDto
 
     /**
      *
-     * @var ?Data $data
+     * @var ?\novu\Models\Components\Data $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\Data|null')]
@@ -39,7 +39,7 @@ class TenantPayloadDto
     /**
      * @param  ?string  $identifier
      * @param  ?string  $name
-     * @param  ?Data  $data
+     * @param  ?\novu\Models\Components\Data  $data
      * @phpstan-pure
      */
     public function __construct(?string $identifier = null, ?string $name = null, ?Data $data = null)

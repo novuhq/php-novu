@@ -42,7 +42,7 @@ class SubscribersControllerBulkUpdateSubscriberPreferencesResponse
     /**
      * OK
      *
-     * @var ?array<Components\GetPreferencesResponseDto> $getPreferencesResponseDtos
+     * @var ?array<\novu\Models\Components\GetPreferencesResponseDto> $getPreferencesResponseDtos
      */
     public ?array $getPreferencesResponseDtos = null;
 
@@ -51,7 +51,7 @@ class SubscribersControllerBulkUpdateSubscriberPreferencesResponse
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
-     * @param  ?array<Components\GetPreferencesResponseDto>  $getPreferencesResponseDtos
+     * @param  ?array<\novu\Models\Components\GetPreferencesResponseDto>  $getPreferencesResponseDtos
      * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?array $getPreferencesResponseDtos = null, ?array $headers = [])

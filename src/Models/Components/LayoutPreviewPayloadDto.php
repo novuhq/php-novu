@@ -14,7 +14,7 @@ class LayoutPreviewPayloadDto
     /**
      * Partial subscriber information
      *
-     * @var ?SubscriberResponseDtoOptional $subscriber
+     * @var ?\novu\Models\Components\SubscriberResponseDtoOptional $subscriber
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('subscriber')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\SubscriberResponseDtoOptional|null')]
@@ -22,7 +22,7 @@ class LayoutPreviewPayloadDto
     public ?SubscriberResponseDtoOptional $subscriber = null;
 
     /**
-     * @param  ?SubscriberResponseDtoOptional  $subscriber
+     * @param  ?\novu\Models\Components\SubscriberResponseDtoOptional  $subscriber
      * @phpstan-pure
      */
     public function __construct(?SubscriberResponseDtoOptional $subscriber = null)

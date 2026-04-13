@@ -36,7 +36,7 @@ bool $value = /* values here */
 
 ```php
 /**
-* @var Errors\MessagePayloadValidationExceptionDto4
+* @var \novu\Models\Errors\MessagePayloadValidationExceptionDto4
 */
 Errors\MessagePayloadValidationExceptionDto4 $value = /* values here */
 ```

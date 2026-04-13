@@ -68,7 +68,7 @@ class NotificationStepData
     /**
      * Message template used in this notification step.
      *
-     * @var ?MessageTemplate $template
+     * @var ?\novu\Models\Components\MessageTemplate $template
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('template')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\MessageTemplate|null')]
@@ -78,7 +78,7 @@ class NotificationStepData
     /**
      * Filters applied to this notification step.
      *
-     * @var ?array<StepFilterDto> $filters
+     * @var ?array<\novu\Models\Components\StepFilterDto> $filters
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('filters')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\StepFilterDto>|null')]
@@ -97,7 +97,7 @@ class NotificationStepData
     /**
      * Metadata associated with the workflow step. Can vary based on the type of step.
      *
-     * @var DigestRegularMetadata|DigestTimedMetadata|DelayRegularMetadata|DelayScheduledMetadata|null $metadata
+     * @var \novu\Models\Components\DigestRegularMetadata|\novu\Models\Components\DigestTimedMetadata|\novu\Models\Components\DelayRegularMetadata|\novu\Models\Components\DelayScheduledMetadata|null $metadata
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('metadata')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\DigestRegularMetadata|\novu\Models\Components\DigestTimedMetadata|\novu\Models\Components\DelayRegularMetadata|\novu\Models\Components\DelayScheduledMetadata|null')]
@@ -107,7 +107,7 @@ class NotificationStepData
     /**
      * Callback information for replies, including whether it is active and the callback URL.
      *
-     * @var ?ReplyCallback $replyCallback
+     * @var ?\novu\Models\Components\ReplyCallback $replyCallback
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('replyCallback')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ReplyCallback|null')]
@@ -121,11 +121,11 @@ class NotificationStepData
      * @param  ?string  $templateId
      * @param  ?bool  $active
      * @param  ?bool  $shouldStopOnFail
-     * @param  ?MessageTemplate  $template
-     * @param  ?array<StepFilterDto>  $filters
+     * @param  ?\novu\Models\Components\MessageTemplate  $template
+     * @param  ?array<\novu\Models\Components\StepFilterDto>  $filters
      * @param  ?string  $parentId
-     * @param  DigestRegularMetadata|DigestTimedMetadata|DelayRegularMetadata|DelayScheduledMetadata|null  $metadata
-     * @param  ?ReplyCallback  $replyCallback
+     * @param  \novu\Models\Components\DigestRegularMetadata|\novu\Models\Components\DigestTimedMetadata|\novu\Models\Components\DelayRegularMetadata|\novu\Models\Components\DelayScheduledMetadata|null  $metadata
+     * @param  ?\novu\Models\Components\ReplyCallback  $replyCallback
      * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $uuid = null, ?string $name = null, ?string $templateId = null, ?bool $active = null, ?bool $shouldStopOnFail = null, ?MessageTemplate $template = null, ?array $filters = null, ?string $parentId = null, DigestRegularMetadata|DigestTimedMetadata|DelayRegularMetadata|DelayScheduledMetadata|null $metadata = null, ?ReplyCallback $replyCallback = null)

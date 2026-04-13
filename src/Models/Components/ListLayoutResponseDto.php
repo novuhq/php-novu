@@ -14,7 +14,7 @@ class ListLayoutResponseDto
     /**
      * List of layouts
      *
-     * @var array<LayoutResponseDto> $layouts
+     * @var array<\novu\Models\Components\LayoutResponseDto> $layouts
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('layouts')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\LayoutResponseDto>')]
@@ -29,7 +29,7 @@ class ListLayoutResponseDto
     public float $totalCount;
 
     /**
-     * @param  array<LayoutResponseDto>  $layouts
+     * @param  array<\novu\Models\Components\LayoutResponseDto>  $layouts
      * @param  float  $totalCount
      * @phpstan-pure
      */

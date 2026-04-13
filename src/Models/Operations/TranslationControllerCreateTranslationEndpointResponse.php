@@ -35,7 +35,7 @@ class TranslationControllerCreateTranslationEndpointResponse
     /**
      * Translation created or updated successfully
      *
-     * @var ?Components\TranslationResponseDto $translationResponseDto
+     * @var ?\novu\Models\Components\TranslationResponseDto $translationResponseDto
      */
     public ?Components\TranslationResponseDto $translationResponseDto = null;
 
@@ -43,7 +43,7 @@ class TranslationControllerCreateTranslationEndpointResponse
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
-     * @param  ?Components\TranslationResponseDto  $translationResponseDto
+     * @param  ?\novu\Models\Components\TranslationResponseDto  $translationResponseDto
      * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\TranslationResponseDto $translationResponseDto = null)

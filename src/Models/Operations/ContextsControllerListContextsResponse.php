@@ -42,7 +42,7 @@ class ContextsControllerListContextsResponse
     /**
      * OK
      *
-     * @var ?Components\ListContextsResponseDto $listContextsResponseDto
+     * @var ?\novu\Models\Components\ListContextsResponseDto $listContextsResponseDto
      */
     public ?Components\ListContextsResponseDto $listContextsResponseDto = null;
 
@@ -51,7 +51,7 @@ class ContextsControllerListContextsResponse
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
-     * @param  ?Components\ListContextsResponseDto  $listContextsResponseDto
+     * @param  ?\novu\Models\Components\ListContextsResponseDto  $listContextsResponseDto
      * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\ListContextsResponseDto $listContextsResponseDto = null, ?array $headers = [])

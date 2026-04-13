@@ -51,7 +51,7 @@ class InAppControlDto
     /**
      * Primary action button details.
      *
-     * @var ?ActionDto $primaryAction
+     * @var ?\novu\Models\Components\ActionDto $primaryAction
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('primaryAction')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ActionDto|null')]
@@ -61,7 +61,7 @@ class InAppControlDto
     /**
      * Secondary action button details.
      *
-     * @var ?ActionDto $secondaryAction
+     * @var ?\novu\Models\Components\ActionDto $secondaryAction
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('secondaryAction')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ActionDto|null')]
@@ -71,7 +71,7 @@ class InAppControlDto
     /**
      * Redirection URL configuration for the main content click (if no actions defined/clicked)..
      *
-     * @var ?RedirectDto $redirect
+     * @var ?\novu\Models\Components\RedirectDto $redirect
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('redirect')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\RedirectDto|null')]
@@ -102,9 +102,9 @@ class InAppControlDto
      * @param  ?string  $body
      * @param  ?string  $subject
      * @param  ?string  $avatar
-     * @param  ?ActionDto  $primaryAction
-     * @param  ?ActionDto  $secondaryAction
-     * @param  ?RedirectDto  $redirect
+     * @param  ?\novu\Models\Components\ActionDto  $primaryAction
+     * @param  ?\novu\Models\Components\ActionDto  $secondaryAction
+     * @param  ?\novu\Models\Components\RedirectDto  $redirect
      * @param  ?bool  $disableOutputSanitization
      * @param  ?array<string, mixed>  $data
      * @phpstan-pure

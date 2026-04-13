@@ -14,7 +14,7 @@ class EventBody
     /**
      * Status of the event
      *
-     * @var Status $status
+     * @var \novu\Models\Components\Status $status
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\Status')]
@@ -65,7 +65,7 @@ class EventBody
     public ?string $row = null;
 
     /**
-     * @param  Status  $status
+     * @param  \novu\Models\Components\Status  $status
      * @param  string  $date
      * @param  ?string  $externalId
      * @param  ?float  $attempts

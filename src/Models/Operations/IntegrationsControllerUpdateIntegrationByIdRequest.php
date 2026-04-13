@@ -21,7 +21,7 @@ class IntegrationsControllerUpdateIntegrationByIdRequest
 
     /**
      *
-     * @var Components\UpdateIntegrationRequestDto $updateIntegrationRequestDto
+     * @var \novu\Models\Components\UpdateIntegrationRequestDto $updateIntegrationRequestDto
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\UpdateIntegrationRequestDto $updateIntegrationRequestDto;
@@ -36,7 +36,7 @@ class IntegrationsControllerUpdateIntegrationByIdRequest
 
     /**
      * @param  string  $integrationId
-     * @param  Components\UpdateIntegrationRequestDto  $updateIntegrationRequestDto
+     * @param  \novu\Models\Components\UpdateIntegrationRequestDto  $updateIntegrationRequestDto
      * @param  ?string  $idempotencyKey
      * @phpstan-pure
      */

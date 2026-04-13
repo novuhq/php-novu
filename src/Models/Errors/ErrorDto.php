@@ -38,7 +38,7 @@ class ErrorDto
     /**
      * Value that failed validation
      *
-     * @var string|float|bool|Four|array<string|float|bool|array<string, mixed>|null>|null $message
+     * @var string|float|bool|\novu\Models\Errors\Four|array<string|float|bool|array<string, mixed>|null>|null $message
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('message')]
     #[\Speakeasy\Serializer\Annotation\Type('string|float|bool|\novu\Models\Errors\Four|array<string|float|bool|array<string, mixed>|null>|null')]
@@ -72,7 +72,7 @@ class ErrorDto
      * @param  string  $path
      * @param  ?array<string, mixed>  $ctx
      * @param  ?string  $errorId
-     * @param  string|float|bool|Four|array<string|float|bool|array<string, mixed>|null>|null  $message
+     * @param  string|float|bool|\novu\Models\Errors\Four|array<string|float|bool|array<string, mixed>|null>|null  $message
      * @phpstan-pure
      */
     public function __construct(float $statusCode, string $timestamp, string $path, ?array $ctx = null, ?string $errorId = null, string|float|bool|Four|array|null $message = null)

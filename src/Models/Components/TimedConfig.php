@@ -22,7 +22,7 @@ class TimedConfig
     /**
      * $weekDays
      *
-     * @var ?array<WeekDays> $weekDays
+     * @var ?array<\novu\Models\Components\WeekDays> $weekDays
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('weekDays')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\WeekDays>|null')]
@@ -41,7 +41,7 @@ class TimedConfig
 
     /**
      *
-     * @var ?Ordinal $ordinal
+     * @var ?\novu\Models\Components\Ordinal $ordinal
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('ordinal')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\Ordinal|null')]
@@ -50,7 +50,7 @@ class TimedConfig
 
     /**
      *
-     * @var ?OrdinalValue $ordinalValue
+     * @var ?\novu\Models\Components\OrdinalValue $ordinalValue
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('ordinalValue')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\OrdinalValue|null')]
@@ -59,7 +59,7 @@ class TimedConfig
 
     /**
      *
-     * @var ?MonthlyType $monthlyType
+     * @var ?\novu\Models\Components\MonthlyType $monthlyType
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('monthlyType')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\MonthlyType|null')]
@@ -68,11 +68,11 @@ class TimedConfig
 
     /**
      * @param  ?string  $atTime
-     * @param  ?array<WeekDays>  $weekDays
+     * @param  ?array<\novu\Models\Components\WeekDays>  $weekDays
      * @param  ?array<string>  $monthDays
-     * @param  ?Ordinal  $ordinal
-     * @param  ?OrdinalValue  $ordinalValue
-     * @param  ?MonthlyType  $monthlyType
+     * @param  ?\novu\Models\Components\Ordinal  $ordinal
+     * @param  ?\novu\Models\Components\OrdinalValue  $ordinalValue
+     * @param  ?\novu\Models\Components\MonthlyType  $monthlyType
      * @phpstan-pure
      */
     public function __construct(?string $atTime = null, ?array $weekDays = null, ?array $monthDays = null, ?Ordinal $ordinal = null, ?OrdinalValue $ordinalValue = null, ?MonthlyType $monthlyType = null)

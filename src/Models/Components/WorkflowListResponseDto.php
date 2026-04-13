@@ -62,7 +62,7 @@ class WorkflowListResponseDto
     /**
      * Status of the workflow
      *
-     * @var WorkflowStatusEnum $status
+     * @var \novu\Models\Components\WorkflowStatusEnum $status
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\WorkflowStatusEnum')]
@@ -71,7 +71,7 @@ class WorkflowListResponseDto
     /**
      * Origin of the layout
      *
-     * @var ResourceOriginEnum $origin
+     * @var \novu\Models\Components\ResourceOriginEnum $origin
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('origin')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ResourceOriginEnum')]
@@ -80,7 +80,7 @@ class WorkflowListResponseDto
     /**
      * Overview of step types in the workflow
      *
-     * @var array<StepTypeEnum> $stepTypeOverviews
+     * @var array<\novu\Models\Components\StepTypeEnum> $stepTypeOverviews
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('stepTypeOverviews')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\StepTypeEnum>')]
@@ -89,7 +89,7 @@ class WorkflowListResponseDto
     /**
      * Steps of the workflow
      *
-     * @var array<StepListResponseDto> $steps
+     * @var array<\novu\Models\Components\StepListResponseDto> $steps
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('steps')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\StepListResponseDto>')]
@@ -117,7 +117,7 @@ class WorkflowListResponseDto
     /**
      * User who last updated the workflow
      *
-     * @var ?WorkflowListResponseDtoUpdatedBy $updatedBy
+     * @var ?\novu\Models\Components\WorkflowListResponseDtoUpdatedBy $updatedBy
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('updatedBy')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\WorkflowListResponseDtoUpdatedBy|null')]
@@ -136,7 +136,7 @@ class WorkflowListResponseDto
     /**
      * User who last published the workflow
      *
-     * @var ?WorkflowListResponseDtoLastPublishedBy $lastPublishedBy
+     * @var ?\novu\Models\Components\WorkflowListResponseDtoLastPublishedBy $lastPublishedBy
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('lastPublishedBy')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\WorkflowListResponseDtoLastPublishedBy|null')]
@@ -159,15 +159,15 @@ class WorkflowListResponseDto
      * @param  string  $id
      * @param  string  $workflowId
      * @param  string  $slug
-     * @param  WorkflowStatusEnum  $status
-     * @param  ResourceOriginEnum  $origin
-     * @param  array<StepTypeEnum>  $stepTypeOverviews
-     * @param  array<StepListResponseDto>  $steps
+     * @param  \novu\Models\Components\WorkflowStatusEnum  $status
+     * @param  \novu\Models\Components\ResourceOriginEnum  $origin
+     * @param  array<\novu\Models\Components\StepTypeEnum>  $stepTypeOverviews
+     * @param  array<\novu\Models\Components\StepListResponseDto>  $steps
      * @param  ?array<string>  $tags
      * @param  ?bool  $isTranslationEnabled
-     * @param  ?WorkflowListResponseDtoUpdatedBy  $updatedBy
+     * @param  ?\novu\Models\Components\WorkflowListResponseDtoUpdatedBy  $updatedBy
      * @param  ?string  $lastPublishedAt
-     * @param  ?WorkflowListResponseDtoLastPublishedBy  $lastPublishedBy
+     * @param  ?\novu\Models\Components\WorkflowListResponseDtoLastPublishedBy  $lastPublishedBy
      * @param  ?string  $lastTriggeredAt
      * @phpstan-pure
      */

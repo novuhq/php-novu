@@ -24,7 +24,7 @@ class LayoutPreviewRequestDto
     /**
      * Optional payload for layout preview
      *
-     * @var ?LayoutPreviewPayloadDto $previewPayload
+     * @var ?\novu\Models\Components\LayoutPreviewPayloadDto $previewPayload
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('previewPayload')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\LayoutPreviewPayloadDto|null')]
@@ -33,7 +33,7 @@ class LayoutPreviewRequestDto
 
     /**
      * @param  ?array<string, mixed>  $controlValues
-     * @param  ?LayoutPreviewPayloadDto  $previewPayload
+     * @param  ?\novu\Models\Components\LayoutPreviewPayloadDto  $previewPayload
      * @phpstan-pure
      */
     public function __construct(?array $controlValues = null, ?LayoutPreviewPayloadDto $previewPayload = null)

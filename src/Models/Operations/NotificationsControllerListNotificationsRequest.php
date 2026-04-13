@@ -15,7 +15,7 @@ class NotificationsControllerListNotificationsRequest
     /**
      * Array of channel types
      *
-     * @var ?array<Components\ChannelTypeEnum> $channels
+     * @var ?array<\novu\Models\Components\ChannelTypeEnum> $channels
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=channels')]
     public ?array $channels = null;
@@ -134,7 +134,7 @@ class NotificationsControllerListNotificationsRequest
     public ?float $limit = null;
 
     /**
-     * @param  ?array<Components\ChannelTypeEnum>  $channels
+     * @param  ?array<\novu\Models\Components\ChannelTypeEnum>  $channels
      * @param  ?array<string>  $templates
      * @param  ?array<string>  $emails
      * @param  ?string  $search

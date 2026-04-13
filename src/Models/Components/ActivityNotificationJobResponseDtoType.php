@@ -22,4 +22,5 @@ enum ActivityNotificationJobResponseDtoType: string
     case Delay = 'delay';
     case Throttle = 'throttle';
     case Custom = 'custom';
+    case HttpRequest = 'http_request';
 }

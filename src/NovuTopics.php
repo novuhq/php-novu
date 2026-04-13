@@ -52,8 +52,8 @@ class NovuTopics
      * Retrieve subscriber's topic subscriptions by its unique key identifier **subscriberId**. 
      *     Checkout all available filters in the query section.
      *
-     * @param  Operations\SubscribersControllerListSubscriberTopicsRequest  $request
-     * @return Operations\SubscribersControllerListSubscriberTopicsResponse
+     * @param  \novu\Models\Operations\SubscribersControllerListSubscriberTopicsRequest  $request
+     * @return \novu\Models\Operations\SubscribersControllerListSubscriberTopicsResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function list(Operations\SubscribersControllerListSubscriberTopicsRequest $request, ?Options $options = null): Operations\SubscribersControllerListSubscriberTopicsResponse

@@ -16,7 +16,7 @@ string $value = /* values here */
 
 ```php
 /**
-* @var Components\CreateWebhookEndpointDtoContext2
+* @var \novu\Models\Components\CreateWebhookEndpointDtoContext2
 */
 Components\CreateWebhookEndpointDtoContext2 $value = /* values here */
 ```

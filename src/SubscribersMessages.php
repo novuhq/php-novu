@@ -52,10 +52,10 @@ class SubscribersMessages
      *
      * Update all subscriber in-app (inbox) notifications state such as read, unread, seen or unseen by **subscriberId**.
      *
-     * @param  Components\MarkAllMessageAsRequestDto  $markAllMessageAsRequestDto
+     * @param  \novu\Models\Components\MarkAllMessageAsRequestDto  $markAllMessageAsRequestDto
      * @param  string  $subscriberId
      * @param  ?string  $idempotencyKey
-     * @return Operations\SubscribersV1ControllerMarkAllUnreadAsReadResponse
+     * @return \novu\Models\Operations\SubscribersV1ControllerMarkAllUnreadAsReadResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function markAll(Components\MarkAllMessageAsRequestDto $markAllMessageAsRequestDto, string $subscriberId, ?string $idempotencyKey = null, ?Options $options = null): Operations\SubscribersV1ControllerMarkAllUnreadAsReadResponse

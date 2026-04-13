@@ -22,7 +22,7 @@ class CreateTranslationRequestDto
     /**
      * The resource type to associate translation with
      *
-     * @var ResourceType $resourceType
+     * @var \novu\Models\Components\ResourceType $resourceType
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('resourceType')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ResourceType')]
@@ -47,7 +47,7 @@ class CreateTranslationRequestDto
 
     /**
      * @param  string  $resourceId
-     * @param  ResourceType  $resourceType
+     * @param  \novu\Models\Components\ResourceType  $resourceType
      * @param  string  $locale
      * @param  array<string, mixed>  $content
      * @phpstan-pure

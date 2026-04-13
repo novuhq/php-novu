@@ -14,7 +14,7 @@ class DigestMetadataDto
     /**
      * The Digest Type
      *
-     * @var DigestTypeEnum $type
+     * @var \novu\Models\Components\DigestTypeEnum $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\DigestTypeEnum')]
@@ -41,7 +41,7 @@ class DigestMetadataDto
     /**
      * Unit of the digest
      *
-     * @var ?DigestMetadataDtoUnit $unit
+     * @var ?\novu\Models\Components\DigestMetadataDtoUnit $unit
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('unit')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\DigestMetadataDtoUnit|null')]
@@ -79,7 +79,7 @@ class DigestMetadataDto
     /**
      * Regular digest: Unit for backoff
      *
-     * @var ?DigestUnitEnum $backoffUnit
+     * @var ?\novu\Models\Components\DigestUnitEnum $backoffUnit
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('backoffUnit')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\DigestUnitEnum|null')]
@@ -98,7 +98,7 @@ class DigestMetadataDto
     /**
      * Configuration for timed digest
      *
-     * @var ?DigestTimedConfigDto $timed
+     * @var ?\novu\Models\Components\DigestTimedConfigDto $timed
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('timed')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\DigestTimedConfigDto|null')]
@@ -106,16 +106,16 @@ class DigestMetadataDto
     public ?DigestTimedConfigDto $timed = null;
 
     /**
-     * @param  DigestTypeEnum  $type
+     * @param  \novu\Models\Components\DigestTypeEnum  $type
      * @param  ?string  $digestKey
      * @param  ?float  $amount
-     * @param  ?DigestMetadataDtoUnit  $unit
+     * @param  ?\novu\Models\Components\DigestMetadataDtoUnit  $unit
      * @param  ?array<array<string, mixed>>  $events
      * @param  ?bool  $backoff
      * @param  ?float  $backoffAmount
-     * @param  ?DigestUnitEnum  $backoffUnit
+     * @param  ?\novu\Models\Components\DigestUnitEnum  $backoffUnit
      * @param  ?bool  $updateMode
-     * @param  ?DigestTimedConfigDto  $timed
+     * @param  ?\novu\Models\Components\DigestTimedConfigDto  $timed
      * @phpstan-pure
      */
     public function __construct(DigestTypeEnum $type, ?string $digestKey = null, ?float $amount = null, ?DigestMetadataDtoUnit $unit = null, ?array $events = null, ?bool $backoff = null, ?float $backoffAmount = null, ?DigestUnitEnum $backoffUnit = null, ?bool $updateMode = null, ?DigestTimedConfigDto $timed = null)

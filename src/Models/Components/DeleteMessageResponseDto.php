@@ -22,7 +22,7 @@ class DeleteMessageResponseDto
     /**
      * The status enum for the performed action
      *
-     * @var DeleteMessageResponseDtoStatus $status
+     * @var \novu\Models\Components\DeleteMessageResponseDtoStatus $status
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\DeleteMessageResponseDtoStatus')]
@@ -30,7 +30,7 @@ class DeleteMessageResponseDto
 
     /**
      * @param  bool  $acknowledged
-     * @param  DeleteMessageResponseDtoStatus  $status
+     * @param  \novu\Models\Components\DeleteMessageResponseDtoStatus  $status
      * @phpstan-pure
      */
     public function __construct(bool $acknowledged, DeleteMessageResponseDtoStatus $status)

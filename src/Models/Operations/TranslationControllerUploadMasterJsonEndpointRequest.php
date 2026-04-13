@@ -13,7 +13,7 @@ class TranslationControllerUploadMasterJsonEndpointRequest
 {
     /**
      *
-     * @var TranslationControllerUploadMasterJsonEndpointRequestBody $requestBody
+     * @var \novu\Models\Operations\TranslationControllerUploadMasterJsonEndpointRequestBody $requestBody
      */
     #[SpeakeasyMetadata('request:mediaType=multipart/form-data')]
     public TranslationControllerUploadMasterJsonEndpointRequestBody $requestBody;
@@ -27,7 +27,7 @@ class TranslationControllerUploadMasterJsonEndpointRequest
     public ?string $idempotencyKey = null;
 
     /**
-     * @param  TranslationControllerUploadMasterJsonEndpointRequestBody  $requestBody
+     * @param  \novu\Models\Operations\TranslationControllerUploadMasterJsonEndpointRequestBody  $requestBody
      * @param  ?string  $idempotencyKey
      * @phpstan-pure
      */

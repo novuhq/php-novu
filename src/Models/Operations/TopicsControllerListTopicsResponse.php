@@ -42,7 +42,7 @@ class TopicsControllerListTopicsResponse
     /**
      * OK
      *
-     * @var ?Components\ListTopicsResponseDto $listTopicsResponseDto
+     * @var ?\novu\Models\Components\ListTopicsResponseDto $listTopicsResponseDto
      */
     public ?Components\ListTopicsResponseDto $listTopicsResponseDto = null;
 
@@ -51,7 +51,7 @@ class TopicsControllerListTopicsResponse
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
-     * @param  ?Components\ListTopicsResponseDto  $listTopicsResponseDto
+     * @param  ?\novu\Models\Components\ListTopicsResponseDto  $listTopicsResponseDto
      * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\ListTopicsResponseDto $listTopicsResponseDto = null, ?array $headers = [])

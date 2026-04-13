@@ -41,7 +41,7 @@ class MessagesControllerGetMessagesResponse
 
     /**
      *
-     * @var ?Components\MessagesResponseDto $messagesResponseDto
+     * @var ?\novu\Models\Components\MessagesResponseDto $messagesResponseDto
      */
     public ?Components\MessagesResponseDto $messagesResponseDto = null;
 
@@ -50,7 +50,7 @@ class MessagesControllerGetMessagesResponse
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
-     * @param  ?Components\MessagesResponseDto  $messagesResponseDto
+     * @param  ?\novu\Models\Components\MessagesResponseDto  $messagesResponseDto
      * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\MessagesResponseDto $messagesResponseDto = null, ?array $headers = [])

@@ -78,7 +78,7 @@ class LayoutResponseDto
     /**
      * Origin of the layout
      *
-     * @var ResourceOriginEnum $origin
+     * @var \novu\Models\Components\ResourceOriginEnum $origin
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('origin')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ResourceOriginEnum')]
@@ -87,7 +87,7 @@ class LayoutResponseDto
     /**
      * Type of the layout
      *
-     * @var ResourceTypeEnum $type
+     * @var \novu\Models\Components\ResourceTypeEnum $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ResourceTypeEnum')]
@@ -96,7 +96,7 @@ class LayoutResponseDto
     /**
      * Controls metadata for the layout
      *
-     * @var LayoutControlsDto $controls
+     * @var \novu\Models\Components\LayoutControlsDto $controls
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('controls')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\LayoutControlsDto')]
@@ -105,7 +105,7 @@ class LayoutResponseDto
     /**
      * User who last updated the layout
      *
-     * @var ?UpdatedBy $updatedBy
+     * @var ?\novu\Models\Components\UpdatedBy $updatedBy
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('updatedBy')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\UpdatedBy|null')]
@@ -131,10 +131,10 @@ class LayoutResponseDto
      * @param  bool  $isTranslationEnabled
      * @param  string  $updatedAt
      * @param  string  $createdAt
-     * @param  ResourceOriginEnum  $origin
-     * @param  ResourceTypeEnum  $type
-     * @param  LayoutControlsDto  $controls
-     * @param  ?UpdatedBy  $updatedBy
+     * @param  \novu\Models\Components\ResourceOriginEnum  $origin
+     * @param  \novu\Models\Components\ResourceTypeEnum  $type
+     * @param  \novu\Models\Components\LayoutControlsDto  $controls
+     * @param  ?\novu\Models\Components\UpdatedBy  $updatedBy
      * @param  ?array<string, mixed>  $variables
      * @phpstan-pure
      */

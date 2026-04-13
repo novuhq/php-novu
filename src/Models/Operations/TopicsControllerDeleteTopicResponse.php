@@ -42,7 +42,7 @@ class TopicsControllerDeleteTopicResponse
     /**
      * Topic deleted successfully
      *
-     * @var ?Components\DeleteTopicResponseDto $deleteTopicResponseDto
+     * @var ?\novu\Models\Components\DeleteTopicResponseDto $deleteTopicResponseDto
      */
     public ?Components\DeleteTopicResponseDto $deleteTopicResponseDto = null;
 
@@ -51,7 +51,7 @@ class TopicsControllerDeleteTopicResponse
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
-     * @param  ?Components\DeleteTopicResponseDto  $deleteTopicResponseDto
+     * @param  ?\novu\Models\Components\DeleteTopicResponseDto  $deleteTopicResponseDto
      * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\DeleteTopicResponseDto $deleteTopicResponseDto = null, ?array $headers = [])

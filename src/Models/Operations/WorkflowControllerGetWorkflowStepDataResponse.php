@@ -42,7 +42,7 @@ class WorkflowControllerGetWorkflowStepDataResponse
     /**
      * OK
      *
-     * @var ?Components\StepResponseDto $stepResponseDto
+     * @var ?\novu\Models\Components\StepResponseDto $stepResponseDto
      */
     public ?Components\StepResponseDto $stepResponseDto = null;
 
@@ -51,7 +51,7 @@ class WorkflowControllerGetWorkflowStepDataResponse
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
-     * @param  ?Components\StepResponseDto  $stepResponseDto
+     * @param  ?\novu\Models\Components\StepResponseDto  $stepResponseDto
      * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\StepResponseDto $stepResponseDto = null, ?array $headers = [])

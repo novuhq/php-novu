@@ -14,7 +14,7 @@ class BulkUpdateSubscriberPreferenceItemDto
     /**
      * Channel-specific preference settings
      *
-     * @var PatchPreferenceChannelsDto $channels
+     * @var \novu\Models\Components\PatchPreferenceChannelsDto $channels
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('channels')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\PatchPreferenceChannelsDto')]
@@ -29,7 +29,7 @@ class BulkUpdateSubscriberPreferenceItemDto
     public string $workflowId;
 
     /**
-     * @param  PatchPreferenceChannelsDto  $channels
+     * @param  \novu\Models\Components\PatchPreferenceChannelsDto  $channels
      * @param  string  $workflowId
      * @phpstan-pure
      */

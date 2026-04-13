@@ -15,7 +15,7 @@ class TriggerEventToAllRequestDtoOverrides
     /**
      * This could be used to override provider specific configurations or layout at the step level
      *
-     * @var ?array<string, StepsOverrides> $steps
+     * @var ?array<string, \novu\Models\Components\StepsOverrides> $steps
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('steps')]
     #[\Speakeasy\Serializer\Annotation\Type('array<string, \novu\Models\Components\StepsOverrides>|null')]
@@ -25,7 +25,7 @@ class TriggerEventToAllRequestDtoOverrides
     /**
      * Channel-specific overrides that apply to all steps of a particular channel type. Step-level overrides take precedence over channel-level overrides.
      *
-     * @var ?TriggerEventToAllRequestDtoChannels $channels
+     * @var ?\novu\Models\Components\TriggerEventToAllRequestDtoChannels $channels
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('channels')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\TriggerEventToAllRequestDtoChannels|null')]
@@ -99,7 +99,7 @@ class TriggerEventToAllRequestDtoOverrides
     /**
      * Severity of the workflow
      *
-     * @var ?SeverityLevelEnum $severity
+     * @var ?\novu\Models\Components\SeverityLevelEnum $severity
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('severity')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\SeverityLevelEnum|null')]
@@ -117,15 +117,15 @@ class TriggerEventToAllRequestDtoOverrides
     public ?array $additionalProperties = null;
 
     /**
-     * @param  ?array<string, StepsOverrides>  $steps
-     * @param  ?TriggerEventToAllRequestDtoChannels  $channels
+     * @param  ?array<string, \novu\Models\Components\StepsOverrides>  $steps
+     * @param  ?\novu\Models\Components\TriggerEventToAllRequestDtoChannels  $channels
      * @param  ?array<string, array<string, mixed>>  $providers
      * @param  ?array<string, mixed>  $email
      * @param  ?array<string, mixed>  $push
      * @param  ?array<string, mixed>  $sms
      * @param  ?array<string, mixed>  $chat
      * @param  ?string  $layoutIdentifier
-     * @param  ?SeverityLevelEnum  $severity
+     * @param  ?\novu\Models\Components\SeverityLevelEnum  $severity
      * @param  ?array<string, array<string, mixed>>  $additionalProperties
      * @phpstan-pure
      */

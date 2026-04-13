@@ -22,7 +22,7 @@ class TriggerEventRequestDto
     /**
      * The recipients list of people who will receive the notification. Maximum number of recipients can be 100.
      *
-     * @var array<SubscriberPayloadDto|TopicPayloadDto|string>|string|SubscriberPayloadDto|TopicPayloadDto $to
+     * @var array<\novu\Models\Components\SubscriberPayloadDto|\novu\Models\Components\TopicPayloadDto|string>|string|\novu\Models\Components\SubscriberPayloadDto|\novu\Models\Components\TopicPayloadDto $to
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('to')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\SubscriberPayloadDto|\novu\Models\Components\TopicPayloadDto|string>|string|\novu\Models\Components\SubscriberPayloadDto|\novu\Models\Components\TopicPayloadDto')]
@@ -44,7 +44,7 @@ class TriggerEventRequestDto
     /**
      * This could be used to override provider specific configurations
      *
-     * @var ?Overrides $overrides
+     * @var ?\novu\Models\Components\Overrides $overrides
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('overrides')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\Overrides|null')]
@@ -68,7 +68,7 @@ class TriggerEventRequestDto
      *
      *     If a new actor object is provided, we will create a new subscriber in our system
      *
-     * @var string|SubscriberPayloadDto|null $actor
+     * @var string|\novu\Models\Components\SubscriberPayloadDto|null $actor
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('actor')]
     #[\Speakeasy\Serializer\Annotation\Type('string|\novu\Models\Components\SubscriberPayloadDto|null')]
@@ -80,7 +80,7 @@ class TriggerEventRequestDto
      *
      *     Existing tenants will be updated with the provided details.
      *
-     * @var string|TenantPayloadDto|null $tenant
+     * @var string|\novu\Models\Components\TenantPayloadDto|null $tenant
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('tenant')]
     #[\Speakeasy\Serializer\Annotation\Type('string|\novu\Models\Components\TenantPayloadDto|null')]
@@ -90,7 +90,7 @@ class TriggerEventRequestDto
     /**
      * $context
      *
-     * @var ?array<string, string|TriggerEventRequestDtoContext2> $context
+     * @var ?array<string, string|\novu\Models\Components\TriggerEventRequestDtoContext2> $context
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('context')]
     #[\Speakeasy\Serializer\Annotation\Type('array<string, string|\novu\Models\Components\TriggerEventRequestDtoContext2>|null')]
@@ -99,13 +99,13 @@ class TriggerEventRequestDto
 
     /**
      * @param  string  $workflowId
-     * @param  array<SubscriberPayloadDto|TopicPayloadDto|string>|string|SubscriberPayloadDto|TopicPayloadDto  $to
+     * @param  array<\novu\Models\Components\SubscriberPayloadDto|\novu\Models\Components\TopicPayloadDto|string>|string|\novu\Models\Components\SubscriberPayloadDto|\novu\Models\Components\TopicPayloadDto  $to
      * @param  ?array<string, mixed>  $payload
-     * @param  ?Overrides  $overrides
+     * @param  ?\novu\Models\Components\Overrides  $overrides
      * @param  ?string  $transactionId
-     * @param  string|SubscriberPayloadDto|null  $actor
-     * @param  string|TenantPayloadDto|null  $tenant
-     * @param  ?array<string, string|TriggerEventRequestDtoContext2>  $context
+     * @param  string|\novu\Models\Components\SubscriberPayloadDto|null  $actor
+     * @param  string|\novu\Models\Components\TenantPayloadDto|null  $tenant
+     * @param  ?array<string, string|\novu\Models\Components\TriggerEventRequestDtoContext2>  $context
      * @phpstan-pure
      */
     public function __construct(string $workflowId, array|string|SubscriberPayloadDto|TopicPayloadDto $to, ?array $payload = null, ?Overrides $overrides = null, ?string $transactionId = null, string|SubscriberPayloadDto|null $actor = null, string|TenantPayloadDto|null $tenant = null, ?array $context = null)

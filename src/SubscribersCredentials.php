@@ -56,7 +56,7 @@ class SubscribersCredentials
      * @param  string  $subscriberId
      * @param  string  $providerId
      * @param  ?string  $idempotencyKey
-     * @return Operations\SubscribersV1ControllerDeleteSubscriberCredentialsResponse
+     * @return \novu\Models\Operations\SubscribersV1ControllerDeleteSubscriberCredentialsResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function deleteProvider(string $subscriberId, string $providerId, ?string $idempotencyKey = null, ?Options $options = null): Operations\SubscribersV1ControllerDeleteSubscriberCredentialsResponse
@@ -192,10 +192,10 @@ class SubscribersCredentials
      * Upsert credentials for a provider such as **slack** and **FCM**. 
      *       **providerId** is required field. This API creates **deviceTokens** or appends to the existing ones.
      *
-     * @param  Components\UpdateSubscriberChannelRequestDto  $updateSubscriberChannelRequestDto
+     * @param  \novu\Models\Components\UpdateSubscriberChannelRequestDto  $updateSubscriberChannelRequestDto
      * @param  string  $subscriberId
      * @param  ?string  $idempotencyKey
-     * @return Operations\SubscribersV1ControllerModifySubscriberChannelResponse
+     * @return \novu\Models\Operations\SubscribersV1ControllerModifySubscriberChannelResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function append(Components\UpdateSubscriberChannelRequestDto $updateSubscriberChannelRequestDto, string $subscriberId, ?string $idempotencyKey = null, ?Options $options = null): Operations\SubscribersV1ControllerModifySubscriberChannelResponse

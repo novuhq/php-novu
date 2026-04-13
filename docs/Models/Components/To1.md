@@ -7,7 +7,7 @@
 
 ```php
 /**
-* @var Components\SubscriberPayloadDto
+* @var \novu\Models\Components\SubscriberPayloadDto
 */
 Components\SubscriberPayloadDto $value = /* values here */
 ```
@@ -16,7 +16,7 @@ Components\SubscriberPayloadDto $value = /* values here */
 
 ```php
 /**
-* @var Components\TopicPayloadDto
+* @var \novu\Models\Components\TopicPayloadDto
 */
 Components\TopicPayloadDto $value = /* values here */
 ```

@@ -22,4 +22,5 @@ enum UiSchemaGroupEnum: string
     case Push = 'PUSH';
     case Skip = 'SKIP';
     case Layout = 'LAYOUT';
+    case HttpRequest = 'HTTP_REQUEST';
 }

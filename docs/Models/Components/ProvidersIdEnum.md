@@ -64,6 +64,7 @@ Provider ID of the job
 | `Imedia`           | imedia             |
 | `Sinch`            | sinch              |
 | `IsendproSms`      | isendpro-sms       |
+| `CmTelecom`        | cm-telecom         |
 | `Fcm`              | fcm                |
 | `Apns`             | apns               |
 | `Expo`             | expo               |

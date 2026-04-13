@@ -61,7 +61,7 @@ class EmailStepResponseDtoControlValues
     /**
      * Type of editor to use for the body.
      *
-     * @var ?EmailStepResponseDtoEditorType $editorType
+     * @var ?\novu\Models\Components\EmailStepResponseDtoEditorType $editorType
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('editorType')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\EmailStepResponseDtoEditorType|null')]
@@ -81,7 +81,7 @@ class EmailStepResponseDtoControlValues
      * @param  string  $subject
      * @param  ?array<string, mixed>  $skip
      * @param  ?string  $body
-     * @param  ?EmailStepResponseDtoEditorType  $editorType
+     * @param  ?\novu\Models\Components\EmailStepResponseDtoEditorType  $editorType
      * @param  ?bool  $disableOutputSanitization
      * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $layoutId

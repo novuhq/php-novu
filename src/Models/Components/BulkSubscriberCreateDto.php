@@ -14,14 +14,14 @@ class BulkSubscriberCreateDto
     /**
      * An array of subscribers to be created in bulk.
      *
-     * @var array<CreateSubscriberRequestDto> $subscribers
+     * @var array<\novu\Models\Components\CreateSubscriberRequestDto> $subscribers
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('subscribers')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\CreateSubscriberRequestDto>')]
     public array $subscribers;
 
     /**
-     * @param  array<CreateSubscriberRequestDto>  $subscribers
+     * @param  array<\novu\Models\Components\CreateSubscriberRequestDto>  $subscribers
      * @phpstan-pure
      */
     public function __construct(array $subscribers)

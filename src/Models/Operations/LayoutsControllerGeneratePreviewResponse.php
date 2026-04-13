@@ -42,7 +42,7 @@ class LayoutsControllerGeneratePreviewResponse
     /**
      * Created
      *
-     * @var ?Components\GenerateLayoutPreviewResponseDto $generateLayoutPreviewResponseDto
+     * @var ?\novu\Models\Components\GenerateLayoutPreviewResponseDto $generateLayoutPreviewResponseDto
      */
     public ?Components\GenerateLayoutPreviewResponseDto $generateLayoutPreviewResponseDto = null;
 
@@ -51,7 +51,7 @@ class LayoutsControllerGeneratePreviewResponse
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
-     * @param  ?Components\GenerateLayoutPreviewResponseDto  $generateLayoutPreviewResponseDto
+     * @param  ?\novu\Models\Components\GenerateLayoutPreviewResponseDto  $generateLayoutPreviewResponseDto
      * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\GenerateLayoutPreviewResponseDto $generateLayoutPreviewResponseDto = null, ?array $headers = [])

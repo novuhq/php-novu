@@ -14,7 +14,7 @@ class TranslationControllerImportMasterJsonEndpointRequest
 {
     /**
      *
-     * @var Components\ImportMasterJsonRequestDto $importMasterJsonRequestDto
+     * @var \novu\Models\Components\ImportMasterJsonRequestDto $importMasterJsonRequestDto
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\ImportMasterJsonRequestDto $importMasterJsonRequestDto;
@@ -28,7 +28,7 @@ class TranslationControllerImportMasterJsonEndpointRequest
     public ?string $idempotencyKey = null;
 
     /**
-     * @param  Components\ImportMasterJsonRequestDto  $importMasterJsonRequestDto
+     * @param  \novu\Models\Components\ImportMasterJsonRequestDto  $importMasterJsonRequestDto
      * @param  ?string  $idempotencyKey
      * @phpstan-pure
      */

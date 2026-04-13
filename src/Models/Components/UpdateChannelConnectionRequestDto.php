@@ -13,7 +13,7 @@ class UpdateChannelConnectionRequestDto
 {
     /**
      *
-     * @var WorkspaceDto $workspace
+     * @var \novu\Models\Components\WorkspaceDto $workspace
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('workspace')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\WorkspaceDto')]
@@ -21,15 +21,15 @@ class UpdateChannelConnectionRequestDto
 
     /**
      *
-     * @var AuthDto $auth
+     * @var \novu\Models\Components\AuthDto $auth
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('auth')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\AuthDto')]
     public AuthDto $auth;
 
     /**
-     * @param  WorkspaceDto  $workspace
-     * @param  AuthDto  $auth
+     * @param  \novu\Models\Components\WorkspaceDto  $workspace
+     * @param  \novu\Models\Components\AuthDto  $auth
      * @phpstan-pure
      */
     public function __construct(WorkspaceDto $workspace, AuthDto $auth)

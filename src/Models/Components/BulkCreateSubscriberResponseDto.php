@@ -14,7 +14,7 @@ class BulkCreateSubscriberResponseDto
     /**
      * An array of subscribers that were successfully updated.
      *
-     * @var array<UpdatedSubscriberDto> $updated
+     * @var array<\novu\Models\Components\UpdatedSubscriberDto> $updated
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('updated')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\UpdatedSubscriberDto>')]
@@ -23,7 +23,7 @@ class BulkCreateSubscriberResponseDto
     /**
      * An array of subscribers that were successfully created.
      *
-     * @var array<CreatedSubscriberDto> $created
+     * @var array<\novu\Models\Components\CreatedSubscriberDto> $created
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('created')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\CreatedSubscriberDto>')]
@@ -32,16 +32,16 @@ class BulkCreateSubscriberResponseDto
     /**
      * An array of failed operations with error messages and optional subscriber IDs.
      *
-     * @var array<FailedOperationDto> $failed
+     * @var array<\novu\Models\Components\FailedOperationDto> $failed
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('failed')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\FailedOperationDto>')]
     public array $failed;
 
     /**
-     * @param  array<UpdatedSubscriberDto>  $updated
-     * @param  array<CreatedSubscriberDto>  $created
-     * @param  array<FailedOperationDto>  $failed
+     * @param  array<\novu\Models\Components\UpdatedSubscriberDto>  $updated
+     * @param  array<\novu\Models\Components\CreatedSubscriberDto>  $created
+     * @param  array<\novu\Models\Components\FailedOperationDto>  $failed
      * @phpstan-pure
      */
     public function __construct(array $updated, array $created, array $failed)

@@ -33,7 +33,7 @@ class DelayControlDto
     /**
      * Unit of time for the delay amount.
      *
-     * @var ?Unit $unit
+     * @var ?\novu\Models\Components\Unit $unit
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('unit')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\Unit|null')]
@@ -52,7 +52,7 @@ class DelayControlDto
     /**
      * Type of the delay. Currently only 'regular' is supported by the schema.
      *
-     * @var ?Type $type
+     * @var ?\novu\Models\Components\Type $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\Type|null')]
@@ -61,9 +61,9 @@ class DelayControlDto
 
     /**
      * @param  ?array<string, mixed>  $skip
-     * @param  ?Type  $type
+     * @param  ?\novu\Models\Components\Type  $type
      * @param  ?float  $amount
-     * @param  ?Unit  $unit
+     * @param  ?\novu\Models\Components\Unit  $unit
      * @param  ?string  $cron
      * @phpstan-pure
      */

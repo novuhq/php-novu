@@ -14,7 +14,7 @@ class DeleteTopicSubscriptionsResponseDto
     /**
      * The list of successfully deleted subscriptions
      *
-     * @var array<SubscriptionDto> $data
+     * @var array<\novu\Models\Components\SubscriptionDto> $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\SubscriptionDto>')]
@@ -23,7 +23,7 @@ class DeleteTopicSubscriptionsResponseDto
     /**
      * Metadata about the operation
      *
-     * @var MetaDto $meta
+     * @var \novu\Models\Components\MetaDto $meta
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('meta')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\MetaDto')]
@@ -32,7 +32,7 @@ class DeleteTopicSubscriptionsResponseDto
     /**
      * The list of errors for failed deletion attempts
      *
-     * @var ?array<SubscriptionsDeleteErrorDto> $errors
+     * @var ?array<\novu\Models\Components\SubscriptionsDeleteErrorDto> $errors
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('errors')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\SubscriptionsDeleteErrorDto>|null')]
@@ -40,9 +40,9 @@ class DeleteTopicSubscriptionsResponseDto
     public ?array $errors = null;
 
     /**
-     * @param  array<SubscriptionDto>  $data
-     * @param  MetaDto  $meta
-     * @param  ?array<SubscriptionsDeleteErrorDto>  $errors
+     * @param  array<\novu\Models\Components\SubscriptionDto>  $data
+     * @param  \novu\Models\Components\MetaDto  $meta
+     * @param  ?array<\novu\Models\Components\SubscriptionsDeleteErrorDto>  $errors
      * @phpstan-pure
      */
     public function __construct(array $data, MetaDto $meta, ?array $errors = null)

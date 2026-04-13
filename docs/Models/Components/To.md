@@ -9,7 +9,7 @@ The recipients list of people who will receive the notification. Maximum number 
 
 ```php
 /**
-* @var array<Components\SubscriberPayloadDto|Components\TopicPayloadDto|string>
+* @var array<\novu\Models\Components\SubscriberPayloadDto|\novu\Models\Components\TopicPayloadDto|string>
 */
 array $value = /* values here */
 ```
@@ -27,7 +27,7 @@ string $value = /* values here */
 
 ```php
 /**
-* @var Components\SubscriberPayloadDto
+* @var \novu\Models\Components\SubscriberPayloadDto
 */
 Components\SubscriberPayloadDto $value = /* values here */
 ```
@@ -36,7 +36,7 @@ Components\SubscriberPayloadDto $value = /* values here */
 
 ```php
 /**
-* @var Components\TopicPayloadDto
+* @var \novu\Models\Components\TopicPayloadDto
 */
 Components\TopicPayloadDto $value = /* values here */
 ```

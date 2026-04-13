@@ -14,7 +14,7 @@ class UiSchema
     /**
      * Group of the UI Schema
      *
-     * @var ?UiSchemaGroupEnum $group
+     * @var ?\novu\Models\Components\UiSchemaGroupEnum $group
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('group')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\UiSchemaGroupEnum|null')]
@@ -24,7 +24,7 @@ class UiSchema
     /**
      * Properties of the UI Schema
      *
-     * @var ?array<string, UiSchemaProperty> $properties
+     * @var ?array<string, \novu\Models\Components\UiSchemaProperty> $properties
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('properties')]
     #[\Speakeasy\Serializer\Annotation\Type('array<string, \novu\Models\Components\UiSchemaProperty>|null')]
@@ -32,8 +32,8 @@ class UiSchema
     public ?array $properties = null;
 
     /**
-     * @param  ?UiSchemaGroupEnum  $group
-     * @param  ?array<string, UiSchemaProperty>  $properties
+     * @param  ?\novu\Models\Components\UiSchemaGroupEnum  $group
+     * @param  ?array<string, \novu\Models\Components\UiSchemaProperty>  $properties
      * @phpstan-pure
      */
     public function __construct(?UiSchemaGroupEnum $group = null, ?array $properties = null)

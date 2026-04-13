@@ -9,13 +9,13 @@ declare(strict_types=1);
 namespace novu\Models\Components;
 
 
-/** ControlValues - Control values for the layout */
+/** ControlValues - Control values for the layout. Omit to leave unchanged, or set to null to clear stored control values. */
 class ControlValues
 {
     /**
      * Email layout controls
      *
-     * @var ?EmailControlsDto $email
+     * @var ?\novu\Models\Components\EmailControlsDto $email
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('email')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\EmailControlsDto|null')]
@@ -23,7 +23,7 @@ class ControlValues
     public ?EmailControlsDto $email = null;
 
     /**
-     * @param  ?EmailControlsDto  $email
+     * @param  ?\novu\Models\Components\EmailControlsDto  $email
      * @phpstan-pure
      */
     public function __construct(?EmailControlsDto $email = null)

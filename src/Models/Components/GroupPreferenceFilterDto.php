@@ -14,7 +14,7 @@ class GroupPreferenceFilterDto
     /**
      * Filter criteria for workflow IDs and tags
      *
-     * @var GroupPreferenceFilterDetailsDto $filter
+     * @var \novu\Models\Components\GroupPreferenceFilterDetailsDto $filter
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('filter')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\GroupPreferenceFilterDetailsDto')]
@@ -40,7 +40,7 @@ class GroupPreferenceFilterDto
     public ?array $condition = null;
 
     /**
-     * @param  GroupPreferenceFilterDetailsDto  $filter
+     * @param  \novu\Models\Components\GroupPreferenceFilterDetailsDto  $filter
      * @param  ?bool  $enabled
      * @param  ?array<string, mixed>  $condition
      * @phpstan-pure

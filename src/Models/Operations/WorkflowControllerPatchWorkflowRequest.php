@@ -22,7 +22,7 @@ class WorkflowControllerPatchWorkflowRequest
     /**
      * Workflow patch details
      *
-     * @var Components\PatchWorkflowDto $patchWorkflowDto
+     * @var \novu\Models\Components\PatchWorkflowDto $patchWorkflowDto
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\PatchWorkflowDto $patchWorkflowDto;
@@ -37,7 +37,7 @@ class WorkflowControllerPatchWorkflowRequest
 
     /**
      * @param  string  $workflowId
-     * @param  Components\PatchWorkflowDto  $patchWorkflowDto
+     * @param  \novu\Models\Components\PatchWorkflowDto  $patchWorkflowDto
      * @param  ?string  $idempotencyKey
      * @phpstan-pure
      */

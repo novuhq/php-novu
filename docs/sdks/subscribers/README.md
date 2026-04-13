@@ -173,7 +173,7 @@ if ($response->subscriberResponseDto !== null) {
 
 | Parameter                         | Type                              | Required                          | Description                       |
 | --------------------------------- | --------------------------------- | --------------------------------- | --------------------------------- |
-| `subscriberId`                    | *string*                          | :heavy_check_mark:                | N/A                               |
+| `subscriberId`                    | *string*                          | :heavy_check_mark:                | The identifier of the subscriber  |
 | `idempotencyKey`                  | *?string*                         | :heavy_minus_sign:                | A header for idempotency purposes |
 
 ### Response
@@ -237,7 +237,7 @@ if ($response->subscriberResponseDto !== null) {
 
 | Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
 | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| `subscriberId`                                                                               | *string*                                                                                     | :heavy_check_mark:                                                                           | N/A                                                                                          |
+| `subscriberId`                                                                               | *string*                                                                                     | :heavy_check_mark:                                                                           | The identifier of the subscriber                                                             |
 | `patchSubscriberRequestDto`                                                                  | [Components\PatchSubscriberRequestDto](../../Models/Components/PatchSubscriberRequestDto.md) | :heavy_check_mark:                                                                           | N/A                                                                                          |
 | `idempotencyKey`                                                                             | *?string*                                                                                    | :heavy_minus_sign:                                                                           | A header for idempotency purposes                                                            |
 
@@ -291,7 +291,7 @@ if ($response->removeSubscriberResponseDto !== null) {
 
 | Parameter                         | Type                              | Required                          | Description                       |
 | --------------------------------- | --------------------------------- | --------------------------------- | --------------------------------- |
-| `subscriberId`                    | *string*                          | :heavy_check_mark:                | N/A                               |
+| `subscriberId`                    | *string*                          | :heavy_check_mark:                | The identifier of the subscriber  |
 | `idempotencyKey`                  | *?string*                         | :heavy_minus_sign:                | A header for idempotency purposes |
 
 ### Response
@@ -481,7 +481,7 @@ if ($response->getSubscriberPreferencesDto !== null) {
 
 | Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
 | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `subscriberId`                                                                                       | *string*                                                                                             | :heavy_check_mark:                                                                                   | N/A                                                                                                  |
+| `subscriberId`                                                                                       | *string*                                                                                             | :heavy_check_mark:                                                                                   | The identifier of the subscriber                                                                     |
 | `patchSubscriberPreferencesDto`                                                                      | [Components\PatchSubscriberPreferencesDto](../../Models/Components/PatchSubscriberPreferencesDto.md) | :heavy_check_mark:                                                                                   | N/A                                                                                                  |
 | `idempotencyKey`                                                                                     | *?string*                                                                                            | :heavy_minus_sign:                                                                                   | A header for idempotency purposes                                                                    |
 

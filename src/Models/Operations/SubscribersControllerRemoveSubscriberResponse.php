@@ -42,7 +42,7 @@ class SubscribersControllerRemoveSubscriberResponse
     /**
      * OK
      *
-     * @var ?Components\RemoveSubscriberResponseDto $removeSubscriberResponseDto
+     * @var ?\novu\Models\Components\RemoveSubscriberResponseDto $removeSubscriberResponseDto
      */
     public ?Components\RemoveSubscriberResponseDto $removeSubscriberResponseDto = null;
 
@@ -51,7 +51,7 @@ class SubscribersControllerRemoveSubscriberResponse
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
-     * @param  ?Components\RemoveSubscriberResponseDto  $removeSubscriberResponseDto
+     * @param  ?\novu\Models\Components\RemoveSubscriberResponseDto  $removeSubscriberResponseDto
      * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\RemoveSubscriberResponseDto $removeSubscriberResponseDto = null, ?array $headers = [])

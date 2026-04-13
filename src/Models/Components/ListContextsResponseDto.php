@@ -14,7 +14,7 @@ class ListContextsResponseDto
     /**
      * List of returned Contexts
      *
-     * @var array<GetContextResponseDto> $data
+     * @var array<\novu\Models\Components\GetContextResponseDto> $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\GetContextResponseDto>')]
@@ -53,7 +53,7 @@ class ListContextsResponseDto
     public ?string $previous;
 
     /**
-     * @param  array<GetContextResponseDto>  $data
+     * @param  array<\novu\Models\Components\GetContextResponseDto>  $data
      * @param  float  $totalCount
      * @param  bool  $totalCountCapped
      * @param  ?string  $next

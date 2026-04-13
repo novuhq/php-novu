@@ -14,7 +14,7 @@ class TranslationControllerGetSingleTranslationRequest
     /**
      * Resource type
      *
-     * @var PathParamResourceType $resourceType
+     * @var \novu\Models\Operations\PathParamResourceType $resourceType
      */
     #[SpeakeasyMetadata('pathParam:style=simple,explode=false,name=resourceType')]
     public PathParamResourceType $resourceType;
@@ -44,7 +44,7 @@ class TranslationControllerGetSingleTranslationRequest
     public ?string $idempotencyKey = null;
 
     /**
-     * @param  PathParamResourceType  $resourceType
+     * @param  \novu\Models\Operations\PathParamResourceType  $resourceType
      * @param  string  $resourceId
      * @param  string  $locale
      * @param  ?string  $idempotencyKey

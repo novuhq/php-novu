@@ -30,7 +30,7 @@ class CreateMsTeamsChannelEndpointDto
     /**
      * Type of channel endpoint
      *
-     * @var CreateMsTeamsChannelEndpointDtoType $type
+     * @var \novu\Models\Components\CreateMsTeamsChannelEndpointDtoType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\CreateMsTeamsChannelEndpointDtoType')]
@@ -39,7 +39,7 @@ class CreateMsTeamsChannelEndpointDto
     /**
      * MS Teams channel endpoint data
      *
-     * @var MsTeamsChannelEndpointDto $endpoint
+     * @var \novu\Models\Components\MsTeamsChannelEndpointDto $endpoint
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('endpoint')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\MsTeamsChannelEndpointDto')]
@@ -57,7 +57,7 @@ class CreateMsTeamsChannelEndpointDto
     /**
      * $context
      *
-     * @var ?array<string, string|CreateMsTeamsChannelEndpointDtoContext2> $context
+     * @var ?array<string, string|\novu\Models\Components\CreateMsTeamsChannelEndpointDtoContext2> $context
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('context')]
     #[\Speakeasy\Serializer\Annotation\Type('array<string, string|\novu\Models\Components\CreateMsTeamsChannelEndpointDtoContext2>|null')]
@@ -76,10 +76,10 @@ class CreateMsTeamsChannelEndpointDto
     /**
      * @param  string  $subscriberId
      * @param  string  $integrationIdentifier
-     * @param  CreateMsTeamsChannelEndpointDtoType  $type
-     * @param  MsTeamsChannelEndpointDto  $endpoint
+     * @param  \novu\Models\Components\CreateMsTeamsChannelEndpointDtoType  $type
+     * @param  \novu\Models\Components\MsTeamsChannelEndpointDto  $endpoint
      * @param  ?string  $identifier
-     * @param  ?array<string, string|CreateMsTeamsChannelEndpointDtoContext2>  $context
+     * @param  ?array<string, string|\novu\Models\Components\CreateMsTeamsChannelEndpointDtoContext2>  $context
      * @param  ?string  $connectionIdentifier
      * @phpstan-pure
      */

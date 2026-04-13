@@ -15,7 +15,7 @@ class MessagesControllerGetMessagesRequest
     /**
      * Channel type through which the message is sent
      *
-     * @var ?Components\ChannelTypeEnum $channel
+     * @var ?\novu\Models\Components\ChannelTypeEnum $channel
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=channel')]
     public ?Components\ChannelTypeEnum $channel = null;
@@ -66,7 +66,7 @@ class MessagesControllerGetMessagesRequest
     public ?float $limit = null;
 
     /**
-     * @param  ?Components\ChannelTypeEnum  $channel
+     * @param  ?\novu\Models\Components\ChannelTypeEnum  $channel
      * @param  ?string  $subscriberId
      * @param  ?array<string>  $transactionId
      * @param  ?array<string>  $contextKeys

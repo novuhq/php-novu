@@ -35,7 +35,7 @@ class TranslationControllerGetMasterJsonEndpointResponse
     /**
      * Master translations JSON retrieved successfully
      *
-     * @var ?Components\GetMasterJsonResponseDto $getMasterJsonResponseDto
+     * @var ?\novu\Models\Components\GetMasterJsonResponseDto $getMasterJsonResponseDto
      */
     public ?Components\GetMasterJsonResponseDto $getMasterJsonResponseDto = null;
 
@@ -43,7 +43,7 @@ class TranslationControllerGetMasterJsonEndpointResponse
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
-     * @param  ?Components\GetMasterJsonResponseDto  $getMasterJsonResponseDto
+     * @param  ?\novu\Models\Components\GetMasterJsonResponseDto  $getMasterJsonResponseDto
      * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\GetMasterJsonResponseDto $getMasterJsonResponseDto = null)

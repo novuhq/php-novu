@@ -14,7 +14,7 @@ class GetPreferencesResponseDto
     /**
      * The level of the preference (global or template)
      *
-     * @var PreferenceLevelEnum $level
+     * @var \novu\Models\Components\PreferenceLevelEnum $level
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('level')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\PreferenceLevelEnum')]
@@ -31,7 +31,7 @@ class GetPreferencesResponseDto
     /**
      * Channel-specific preference settings
      *
-     * @var SubscriberPreferenceChannels $channels
+     * @var \novu\Models\Components\SubscriberPreferenceChannels $channels
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('channels')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\SubscriberPreferenceChannels')]
@@ -40,7 +40,7 @@ class GetPreferencesResponseDto
     /**
      * Workflow information if this is a template-level preference
      *
-     * @var ?Workflow $workflow
+     * @var ?\novu\Models\Components\Workflow $workflow
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('workflow')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\Workflow|null')]
@@ -50,7 +50,7 @@ class GetPreferencesResponseDto
     /**
      * Condition using JSON Logic rules
      *
-     * @var ?Condition $condition
+     * @var ?\novu\Models\Components\Condition $condition
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('condition')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\Condition|null')]
@@ -58,11 +58,11 @@ class GetPreferencesResponseDto
     public ?Condition $condition = null;
 
     /**
-     * @param  PreferenceLevelEnum  $level
+     * @param  \novu\Models\Components\PreferenceLevelEnum  $level
      * @param  bool  $enabled
-     * @param  SubscriberPreferenceChannels  $channels
-     * @param  ?Workflow  $workflow
-     * @param  ?Condition  $condition
+     * @param  \novu\Models\Components\SubscriberPreferenceChannels  $channels
+     * @param  ?\novu\Models\Components\Workflow  $workflow
+     * @param  ?\novu\Models\Components\Condition  $condition
      * @phpstan-pure
      */
     public function __construct(PreferenceLevelEnum $level, bool $enabled, SubscriberPreferenceChannels $channels, ?Workflow $workflow = null, ?Condition $condition = null)

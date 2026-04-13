@@ -31,7 +31,7 @@ class GetChannelEndpointResponseDto
     /**
      * Type of channel endpoint
      *
-     * @var GetChannelEndpointResponseDtoType $type
+     * @var \novu\Models\Components\GetChannelEndpointResponseDtoType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\GetChannelEndpointResponseDtoType')]
@@ -40,7 +40,7 @@ class GetChannelEndpointResponseDto
     /**
      * Endpoint data specific to the channel type
      *
-     * @var SlackChannelEndpointDto|SlackUserEndpointDto|WebhookEndpointDto|PhoneEndpointDto $endpoint
+     * @var \novu\Models\Components\SlackChannelEndpointDto|\novu\Models\Components\SlackUserEndpointDto|\novu\Models\Components\WebhookEndpointDto|\novu\Models\Components\PhoneEndpointDto $endpoint
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('endpoint')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\SlackChannelEndpointDto|\novu\Models\Components\SlackUserEndpointDto|\novu\Models\Components\WebhookEndpointDto|\novu\Models\Components\PhoneEndpointDto')]
@@ -65,7 +65,7 @@ class GetChannelEndpointResponseDto
     /**
      * The channel type (email, sms, push, chat, etc.).
      *
-     * @var ?GetChannelEndpointResponseDtoChannel $channel
+     * @var ?\novu\Models\Components\GetChannelEndpointResponseDtoChannel $channel
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('channel')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\GetChannelEndpointResponseDtoChannel|null')]
@@ -74,7 +74,7 @@ class GetChannelEndpointResponseDto
     /**
      * The provider identifier (e.g., sendgrid, twilio, slack, etc.).
      *
-     * @var ?GetChannelEndpointResponseDtoProviderId $providerId
+     * @var ?\novu\Models\Components\GetChannelEndpointResponseDtoProviderId $providerId
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('providerId')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\GetChannelEndpointResponseDtoProviderId|null')]
@@ -107,12 +107,12 @@ class GetChannelEndpointResponseDto
     /**
      * @param  string  $identifier
      * @param  array<string>  $contextKeys
-     * @param  GetChannelEndpointResponseDtoType  $type
-     * @param  SlackChannelEndpointDto|SlackUserEndpointDto|WebhookEndpointDto|PhoneEndpointDto  $endpoint
+     * @param  \novu\Models\Components\GetChannelEndpointResponseDtoType  $type
+     * @param  \novu\Models\Components\SlackChannelEndpointDto|\novu\Models\Components\SlackUserEndpointDto|\novu\Models\Components\WebhookEndpointDto|\novu\Models\Components\PhoneEndpointDto  $endpoint
      * @param  string  $createdAt
      * @param  string  $updatedAt
-     * @param  ?GetChannelEndpointResponseDtoChannel  $channel
-     * @param  ?GetChannelEndpointResponseDtoProviderId  $providerId
+     * @param  ?\novu\Models\Components\GetChannelEndpointResponseDtoChannel  $channel
+     * @param  ?\novu\Models\Components\GetChannelEndpointResponseDtoProviderId  $providerId
      * @param  ?string  $integrationIdentifier
      * @param  ?string  $connectionIdentifier
      * @param  ?string  $subscriberId

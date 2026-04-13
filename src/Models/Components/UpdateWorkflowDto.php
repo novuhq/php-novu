@@ -22,16 +22,16 @@ class UpdateWorkflowDto
     /**
      * Steps of the workflow
      *
-     * @var array<InAppStepUpsertDto|EmailStepUpsertDto|SmsStepUpsertDto|PushStepUpsertDto|ChatStepUpsertDto|DelayStepUpsertDto|DigestStepUpsertDto|CustomStepUpsertDto> $steps
+     * @var array<\novu\Models\Components\InAppStepUpsertDto|\novu\Models\Components\EmailStepUpsertDto|\novu\Models\Components\SmsStepUpsertDto|\novu\Models\Components\PushStepUpsertDto|\novu\Models\Components\ChatStepUpsertDto|\novu\Models\Components\DelayStepUpsertDto|\novu\Models\Components\DigestStepUpsertDto|\novu\Models\Components\CustomStepUpsertDto|\novu\Models\Components\HttpRequestStepUpsertDto> $steps
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('steps')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\InAppStepUpsertDto|\novu\Models\Components\EmailStepUpsertDto|\novu\Models\Components\SmsStepUpsertDto|\novu\Models\Components\PushStepUpsertDto|\novu\Models\Components\ChatStepUpsertDto|\novu\Models\Components\DelayStepUpsertDto|\novu\Models\Components\DigestStepUpsertDto|\novu\Models\Components\CustomStepUpsertDto>')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\InAppStepUpsertDto|\novu\Models\Components\EmailStepUpsertDto|\novu\Models\Components\SmsStepUpsertDto|\novu\Models\Components\PushStepUpsertDto|\novu\Models\Components\ChatStepUpsertDto|\novu\Models\Components\DelayStepUpsertDto|\novu\Models\Components\DigestStepUpsertDto|\novu\Models\Components\CustomStepUpsertDto|\novu\Models\Components\HttpRequestStepUpsertDto>')]
     public array $steps;
 
     /**
      * Workflow preferences
      *
-     * @var PreferencesRequestDto $preferences
+     * @var \novu\Models\Components\PreferencesRequestDto $preferences
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('preferences')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\PreferencesRequestDto')]
@@ -40,7 +40,7 @@ class UpdateWorkflowDto
     /**
      * Origin of the layout
      *
-     * @var ResourceOriginEnum $origin
+     * @var \novu\Models\Components\ResourceOriginEnum $origin
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('origin')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ResourceOriginEnum')]
@@ -86,7 +86,7 @@ class UpdateWorkflowDto
     /**
      * Severity of the workflow
      *
-     * @var ?SeverityLevelEnum $severity
+     * @var ?\novu\Models\Components\SeverityLevelEnum $severity
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('severity')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\SeverityLevelEnum|null')]
@@ -123,16 +123,16 @@ class UpdateWorkflowDto
 
     /**
      * @param  string  $name
-     * @param  array<InAppStepUpsertDto|EmailStepUpsertDto|SmsStepUpsertDto|PushStepUpsertDto|ChatStepUpsertDto|DelayStepUpsertDto|DigestStepUpsertDto|CustomStepUpsertDto>  $steps
-     * @param  PreferencesRequestDto  $preferences
-     * @param  ResourceOriginEnum  $origin
+     * @param  array<\novu\Models\Components\InAppStepUpsertDto|\novu\Models\Components\EmailStepUpsertDto|\novu\Models\Components\SmsStepUpsertDto|\novu\Models\Components\PushStepUpsertDto|\novu\Models\Components\ChatStepUpsertDto|\novu\Models\Components\DelayStepUpsertDto|\novu\Models\Components\DigestStepUpsertDto|\novu\Models\Components\CustomStepUpsertDto|\novu\Models\Components\HttpRequestStepUpsertDto>  $steps
+     * @param  \novu\Models\Components\PreferencesRequestDto  $preferences
+     * @param  \novu\Models\Components\ResourceOriginEnum  $origin
      * @param  ?string  $description
      * @param  ?array<string>  $tags
      * @param  ?bool  $active
      * @param  ?bool  $validatePayload
      * @param  ?bool  $isTranslationEnabled
      * @param  ?string  $workflowId
-     * @param  ?SeverityLevelEnum  $severity
+     * @param  ?\novu\Models\Components\SeverityLevelEnum  $severity
      * @param  ?array<string, mixed>  $payloadSchema
      * @phpstan-pure
      */

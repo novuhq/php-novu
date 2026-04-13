@@ -1,0 +1,10 @@
+# GetSubscriberNotificationsResponseDto
+
+
+## Fields
+
+| Field                                                                                     | Type                                                                                      | Required                                                                                  | Description                                                                               |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `data`                                                                                    | array<[Components\InboxNotificationDto](../../Models/Components/InboxNotificationDto.md)> | :heavy_check_mark:                                                                        | Array of notifications                                                                    |
+| `hasMore`                                                                                 | *bool*                                                                                    | :heavy_check_mark:                                                                        | Indicates if there are more notifications available                                       |
+| `filter`                                                                                  | [Components\Filter](../../Models/Components/Filter.md)                                    | :heavy_check_mark:                                                                        | The filter applied to the notifications                                                   |

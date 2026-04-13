@@ -19,13 +19,13 @@ use Speakeasy\Serializer\DeserializationContext;
 class Subscribers
 {
     private SDKConfiguration $sdkConfiguration;
+    public NovuNotifications $notifications;
+
     public Preferences $preferences;
 
     public NovuTopics $topics;
 
     public NovuMessages $messages;
-
-    public NovuNotifications $notifications;
 
     /**
      * @param  SDKConfiguration  $sdkConfig
@@ -33,10 +33,10 @@ class Subscribers
     public function __construct(public SDKConfiguration $sdkConfig)
     {
         $this->sdkConfiguration = $sdkConfig;
+        $this->notifications = new NovuNotifications($this->sdkConfiguration);
         $this->preferences = new Preferences($this->sdkConfiguration);
         $this->topics = new NovuTopics($this->sdkConfiguration);
         $this->messages = new NovuMessages($this->sdkConfiguration);
-        $this->notifications = new NovuNotifications($this->sdkConfiguration);
     }
     /**
      * @param  string  $baseUrl
@@ -65,10 +65,10 @@ class Subscribers
      * Create a subscriber with the subscriber attributes. 
      *       **subscriberId** is a required field, rest other fields are optional, if the subscriber already exists, it will be updated
      *
-     * @param  Components\CreateSubscriberRequestDto  $createSubscriberRequestDto
+     * @param  \novu\Models\Components\CreateSubscriberRequestDto  $createSubscriberRequestDto
      * @param  ?bool  $failIfExists
      * @param  ?string  $idempotencyKey
-     * @return Operations\SubscribersControllerCreateSubscriberResponse
+     * @return \novu\Models\Operations\SubscribersControllerCreateSubscriberResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function create(Components\CreateSubscriberRequestDto $createSubscriberRequestDto, ?bool $failIfExists = null, ?string $idempotencyKey = null, ?Options $options = null): Operations\SubscribersControllerCreateSubscriberResponse
@@ -235,7 +235,7 @@ class Subscribers
      *
      * @param  string  $subscriberId
      * @param  ?string  $idempotencyKey
-     * @return Operations\SubscribersControllerGetSubscriberResponse
+     * @return \novu\Models\Operations\SubscribersControllerGetSubscriberResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function get(string $subscriberId, ?string $idempotencyKey = null, ?Options $options = null): Operations\SubscribersControllerGetSubscriberResponse
@@ -380,10 +380,10 @@ class Subscribers
      * Update a subscriber by its unique key identifier **subscriberId**. 
      *     **subscriberId** is a required field, rest other fields are optional
      *
-     * @param  Components\PatchSubscriberRequestDto  $patchSubscriberRequestDto
+     * @param  \novu\Models\Components\PatchSubscriberRequestDto  $patchSubscriberRequestDto
      * @param  string  $subscriberId
      * @param  ?string  $idempotencyKey
-     * @return Operations\SubscribersControllerPatchSubscriberResponse
+     * @return \novu\Models\Operations\SubscribersControllerPatchSubscriberResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function patch(Components\PatchSubscriberRequestDto $patchSubscriberRequestDto, string $subscriberId, ?string $idempotencyKey = null, ?Options $options = null): Operations\SubscribersControllerPatchSubscriberResponse
@@ -536,7 +536,7 @@ class Subscribers
      *
      * @param  string  $subscriberId
      * @param  ?string  $idempotencyKey
-     * @return Operations\SubscribersControllerRemoveSubscriberResponse
+     * @return \novu\Models\Operations\SubscribersControllerRemoveSubscriberResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function delete(string $subscriberId, ?string $idempotencyKey = null, ?Options $options = null): Operations\SubscribersControllerRemoveSubscriberResponse
@@ -681,8 +681,8 @@ class Subscribers
      * Search subscribers by their **email**, **phone**, **subscriberId** and **name**. 
      *     The search is case sensitive and supports pagination.Checkout all available filters in the query section.
      *
-     * @param  ?Operations\SubscribersControllerSearchSubscribersRequest  $request
-     * @return Operations\SubscribersControllerSearchSubscribersResponse
+     * @param  ?\novu\Models\Operations\SubscribersControllerSearchSubscribersRequest  $request
+     * @return \novu\Models\Operations\SubscribersControllerSearchSubscribersResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function search(?Operations\SubscribersControllerSearchSubscribersRequest $request = null, ?Options $options = null): Operations\SubscribersControllerSearchSubscribersResponse
@@ -827,10 +827,10 @@ class Subscribers
      *     **workflowId** is optional field, if provided, this API will update that workflow preference, 
      *     otherwise it will update global preferences
      *
-     * @param  Components\PatchSubscriberPreferencesDto  $patchSubscriberPreferencesDto
+     * @param  \novu\Models\Components\PatchSubscriberPreferencesDto  $patchSubscriberPreferencesDto
      * @param  string  $subscriberId
      * @param  ?string  $idempotencyKey
-     * @return Operations\SubscribersControllerUpdateSubscriberPreferencesResponse
+     * @return \novu\Models\Operations\SubscribersControllerUpdateSubscriberPreferencesResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function updatePreferences(Components\PatchSubscriberPreferencesDto $patchSubscriberPreferencesDto, string $subscriberId, ?string $idempotencyKey = null, ?Options $options = null): Operations\SubscribersControllerUpdateSubscriberPreferencesResponse
@@ -982,9 +982,9 @@ class Subscribers
      *       Using this endpoint multiple subscribers can be created at once. The bulk API is limited to 500 subscribers per request.
      *     
      *
-     * @param  Components\BulkSubscriberCreateDto  $bulkSubscriberCreateDto
+     * @param  \novu\Models\Components\BulkSubscriberCreateDto  $bulkSubscriberCreateDto
      * @param  ?string  $idempotencyKey
-     * @return Operations\SubscribersV1ControllerBulkCreateSubscribersResponse
+     * @return \novu\Models\Operations\SubscribersV1ControllerBulkCreateSubscribersResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function createBulk(Components\BulkSubscriberCreateDto $bulkSubscriberCreateDto, ?string $idempotencyKey = null, ?Options $options = null): Operations\SubscribersV1ControllerBulkCreateSubscribersResponse
@@ -1134,10 +1134,10 @@ class Subscribers
      * Update credentials for a provider such as **slack** and **FCM**. 
      *       **providerId** is required field. This API creates the **deviceTokens** or replaces the existing ones.
      *
-     * @param  Components\UpdateSubscriberChannelRequestDto  $updateSubscriberChannelRequestDto
+     * @param  \novu\Models\Components\UpdateSubscriberChannelRequestDto  $updateSubscriberChannelRequestDto
      * @param  string  $subscriberId
      * @param  ?string  $idempotencyKey
-     * @return Operations\SubscribersV1ControllerUpdateSubscriberChannelResponse
+     * @return \novu\Models\Operations\SubscribersV1ControllerUpdateSubscriberChannelResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function updateCredentials(Components\UpdateSubscriberChannelRequestDto $updateSubscriberChannelRequestDto, string $subscriberId, ?string $idempotencyKey = null, ?Options $options = null): Operations\SubscribersV1ControllerUpdateSubscriberChannelResponse
@@ -1287,10 +1287,10 @@ class Subscribers
      *
      * Update the subscriber online status by its unique key identifier **subscriberId**
      *
-     * @param  Components\UpdateSubscriberOnlineFlagRequestDto  $updateSubscriberOnlineFlagRequestDto
+     * @param  \novu\Models\Components\UpdateSubscriberOnlineFlagRequestDto  $updateSubscriberOnlineFlagRequestDto
      * @param  string  $subscriberId
      * @param  ?string  $idempotencyKey
-     * @return Operations\SubscribersV1ControllerUpdateSubscriberOnlineFlagResponse
+     * @return \novu\Models\Operations\SubscribersV1ControllerUpdateSubscriberOnlineFlagResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function updateOnlineStatus(Components\UpdateSubscriberOnlineFlagRequestDto $updateSubscriberOnlineFlagRequestDto, string $subscriberId, ?string $idempotencyKey = null, ?Options $options = null): Operations\SubscribersV1ControllerUpdateSubscriberOnlineFlagResponse

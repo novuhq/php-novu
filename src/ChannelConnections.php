@@ -52,9 +52,9 @@ class ChannelConnections
      *
      * Create a new channel connection for a resource for given integration. Only one channel connection is allowed per resource and integration.
      *
-     * @param  Components\CreateChannelConnectionRequestDto  $createChannelConnectionRequestDto
+     * @param  \novu\Models\Components\CreateChannelConnectionRequestDto  $createChannelConnectionRequestDto
      * @param  ?string  $idempotencyKey
-     * @return Operations\ChannelConnectionsControllerCreateChannelConnectionResponse
+     * @return \novu\Models\Operations\ChannelConnectionsControllerCreateChannelConnectionResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function create(Components\CreateChannelConnectionRequestDto $createChannelConnectionRequestDto, ?string $idempotencyKey = null, ?Options $options = null): Operations\ChannelConnectionsControllerCreateChannelConnectionResponse
@@ -205,7 +205,7 @@ class ChannelConnections
      *
      * @param  string  $identifier
      * @param  ?string  $idempotencyKey
-     * @return Operations\ChannelConnectionsControllerDeleteChannelConnectionResponse
+     * @return \novu\Models\Operations\ChannelConnectionsControllerDeleteChannelConnectionResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function delete(string $identifier, ?string $idempotencyKey = null, ?Options $options = null): Operations\ChannelConnectionsControllerDeleteChannelConnectionResponse
@@ -341,7 +341,7 @@ class ChannelConnections
      *
      * @param  string  $identifier
      * @param  ?string  $idempotencyKey
-     * @return Operations\ChannelConnectionsControllerGetChannelConnectionByIdentifierResponse
+     * @return \novu\Models\Operations\ChannelConnectionsControllerGetChannelConnectionByIdentifierResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function retrieve(string $identifier, ?string $idempotencyKey = null, ?Options $options = null): Operations\ChannelConnectionsControllerGetChannelConnectionByIdentifierResponse
@@ -485,8 +485,8 @@ class ChannelConnections
      *
      * List all channel connections for a resource.
      *
-     * @param  ?Operations\ChannelConnectionsControllerListChannelConnectionsRequest  $request
-     * @return Operations\ChannelConnectionsControllerListChannelConnectionsResponse
+     * @param  ?\novu\Models\Operations\ChannelConnectionsControllerListChannelConnectionsRequest  $request
+     * @return \novu\Models\Operations\ChannelConnectionsControllerListChannelConnectionsResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function list(?Operations\ChannelConnectionsControllerListChannelConnectionsRequest $request = null, ?Options $options = null): Operations\ChannelConnectionsControllerListChannelConnectionsResponse
@@ -629,10 +629,10 @@ class ChannelConnections
      *
      * Update an existing channel connection by its unique identifier.
      *
-     * @param  Components\UpdateChannelConnectionRequestDto  $updateChannelConnectionRequestDto
+     * @param  \novu\Models\Components\UpdateChannelConnectionRequestDto  $updateChannelConnectionRequestDto
      * @param  string  $identifier
      * @param  ?string  $idempotencyKey
-     * @return Operations\ChannelConnectionsControllerUpdateChannelConnectionResponse
+     * @return \novu\Models\Operations\ChannelConnectionsControllerUpdateChannelConnectionResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function update(Components\UpdateChannelConnectionRequestDto $updateChannelConnectionRequestDto, string $identifier, ?string $idempotencyKey = null, ?Options $options = null): Operations\ChannelConnectionsControllerUpdateChannelConnectionResponse

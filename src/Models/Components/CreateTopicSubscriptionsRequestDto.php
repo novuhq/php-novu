@@ -25,7 +25,7 @@ class CreateTopicSubscriptionsRequestDto
     /**
      * List of subscriptions to subscribe to the topic (max: 100). Can be either a string array of subscriber IDs or an array of objects with identifier and subscriberId
      *
-     * @var ?array<string|TopicSubscriberIdentifierDto> $subscriptions
+     * @var ?array<string|\novu\Models\Components\TopicSubscriberIdentifierDto> $subscriptions
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('subscriptions')]
     #[\Speakeasy\Serializer\Annotation\Type('array<string|\novu\Models\Components\TopicSubscriberIdentifierDto>|null')]
@@ -44,7 +44,7 @@ class CreateTopicSubscriptionsRequestDto
     /**
      * $context
      *
-     * @var ?array<string, string|CreateTopicSubscriptionsRequestDtoContext2> $context
+     * @var ?array<string, string|\novu\Models\Components\CreateTopicSubscriptionsRequestDtoContext2> $context
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('context')]
     #[\Speakeasy\Serializer\Annotation\Type('array<string, string|\novu\Models\Components\CreateTopicSubscriptionsRequestDtoContext2>|null')]
@@ -54,7 +54,7 @@ class CreateTopicSubscriptionsRequestDto
     /**
      * The preferences of the topic. Can be a simple workflow ID string, workflow preference object, or group filter object
      *
-     * @var ?array<string|WorkflowPreferenceRequestDto|GroupPreferenceFilterDto> $preferences
+     * @var ?array<string|\novu\Models\Components\WorkflowPreferenceRequestDto|\novu\Models\Components\GroupPreferenceFilterDto> $preferences
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('preferences')]
     #[\Speakeasy\Serializer\Annotation\Type('array<string|\novu\Models\Components\WorkflowPreferenceRequestDto|\novu\Models\Components\GroupPreferenceFilterDto>|null')]
@@ -63,10 +63,10 @@ class CreateTopicSubscriptionsRequestDto
 
     /**
      * @param  ?array<string>  $subscriberIds
-     * @param  ?array<string|TopicSubscriberIdentifierDto>  $subscriptions
+     * @param  ?array<string|\novu\Models\Components\TopicSubscriberIdentifierDto>  $subscriptions
      * @param  ?string  $name
-     * @param  ?array<string, string|CreateTopicSubscriptionsRequestDtoContext2>  $context
-     * @param  ?array<string|WorkflowPreferenceRequestDto|GroupPreferenceFilterDto>  $preferences
+     * @param  ?array<string, string|\novu\Models\Components\CreateTopicSubscriptionsRequestDtoContext2>  $context
+     * @param  ?array<string|\novu\Models\Components\WorkflowPreferenceRequestDto|\novu\Models\Components\GroupPreferenceFilterDto>  $preferences
      * @phpstan-pure
      */
     public function __construct(?array $subscriberIds = null, ?array $subscriptions = null, ?string $name = null, ?array $context = null, ?array $preferences = null)

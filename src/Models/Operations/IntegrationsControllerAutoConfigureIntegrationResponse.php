@@ -42,7 +42,7 @@ class IntegrationsControllerAutoConfigureIntegrationResponse
     /**
      * OK
      *
-     * @var ?Components\AutoConfigureIntegrationResponseDto $autoConfigureIntegrationResponseDto
+     * @var ?\novu\Models\Components\AutoConfigureIntegrationResponseDto $autoConfigureIntegrationResponseDto
      */
     public ?Components\AutoConfigureIntegrationResponseDto $autoConfigureIntegrationResponseDto = null;
 
@@ -51,7 +51,7 @@ class IntegrationsControllerAutoConfigureIntegrationResponse
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
-     * @param  ?Components\AutoConfigureIntegrationResponseDto  $autoConfigureIntegrationResponseDto
+     * @param  ?\novu\Models\Components\AutoConfigureIntegrationResponseDto  $autoConfigureIntegrationResponseDto
      * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\AutoConfigureIntegrationResponseDto $autoConfigureIntegrationResponseDto = null, ?array $headers = [])

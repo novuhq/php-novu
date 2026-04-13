@@ -55,7 +55,7 @@ class Notifications
      *
      * @param  string  $notificationId
      * @param  ?string  $idempotencyKey
-     * @return Operations\NotificationsControllerGetNotificationResponse
+     * @return \novu\Models\Operations\NotificationsControllerGetNotificationResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function get(string $notificationId, ?string $idempotencyKey = null, ?Options $options = null): Operations\NotificationsControllerGetNotificationResponse
@@ -202,8 +202,8 @@ class Notifications
      *     Checkout all available filters in the query section.
      *     This API returns event triggers, to list each channel notifications, check messages APIs.
      *
-     * @param  ?Operations\NotificationsControllerListNotificationsRequest  $request
-     * @return Operations\NotificationsControllerListNotificationsResponse
+     * @param  ?\novu\Models\Operations\NotificationsControllerListNotificationsRequest  $request
+     * @return \novu\Models\Operations\NotificationsControllerListNotificationsResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function list(?Operations\NotificationsControllerListNotificationsRequest $request = null, ?Options $options = null): Operations\NotificationsControllerListNotificationsResponse

@@ -42,7 +42,7 @@ class IntegrationsControllerGetActiveIntegrationsResponse
     /**
      * The list of active integrations belonging to the organization that are successfully returned.
      *
-     * @var ?array<Components\IntegrationResponseDto> $integrationResponseDtos
+     * @var ?array<\novu\Models\Components\IntegrationResponseDto> $integrationResponseDtos
      */
     public ?array $integrationResponseDtos = null;
 
@@ -51,7 +51,7 @@ class IntegrationsControllerGetActiveIntegrationsResponse
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
-     * @param  ?array<Components\IntegrationResponseDto>  $integrationResponseDtos
+     * @param  ?array<\novu\Models\Components\IntegrationResponseDto>  $integrationResponseDtos
      * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?array $integrationResponseDtos = null, ?array $headers = [])

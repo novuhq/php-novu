@@ -22,7 +22,7 @@ class LayoutsControllerUpdateRequest
     /**
      * Layout update details
      *
-     * @var Components\UpdateLayoutDto $updateLayoutDto
+     * @var \novu\Models\Components\UpdateLayoutDto $updateLayoutDto
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\UpdateLayoutDto $updateLayoutDto;
@@ -37,7 +37,7 @@ class LayoutsControllerUpdateRequest
 
     /**
      * @param  string  $layoutId
-     * @param  Components\UpdateLayoutDto  $updateLayoutDto
+     * @param  \novu\Models\Components\UpdateLayoutDto  $updateLayoutDto
      * @param  ?string  $idempotencyKey
      * @phpstan-pure
      */

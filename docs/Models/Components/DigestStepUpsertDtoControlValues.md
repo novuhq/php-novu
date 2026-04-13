@@ -9,7 +9,7 @@ Control values for the Digest step.
 
 ```php
 /**
-* @var Components\DigestControlDto
+* @var \novu\Models\Components\DigestControlDto
 */
 Components\DigestControlDto $value = /* values here */
 ```

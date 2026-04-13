@@ -14,7 +14,7 @@ class SubscriberPreferenceOverrideDto
     /**
      * Channel type through which the message is sent
      *
-     * @var ChannelTypeEnum $channel
+     * @var \novu\Models\Components\ChannelTypeEnum $channel
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('channel')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ChannelTypeEnum')]
@@ -23,15 +23,15 @@ class SubscriberPreferenceOverrideDto
     /**
      * The source of overrides
      *
-     * @var PreferenceOverrideSourceEnum $source
+     * @var \novu\Models\Components\PreferenceOverrideSourceEnum $source
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('source')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\PreferenceOverrideSourceEnum')]
     public PreferenceOverrideSourceEnum $source;
 
     /**
-     * @param  ChannelTypeEnum  $channel
-     * @param  PreferenceOverrideSourceEnum  $source
+     * @param  \novu\Models\Components\ChannelTypeEnum  $channel
+     * @param  \novu\Models\Components\PreferenceOverrideSourceEnum  $source
      * @phpstan-pure
      */
     public function __construct(ChannelTypeEnum $channel, PreferenceOverrideSourceEnum $source)

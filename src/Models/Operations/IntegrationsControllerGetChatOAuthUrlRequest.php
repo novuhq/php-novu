@@ -14,7 +14,7 @@ class IntegrationsControllerGetChatOAuthUrlRequest
 {
     /**
      *
-     * @var Components\GenerateChatOauthUrlRequestDto $generateChatOauthUrlRequestDto
+     * @var \novu\Models\Components\GenerateChatOauthUrlRequestDto $generateChatOauthUrlRequestDto
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\GenerateChatOauthUrlRequestDto $generateChatOauthUrlRequestDto;
@@ -28,7 +28,7 @@ class IntegrationsControllerGetChatOAuthUrlRequest
     public ?string $idempotencyKey = null;
 
     /**
-     * @param  Components\GenerateChatOauthUrlRequestDto  $generateChatOauthUrlRequestDto
+     * @param  \novu\Models\Components\GenerateChatOauthUrlRequestDto  $generateChatOauthUrlRequestDto
      * @param  ?string  $idempotencyKey
      * @phpstan-pure
      */

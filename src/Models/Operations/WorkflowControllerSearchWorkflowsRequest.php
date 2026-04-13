@@ -31,7 +31,7 @@ class WorkflowControllerSearchWorkflowsRequest
     /**
      * Direction of sorting
      *
-     * @var ?Components\DirectionEnum $orderDirection
+     * @var ?\novu\Models\Components\DirectionEnum $orderDirection
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=orderDirection')]
     public ?Components\DirectionEnum $orderDirection = null;
@@ -39,7 +39,7 @@ class WorkflowControllerSearchWorkflowsRequest
     /**
      * Field to sort the results by
      *
-     * @var ?Components\WorkflowResponseDtoSortField $orderBy
+     * @var ?\novu\Models\Components\WorkflowResponseDtoSortField $orderBy
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=orderBy')]
     public ?Components\WorkflowResponseDtoSortField $orderBy = null;
@@ -63,7 +63,7 @@ class WorkflowControllerSearchWorkflowsRequest
     /**
      * Filter workflows by status
      *
-     * @var ?array<Components\WorkflowStatusEnum> $status
+     * @var ?array<\novu\Models\Components\WorkflowStatusEnum> $status
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=status')]
     public ?array $status = null;
@@ -79,11 +79,11 @@ class WorkflowControllerSearchWorkflowsRequest
     /**
      * @param  ?float  $limit
      * @param  ?float  $offset
-     * @param  ?Components\DirectionEnum  $orderDirection
-     * @param  ?Components\WorkflowResponseDtoSortField  $orderBy
+     * @param  ?\novu\Models\Components\DirectionEnum  $orderDirection
+     * @param  ?\novu\Models\Components\WorkflowResponseDtoSortField  $orderBy
      * @param  ?string  $query
      * @param  ?array<string>  $tags
-     * @param  ?array<Components\WorkflowStatusEnum>  $status
+     * @param  ?array<\novu\Models\Components\WorkflowStatusEnum>  $status
      * @param  ?string  $idempotencyKey
      * @phpstan-pure
      */

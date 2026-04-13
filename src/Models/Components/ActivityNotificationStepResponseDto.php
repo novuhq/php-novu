@@ -30,7 +30,7 @@ class ActivityNotificationStepResponseDto
     /**
      * Filter criteria for the step
      *
-     * @var array<StepFilterDto> $filters
+     * @var array<\novu\Models\Components\StepFilterDto> $filters
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('filters')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\StepFilterDto>')]
@@ -47,7 +47,7 @@ class ActivityNotificationStepResponseDto
     /**
      * Reply callback settings
      *
-     * @var ?ActivityNotificationStepResponseDtoReplyCallback $replyCallback
+     * @var ?\novu\Models\Components\ActivityNotificationStepResponseDtoReplyCallback $replyCallback
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('replyCallback')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ActivityNotificationStepResponseDtoReplyCallback|null')]
@@ -57,7 +57,7 @@ class ActivityNotificationStepResponseDto
     /**
      * Control variables
      *
-     * @var ?ControlVariables $controlVariables
+     * @var ?\novu\Models\Components\ControlVariables $controlVariables
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('controlVariables')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ControlVariables|null')]
@@ -67,7 +67,7 @@ class ActivityNotificationStepResponseDto
     /**
      * Metadata for the workflow step
      *
-     * @var ?ActivityNotificationStepResponseDtoMetadata $metadata
+     * @var ?\novu\Models\Components\ActivityNotificationStepResponseDtoMetadata $metadata
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('metadata')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ActivityNotificationStepResponseDtoMetadata|null')]
@@ -77,7 +77,7 @@ class ActivityNotificationStepResponseDto
     /**
      * Step issues
      *
-     * @var ?Issues $issues
+     * @var ?\novu\Models\Components\Issues $issues
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('issues')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\Issues|null')]
@@ -87,7 +87,7 @@ class ActivityNotificationStepResponseDto
     /**
      * Optional template for the step
      *
-     * @var ?MessageTemplateDto $template
+     * @var ?\novu\Models\Components\MessageTemplateDto $template
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('template')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\MessageTemplateDto|null')]
@@ -97,7 +97,7 @@ class ActivityNotificationStepResponseDto
     /**
      * Variants of the step
      *
-     * @var ?array<ActivityNotificationStepResponseDto> $variants
+     * @var ?array<\novu\Models\Components\ActivityNotificationStepResponseDto> $variants
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('variants')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\ActivityNotificationStepResponseDto>|null')]
@@ -125,14 +125,14 @@ class ActivityNotificationStepResponseDto
     /**
      * @param  string  $id
      * @param  bool  $active
-     * @param  array<StepFilterDto>  $filters
+     * @param  array<\novu\Models\Components\StepFilterDto>  $filters
      * @param  string  $templateId
-     * @param  ?ActivityNotificationStepResponseDtoReplyCallback  $replyCallback
-     * @param  ?ControlVariables  $controlVariables
-     * @param  ?ActivityNotificationStepResponseDtoMetadata  $metadata
-     * @param  ?Issues  $issues
-     * @param  ?MessageTemplateDto  $template
-     * @param  ?array<ActivityNotificationStepResponseDto>  $variants
+     * @param  ?\novu\Models\Components\ActivityNotificationStepResponseDtoReplyCallback  $replyCallback
+     * @param  ?\novu\Models\Components\ControlVariables  $controlVariables
+     * @param  ?\novu\Models\Components\ActivityNotificationStepResponseDtoMetadata  $metadata
+     * @param  ?\novu\Models\Components\Issues  $issues
+     * @param  ?\novu\Models\Components\MessageTemplateDto  $template
+     * @param  ?array<\novu\Models\Components\ActivityNotificationStepResponseDto>  $variants
      * @param  ?string  $name
      * @param  ?string  $parentId
      * @phpstan-pure

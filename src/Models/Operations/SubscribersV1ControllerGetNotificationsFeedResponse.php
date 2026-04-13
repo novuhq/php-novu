@@ -42,7 +42,7 @@ class SubscribersV1ControllerGetNotificationsFeedResponse
     /**
      * OK
      *
-     * @var ?Components\FeedResponseDto $feedResponseDto
+     * @var ?\novu\Models\Components\FeedResponseDto $feedResponseDto
      */
     public ?Components\FeedResponseDto $feedResponseDto = null;
 
@@ -51,7 +51,7 @@ class SubscribersV1ControllerGetNotificationsFeedResponse
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
-     * @param  ?Components\FeedResponseDto  $feedResponseDto
+     * @param  ?\novu\Models\Components\FeedResponseDto  $feedResponseDto
      * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\FeedResponseDto $feedResponseDto = null, ?array $headers = [])

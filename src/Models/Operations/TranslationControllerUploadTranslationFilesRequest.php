@@ -13,7 +13,7 @@ class TranslationControllerUploadTranslationFilesRequest
 {
     /**
      *
-     * @var TranslationControllerUploadTranslationFilesRequestBody $requestBody
+     * @var \novu\Models\Operations\TranslationControllerUploadTranslationFilesRequestBody $requestBody
      */
     #[SpeakeasyMetadata('request:mediaType=multipart/form-data')]
     public TranslationControllerUploadTranslationFilesRequestBody $requestBody;
@@ -27,7 +27,7 @@ class TranslationControllerUploadTranslationFilesRequest
     public ?string $idempotencyKey = null;
 
     /**
-     * @param  TranslationControllerUploadTranslationFilesRequestBody  $requestBody
+     * @param  \novu\Models\Operations\TranslationControllerUploadTranslationFilesRequestBody  $requestBody
      * @param  ?string  $idempotencyKey
      * @phpstan-pure
      */

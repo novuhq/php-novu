@@ -53,8 +53,8 @@ class NovuMessages
      * Update in-app (inbox) notification's action status by its unique key identifier **messageId** and type field **type**. 
      *       **type** field can be **primary** or **secondary**
      *
-     * @param  Operations\SubscribersV1ControllerMarkActionAsSeenRequest  $request
-     * @return Operations\SubscribersV1ControllerMarkActionAsSeenResponse
+     * @param  \novu\Models\Operations\SubscribersV1ControllerMarkActionAsSeenRequest  $request
+     * @return \novu\Models\Operations\SubscribersV1ControllerMarkActionAsSeenResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function updateAsSeen(Operations\SubscribersV1ControllerMarkActionAsSeenRequest $request, ?Options $options = null): Operations\SubscribersV1ControllerMarkActionAsSeenResponse
@@ -200,10 +200,10 @@ class NovuMessages
      * Update subscriber's multiple in-app (inbox) notifications state such as seen, read, unseen or unread by **subscriberId**. 
      *       **messageId** is of type mongodbId of notifications
      *
-     * @param  Components\MessageMarkAsRequestDto  $messageMarkAsRequestDto
+     * @param  \novu\Models\Components\MessageMarkAsRequestDto  $messageMarkAsRequestDto
      * @param  string  $subscriberId
      * @param  ?string  $idempotencyKey
-     * @return Operations\SubscribersV1ControllerMarkMessagesAsResponse
+     * @return \novu\Models\Operations\SubscribersV1ControllerMarkMessagesAsResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function markAllAs(Components\MessageMarkAsRequestDto $messageMarkAsRequestDto, string $subscriberId, ?string $idempotencyKey = null, ?Options $options = null): Operations\SubscribersV1ControllerMarkMessagesAsResponse

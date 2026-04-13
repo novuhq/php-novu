@@ -25,7 +25,7 @@ class DeleteTopicSubscriptionsRequestDto
     /**
      * List of subscriptions to unsubscribe from the topic (max: 100). Can be either a string array of subscriber IDs or an array of objects with identifier and/or subscriberId. If only subscriberId is provided, all subscriptions for that subscriber within the topic will be deleted.
      *
-     * @var ?array<string|DeleteTopicSubscriberIdentifierDto> $subscriptions
+     * @var ?array<string|\novu\Models\Components\DeleteTopicSubscriberIdentifierDto> $subscriptions
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('subscriptions')]
     #[\Speakeasy\Serializer\Annotation\Type('array<string|\novu\Models\Components\DeleteTopicSubscriberIdentifierDto>|null')]
@@ -34,7 +34,7 @@ class DeleteTopicSubscriptionsRequestDto
 
     /**
      * @param  ?array<string>  $subscriberIds
-     * @param  ?array<string|DeleteTopicSubscriberIdentifierDto>  $subscriptions
+     * @param  ?array<string|\novu\Models\Components\DeleteTopicSubscriberIdentifierDto>  $subscriptions
      * @phpstan-pure
      */
     public function __construct(?array $subscriberIds = null, ?array $subscriptions = null)

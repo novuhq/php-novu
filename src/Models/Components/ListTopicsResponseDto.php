@@ -14,7 +14,7 @@ class ListTopicsResponseDto
     /**
      * List of returned Topics
      *
-     * @var array<TopicResponseDto> $data
+     * @var array<\novu\Models\Components\TopicResponseDto> $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\TopicResponseDto>')]
@@ -53,7 +53,7 @@ class ListTopicsResponseDto
     public ?string $previous;
 
     /**
-     * @param  array<TopicResponseDto>  $data
+     * @param  array<\novu\Models\Components\TopicResponseDto>  $data
      * @param  float  $totalCount
      * @param  bool  $totalCountCapped
      * @param  ?string  $next

@@ -13,7 +13,7 @@ class NotificationTrigger
 {
     /**
      *
-     * @var NotificationTriggerType $type
+     * @var \novu\Models\Components\NotificationTriggerType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\NotificationTriggerType')]
@@ -29,7 +29,7 @@ class NotificationTrigger
     /**
      * $variables
      *
-     * @var array<NotificationTriggerVariable> $variables
+     * @var array<\novu\Models\Components\NotificationTriggerVariable> $variables
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('variables')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\NotificationTriggerVariable>')]
@@ -38,7 +38,7 @@ class NotificationTrigger
     /**
      * $subscriberVariables
      *
-     * @var ?array<NotificationTriggerVariable> $subscriberVariables
+     * @var ?array<\novu\Models\Components\NotificationTriggerVariable> $subscriberVariables
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('subscriberVariables')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\NotificationTriggerVariable>|null')]
@@ -46,10 +46,10 @@ class NotificationTrigger
     public ?array $subscriberVariables = null;
 
     /**
-     * @param  NotificationTriggerType  $type
+     * @param  \novu\Models\Components\NotificationTriggerType  $type
      * @param  string  $identifier
-     * @param  array<NotificationTriggerVariable>  $variables
-     * @param  ?array<NotificationTriggerVariable>  $subscriberVariables
+     * @param  array<\novu\Models\Components\NotificationTriggerVariable>  $variables
+     * @param  ?array<\novu\Models\Components\NotificationTriggerVariable>  $subscriberVariables
      * @phpstan-pure
      */
     public function __construct(NotificationTriggerType $type, string $identifier, array $variables, ?array $subscriberVariables = null)

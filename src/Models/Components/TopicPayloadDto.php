@@ -20,7 +20,7 @@ class TopicPayloadDto
 
     /**
      *
-     * @var TriggerRecipientsTypeEnum $type
+     * @var \novu\Models\Components\TriggerRecipientsTypeEnum $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\TriggerRecipientsTypeEnum')]
@@ -38,7 +38,7 @@ class TopicPayloadDto
 
     /**
      * @param  string  $topicKey
-     * @param  TriggerRecipientsTypeEnum  $type
+     * @param  \novu\Models\Components\TriggerRecipientsTypeEnum  $type
      * @param  ?array<string>  $exclude
      * @phpstan-pure
      */

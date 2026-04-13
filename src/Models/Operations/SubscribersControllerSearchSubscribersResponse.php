@@ -42,7 +42,7 @@ class SubscribersControllerSearchSubscribersResponse
     /**
      * OK
      *
-     * @var ?Components\ListSubscribersResponseDto $listSubscribersResponseDto
+     * @var ?\novu\Models\Components\ListSubscribersResponseDto $listSubscribersResponseDto
      */
     public ?Components\ListSubscribersResponseDto $listSubscribersResponseDto = null;
 
@@ -51,7 +51,7 @@ class SubscribersControllerSearchSubscribersResponse
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
-     * @param  ?Components\ListSubscribersResponseDto  $listSubscribersResponseDto
+     * @param  ?\novu\Models\Components\ListSubscribersResponseDto  $listSubscribersResponseDto
      * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\ListSubscribersResponseDto $listSubscribersResponseDto = null, ?array $headers = [])

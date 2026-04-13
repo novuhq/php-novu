@@ -51,10 +51,12 @@ class Groups
      *
      * Delete an entire translation group and all its translations
      *
-     * @param  Operations\TranslationControllerDeleteTranslationGroupEndpointPathParamResourceType  $resourceType
+     * This operation requires either `secretKey` or `secretKey` to be set via `setSecurity` on the SDK builder.
+     *
+     * @param  \novu\Models\Operations\TranslationControllerDeleteTranslationGroupEndpointPathParamResourceType  $resourceType
      * @param  string  $resourceId
      * @param  ?string  $idempotencyKey
-     * @return Operations\TranslationControllerDeleteTranslationGroupEndpointResponse
+     * @return \novu\Models\Operations\TranslationControllerDeleteTranslationGroupEndpointResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function delete(Operations\TranslationControllerDeleteTranslationGroupEndpointPathParamResourceType $resourceType, string $resourceId, ?string $idempotencyKey = null, ?Options $options = null): Operations\TranslationControllerDeleteTranslationGroupEndpointResponse
@@ -102,12 +104,15 @@ class Groups
         $httpOptions['headers']['Accept'] = '*/*';
         $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('DELETE', $url);
+        $client = $this->sdkConfiguration->securitySource !== null
+            ? Utils\Utils::configureSecurityClient($this->sdkConfiguration->defaultClient, $this->sdkConfiguration->getSecurity(), ['secretKey', 'secretKey'])
+            : $this->sdkConfiguration->defaultClient;
         $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'TranslationController_deleteTranslationGroupEndpoint', null, $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
         $httpRequest = Utils\Utils::removeHeaders($httpRequest);
         try {
-            $httpResponse = RetryUtils::retryWrapper(fn () => $this->sdkConfiguration->client->send($httpRequest, $httpOptions), $retryConfig, $retryCodes);
+            $httpResponse = RetryUtils::retryWrapper(fn () => $client->send($httpRequest, $httpOptions), $retryConfig, $retryCodes);
         } catch (\GuzzleHttp\Exception\GuzzleException $error) {
             $res = $this->sdkConfiguration->hooks->afterError(new Hooks\AfterErrorContext($hookContext), null, $error);
             $httpResponse = $res;
@@ -141,10 +146,12 @@ class Groups
      *
      * Retrieves a single translation group by resource type (workflow, layout) and resource ID (workflowId, layoutId)
      *
-     * @param  Operations\TranslationControllerGetTranslationGroupEndpointPathParamResourceType  $resourceType
+     * This operation requires either `secretKey` or `secretKey` to be set via `setSecurity` on the SDK builder.
+     *
+     * @param  \novu\Models\Operations\TranslationControllerGetTranslationGroupEndpointPathParamResourceType  $resourceType
      * @param  string  $resourceId
      * @param  ?string  $idempotencyKey
-     * @return Operations\TranslationControllerGetTranslationGroupEndpointResponse
+     * @return \novu\Models\Operations\TranslationControllerGetTranslationGroupEndpointResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function retrieve(Operations\TranslationControllerGetTranslationGroupEndpointPathParamResourceType $resourceType, string $resourceId, ?string $idempotencyKey = null, ?Options $options = null): Operations\TranslationControllerGetTranslationGroupEndpointResponse
@@ -192,12 +199,15 @@ class Groups
         $httpOptions['headers']['Accept'] = 'application/json';
         $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('GET', $url);
+        $client = $this->sdkConfiguration->securitySource !== null
+            ? Utils\Utils::configureSecurityClient($this->sdkConfiguration->defaultClient, $this->sdkConfiguration->getSecurity(), ['secretKey', 'secretKey'])
+            : $this->sdkConfiguration->defaultClient;
         $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'TranslationController_getTranslationGroupEndpoint', null, $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
         $httpRequest = Utils\Utils::removeHeaders($httpRequest);
         try {
-            $httpResponse = RetryUtils::retryWrapper(fn () => $this->sdkConfiguration->client->send($httpRequest, $httpOptions), $retryConfig, $retryCodes);
+            $httpResponse = RetryUtils::retryWrapper(fn () => $client->send($httpRequest, $httpOptions), $retryConfig, $retryCodes);
         } catch (\GuzzleHttp\Exception\GuzzleException $error) {
             $res = $this->sdkConfiguration->hooks->afterError(new Hooks\AfterErrorContext($hookContext), null, $error);
             $httpResponse = $res;

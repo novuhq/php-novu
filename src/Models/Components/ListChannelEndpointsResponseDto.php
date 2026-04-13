@@ -14,7 +14,7 @@ class ListChannelEndpointsResponseDto
     /**
      * List of returned Channel Endpoints
      *
-     * @var array<GetChannelEndpointResponseDto> $data
+     * @var array<\novu\Models\Components\GetChannelEndpointResponseDto> $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\GetChannelEndpointResponseDto>')]
@@ -53,7 +53,7 @@ class ListChannelEndpointsResponseDto
     public ?string $previous;
 
     /**
-     * @param  array<GetChannelEndpointResponseDto>  $data
+     * @param  array<\novu\Models\Components\GetChannelEndpointResponseDto>  $data
      * @param  float  $totalCount
      * @param  bool  $totalCountCapped
      * @param  ?string  $next

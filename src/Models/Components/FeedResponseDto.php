@@ -22,7 +22,7 @@ class FeedResponseDto
     /**
      * Array of notifications returned in the response.
      *
-     * @var array<NotificationFeedItemDto> $data
+     * @var array<\novu\Models\Components\NotificationFeedItemDto> $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\NotificationFeedItemDto>')]
@@ -55,7 +55,7 @@ class FeedResponseDto
 
     /**
      * @param  bool  $hasMore
-     * @param  array<NotificationFeedItemDto>  $data
+     * @param  array<\novu\Models\Components\NotificationFeedItemDto>  $data
      * @param  float  $pageSize
      * @param  float  $page
      * @param  ?float  $totalCount

@@ -9,7 +9,7 @@ Endpoint data specific to the channel type
 
 ```php
 /**
-* @var Components\SlackChannelEndpointDto
+* @var \novu\Models\Components\SlackChannelEndpointDto
 */
 Components\SlackChannelEndpointDto $value = /* values here */
 ```
@@ -18,7 +18,7 @@ Components\SlackChannelEndpointDto $value = /* values here */
 
 ```php
 /**
-* @var Components\SlackUserEndpointDto
+* @var \novu\Models\Components\SlackUserEndpointDto
 */
 Components\SlackUserEndpointDto $value = /* values here */
 ```
@@ -27,7 +27,7 @@ Components\SlackUserEndpointDto $value = /* values here */
 
 ```php
 /**
-* @var Components\WebhookEndpointDto
+* @var \novu\Models\Components\WebhookEndpointDto
 */
 Components\WebhookEndpointDto $value = /* values here */
 ```
@@ -36,7 +36,7 @@ Components\WebhookEndpointDto $value = /* values here */
 
 ```php
 /**
-* @var Components\PhoneEndpointDto
+* @var \novu\Models\Components\PhoneEndpointDto
 */
 Components\PhoneEndpointDto $value = /* values here */
 ```

@@ -22,7 +22,7 @@ class ScheduleDto
     /**
      * Weekly schedule
      *
-     * @var ?WeeklySchedule $weeklySchedule
+     * @var ?\novu\Models\Components\WeeklySchedule $weeklySchedule
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('weeklySchedule')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\WeeklySchedule|null')]
@@ -31,7 +31,7 @@ class ScheduleDto
 
     /**
      * @param  bool  $isEnabled
-     * @param  ?WeeklySchedule  $weeklySchedule
+     * @param  ?\novu\Models\Components\WeeklySchedule  $weeklySchedule
      * @phpstan-pure
      */
     public function __construct(bool $isEnabled, ?WeeklySchedule $weeklySchedule = null)

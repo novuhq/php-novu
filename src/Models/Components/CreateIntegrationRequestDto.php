@@ -22,7 +22,7 @@ class CreateIntegrationRequestDto
     /**
      * The channel type for the integration
      *
-     * @var CreateIntegrationRequestDtoChannel $channel
+     * @var \novu\Models\Components\CreateIntegrationRequestDtoChannel $channel
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('channel')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\CreateIntegrationRequestDtoChannel')]
@@ -58,7 +58,7 @@ class CreateIntegrationRequestDto
     /**
      * The credentials for the integration
      *
-     * @var ?CredentialsDto $credentials
+     * @var ?\novu\Models\Components\CredentialsDto $credentials
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('credentials')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\CredentialsDto|null')]
@@ -86,7 +86,7 @@ class CreateIntegrationRequestDto
     /**
      * Conditions for the integration
      *
-     * @var ?array<StepFilterDto> $conditions
+     * @var ?array<\novu\Models\Components\StepFilterDto> $conditions
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('conditions')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\StepFilterDto>|null')]
@@ -96,7 +96,7 @@ class CreateIntegrationRequestDto
     /**
      * Configurations for the integration
      *
-     * @var ?Configurations $configurations
+     * @var ?\novu\Models\Components\Configurations $configurations
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('configurations')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\Configurations|null')]
@@ -105,15 +105,15 @@ class CreateIntegrationRequestDto
 
     /**
      * @param  string  $providerId
-     * @param  CreateIntegrationRequestDtoChannel  $channel
+     * @param  \novu\Models\Components\CreateIntegrationRequestDtoChannel  $channel
      * @param  ?string  $name
      * @param  ?string  $identifier
      * @param  ?string  $environmentId
-     * @param  ?CredentialsDto  $credentials
+     * @param  ?\novu\Models\Components\CredentialsDto  $credentials
      * @param  ?bool  $active
      * @param  ?bool  $check
-     * @param  ?array<StepFilterDto>  $conditions
-     * @param  ?Configurations  $configurations
+     * @param  ?array<\novu\Models\Components\StepFilterDto>  $conditions
+     * @param  ?\novu\Models\Components\Configurations  $configurations
      * @phpstan-pure
      */
     public function __construct(string $providerId, CreateIntegrationRequestDtoChannel $channel, ?string $name = null, ?string $identifier = null, ?string $environmentId = null, ?CredentialsDto $credentials = null, ?bool $active = null, ?bool $check = null, ?array $conditions = null, ?Configurations $configurations = null)

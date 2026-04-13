@@ -23,7 +23,7 @@ class ActionDto
     /**
      * Redirect configuration for the action.
      *
-     * @var ?RedirectDto $redirect
+     * @var ?\novu\Models\Components\RedirectDto $redirect
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('redirect')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\RedirectDto|null')]
@@ -32,7 +32,7 @@ class ActionDto
 
     /**
      * @param  ?string  $label
-     * @param  ?RedirectDto  $redirect
+     * @param  ?\novu\Models\Components\RedirectDto  $redirect
      * @phpstan-pure
      */
     public function __construct(?string $label = null, ?RedirectDto $redirect = null)

@@ -30,7 +30,7 @@ class CreateSlackChannelEndpointDto
     /**
      * Type of channel endpoint
      *
-     * @var CreateSlackChannelEndpointDtoType $type
+     * @var \novu\Models\Components\CreateSlackChannelEndpointDtoType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\CreateSlackChannelEndpointDtoType')]
@@ -39,7 +39,7 @@ class CreateSlackChannelEndpointDto
     /**
      * Slack channel endpoint data
      *
-     * @var SlackChannelEndpointDto $endpoint
+     * @var \novu\Models\Components\SlackChannelEndpointDto $endpoint
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('endpoint')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\SlackChannelEndpointDto')]
@@ -57,7 +57,7 @@ class CreateSlackChannelEndpointDto
     /**
      * $context
      *
-     * @var ?array<string, string|CreateSlackChannelEndpointDtoContext2> $context
+     * @var ?array<string, string|\novu\Models\Components\CreateSlackChannelEndpointDtoContext2> $context
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('context')]
     #[\Speakeasy\Serializer\Annotation\Type('array<string, string|\novu\Models\Components\CreateSlackChannelEndpointDtoContext2>|null')]
@@ -76,10 +76,10 @@ class CreateSlackChannelEndpointDto
     /**
      * @param  string  $subscriberId
      * @param  string  $integrationIdentifier
-     * @param  CreateSlackChannelEndpointDtoType  $type
-     * @param  SlackChannelEndpointDto  $endpoint
+     * @param  \novu\Models\Components\CreateSlackChannelEndpointDtoType  $type
+     * @param  \novu\Models\Components\SlackChannelEndpointDto  $endpoint
      * @param  ?string  $identifier
-     * @param  ?array<string, string|CreateSlackChannelEndpointDtoContext2>  $context
+     * @param  ?array<string, string|\novu\Models\Components\CreateSlackChannelEndpointDtoContext2>  $context
      * @param  ?string  $connectionIdentifier
      * @phpstan-pure
      */

@@ -34,7 +34,7 @@ class TriggerEventToAllRequestDto
     /**
      * This could be used to override provider specific configurations
      *
-     * @var ?TriggerEventToAllRequestDtoOverrides $overrides
+     * @var ?\novu\Models\Components\TriggerEventToAllRequestDtoOverrides $overrides
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('overrides')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\TriggerEventToAllRequestDtoOverrides|null')]
@@ -56,7 +56,7 @@ class TriggerEventToAllRequestDto
      *     If a new actor object is provided, we will create a new subscriber in our system
      *     
      *
-     * @var string|SubscriberPayloadDto|null $actor
+     * @var string|\novu\Models\Components\SubscriberPayloadDto|null $actor
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('actor')]
     #[\Speakeasy\Serializer\Annotation\Type('string|\novu\Models\Components\SubscriberPayloadDto|null')]
@@ -69,7 +69,7 @@ class TriggerEventToAllRequestDto
      *     If a new tenant object is provided, we will create a new tenant.
      *     
      *
-     * @var string|TenantPayloadDto|null $tenant
+     * @var string|\novu\Models\Components\TenantPayloadDto|null $tenant
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('tenant')]
     #[\Speakeasy\Serializer\Annotation\Type('string|\novu\Models\Components\TenantPayloadDto|null')]
@@ -79,7 +79,7 @@ class TriggerEventToAllRequestDto
     /**
      * $context
      *
-     * @var ?array<string, string|TriggerEventToAllRequestDtoContext2> $context
+     * @var ?array<string, string|\novu\Models\Components\TriggerEventToAllRequestDtoContext2> $context
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('context')]
     #[\Speakeasy\Serializer\Annotation\Type('array<string, string|\novu\Models\Components\TriggerEventToAllRequestDtoContext2>|null')]
@@ -89,11 +89,11 @@ class TriggerEventToAllRequestDto
     /**
      * @param  string  $name
      * @param  array<string, mixed>  $payload
-     * @param  ?TriggerEventToAllRequestDtoOverrides  $overrides
+     * @param  ?\novu\Models\Components\TriggerEventToAllRequestDtoOverrides  $overrides
      * @param  ?string  $transactionId
-     * @param  string|SubscriberPayloadDto|null  $actor
-     * @param  string|TenantPayloadDto|null  $tenant
-     * @param  ?array<string, string|TriggerEventToAllRequestDtoContext2>  $context
+     * @param  string|\novu\Models\Components\SubscriberPayloadDto|null  $actor
+     * @param  string|\novu\Models\Components\TenantPayloadDto|null  $tenant
+     * @param  ?array<string, string|\novu\Models\Components\TriggerEventToAllRequestDtoContext2>  $context
      * @phpstan-pure
      */
     public function __construct(string $name, array $payload, ?TriggerEventToAllRequestDtoOverrides $overrides = null, ?string $transactionId = null, string|SubscriberPayloadDto|null $actor = null, string|TenantPayloadDto|null $tenant = null, ?array $context = null)

@@ -25,7 +25,7 @@ class DigestStepResponseDtoControlValues
     /**
      * The type of digest strategy. Determines which fields are applicable.
      *
-     * @var ?DigestStepResponseDtoType $type
+     * @var ?\novu\Models\Components\DigestStepResponseDtoType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\DigestStepResponseDtoType|null')]
@@ -44,7 +44,7 @@ class DigestStepResponseDtoControlValues
     /**
      * The unit of time for the digest interval (for REGULAR type).
      *
-     * @var ?DigestStepResponseDtoUnit $unit
+     * @var ?\novu\Models\Components\DigestStepResponseDtoUnit $unit
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('unit')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\DigestStepResponseDtoUnit|null')]
@@ -54,7 +54,7 @@ class DigestStepResponseDtoControlValues
     /**
      * Configuration for look-back window (for REGULAR type).
      *
-     * @var ?LookBackWindowDto $lookBackWindow
+     * @var ?\novu\Models\Components\LookBackWindowDto $lookBackWindow
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('lookBackWindow')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\LookBackWindowDto|null')]
@@ -91,10 +91,10 @@ class DigestStepResponseDtoControlValues
 
     /**
      * @param  ?array<string, mixed>  $skip
-     * @param  ?DigestStepResponseDtoType  $type
+     * @param  ?\novu\Models\Components\DigestStepResponseDtoType  $type
      * @param  ?float  $amount
-     * @param  ?DigestStepResponseDtoUnit  $unit
-     * @param  ?LookBackWindowDto  $lookBackWindow
+     * @param  ?\novu\Models\Components\DigestStepResponseDtoUnit  $unit
+     * @param  ?\novu\Models\Components\LookBackWindowDto  $lookBackWindow
      * @param  ?string  $cron
      * @param  ?string  $digestKey
      * @param  ?array<string, mixed>  $additionalProperties

@@ -31,7 +31,7 @@ class AutoConfigureIntegrationResponseDto
     /**
      * The updated configurations after auto-configuration
      *
-     * @var ?Integration $integration
+     * @var ?\novu\Models\Components\Integration $integration
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('integration')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\Integration|null')]
@@ -41,7 +41,7 @@ class AutoConfigureIntegrationResponseDto
     /**
      * @param  bool  $success
      * @param  ?string  $message
-     * @param  ?Integration  $integration
+     * @param  ?\novu\Models\Components\Integration  $integration
      * @phpstan-pure
      */
     public function __construct(bool $success, ?string $message = null, ?Integration $integration = null)

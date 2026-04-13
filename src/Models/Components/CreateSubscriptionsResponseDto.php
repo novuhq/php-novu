@@ -14,7 +14,7 @@ class CreateSubscriptionsResponseDto
     /**
      * The list of successfully created subscriptions
      *
-     * @var array<SubscriptionResponseDto> $data
+     * @var array<\novu\Models\Components\SubscriptionResponseDto> $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\SubscriptionResponseDto>')]
@@ -23,7 +23,7 @@ class CreateSubscriptionsResponseDto
     /**
      * Metadata about the operation
      *
-     * @var MetaDto $meta
+     * @var \novu\Models\Components\MetaDto $meta
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('meta')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\MetaDto')]
@@ -32,7 +32,7 @@ class CreateSubscriptionsResponseDto
     /**
      * The list of errors for failed subscription attempts
      *
-     * @var ?array<SubscriptionErrorDto> $errors
+     * @var ?array<\novu\Models\Components\SubscriptionErrorDto> $errors
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('errors')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\SubscriptionErrorDto>|null')]
@@ -40,9 +40,9 @@ class CreateSubscriptionsResponseDto
     public ?array $errors = null;
 
     /**
-     * @param  array<SubscriptionResponseDto>  $data
-     * @param  MetaDto  $meta
-     * @param  ?array<SubscriptionErrorDto>  $errors
+     * @param  array<\novu\Models\Components\SubscriptionResponseDto>  $data
+     * @param  \novu\Models\Components\MetaDto  $meta
+     * @param  ?array<\novu\Models\Components\SubscriptionErrorDto>  $errors
      * @phpstan-pure
      */
     public function __construct(array $data, MetaDto $meta, ?array $errors = null)

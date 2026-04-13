@@ -30,7 +30,7 @@ class CreateMsTeamsUserEndpointDto
     /**
      * Type of channel endpoint
      *
-     * @var CreateMsTeamsUserEndpointDtoType $type
+     * @var \novu\Models\Components\CreateMsTeamsUserEndpointDtoType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\CreateMsTeamsUserEndpointDtoType')]
@@ -39,7 +39,7 @@ class CreateMsTeamsUserEndpointDto
     /**
      * MS Teams user endpoint data
      *
-     * @var MsTeamsUserEndpointDto $endpoint
+     * @var \novu\Models\Components\MsTeamsUserEndpointDto $endpoint
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('endpoint')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\MsTeamsUserEndpointDto')]
@@ -57,7 +57,7 @@ class CreateMsTeamsUserEndpointDto
     /**
      * $context
      *
-     * @var ?array<string, string|CreateMsTeamsUserEndpointDtoContext2> $context
+     * @var ?array<string, string|\novu\Models\Components\CreateMsTeamsUserEndpointDtoContext2> $context
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('context')]
     #[\Speakeasy\Serializer\Annotation\Type('array<string, string|\novu\Models\Components\CreateMsTeamsUserEndpointDtoContext2>|null')]
@@ -76,10 +76,10 @@ class CreateMsTeamsUserEndpointDto
     /**
      * @param  string  $subscriberId
      * @param  string  $integrationIdentifier
-     * @param  CreateMsTeamsUserEndpointDtoType  $type
-     * @param  MsTeamsUserEndpointDto  $endpoint
+     * @param  \novu\Models\Components\CreateMsTeamsUserEndpointDtoType  $type
+     * @param  \novu\Models\Components\MsTeamsUserEndpointDto  $endpoint
      * @param  ?string  $identifier
-     * @param  ?array<string, string|CreateMsTeamsUserEndpointDtoContext2>  $context
+     * @param  ?array<string, string|\novu\Models\Components\CreateMsTeamsUserEndpointDtoContext2>  $context
      * @param  ?string  $connectionIdentifier
      * @phpstan-pure
      */

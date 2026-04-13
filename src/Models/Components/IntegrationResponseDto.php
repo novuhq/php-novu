@@ -52,9 +52,9 @@ class IntegrationResponseDto
     public string $providerId;
 
     /**
-     * The channel type for the integration, which defines how the integration communicates (e.g., email, SMS).
+     * The channel type for the integration, which defines how it communicates (e.g., email, SMS).
      *
-     * @var IntegrationResponseDtoChannel $channel
+     * @var \novu\Models\Components\IntegrationResponseDtoChannel $channel
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('channel')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\IntegrationResponseDtoChannel')]
@@ -63,7 +63,7 @@ class IntegrationResponseDto
     /**
      * The credentials required for the integration to function, including API keys and other sensitive information.
      *
-     * @var CredentialsDto $credentials
+     * @var \novu\Models\Components\CredentialsDto $credentials
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('credentials')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\CredentialsDto')]
@@ -105,7 +105,7 @@ class IntegrationResponseDto
     /**
      * The configurations required for enabling the additional configurations of the integration.
      *
-     * @var ?ConfigurationsDto $configurations
+     * @var ?\novu\Models\Components\ConfigurationsDto $configurations
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('configurations')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ConfigurationsDto|null')]
@@ -133,7 +133,7 @@ class IntegrationResponseDto
     /**
      * An array of conditions associated with the integration that may influence its behavior or processing logic.
      *
-     * @var ?array<StepFilterDto> $conditions
+     * @var ?array<\novu\Models\Components\StepFilterDto> $conditions
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('conditions')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\StepFilterDto>|null')]
@@ -146,16 +146,16 @@ class IntegrationResponseDto
      * @param  string  $name
      * @param  string  $identifier
      * @param  string  $providerId
-     * @param  IntegrationResponseDtoChannel  $channel
-     * @param  CredentialsDto  $credentials
+     * @param  \novu\Models\Components\IntegrationResponseDtoChannel  $channel
+     * @param  \novu\Models\Components\CredentialsDto  $credentials
      * @param  bool  $active
      * @param  bool  $deleted
      * @param  bool  $primary
      * @param  ?string  $id
-     * @param  ?ConfigurationsDto  $configurations
+     * @param  ?\novu\Models\Components\ConfigurationsDto  $configurations
      * @param  ?string  $deletedAt
      * @param  ?string  $deletedBy
-     * @param  ?array<StepFilterDto>  $conditions
+     * @param  ?array<\novu\Models\Components\StepFilterDto>  $conditions
      * @phpstan-pure
      */
     public function __construct(string $environmentId, string $organizationId, string $name, string $identifier, string $providerId, IntegrationResponseDtoChannel $channel, CredentialsDto $credentials, bool $active, bool $deleted, bool $primary, ?string $id = null, ?ConfigurationsDto $configurations = null, ?string $deletedAt = null, ?string $deletedBy = null, ?array $conditions = null)

@@ -62,16 +62,16 @@ class WorkflowResponseDto
     /**
      * Steps of the workflow
      *
-     * @var array<InAppStepResponseDto|EmailStepResponseDto|SmsStepResponseDto|PushStepResponseDto|ChatStepResponseDto|DelayStepResponseDto|DigestStepResponseDto|CustomStepResponseDto|ThrottleStepResponseDto> $steps
+     * @var array<\novu\Models\Components\InAppStepResponseDto|\novu\Models\Components\EmailStepResponseDto|\novu\Models\Components\SmsStepResponseDto|\novu\Models\Components\PushStepResponseDto|\novu\Models\Components\ChatStepResponseDto|\novu\Models\Components\DelayStepResponseDto|\novu\Models\Components\DigestStepResponseDto|\novu\Models\Components\CustomStepResponseDto|\novu\Models\Components\ThrottleStepResponseDto|\novu\Models\Components\HttpRequestStepResponseDto> $steps
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('steps')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\InAppStepResponseDto|\novu\Models\Components\EmailStepResponseDto|\novu\Models\Components\SmsStepResponseDto|\novu\Models\Components\PushStepResponseDto|\novu\Models\Components\ChatStepResponseDto|\novu\Models\Components\DelayStepResponseDto|\novu\Models\Components\DigestStepResponseDto|\novu\Models\Components\CustomStepResponseDto|\novu\Models\Components\ThrottleStepResponseDto>')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\InAppStepResponseDto|\novu\Models\Components\EmailStepResponseDto|\novu\Models\Components\SmsStepResponseDto|\novu\Models\Components\PushStepResponseDto|\novu\Models\Components\ChatStepResponseDto|\novu\Models\Components\DelayStepResponseDto|\novu\Models\Components\DigestStepResponseDto|\novu\Models\Components\CustomStepResponseDto|\novu\Models\Components\ThrottleStepResponseDto|\novu\Models\Components\HttpRequestStepResponseDto>')]
     public array $steps;
 
     /**
      * Origin of the layout
      *
-     * @var ResourceOriginEnum $origin
+     * @var \novu\Models\Components\ResourceOriginEnum $origin
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('origin')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ResourceOriginEnum')]
@@ -80,7 +80,7 @@ class WorkflowResponseDto
     /**
      * Preferences for the workflow
      *
-     * @var WorkflowPreferencesResponseDto $preferences
+     * @var \novu\Models\Components\WorkflowPreferencesResponseDto $preferences
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('preferences')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\WorkflowPreferencesResponseDto')]
@@ -89,7 +89,7 @@ class WorkflowResponseDto
     /**
      * Status of the workflow
      *
-     * @var WorkflowStatusEnum $status
+     * @var \novu\Models\Components\WorkflowStatusEnum $status
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\WorkflowStatusEnum')]
@@ -98,7 +98,7 @@ class WorkflowResponseDto
     /**
      * Severity of the workflow
      *
-     * @var SeverityLevelEnum $severity
+     * @var \novu\Models\Components\SeverityLevelEnum $severity
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('severity')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\SeverityLevelEnum')]
@@ -135,7 +135,7 @@ class WorkflowResponseDto
     /**
      * Runtime issues for workflow creation and update
      *
-     * @var ?array<string, RuntimeIssueDto> $issues
+     * @var ?array<string, \novu\Models\Components\RuntimeIssueDto> $issues
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('issues')]
     #[\Speakeasy\Serializer\Annotation\Type('array<string, \novu\Models\Components\RuntimeIssueDto>|null')]
@@ -155,7 +155,7 @@ class WorkflowResponseDto
     /**
      * User who last updated the workflow
      *
-     * @var ?WorkflowResponseDtoUpdatedBy $updatedBy
+     * @var ?\novu\Models\Components\WorkflowResponseDtoUpdatedBy $updatedBy
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('updatedBy')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\WorkflowResponseDtoUpdatedBy|null')]
@@ -174,7 +174,7 @@ class WorkflowResponseDto
     /**
      * User who last published the workflow
      *
-     * @var ?LastPublishedBy $lastPublishedBy
+     * @var ?\novu\Models\Components\LastPublishedBy $lastPublishedBy
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('lastPublishedBy')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\LastPublishedBy|null')]
@@ -225,21 +225,21 @@ class WorkflowResponseDto
      * @param  string  $slug
      * @param  string  $updatedAt
      * @param  string  $createdAt
-     * @param  array<InAppStepResponseDto|EmailStepResponseDto|SmsStepResponseDto|PushStepResponseDto|ChatStepResponseDto|DelayStepResponseDto|DigestStepResponseDto|CustomStepResponseDto|ThrottleStepResponseDto>  $steps
-     * @param  ResourceOriginEnum  $origin
-     * @param  WorkflowPreferencesResponseDto  $preferences
-     * @param  WorkflowStatusEnum  $status
-     * @param  SeverityLevelEnum  $severity
+     * @param  array<\novu\Models\Components\InAppStepResponseDto|\novu\Models\Components\EmailStepResponseDto|\novu\Models\Components\SmsStepResponseDto|\novu\Models\Components\PushStepResponseDto|\novu\Models\Components\ChatStepResponseDto|\novu\Models\Components\DelayStepResponseDto|\novu\Models\Components\DigestStepResponseDto|\novu\Models\Components\CustomStepResponseDto|\novu\Models\Components\ThrottleStepResponseDto|\novu\Models\Components\HttpRequestStepResponseDto>  $steps
+     * @param  \novu\Models\Components\ResourceOriginEnum  $origin
+     * @param  \novu\Models\Components\WorkflowPreferencesResponseDto  $preferences
+     * @param  \novu\Models\Components\WorkflowStatusEnum  $status
+     * @param  \novu\Models\Components\SeverityLevelEnum  $severity
      * @param  ?string  $description
      * @param  ?array<string>  $tags
      * @param  ?bool  $active
      * @param  ?bool  $validatePayload
      * @param  ?bool  $isTranslationEnabled
-     * @param  ?array<string, RuntimeIssueDto>  $issues
+     * @param  ?array<string, \novu\Models\Components\RuntimeIssueDto>  $issues
      * @param  ?array<string, mixed>  $payloadSchema
-     * @param  ?WorkflowResponseDtoUpdatedBy  $updatedBy
+     * @param  ?\novu\Models\Components\WorkflowResponseDtoUpdatedBy  $updatedBy
      * @param  ?string  $lastPublishedAt
-     * @param  ?LastPublishedBy  $lastPublishedBy
+     * @param  ?\novu\Models\Components\LastPublishedBy  $lastPublishedBy
      * @param  ?string  $lastTriggeredAt
      * @param  ?array<string, mixed>  $payloadExample
      * @phpstan-pure

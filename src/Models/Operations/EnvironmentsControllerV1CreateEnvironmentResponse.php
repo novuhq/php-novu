@@ -42,7 +42,7 @@ class EnvironmentsControllerV1CreateEnvironmentResponse
     /**
      * Created
      *
-     * @var ?Components\EnvironmentResponseDto $environmentResponseDto
+     * @var ?\novu\Models\Components\EnvironmentResponseDto $environmentResponseDto
      */
     public ?Components\EnvironmentResponseDto $environmentResponseDto = null;
 
@@ -51,7 +51,7 @@ class EnvironmentsControllerV1CreateEnvironmentResponse
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
-     * @param  ?Components\EnvironmentResponseDto  $environmentResponseDto
+     * @param  ?\novu\Models\Components\EnvironmentResponseDto  $environmentResponseDto
      * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\EnvironmentResponseDto $environmentResponseDto = null, ?array $headers = [])

@@ -13,7 +13,7 @@ class One
 {
     /**
      *
-     * @var ?ResultType $type
+     * @var ?\novu\Models\Components\ResultType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ResultType|null')]
@@ -22,7 +22,7 @@ class One
 
     /**
      *
-     * @var ?EmailLayoutRenderOutput $preview
+     * @var ?\novu\Models\Components\EmailLayoutRenderOutput $preview
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('preview')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\EmailLayoutRenderOutput|null')]
@@ -30,8 +30,8 @@ class One
     public ?EmailLayoutRenderOutput $preview = null;
 
     /**
-     * @param  ?ResultType  $type
-     * @param  ?EmailLayoutRenderOutput  $preview
+     * @param  ?\novu\Models\Components\ResultType  $type
+     * @param  ?\novu\Models\Components\EmailLayoutRenderOutput  $preview
      * @phpstan-pure
      */
     public function __construct(?ResultType $type = null, ?EmailLayoutRenderOutput $preview = null)

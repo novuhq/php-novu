@@ -13,6 +13,7 @@ use novu\Utils\SpeakeasyMetadata;
 class SubscribersControllerUpdateSubscriberPreferencesRequest
 {
     /**
+     * The identifier of the subscriber
      *
      * @var string $subscriberId
      */
@@ -21,7 +22,7 @@ class SubscribersControllerUpdateSubscriberPreferencesRequest
 
     /**
      *
-     * @var Components\PatchSubscriberPreferencesDto $patchSubscriberPreferencesDto
+     * @var \novu\Models\Components\PatchSubscriberPreferencesDto $patchSubscriberPreferencesDto
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\PatchSubscriberPreferencesDto $patchSubscriberPreferencesDto;
@@ -36,7 +37,7 @@ class SubscribersControllerUpdateSubscriberPreferencesRequest
 
     /**
      * @param  string  $subscriberId
-     * @param  Components\PatchSubscriberPreferencesDto  $patchSubscriberPreferencesDto
+     * @param  \novu\Models\Components\PatchSubscriberPreferencesDto  $patchSubscriberPreferencesDto
      * @param  ?string  $idempotencyKey
      * @phpstan-pure
      */

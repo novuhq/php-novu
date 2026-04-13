@@ -42,7 +42,7 @@ class MessagesControllerDeleteMessageResponse
     /**
      * OK
      *
-     * @var ?Components\DeleteMessageResponseDto $deleteMessageResponseDto
+     * @var ?\novu\Models\Components\DeleteMessageResponseDto $deleteMessageResponseDto
      */
     public ?Components\DeleteMessageResponseDto $deleteMessageResponseDto = null;
 
@@ -51,7 +51,7 @@ class MessagesControllerDeleteMessageResponse
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
-     * @param  ?Components\DeleteMessageResponseDto  $deleteMessageResponseDto
+     * @param  ?\novu\Models\Components\DeleteMessageResponseDto  $deleteMessageResponseDto
      * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\DeleteMessageResponseDto $deleteMessageResponseDto = null, ?array $headers = [])

@@ -15,7 +15,7 @@ class TriggerEventToAllRequestDtoChannels
     /**
      * Email channel specific overrides
      *
-     * @var ?EmailChannelOverrides $email
+     * @var ?\novu\Models\Components\EmailChannelOverrides $email
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('email')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\EmailChannelOverrides|null')]
@@ -23,7 +23,7 @@ class TriggerEventToAllRequestDtoChannels
     public ?EmailChannelOverrides $email = null;
 
     /**
-     * @param  ?EmailChannelOverrides  $email
+     * @param  ?\novu\Models\Components\EmailChannelOverrides  $email
      * @phpstan-pure
      */
     public function __construct(?EmailChannelOverrides $email = null)

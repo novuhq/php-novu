@@ -22,7 +22,7 @@ class EmailControlsDto
     /**
      * Editor type of the layout.
      *
-     * @var EditorType $editorType
+     * @var \novu\Models\Components\EditorType $editorType
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('editorType')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\EditorType')]
@@ -30,7 +30,7 @@ class EmailControlsDto
 
     /**
      * @param  string  $body
-     * @param  EditorType  $editorType
+     * @param  \novu\Models\Components\EditorType  $editorType
      * @phpstan-pure
      */
     public function __construct(string $body, EditorType $editorType)

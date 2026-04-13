@@ -45,7 +45,7 @@ class UpdateEnvironmentRequestDto
 
     /**
      *
-     * @var ?InBoundParseDomainDto $dns
+     * @var ?\novu\Models\Components\InBoundParseDomainDto $dns
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('dns')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\InBoundParseDomainDto|null')]
@@ -54,7 +54,7 @@ class UpdateEnvironmentRequestDto
 
     /**
      *
-     * @var ?BridgeConfigurationDto $bridge
+     * @var ?\novu\Models\Components\BridgeConfigurationDto $bridge
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('bridge')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\BridgeConfigurationDto|null')]
@@ -66,8 +66,8 @@ class UpdateEnvironmentRequestDto
      * @param  ?string  $identifier
      * @param  ?string  $parentId
      * @param  ?string  $color
-     * @param  ?InBoundParseDomainDto  $dns
-     * @param  ?BridgeConfigurationDto  $bridge
+     * @param  ?\novu\Models\Components\InBoundParseDomainDto  $dns
+     * @param  ?\novu\Models\Components\BridgeConfigurationDto  $bridge
      * @phpstan-pure
      */
     public function __construct(?string $name = null, ?string $identifier = null, ?string $parentId = null, ?string $color = null, ?InBoundParseDomainDto $dns = null, ?BridgeConfigurationDto $bridge = null)

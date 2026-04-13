@@ -14,7 +14,7 @@ class ListWorkflowResponse
     /**
      * List of workflows
      *
-     * @var array<WorkflowListResponseDto> $workflows
+     * @var array<\novu\Models\Components\WorkflowListResponseDto> $workflows
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('workflows')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\WorkflowListResponseDto>')]
@@ -29,7 +29,7 @@ class ListWorkflowResponse
     public float $totalCount;
 
     /**
-     * @param  array<WorkflowListResponseDto>  $workflows
+     * @param  array<\novu\Models\Components\WorkflowListResponseDto>  $workflows
      * @param  float  $totalCount
      * @phpstan-pure
      */

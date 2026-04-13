@@ -53,10 +53,10 @@ class SubscribersPreferences
      *     This API returns all five channels preferences for all workflows and global preferences.
      *
      * @param  string  $subscriberId
-     * @param  ?Operations\Criticality  $criticality
+     * @param  ?\novu\Models\Operations\Criticality  $criticality
      * @param  ?array<string>  $contextKeys
      * @param  ?string  $idempotencyKey
-     * @return Operations\SubscribersControllerGetSubscriberPreferencesResponse
+     * @return \novu\Models\Operations\SubscribersControllerGetSubscriberPreferencesResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function list(string $subscriberId, ?Operations\Criticality $criticality = null, ?array $contextKeys = null, ?string $idempotencyKey = null, ?Options $options = null): Operations\SubscribersControllerGetSubscriberPreferencesResponse

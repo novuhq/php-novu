@@ -69,6 +69,7 @@ enum ProviderId: string
     case Imedia = 'imedia';
     case Sinch = 'sinch';
     case IsendproSms = 'isendpro-sms';
+    case CmTelecom = 'cm-telecom';
     case Fcm = 'fcm';
     case Apns = 'apns';
     case Expo = 'expo';

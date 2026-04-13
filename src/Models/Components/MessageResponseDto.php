@@ -62,7 +62,7 @@ class MessageResponseDto
     /**
      * Channel type through which the message is sent
      *
-     * @var ChannelTypeEnum $channel
+     * @var \novu\Models\Components\ChannelTypeEnum $channel
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('channel')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ChannelTypeEnum')]
@@ -87,7 +87,7 @@ class MessageResponseDto
     /**
      * Call to action associated with the message
      *
-     * @var MessageCTA $cta
+     * @var \novu\Models\Components\MessageCTA $cta
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('cta')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\MessageCTA')]
@@ -96,7 +96,7 @@ class MessageResponseDto
     /**
      * Status of the message
      *
-     * @var MessageStatusEnum $status
+     * @var \novu\Models\Components\MessageStatusEnum $status
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\MessageStatusEnum')]
@@ -114,7 +114,7 @@ class MessageResponseDto
     /**
      * Subscriber details, if available
      *
-     * @var ?SubscriberResponseDto $subscriber
+     * @var ?\novu\Models\Components\SubscriberResponseDto $subscriber
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('subscriber')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\SubscriberResponseDto|null')]
@@ -124,7 +124,7 @@ class MessageResponseDto
     /**
      * Workflow template associated with the message
      *
-     * @var ?WorkflowResponse $template
+     * @var ?\novu\Models\Components\WorkflowResponse $template
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('template')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\WorkflowResponse|null')]
@@ -310,7 +310,7 @@ class MessageResponseDto
     /**
      * Content of the message, can be an email block or a string
      *
-     * @var array<EmailBlock>|string|null $content
+     * @var array<\novu\Models\Components\EmailBlock>|string|null $content
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('content')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\EmailBlock>|string|null')]
@@ -333,14 +333,14 @@ class MessageResponseDto
      * @param  string  $subscriberId
      * @param  string  $createdAt
      * @param  string  $transactionId
-     * @param  ChannelTypeEnum  $channel
+     * @param  \novu\Models\Components\ChannelTypeEnum  $channel
      * @param  bool  $read
      * @param  bool  $seen
-     * @param  MessageCTA  $cta
-     * @param  MessageStatusEnum  $status
+     * @param  \novu\Models\Components\MessageCTA  $cta
+     * @param  \novu\Models\Components\MessageStatusEnum  $status
      * @param  ?string  $id
-     * @param  ?SubscriberResponseDto  $subscriber
-     * @param  ?WorkflowResponse  $template
+     * @param  ?\novu\Models\Components\SubscriberResponseDto  $subscriber
+     * @param  ?\novu\Models\Components\WorkflowResponse  $template
      * @param  ?string  $templateIdentifier
      * @param  ?array<string>  $deliveredAt
      * @param  ?string  $lastSeenDate
@@ -360,7 +360,7 @@ class MessageResponseDto
      * @param  ?array<string>  $contextKeys
      * @param  ?string  $templateId
      * @param  ?string  $messageTemplateId
-     * @param  array<EmailBlock>|string|null  $content
+     * @param  array<\novu\Models\Components\EmailBlock>|string|null  $content
      * @param  ?string  $feedId
      * @phpstan-pure
      */

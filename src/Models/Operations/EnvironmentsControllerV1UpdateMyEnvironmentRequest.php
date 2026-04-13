@@ -22,7 +22,7 @@ class EnvironmentsControllerV1UpdateMyEnvironmentRequest
 
     /**
      *
-     * @var Components\UpdateEnvironmentRequestDto $updateEnvironmentRequestDto
+     * @var \novu\Models\Components\UpdateEnvironmentRequestDto $updateEnvironmentRequestDto
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\UpdateEnvironmentRequestDto $updateEnvironmentRequestDto;
@@ -37,7 +37,7 @@ class EnvironmentsControllerV1UpdateMyEnvironmentRequest
 
     /**
      * @param  string  $environmentId
-     * @param  Components\UpdateEnvironmentRequestDto  $updateEnvironmentRequestDto
+     * @param  \novu\Models\Components\UpdateEnvironmentRequestDto  $updateEnvironmentRequestDto
      * @param  ?string  $idempotencyKey
      * @phpstan-pure
      */

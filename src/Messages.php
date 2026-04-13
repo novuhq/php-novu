@@ -54,7 +54,7 @@ class Messages
      *
      * @param  string  $messageId
      * @param  ?string  $idempotencyKey
-     * @return Operations\MessagesControllerDeleteMessageResponse
+     * @return \novu\Models\Operations\MessagesControllerDeleteMessageResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function delete(string $messageId, ?string $idempotencyKey = null, ?Options $options = null): Operations\MessagesControllerDeleteMessageResponse
@@ -200,9 +200,9 @@ class Messages
      *     This API supports filtering by **channel** and delete all messages associated with the **transactionId**.
      *
      * @param  string  $transactionId
-     * @param  ?Operations\MessagesControllerDeleteMessagesByTransactionIdQueryParamChannel  $channel
+     * @param  ?\novu\Models\Operations\MessagesControllerDeleteMessagesByTransactionIdQueryParamChannel  $channel
      * @param  ?string  $idempotencyKey
-     * @return Operations\MessagesControllerDeleteMessagesByTransactionIdResponse
+     * @return \novu\Models\Operations\MessagesControllerDeleteMessagesByTransactionIdResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function deleteByTransactionId(string $transactionId, ?Operations\MessagesControllerDeleteMessagesByTransactionIdQueryParamChannel $channel = null, ?string $idempotencyKey = null, ?Options $options = null): Operations\MessagesControllerDeleteMessagesByTransactionIdResponse
@@ -342,8 +342,8 @@ class Messages
      *     This API supports filtering by **channel**, **subscriberId**, and **transactionId**. 
      *     This API returns a paginated list of messages.
      *
-     * @param  ?Operations\MessagesControllerGetMessagesRequest  $request
-     * @return Operations\MessagesControllerGetMessagesResponse
+     * @param  ?\novu\Models\Operations\MessagesControllerGetMessagesRequest  $request
+     * @return \novu\Models\Operations\MessagesControllerGetMessagesResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function get(?Operations\MessagesControllerGetMessagesRequest $request = null, ?Options $options = null): Operations\MessagesControllerGetMessagesResponse

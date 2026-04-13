@@ -86,7 +86,7 @@ class NotificationFeedItemDto
     /**
      * Channel type through which the message is sent
      *
-     * @var ChannelTypeEnum $channel
+     * @var \novu\Models\Components\ChannelTypeEnum $channel
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('channel')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ChannelTypeEnum')]
@@ -119,7 +119,7 @@ class NotificationFeedItemDto
     /**
      * Call-to-action information associated with the notification.
      *
-     * @var MessageCTA $cta
+     * @var \novu\Models\Components\MessageCTA $cta
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('cta')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\MessageCTA')]
@@ -128,7 +128,7 @@ class NotificationFeedItemDto
     /**
      * Current status of the notification.
      *
-     * @var NotificationFeedItemDtoStatus $status
+     * @var \novu\Models\Components\NotificationFeedItemDtoStatus $status
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\NotificationFeedItemDtoStatus')]
@@ -146,7 +146,7 @@ class NotificationFeedItemDto
     /**
      * Actor details related to the notification, if applicable.
      *
-     * @var ?ActorFeedItemDto $actor
+     * @var ?\novu\Models\Components\ActorFeedItemDto $actor
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('actor')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ActorFeedItemDto|null')]
@@ -156,7 +156,7 @@ class NotificationFeedItemDto
     /**
      * Subscriber details associated with this notification.
      *
-     * @var ?SubscriberFeedResponseDto $subscriber
+     * @var ?\novu\Models\Components\SubscriberFeedResponseDto $subscriber
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('subscriber')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\SubscriberFeedResponseDto|null')]
@@ -277,15 +277,15 @@ class NotificationFeedItemDto
      * @param  string  $jobId
      * @param  string  $transactionId
      * @param  string  $content
-     * @param  ChannelTypeEnum  $channel
+     * @param  \novu\Models\Components\ChannelTypeEnum  $channel
      * @param  bool  $read
      * @param  bool  $seen
      * @param  bool  $archived
-     * @param  MessageCTA  $cta
-     * @param  NotificationFeedItemDtoStatus  $status
+     * @param  \novu\Models\Components\MessageCTA  $cta
+     * @param  \novu\Models\Components\NotificationFeedItemDtoStatus  $status
      * @param  ?string  $messageTemplateId
-     * @param  ?ActorFeedItemDto  $actor
-     * @param  ?SubscriberFeedResponseDto  $subscriber
+     * @param  ?\novu\Models\Components\ActorFeedItemDto  $actor
+     * @param  ?\novu\Models\Components\SubscriberFeedResponseDto  $subscriber
      * @param  ?array<string, mixed>  $payload
      * @param  ?array<string, mixed>  $overrides
      * @param  ?string  $feedId

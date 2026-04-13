@@ -15,7 +15,7 @@ class ChannelEndpointsControllerCreateChannelEndpointRequest
     /**
      * Channel endpoint creation request. The structure varies based on the type field.
      *
-     * @var Components\CreateSlackChannelEndpointDto|Components\CreateSlackUserEndpointDto|Components\CreateWebhookEndpointDto|Components\CreatePhoneEndpointDto|Components\CreateMsTeamsChannelEndpointDto|Components\CreateMsTeamsUserEndpointDto $requestBody
+     * @var \novu\Models\Components\CreateSlackChannelEndpointDto|\novu\Models\Components\CreateSlackUserEndpointDto|\novu\Models\Components\CreateWebhookEndpointDto|\novu\Models\Components\CreatePhoneEndpointDto|\novu\Models\Components\CreateMsTeamsChannelEndpointDto|\novu\Models\Components\CreateMsTeamsUserEndpointDto $requestBody
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\CreateSlackChannelEndpointDto|Components\CreateSlackUserEndpointDto|Components\CreateWebhookEndpointDto|Components\CreatePhoneEndpointDto|Components\CreateMsTeamsChannelEndpointDto|Components\CreateMsTeamsUserEndpointDto $requestBody;
@@ -29,7 +29,7 @@ class ChannelEndpointsControllerCreateChannelEndpointRequest
     public ?string $idempotencyKey = null;
 
     /**
-     * @param  Components\CreateSlackChannelEndpointDto|Components\CreateSlackUserEndpointDto|Components\CreateWebhookEndpointDto|Components\CreatePhoneEndpointDto|Components\CreateMsTeamsChannelEndpointDto|Components\CreateMsTeamsUserEndpointDto  $requestBody
+     * @param  \novu\Models\Components\CreateSlackChannelEndpointDto|\novu\Models\Components\CreateSlackUserEndpointDto|\novu\Models\Components\CreateWebhookEndpointDto|\novu\Models\Components\CreatePhoneEndpointDto|\novu\Models\Components\CreateMsTeamsChannelEndpointDto|\novu\Models\Components\CreateMsTeamsUserEndpointDto  $requestBody
      * @param  ?string  $idempotencyKey
      * @phpstan-pure
      */

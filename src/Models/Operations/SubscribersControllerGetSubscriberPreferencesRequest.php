@@ -12,6 +12,7 @@ use novu\Utils\SpeakeasyMetadata;
 class SubscribersControllerGetSubscriberPreferencesRequest
 {
     /**
+     * The identifier of the subscriber
      *
      * @var string $subscriberId
      */
@@ -36,14 +37,14 @@ class SubscribersControllerGetSubscriberPreferencesRequest
 
     /**
      *
-     * @var ?Criticality $criticality
+     * @var ?\novu\Models\Operations\Criticality $criticality
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=criticality')]
     public ?Criticality $criticality = null;
 
     /**
      * @param  string  $subscriberId
-     * @param  ?Criticality  $criticality
+     * @param  ?\novu\Models\Operations\Criticality  $criticality
      * @param  ?array<string>  $contextKeys
      * @param  ?string  $idempotencyKey
      * @phpstan-pure

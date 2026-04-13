@@ -22,7 +22,7 @@ class TranslationResponseDto
     /**
      * Resource type
      *
-     * @var TranslationResponseDtoResourceType $resourceType
+     * @var \novu\Models\Components\TranslationResponseDtoResourceType $resourceType
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('resourceType')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\TranslationResponseDtoResourceType')]
@@ -63,7 +63,7 @@ class TranslationResponseDto
 
     /**
      * @param  string  $resourceId
-     * @param  TranslationResponseDtoResourceType  $resourceType
+     * @param  \novu\Models\Components\TranslationResponseDtoResourceType  $resourceType
      * @param  string  $locale
      * @param  array<string, mixed>  $content
      * @param  string  $createdAt

@@ -14,7 +14,7 @@ class TranslationControllerCreateTranslationEndpointRequest
 {
     /**
      *
-     * @var Components\CreateTranslationRequestDto $createTranslationRequestDto
+     * @var \novu\Models\Components\CreateTranslationRequestDto $createTranslationRequestDto
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\CreateTranslationRequestDto $createTranslationRequestDto;
@@ -28,7 +28,7 @@ class TranslationControllerCreateTranslationEndpointRequest
     public ?string $idempotencyKey = null;
 
     /**
-     * @param  Components\CreateTranslationRequestDto  $createTranslationRequestDto
+     * @param  \novu\Models\Components\CreateTranslationRequestDto  $createTranslationRequestDto
      * @param  ?string  $idempotencyKey
      * @phpstan-pure
      */

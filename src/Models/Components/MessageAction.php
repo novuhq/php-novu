@@ -14,7 +14,7 @@ class MessageAction
     /**
      * Status of the message action
      *
-     * @var ?MessageActionStatusEnum $status
+     * @var ?\novu\Models\Components\MessageActionStatusEnum $status
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\MessageActionStatusEnum|null')]
@@ -24,7 +24,7 @@ class MessageAction
     /**
      * List of buttons associated with the message action
      *
-     * @var ?array<MessageButton> $buttons
+     * @var ?array<\novu\Models\Components\MessageButton> $buttons
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('buttons')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\MessageButton>|null')]
@@ -34,7 +34,7 @@ class MessageAction
     /**
      * Result of the message action
      *
-     * @var ?MessageActionResult $result
+     * @var ?\novu\Models\Components\MessageActionResult $result
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('result')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\MessageActionResult|null')]
@@ -42,9 +42,9 @@ class MessageAction
     public ?MessageActionResult $result = null;
 
     /**
-     * @param  ?MessageActionStatusEnum  $status
-     * @param  ?array<MessageButton>  $buttons
-     * @param  ?MessageActionResult  $result
+     * @param  ?\novu\Models\Components\MessageActionStatusEnum  $status
+     * @param  ?array<\novu\Models\Components\MessageButton>  $buttons
+     * @param  ?\novu\Models\Components\MessageActionResult  $result
      * @phpstan-pure
      */
     public function __construct(?MessageActionStatusEnum $status = null, ?array $buttons = null, ?MessageActionResult $result = null)

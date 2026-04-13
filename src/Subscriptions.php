@@ -53,10 +53,10 @@ class Subscriptions
      * This api will create subscription for subscriberIds for a topic. 
      *       Its like subscribing to a common interest group. if topic does not exist, it will be created.
      *
-     * @param  Components\CreateTopicSubscriptionsRequestDto  $createTopicSubscriptionsRequestDto
+     * @param  \novu\Models\Components\CreateTopicSubscriptionsRequestDto  $createTopicSubscriptionsRequestDto
      * @param  string  $topicKey
      * @param  ?string  $idempotencyKey
-     * @return Operations\TopicsControllerCreateTopicSubscriptionsResponse
+     * @return \novu\Models\Operations\TopicsControllerCreateTopicSubscriptionsResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function create(Components\CreateTopicSubscriptionsRequestDto $createTopicSubscriptionsRequestDto, string $topicKey, ?string $idempotencyKey = null, ?Options $options = null): Operations\TopicsControllerCreateTopicSubscriptionsResponse
@@ -206,10 +206,10 @@ class Subscriptions
      *
      * Delete subscriptions for subscriberIds for a topic.
      *
-     * @param  Components\DeleteTopicSubscriptionsRequestDto  $deleteTopicSubscriptionsRequestDto
+     * @param  \novu\Models\Components\DeleteTopicSubscriptionsRequestDto  $deleteTopicSubscriptionsRequestDto
      * @param  string  $topicKey
      * @param  ?string  $idempotencyKey
-     * @return Operations\TopicsControllerDeleteTopicSubscriptionsResponse
+     * @return \novu\Models\Operations\TopicsControllerDeleteTopicSubscriptionsResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function delete(Components\DeleteTopicSubscriptionsRequestDto $deleteTopicSubscriptionsRequestDto, string $topicKey, ?string $idempotencyKey = null, ?Options $options = null): Operations\TopicsControllerDeleteTopicSubscriptionsResponse
@@ -362,7 +362,7 @@ class Subscriptions
      * @param  string  $topicKey
      * @param  string  $identifier
      * @param  ?string  $idempotencyKey
-     * @return Operations\TopicsControllerGetTopicSubscriptionResponse
+     * @return \novu\Models\Operations\TopicsControllerGetTopicSubscriptionResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function getSubscription(string $topicKey, string $identifier, ?string $idempotencyKey = null, ?Options $options = null): Operations\TopicsControllerGetTopicSubscriptionResponse
@@ -508,8 +508,8 @@ class Subscriptions
      * List all subscriptions of subscribers for a topic.
      *     Checkout all available filters in the query section.
      *
-     * @param  Operations\TopicsControllerListTopicSubscriptionsRequest  $request
-     * @return Operations\TopicsControllerListTopicSubscriptionsResponse
+     * @param  \novu\Models\Operations\TopicsControllerListTopicSubscriptionsRequest  $request
+     * @return \novu\Models\Operations\TopicsControllerListTopicSubscriptionsResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function list(Operations\TopicsControllerListTopicSubscriptionsRequest $request, ?Options $options = null): Operations\TopicsControllerListTopicSubscriptionsResponse
@@ -652,11 +652,11 @@ class Subscriptions
      *
      * Update a subscription by its unique identifier for a topic. You can update the preferences and name associated with the subscription.
      *
-     * @param  Components\UpdateTopicSubscriptionRequestDto  $updateTopicSubscriptionRequestDto
+     * @param  \novu\Models\Components\UpdateTopicSubscriptionRequestDto  $updateTopicSubscriptionRequestDto
      * @param  string  $topicKey
      * @param  string  $identifier
      * @param  ?string  $idempotencyKey
-     * @return Operations\TopicsControllerUpdateTopicSubscriptionResponse
+     * @return \novu\Models\Operations\TopicsControllerUpdateTopicSubscriptionResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function update(Components\UpdateTopicSubscriptionRequestDto $updateTopicSubscriptionRequestDto, string $topicKey, string $identifier, ?string $idempotencyKey = null, ?Options $options = null): Operations\TopicsControllerUpdateTopicSubscriptionResponse

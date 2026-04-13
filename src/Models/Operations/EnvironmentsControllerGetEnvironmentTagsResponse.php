@@ -42,7 +42,7 @@ class EnvironmentsControllerGetEnvironmentTagsResponse
     /**
      * OK
      *
-     * @var ?array<Components\GetEnvironmentTagsDto> $getEnvironmentTagsDtos
+     * @var ?array<\novu\Models\Components\GetEnvironmentTagsDto> $getEnvironmentTagsDtos
      */
     public ?array $getEnvironmentTagsDtos = null;
 
@@ -51,7 +51,7 @@ class EnvironmentsControllerGetEnvironmentTagsResponse
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
-     * @param  ?array<Components\GetEnvironmentTagsDto>  $getEnvironmentTagsDtos
+     * @param  ?array<\novu\Models\Components\GetEnvironmentTagsDto>  $getEnvironmentTagsDtos
      * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?array $getEnvironmentTagsDtos = null, ?array $headers = [])

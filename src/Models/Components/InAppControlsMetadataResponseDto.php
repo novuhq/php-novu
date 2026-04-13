@@ -14,7 +14,7 @@ class InAppControlsMetadataResponseDto
     /**
      * Control values specific to In-App
      *
-     * @var InAppControlDto $values
+     * @var \novu\Models\Components\InAppControlDto $values
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('values')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\InAppControlDto')]
@@ -33,7 +33,7 @@ class InAppControlsMetadataResponseDto
     /**
      * UI Schema for rendering
      *
-     * @var ?UiSchema $uiSchema
+     * @var ?\novu\Models\Components\UiSchema $uiSchema
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('uiSchema')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\UiSchema|null')]
@@ -41,9 +41,9 @@ class InAppControlsMetadataResponseDto
     public ?UiSchema $uiSchema = null;
 
     /**
-     * @param  InAppControlDto  $values
+     * @param  \novu\Models\Components\InAppControlDto  $values
      * @param  ?array<string, mixed>  $dataSchema
-     * @param  ?UiSchema  $uiSchema
+     * @param  ?\novu\Models\Components\UiSchema  $uiSchema
      * @phpstan-pure
      */
     public function __construct(InAppControlDto $values, ?array $dataSchema = null, ?UiSchema $uiSchema = null)

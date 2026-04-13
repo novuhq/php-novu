@@ -14,7 +14,7 @@ class MarkMessageActionAsSeenDto
     /**
      * Message action status
      *
-     * @var MarkMessageActionAsSeenDtoStatus $status
+     * @var \novu\Models\Components\MarkMessageActionAsSeenDtoStatus $status
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\MarkMessageActionAsSeenDtoStatus')]
@@ -23,7 +23,7 @@ class MarkMessageActionAsSeenDto
     /**
      * Message action payload
      *
-     * @var ?MarkMessageActionAsSeenDtoPayload $payload
+     * @var ?\novu\Models\Components\MarkMessageActionAsSeenDtoPayload $payload
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('payload')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\MarkMessageActionAsSeenDtoPayload|null')]
@@ -31,8 +31,8 @@ class MarkMessageActionAsSeenDto
     public ?MarkMessageActionAsSeenDtoPayload $payload = null;
 
     /**
-     * @param  MarkMessageActionAsSeenDtoStatus  $status
-     * @param  ?MarkMessageActionAsSeenDtoPayload  $payload
+     * @param  \novu\Models\Components\MarkMessageActionAsSeenDtoStatus  $status
+     * @param  ?\novu\Models\Components\MarkMessageActionAsSeenDtoPayload  $payload
      * @phpstan-pure
      */
     public function __construct(MarkMessageActionAsSeenDtoStatus $status, ?MarkMessageActionAsSeenDtoPayload $payload = null)

@@ -22,7 +22,7 @@ class ChannelConnectionsControllerUpdateChannelConnectionRequest
 
     /**
      *
-     * @var Components\UpdateChannelConnectionRequestDto $updateChannelConnectionRequestDto
+     * @var \novu\Models\Components\UpdateChannelConnectionRequestDto $updateChannelConnectionRequestDto
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\UpdateChannelConnectionRequestDto $updateChannelConnectionRequestDto;
@@ -37,7 +37,7 @@ class ChannelConnectionsControllerUpdateChannelConnectionRequest
 
     /**
      * @param  string  $identifier
-     * @param  Components\UpdateChannelConnectionRequestDto  $updateChannelConnectionRequestDto
+     * @param  \novu\Models\Components\UpdateChannelConnectionRequestDto  $updateChannelConnectionRequestDto
      * @param  ?string  $idempotencyKey
      * @phpstan-pure
      */

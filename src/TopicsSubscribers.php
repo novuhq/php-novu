@@ -54,7 +54,7 @@ class TopicsSubscribers
      * @param  string  $externalSubscriberId
      * @param  string  $topicKey
      * @param  ?string  $idempotencyKey
-     * @return Operations\TopicsV1ControllerGetTopicSubscriberResponse
+     * @return \novu\Models\Operations\TopicsV1ControllerGetTopicSubscriberResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function check(string $externalSubscriberId, string $topicKey, ?string $idempotencyKey = null, ?Options $options = null): Operations\TopicsV1ControllerGetTopicSubscriberResponse

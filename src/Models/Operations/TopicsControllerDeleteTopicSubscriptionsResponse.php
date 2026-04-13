@@ -42,7 +42,7 @@ class TopicsControllerDeleteTopicSubscriptionsResponse
     /**
      * Subscriptions deleted successfully
      *
-     * @var ?Components\DeleteTopicSubscriptionsResponseDto $deleteTopicSubscriptionsResponseDto
+     * @var ?\novu\Models\Components\DeleteTopicSubscriptionsResponseDto $deleteTopicSubscriptionsResponseDto
      */
     public ?Components\DeleteTopicSubscriptionsResponseDto $deleteTopicSubscriptionsResponseDto = null;
 
@@ -51,7 +51,7 @@ class TopicsControllerDeleteTopicSubscriptionsResponse
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
-     * @param  ?Components\DeleteTopicSubscriptionsResponseDto  $deleteTopicSubscriptionsResponseDto
+     * @param  ?\novu\Models\Components\DeleteTopicSubscriptionsResponseDto  $deleteTopicSubscriptionsResponseDto
      * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\DeleteTopicSubscriptionsResponseDto $deleteTopicSubscriptionsResponseDto = null, ?array $headers = [])

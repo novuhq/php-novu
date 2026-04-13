@@ -20,7 +20,7 @@ class StepFilterDto
 
     /**
      *
-     * @var BuilderFieldTypeEnum $type
+     * @var \novu\Models\Components\BuilderFieldTypeEnum $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\BuilderFieldTypeEnum')]
@@ -28,7 +28,7 @@ class StepFilterDto
 
     /**
      *
-     * @var StepFilterDtoValue $value
+     * @var \novu\Models\Components\StepFilterDtoValue $value
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('value')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\StepFilterDtoValue')]
@@ -37,7 +37,7 @@ class StepFilterDto
     /**
      * $children
      *
-     * @var array<FieldFilterPartDto> $children
+     * @var array<\novu\Models\Components\FieldFilterPartDto> $children
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('children')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\FieldFilterPartDto>')]
@@ -45,9 +45,9 @@ class StepFilterDto
 
     /**
      * @param  bool  $isNegated
-     * @param  BuilderFieldTypeEnum  $type
-     * @param  StepFilterDtoValue  $value
-     * @param  array<FieldFilterPartDto>  $children
+     * @param  \novu\Models\Components\BuilderFieldTypeEnum  $type
+     * @param  \novu\Models\Components\StepFilterDtoValue  $value
+     * @param  array<\novu\Models\Components\FieldFilterPartDto>  $children
      * @phpstan-pure
      */
     public function __construct(bool $isNegated, BuilderFieldTypeEnum $type, StepFilterDtoValue $value, array $children)

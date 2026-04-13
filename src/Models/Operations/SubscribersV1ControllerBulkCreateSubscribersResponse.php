@@ -42,7 +42,7 @@ class SubscribersV1ControllerBulkCreateSubscribersResponse
     /**
      * Created
      *
-     * @var ?Components\BulkCreateSubscriberResponseDto $bulkCreateSubscriberResponseDto
+     * @var ?\novu\Models\Components\BulkCreateSubscriberResponseDto $bulkCreateSubscriberResponseDto
      */
     public ?Components\BulkCreateSubscriberResponseDto $bulkCreateSubscriberResponseDto = null;
 
@@ -51,7 +51,7 @@ class SubscribersV1ControllerBulkCreateSubscribersResponse
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
-     * @param  ?Components\BulkCreateSubscriberResponseDto  $bulkCreateSubscriberResponseDto
+     * @param  ?\novu\Models\Components\BulkCreateSubscriberResponseDto  $bulkCreateSubscriberResponseDto
      * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\BulkCreateSubscriberResponseDto $bulkCreateSubscriberResponseDto = null, ?array $headers = [])

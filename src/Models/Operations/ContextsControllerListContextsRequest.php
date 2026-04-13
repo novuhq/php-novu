@@ -38,7 +38,7 @@ class ContextsControllerListContextsRequest
     /**
      * Direction of sorting
      *
-     * @var ?OrderDirection $orderDirection
+     * @var ?\novu\Models\Operations\OrderDirection $orderDirection
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=orderDirection')]
     public ?OrderDirection $orderDirection = null;
@@ -87,7 +87,7 @@ class ContextsControllerListContextsRequest
      * @param  ?string  $after
      * @param  ?string  $before
      * @param  ?float  $limit
-     * @param  ?OrderDirection  $orderDirection
+     * @param  ?\novu\Models\Operations\OrderDirection  $orderDirection
      * @param  ?string  $orderBy
      * @param  ?bool  $includeCursor
      * @param  ?string  $id

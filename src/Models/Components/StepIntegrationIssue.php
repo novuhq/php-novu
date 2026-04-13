@@ -14,7 +14,7 @@ class StepIntegrationIssue
     /**
      * Type of integration issue
      *
-     * @var IntegrationIssueEnum $issueType
+     * @var \novu\Models\Components\IntegrationIssueEnum $issueType
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('issueType')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\IntegrationIssueEnum')]
@@ -38,7 +38,7 @@ class StepIntegrationIssue
     public ?string $variableName = null;
 
     /**
-     * @param  IntegrationIssueEnum  $issueType
+     * @param  \novu\Models\Components\IntegrationIssueEnum  $issueType
      * @param  string  $message
      * @param  ?string  $variableName
      * @phpstan-pure

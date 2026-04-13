@@ -55,9 +55,9 @@ class Workflows
      *
      * Creates a new workflow in the Novu Cloud environment
      *
-     * @param  Components\CreateWorkflowDto  $createWorkflowDto
+     * @param  \novu\Models\Components\CreateWorkflowDto  $createWorkflowDto
      * @param  ?string  $idempotencyKey
-     * @return Operations\WorkflowControllerCreateResponse
+     * @return \novu\Models\Operations\WorkflowControllerCreateResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function create(Components\CreateWorkflowDto $createWorkflowDto, ?string $idempotencyKey = null, ?Options $options = null): Operations\WorkflowControllerCreateResponse
@@ -209,7 +209,7 @@ class Workflows
      * @param  string  $workflowId
      * @param  ?string  $environmentId
      * @param  ?string  $idempotencyKey
-     * @return Operations\WorkflowControllerGetWorkflowResponse
+     * @return \novu\Models\Operations\WorkflowControllerGetWorkflowResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function get(string $workflowId, ?string $environmentId = null, ?string $idempotencyKey = null, ?Options $options = null): Operations\WorkflowControllerGetWorkflowResponse
@@ -357,10 +357,10 @@ class Workflows
      *
      * Partially updates a workflow by its unique identifier **workflowId**
      *
-     * @param  Components\PatchWorkflowDto  $patchWorkflowDto
+     * @param  \novu\Models\Components\PatchWorkflowDto  $patchWorkflowDto
      * @param  string  $workflowId
      * @param  ?string  $idempotencyKey
-     * @return Operations\WorkflowControllerPatchWorkflowResponse
+     * @return \novu\Models\Operations\WorkflowControllerPatchWorkflowResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function patch(Components\PatchWorkflowDto $patchWorkflowDto, string $workflowId, ?string $idempotencyKey = null, ?Options $options = null): Operations\WorkflowControllerPatchWorkflowResponse
@@ -512,7 +512,7 @@ class Workflows
      *
      * @param  string  $workflowId
      * @param  ?string  $idempotencyKey
-     * @return Operations\WorkflowControllerRemoveWorkflowResponse
+     * @return \novu\Models\Operations\WorkflowControllerRemoveWorkflowResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function delete(string $workflowId, ?string $idempotencyKey = null, ?Options $options = null): Operations\WorkflowControllerRemoveWorkflowResponse
@@ -646,8 +646,8 @@ class Workflows
      *
      * Retrieves a list of workflows with optional filtering and pagination
      *
-     * @param  ?Operations\WorkflowControllerSearchWorkflowsRequest  $request
-     * @return Operations\WorkflowControllerSearchWorkflowsResponse
+     * @param  ?\novu\Models\Operations\WorkflowControllerSearchWorkflowsRequest  $request
+     * @return \novu\Models\Operations\WorkflowControllerSearchWorkflowsResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function list(?Operations\WorkflowControllerSearchWorkflowsRequest $request = null, ?Options $options = null): Operations\WorkflowControllerSearchWorkflowsResponse
@@ -790,10 +790,10 @@ class Workflows
      *
      * Synchronizes a workflow to the target environment
      *
-     * @param  Components\SyncWorkflowDto  $syncWorkflowDto
+     * @param  \novu\Models\Components\SyncWorkflowDto  $syncWorkflowDto
      * @param  string  $workflowId
      * @param  ?string  $idempotencyKey
-     * @return Operations\WorkflowControllerSyncResponse
+     * @return \novu\Models\Operations\WorkflowControllerSyncResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function sync(Components\SyncWorkflowDto $syncWorkflowDto, string $workflowId, ?string $idempotencyKey = null, ?Options $options = null): Operations\WorkflowControllerSyncResponse
@@ -943,10 +943,10 @@ class Workflows
      *
      * Updates the details of an existing workflow, here **workflowId** is the identifier of the workflow
      *
-     * @param  Components\UpdateWorkflowDto  $updateWorkflowDto
+     * @param  \novu\Models\Components\UpdateWorkflowDto  $updateWorkflowDto
      * @param  string  $workflowId
      * @param  ?string  $idempotencyKey
-     * @return Operations\WorkflowControllerUpdateResponse
+     * @return \novu\Models\Operations\WorkflowControllerUpdateResponse
      * @throws \novu\Models\Errors\APIException
      */
     public function update(Components\UpdateWorkflowDto $updateWorkflowDto, string $workflowId, ?string $idempotencyKey = null, ?Options $options = null): Operations\WorkflowControllerUpdateResponse

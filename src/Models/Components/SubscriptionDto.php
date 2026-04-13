@@ -22,7 +22,7 @@ class SubscriptionDto
     /**
      * The topic information
      *
-     * @var TopicDto $topic
+     * @var \novu\Models\Components\TopicDto $topic
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('topic')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\TopicDto')]
@@ -56,7 +56,7 @@ class SubscriptionDto
     /**
      * The subscriber information
      *
-     * @var ?SubscriptionDtoSubscriber $subscriber
+     * @var ?\novu\Models\Components\SubscriptionDtoSubscriber $subscriber
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('subscriber')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\SubscriptionDtoSubscriber|null')]
@@ -74,11 +74,11 @@ class SubscriptionDto
 
     /**
      * @param  string  $id
-     * @param  TopicDto  $topic
+     * @param  \novu\Models\Components\TopicDto  $topic
      * @param  string  $createdAt
      * @param  string  $updatedAt
      * @param  ?string  $identifier
-     * @param  ?SubscriptionDtoSubscriber  $subscriber
+     * @param  ?\novu\Models\Components\SubscriptionDtoSubscriber  $subscriber
      * @param  ?array<string>  $contextKeys
      * @phpstan-pure
      */

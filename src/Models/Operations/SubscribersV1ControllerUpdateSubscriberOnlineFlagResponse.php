@@ -42,7 +42,7 @@ class SubscribersV1ControllerUpdateSubscriberOnlineFlagResponse
     /**
      * OK
      *
-     * @var ?Components\SubscriberResponseDto $subscriberResponseDto
+     * @var ?\novu\Models\Components\SubscriberResponseDto $subscriberResponseDto
      */
     public ?Components\SubscriberResponseDto $subscriberResponseDto = null;
 
@@ -51,7 +51,7 @@ class SubscribersV1ControllerUpdateSubscriberOnlineFlagResponse
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
-     * @param  ?Components\SubscriberResponseDto  $subscriberResponseDto
+     * @param  ?\novu\Models\Components\SubscriberResponseDto  $subscriberResponseDto
      * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\SubscriberResponseDto $subscriberResponseDto = null, ?array $headers = [])

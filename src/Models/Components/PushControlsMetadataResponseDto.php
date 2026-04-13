@@ -14,7 +14,7 @@ class PushControlsMetadataResponseDto
     /**
      * Control values specific to Push
      *
-     * @var PushControlDto $values
+     * @var \novu\Models\Components\PushControlDto $values
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('values')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\PushControlDto')]
@@ -33,7 +33,7 @@ class PushControlsMetadataResponseDto
     /**
      * UI Schema for rendering
      *
-     * @var ?UiSchema $uiSchema
+     * @var ?\novu\Models\Components\UiSchema $uiSchema
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('uiSchema')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\UiSchema|null')]
@@ -41,9 +41,9 @@ class PushControlsMetadataResponseDto
     public ?UiSchema $uiSchema = null;
 
     /**
-     * @param  PushControlDto  $values
+     * @param  \novu\Models\Components\PushControlDto  $values
      * @param  ?array<string, mixed>  $dataSchema
-     * @param  ?UiSchema  $uiSchema
+     * @param  ?\novu\Models\Components\UiSchema  $uiSchema
      * @phpstan-pure
      */
     public function __construct(PushControlDto $values, ?array $dataSchema = null, ?UiSchema $uiSchema = null)

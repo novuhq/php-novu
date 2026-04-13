@@ -24,7 +24,7 @@ class MessageActionResult
     /**
      * Type of button for the action result
      *
-     * @var ?ButtonTypeEnum $type
+     * @var ?\novu\Models\Components\ButtonTypeEnum $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ButtonTypeEnum|null')]
@@ -33,7 +33,7 @@ class MessageActionResult
 
     /**
      * @param  ?array<string, mixed>  $payload
-     * @param  ?ButtonTypeEnum  $type
+     * @param  ?\novu\Models\Components\ButtonTypeEnum  $type
      * @phpstan-pure
      */
     public function __construct(?array $payload = null, ?ButtonTypeEnum $type = null)

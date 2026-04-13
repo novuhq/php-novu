@@ -9,7 +9,7 @@ A preference for the workflow. The values specified here will be used if no pref
 
 ```php
 /**
-* @var Components\WorkflowPreferenceDto
+* @var \novu\Models\Components\WorkflowPreferenceDto
 */
 Components\WorkflowPreferenceDto $value = /* values here */
 ```

@@ -14,7 +14,7 @@ class SubscribersV1ControllerBulkCreateSubscribersRequest
 {
     /**
      *
-     * @var Components\BulkSubscriberCreateDto $bulkSubscriberCreateDto
+     * @var \novu\Models\Components\BulkSubscriberCreateDto $bulkSubscriberCreateDto
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\BulkSubscriberCreateDto $bulkSubscriberCreateDto;
@@ -28,7 +28,7 @@ class SubscribersV1ControllerBulkCreateSubscribersRequest
     public ?string $idempotencyKey = null;
 
     /**
-     * @param  Components\BulkSubscriberCreateDto  $bulkSubscriberCreateDto
+     * @param  \novu\Models\Components\BulkSubscriberCreateDto  $bulkSubscriberCreateDto
      * @param  ?string  $idempotencyKey
      * @phpstan-pure
      */

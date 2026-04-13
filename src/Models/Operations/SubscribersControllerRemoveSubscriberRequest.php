@@ -12,6 +12,7 @@ use novu\Utils\SpeakeasyMetadata;
 class SubscribersControllerRemoveSubscriberRequest
 {
     /**
+     * The identifier of the subscriber
      *
      * @var string $subscriberId
      */

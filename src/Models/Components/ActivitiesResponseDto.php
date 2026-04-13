@@ -22,7 +22,7 @@ class ActivitiesResponseDto
     /**
      * Array of activity notifications
      *
-     * @var array<ActivityNotificationResponseDto> $data
+     * @var array<\novu\Models\Components\ActivityNotificationResponseDto> $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\ActivityNotificationResponseDto>')]
@@ -46,7 +46,7 @@ class ActivitiesResponseDto
 
     /**
      * @param  bool  $hasMore
-     * @param  array<ActivityNotificationResponseDto>  $data
+     * @param  array<\novu\Models\Components\ActivityNotificationResponseDto>  $data
      * @param  float  $pageSize
      * @param  float  $page
      * @phpstan-pure

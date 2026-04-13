@@ -42,7 +42,7 @@ class ChannelConnectionsControllerListChannelConnectionsResponse
     /**
      * OK
      *
-     * @var ?Components\ListChannelConnectionsResponseDto $listChannelConnectionsResponseDto
+     * @var ?\novu\Models\Components\ListChannelConnectionsResponseDto $listChannelConnectionsResponseDto
      */
     public ?Components\ListChannelConnectionsResponseDto $listChannelConnectionsResponseDto = null;
 
@@ -51,7 +51,7 @@ class ChannelConnectionsControllerListChannelConnectionsResponse
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
-     * @param  ?Components\ListChannelConnectionsResponseDto  $listChannelConnectionsResponseDto
+     * @param  ?\novu\Models\Components\ListChannelConnectionsResponseDto  $listChannelConnectionsResponseDto
      * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\ListChannelConnectionsResponseDto $listChannelConnectionsResponseDto = null, ?array $headers = [])
