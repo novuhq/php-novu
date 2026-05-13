@@ -28,6 +28,7 @@ Provider ID of the job
 | `Sparkpost`        | sparkpost          |
 | `EmailWebhook`     | email-webhook      |
 | `Braze`            | braze              |
+| `NovuEmailAgent`   | novu-email-agent   |
 | `Nexmo`            | nexmo              |
 | `Plivo`            | plivo              |
 | `Sms77`            | sms77              |
@@ -86,3 +87,4 @@ Provider ID of the job
 | `WhatsappBusiness` | whatsapp-business  |
 | `ChatWebhook`      | chat-webhook       |
 | `NovuSlack`        | novu-slack         |
+| `Anthropic`        | anthropic          |

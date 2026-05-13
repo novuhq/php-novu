@@ -33,6 +33,7 @@ enum ProviderId: string
     case Sparkpost = 'sparkpost';
     case EmailWebhook = 'email-webhook';
     case Braze = 'braze';
+    case NovuEmailAgent = 'novu-email-agent';
     case Nexmo = 'nexmo';
     case Plivo = 'plivo';
     case Sms77 = 'sms77';
@@ -91,4 +92,5 @@ enum ProviderId: string
     case WhatsappBusiness = 'whatsapp-business';
     case ChatWebhook = 'chat-webhook';
     case NovuSlack = 'novu-slack';
+    case Anthropic = 'anthropic';
 }

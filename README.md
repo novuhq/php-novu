@@ -372,6 +372,30 @@ if ($response->triggerEventResponseDto !== null) {
 * [retrieve](docs/sdks/contexts/README.md#retrieve) - Retrieve a context
 * [delete](docs/sdks/contexts/README.md#delete) - Delete a context
 
+### [Domains](docs/sdks/domains/README.md)
+
+* [list](docs/sdks/domains/README.md#list) - List domains for an environment
+* [create](docs/sdks/domains/README.md#create) - Create a domain
+* [retrieve](docs/sdks/domains/README.md#retrieve) - Retrieve a domain by name
+* [update](docs/sdks/domains/README.md#update) - Update a domain
+* [delete](docs/sdks/domains/README.md#delete) - Delete a domain
+* [diagnose](docs/sdks/domains/README.md#diagnose) - Diagnose inbound DNS for a domain
+* [verify](docs/sdks/domains/README.md#verify) - Verify a domain
+
+#### [Domains.AutoConfigure](docs/sdks/autoconfigure/README.md)
+
+* [retrieve](docs/sdks/autoconfigure/README.md#retrieve) - Retrieve auto-configuration availability
+* [start](docs/sdks/autoconfigure/README.md#start) - Start DNS auto-configuration
+
+#### [Domains.Routes](docs/sdks/routes/README.md)
+
+* [list](docs/sdks/routes/README.md#list) - List routes for a domain
+* [create](docs/sdks/routes/README.md#create) - Create a route
+* [retrieve](docs/sdks/routes/README.md#retrieve) - Retrieve a route by address
+* [update](docs/sdks/routes/README.md#update) - Update a route
+* [delete](docs/sdks/routes/README.md#delete) - Delete a route
+* [test](docs/sdks/routes/README.md#test) - Test an inbound route
+
 ### [EnvironmentVariables](docs/sdks/environmentvariables/README.md)
 
 * [list](docs/sdks/environmentvariables/README.md#list) - List all variables
@@ -400,7 +424,9 @@ if ($response->triggerEventResponseDto !== null) {
 * [integrationsControllerAutoConfigureIntegration](docs/sdks/integrations/README.md#integrationscontrollerautoconfigureintegration) - Auto-configure an integration for inbound webhooks
 * [setAsPrimary](docs/sdks/integrations/README.md#setasprimary) - Update integration as primary
 * [listActive](docs/sdks/integrations/README.md#listactive) - List active integrations
-* [generateChatOAuthUrl](docs/sdks/integrations/README.md#generatechatoauthurl) - Generate chat OAuth URL
+* [generateConnectOAuthUrl](docs/sdks/integrations/README.md#generateconnectoauthurl) - Generate OAuth URL for a workspace/tenant connection
+* [generateLinkUserOAuthUrl](docs/sdks/integrations/README.md#generatelinkuseroauthurl) - Generate OAuth URL to link a subscriber user identity
+* [~~generateChatOAuthUrl~~](docs/sdks/integrations/README.md#generatechatoauthurl) - Generate chat OAuth URL :warning: **Deprecated**
 
 ### [Layouts](docs/sdks/layouts/README.md)
 

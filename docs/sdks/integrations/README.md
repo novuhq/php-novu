@@ -14,7 +14,9 @@ With the help of the Integration Store, you can easily integrate your favorite d
 * [integrationsControllerAutoConfigureIntegration](#integrationscontrollerautoconfigureintegration) - Auto-configure an integration for inbound webhooks
 * [setAsPrimary](#setasprimary) - Update integration as primary
 * [listActive](#listactive) - List active integrations
-* [generateChatOAuthUrl](#generatechatoauthurl) - Generate chat OAuth URL
+* [generateConnectOAuthUrl](#generateconnectoauthurl) - Generate OAuth URL for a workspace/tenant connection
+* [generateLinkUserOAuthUrl](#generatelinkuseroauthurl) - Generate OAuth URL to link a subscriber user identity
+* [~~generateChatOAuthUrl~~](#generatechatoauthurl) - Generate chat OAuth URL :warning: **Deprecated**
 
 ## list
 
@@ -89,10 +91,7 @@ $sdk = novu\Novu::builder()
     )
     ->build();
 
-$createIntegrationRequestDto = new Components\CreateIntegrationRequestDto(
-    providerId: '<id>',
-    channel: Components\CreateIntegrationRequestDtoChannel::Email,
-);
+$createIntegrationRequestDto = new Components\CreateIntegrationRequestDto();
 
 $response = $sdk->integrations->create(
     createIntegrationRequestDto: $createIntegrationRequestDto
@@ -392,11 +391,146 @@ if ($response->integrationResponseDtos !== null) {
 | Errors\ErrorDto                        | 500                                    | application/json                       |
 | Errors\APIException                    | 4XX, 5XX                               | \*/\*                                  |
 
-## generateChatOAuthUrl
+## generateConnectOAuthUrl
 
-Generate an OAuth URL for chat integrations like Slack and MS Teams. 
+Generate an OAuth URL that creates a workspace or tenant-level channel connection (Slack workspace install or MS Teams admin consent). 
+    The generated URL expires after 5 minutes.
+
+### Example Usage
+
+<!-- UsageSnippet language="php" operationID="IntegrationsController_generateConnectOAuthUrl" method="post" path="/v1/integrations/channel-connections/oauth" -->
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use novu;
+use novu\Models\Components;
+
+$sdk = novu\Novu::builder()
+    ->setSecurity(
+        'YOUR_SECRET_KEY_HERE'
+    )
+    ->build();
+
+$generateConnectOauthUrlRequestDto = new Components\GenerateConnectOauthUrlRequestDto(
+    subscriberId: 'subscriber-123',
+    integrationIdentifier: '<value>',
+    connectionIdentifier: 'slack-connection-abc123',
+    context: [
+        'key' => 'org-acme',
+    ],
+    scope: [
+        'chat:write',
+        'chat:write.public',
+        'channels:read',
+    ],
+    connectionMode: Components\GenerateConnectOauthUrlRequestDtoConnectionMode::Shared,
+    autoLinkUser: true,
+);
+
+$response = $sdk->integrations->generateConnectOAuthUrl(
+    generateConnectOauthUrlRequestDto: $generateConnectOauthUrlRequestDto
+);
+
+if ($response->generateChatOAuthUrlResponseDto !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| `generateConnectOauthUrlRequestDto`                                                                          | [Components\GenerateConnectOauthUrlRequestDto](../../Models/Components/GenerateConnectOauthUrlRequestDto.md) | :heavy_check_mark:                                                                                           | N/A                                                                                                          |
+| `idempotencyKey`                                                                                             | *?string*                                                                                                    | :heavy_minus_sign:                                                                                           | A header for idempotency purposes                                                                            |
+
+### Response
+
+**[?Operations\IntegrationsControllerGenerateConnectOAuthUrlResponse](../../Models/Operations/IntegrationsControllerGenerateConnectOAuthUrlResponse.md)**
+
+### Errors
+
+| Error Type                             | Status Code                            | Content Type                           |
+| -------------------------------------- | -------------------------------------- | -------------------------------------- |
+| Errors\ErrorDto                        | 414                                    | application/json                       |
+| Errors\ErrorDto                        | 400, 401, 403, 404, 405, 409, 413, 415 | application/json                       |
+| Errors\ValidationErrorDto              | 422                                    | application/json                       |
+| Errors\ErrorDto                        | 500                                    | application/json                       |
+| Errors\APIException                    | 4XX, 5XX                               | \*/\*                                  |
+
+## generateLinkUserOAuthUrl
+
+Generate an OAuth URL that links a specific subscriber to their chat identity (Slack user ID or MS Teams user OID). 
+    The generated URL expires after 5 minutes.
+
+### Example Usage
+
+<!-- UsageSnippet language="php" operationID="IntegrationsController_generateLinkUserOAuthUrl" method="post" path="/v1/integrations/channel-endpoints/oauth" -->
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use novu;
+use novu\Models\Components;
+
+$sdk = novu\Novu::builder()
+    ->setSecurity(
+        'YOUR_SECRET_KEY_HERE'
+    )
+    ->build();
+
+$generateLinkUserOauthUrlRequestDto = new Components\GenerateLinkUserOauthUrlRequestDto(
+    subscriberId: 'subscriber-123',
+    integrationIdentifier: '<value>',
+    connectionIdentifier: 'slack-connection-abc123',
+    context: [
+        'key' => 'org-acme',
+    ],
+    userScope: [
+        'identity.basic',
+    ],
+);
+
+$response = $sdk->integrations->generateLinkUserOAuthUrl(
+    generateLinkUserOauthUrlRequestDto: $generateLinkUserOauthUrlRequestDto
+);
+
+if ($response->generateChatOAuthUrlResponseDto !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                      | Type                                                                                                           | Required                                                                                                       | Description                                                                                                    |
+| -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| `generateLinkUserOauthUrlRequestDto`                                                                           | [Components\GenerateLinkUserOauthUrlRequestDto](../../Models/Components/GenerateLinkUserOauthUrlRequestDto.md) | :heavy_check_mark:                                                                                             | N/A                                                                                                            |
+| `idempotencyKey`                                                                                               | *?string*                                                                                                      | :heavy_minus_sign:                                                                                             | A header for idempotency purposes                                                                              |
+
+### Response
+
+**[?Operations\IntegrationsControllerGenerateLinkUserOAuthUrlResponse](../../Models/Operations/IntegrationsControllerGenerateLinkUserOAuthUrlResponse.md)**
+
+### Errors
+
+| Error Type                             | Status Code                            | Content Type                           |
+| -------------------------------------- | -------------------------------------- | -------------------------------------- |
+| Errors\ErrorDto                        | 414                                    | application/json                       |
+| Errors\ErrorDto                        | 400, 401, 403, 404, 405, 409, 413, 415 | application/json                       |
+| Errors\ValidationErrorDto              | 422                                    | application/json                       |
+| Errors\ErrorDto                        | 500                                    | application/json                       |
+| Errors\APIException                    | 4XX, 5XX                               | \*/\*                                  |
+
+## ~~generateChatOAuthUrl~~
+
+**Deprecated** — use `POST /integrations/channel-connections/oauth` (connect) or `POST /integrations/channel-endpoints/oauth` (link_user) instead.
+    Generate an OAuth URL for chat integrations like Slack and MS Teams. 
     This URL allows subscribers to authorize the integration, enabling the system to send messages 
     through their chat workspace. The generated URL expires after 5 minutes.
+
+> :warning: **DEPRECATED**: This will be removed in a future release, please migrate away from it as soon as possible.
 
 ### Example Usage
 
@@ -431,6 +565,12 @@ $generateChatOauthUrlRequestDto = new Components\GenerateChatOauthUrlRequestDto(
         'users:read.email',
         'incoming-webhook',
     ],
+    userScope: [
+        'identity.basic',
+    ],
+    mode: Components\Mode::LinkUser,
+    connectionMode: Components\GenerateChatOauthUrlRequestDtoConnectionMode::Shared,
+    autoLinkUser: true,
 );
 
 $response = $sdk->integrations->generateChatOAuthUrl(

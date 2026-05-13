@@ -64,15 +64,26 @@ class CreateChannelConnectionRequestDto
     public ?array $context = null;
 
     /**
+     * Connection mode that determines how the channel connection is scoped. Use "subscriber" (default) to associate the connection with a specific subscriber. Use "shared" to associate the connection with a context instead of a subscriber — subscriberId will not be stored on the connection.
+     *
+     * @var ?\novu\Models\Components\ConnectionMode $connectionMode
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('connectionMode')]
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ConnectionMode|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?ConnectionMode $connectionMode = null;
+
+    /**
      * @param  string  $integrationIdentifier
      * @param  \novu\Models\Components\WorkspaceDto  $workspace
      * @param  \novu\Models\Components\AuthDto  $auth
      * @param  ?string  $identifier
      * @param  ?string  $subscriberId
      * @param  ?array<string, string|\novu\Models\Components\CreateChannelConnectionRequestDtoContext2>  $context
+     * @param  ?\novu\Models\Components\ConnectionMode  $connectionMode
      * @phpstan-pure
      */
-    public function __construct(string $integrationIdentifier, WorkspaceDto $workspace, AuthDto $auth, ?string $identifier = null, ?string $subscriberId = null, ?array $context = null)
+    public function __construct(string $integrationIdentifier, WorkspaceDto $workspace, AuthDto $auth, ?string $identifier = null, ?string $subscriberId = null, ?array $context = null, ?ConnectionMode $connectionMode = null)
     {
         $this->integrationIdentifier = $integrationIdentifier;
         $this->workspace = $workspace;
@@ -80,5 +91,6 @@ class CreateChannelConnectionRequestDto
         $this->identifier = $identifier;
         $this->subscriberId = $subscriberId;
         $this->context = $context;
+        $this->connectionMode = $connectionMode;
     }
 }

@@ -39,14 +39,14 @@ class HttpRequestControlDto
     public ?array $headers = null;
 
     /**
-     * Request body as key-value pairs
+     * Request body as a raw JSON string. Key-value arrays are supported for legacy workflows.
      *
-     * @var ?array<\novu\Models\Components\HttpRequestKeyValuePairDto> $body
+     * @var string|array<\novu\Models\Components\HttpRequestKeyValuePairDto>|null $body
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('body')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\HttpRequestKeyValuePairDto>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('string|array<\novu\Models\Components\HttpRequestKeyValuePairDto>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $body = null;
+    public string|array|null $body = null;
 
     /**
      * JSON schema to validate response body against
@@ -80,13 +80,13 @@ class HttpRequestControlDto
      * @param  \novu\Models\Components\HttpMethodEnum  $method
      * @param  string  $url
      * @param  ?array<\novu\Models\Components\HttpRequestKeyValuePairDto>  $headers
-     * @param  ?array<\novu\Models\Components\HttpRequestKeyValuePairDto>  $body
+     * @param  string|array<\novu\Models\Components\HttpRequestKeyValuePairDto>|null  $body
      * @param  ?array<string, mixed>  $responseBodySchema
      * @param  ?bool  $enforceSchemaValidation
      * @param  ?bool  $continueOnFailure
      * @phpstan-pure
      */
-    public function __construct(HttpMethodEnum $method, string $url, ?array $body = null, ?array $responseBodySchema = null, ?bool $enforceSchemaValidation = null, ?bool $continueOnFailure = null, ?array $headers = null)
+    public function __construct(HttpMethodEnum $method, string $url, string|array|null $body = null, ?array $responseBodySchema = null, ?bool $enforceSchemaValidation = null, ?bool $continueOnFailure = null, ?array $headers = null)
     {
         $this->method = $method;
         $this->url = $url;

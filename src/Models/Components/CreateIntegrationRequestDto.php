@@ -12,23 +12,6 @@ namespace novu\Models\Components;
 class CreateIntegrationRequestDto
 {
     /**
-     * The provider ID for the integration
-     *
-     * @var string $providerId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('providerId')]
-    public string $providerId;
-
-    /**
-     * The channel type for the integration
-     *
-     * @var \novu\Models\Components\CreateIntegrationRequestDtoChannel $channel
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('channel')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\CreateIntegrationRequestDtoChannel')]
-    public CreateIntegrationRequestDtoChannel $channel;
-
-    /**
      * The name of the integration
      *
      * @var ?string $name
@@ -54,6 +37,35 @@ class CreateIntegrationRequestDto
     #[\Speakeasy\Serializer\Annotation\SerializedName('_environmentId')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $environmentId = null;
+
+    /**
+     * The provider ID for the integration
+     *
+     * @var ?string $providerId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('providerId')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $providerId = null;
+
+    /**
+     * The channel type for the integration. Not required for agent-kind integrations.
+     *
+     * @var ?\novu\Models\Components\CreateIntegrationRequestDtoChannel $channel
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('channel')]
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\CreateIntegrationRequestDtoChannel|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?CreateIntegrationRequestDtoChannel $channel = null;
+
+    /**
+     * Distinguishes delivery integrations from agent-runtime integrations. Defaults to "delivery". Agent integrations do not require a channel.
+     *
+     * @var ?\novu\Models\Components\CreateIntegrationRequestDtoKind $kind
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('kind')]
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\CreateIntegrationRequestDtoKind|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?CreateIntegrationRequestDtoKind $kind = null;
 
     /**
      * The credentials for the integration
@@ -104,11 +116,12 @@ class CreateIntegrationRequestDto
     public ?Configurations $configurations = null;
 
     /**
-     * @param  string  $providerId
-     * @param  \novu\Models\Components\CreateIntegrationRequestDtoChannel  $channel
      * @param  ?string  $name
      * @param  ?string  $identifier
      * @param  ?string  $environmentId
+     * @param  ?string  $providerId
+     * @param  ?\novu\Models\Components\CreateIntegrationRequestDtoChannel  $channel
+     * @param  ?\novu\Models\Components\CreateIntegrationRequestDtoKind  $kind
      * @param  ?\novu\Models\Components\CredentialsDto  $credentials
      * @param  ?bool  $active
      * @param  ?bool  $check
@@ -116,13 +129,14 @@ class CreateIntegrationRequestDto
      * @param  ?\novu\Models\Components\Configurations  $configurations
      * @phpstan-pure
      */
-    public function __construct(string $providerId, CreateIntegrationRequestDtoChannel $channel, ?string $name = null, ?string $identifier = null, ?string $environmentId = null, ?CredentialsDto $credentials = null, ?bool $active = null, ?bool $check = null, ?array $conditions = null, ?Configurations $configurations = null)
+    public function __construct(?string $name = null, ?string $identifier = null, ?string $environmentId = null, ?string $providerId = null, ?CreateIntegrationRequestDtoChannel $channel = null, ?CreateIntegrationRequestDtoKind $kind = null, ?CredentialsDto $credentials = null, ?bool $active = null, ?bool $check = null, ?array $conditions = null, ?Configurations $configurations = null)
     {
-        $this->providerId = $providerId;
-        $this->channel = $channel;
         $this->name = $name;
         $this->identifier = $identifier;
         $this->environmentId = $environmentId;
+        $this->providerId = $providerId;
+        $this->channel = $channel;
+        $this->kind = $kind;
         $this->credentials = $credentials;
         $this->active = $active;
         $this->check = $check;
