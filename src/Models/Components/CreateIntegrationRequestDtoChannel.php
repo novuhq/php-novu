@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace novu\Models\Components;
 
 
-/** The channel type for the integration */
+/** The channel type for the integration. Not required for agent-kind integrations. */
 enum CreateIntegrationRequestDtoChannel: string
 {
     case InApp = 'in_app';

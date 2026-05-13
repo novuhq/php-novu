@@ -28,6 +28,7 @@ The provider identifier (e.g., sendgrid, twilio, slack, etc.).
 | `Sparkpost`        | sparkpost          |
 | `EmailWebhook`     | email-webhook      |
 | `Braze`            | braze              |
+| `NovuEmailAgent`   | novu-email-agent   |
 | `Nexmo`            | nexmo              |
 | `Plivo`            | plivo              |
 | `Sms77`            | sms77              |
@@ -86,3 +87,4 @@ The provider identifier (e.g., sendgrid, twilio, slack, etc.).
 | `WhatsappBusiness` | whatsapp-business  |
 | `ChatWebhook`      | chat-webhook       |
 | `NovuSlack`        | novu-slack         |
+| `Anthropic`        | anthropic          |

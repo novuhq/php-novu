@@ -52,24 +52,6 @@ class IntegrationResponseDto
     public string $providerId;
 
     /**
-     * The channel type for the integration, which defines how it communicates (e.g., email, SMS).
-     *
-     * @var \novu\Models\Components\IntegrationResponseDtoChannel $channel
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('channel')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\IntegrationResponseDtoChannel')]
-    public IntegrationResponseDtoChannel $channel;
-
-    /**
-     * The credentials required for the integration to function, including API keys and other sensitive information.
-     *
-     * @var \novu\Models\Components\CredentialsDto $credentials
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('credentials')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\CredentialsDto')]
-    public CredentialsDto $credentials;
-
-    /**
      * Indicates whether the integration is currently active. An active integration will process events and messages.
      *
      * @var bool $active
@@ -101,6 +83,36 @@ class IntegrationResponseDto
     #[\Speakeasy\Serializer\Annotation\SerializedName('_id')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $id = null;
+
+    /**
+     * The channel type for the integration, which defines how it communicates (e.g., email, SMS). Not set for agent-kind integrations.
+     *
+     * @var ?\novu\Models\Components\IntegrationResponseDtoChannel $channel
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('channel')]
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\IntegrationResponseDtoChannel|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?IntegrationResponseDtoChannel $channel = null;
+
+    /**
+     * Distinguishes delivery integrations from agent-runtime integrations. Defaults to "delivery". Agent integrations do not have a channel.
+     *
+     * @var ?\novu\Models\Components\Kind $kind
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('kind')]
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\Kind|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?Kind $kind = null;
+
+    /**
+     * The decrypted credentials required for the integration to function (e.g. provider API keys, signing secrets). Only returned to dashboard/session-token callers; API-key authenticated callers receive the integration metadata without this field to avoid amplifying API-key leaks into provider-credential leaks.
+     *
+     * @var ?\novu\Models\Components\CredentialsDto $credentials
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('credentials')]
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\CredentialsDto|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?CredentialsDto $credentials = null;
 
     /**
      * The configurations required for enabling the additional configurations of the integration.
@@ -146,31 +158,33 @@ class IntegrationResponseDto
      * @param  string  $name
      * @param  string  $identifier
      * @param  string  $providerId
-     * @param  \novu\Models\Components\IntegrationResponseDtoChannel  $channel
-     * @param  \novu\Models\Components\CredentialsDto  $credentials
      * @param  bool  $active
      * @param  bool  $deleted
      * @param  bool  $primary
      * @param  ?string  $id
+     * @param  ?\novu\Models\Components\IntegrationResponseDtoChannel  $channel
+     * @param  ?\novu\Models\Components\Kind  $kind
+     * @param  ?\novu\Models\Components\CredentialsDto  $credentials
      * @param  ?\novu\Models\Components\ConfigurationsDto  $configurations
      * @param  ?string  $deletedAt
      * @param  ?string  $deletedBy
      * @param  ?array<\novu\Models\Components\StepFilterDto>  $conditions
      * @phpstan-pure
      */
-    public function __construct(string $environmentId, string $organizationId, string $name, string $identifier, string $providerId, IntegrationResponseDtoChannel $channel, CredentialsDto $credentials, bool $active, bool $deleted, bool $primary, ?string $id = null, ?ConfigurationsDto $configurations = null, ?string $deletedAt = null, ?string $deletedBy = null, ?array $conditions = null)
+    public function __construct(string $environmentId, string $organizationId, string $name, string $identifier, string $providerId, bool $active, bool $deleted, bool $primary, ?string $id = null, ?IntegrationResponseDtoChannel $channel = null, ?Kind $kind = null, ?CredentialsDto $credentials = null, ?ConfigurationsDto $configurations = null, ?string $deletedAt = null, ?string $deletedBy = null, ?array $conditions = null)
     {
         $this->environmentId = $environmentId;
         $this->organizationId = $organizationId;
         $this->name = $name;
         $this->identifier = $identifier;
         $this->providerId = $providerId;
-        $this->channel = $channel;
-        $this->credentials = $credentials;
         $this->active = $active;
         $this->deleted = $deleted;
         $this->primary = $primary;
         $this->id = $id;
+        $this->channel = $channel;
+        $this->kind = $kind;
+        $this->credentials = $credentials;
         $this->configurations = $configurations;
         $this->deletedAt = $deletedAt;
         $this->deletedBy = $deletedBy;

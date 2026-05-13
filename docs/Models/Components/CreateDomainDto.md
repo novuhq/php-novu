@@ -1,0 +1,9 @@
+# CreateDomainDto
+
+
+## Fields
+
+| Field                                                                                   | Type                                                                                    | Required                                                                                | Description                                                                             |
+| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `name`                                                                                  | *string*                                                                                | :heavy_check_mark:                                                                      | The domain name (e.g. "recent.dev")                                                     |
+| `data`                                                                                  | array<string, *string*>                                                                 | :heavy_minus_sign:                                                                      | Optional string key-value metadata (max 10 keys, 500 characters total for keys+values). |

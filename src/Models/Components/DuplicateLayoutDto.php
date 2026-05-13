@@ -20,6 +20,15 @@ class DuplicateLayoutDto
     public string $name;
 
     /**
+     * Identifier for the duplicated layout. When omitted, it is derived from the name.
+     *
+     * @var ?string $layoutId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('layoutId')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $layoutId = null;
+
+    /**
      * Enable or disable translations for this layout
      *
      * @var ?bool $isTranslationEnabled
@@ -30,12 +39,14 @@ class DuplicateLayoutDto
 
     /**
      * @param  string  $name
+     * @param  ?string  $layoutId
      * @param  ?bool  $isTranslationEnabled
      * @phpstan-pure
      */
-    public function __construct(string $name, ?bool $isTranslationEnabled = false)
+    public function __construct(string $name, ?string $layoutId = null, ?bool $isTranslationEnabled = false)
     {
         $this->name = $name;
+        $this->layoutId = $layoutId;
         $this->isTranslationEnabled = $isTranslationEnabled;
     }
 }

@@ -100,6 +100,7 @@ $createChannelConnectionRequestDto = new Components\CreateChannelConnectionReque
     context: [
         'key' => 'org-acme',
     ],
+    connectionMode: Components\ConnectionMode::Shared,
     integrationIdentifier: 'slack-prod',
     workspace: new Components\WorkspaceDto(
         id: 'T123456',
