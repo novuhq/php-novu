@@ -19,6 +19,7 @@ The ID of the chat or push provider.
 | `WhatsappBusiness` | whatsapp-business  |
 | `ChatWebhook`      | chat-webhook       |
 | `NovuSlack`        | novu-slack         |
+| `Telegram`         | telegram           |
 | `Fcm`              | fcm                |
 | `Apns`             | apns               |
 | `Expo`             | expo               |

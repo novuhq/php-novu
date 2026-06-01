@@ -413,6 +413,42 @@ class CredentialsDto
     public ?string $fromAddressOverride = null;
 
     /**
+     * Agent default shared inbox slug prefix used in `{emailSlugPrefix}-{agentId}@<shared-domain>`. Only meaningful on the NovuAgent email integration.
+     *
+     * @var ?string $emailSlugPrefix
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('emailSlugPrefix')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $emailSlugPrefix = null;
+
+    /**
+     * Claude Managed Agents: ID of the Anthropic environment tied to this integration. Hydrated by the API at integration provisioning time.
+     *
+     * @var ?string $externalEnvironmentId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('externalEnvironmentId')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $externalEnvironmentId = null;
+
+    /**
+     * Claude Managed Agents: ID of the Anthropic vault (`vlt_…`) tied to this integration. Hydrated by the API at integration provisioning time and used to push OAuth-completed MCP credentials to the per-vault credentials API.
+     *
+     * @var ?string $externalVaultId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('externalVaultId')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $externalVaultId = null;
+
+    /**
+     * Claude Managed Agents: id of the Anthropic workspace used in console deep links. Defaults to `'default'` (the Default Workspace). Set this when the API key is scoped to a custom workspace (e.g. `wrkspc_…`).
+     *
+     * @var ?string $externalWorkspaceId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('externalWorkspaceId')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $externalWorkspaceId = null;
+
+    /**
      * @param  ?string  $apiKey
      * @param  ?string  $user
      * @param  ?string  $secretKey
@@ -463,9 +499,13 @@ class CredentialsDto
      * @param  ?string  $outboundIntegrationId
      * @param  ?bool  $useFromAddressOverride
      * @param  ?string  $fromAddressOverride
+     * @param  ?string  $emailSlugPrefix
+     * @param  ?string  $externalEnvironmentId
+     * @param  ?string  $externalVaultId
+     * @param  ?string  $externalWorkspaceId
      * @phpstan-pure
      */
-    public function __construct(?string $apiKey = null, ?string $user = null, ?string $secretKey = null, ?string $domain = null, ?string $password = null, ?string $host = null, ?string $port = null, ?bool $secure = null, ?string $region = null, ?string $accountSid = null, ?string $messageProfileId = null, ?string $token = null, ?string $from = null, ?string $senderName = null, ?string $projectName = null, ?string $applicationId = null, ?string $clientId = null, ?bool $requireTls = null, ?bool $ignoreTls = null, ?TlsOptions $tlsOptions = null, ?string $baseUrl = null, ?string $webhookUrl = null, ?string $redirectUrl = null, ?bool $hmac = null, ?string $serviceAccount = null, ?string $ipPoolName = null, ?string $apiKeyRequestHeader = null, ?string $secretKeyRequestHeader = null, ?string $idPath = null, ?string $datePath = null, ?string $apiToken = null, ?bool $authenticateByToken = null, ?string $authenticationTokenKey = null, ?string $instanceId = null, ?string $alertUid = null, ?string $title = null, ?string $imageUrl = null, ?string $state = null, ?string $externalLink = null, ?string $channelId = null, ?string $phoneNumberIdentification = null, ?string $accessKey = null, ?string $appSid = null, ?string $senderId = null, ?string $tenantId = null, ?string $appIOBaseUrl = null, ?string $signingSecret = null, ?string $outboundIntegrationId = null, ?bool $useFromAddressOverride = null, ?string $fromAddressOverride = null)
+    public function __construct(?string $apiKey = null, ?string $user = null, ?string $secretKey = null, ?string $domain = null, ?string $password = null, ?string $host = null, ?string $port = null, ?bool $secure = null, ?string $region = null, ?string $accountSid = null, ?string $messageProfileId = null, ?string $token = null, ?string $from = null, ?string $senderName = null, ?string $projectName = null, ?string $applicationId = null, ?string $clientId = null, ?bool $requireTls = null, ?bool $ignoreTls = null, ?TlsOptions $tlsOptions = null, ?string $baseUrl = null, ?string $webhookUrl = null, ?string $redirectUrl = null, ?bool $hmac = null, ?string $serviceAccount = null, ?string $ipPoolName = null, ?string $apiKeyRequestHeader = null, ?string $secretKeyRequestHeader = null, ?string $idPath = null, ?string $datePath = null, ?string $apiToken = null, ?bool $authenticateByToken = null, ?string $authenticationTokenKey = null, ?string $instanceId = null, ?string $alertUid = null, ?string $title = null, ?string $imageUrl = null, ?string $state = null, ?string $externalLink = null, ?string $channelId = null, ?string $phoneNumberIdentification = null, ?string $accessKey = null, ?string $appSid = null, ?string $senderId = null, ?string $tenantId = null, ?string $appIOBaseUrl = null, ?string $signingSecret = null, ?string $outboundIntegrationId = null, ?bool $useFromAddressOverride = null, ?string $fromAddressOverride = null, ?string $emailSlugPrefix = null, ?string $externalEnvironmentId = null, ?string $externalVaultId = null, ?string $externalWorkspaceId = null)
     {
         $this->apiKey = $apiKey;
         $this->user = $user;
@@ -517,5 +557,9 @@ class CredentialsDto
         $this->outboundIntegrationId = $outboundIntegrationId;
         $this->useFromAddressOverride = $useFromAddressOverride;
         $this->fromAddressOverride = $fromAddressOverride;
+        $this->emailSlugPrefix = $emailSlugPrefix;
+        $this->externalEnvironmentId = $externalEnvironmentId;
+        $this->externalVaultId = $externalVaultId;
+        $this->externalWorkspaceId = $externalWorkspaceId;
     }
 }

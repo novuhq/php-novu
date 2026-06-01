@@ -18,4 +18,5 @@ enum GetChannelEndpointResponseDtoType: string
     case Phone = 'phone';
     case MsTeamsChannel = 'ms_teams_channel';
     case MsTeamsUser = 'ms_teams_user';
+    case TelegramChat = 'telegram_chat';
 }

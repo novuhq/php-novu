@@ -54,12 +54,12 @@ class ChannelEndpoints
      *
      * This operation requires either `secretKey` or `secretKey` to be set via `setSecurity` on the SDK builder.
      *
-     * @param  \novu\Models\Components\CreateSlackChannelEndpointDto|\novu\Models\Components\CreateSlackUserEndpointDto|\novu\Models\Components\CreateWebhookEndpointDto|\novu\Models\Components\CreatePhoneEndpointDto|\novu\Models\Components\CreateMsTeamsChannelEndpointDto|\novu\Models\Components\CreateMsTeamsUserEndpointDto  $requestBody
+     * @param  \novu\Models\Components\CreateSlackChannelEndpointDto|\novu\Models\Components\CreateSlackUserEndpointDto|\novu\Models\Components\CreateWebhookEndpointDto|\novu\Models\Components\CreatePhoneEndpointDto|\novu\Models\Components\CreateMsTeamsChannelEndpointDto|\novu\Models\Components\CreateMsTeamsUserEndpointDto|\novu\Models\Components\CreateTelegramChatEndpointDto  $requestBody
      * @param  ?string  $idempotencyKey
      * @return \novu\Models\Operations\ChannelEndpointsControllerCreateChannelEndpointResponse
      * @throws \novu\Models\Errors\APIException
      */
-    public function create(Components\CreateSlackChannelEndpointDto|Components\CreateSlackUserEndpointDto|Components\CreateWebhookEndpointDto|Components\CreatePhoneEndpointDto|Components\CreateMsTeamsChannelEndpointDto|Components\CreateMsTeamsUserEndpointDto $requestBody, ?string $idempotencyKey = null, ?Options $options = null): Operations\ChannelEndpointsControllerCreateChannelEndpointResponse
+    public function create(Components\CreateSlackChannelEndpointDto|Components\CreateSlackUserEndpointDto|Components\CreateWebhookEndpointDto|Components\CreatePhoneEndpointDto|Components\CreateMsTeamsChannelEndpointDto|Components\CreateMsTeamsUserEndpointDto|Components\CreateTelegramChatEndpointDto $requestBody, ?string $idempotencyKey = null, ?Options $options = null): Operations\ChannelEndpointsControllerCreateChannelEndpointResponse
     {
         $retryConfig = null;
         if ($options) {

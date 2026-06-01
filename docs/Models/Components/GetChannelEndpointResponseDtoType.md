@@ -13,3 +13,4 @@ Type of channel endpoint
 | `Phone`          | phone            |
 | `MsTeamsChannel` | ms_teams_channel |
 | `MsTeamsUser`    | ms_teams_user    |
+| `TelegramChat`   | telegram_chat    |

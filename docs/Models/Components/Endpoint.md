@@ -41,3 +41,30 @@ Components\WebhookEndpointDto $value = /* values here */
 Components\PhoneEndpointDto $value = /* values here */
 ```
 
+### `Components\MsTeamsChannelEndpointDto`
+
+```php
+/**
+* @var \novu\Models\Components\MsTeamsChannelEndpointDto
+*/
+Components\MsTeamsChannelEndpointDto $value = /* values here */
+```
+
+### `Components\MsTeamsUserEndpointDto`
+
+```php
+/**
+* @var \novu\Models\Components\MsTeamsUserEndpointDto
+*/
+Components\MsTeamsUserEndpointDto $value = /* values here */
+```
+
+### `Components\TelegramChatEndpointDto`
+
+```php
+/**
+* @var \novu\Models\Components\TelegramChatEndpointDto
+*/
+Components\TelegramChatEndpointDto $value = /* values here */
+```
+
