@@ -92,5 +92,8 @@ enum ProvidersIdEnum: string
     case WhatsappBusiness = 'whatsapp-business';
     case ChatWebhook = 'chat-webhook';
     case NovuSlack = 'novu-slack';
+    case Telegram = 'telegram';
     case Anthropic = 'anthropic';
+    case NovuAnthropic = 'novu-anthropic';
+    case AnthropicAws = 'anthropic-aws';
 }

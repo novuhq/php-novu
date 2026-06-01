@@ -87,4 +87,7 @@ Provider ID of the job
 | `WhatsappBusiness` | whatsapp-business  |
 | `ChatWebhook`      | chat-webhook       |
 | `NovuSlack`        | novu-slack         |
+| `Telegram`         | telegram           |
 | `Anthropic`        | anthropic          |
+| `NovuAnthropic`    | novu-anthropic     |
+| `AnthropicAws`     | anthropic-aws      |

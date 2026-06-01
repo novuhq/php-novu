@@ -40,11 +40,11 @@ class GetChannelEndpointResponseDto
     /**
      * Endpoint data specific to the channel type
      *
-     * @var \novu\Models\Components\SlackChannelEndpointDto|\novu\Models\Components\SlackUserEndpointDto|\novu\Models\Components\WebhookEndpointDto|\novu\Models\Components\PhoneEndpointDto $endpoint
+     * @var \novu\Models\Components\SlackChannelEndpointDto|\novu\Models\Components\SlackUserEndpointDto|\novu\Models\Components\WebhookEndpointDto|\novu\Models\Components\PhoneEndpointDto|\novu\Models\Components\MsTeamsChannelEndpointDto|\novu\Models\Components\MsTeamsUserEndpointDto|\novu\Models\Components\TelegramChatEndpointDto $endpoint
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('endpoint')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\SlackChannelEndpointDto|\novu\Models\Components\SlackUserEndpointDto|\novu\Models\Components\WebhookEndpointDto|\novu\Models\Components\PhoneEndpointDto')]
-    public SlackChannelEndpointDto|SlackUserEndpointDto|WebhookEndpointDto|PhoneEndpointDto $endpoint;
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\SlackChannelEndpointDto|\novu\Models\Components\SlackUserEndpointDto|\novu\Models\Components\WebhookEndpointDto|\novu\Models\Components\PhoneEndpointDto|\novu\Models\Components\MsTeamsChannelEndpointDto|\novu\Models\Components\MsTeamsUserEndpointDto|\novu\Models\Components\TelegramChatEndpointDto')]
+    public SlackChannelEndpointDto|SlackUserEndpointDto|WebhookEndpointDto|PhoneEndpointDto|MsTeamsChannelEndpointDto|MsTeamsUserEndpointDto|TelegramChatEndpointDto $endpoint;
 
     /**
      * The timestamp indicating when the channel endpoint was created, in ISO 8601 format.
@@ -108,7 +108,7 @@ class GetChannelEndpointResponseDto
      * @param  string  $identifier
      * @param  array<string>  $contextKeys
      * @param  \novu\Models\Components\GetChannelEndpointResponseDtoType  $type
-     * @param  \novu\Models\Components\SlackChannelEndpointDto|\novu\Models\Components\SlackUserEndpointDto|\novu\Models\Components\WebhookEndpointDto|\novu\Models\Components\PhoneEndpointDto  $endpoint
+     * @param  \novu\Models\Components\SlackChannelEndpointDto|\novu\Models\Components\SlackUserEndpointDto|\novu\Models\Components\WebhookEndpointDto|\novu\Models\Components\PhoneEndpointDto|\novu\Models\Components\MsTeamsChannelEndpointDto|\novu\Models\Components\MsTeamsUserEndpointDto|\novu\Models\Components\TelegramChatEndpointDto  $endpoint
      * @param  string  $createdAt
      * @param  string  $updatedAt
      * @param  ?\novu\Models\Components\GetChannelEndpointResponseDtoChannel  $channel
@@ -118,7 +118,7 @@ class GetChannelEndpointResponseDto
      * @param  ?string  $subscriberId
      * @phpstan-pure
      */
-    public function __construct(string $identifier, array $contextKeys, GetChannelEndpointResponseDtoType $type, SlackChannelEndpointDto|SlackUserEndpointDto|WebhookEndpointDto|PhoneEndpointDto $endpoint, string $createdAt, string $updatedAt, ?GetChannelEndpointResponseDtoChannel $channel = null, ?GetChannelEndpointResponseDtoProviderId $providerId = null, ?string $integrationIdentifier = null, ?string $connectionIdentifier = null, ?string $subscriberId = null)
+    public function __construct(string $identifier, array $contextKeys, GetChannelEndpointResponseDtoType $type, SlackChannelEndpointDto|SlackUserEndpointDto|WebhookEndpointDto|PhoneEndpointDto|MsTeamsChannelEndpointDto|MsTeamsUserEndpointDto|TelegramChatEndpointDto $endpoint, string $createdAt, string $updatedAt, ?GetChannelEndpointResponseDtoChannel $channel = null, ?GetChannelEndpointResponseDtoProviderId $providerId = null, ?string $integrationIdentifier = null, ?string $connectionIdentifier = null, ?string $subscriberId = null)
     {
         $this->identifier = $identifier;
         $this->contextKeys = $contextKeys;

@@ -59,3 +59,12 @@ Components\CreateMsTeamsChannelEndpointDto $value = /* values here */
 Components\CreateMsTeamsUserEndpointDto $value = /* values here */
 ```
 
+### `Components\CreateTelegramChatEndpointDto`
+
+```php
+/**
+* @var \novu\Models\Components\CreateTelegramChatEndpointDto
+*/
+Components\CreateTelegramChatEndpointDto $value = /* values here */
+```
+

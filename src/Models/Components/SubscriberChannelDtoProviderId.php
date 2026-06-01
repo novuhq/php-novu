@@ -24,6 +24,7 @@ enum SubscriberChannelDtoProviderId: string
     case WhatsappBusiness = 'whatsapp-business';
     case ChatWebhook = 'chat-webhook';
     case NovuSlack = 'novu-slack';
+    case Telegram = 'telegram';
     case Fcm = 'fcm';
     case Apns = 'apns';
     case Expo = 'expo';
