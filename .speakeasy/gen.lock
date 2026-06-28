@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 4286f3ad-fa54-4c63-a599-e5773b27ae7b
 management:
-  docChecksum: 7b2c3260ca3e25edb03cc7bf75a9e268
-  docVersion: 3.15.0
-  speakeasyVersion: 1.769.1
-  generationVersion: 2.892.1
-  releaseVersion: 3.17.0
-  configChecksum: 9d0819fda60ac35c885926f88849e0ad
+  docChecksum: 3324a78481825c8656b38e36e22a2667
+  docVersion: 3.17.1
+  speakeasyVersion: 1.786.1
+  generationVersion: 2.913.3
+  releaseVersion: 3.18.0
+  configChecksum: 32c527fa3412d7e3194243d048dd63b9
   repoURL: https://github.com/novuhq/php-novu.git
   installationURL: https://github.com/novuhq/php-novu.git
   published: true
 persistentEdits:
-  generation_id: f1557e37-db24-451f-8850-66aac1ef3b23
-  pristine_commit_hash: 099298de853425047074d4c376184a70c9835aca
-  pristine_tree_hash: 93d13a80f73abe1ae10048079cdd8671a832a58c
+  generation_id: c6e9462e-0046-415a-8447-7357b67f2dfb
+  pristine_commit_hash: 5cf73dd04383bc855718f1ca75f5588ba7ba4529
+  pristine_tree_hash: 32ed988c875a5227f43b0e0000e966016295e50f
 features:
   php:
     additionalProperties: 0.1.0
@@ -30,8 +30,8 @@ features:
     nameOverrides: 2.81.4
     nullables: 1.0.1
     responseFormat: 0.1.0
-    retries: 0.1.1
-    unions: 0.1.7
+    retries: 0.1.2
+    unions: 0.1.8
 trackedFiles:
   .gitattributes:
     id: 24139dae6567
@@ -2279,12 +2279,12 @@ trackedFiles:
     pristine_git_object: f76ecd1761470efb92f0f7a4a6d7ae864569a5a3
   docs/Models/Components/UpdateWorkflowDto.md:
     id: cca298004bd9
-    last_write_checksum: sha1:59cb6ccbf484e178bdf50ac893a0617323420844
-    pristine_git_object: 2b383bec319a7f7ead2ce480446a7a9dc51a849b
+    last_write_checksum: sha1:a2125e94a375b10d485085837120ba7aa9cd8a27
+    pristine_git_object: 656ea8a19fec0c2eddd1c44c5413144f47eeca58
   docs/Models/Components/UpdateWorkflowDtoSteps.md:
     id: ee9757a7bfac
-    last_write_checksum: sha1:37dbfb19eb2b03429d89675d285170e962199154
-    pristine_git_object: 582ca0d398846fad440594aeb9b9780452d8285a
+    last_write_checksum: sha1:e4578cfe4a086f92b9273f08feefe58e01bc2092
+    pristine_git_object: dd60146c407d744b1ae5b0455e7589ad06801018
   docs/Models/Components/UpdatedBy.md:
     id: f2cf360c400f
     last_write_checksum: sha1:fe5a1c0f9a1aabfdfa6c433b48f25c9385a6e09f
@@ -3707,8 +3707,8 @@ trackedFiles:
     pristine_git_object: 90f9b05b4b27ca00a2924ac9b63a2a065539911f
   docs/sdks/integrations/README.md:
     id: 7b29664808c0
-    last_write_checksum: sha1:ac8f7e1b102691f111fda5cd2e91be7b1f5a0aa8
-    pristine_git_object: 1884f294f98358b09ffe143f4ea6ca70f98dc7d6
+    last_write_checksum: sha1:ec0fe8ebadbd8832be52c4c25dea9b4bbc101fbb
+    pristine_git_object: 00b60fe7938bc0fec5da21bb0d6dd2d177dea4b2
   docs/sdks/layouts/README.md:
     id: 9cae4f89dc39
     last_write_checksum: sha1:e180ddf3c946f611fa1bfc75e6df0ae3f8979000
@@ -3731,12 +3731,12 @@ trackedFiles:
     pristine_git_object: 1fb49dd3fd435bee94593563d53e376157758ca9
   docs/sdks/novumessages/README.md:
     id: 0ed543e2b6a6
-    last_write_checksum: sha1:cbf79c08a42836be8e4e87c3d511e0b6387f66e6
-    pristine_git_object: 849fe90a2f6c3425e6fa18a8c6d8f99092685186
+    last_write_checksum: sha1:abb1b56860f7f3028ea9e3d780354f307f449702
+    pristine_git_object: 605ffc56f80b7acd043e1956e54664c56b83ca1a
   docs/sdks/novunotifications/README.md:
     id: 9d94ce44af2e
-    last_write_checksum: sha1:f5513ff609965c253b09f6b5faf7b889c665914b
-    pristine_git_object: 6d1dc76eb2bd62dda4738ad898812a35208544e4
+    last_write_checksum: sha1:9400995816579ff818b596e8daa149c44b7a2482
+    pristine_git_object: 94ce1afc31c0b4528f43efdc6964abf0f19fbe53
   docs/sdks/novutopics/README.md:
     id: e4d164b0f8b9
     last_write_checksum: sha1:5283f89f8128dc6211555c9140ffa8d7a91fe26d
@@ -3763,12 +3763,12 @@ trackedFiles:
     pristine_git_object: 20aa83c2df65a45d09060ce4b7dbdefc8a126594
   docs/sdks/subscribersmessages/README.md:
     id: dfd6797670e7
-    last_write_checksum: sha1:881f036006e6c817b37f9c413fed954acd98173e
-    pristine_git_object: f30b9007bf1c70fa9520a0a6afe605093a8e3633
+    last_write_checksum: sha1:883f63107db71da0467b2cc42028d55830ec8425
+    pristine_git_object: 0a964ff9845f61188ce25f4c709a4f65fa985254
   docs/sdks/subscribersnotifications/README.md:
     id: 0a73fd64f474
-    last_write_checksum: sha1:2fa5e5fb036bffc6667a21d1138937ac18f94701
-    pristine_git_object: b4ee0ce21e2146b0b5cf4db7536a830976192260
+    last_write_checksum: sha1:2f0d604f8166f13f8c0e221acfcd94e3e24138cf
+    pristine_git_object: 1fc6e98b087ee78b0551e14e0ac8d218c07aeb86
   docs/sdks/subscriberspreferences/README.md:
     id: 6fc164967b15
     last_write_checksum: sha1:3101d8493c3aae7193ef929febb2c3eb66fe58ec
@@ -3911,8 +3911,8 @@ trackedFiles:
     pristine_git_object: 1830ee19764e9d29bba3b73ba842999eca676c45
   src/Integrations.php:
     id: 560b50711cf5
-    last_write_checksum: sha1:a349e8d04ab404f0eab308c6263b946f5d27c369
-    pristine_git_object: 8c61f626a8d12a60730f42b5d977c14890e079d2
+    last_write_checksum: sha1:c6c5213c61081fe8482ff28e4e3ed5d4d4e58d3e
+    pristine_git_object: 7fa9270aa076938dedb7503db91381cc8396203c
   src/Layouts.php:
     id: 228b96a9374d
     last_write_checksum: sha1:d2183fdf4de37505ae346732a8d5d9f75347e3fc
@@ -5939,8 +5939,8 @@ trackedFiles:
     pristine_git_object: 7b9005b2a80c23a23632a433ca9cf4126cfda0da
   src/Models/Components/UpdateWorkflowDto.php:
     id: 5c173b056a5c
-    last_write_checksum: sha1:8660fa0d4e6c8a88e40a9050580cc96226ccb332
-    pristine_git_object: e5f9a735556deeff3994d8713991e5e1b5bb6789
+    last_write_checksum: sha1:39c089e52a1b2e7913ba1a603a20b96b405424b4
+    pristine_git_object: 907326c2d5590e26156d31976a772d6176b1821e
   src/Models/Components/UpdatedBy.php:
     id: 198dc129bc85
     last_write_checksum: sha1:49716cf380aa243b317025ad5df0fe748da7d812
@@ -7311,12 +7311,12 @@ trackedFiles:
     pristine_git_object: b88980cfb1d4cfc517447bc3c98f6de09dbd2282
   src/NovuMessages.php:
     id: 7c7140b21dc5
-    last_write_checksum: sha1:7af10bb7fbbc3c3979c9c70117e842411beecb66
-    pristine_git_object: f6a2b8cc5c2504f0afb38dfd324f84cae90bff95
+    last_write_checksum: sha1:0cb062dfea648ceb0fe4bd11d5de6cc8d34a8d62
+    pristine_git_object: 7e423e388d0d85a485d956a05172bbc6de097522
   src/NovuNotifications.php:
     id: 1fba9beac060
-    last_write_checksum: sha1:584c2f81d360a2fe26a32dc5c1639dac9e9d1b65
-    pristine_git_object: c442ad43298d2e177114f74fc9ae4cbaedd0e989
+    last_write_checksum: sha1:dd314f1a2136c89c0a051e0d7babe92501b02760
+    pristine_git_object: d8bd74ef4e5ce2a30dbb713b09a3f9a2cb794556
   src/NovuTopics.php:
     id: 9beacd1d4a07
     last_write_checksum: sha1:56e2228c15ed675389019d0c2c412398c37311f9
@@ -7331,8 +7331,8 @@ trackedFiles:
     pristine_git_object: 1108950af27b5c0a25485670947575257c044c13
   src/SDKConfiguration.php:
     id: 9d60ab0bec0b
-    last_write_checksum: sha1:c805f190f54656df94930f4e81a2a59945adc2ae
-    pristine_git_object: 01ca386406eeed33a08167d1033372eeadae9118
+    last_write_checksum: sha1:7f351825ef28904a82acb8c4b9c23d4dcd1955fc
+    pristine_git_object: 9484c5bc671ff677952cf99a35bbe344e24b4983
   src/Steps.php:
     id: 9ae87f15c136
     last_write_checksum: sha1:8e390ba9f473cc43bac37ae4a19a15350a91bd8f
@@ -7347,12 +7347,12 @@ trackedFiles:
     pristine_git_object: 64bd523dc6cb618e7437fe6fd12dbf60372aa11f
   src/SubscribersMessages.php:
     id: 97a7c79c4aff
-    last_write_checksum: sha1:9cc74865996bc6ed50a8b50c8b86c4ae7f911ec4
-    pristine_git_object: 9d85badb5134e683b1b4b8214b175bdeb3042907
+    last_write_checksum: sha1:e40c806f8a665883c154ce4515f50a54d3d0faf2
+    pristine_git_object: b7c00bbfcb9b062f92bfe929e282bb1a62b4de61
   src/SubscribersNotifications.php:
     id: e2c4cb45fcf4
-    last_write_checksum: sha1:4fe28062364daa672b8264184e2f1719d38cbc16
-    pristine_git_object: 4e8702aa6a7bca357bddfb091a9de793bfc5443f
+    last_write_checksum: sha1:4626fe99fb3404d4d9828f2d578ac1509808a9ac
+    pristine_git_object: 77a5c51e2ff56f527830cd404adb9a5189aae884
   src/SubscribersPreferences.php:
     id: "993314962354"
     last_write_checksum: sha1:bdf44c8297ca3172db5427f52b72a1c743c65615
@@ -7479,8 +7479,8 @@ trackedFiles:
     pristine_git_object: 156ca535fdb3dcdfb0030d9e25254c662d56d0f3
   src/Utils/Retry/RetryUtils.php:
     id: 28597380e832
-    last_write_checksum: sha1:6d1f41cb1af93a89f741ef73531b44a31abec3ee
-    pristine_git_object: 15acbb329188743da92e41dd13f1bfb171fa4c1f
+    last_write_checksum: sha1:90712a9e860da55eaddc49d566ae87da97b1c320
+    pristine_git_object: 6fbe865998b3631e8f8cdf262cdf49cad5b4e9f4
   src/Utils/Retry/TemporaryError.php:
     id: d58c3851b91f
     last_write_checksum: sha1:776e93d7f5ad68b129e1491ba953d0258aff0be1
@@ -7507,8 +7507,8 @@ trackedFiles:
     pristine_git_object: 44a7b449566c8a5662afaae8eff38991d3e13cb6
   src/Utils/UnionHandler.php:
     id: 5a76a946fe85
-    last_write_checksum: sha1:9baf4d3030d6c155a87bb0e39b8e2cc2f0cd091f
-    pristine_git_object: d160fe7793fa34a0345af5e9032e091d7b2ef9af
+    last_write_checksum: sha1:825bf9f6a1d5c9a5d0b154be380329072c7a24b0
+    pristine_git_object: b2988d6f1bf1a66ac57dfb9140f8886e956cf758
   src/Utils/Utils.php:
     id: c902f57e2422
     last_write_checksum: sha1:21636e401bb1936baf07b26fbc4b98ed577372ae
@@ -9739,7 +9739,7 @@ examples:
           application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Php SDK Changes:\n* `novu->channel connections->create()`:  `response.providerId` **Changed** (Breaking ⚠️)\n* `novu->channel connections->update()`:  `response.providerId` **Changed** (Breaking ⚠️)\n* `novu->subscriberscredentials->append()`: \n  *  `request.updateSubscriberChannelRequestDto->providerId->enum(telegram)` **Added**\n  *  `response.channels[]->providerId->enum(telegram)` **Added** (Breaking ⚠️)\n* `novu->layouts->generatePreview()`: \n  *  `request.layoutPreviewRequestDto->previewPayload->subscriber->channels[]->providerId->enum(telegram)` **Added**\n  *  `response.previewPayloadExample->subscriber->channels[]->providerId->enum(telegram)` **Added** (Breaking ⚠️)\n* `novu->subscribers->search()`:  `response.data[]->channels[]->providerId->enum(telegram)` **Added** (Breaking ⚠️)\n* `novu->subscribers->create()`: \n  *  `response.channels[]->providerId->enum(telegram)` **Added** (Breaking ⚠️)\n  *  `error.channels[]->providerId->enum(telegram)` **Added** (Breaking ⚠️)\n* `novu->subscribers->get()`:  `response.channels[]->providerId->enum(telegram)` **Added** (Breaking ⚠️)\n* `novu->subscribers->patch()`:  `response.channels[]->providerId->enum(telegram)` **Added** (Breaking ⚠️)\n* `novu->subscribers->updateCredentials()`: \n  *  `request.updateSubscriberChannelRequestDto->providerId->enum(telegram)` **Added**\n  *  `response.channels[]->providerId->enum(telegram)` **Added** (Breaking ⚠️)\n* `novu->subscribers->updateOnlineStatus()`:  `response.channels[]->providerId->enum(telegram)` **Added** (Breaking ⚠️)\n* `novu->subscribers->messages->updateAsSeen()`:  `response.subscriber->channels[]->providerId->enum(telegram)` **Added** (Breaking ⚠️)\n* `novu->subscribers->messages->markAllAs()`:  `response.[]->subscriber->channels[]->providerId->enum(telegram)` **Added** (Breaking ⚠️)\n* `novu->workflows->steps->generatePreview()`: \n  *  `request.generatePreviewRequestDto->previewPayload->subscriber->channels[]->providerId->enum(telegram)` **Added**\n  *  `response.previewPayloadExample->subscriber->channels[]->providerId->enum(telegram)` **Added** (Breaking ⚠️)\n* `novu->channel connections->list()`: \n  *  `request->providerId` **Changed**\n  *  `response.data[]->providerId` **Changed** (Breaking ⚠️)\n* `novu->notifications->get()`:  `response.jobs[]->executionDetails[]->providerId` **Changed** (Breaking ⚠️)\n* `novu->notifications->list()`:  `response.data[]->jobs[]->executionDetails[]->providerId` **Changed** (Breaking ⚠️)\n* `novu->channel endpoints->create()`: \n  *  `requestBody->union(telegram_chat)` **Added**\n  *  `response` **Changed** (Breaking ⚠️)\n* `novu->channel endpoints->list()`: \n  *  `request->providerId` **Changed**\n  *  `response.data[]` **Changed** (Breaking ⚠️)\n* `novu->channel connections->retrieve()`:  `response.providerId` **Changed** (Breaking ⚠️)\n* `novu->channel endpoints->retrieve()`:  `response` **Changed** (Breaking ⚠️)\n* `novu->channel endpoints->update()`:  `response` **Changed** (Breaking ⚠️)\n* `novu->messages->get()`:  `response.data[]->subscriber->channels[]->providerId->enum(telegram)` **Added** (Breaking ⚠️)\n* `novu->integrations->create()`: \n  *  `request.createIntegrationRequestDto->credentials` **Changed**\n  *  `response.credentials` **Changed**\n* `novu->integrations->update()`: \n  *  `request.updateIntegrationRequestDto->credentials` **Changed**\n  *  `response.credentials` **Changed**\n* `novu->integrations->delete()`:  `response.[]->credentials` **Changed**\n* `novu->integrations->setAsPrimary()`:  `response.credentials` **Changed**\n* `novu->integrations->listActive()`:  `response.[]->credentials` **Changed**\n* `novu->integrations->list()`:  `response.[]->credentials` **Changed**\n* `novu->trigger()`: \n  *  `request.triggerEventRequestDto->to->union(Array<1>)[]->union(SubscriberPayloadDto)->channels[]->providerId->enum(telegram)` **Added**\n* `novu->triggerbroadcast()`: \n  *  `request.triggerEventToAllRequestDto->actor->union(SubscriberPayloadDto)->channels[]->providerId->enum(telegram)` **Added**\n* `novu->triggerbulk()`: \n  *  `request.bulkTriggerEventDto->events[]->to->union(Array<1>)[]->union(SubscriberPayloadDto)->channels[]->providerId->enum(telegram)` **Added**\n"
+releaseNotes: "## Php SDK Changes:\n* `novu->subscribers->notifications->getFeed()`: **Deprecated**\n* `novu->subscribers->messages->updateAsSeen()`: **Deprecated**\n* `novu->subscribers->messages->markAllAs()`: **Deprecated**\n* `novu->workflows->update()`: \n  *  `request.updateWorkflowDto->steps[]->union(throttle)` **Added**\n* `novu->subscribersmessages->markAll()`: **Deprecated**\n* `novu->subscribersnotifications->getUnseenCount()`: **Deprecated**\n"
 generatedFiles:
   - .gitattributes
   - USAGE.md

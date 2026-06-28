@@ -50,16 +50,18 @@ class SubscribersMessages
     /**
      * Update all notifications state
      *
-     * Update all subscriber in-app (inbox) notifications state such as read, unread, seen or unseen by **subscriberId**.
+     * This API is deprecated, use v2 API instead. Update all subscriber in-app notifications state such as read, unread, seen or unseen by **subscriberId**.
      *
      * @param  \novu\Models\Components\MarkAllMessageAsRequestDto  $markAllMessageAsRequestDto
      * @param  string  $subscriberId
      * @param  ?string  $idempotencyKey
      * @return \novu\Models\Operations\SubscribersV1ControllerMarkAllUnreadAsReadResponse
      * @throws \novu\Models\Errors\APIException
+     * @deprecated  method: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     public function markAll(Components\MarkAllMessageAsRequestDto $markAllMessageAsRequestDto, string $subscriberId, ?string $idempotencyKey = null, ?Options $options = null): Operations\SubscribersV1ControllerMarkAllUnreadAsReadResponse
     {
+        trigger_error('Method '.__METHOD__.' is deprecated', E_USER_DEPRECATED);
         $retryConfig = null;
         if ($options) {
             $retryConfig = $options->retryConfig;

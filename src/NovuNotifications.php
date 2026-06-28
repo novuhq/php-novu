@@ -2423,14 +2423,16 @@ class NovuNotifications
     /**
      * Retrieve subscriber notifications
      *
-     * Retrieve subscriber in-app (inbox) notifications by its unique key identifier **subscriberId**.
+     * This API is deprecated, use v2 API instead. Retrieve subscriber in-app notifications by its unique key identifier **subscriberId**.
      *
      * @param  \novu\Models\Operations\SubscribersV1ControllerGetNotificationsFeedRequest  $request
      * @return \novu\Models\Operations\SubscribersV1ControllerGetNotificationsFeedResponse
      * @throws \novu\Models\Errors\APIException
+     * @deprecated  method: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     public function getFeed(Operations\SubscribersV1ControllerGetNotificationsFeedRequest $request, ?Options $options = null): Operations\SubscribersV1ControllerGetNotificationsFeedResponse
     {
+        trigger_error('Method '.__METHOD__.' is deprecated', E_USER_DEPRECATED);
         $retryConfig = null;
         if ($options) {
             $retryConfig = $options->retryConfig;

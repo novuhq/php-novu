@@ -480,7 +480,7 @@ if ($response->triggerEventResponseDto !== null) {
 * [markAllAsRead](docs/sdks/novunotifications/README.md#markallasread) - Mark all notifications as read
 * [archiveAllRead](docs/sdks/novunotifications/README.md#archiveallread) - Archive all read notifications
 * [markAsSeen](docs/sdks/novunotifications/README.md#markasseen) - Mark notifications as seen
-* [getFeed](docs/sdks/novunotifications/README.md#getfeed) - Retrieve subscriber notifications
+* [~~getFeed~~](docs/sdks/novunotifications/README.md#getfeed) - Retrieve subscriber notifications :warning: **Deprecated**
 
 #### [Subscribers.Preferences](docs/sdks/preferences/README.md)
 
@@ -490,23 +490,23 @@ if ($response->triggerEventResponseDto !== null) {
 
 * [list](docs/sdks/novutopics/README.md#list) - Retrieve subscriber subscriptions
 
-### [Subscribers.Messages](docs/sdks/novumessages/README.md)
+### [~~Subscribers.Messages~~](docs/sdks/novumessages/README.md)
 
-* [updateAsSeen](docs/sdks/novumessages/README.md#updateasseen) - Update notification action status
-* [markAllAs](docs/sdks/novumessages/README.md#markallas) - Update notifications state
+* [~~updateAsSeen~~](docs/sdks/novumessages/README.md#updateasseen) - Update notification action status :warning: **Deprecated**
+* [~~markAllAs~~](docs/sdks/novumessages/README.md#markallas) - Update notifications state :warning: **Deprecated**
 
 ### [SubscribersCredentials](docs/sdks/subscriberscredentials/README.md)
 
 * [append](docs/sdks/subscriberscredentials/README.md#append) - Upsert provider credentials
 * [deleteProvider](docs/sdks/subscriberscredentials/README.md#deleteprovider) - Delete provider credentials
 
-### [SubscribersMessages](docs/sdks/subscribersmessages/README.md)
+### [~~SubscribersMessages~~](docs/sdks/subscribersmessages/README.md)
 
-* [markAll](docs/sdks/subscribersmessages/README.md#markall) - Update all notifications state
+* [~~markAll~~](docs/sdks/subscribersmessages/README.md#markall) - Update all notifications state :warning: **Deprecated**
 
-### [SubscribersNotifications](docs/sdks/subscribersnotifications/README.md)
+### [~~SubscribersNotifications~~](docs/sdks/subscribersnotifications/README.md)
 
-* [getUnseenCount](docs/sdks/subscribersnotifications/README.md#getunseencount) - Retrieve unseen notifications count
+* [~~getUnseenCount~~](docs/sdks/subscribersnotifications/README.md#getunseencount) - Retrieve unseen notifications count :warning: **Deprecated**
 
 ### [SubscribersPreferences](docs/sdks/subscriberspreferences/README.md)
 

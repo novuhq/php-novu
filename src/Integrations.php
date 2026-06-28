@@ -51,7 +51,7 @@ class Integrations
      * Auto-configure an integration for inbound webhooks
      *
      * Auto-configure an integration by its unique key identifier **integrationId** for inbound webhook support. 
-     *     This will automatically generate required webhook signing keys and configure webhook endpoints.
+     *     This will automatically generate required webhook signing keys and configure webhook endpoints. Only integration metadata is returned, credentials field is returned as an empty object.
      *
      * @param  string  $integrationId
      * @param  ?string  $idempotencyKey
@@ -199,7 +199,7 @@ class Integrations
      * Create an integration
      *
      * Create an integration for the current environment the user is based on the API key provided. 
-     *     Each provider supports different credentials, check the provider documentation for more details.
+     *     Each provider supports different credentials, check the provider documentation for more details. Only integration metadata is returned, credentials field is returned as an empty object.
      *
      * @param  \novu\Models\Components\CreateIntegrationRequestDto  $createIntegrationRequestDto
      * @param  ?string  $idempotencyKey
@@ -657,7 +657,7 @@ class Integrations
     /**
      * List active integrations
      *
-     * List all the active integrations created in the organization
+     * List all the active integrations created in the organization. Only integration metadata is returned, credentials field is returned as an empty object.
      *
      * @param  ?string  $idempotencyKey
      * @return \novu\Models\Operations\IntegrationsControllerGetActiveIntegrationsResponse
@@ -959,7 +959,7 @@ class Integrations
     /**
      * List all integrations
      *
-     * List all the channels integrations created in the organization
+     * List all the channels integrations created in the organization. Only integration metadata is returned, credentials field is returned as an empty object.
      *
      * @param  ?string  $idempotencyKey
      * @return \novu\Models\Operations\IntegrationsControllerListIntegrationsResponse
@@ -1105,7 +1105,7 @@ class Integrations
      * Delete an integration
      *
      * Delete an integration by its unique key identifier **integrationId**. 
-     *     This action is irreversible.
+     *     This action is irreversible. Only integration metadata is returned, credentials field is returned as empty object.
      *
      * @param  string  $integrationId
      * @param  ?string  $idempotencyKey
@@ -1254,7 +1254,8 @@ class Integrations
      *
      * Update an integration as **primary** by its unique key identifier **integrationId**. 
      *     This API will set the integration as primary for that channel in the current environment. 
-     *     Primary integration is used to deliver notification for sms and email channels in the workflow.
+     *     Primary integration is used to deliver notification for sms and email channels in the workflow. 
+     *     Only integration metadata is returned, credentials field is returned as an empty object.
      *
      * @param  string  $integrationId
      * @param  ?string  $idempotencyKey
@@ -1402,7 +1403,7 @@ class Integrations
      * Update an integration
      *
      * Update an integration by its unique key identifier **integrationId**. 
-     *     Each provider supports different credentials, check the provider documentation for more details.
+     *     Each provider supports different credentials, check the provider documentation for more details. Only integration metadata is returned, credentials field is returned as an empty object.
      *
      * @param  \novu\Models\Components\UpdateIntegrationRequestDto  $updateIntegrationRequestDto
      * @param  string  $integrationId
