@@ -22,6 +22,16 @@ class PreviewPayloadDto
     public ?SubscriberResponseDtoOptional $subscriber = null;
 
     /**
+     * Partial actor information
+     *
+     * @var ?\novu\Models\Components\SubscriberResponseDtoOptional $actor
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('actor')]
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\SubscriberResponseDtoOptional|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?SubscriberResponseDtoOptional $actor = null;
+
+    /**
      * Payload data
      *
      * @var ?array<string, mixed> $payload
@@ -63,15 +73,17 @@ class PreviewPayloadDto
 
     /**
      * @param  ?\novu\Models\Components\SubscriberResponseDtoOptional  $subscriber
+     * @param  ?\novu\Models\Components\SubscriberResponseDtoOptional  $actor
      * @param  ?array<string, mixed>  $payload
      * @param  ?array<string, mixed>  $steps
      * @param  ?array<string, string|\novu\Models\Components\PreviewPayloadDtoContext2>  $context
      * @param  ?array<string, mixed>  $env
      * @phpstan-pure
      */
-    public function __construct(?SubscriberResponseDtoOptional $subscriber = null, ?array $payload = null, ?array $steps = null, ?array $context = null, ?array $env = null)
+    public function __construct(?SubscriberResponseDtoOptional $subscriber = null, ?SubscriberResponseDtoOptional $actor = null, ?array $payload = null, ?array $steps = null, ?array $context = null, ?array $env = null)
     {
         $this->subscriber = $subscriber;
+        $this->actor = $actor;
         $this->payload = $payload;
         $this->steps = $steps;
         $this->context = $context;

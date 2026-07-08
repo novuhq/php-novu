@@ -49,7 +49,7 @@ class SubscribersNotifications
     /**
      * Retrieve unseen notifications count
      *
-     * Retrieve unseen in-app (inbox) notifications count for a subscriber by its unique key identifier **subscriberId**.
+     * This API is deprecated, use v2 API instead. Retrieve unseen in-app notifications count for a subscriber by its unique key identifier **subscriberId**.
      *
      * @param  string  $subscriberId
      * @param  ?bool  $seen
@@ -57,9 +57,11 @@ class SubscribersNotifications
      * @param  ?string  $idempotencyKey
      * @return \novu\Models\Operations\SubscribersV1ControllerGetUnseenCountResponse
      * @throws \novu\Models\Errors\APIException
+     * @deprecated  method: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     public function getUnseenCount(string $subscriberId, ?bool $seen = null, ?float $limit = null, ?string $idempotencyKey = null, ?Options $options = null): Operations\SubscribersV1ControllerGetUnseenCountResponse
     {
+        trigger_error('Method '.__METHOD__.' is deprecated', E_USER_DEPRECATED);
         $retryConfig = null;
         if ($options) {
             $retryConfig = $options->retryConfig;

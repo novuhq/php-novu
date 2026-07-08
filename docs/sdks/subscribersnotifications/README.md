@@ -1,14 +1,19 @@
-# SubscribersNotifications
+# ~~SubscribersNotifications~~
+
+> [!WARNING]
+> This SDK is **DEPRECATED**
 
 ## Overview
 
 ### Available Operations
 
-* [getUnseenCount](#getunseencount) - Retrieve unseen notifications count
+* [~~getUnseenCount~~](#getunseencount) - Retrieve unseen notifications count :warning: **Deprecated**
 
-## getUnseenCount
+## ~~getUnseenCount~~
 
-Retrieve unseen in-app (inbox) notifications count for a subscriber by its unique key identifier **subscriberId**.
+This API is deprecated, use v2 API instead. Retrieve unseen in-app notifications count for a subscriber by its unique key identifier **subscriberId**.
+
+> :warning: **DEPRECATED**: This will be removed in a future release, please migrate away from it as soon as possible.
 
 ### Example Usage
 

@@ -50,15 +50,17 @@ class NovuMessages
     /**
      * Update notification action status
      *
-     * Update in-app (inbox) notification's action status by its unique key identifier **messageId** and type field **type**. 
+     * This API is deprecated, use v2 API instead. Update in-app notification's action status by its unique key identifier **messageId** and type field **type**. 
      *       **type** field can be **primary** or **secondary**
      *
      * @param  \novu\Models\Operations\SubscribersV1ControllerMarkActionAsSeenRequest  $request
      * @return \novu\Models\Operations\SubscribersV1ControllerMarkActionAsSeenResponse
      * @throws \novu\Models\Errors\APIException
+     * @deprecated  method: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     public function updateAsSeen(Operations\SubscribersV1ControllerMarkActionAsSeenRequest $request, ?Options $options = null): Operations\SubscribersV1ControllerMarkActionAsSeenResponse
     {
+        trigger_error('Method '.__METHOD__.' is deprecated', E_USER_DEPRECATED);
         $retryConfig = null;
         if ($options) {
             $retryConfig = $options->retryConfig;
@@ -198,17 +200,19 @@ class NovuMessages
     /**
      * Update notifications state
      *
-     * Update subscriber's multiple in-app (inbox) notifications state such as seen, read, unseen or unread by **subscriberId**. 
-     *       **messageId** is of type mongodbId of notifications
+     * This API is deprecated, use v2 API instead. Update subscriber's multiple in-app notifications state such as seen, read, unseen or unread by **subscriberId**. 
+     *       **messageId** is of type mongodbId of notifications.
      *
      * @param  \novu\Models\Components\MessageMarkAsRequestDto  $messageMarkAsRequestDto
      * @param  string  $subscriberId
      * @param  ?string  $idempotencyKey
      * @return \novu\Models\Operations\SubscribersV1ControllerMarkMessagesAsResponse
      * @throws \novu\Models\Errors\APIException
+     * @deprecated  method: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     public function markAllAs(Components\MessageMarkAsRequestDto $messageMarkAsRequestDto, string $subscriberId, ?string $idempotencyKey = null, ?Options $options = null): Operations\SubscribersV1ControllerMarkMessagesAsResponse
     {
+        trigger_error('Method '.__METHOD__.' is deprecated', E_USER_DEPRECATED);
         $retryConfig = null;
         if ($options) {
             $retryConfig = $options->retryConfig;

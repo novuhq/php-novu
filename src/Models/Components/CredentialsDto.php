@@ -398,6 +398,14 @@ class CredentialsDto
 
     /**
      *
+     * @var ?string $outboundConnectedAt
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('outboundConnectedAt')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $outboundConnectedAt = null;
+
+    /**
+     *
      * @var ?bool $useFromAddressOverride
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('useFromAddressOverride')]
@@ -497,6 +505,7 @@ class CredentialsDto
      * @param  ?string  $appIOBaseUrl
      * @param  ?string  $signingSecret
      * @param  ?string  $outboundIntegrationId
+     * @param  ?string  $outboundConnectedAt
      * @param  ?bool  $useFromAddressOverride
      * @param  ?string  $fromAddressOverride
      * @param  ?string  $emailSlugPrefix
@@ -505,7 +514,7 @@ class CredentialsDto
      * @param  ?string  $externalWorkspaceId
      * @phpstan-pure
      */
-    public function __construct(?string $apiKey = null, ?string $user = null, ?string $secretKey = null, ?string $domain = null, ?string $password = null, ?string $host = null, ?string $port = null, ?bool $secure = null, ?string $region = null, ?string $accountSid = null, ?string $messageProfileId = null, ?string $token = null, ?string $from = null, ?string $senderName = null, ?string $projectName = null, ?string $applicationId = null, ?string $clientId = null, ?bool $requireTls = null, ?bool $ignoreTls = null, ?TlsOptions $tlsOptions = null, ?string $baseUrl = null, ?string $webhookUrl = null, ?string $redirectUrl = null, ?bool $hmac = null, ?string $serviceAccount = null, ?string $ipPoolName = null, ?string $apiKeyRequestHeader = null, ?string $secretKeyRequestHeader = null, ?string $idPath = null, ?string $datePath = null, ?string $apiToken = null, ?bool $authenticateByToken = null, ?string $authenticationTokenKey = null, ?string $instanceId = null, ?string $alertUid = null, ?string $title = null, ?string $imageUrl = null, ?string $state = null, ?string $externalLink = null, ?string $channelId = null, ?string $phoneNumberIdentification = null, ?string $accessKey = null, ?string $appSid = null, ?string $senderId = null, ?string $tenantId = null, ?string $appIOBaseUrl = null, ?string $signingSecret = null, ?string $outboundIntegrationId = null, ?bool $useFromAddressOverride = null, ?string $fromAddressOverride = null, ?string $emailSlugPrefix = null, ?string $externalEnvironmentId = null, ?string $externalVaultId = null, ?string $externalWorkspaceId = null)
+    public function __construct(?string $apiKey = null, ?string $user = null, ?string $secretKey = null, ?string $domain = null, ?string $password = null, ?string $host = null, ?string $port = null, ?bool $secure = null, ?string $region = null, ?string $accountSid = null, ?string $messageProfileId = null, ?string $token = null, ?string $from = null, ?string $senderName = null, ?string $projectName = null, ?string $applicationId = null, ?string $clientId = null, ?bool $requireTls = null, ?bool $ignoreTls = null, ?TlsOptions $tlsOptions = null, ?string $baseUrl = null, ?string $webhookUrl = null, ?string $redirectUrl = null, ?bool $hmac = null, ?string $serviceAccount = null, ?string $ipPoolName = null, ?string $apiKeyRequestHeader = null, ?string $secretKeyRequestHeader = null, ?string $idPath = null, ?string $datePath = null, ?string $apiToken = null, ?bool $authenticateByToken = null, ?string $authenticationTokenKey = null, ?string $instanceId = null, ?string $alertUid = null, ?string $title = null, ?string $imageUrl = null, ?string $state = null, ?string $externalLink = null, ?string $channelId = null, ?string $phoneNumberIdentification = null, ?string $accessKey = null, ?string $appSid = null, ?string $senderId = null, ?string $tenantId = null, ?string $appIOBaseUrl = null, ?string $signingSecret = null, ?string $outboundIntegrationId = null, ?string $outboundConnectedAt = null, ?bool $useFromAddressOverride = null, ?string $fromAddressOverride = null, ?string $emailSlugPrefix = null, ?string $externalEnvironmentId = null, ?string $externalVaultId = null, ?string $externalWorkspaceId = null)
     {
         $this->apiKey = $apiKey;
         $this->user = $user;
@@ -555,6 +564,7 @@ class CredentialsDto
         $this->appIOBaseUrl = $appIOBaseUrl;
         $this->signingSecret = $signingSecret;
         $this->outboundIntegrationId = $outboundIntegrationId;
+        $this->outboundConnectedAt = $outboundConnectedAt;
         $this->useFromAddressOverride = $useFromAddressOverride;
         $this->fromAddressOverride = $fromAddressOverride;
         $this->emailSlugPrefix = $emailSlugPrefix;
