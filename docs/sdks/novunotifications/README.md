@@ -20,7 +20,7 @@
 * [markAllAsRead](#markallasread) - Mark all notifications as read
 * [archiveAllRead](#archiveallread) - Archive all read notifications
 * [markAsSeen](#markasseen) - Mark notifications as seen
-* [getFeed](#getfeed) - Retrieve subscriber notifications
+* [~~getFeed~~](#getfeed) - Retrieve subscriber notifications :warning: **Deprecated**
 
 ## list
 
@@ -924,9 +924,11 @@ if ($response->statusCode === 200) {
 | Errors\ErrorDto                        | 500                                    | application/json                       |
 | Errors\APIException                    | 4XX, 5XX                               | \*/\*                                  |
 
-## getFeed
+## ~~getFeed~~
 
-Retrieve subscriber in-app (inbox) notifications by its unique key identifier **subscriberId**.
+This API is deprecated, use v2 API instead. Retrieve subscriber in-app notifications by its unique key identifier **subscriberId**.
+
+> :warning: **DEPRECATED**: This will be removed in a future release, please migrate away from it as soon as possible.
 
 ### Example Usage
 

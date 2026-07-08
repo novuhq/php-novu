@@ -52,6 +52,28 @@ $generatePreviewRequestDto = new Components\GeneratePreviewRequestDto(
                 ),
             ],
         ),
+        actor: new Components\SubscriberResponseDtoOptional(
+            channels: [
+                new Components\ChannelSettingsDto(
+                    providerId: Components\ChatOrPushProviderEnum::Telegram,
+                    credentials: new Components\ChannelCredentials(
+                        webhookUrl: 'https://example.com/webhook',
+                        channel: 'general',
+                        deviceTokens: [
+                            'token1',
+                            'token2',
+                            'token3',
+                        ],
+                        alertUid: '12345-abcde',
+                        title: 'Critical Alert',
+                        imageUrl: 'https://example.com/image.png',
+                        state: 'resolved',
+                        externalUrl: 'https://example.com/details',
+                    ),
+                    integrationId: '<id>',
+                ),
+            ],
+        ),
         context: [
             'key' => 'org-acme',
         ],

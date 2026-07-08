@@ -22,10 +22,10 @@ class UpdateWorkflowDto
     /**
      * Steps of the workflow
      *
-     * @var array<\novu\Models\Components\InAppStepUpsertDto|\novu\Models\Components\EmailStepUpsertDto|\novu\Models\Components\SmsStepUpsertDto|\novu\Models\Components\PushStepUpsertDto|\novu\Models\Components\ChatStepUpsertDto|\novu\Models\Components\DelayStepUpsertDto|\novu\Models\Components\DigestStepUpsertDto|\novu\Models\Components\CustomStepUpsertDto|\novu\Models\Components\HttpRequestStepUpsertDto> $steps
+     * @var array<\novu\Models\Components\InAppStepUpsertDto|\novu\Models\Components\EmailStepUpsertDto|\novu\Models\Components\SmsStepUpsertDto|\novu\Models\Components\PushStepUpsertDto|\novu\Models\Components\ChatStepUpsertDto|\novu\Models\Components\DelayStepUpsertDto|\novu\Models\Components\DigestStepUpsertDto|\novu\Models\Components\ThrottleStepUpsertDto|\novu\Models\Components\CustomStepUpsertDto|\novu\Models\Components\HttpRequestStepUpsertDto> $steps
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('steps')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\InAppStepUpsertDto|\novu\Models\Components\EmailStepUpsertDto|\novu\Models\Components\SmsStepUpsertDto|\novu\Models\Components\PushStepUpsertDto|\novu\Models\Components\ChatStepUpsertDto|\novu\Models\Components\DelayStepUpsertDto|\novu\Models\Components\DigestStepUpsertDto|\novu\Models\Components\CustomStepUpsertDto|\novu\Models\Components\HttpRequestStepUpsertDto>')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\InAppStepUpsertDto|\novu\Models\Components\EmailStepUpsertDto|\novu\Models\Components\SmsStepUpsertDto|\novu\Models\Components\PushStepUpsertDto|\novu\Models\Components\ChatStepUpsertDto|\novu\Models\Components\DelayStepUpsertDto|\novu\Models\Components\DigestStepUpsertDto|\novu\Models\Components\ThrottleStepUpsertDto|\novu\Models\Components\CustomStepUpsertDto|\novu\Models\Components\HttpRequestStepUpsertDto>')]
     public array $steps;
 
     /**
@@ -123,7 +123,7 @@ class UpdateWorkflowDto
 
     /**
      * @param  string  $name
-     * @param  array<\novu\Models\Components\InAppStepUpsertDto|\novu\Models\Components\EmailStepUpsertDto|\novu\Models\Components\SmsStepUpsertDto|\novu\Models\Components\PushStepUpsertDto|\novu\Models\Components\ChatStepUpsertDto|\novu\Models\Components\DelayStepUpsertDto|\novu\Models\Components\DigestStepUpsertDto|\novu\Models\Components\CustomStepUpsertDto|\novu\Models\Components\HttpRequestStepUpsertDto>  $steps
+     * @param  array<\novu\Models\Components\InAppStepUpsertDto|\novu\Models\Components\EmailStepUpsertDto|\novu\Models\Components\SmsStepUpsertDto|\novu\Models\Components\PushStepUpsertDto|\novu\Models\Components\ChatStepUpsertDto|\novu\Models\Components\DelayStepUpsertDto|\novu\Models\Components\DigestStepUpsertDto|\novu\Models\Components\ThrottleStepUpsertDto|\novu\Models\Components\CustomStepUpsertDto|\novu\Models\Components\HttpRequestStepUpsertDto>  $steps
      * @param  \novu\Models\Components\PreferencesRequestDto  $preferences
      * @param  \novu\Models\Components\ResourceOriginEnum  $origin
      * @param  ?string  $description

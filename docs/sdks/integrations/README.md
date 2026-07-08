@@ -13,14 +13,17 @@ With the help of the Integration Store, you can easily integrate your favorite d
 * [delete](#delete) - Delete an integration
 * [integrationsControllerAutoConfigureIntegration](#integrationscontrollerautoconfigureintegration) - Auto-configure an integration for inbound webhooks
 * [setAsPrimary](#setasprimary) - Update integration as primary
+* [createMobileLink](#createmobilelink) - Issue a short-lived mobile setup link for an existing integration
+* [integrationsControllerConfigureIntegrationWebhook](#integrationscontrollerconfigureintegrationwebhook) - Configure a chat integration webhook
 * [listActive](#listactive) - List active integrations
 * [generateConnectOAuthUrl](#generateconnectoauthurl) - Generate OAuth URL for a workspace/tenant connection
+* [linkChannelEndpoint](#linkchannelendpoint) - Issue a URL to link a subscriber chat identity
 * [generateLinkUserOAuthUrl](#generatelinkuseroauthurl) - Generate OAuth URL to link a subscriber user identity
 * [~~generateChatOAuthUrl~~](#generatechatoauthurl) - Generate chat OAuth URL :warning: **Deprecated**
 
 ## list
 
-List all the channels integrations created in the organization
+List all the channels integrations created in the organization. Only integration metadata is returned, credentials field is returned as an empty object.
 
 ### Example Usage
 
@@ -72,7 +75,7 @@ if ($response->integrationResponseDtos !== null) {
 ## create
 
 Create an integration for the current environment the user is based on the API key provided. 
-    Each provider supports different credentials, check the provider documentation for more details.
+    Each provider supports different credentials, check the provider documentation for more details. Only integration metadata is returned, credentials field is returned as an empty object.
 
 ### Example Usage
 
@@ -126,7 +129,7 @@ if ($response->integrationResponseDto !== null) {
 ## update
 
 Update an integration by its unique key identifier **integrationId**. 
-    Each provider supports different credentials, check the provider documentation for more details.
+    Each provider supports different credentials, check the provider documentation for more details. Only integration metadata is returned, credentials field is returned as an empty object.
 
 ### Example Usage
 
@@ -183,7 +186,7 @@ if ($response->integrationResponseDto !== null) {
 ## delete
 
 Delete an integration by its unique key identifier **integrationId**. 
-    This action is irreversible.
+    This action is irreversible. Only integration metadata is returned, credentials field is returned as empty object.
 
 ### Example Usage
 
@@ -236,7 +239,7 @@ if ($response->integrationResponseDtos !== null) {
 ## integrationsControllerAutoConfigureIntegration
 
 Auto-configure an integration by its unique key identifier **integrationId** for inbound webhook support. 
-    This will automatically generate required webhook signing keys and configure webhook endpoints.
+    This will automatically generate required webhook signing keys and configure webhook endpoints. Only integration metadata is returned, credentials field is returned as an empty object.
 
 ### Example Usage
 
@@ -290,7 +293,8 @@ if ($response->autoConfigureIntegrationResponseDto !== null) {
 
 Update an integration as **primary** by its unique key identifier **integrationId**. 
     This API will set the integration as primary for that channel in the current environment. 
-    Primary integration is used to deliver notification for sms and email channels in the workflow.
+    Primary integration is used to deliver notification for sms and email channels in the workflow. 
+    Only integration metadata is returned, credentials field is returned as an empty object.
 
 ### Example Usage
 
@@ -340,9 +344,119 @@ if ($response->integrationResponseDto !== null) {
 | Errors\ErrorDto                   | 500                               | application/json                  |
 | Errors\APIException               | 4XX, 5XX                          | \*/\*                             |
 
+## createMobileLink
+
+Returns an opaque, single-use setup token plus a mobile URL for configuring an existing chat integration. Telegram is the only supported provider initially.
+
+### Example Usage
+
+<!-- UsageSnippet language="php" operationID="IntegrationsController_createIntegrationMobileLink" method="post" path="/v1/integrations/{integrationIdentifier}/mobile-link" -->
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use novu;
+use novu\Models\Components;
+
+$sdk = novu\Novu::builder()
+    ->setSecurity(
+        'YOUR_SECRET_KEY_HERE'
+    )
+    ->build();
+
+$issueIntegrationMobileLinkRequestDto = new Components\IssueIntegrationMobileLinkRequestDto(
+    subscriberId: 'subscriber-123',
+);
+
+$response = $sdk->integrations->createMobileLink(
+    integrationIdentifier: '<value>',
+    issueIntegrationMobileLinkRequestDto: $issueIntegrationMobileLinkRequestDto
+
+);
+
+if ($response->issueTelegramMobileLinkResponseDto !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                          | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
+| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
+| `integrationIdentifier`                                                                                            | *string*                                                                                                           | :heavy_check_mark:                                                                                                 | N/A                                                                                                                |
+| `issueIntegrationMobileLinkRequestDto`                                                                             | [Components\IssueIntegrationMobileLinkRequestDto](../../Models/Components/IssueIntegrationMobileLinkRequestDto.md) | :heavy_check_mark:                                                                                                 | N/A                                                                                                                |
+| `idempotencyKey`                                                                                                   | *?string*                                                                                                          | :heavy_minus_sign:                                                                                                 | A header for idempotency purposes                                                                                  |
+
+### Response
+
+**[?Operations\IntegrationsControllerCreateIntegrationMobileLinkResponse](../../Models/Operations/IntegrationsControllerCreateIntegrationMobileLinkResponse.md)**
+
+### Errors
+
+| Error Type                             | Status Code                            | Content Type                           |
+| -------------------------------------- | -------------------------------------- | -------------------------------------- |
+| Errors\ErrorDto                        | 414                                    | application/json                       |
+| Errors\ErrorDto                        | 400, 401, 403, 404, 405, 409, 413, 415 | application/json                       |
+| Errors\ValidationErrorDto              | 422                                    | application/json                       |
+| Errors\ErrorDto                        | 500                                    | application/json                       |
+| Errors\APIException                    | 4XX, 5XX                               | \*/\*                                  |
+
+## integrationsControllerConfigureIntegrationWebhook
+
+Registers the Novu webhook URL with the chat provider for the specified integration. Telegram is the only supported provider initially.
+
+### Example Usage
+
+<!-- UsageSnippet language="php" operationID="IntegrationsController_configureIntegrationWebhook" method="post" path="/v1/integrations/{integrationIdentifier}/webhook/configure" -->
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use novu;
+
+$sdk = novu\Novu::builder()
+    ->setSecurity(
+        'YOUR_SECRET_KEY_HERE'
+    )
+    ->build();
+
+
+
+$response = $sdk->integrations->integrationsControllerConfigureIntegrationWebhook(
+    integrationIdentifier: '<value>'
+);
+
+if ($response->configureTelegramWebhookResponseDto !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                         | Type                              | Required                          | Description                       |
+| --------------------------------- | --------------------------------- | --------------------------------- | --------------------------------- |
+| `integrationIdentifier`           | *string*                          | :heavy_check_mark:                | N/A                               |
+| `idempotencyKey`                  | *?string*                         | :heavy_minus_sign:                | A header for idempotency purposes |
+
+### Response
+
+**[?Operations\IntegrationsControllerConfigureIntegrationWebhookResponse](../../Models/Operations/IntegrationsControllerConfigureIntegrationWebhookResponse.md)**
+
+### Errors
+
+| Error Type                             | Status Code                            | Content Type                           |
+| -------------------------------------- | -------------------------------------- | -------------------------------------- |
+| Errors\ErrorDto                        | 414                                    | application/json                       |
+| Errors\ErrorDto                        | 400, 401, 403, 404, 405, 409, 413, 415 | application/json                       |
+| Errors\ValidationErrorDto              | 422                                    | application/json                       |
+| Errors\ErrorDto                        | 500                                    | application/json                       |
+| Errors\APIException                    | 4XX, 5XX                               | \*/\*                                  |
+
 ## listActive
 
-List all the active integrations created in the organization
+List all the active integrations created in the organization. Only integration metadata is returned, credentials field is returned as an empty object.
 
 ### Example Usage
 
@@ -448,6 +562,62 @@ if ($response->generateChatOAuthUrlResponseDto !== null) {
 ### Response
 
 **[?Operations\IntegrationsControllerGenerateConnectOAuthUrlResponse](../../Models/Operations/IntegrationsControllerGenerateConnectOAuthUrlResponse.md)**
+
+### Errors
+
+| Error Type                             | Status Code                            | Content Type                           |
+| -------------------------------------- | -------------------------------------- | -------------------------------------- |
+| Errors\ErrorDto                        | 414                                    | application/json                       |
+| Errors\ErrorDto                        | 400, 401, 403, 404, 405, 409, 413, 415 | application/json                       |
+| Errors\ValidationErrorDto              | 422                                    | application/json                       |
+| Errors\ErrorDto                        | 500                                    | application/json                       |
+| Errors\APIException                    | 4XX, 5XX                               | \*/\*                                  |
+
+## linkChannelEndpoint
+
+Returns a provider-specific URL the subscriber opens to link their chat identity. The integration provider is resolved from integrationIdentifier; Telegram returns a deep link.
+
+### Example Usage
+
+<!-- UsageSnippet language="php" operationID="IntegrationsController_linkChannelEndpoint" method="post" path="/v1/integrations/channel-endpoints/link" -->
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use novu;
+use novu\Models\Components;
+
+$sdk = novu\Novu::builder()
+    ->setSecurity(
+        'YOUR_SECRET_KEY_HERE'
+    )
+    ->build();
+
+$linkChannelEndpointRequestDto = new Components\LinkChannelEndpointRequestDto(
+    integrationIdentifier: 'telegram-bot',
+    subscriberId: 'subscriber-123',
+);
+
+$response = $sdk->integrations->linkChannelEndpoint(
+    linkChannelEndpointRequestDto: $linkChannelEndpointRequestDto
+);
+
+if ($response->linkChannelEndpointResponseDto !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `linkChannelEndpointRequestDto`                                                                      | [Components\LinkChannelEndpointRequestDto](../../Models/Components/LinkChannelEndpointRequestDto.md) | :heavy_check_mark:                                                                                   | N/A                                                                                                  |
+| `idempotencyKey`                                                                                     | *?string*                                                                                            | :heavy_minus_sign:                                                                                   | A header for idempotency purposes                                                                    |
+
+### Response
+
+**[?Operations\IntegrationsControllerLinkChannelEndpointResponse](../../Models/Operations/IntegrationsControllerLinkChannelEndpointResponse.md)**
 
 ### Errors
 

@@ -1,14 +1,19 @@
-# SubscribersMessages
+# ~~SubscribersMessages~~
+
+> [!WARNING]
+> This SDK is **DEPRECATED**
 
 ## Overview
 
 ### Available Operations
 
-* [markAll](#markall) - Update all notifications state
+* [~~markAll~~](#markall) - Update all notifications state :warning: **Deprecated**
 
-## markAll
+## ~~markAll~~
 
-Update all subscriber in-app (inbox) notifications state such as read, unread, seen or unseen by **subscriberId**.
+This API is deprecated, use v2 API instead. Update all subscriber in-app notifications state such as read, unread, seen or unseen by **subscriberId**.
+
+> :warning: **DEPRECATED**: This will be removed in a future release, please migrate away from it as soon as possible.
 
 ### Example Usage
 
