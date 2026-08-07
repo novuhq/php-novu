@@ -23,11 +23,11 @@ class GeneratePreviewResponseDto
     /**
      * Preview result
      *
-     * @var array<string, mixed>|\novu\Models\Components\Result2|\novu\Models\Components\Three|\novu\Models\Components\Result4|\novu\Models\Components\Result5|\novu\Models\Components\Six|\novu\Models\Components\Seven|\novu\Models\Components\Eight|\novu\Models\Components\Nine $result
+     * @var array<string, mixed>|\novu\Models\Components\Result2|\novu\Models\Components\Three|\novu\Models\Components\Result4|\novu\Models\Components\Result5|\novu\Models\Components\Six|\novu\Models\Components\Seven|\novu\Models\Components\Eight|\novu\Models\Components\Nine|\novu\Models\Components\Ten $result
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('result')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|\novu\Models\Components\Result2|\novu\Models\Components\Three|\novu\Models\Components\Result4|\novu\Models\Components\Result5|\novu\Models\Components\Six|\novu\Models\Components\Seven|\novu\Models\Components\Eight|\novu\Models\Components\Nine')]
-    public array|Result2|Three|Result4|Result5|Six|Seven|Eight|Nine $result;
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|\novu\Models\Components\Result2|\novu\Models\Components\Three|\novu\Models\Components\Result4|\novu\Models\Components\Result5|\novu\Models\Components\Six|\novu\Models\Components\Seven|\novu\Models\Components\Eight|\novu\Models\Components\Nine|\novu\Models\Components\Ten')]
+    public array|Result2|Three|Result4|Result5|Six|Seven|Eight|Nine|Ten $result;
 
     /**
      * Sample novu-signature header value for HTTP request steps
@@ -50,12 +50,12 @@ class GeneratePreviewResponseDto
 
     /**
      * @param  \novu\Models\Components\PreviewPayloadDto  $previewPayloadExample
-     * @param  array<string, mixed>|\novu\Models\Components\Result2|\novu\Models\Components\Three|\novu\Models\Components\Result4|\novu\Models\Components\Result5|\novu\Models\Components\Six|\novu\Models\Components\Seven|\novu\Models\Components\Eight|\novu\Models\Components\Nine  $result
+     * @param  array<string, mixed>|\novu\Models\Components\Result2|\novu\Models\Components\Three|\novu\Models\Components\Result4|\novu\Models\Components\Result5|\novu\Models\Components\Six|\novu\Models\Components\Seven|\novu\Models\Components\Eight|\novu\Models\Components\Nine|\novu\Models\Components\Ten  $result
      * @param  ?string  $novuSignature
      * @param  ?array<string, mixed>  $schema
      * @phpstan-pure
      */
-    public function __construct(PreviewPayloadDto $previewPayloadExample, array|Result2|Three|Result4|Result5|Six|Seven|Eight|Nine $result, ?string $novuSignature = null, ?array $schema = null)
+    public function __construct(PreviewPayloadDto $previewPayloadExample, array|Result2|Three|Result4|Result5|Six|Seven|Eight|Nine|Ten $result, ?string $novuSignature = null, ?array $schema = null)
     {
         $this->previewPayloadExample = $previewPayloadExample;
         $this->result = $result;

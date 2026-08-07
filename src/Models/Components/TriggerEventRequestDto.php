@@ -42,6 +42,15 @@ class TriggerEventRequestDto
     public ?array $payload = null;
 
     /**
+     * Optional Bridge Endpoint URL used to route this trigger to a specific Bridge application. Useful during local development when multiple engineers share an organization: set this to your personal tunnel URL from `npx novu@latest dev` (for example via NOVU_BRIDGE_URL) so app-fired triggers hit your machine instead of the environment's synced Bridge URL. Must be a publicly reachable https URL — private or localhost addresses are rejected.
+     *
+     * @var ?string $bridgeUrl
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('bridgeUrl')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $bridgeUrl = null;
+
+    /**
      * This could be used to override provider specific configurations
      *
      * @var ?\novu\Models\Components\Overrides $overrides
@@ -98,25 +107,38 @@ class TriggerEventRequestDto
     public ?array $context = null;
 
     /**
+     * Override the workflow-assigned agent for this trigger using the public agent identifier. Omit to use the workflow default; pass null to disable agent routing for this execution.
+     *
+     * @var ?string $agentId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('agentId')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $agentId = null;
+
+    /**
      * @param  string  $workflowId
      * @param  array<\novu\Models\Components\SubscriberPayloadDto|\novu\Models\Components\TopicPayloadDto|string>|string|\novu\Models\Components\SubscriberPayloadDto|\novu\Models\Components\TopicPayloadDto  $to
      * @param  ?array<string, mixed>  $payload
+     * @param  ?string  $bridgeUrl
      * @param  ?\novu\Models\Components\Overrides  $overrides
      * @param  ?string  $transactionId
      * @param  string|\novu\Models\Components\SubscriberPayloadDto|null  $actor
      * @param  string|\novu\Models\Components\TenantPayloadDto|null  $tenant
      * @param  ?array<string, string|\novu\Models\Components\TriggerEventRequestDtoContext2>  $context
+     * @param  ?string  $agentId
      * @phpstan-pure
      */
-    public function __construct(string $workflowId, array|string|SubscriberPayloadDto|TopicPayloadDto $to, ?array $payload = null, ?Overrides $overrides = null, ?string $transactionId = null, string|SubscriberPayloadDto|null $actor = null, string|TenantPayloadDto|null $tenant = null, ?array $context = null)
+    public function __construct(string $workflowId, array|string|SubscriberPayloadDto|TopicPayloadDto $to, ?array $payload = null, ?string $bridgeUrl = null, ?Overrides $overrides = null, ?string $transactionId = null, string|SubscriberPayloadDto|null $actor = null, string|TenantPayloadDto|null $tenant = null, ?array $context = null, ?string $agentId = null)
     {
         $this->workflowId = $workflowId;
         $this->to = $to;
         $this->payload = $payload;
+        $this->bridgeUrl = $bridgeUrl;
         $this->overrides = $overrides;
         $this->transactionId = $transactionId;
         $this->actor = $actor;
         $this->tenant = $tenant;
         $this->context = $context;
+        $this->agentId = $agentId;
     }
 }

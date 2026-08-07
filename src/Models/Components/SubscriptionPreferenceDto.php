@@ -28,7 +28,7 @@ class SubscriptionPreferenceDto
     public bool $enabled;
 
     /**
-     * Optional condition using JSON Logic rules
+     * Optional JSON Logic condition evaluated against the trigger payload at fan-out time (for example, `{ "var": "payload.tier" }`)
      *
      * @var ?array<string, mixed> $condition
      */

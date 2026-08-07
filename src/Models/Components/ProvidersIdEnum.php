@@ -12,6 +12,7 @@ namespace novu\Models\Components;
 /** Provider ID of the job */
 enum ProvidersIdEnum: string
 {
+    case Anypost = 'anypost';
     case Emailjs = 'emailjs';
     case Mailgun = 'mailgun';
     case Mailjet = 'mailjet';
@@ -71,6 +72,7 @@ enum ProvidersIdEnum: string
     case Sinch = 'sinch';
     case IsendproSms = 'isendpro-sms';
     case CmTelecom = 'cm-telecom';
+    case RuachSms = 'ruach-sms';
     case Fcm = 'fcm';
     case Apns = 'apns';
     case Expo = 'expo';
@@ -83,6 +85,7 @@ enum ProvidersIdEnum: string
     case Slack = 'slack';
     case Discord = 'discord';
     case Msteams = 'msteams';
+    case WebexMessaging = 'webex-messaging';
     case Mattermost = 'mattermost';
     case Ryver = 'ryver';
     case Zulip = 'zulip';
@@ -90,10 +93,17 @@ enum ProvidersIdEnum: string
     case Getstream = 'getstream';
     case RocketChat = 'rocket-chat';
     case WhatsappBusiness = 'whatsapp-business';
+    case Line = 'line';
     case ChatWebhook = 'chat-webhook';
     case NovuSlack = 'novu-slack';
     case Telegram = 'telegram';
+    case Sendblue = 'sendblue';
+    case NovuWebChat = 'novu-web-chat';
     case Anthropic = 'anthropic';
     case NovuAnthropic = 'novu-anthropic';
     case AnthropicAws = 'anthropic-aws';
+    case Pagerduty = 'pagerduty';
+    case Opsgenie = 'opsgenie';
+    case Grafana = 'grafana';
+    case ToolWebhook = 'tool-webhook';
 }

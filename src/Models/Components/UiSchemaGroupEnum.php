@@ -20,6 +20,7 @@ enum UiSchemaGroupEnum: string
     case Sms = 'SMS';
     case Chat = 'CHAT';
     case Push = 'PUSH';
+    case Tool = 'TOOL';
     case Skip = 'SKIP';
     case Layout = 'LAYOUT';
     case HttpRequest = 'HTTP_REQUEST';

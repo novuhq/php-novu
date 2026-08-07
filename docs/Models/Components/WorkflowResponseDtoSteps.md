@@ -93,3 +93,12 @@ Components\ThrottleStepResponseDto $value = /* values here */
 Components\HttpRequestStepResponseDto $value = /* values here */
 ```
 
+### `Components\ToolStepResponseDto`
+
+```php
+/**
+* @var \novu\Models\Components\ToolStepResponseDto
+*/
+Components\ToolStepResponseDto $value = /* values here */
+```
+

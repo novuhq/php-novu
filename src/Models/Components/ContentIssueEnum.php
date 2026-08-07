@@ -17,4 +17,5 @@ enum ContentIssueEnum: string
     case InvalidUrl = 'INVALID_URL';
     case MissingValue = 'MISSING_VALUE';
     case TierLimitExceeded = 'TIER_LIMIT_EXCEEDED';
+    case UnsupportedProperty = 'UNSUPPORTED_PROPERTY';
 }

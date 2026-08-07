@@ -12,19 +12,32 @@ namespace novu\Models\Components;
 class ChatRenderOutput
 {
     /**
-     * Body of the chat message
+     * Body of the chat message. Mutually exclusive with `card`.
      *
-     * @var string $body
+     * @var ?string $body
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('body')]
-    public string $body;
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $body = null;
 
     /**
-     * @param  string  $body
+     * Rich Chat: compiled provider-agnostic card DSL. Mutually exclusive with `body`.
+     *
+     * @var ?array<string, mixed> $card
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('card')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $card = null;
+
+    /**
+     * @param  ?string  $body
+     * @param  ?array<string, mixed>  $card
      * @phpstan-pure
      */
-    public function __construct(string $body)
+    public function __construct(?string $body = null, ?array $card = null)
     {
         $this->body = $body;
+        $this->card = $card;
     }
 }

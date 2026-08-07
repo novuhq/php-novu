@@ -22,10 +22,10 @@ class UpdateWorkflowDto
     /**
      * Steps of the workflow
      *
-     * @var array<\novu\Models\Components\InAppStepUpsertDto|\novu\Models\Components\EmailStepUpsertDto|\novu\Models\Components\SmsStepUpsertDto|\novu\Models\Components\PushStepUpsertDto|\novu\Models\Components\ChatStepUpsertDto|\novu\Models\Components\DelayStepUpsertDto|\novu\Models\Components\DigestStepUpsertDto|\novu\Models\Components\ThrottleStepUpsertDto|\novu\Models\Components\CustomStepUpsertDto|\novu\Models\Components\HttpRequestStepUpsertDto> $steps
+     * @var array<\novu\Models\Components\InAppStepUpsertDto|\novu\Models\Components\EmailStepUpsertDto|\novu\Models\Components\SmsStepUpsertDto|\novu\Models\Components\PushStepUpsertDto|\novu\Models\Components\ChatStepUpsertDto|\novu\Models\Components\DelayStepUpsertDto|\novu\Models\Components\DigestStepUpsertDto|\novu\Models\Components\ThrottleStepUpsertDto|\novu\Models\Components\ToolStepUpsertDto|\novu\Models\Components\CustomStepUpsertDto|\novu\Models\Components\HttpRequestStepUpsertDto> $steps
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('steps')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\InAppStepUpsertDto|\novu\Models\Components\EmailStepUpsertDto|\novu\Models\Components\SmsStepUpsertDto|\novu\Models\Components\PushStepUpsertDto|\novu\Models\Components\ChatStepUpsertDto|\novu\Models\Components\DelayStepUpsertDto|\novu\Models\Components\DigestStepUpsertDto|\novu\Models\Components\ThrottleStepUpsertDto|\novu\Models\Components\CustomStepUpsertDto|\novu\Models\Components\HttpRequestStepUpsertDto>')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\InAppStepUpsertDto|\novu\Models\Components\EmailStepUpsertDto|\novu\Models\Components\SmsStepUpsertDto|\novu\Models\Components\PushStepUpsertDto|\novu\Models\Components\ChatStepUpsertDto|\novu\Models\Components\DelayStepUpsertDto|\novu\Models\Components\DigestStepUpsertDto|\novu\Models\Components\ThrottleStepUpsertDto|\novu\Models\Components\ToolStepUpsertDto|\novu\Models\Components\CustomStepUpsertDto|\novu\Models\Components\HttpRequestStepUpsertDto>')]
     public array $steps;
 
     /**
@@ -36,15 +36,6 @@ class UpdateWorkflowDto
     #[\Speakeasy\Serializer\Annotation\SerializedName('preferences')]
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\PreferencesRequestDto')]
     public PreferencesRequestDto $preferences;
-
-    /**
-     * Origin of the layout
-     *
-     * @var \novu\Models\Components\ResourceOriginEnum $origin
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('origin')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ResourceOriginEnum')]
-    public ResourceOriginEnum $origin;
 
     /**
      * Description of the workflow
@@ -84,6 +75,16 @@ class UpdateWorkflowDto
     public ?string $workflowId = null;
 
     /**
+     * Origin of the layout
+     *
+     * @var ?\novu\Models\Components\ResourceOriginEnum $origin
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('origin')]
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ResourceOriginEnum|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?ResourceOriginEnum $origin = null;
+
+    /**
      * Severity of the workflow
      *
      * @var ?\novu\Models\Components\SeverityLevelEnum $severity
@@ -102,6 +103,16 @@ class UpdateWorkflowDto
     #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $payloadSchema = null;
+
+    /**
+     * Optional agent assignment used to route this workflow through an agent's connected channels. Pass null to clear.
+     *
+     * @var ?\novu\Models\Components\UpdateWorkflowDtoAgent $agent
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('agent')]
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\UpdateWorkflowDtoAgent|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?UpdateWorkflowDtoAgent $agent = null;
 
     /**
      * Whether the workflow is active
@@ -123,31 +134,33 @@ class UpdateWorkflowDto
 
     /**
      * @param  string  $name
-     * @param  array<\novu\Models\Components\InAppStepUpsertDto|\novu\Models\Components\EmailStepUpsertDto|\novu\Models\Components\SmsStepUpsertDto|\novu\Models\Components\PushStepUpsertDto|\novu\Models\Components\ChatStepUpsertDto|\novu\Models\Components\DelayStepUpsertDto|\novu\Models\Components\DigestStepUpsertDto|\novu\Models\Components\ThrottleStepUpsertDto|\novu\Models\Components\CustomStepUpsertDto|\novu\Models\Components\HttpRequestStepUpsertDto>  $steps
+     * @param  array<\novu\Models\Components\InAppStepUpsertDto|\novu\Models\Components\EmailStepUpsertDto|\novu\Models\Components\SmsStepUpsertDto|\novu\Models\Components\PushStepUpsertDto|\novu\Models\Components\ChatStepUpsertDto|\novu\Models\Components\DelayStepUpsertDto|\novu\Models\Components\DigestStepUpsertDto|\novu\Models\Components\ThrottleStepUpsertDto|\novu\Models\Components\ToolStepUpsertDto|\novu\Models\Components\CustomStepUpsertDto|\novu\Models\Components\HttpRequestStepUpsertDto>  $steps
      * @param  \novu\Models\Components\PreferencesRequestDto  $preferences
-     * @param  \novu\Models\Components\ResourceOriginEnum  $origin
      * @param  ?string  $description
      * @param  ?array<string>  $tags
      * @param  ?bool  $active
      * @param  ?bool  $validatePayload
      * @param  ?bool  $isTranslationEnabled
      * @param  ?string  $workflowId
+     * @param  ?\novu\Models\Components\ResourceOriginEnum  $origin
      * @param  ?\novu\Models\Components\SeverityLevelEnum  $severity
      * @param  ?array<string, mixed>  $payloadSchema
+     * @param  ?\novu\Models\Components\UpdateWorkflowDtoAgent  $agent
      * @phpstan-pure
      */
-    public function __construct(string $name, array $steps, PreferencesRequestDto $preferences, ResourceOriginEnum $origin, ?string $description = null, ?array $tags = null, ?bool $validatePayload = null, ?string $workflowId = null, ?SeverityLevelEnum $severity = null, ?array $payloadSchema = null, ?bool $active = false, ?bool $isTranslationEnabled = false)
+    public function __construct(string $name, array $steps, PreferencesRequestDto $preferences, ?string $description = null, ?array $tags = null, ?bool $validatePayload = null, ?string $workflowId = null, ?ResourceOriginEnum $origin = null, ?SeverityLevelEnum $severity = null, ?array $payloadSchema = null, ?UpdateWorkflowDtoAgent $agent = null, ?bool $active = false, ?bool $isTranslationEnabled = false)
     {
         $this->name = $name;
         $this->steps = $steps;
         $this->preferences = $preferences;
-        $this->origin = $origin;
         $this->description = $description;
         $this->tags = $tags;
         $this->validatePayload = $validatePayload;
         $this->workflowId = $workflowId;
+        $this->origin = $origin;
         $this->severity = $severity;
         $this->payloadSchema = $payloadSchema;
+        $this->agent = $agent;
         $this->active = $active;
         $this->isTranslationEnabled = $isTranslationEnabled;
     }

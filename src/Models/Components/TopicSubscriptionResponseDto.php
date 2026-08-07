@@ -64,15 +64,26 @@ class TopicSubscriptionResponseDto
     public ?array $contextKeys = null;
 
     /**
+     * The preferences for workflows in this subscription
+     *
+     * @var ?array<\novu\Models\Components\SubscriptionPreferenceDto> $preferences
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('preferences')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\SubscriptionPreferenceDto>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $preferences = null;
+
+    /**
      * @param  string  $id
      * @param  string  $identifier
      * @param  string  $createdAt
      * @param  \novu\Models\Components\TopicResponseDto  $topic
      * @param  \novu\Models\Components\SubscriberDto  $subscriber
      * @param  ?array<string>  $contextKeys
+     * @param  ?array<\novu\Models\Components\SubscriptionPreferenceDto>  $preferences
      * @phpstan-pure
      */
-    public function __construct(string $id, string $identifier, string $createdAt, TopicResponseDto $topic, SubscriberDto $subscriber, ?array $contextKeys = null)
+    public function __construct(string $id, string $identifier, string $createdAt, TopicResponseDto $topic, SubscriberDto $subscriber, ?array $contextKeys = null, ?array $preferences = null)
     {
         $this->id = $id;
         $this->identifier = $identifier;
@@ -80,5 +91,6 @@ class TopicSubscriptionResponseDto
         $this->topic = $topic;
         $this->subscriber = $subscriber;
         $this->contextKeys = $contextKeys;
+        $this->preferences = $preferences;
     }
 }

@@ -10,6 +10,7 @@ The ID of the chat or push provider.
 | `Slack`            | slack              |
 | `Discord`          | discord            |
 | `Msteams`          | msteams            |
+| `WebexMessaging`   | webex-messaging    |
 | `Mattermost`       | mattermost         |
 | `Ryver`            | ryver              |
 | `Zulip`            | zulip              |
@@ -17,9 +18,12 @@ The ID of the chat or push provider.
 | `Getstream`        | getstream          |
 | `RocketChat`       | rocket-chat        |
 | `WhatsappBusiness` | whatsapp-business  |
+| `Line`             | line               |
 | `ChatWebhook`      | chat-webhook       |
 | `NovuSlack`        | novu-slack         |
 | `Telegram`         | telegram           |
+| `Sendblue`         | sendblue           |
+| `NovuWebChat`      | novu-web-chat      |
 | `Fcm`              | fcm                |
 | `Apns`             | apns               |
 | `Expo`             | expo               |

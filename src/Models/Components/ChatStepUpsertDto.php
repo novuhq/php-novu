@@ -57,19 +57,31 @@ class ChatStepUpsertDto
     public ChatControlDto|array|null $controlValues = null;
 
     /**
+     * Per-provider content overrides keyed by providerId. Stored separately from controlValues and merged over the default body at send time. Keys are ChatProviderIdEnum / ToolProviderIdEnum values (e.g. `slack`, `whatsapp-business`, `pagerduty`). Omit to leave unchanged; pass null to delete all provider overrides; pass an object to replace the full set.
+     *
+     * @var ?array<string, array<string, mixed>> $providerOverrides
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('providerOverrides')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, array<string, mixed>>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $providerOverrides = null;
+
+    /**
      * @param  string  $name
      * @param  \novu\Models\Components\StepTypeEnum  $type
      * @param  ?string  $id
      * @param  ?string  $stepId
      * @param  \novu\Models\Components\ChatControlDto|array<string, mixed>|null  $controlValues
+     * @param  ?array<string, array<string, mixed>>  $providerOverrides
      * @phpstan-pure
      */
-    public function __construct(string $name, StepTypeEnum $type, ?string $id = null, ?string $stepId = null, ChatControlDto|array|null $controlValues = null)
+    public function __construct(string $name, StepTypeEnum $type, ?string $id = null, ?string $stepId = null, ChatControlDto|array|null $controlValues = null, ?array $providerOverrides = null)
     {
         $this->name = $name;
         $this->type = $type;
         $this->id = $id;
         $this->stepId = $stepId;
         $this->controlValues = $controlValues;
+        $this->providerOverrides = $providerOverrides;
     }
 }

@@ -1,0 +1,10 @@
+# AgentsControllerUpdateAgentBridgeRequest
+
+
+## Fields
+
+| Field                                                                                            | Type                                                                                             | Required                                                                                         | Description                                                                                      |
+| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
+| `identifier`                                                                                     | *string*                                                                                         | :heavy_check_mark:                                                                               | N/A                                                                                              |
+| `idempotencyKey`                                                                                 | *?string*                                                                                        | :heavy_minus_sign:                                                                               | A header for idempotency purposes                                                                |
+| `updateAgentBridgeRequestDto`                                                                    | [Components\UpdateAgentBridgeRequestDto](../../Models/Components/UpdateAgentBridgeRequestDto.md) | :heavy_check_mark:                                                                               | N/A                                                                                              |

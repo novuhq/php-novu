@@ -27,13 +27,23 @@ class WorkspaceDto
     public ?string $name = null;
 
     /**
+     *
+     * @var ?string $botUserId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('botUserId')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $botUserId = null;
+
+    /**
      * @param  string  $id
      * @param  ?string  $name
+     * @param  ?string  $botUserId
      * @phpstan-pure
      */
-    public function __construct(string $id, ?string $name = null)
+    public function __construct(string $id, ?string $name = null, ?string $botUserId = null)
     {
         $this->id = $id;
         $this->name = $name;
+        $this->botUserId = $botUserId;
     }
 }

@@ -87,6 +87,15 @@ class TriggerEventToAllRequestDto
     public ?array $context = null;
 
     /**
+     * Override the workflow-assigned agent for this trigger using the public agent identifier. Omit to use the workflow default; pass null to disable agent routing for this execution.
+     *
+     * @var ?string $agentId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('agentId')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $agentId = null;
+
+    /**
      * @param  string  $name
      * @param  array<string, mixed>  $payload
      * @param  ?\novu\Models\Components\TriggerEventToAllRequestDtoOverrides  $overrides
@@ -94,9 +103,10 @@ class TriggerEventToAllRequestDto
      * @param  string|\novu\Models\Components\SubscriberPayloadDto|null  $actor
      * @param  string|\novu\Models\Components\TenantPayloadDto|null  $tenant
      * @param  ?array<string, string|\novu\Models\Components\TriggerEventToAllRequestDtoContext2>  $context
+     * @param  ?string  $agentId
      * @phpstan-pure
      */
-    public function __construct(string $name, array $payload, ?TriggerEventToAllRequestDtoOverrides $overrides = null, ?string $transactionId = null, string|SubscriberPayloadDto|null $actor = null, string|TenantPayloadDto|null $tenant = null, ?array $context = null)
+    public function __construct(string $name, array $payload, ?TriggerEventToAllRequestDtoOverrides $overrides = null, ?string $transactionId = null, string|SubscriberPayloadDto|null $actor = null, string|TenantPayloadDto|null $tenant = null, ?array $context = null, ?string $agentId = null)
     {
         $this->name = $name;
         $this->payload = $payload;
@@ -105,5 +115,6 @@ class TriggerEventToAllRequestDto
         $this->actor = $actor;
         $this->tenant = $tenant;
         $this->context = $context;
+        $this->agentId = $agentId;
     }
 }

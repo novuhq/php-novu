@@ -30,7 +30,7 @@ class GroupPreferenceFilterDto
     public ?bool $enabled = null;
 
     /**
-     * Optional condition using JSON Logic rules
+     * Optional JSON Logic condition evaluated at fan-out time against trigger payload, subscriber profile, actor, and context (for example, `{ "var": "payload.tier" }`, `{ "var": "subscriber.data.plan" }`, or `{ "var": "actor.data.role" }`)
      *
      * @var ?array<string, mixed> $condition
      */

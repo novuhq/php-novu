@@ -12,3 +12,4 @@ The channel type for the integration. Not required for agent-kind integrations.
 | `Sms`   | sms     |
 | `Chat`  | chat    |
 | `Push`  | push    |
+| `Tool`  | tool    |

@@ -28,13 +28,36 @@ class LinkChannelEndpointRequestDto
     public string $subscriberId;
 
     /**
+     * $context
+     *
+     * @var ?array<string, string|\novu\Models\Components\LinkChannelEndpointRequestDtoContext2> $context
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('context')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, string|\novu\Models\Components\LinkChannelEndpointRequestDtoContext2>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $context = null;
+
+    /**
+     * HMAC-SHA256 of the canonicalized `context`, signed with the tenant environment secret key (the same "Inbox with context" signing scheme). Required when the integration has HMAC validation enabled.
+     *
+     * @var ?string $contextHash
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('contextHash')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $contextHash = null;
+
+    /**
      * @param  string  $integrationIdentifier
      * @param  string  $subscriberId
+     * @param  ?array<string, string|\novu\Models\Components\LinkChannelEndpointRequestDtoContext2>  $context
+     * @param  ?string  $contextHash
      * @phpstan-pure
      */
-    public function __construct(string $integrationIdentifier, string $subscriberId)
+    public function __construct(string $integrationIdentifier, string $subscriberId, ?array $context = null, ?string $contextHash = null)
     {
         $this->integrationIdentifier = $integrationIdentifier;
         $this->subscriberId = $subscriberId;
+        $this->context = $context;
+        $this->contextHash = $contextHash;
     }
 }

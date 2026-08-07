@@ -57,19 +57,30 @@ class PatchPreferenceChannelsDto
     public ?bool $chat = null;
 
     /**
+     * Tool channel preference
+     *
+     * @var ?bool $tool
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('tool')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?bool $tool = null;
+
+    /**
      * @param  ?bool  $email
      * @param  ?bool  $sms
      * @param  ?bool  $inApp
      * @param  ?bool  $push
      * @param  ?bool  $chat
+     * @param  ?bool  $tool
      * @phpstan-pure
      */
-    public function __construct(?bool $email = null, ?bool $sms = null, ?bool $inApp = null, ?bool $push = null, ?bool $chat = null)
+    public function __construct(?bool $email = null, ?bool $sms = null, ?bool $inApp = null, ?bool $push = null, ?bool $chat = null, ?bool $tool = null)
     {
         $this->email = $email;
         $this->sms = $sms;
         $this->inApp = $inApp;
         $this->push = $push;
         $this->chat = $chat;
+        $this->tool = $tool;
     }
 }

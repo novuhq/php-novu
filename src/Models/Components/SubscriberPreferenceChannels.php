@@ -57,19 +57,30 @@ class SubscriberPreferenceChannels
     public ?bool $push = null;
 
     /**
+     * Tool channel preference
+     *
+     * @var ?bool $tool
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('tool')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?bool $tool = null;
+
+    /**
      * @param  ?bool  $email
      * @param  ?bool  $sms
      * @param  ?bool  $inApp
      * @param  ?bool  $chat
      * @param  ?bool  $push
+     * @param  ?bool  $tool
      * @phpstan-pure
      */
-    public function __construct(?bool $email = null, ?bool $sms = null, ?bool $inApp = null, ?bool $chat = null, ?bool $push = null)
+    public function __construct(?bool $email = null, ?bool $sms = null, ?bool $inApp = null, ?bool $chat = null, ?bool $push = null, ?bool $tool = null)
     {
         $this->email = $email;
         $this->sms = $sms;
         $this->inApp = $inApp;
         $this->chat = $chat;
         $this->push = $push;
+        $this->tool = $tool;
     }
 }

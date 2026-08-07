@@ -9,3 +9,5 @@ Reason for the dependency
 | ---------------------------- | ---------------------------- |
 | `LayoutRequiredForWorkflow`  | LAYOUT_REQUIRED_FOR_WORKFLOW |
 | `LayoutExistsInTarget`       | LAYOUT_EXISTS_IN_TARGET      |
+| `AgentRequiredForWorkflow`   | AGENT_REQUIRED_FOR_WORKFLOW  |
+| `AgentExistsInTarget`        | AGENT_EXISTS_IN_TARGET       |

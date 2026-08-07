@@ -17,4 +17,5 @@ enum QueryParamChannel: string
     case Sms = 'sms';
     case Chat = 'chat';
     case Push = 'push';
+    case Tool = 'tool';
 }

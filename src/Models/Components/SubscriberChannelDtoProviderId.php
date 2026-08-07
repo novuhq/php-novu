@@ -15,6 +15,7 @@ enum SubscriberChannelDtoProviderId: string
     case Slack = 'slack';
     case Discord = 'discord';
     case Msteams = 'msteams';
+    case WebexMessaging = 'webex-messaging';
     case Mattermost = 'mattermost';
     case Ryver = 'ryver';
     case Zulip = 'zulip';
@@ -22,9 +23,12 @@ enum SubscriberChannelDtoProviderId: string
     case Getstream = 'getstream';
     case RocketChat = 'rocket-chat';
     case WhatsappBusiness = 'whatsapp-business';
+    case Line = 'line';
     case ChatWebhook = 'chat-webhook';
     case NovuSlack = 'novu-slack';
     case Telegram = 'telegram';
+    case Sendblue = 'sendblue';
+    case NovuWebChat = 'novu-web-chat';
     case Fcm = 'fcm';
     case Apns = 'apns';
     case Expo = 'expo';

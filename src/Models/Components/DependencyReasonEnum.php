@@ -14,4 +14,6 @@ enum DependencyReasonEnum: string
 {
     case LayoutRequiredForWorkflow = 'LAYOUT_REQUIRED_FOR_WORKFLOW';
     case LayoutExistsInTarget = 'LAYOUT_EXISTS_IN_TARGET';
+    case AgentRequiredForWorkflow = 'AGENT_REQUIRED_FOR_WORKFLOW';
+    case AgentExistsInTarget = 'AGENT_EXISTS_IN_TARGET';
 }

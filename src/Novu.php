@@ -78,6 +78,13 @@ class Novu
      */
     public Workflows $workflows;
 
+    /**
+     * Agents are conversational assistants that receive inbound messages from connected channels and respond through a custom code bridge or a managed runtime provider.
+     *
+     * @var Agents $$agents
+     */
+    public Agents $agents;
+
     public ChannelConnections $channelConnections;
 
     public ChannelEndpoints $channelEndpoints;
@@ -140,6 +147,7 @@ class Novu
         $this->topics = new Topics($this->sdkConfiguration);
         $this->translations = new Translations($this->sdkConfiguration);
         $this->workflows = new Workflows($this->sdkConfiguration);
+        $this->agents = new Agents($this->sdkConfiguration);
         $this->channelConnections = new ChannelConnections($this->sdkConfiguration);
         $this->channelEndpoints = new ChannelEndpoints($this->sdkConfiguration);
         $this->domains = new Domains($this->sdkConfiguration);

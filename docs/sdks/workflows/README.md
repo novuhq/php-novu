@@ -191,7 +191,6 @@ $updateWorkflowDto = new Components\UpdateWorkflowDto(
             ],
         ),
     ),
-    origin: Components\ResourceOriginEnum::External,
 );
 
 $response = $sdk->workflows->update(

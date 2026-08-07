@@ -23,7 +23,9 @@ $triggerEventRequestDto = new Components\TriggerEventRequestDto(
             'text' => 'string',
         ],
     ],
+    bridgeUrl: 'https://your-tunnel.novu.co/api/novu',
     overrides: new Components\Overrides(),
+    agentId: 'support-agent',
     to: 'SUBSCRIBER_ID',
     actor: '<value>',
     context: [
@@ -99,6 +101,7 @@ $triggerEventToAllRequestDto = new Components\TriggerEventToAllRequestDto(
             ],
         ],
     ),
+    agentId: 'support-agent',
     actor: new Components\SubscriberPayloadDto(
         firstName: 'John',
         lastName: 'Doe',
@@ -182,6 +185,41 @@ $response = $sdk->triggerBulk(
 );
 
 if ($response->triggerEventResponseDtos !== null) {
+    // handle response
+}
+```
+
+### Send an agent reply
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use novu;
+use novu\Models\Components;
+
+$sdk = novu\Novu::builder()
+    ->setSecurity(
+        'YOUR_SECRET_KEY_HERE'
+    )
+    ->build();
+
+$agentReplyPayloadDto = new Components\AgentReplyPayloadDto(
+    conversationId: '64f5a1c2e8b7a3d9f0c1b2a3',
+    integrationIdentifier: 'slack-support',
+    reply: new Components\MarkdownReplyContentDto(
+        markdown: '**Report ready.** Your weekly summary is attached.',
+    ),
+);
+
+$response = $sdk->agents->sendReply(
+    agentId: 'support-agent',
+    agentReplyPayloadDto: $agentReplyPayloadDto
+
+);
+
+if ($response->object !== null) {
     // handle response
 }
 ```

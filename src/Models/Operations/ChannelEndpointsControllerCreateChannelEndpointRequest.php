@@ -15,10 +15,10 @@ class ChannelEndpointsControllerCreateChannelEndpointRequest
     /**
      * Channel endpoint creation request. The structure varies based on the type field.
      *
-     * @var \novu\Models\Components\CreateSlackChannelEndpointDto|\novu\Models\Components\CreateSlackUserEndpointDto|\novu\Models\Components\CreateWebhookEndpointDto|\novu\Models\Components\CreatePhoneEndpointDto|\novu\Models\Components\CreateMsTeamsChannelEndpointDto|\novu\Models\Components\CreateMsTeamsUserEndpointDto|\novu\Models\Components\CreateTelegramChatEndpointDto $requestBody
+     * @var \novu\Models\Components\CreateSlackChannelEndpointDto|\novu\Models\Components\CreateSlackUserEndpointDto|\novu\Models\Components\CreateWebhookEndpointDto|\novu\Models\Components\CreatePhoneEndpointDto|\novu\Models\Components\CreateMsTeamsChannelEndpointDto|\novu\Models\Components\CreateMsTeamsUserEndpointDto|\novu\Models\Components\CreateTelegramChatEndpointDto|\novu\Models\Components\CreateWebexRoomEndpointDto|\novu\Models\Components\CreateWebexPersonEndpointDto|\novu\Models\Components\CreateLineUserEndpointDto|\novu\Models\Components\CreatePagerDutyServiceEndpointDto|\novu\Models\Components\CreateOpsgenieIntegrationEndpointDto|\novu\Models\Components\CreateGrafanaOnCallIntegrationEndpointDto|\novu\Models\Components\CreateToolWebhookEndpointDto $requestBody
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
-    public Components\CreateSlackChannelEndpointDto|Components\CreateSlackUserEndpointDto|Components\CreateWebhookEndpointDto|Components\CreatePhoneEndpointDto|Components\CreateMsTeamsChannelEndpointDto|Components\CreateMsTeamsUserEndpointDto|Components\CreateTelegramChatEndpointDto $requestBody;
+    public Components\CreateSlackChannelEndpointDto|Components\CreateSlackUserEndpointDto|Components\CreateWebhookEndpointDto|Components\CreatePhoneEndpointDto|Components\CreateMsTeamsChannelEndpointDto|Components\CreateMsTeamsUserEndpointDto|Components\CreateTelegramChatEndpointDto|Components\CreateWebexRoomEndpointDto|Components\CreateWebexPersonEndpointDto|Components\CreateLineUserEndpointDto|Components\CreatePagerDutyServiceEndpointDto|Components\CreateOpsgenieIntegrationEndpointDto|Components\CreateGrafanaOnCallIntegrationEndpointDto|Components\CreateToolWebhookEndpointDto $requestBody;
 
     /**
      * A header for idempotency purposes
@@ -29,11 +29,11 @@ class ChannelEndpointsControllerCreateChannelEndpointRequest
     public ?string $idempotencyKey = null;
 
     /**
-     * @param  \novu\Models\Components\CreateSlackChannelEndpointDto|\novu\Models\Components\CreateSlackUserEndpointDto|\novu\Models\Components\CreateWebhookEndpointDto|\novu\Models\Components\CreatePhoneEndpointDto|\novu\Models\Components\CreateMsTeamsChannelEndpointDto|\novu\Models\Components\CreateMsTeamsUserEndpointDto|\novu\Models\Components\CreateTelegramChatEndpointDto  $requestBody
+     * @param  \novu\Models\Components\CreateSlackChannelEndpointDto|\novu\Models\Components\CreateSlackUserEndpointDto|\novu\Models\Components\CreateWebhookEndpointDto|\novu\Models\Components\CreatePhoneEndpointDto|\novu\Models\Components\CreateMsTeamsChannelEndpointDto|\novu\Models\Components\CreateMsTeamsUserEndpointDto|\novu\Models\Components\CreateTelegramChatEndpointDto|\novu\Models\Components\CreateWebexRoomEndpointDto|\novu\Models\Components\CreateWebexPersonEndpointDto|\novu\Models\Components\CreateLineUserEndpointDto|\novu\Models\Components\CreatePagerDutyServiceEndpointDto|\novu\Models\Components\CreateOpsgenieIntegrationEndpointDto|\novu\Models\Components\CreateGrafanaOnCallIntegrationEndpointDto|\novu\Models\Components\CreateToolWebhookEndpointDto  $requestBody
      * @param  ?string  $idempotencyKey
      * @phpstan-pure
      */
-    public function __construct(Components\CreateSlackChannelEndpointDto|Components\CreateSlackUserEndpointDto|Components\CreateWebhookEndpointDto|Components\CreatePhoneEndpointDto|Components\CreateMsTeamsChannelEndpointDto|Components\CreateMsTeamsUserEndpointDto|Components\CreateTelegramChatEndpointDto $requestBody, ?string $idempotencyKey = null)
+    public function __construct(Components\CreateSlackChannelEndpointDto|Components\CreateSlackUserEndpointDto|Components\CreateWebhookEndpointDto|Components\CreatePhoneEndpointDto|Components\CreateMsTeamsChannelEndpointDto|Components\CreateMsTeamsUserEndpointDto|Components\CreateTelegramChatEndpointDto|Components\CreateWebexRoomEndpointDto|Components\CreateWebexPersonEndpointDto|Components\CreateLineUserEndpointDto|Components\CreatePagerDutyServiceEndpointDto|Components\CreateOpsgenieIntegrationEndpointDto|Components\CreateGrafanaOnCallIntegrationEndpointDto|Components\CreateToolWebhookEndpointDto $requestBody, ?string $idempotencyKey = null)
     {
         $this->requestBody = $requestBody;
         $this->idempotencyKey = $idempotencyKey;

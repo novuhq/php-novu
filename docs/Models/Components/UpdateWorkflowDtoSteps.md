@@ -75,6 +75,15 @@ Components\DigestStepUpsertDto $value = /* values here */
 Components\ThrottleStepUpsertDto $value = /* values here */
 ```
 
+### `Components\ToolStepUpsertDto`
+
+```php
+/**
+* @var \novu\Models\Components\ToolStepUpsertDto
+*/
+Components\ToolStepUpsertDto $value = /* values here */
+```
+
 ### `Components\CustomStepUpsertDto`
 
 ```php

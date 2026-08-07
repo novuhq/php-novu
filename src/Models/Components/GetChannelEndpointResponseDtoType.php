@@ -19,4 +19,11 @@ enum GetChannelEndpointResponseDtoType: string
     case MsTeamsChannel = 'ms_teams_channel';
     case MsTeamsUser = 'ms_teams_user';
     case TelegramChat = 'telegram_chat';
+    case WebexRoom = 'webex_room';
+    case WebexPerson = 'webex_person';
+    case LineUser = 'line_user';
+    case PagerdutyService = 'pagerduty_service';
+    case OpsgenieIntegration = 'opsgenie_integration';
+    case GrafanaOncallIntegration = 'grafana_oncall_integration';
+    case ToolWebhook = 'tool_webhook';
 }

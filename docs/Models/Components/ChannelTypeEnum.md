@@ -12,3 +12,4 @@ Channel type through which the message is sent
 | `Sms`   | sms     |
 | `Chat`  | chat    |
 | `Push`  | push    |
+| `Tool`  | tool    |

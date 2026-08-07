@@ -21,22 +21,34 @@ class Eight
     public ?GeneratePreviewResponseDtoResult8Type $type = null;
 
     /**
+     * $preview
      *
-     * @var ?\novu\Models\Components\DigestRegularOutput $preview
+     * @var ?array<string, mixed> $preview
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('preview')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\DigestRegularOutput|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?DigestRegularOutput $preview = null;
+    public ?array $preview = null;
+
+    /**
+     *
+     * @var ?\novu\Models\Components\PreviewErrorDto $error
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('error')]
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\PreviewErrorDto|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?PreviewErrorDto $error = null;
 
     /**
      * @param  ?\novu\Models\Components\GeneratePreviewResponseDtoResult8Type  $type
-     * @param  ?\novu\Models\Components\DigestRegularOutput  $preview
+     * @param  ?array<string, mixed>  $preview
+     * @param  ?\novu\Models\Components\PreviewErrorDto  $error
      * @phpstan-pure
      */
-    public function __construct(?GeneratePreviewResponseDtoResult8Type $type = null, ?DigestRegularOutput $preview = null)
+    public function __construct(?GeneratePreviewResponseDtoResult8Type $type = null, ?array $preview = null, ?PreviewErrorDto $error = null)
     {
         $this->type = $type;
         $this->preview = $preview;
+        $this->error = $error;
     }
 }

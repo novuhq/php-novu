@@ -20,7 +20,7 @@ class GenerateConnectOauthUrlRequestDto
     public string $integrationIdentifier;
 
     /**
-     * The subscriber ID to associate with the channel connection. For Slack: optional for workspace connections (required only for incoming-webhook scope). For MS Teams: optional. Admin consent is tenant-wide.
+     * The subscriber ID to associate with the channel connection. For Slack: optional for workspace connections (required only for incoming-webhook scope). For Webex: optional for workspace connections. For MS Teams: optional. Admin consent is tenant-wide.
      *
      * @var ?string $subscriberId
      */
@@ -48,7 +48,16 @@ class GenerateConnectOauthUrlRequestDto
     public ?array $context = null;
 
     /**
-     * **Slack only**: OAuth scopes to request during authorization. If not specified, default scopes will be used: chat:write, chat:write.public, channels:read, groups:read, users:read, users:read.email. **MS Teams**: ignored — uses admin consent with pre-configured Azure AD permissions.
+     * HMAC-SHA256 of the canonicalized `context`, signed with the tenant environment secret key (the same "Inbox with context" signing scheme). Required when the integration has HMAC validation enabled and the session did not already HMAC-verify the context. Establishes that the context/tenant binding was minted by an authenticated backend rather than forged in the browser.
+     *
+     * @var ?string $contextHash
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('contextHash')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $contextHash = null;
+
+    /**
+     * **Slack only**: OAuth scopes to request during authorization. If not specified, default scopes will be used: chat:write, chat:write.public, channels:read, groups:read, users:read, users:read.email. **Webex**: OAuth scopes to request during authorization. Defaults to: spark:messages_write, spark:rooms_read, spark:people_read, spark:memberships_read, spark:kms. **MS Teams**: ignored — uses admin consent with pre-configured Azure AD permissions.
      *
      * @var ?array<string> $scope
      */
@@ -68,7 +77,7 @@ class GenerateConnectOauthUrlRequestDto
     public ?GenerateConnectOauthUrlRequestDtoConnectionMode $connectionMode = null;
 
     /**
-     * When true (default when connectionMode is "subscriber"), after the workspace/tenant connection is created the OAuth flow also links the subscriber who clicked "Connect" as a personal endpoint. For Slack, uses the authed_user.id returned by oauth.v2.access — no extra redirect. For MS Teams, triggers a second OAuth redirect for delegated user-identity consent. Set to false to only create the workspace connection without linking the individual user.
+     * When true (default when connectionMode is "subscriber"), after the workspace/tenant connection is created the OAuth flow also links the subscriber who clicked "Connect" as a personal endpoint. For Slack, uses the authed_user.id returned by oauth.v2.access — no extra redirect. For Webex, uses the authenticated Webex person returned by people/me — no extra redirect. For MS Teams, triggers a second OAuth redirect for delegated user-identity consent. Set to false to only create the workspace connection without linking the individual user.
      *
      * @var ?bool $autoLinkUser
      */
@@ -81,17 +90,19 @@ class GenerateConnectOauthUrlRequestDto
      * @param  ?string  $subscriberId
      * @param  ?string  $connectionIdentifier
      * @param  ?array<string, string|\novu\Models\Components\GenerateConnectOauthUrlRequestDtoContext2>  $context
+     * @param  ?string  $contextHash
      * @param  ?array<string>  $scope
      * @param  ?\novu\Models\Components\GenerateConnectOauthUrlRequestDtoConnectionMode  $connectionMode
      * @param  ?bool  $autoLinkUser
      * @phpstan-pure
      */
-    public function __construct(string $integrationIdentifier, ?string $subscriberId = null, ?string $connectionIdentifier = null, ?array $context = null, ?array $scope = null, ?GenerateConnectOauthUrlRequestDtoConnectionMode $connectionMode = null, ?bool $autoLinkUser = null)
+    public function __construct(string $integrationIdentifier, ?string $subscriberId = null, ?string $connectionIdentifier = null, ?array $context = null, ?string $contextHash = null, ?array $scope = null, ?GenerateConnectOauthUrlRequestDtoConnectionMode $connectionMode = null, ?bool $autoLinkUser = null)
     {
         $this->integrationIdentifier = $integrationIdentifier;
         $this->subscriberId = $subscriberId;
         $this->connectionIdentifier = $connectionIdentifier;
         $this->context = $context;
+        $this->contextHash = $contextHash;
         $this->scope = $scope;
         $this->connectionMode = $connectionMode;
         $this->autoLinkUser = $autoLinkUser;
