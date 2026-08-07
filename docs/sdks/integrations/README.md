@@ -507,7 +507,8 @@ if ($response->integrationResponseDtos !== null) {
 
 ## generateConnectOAuthUrl
 
-Generate an OAuth URL that creates a workspace or tenant-level channel connection (Slack workspace install or MS Teams admin consent). 
+Generate an OAuth URL that creates a workspace or tenant-level channel connection (Slack workspace install, MS Teams admin consent, or Webex integration authorization).
+
     The generated URL expires after 5 minutes.
 
 ### Example Usage
@@ -534,6 +535,7 @@ $generateConnectOauthUrlRequestDto = new Components\GenerateConnectOauthUrlReque
     context: [
         'key' => 'org-acme',
     ],
+    contextHash: 'a1b2c3d4e5f6...',
     scope: [
         'chat:write',
         'chat:write.public',
@@ -597,6 +599,10 @@ $sdk = novu\Novu::builder()
 $linkChannelEndpointRequestDto = new Components\LinkChannelEndpointRequestDto(
     integrationIdentifier: 'telegram-bot',
     subscriberId: 'subscriber-123',
+    context: [
+        'key' => 'org-acme',
+    ],
+    contextHash: 'a1b2c3d4e5f6...',
 );
 
 $response = $sdk->integrations->linkChannelEndpoint(
@@ -631,7 +637,8 @@ if ($response->linkChannelEndpointResponseDto !== null) {
 
 ## generateLinkUserOAuthUrl
 
-Generate an OAuth URL that links a specific subscriber to their chat identity (Slack user ID or MS Teams user OID). 
+Generate an OAuth URL that links a specific subscriber to their chat identity (Slack user ID, MS Teams user OID, or Webex person).
+
     The generated URL expires after 5 minutes.
 
 ### Example Usage
@@ -658,6 +665,7 @@ $generateLinkUserOauthUrlRequestDto = new Components\GenerateLinkUserOauthUrlReq
     context: [
         'key' => 'org-acme',
     ],
+    contextHash: 'a1b2c3d4e5f6...',
     userScope: [
         'identity.basic',
     ],
@@ -696,7 +704,7 @@ if ($response->generateChatOAuthUrlResponseDto !== null) {
 ## ~~generateChatOAuthUrl~~
 
 **Deprecated** — use `POST /integrations/channel-connections/oauth` (connect) or `POST /integrations/channel-endpoints/oauth` (link_user) instead.
-    Generate an OAuth URL for chat integrations like Slack and MS Teams. 
+    Generate an OAuth URL for chat integrations like Slack, MS Teams, and Webex.
     This URL allows subscribers to authorize the integration, enabling the system to send messages 
     through their chat workspace. The generated URL expires after 5 minutes.
 

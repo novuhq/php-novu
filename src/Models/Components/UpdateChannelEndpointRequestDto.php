@@ -14,17 +14,17 @@ class UpdateChannelEndpointRequestDto
     /**
      * Updated endpoint data. The structure must match the existing channel endpoint type.
      *
-     * @var \novu\Models\Components\SlackChannelEndpointDto|\novu\Models\Components\SlackUserEndpointDto|\novu\Models\Components\WebhookEndpointDto|\novu\Models\Components\PhoneEndpointDto $endpoint
+     * @var \novu\Models\Components\SlackChannelEndpointDto|\novu\Models\Components\SlackUserEndpointDto|\novu\Models\Components\WebhookEndpointDto|\novu\Models\Components\PhoneEndpointDto|\novu\Models\Components\WebexRoomEndpointDto|\novu\Models\Components\WebexPersonEndpointDto|\novu\Models\Components\ToolWebhookEndpointDto $endpoint
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('endpoint')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\SlackChannelEndpointDto|\novu\Models\Components\SlackUserEndpointDto|\novu\Models\Components\WebhookEndpointDto|\novu\Models\Components\PhoneEndpointDto')]
-    public SlackChannelEndpointDto|SlackUserEndpointDto|WebhookEndpointDto|PhoneEndpointDto $endpoint;
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\SlackChannelEndpointDto|\novu\Models\Components\SlackUserEndpointDto|\novu\Models\Components\WebhookEndpointDto|\novu\Models\Components\PhoneEndpointDto|\novu\Models\Components\WebexRoomEndpointDto|\novu\Models\Components\WebexPersonEndpointDto|\novu\Models\Components\ToolWebhookEndpointDto')]
+    public SlackChannelEndpointDto|SlackUserEndpointDto|WebhookEndpointDto|PhoneEndpointDto|WebexRoomEndpointDto|WebexPersonEndpointDto|ToolWebhookEndpointDto $endpoint;
 
     /**
-     * @param  \novu\Models\Components\SlackChannelEndpointDto|\novu\Models\Components\SlackUserEndpointDto|\novu\Models\Components\WebhookEndpointDto|\novu\Models\Components\PhoneEndpointDto  $endpoint
+     * @param  \novu\Models\Components\SlackChannelEndpointDto|\novu\Models\Components\SlackUserEndpointDto|\novu\Models\Components\WebhookEndpointDto|\novu\Models\Components\PhoneEndpointDto|\novu\Models\Components\WebexRoomEndpointDto|\novu\Models\Components\WebexPersonEndpointDto|\novu\Models\Components\ToolWebhookEndpointDto  $endpoint
      * @phpstan-pure
      */
-    public function __construct(SlackChannelEndpointDto|SlackUserEndpointDto|WebhookEndpointDto|PhoneEndpointDto $endpoint)
+    public function __construct(SlackChannelEndpointDto|SlackUserEndpointDto|WebhookEndpointDto|PhoneEndpointDto|WebexRoomEndpointDto|WebexPersonEndpointDto|ToolWebhookEndpointDto $endpoint)
     {
         $this->endpoint = $endpoint;
     }

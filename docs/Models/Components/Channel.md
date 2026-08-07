@@ -12,3 +12,4 @@ The channel type (email, sms, push, chat, etc.).
 | `Sms`   | sms     |
 | `Chat`  | chat    |
 | `Push`  | push    |
+| `Tool`  | tool    |

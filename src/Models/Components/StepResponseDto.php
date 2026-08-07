@@ -125,6 +125,16 @@ class StepResponseDto
     public ?string $stepResolverHash = null;
 
     /**
+     * Per-provider content overrides keyed by providerId. Stored separately from controlValues and merged over the default body at send time. Keys are ChatProviderIdEnum / ToolProviderIdEnum values (e.g. `slack`, `whatsapp-business`, `pagerduty`).
+     *
+     * @var ?array<string, array<string, mixed>> $providerOverrides
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('providerOverrides')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, array<string, mixed>>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $providerOverrides = null;
+
+    /**
      * @param  \novu\Models\Components\ControlsMetadataDto  $controls
      * @param  array<string, mixed>  $variables
      * @param  string  $stepId
@@ -138,9 +148,10 @@ class StepResponseDto
      * @param  ?array<string, mixed>  $controlValues
      * @param  ?\novu\Models\Components\StepIssuesDto  $issues
      * @param  ?string  $stepResolverHash
+     * @param  ?array<string, array<string, mixed>>  $providerOverrides
      * @phpstan-pure
      */
-    public function __construct(ControlsMetadataDto $controls, array $variables, string $stepId, string $id, string $name, string $slug, StepTypeEnum $type, ResourceOriginEnum $origin, string $workflowId, string $workflowDatabaseId, ?array $controlValues = null, ?StepIssuesDto $issues = null, ?string $stepResolverHash = null)
+    public function __construct(ControlsMetadataDto $controls, array $variables, string $stepId, string $id, string $name, string $slug, StepTypeEnum $type, ResourceOriginEnum $origin, string $workflowId, string $workflowDatabaseId, ?array $controlValues = null, ?StepIssuesDto $issues = null, ?string $stepResolverHash = null, ?array $providerOverrides = null)
     {
         $this->controls = $controls;
         $this->variables = $variables;
@@ -155,5 +166,6 @@ class StepResponseDto
         $this->controlValues = $controlValues;
         $this->issues = $issues;
         $this->stepResolverHash = $stepResolverHash;
+        $this->providerOverrides = $providerOverrides;
     }
 }

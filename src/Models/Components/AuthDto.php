@@ -19,11 +19,41 @@ class AuthDto
     public string $accessToken;
 
     /**
+     *
+     * @var ?string $refreshToken
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('refreshToken')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $refreshToken = null;
+
+    /**
+     *
+     * @var ?string $expiresAt
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('expiresAt')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $expiresAt = null;
+
+    /**
+     *
+     * @var ?string $refreshTokenExpiresAt
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('refreshTokenExpiresAt')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $refreshTokenExpiresAt = null;
+
+    /**
      * @param  string  $accessToken
+     * @param  ?string  $refreshToken
+     * @param  ?string  $expiresAt
+     * @param  ?string  $refreshTokenExpiresAt
      * @phpstan-pure
      */
-    public function __construct(string $accessToken)
+    public function __construct(string $accessToken, ?string $refreshToken = null, ?string $expiresAt = null, ?string $refreshTokenExpiresAt = null)
     {
         $this->accessToken = $accessToken;
+        $this->refreshToken = $refreshToken;
+        $this->expiresAt = $expiresAt;
+        $this->refreshTokenExpiresAt = $refreshTokenExpiresAt;
     }
 }

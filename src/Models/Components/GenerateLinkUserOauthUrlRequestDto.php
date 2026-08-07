@@ -28,7 +28,7 @@ class GenerateLinkUserOauthUrlRequestDto
     public string $integrationIdentifier;
 
     /**
-     * Identifier of the existing channel connection to associate this user endpoint with. Generated automatically if not provided.
+     * Identifier of the existing channel connection to associate this user endpoint with. Generated automatically if not provided for providers that support standalone user linking. Required for Webex.
      *
      * @var ?string $connectionIdentifier
      */
@@ -47,7 +47,16 @@ class GenerateLinkUserOauthUrlRequestDto
     public ?array $context = null;
 
     /**
-     * **Slack only**: User-level OAuth scopes for "Sign in with Slack". Defaults to: identity.basic. **MS Teams**: ignored — uses delegated OpenID scopes (openid, profile, User.Read).
+     * HMAC-SHA256 of the canonicalized `context`, signed with the tenant environment secret key (the same "Inbox with context" signing scheme). Required when the integration has HMAC validation enabled and the session did not already HMAC-verify the context, so the per-user link carries a trustworthy subscriber/tenant binding.
+     *
+     * @var ?string $contextHash
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('contextHash')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $contextHash = null;
+
+    /**
+     * **Slack only**: User-level OAuth scopes for "Sign in with Slack". Defaults to: identity.basic. **Webex**: Optional Webex scopes for people/me; defaults to spark:people_read. **MS Teams**: ignored — uses delegated OpenID scopes (openid, profile, User.Read).
      *
      * @var ?array<string> $userScope
      */
@@ -61,15 +70,17 @@ class GenerateLinkUserOauthUrlRequestDto
      * @param  string  $integrationIdentifier
      * @param  ?string  $connectionIdentifier
      * @param  ?array<string, string|\novu\Models\Components\GenerateLinkUserOauthUrlRequestDtoContext2>  $context
+     * @param  ?string  $contextHash
      * @param  ?array<string>  $userScope
      * @phpstan-pure
      */
-    public function __construct(string $subscriberId, string $integrationIdentifier, ?string $connectionIdentifier = null, ?array $context = null, ?array $userScope = null)
+    public function __construct(string $subscriberId, string $integrationIdentifier, ?string $connectionIdentifier = null, ?array $context = null, ?string $contextHash = null, ?array $userScope = null)
     {
         $this->subscriberId = $subscriberId;
         $this->integrationIdentifier = $integrationIdentifier;
         $this->connectionIdentifier = $connectionIdentifier;
         $this->context = $context;
+        $this->contextHash = $contextHash;
         $this->userScope = $userScope;
     }
 }

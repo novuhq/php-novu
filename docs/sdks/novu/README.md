@@ -44,7 +44,9 @@ $triggerEventRequestDto = new Components\TriggerEventRequestDto(
             'text' => 'string',
         ],
     ],
+    bridgeUrl: 'https://your-tunnel.novu.co/api/novu',
     overrides: new Components\Overrides(),
+    agentId: 'support-agent',
     to: 'SUBSCRIBER_ID',
     actor: '<value>',
     context: [
@@ -178,6 +180,7 @@ $triggerEventToAllRequestDto = new Components\TriggerEventToAllRequestDto(
             ],
         ],
     ),
+    agentId: 'support-agent',
     actor: new Components\SubscriberPayloadDto(
         firstName: 'John',
         lastName: 'Doe',

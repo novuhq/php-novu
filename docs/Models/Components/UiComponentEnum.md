@@ -40,6 +40,7 @@ Component type for the UI Schema Property
 | `SmsBody`                             | SMS_BODY                              |
 | `ChatBody`                            | CHAT_BODY                             |
 | `PushBody`                            | PUSH_BODY                             |
+| `ToolBody`                            | TOOL_BODY                             |
 | `PushSubject`                         | PUSH_SUBJECT                          |
 | `QueryEditor`                         | QUERY_EDITOR                          |
 | `Data`                                | DATA                                  |

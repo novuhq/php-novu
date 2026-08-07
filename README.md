@@ -115,7 +115,9 @@ $triggerEventRequestDto = new Components\TriggerEventRequestDto(
             'text' => 'string',
         ],
     ],
+    bridgeUrl: 'https://your-tunnel.novu.co/api/novu',
     overrides: new Components\Overrides(),
+    agentId: 'support-agent',
     to: 'SUBSCRIBER_ID',
     actor: '<value>',
     context: [
@@ -191,6 +193,7 @@ $triggerEventToAllRequestDto = new Components\TriggerEventToAllRequestDto(
             ],
         ],
     ),
+    agentId: 'support-agent',
     actor: new Components\SubscriberPayloadDto(
         firstName: 'John',
         lastName: 'Doe',
@@ -277,6 +280,41 @@ if ($response->triggerEventResponseDtos !== null) {
     // handle response
 }
 ```
+
+### Send an agent reply
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use novu;
+use novu\Models\Components;
+
+$sdk = novu\Novu::builder()
+    ->setSecurity(
+        'YOUR_SECRET_KEY_HERE'
+    )
+    ->build();
+
+$agentReplyPayloadDto = new Components\AgentReplyPayloadDto(
+    conversationId: '64f5a1c2e8b7a3d9f0c1b2a3',
+    integrationIdentifier: 'slack-support',
+    reply: new Components\MarkdownReplyContentDto(
+        markdown: '**Report ready.** Your weekly summary is attached.',
+    ),
+);
+
+$response = $sdk->agents->sendReply(
+    agentId: 'support-agent',
+    agentReplyPayloadDto: $agentReplyPayloadDto
+
+);
+
+if ($response->object !== null) {
+    // handle response
+}
+```
 <!-- End SDK Example Usage [usage] -->
 
 <!-- Start Authentication [security] -->
@@ -313,7 +351,9 @@ $triggerEventRequestDto = new Components\TriggerEventRequestDto(
             'text' => 'string',
         ],
     ],
+    bridgeUrl: 'https://your-tunnel.novu.co/api/novu',
     overrides: new Components\Overrides(),
+    agentId: 'support-agent',
     to: 'SUBSCRIBER_ID',
     actor: '<value>',
     context: [
@@ -347,6 +387,23 @@ if ($response->triggerEventResponseDto !== null) {
 ### [Activity](docs/sdks/activity/README.md)
 
 * [track](docs/sdks/activity/README.md#track) - Track provider activity and engagement events
+
+### [Agents](docs/sdks/agents/README.md)
+
+* [create](docs/sdks/agents/README.md#create) - Create an agent
+* [list](docs/sdks/agents/README.md#list) - List all agents
+* [sendReply](docs/sdks/agents/README.md#sendreply) - Send an agent reply
+* [retrieve](docs/sdks/agents/README.md#retrieve) - Retrieve an agent
+* [update](docs/sdks/agents/README.md#update) - Update an agent
+* [delete](docs/sdks/agents/README.md#delete) - Delete an agent
+* [updateBridge](docs/sdks/agents/README.md#updatebridge) - Update an agent bridge
+
+#### [Agents.Integrations](docs/sdks/novuintegrations/README.md)
+
+* [create](docs/sdks/novuintegrations/README.md#create) - Create an agent integration
+* [list](docs/sdks/novuintegrations/README.md#list) - List agent integrations
+* [update](docs/sdks/novuintegrations/README.md#update) - Update an agent integration
+* [delete](docs/sdks/novuintegrations/README.md#delete) - Delete an agent integration
 
 ### [ChannelConnections](docs/sdks/channelconnections/README.md)
 
@@ -600,7 +657,9 @@ $triggerEventRequestDto = new Components\TriggerEventRequestDto(
             'text' => 'string',
         ],
     ],
+    bridgeUrl: 'https://your-tunnel.novu.co/api/novu',
     overrides: new Components\Overrides(),
+    agentId: 'support-agent',
     to: 'SUBSCRIBER_ID',
     actor: '<value>',
     context: [
@@ -659,7 +718,9 @@ $triggerEventRequestDto = new Components\TriggerEventRequestDto(
             'text' => 'string',
         ],
     ],
+    bridgeUrl: 'https://your-tunnel.novu.co/api/novu',
     overrides: new Components\Overrides(),
+    agentId: 'support-agent',
     to: 'SUBSCRIBER_ID',
     actor: '<value>',
     context: [
@@ -728,7 +789,9 @@ try {
                 'text' => 'string',
             ],
         ],
+        bridgeUrl: 'https://your-tunnel.novu.co/api/novu',
         overrides: new Components\Overrides(),
+        agentId: 'support-agent',
         to: 'SUBSCRIBER_ID',
         actor: '<value>',
         context: [
@@ -802,7 +865,9 @@ $triggerEventRequestDto = new Components\TriggerEventRequestDto(
             'text' => 'string',
         ],
     ],
+    bridgeUrl: 'https://your-tunnel.novu.co/api/novu',
     overrides: new Components\Overrides(),
+    agentId: 'support-agent',
     to: 'SUBSCRIBER_ID',
     actor: '<value>',
     context: [
@@ -845,7 +910,9 @@ $triggerEventRequestDto = new Components\TriggerEventRequestDto(
             'text' => 'string',
         ],
     ],
+    bridgeUrl: 'https://your-tunnel.novu.co/api/novu',
     overrides: new Components\Overrides(),
+    agentId: 'support-agent',
     to: 'SUBSCRIBER_ID',
     actor: '<value>',
     context: [

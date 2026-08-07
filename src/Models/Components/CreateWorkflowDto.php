@@ -30,10 +30,10 @@ class CreateWorkflowDto
     /**
      * Steps of the workflow
      *
-     * @var array<\novu\Models\Components\InAppStepUpsertDto|\novu\Models\Components\EmailStepUpsertDto|\novu\Models\Components\SmsStepUpsertDto|\novu\Models\Components\PushStepUpsertDto|\novu\Models\Components\ChatStepUpsertDto|\novu\Models\Components\DelayStepUpsertDto|\novu\Models\Components\DigestStepUpsertDto|\novu\Models\Components\ThrottleStepUpsertDto|\novu\Models\Components\CustomStepUpsertDto|\novu\Models\Components\HttpRequestStepUpsertDto> $steps
+     * @var array<\novu\Models\Components\InAppStepUpsertDto|\novu\Models\Components\EmailStepUpsertDto|\novu\Models\Components\SmsStepUpsertDto|\novu\Models\Components\PushStepUpsertDto|\novu\Models\Components\ChatStepUpsertDto|\novu\Models\Components\DelayStepUpsertDto|\novu\Models\Components\DigestStepUpsertDto|\novu\Models\Components\ThrottleStepUpsertDto|\novu\Models\Components\ToolStepUpsertDto|\novu\Models\Components\CustomStepUpsertDto|\novu\Models\Components\HttpRequestStepUpsertDto> $steps
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('steps')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\InAppStepUpsertDto|\novu\Models\Components\EmailStepUpsertDto|\novu\Models\Components\SmsStepUpsertDto|\novu\Models\Components\PushStepUpsertDto|\novu\Models\Components\ChatStepUpsertDto|\novu\Models\Components\DelayStepUpsertDto|\novu\Models\Components\DigestStepUpsertDto|\novu\Models\Components\ThrottleStepUpsertDto|\novu\Models\Components\CustomStepUpsertDto|\novu\Models\Components\HttpRequestStepUpsertDto>')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\InAppStepUpsertDto|\novu\Models\Components\EmailStepUpsertDto|\novu\Models\Components\SmsStepUpsertDto|\novu\Models\Components\PushStepUpsertDto|\novu\Models\Components\ChatStepUpsertDto|\novu\Models\Components\DelayStepUpsertDto|\novu\Models\Components\DigestStepUpsertDto|\novu\Models\Components\ThrottleStepUpsertDto|\novu\Models\Components\ToolStepUpsertDto|\novu\Models\Components\CustomStepUpsertDto|\novu\Models\Components\HttpRequestStepUpsertDto>')]
     public array $steps;
 
     /**
@@ -95,6 +95,16 @@ class CreateWorkflowDto
     public ?array $payloadSchema = null;
 
     /**
+     * Optional agent assignment used to route this workflow through an agent's connected channels. Pass null to clear.
+     *
+     * @var ?\novu\Models\Components\Agent $agent
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('agent')]
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\Agent|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?Agent $agent = null;
+
+    /**
      * Whether the workflow is active
      *
      * @var ?bool $active
@@ -125,7 +135,7 @@ class CreateWorkflowDto
     /**
      * @param  string  $name
      * @param  string  $workflowId
-     * @param  array<\novu\Models\Components\InAppStepUpsertDto|\novu\Models\Components\EmailStepUpsertDto|\novu\Models\Components\SmsStepUpsertDto|\novu\Models\Components\PushStepUpsertDto|\novu\Models\Components\ChatStepUpsertDto|\novu\Models\Components\DelayStepUpsertDto|\novu\Models\Components\DigestStepUpsertDto|\novu\Models\Components\ThrottleStepUpsertDto|\novu\Models\Components\CustomStepUpsertDto|\novu\Models\Components\HttpRequestStepUpsertDto>  $steps
+     * @param  array<\novu\Models\Components\InAppStepUpsertDto|\novu\Models\Components\EmailStepUpsertDto|\novu\Models\Components\SmsStepUpsertDto|\novu\Models\Components\PushStepUpsertDto|\novu\Models\Components\ChatStepUpsertDto|\novu\Models\Components\DelayStepUpsertDto|\novu\Models\Components\DigestStepUpsertDto|\novu\Models\Components\ThrottleStepUpsertDto|\novu\Models\Components\ToolStepUpsertDto|\novu\Models\Components\CustomStepUpsertDto|\novu\Models\Components\HttpRequestStepUpsertDto>  $steps
      * @param  ?string  $description
      * @param  ?array<string>  $tags
      * @param  ?bool  $active
@@ -135,9 +145,10 @@ class CreateWorkflowDto
      * @param  ?\novu\Models\Components\PreferencesRequestDto  $preferences
      * @param  ?\novu\Models\Components\SeverityLevelEnum  $severity
      * @param  ?array<string, mixed>  $payloadSchema
+     * @param  ?\novu\Models\Components\Agent  $agent
      * @phpstan-pure
      */
-    public function __construct(string $name, string $workflowId, array $steps, ?string $description = null, ?array $tags = null, ?bool $validatePayload = null, ?PreferencesRequestDto $preferences = null, ?SeverityLevelEnum $severity = null, ?array $payloadSchema = null, ?bool $active = false, ?bool $isTranslationEnabled = false, ?WorkflowCreationSourceEnum $source = WorkflowCreationSourceEnum::Editor)
+    public function __construct(string $name, string $workflowId, array $steps, ?string $description = null, ?array $tags = null, ?bool $validatePayload = null, ?PreferencesRequestDto $preferences = null, ?SeverityLevelEnum $severity = null, ?array $payloadSchema = null, ?Agent $agent = null, ?bool $active = false, ?bool $isTranslationEnabled = false, ?WorkflowCreationSourceEnum $source = WorkflowCreationSourceEnum::Editor)
     {
         $this->name = $name;
         $this->workflowId = $workflowId;
@@ -148,6 +159,7 @@ class CreateWorkflowDto
         $this->preferences = $preferences;
         $this->severity = $severity;
         $this->payloadSchema = $payloadSchema;
+        $this->agent = $agent;
         $this->active = $active;
         $this->isTranslationEnabled = $isTranslationEnabled;
         $this->source = $source;

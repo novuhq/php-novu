@@ -12,3 +12,4 @@ The channel type for the integration, which defines how it communicates (e.g., e
 | `Sms`   | sms     |
 | `Chat`  | chat    |
 | `Push`  | push    |
+| `Tool`  | tool    |

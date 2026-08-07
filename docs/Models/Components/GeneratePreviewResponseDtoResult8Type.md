@@ -3,6 +3,6 @@
 
 ## Values
 
-| Name    | Value   |
-| ------- | ------- |
-| `Delay` | delay   |
+| Name   | Value  |
+| ------ | ------ |
+| `Tool` | tool   |

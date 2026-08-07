@@ -35,6 +35,7 @@ $sdk = novu\Novu::builder()
 $request = new Operations\ChannelConnectionsControllerListChannelConnectionsRequest(
     limit: 10,
     subscriberId: 'subscriber-123',
+    connectionMode: Operations\ConnectionMode::Shared,
     channel: Operations\Channel::Chat,
     providerId: Components\ProvidersIdEnum::Slack,
     integrationIdentifier: 'slack-prod',
@@ -105,9 +106,13 @@ $createChannelConnectionRequestDto = new Components\CreateChannelConnectionReque
     workspace: new Components\WorkspaceDto(
         id: 'T123456',
         name: 'Acme HQ',
+        botUserId: 'U0123456789',
     ),
     auth: new Components\AuthDto(
         accessToken: 'Workspace access token',
+        refreshToken: 'Workspace refresh token',
+        expiresAt: '2026-06-15T12:00:00.000Z',
+        refreshTokenExpiresAt: '2026-09-15T12:00:00.000Z',
     ),
 );
 
@@ -218,9 +223,13 @@ $updateChannelConnectionRequestDto = new Components\UpdateChannelConnectionReque
     workspace: new Components\WorkspaceDto(
         id: 'T123456',
         name: 'Acme HQ',
+        botUserId: 'U0123456789',
     ),
     auth: new Components\AuthDto(
         accessToken: 'Workspace access token',
+        refreshToken: 'Workspace refresh token',
+        expiresAt: '2026-06-15T12:00:00.000Z',
+        refreshTokenExpiresAt: '2026-09-15T12:00:00.000Z',
     ),
 );
 

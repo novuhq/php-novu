@@ -69,6 +69,14 @@ class ChannelConnectionsControllerListChannelConnectionsRequest
     public ?string $subscriberId = null;
 
     /**
+     * Scope results relative to the subscriber. `subscriber` returns only the subscriber-owned connections, `shared` returns only shared (workspace-level) connections. Omit to return both.
+     *
+     * @var ?\novu\Models\Operations\ConnectionMode $connectionMode
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=connectionMode')]
+    public ?ConnectionMode $connectionMode = null;
+
+    /**
      * Filter by channel type (email, sms, push, chat, etc.).
      *
      * @var ?\novu\Models\Operations\Channel $channel
@@ -116,6 +124,7 @@ class ChannelConnectionsControllerListChannelConnectionsRequest
      * @param  ?string  $orderBy
      * @param  ?bool  $includeCursor
      * @param  ?string  $subscriberId
+     * @param  ?\novu\Models\Operations\ConnectionMode  $connectionMode
      * @param  ?\novu\Models\Operations\Channel  $channel
      * @param  ?\novu\Models\Components\ProvidersIdEnum  $providerId
      * @param  ?string  $integrationIdentifier
@@ -123,7 +132,7 @@ class ChannelConnectionsControllerListChannelConnectionsRequest
      * @param  ?string  $idempotencyKey
      * @phpstan-pure
      */
-    public function __construct(?string $after = null, ?string $before = null, ?float $limit = null, ?ChannelConnectionsControllerListChannelConnectionsQueryParamOrderDirection $orderDirection = null, ?string $orderBy = null, ?bool $includeCursor = null, ?string $subscriberId = null, ?Channel $channel = null, ?Components\ProvidersIdEnum $providerId = null, ?string $integrationIdentifier = null, ?array $contextKeys = null, ?string $idempotencyKey = null)
+    public function __construct(?string $after = null, ?string $before = null, ?float $limit = null, ?ChannelConnectionsControllerListChannelConnectionsQueryParamOrderDirection $orderDirection = null, ?string $orderBy = null, ?bool $includeCursor = null, ?string $subscriberId = null, ?ConnectionMode $connectionMode = null, ?Channel $channel = null, ?Components\ProvidersIdEnum $providerId = null, ?string $integrationIdentifier = null, ?array $contextKeys = null, ?string $idempotencyKey = null)
     {
         $this->after = $after;
         $this->before = $before;
@@ -132,6 +141,7 @@ class ChannelConnectionsControllerListChannelConnectionsRequest
         $this->orderBy = $orderBy;
         $this->includeCursor = $includeCursor;
         $this->subscriberId = $subscriberId;
+        $this->connectionMode = $connectionMode;
         $this->channel = $channel;
         $this->providerId = $providerId;
         $this->integrationIdentifier = $integrationIdentifier;

@@ -68,3 +68,66 @@ Components\CreateMsTeamsUserEndpointDto $value = /* values here */
 Components\CreateTelegramChatEndpointDto $value = /* values here */
 ```
 
+### `Components\CreateWebexRoomEndpointDto`
+
+```php
+/**
+* @var \novu\Models\Components\CreateWebexRoomEndpointDto
+*/
+Components\CreateWebexRoomEndpointDto $value = /* values here */
+```
+
+### `Components\CreateWebexPersonEndpointDto`
+
+```php
+/**
+* @var \novu\Models\Components\CreateWebexPersonEndpointDto
+*/
+Components\CreateWebexPersonEndpointDto $value = /* values here */
+```
+
+### `Components\CreateLineUserEndpointDto`
+
+```php
+/**
+* @var \novu\Models\Components\CreateLineUserEndpointDto
+*/
+Components\CreateLineUserEndpointDto $value = /* values here */
+```
+
+### `Components\CreatePagerDutyServiceEndpointDto`
+
+```php
+/**
+* @var \novu\Models\Components\CreatePagerDutyServiceEndpointDto
+*/
+Components\CreatePagerDutyServiceEndpointDto $value = /* values here */
+```
+
+### `Components\CreateOpsgenieIntegrationEndpointDto`
+
+```php
+/**
+* @var \novu\Models\Components\CreateOpsgenieIntegrationEndpointDto
+*/
+Components\CreateOpsgenieIntegrationEndpointDto $value = /* values here */
+```
+
+### `Components\CreateGrafanaOnCallIntegrationEndpointDto`
+
+```php
+/**
+* @var \novu\Models\Components\CreateGrafanaOnCallIntegrationEndpointDto
+*/
+Components\CreateGrafanaOnCallIntegrationEndpointDto $value = /* values here */
+```
+
+### `Components\CreateToolWebhookEndpointDto`
+
+```php
+/**
+* @var \novu\Models\Components\CreateToolWebhookEndpointDto
+*/
+Components\CreateToolWebhookEndpointDto $value = /* values here */
+```
+

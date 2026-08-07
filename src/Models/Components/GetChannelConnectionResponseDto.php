@@ -72,11 +72,11 @@ class GetChannelConnectionResponseDto
     /**
      * The provider identifier (e.g., sendgrid, twilio, slack, etc.).
      *
-     * @var ?\novu\Models\Components\ProviderId $providerId
+     * @var ?\novu\Models\Components\GetChannelConnectionResponseDtoProviderId $providerId
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('providerId')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ProviderId|null')]
-    public ?ProviderId $providerId;
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\GetChannelConnectionResponseDtoProviderId|null')]
+    public ?GetChannelConnectionResponseDtoProviderId $providerId;
 
     /**
      * The identifier of the integration to use for this channel endpoint.
@@ -102,12 +102,12 @@ class GetChannelConnectionResponseDto
      * @param  string  $createdAt
      * @param  string  $updatedAt
      * @param  ?\novu\Models\Components\Channel  $channel
-     * @param  ?\novu\Models\Components\ProviderId  $providerId
+     * @param  ?\novu\Models\Components\GetChannelConnectionResponseDtoProviderId  $providerId
      * @param  ?string  $integrationIdentifier
      * @param  ?string  $subscriberId
      * @phpstan-pure
      */
-    public function __construct(string $identifier, array $contextKeys, WorkspaceDto $workspace, AuthDto $auth, string $createdAt, string $updatedAt, ?Channel $channel = null, ?ProviderId $providerId = null, ?string $integrationIdentifier = null, ?string $subscriberId = null)
+    public function __construct(string $identifier, array $contextKeys, WorkspaceDto $workspace, AuthDto $auth, string $createdAt, string $updatedAt, ?Channel $channel = null, ?GetChannelConnectionResponseDtoProviderId $providerId = null, ?string $integrationIdentifier = null, ?string $subscriberId = null)
     {
         $this->identifier = $identifier;
         $this->contextKeys = $contextKeys;

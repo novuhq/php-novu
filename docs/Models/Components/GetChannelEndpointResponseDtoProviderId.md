@@ -7,6 +7,7 @@ The provider identifier (e.g., sendgrid, twilio, slack, etc.).
 
 | Name               | Value              |
 | ------------------ | ------------------ |
+| `Anypost`          | anypost            |
 | `Emailjs`          | emailjs            |
 | `Mailgun`          | mailgun            |
 | `Mailjet`          | mailjet            |
@@ -66,6 +67,7 @@ The provider identifier (e.g., sendgrid, twilio, slack, etc.).
 | `Sinch`            | sinch              |
 | `IsendproSms`      | isendpro-sms       |
 | `CmTelecom`        | cm-telecom         |
+| `RuachSms`         | ruach-sms          |
 | `Fcm`              | fcm                |
 | `Apns`             | apns               |
 | `Expo`             | expo               |
@@ -78,6 +80,7 @@ The provider identifier (e.g., sendgrid, twilio, slack, etc.).
 | `Slack`            | slack              |
 | `Discord`          | discord            |
 | `Msteams`          | msteams            |
+| `WebexMessaging`   | webex-messaging    |
 | `Mattermost`       | mattermost         |
 | `Ryver`            | ryver              |
 | `Zulip`            | zulip              |
@@ -85,9 +88,16 @@ The provider identifier (e.g., sendgrid, twilio, slack, etc.).
 | `Getstream`        | getstream          |
 | `RocketChat`       | rocket-chat        |
 | `WhatsappBusiness` | whatsapp-business  |
+| `Line`             | line               |
 | `ChatWebhook`      | chat-webhook       |
 | `NovuSlack`        | novu-slack         |
 | `Telegram`         | telegram           |
+| `Sendblue`         | sendblue           |
+| `NovuWebChat`      | novu-web-chat      |
 | `Anthropic`        | anthropic          |
 | `NovuAnthropic`    | novu-anthropic     |
 | `AnthropicAws`     | anthropic-aws      |
+| `Pagerduty`        | pagerduty          |
+| `Opsgenie`         | opsgenie           |
+| `Grafana`          | grafana            |
+| `ToolWebhook`      | tool-webhook       |

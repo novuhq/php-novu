@@ -45,6 +45,7 @@ enum UiComponentEnum: string
     case SmsBody = 'SMS_BODY';
     case ChatBody = 'CHAT_BODY';
     case PushBody = 'PUSH_BODY';
+    case ToolBody = 'TOOL_BODY';
     case PushSubject = 'PUSH_SUBJECT';
     case QueryEditor = 'QUERY_EDITOR';
     case Data = 'DATA';

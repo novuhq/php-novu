@@ -74,16 +74,26 @@ class CreateMsTeamsUserEndpointDto
     public ?string $connectionIdentifier = null;
 
     /**
+     * When true, the subscriber is created if it does not exist yet (existing subscribers are never modified). When false or omitted, an unknown subscriberId returns 404.
+     *
+     * @var ?bool $createSubscriberIfMissing
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('createSubscriberIfMissing')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?bool $createSubscriberIfMissing = null;
+
+    /**
      * @param  string  $subscriberId
      * @param  string  $integrationIdentifier
      * @param  \novu\Models\Components\CreateMsTeamsUserEndpointDtoType  $type
      * @param  \novu\Models\Components\MsTeamsUserEndpointDto  $endpoint
      * @param  ?string  $identifier
+     * @param  ?bool  $createSubscriberIfMissing
      * @param  ?array<string, string|\novu\Models\Components\CreateMsTeamsUserEndpointDtoContext2>  $context
      * @param  ?string  $connectionIdentifier
      * @phpstan-pure
      */
-    public function __construct(string $subscriberId, string $integrationIdentifier, CreateMsTeamsUserEndpointDtoType $type, MsTeamsUserEndpointDto $endpoint, ?string $identifier = null, ?array $context = null, ?string $connectionIdentifier = null)
+    public function __construct(string $subscriberId, string $integrationIdentifier, CreateMsTeamsUserEndpointDtoType $type, MsTeamsUserEndpointDto $endpoint, ?string $identifier = null, ?array $context = null, ?string $connectionIdentifier = null, ?bool $createSubscriberIfMissing = false)
     {
         $this->subscriberId = $subscriberId;
         $this->integrationIdentifier = $integrationIdentifier;
@@ -92,5 +102,6 @@ class CreateMsTeamsUserEndpointDto
         $this->identifier = $identifier;
         $this->context = $context;
         $this->connectionIdentifier = $connectionIdentifier;
+        $this->createSubscriberIfMissing = $createSubscriberIfMissing;
     }
 }

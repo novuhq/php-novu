@@ -11,5 +11,5 @@ namespace novu\Models\Components;
 
 enum GeneratePreviewResponseDtoResult8Type: string
 {
-    case Delay = 'delay';
+    case Tool = 'tool';
 }

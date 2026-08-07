@@ -41,3 +41,30 @@ Components\WebhookEndpointDto $value = /* values here */
 Components\PhoneEndpointDto $value = /* values here */
 ```
 
+### `Components\WebexRoomEndpointDto`
+
+```php
+/**
+* @var \novu\Models\Components\WebexRoomEndpointDto
+*/
+Components\WebexRoomEndpointDto $value = /* values here */
+```
+
+### `Components\WebexPersonEndpointDto`
+
+```php
+/**
+* @var \novu\Models\Components\WebexPersonEndpointDto
+*/
+Components\WebexPersonEndpointDto $value = /* values here */
+```
+
+### `Components\ToolWebhookEndpointDto`
+
+```php
+/**
+* @var \novu\Models\Components\ToolWebhookEndpointDto
+*/
+Components\ToolWebhookEndpointDto $value = /* values here */
+```
+

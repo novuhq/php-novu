@@ -11,5 +11,5 @@ namespace novu\Models\Components;
 
 enum GeneratePreviewResponseDtoResult9Type: string
 {
-    case Digest = 'digest';
+    case Delay = 'delay';
 }

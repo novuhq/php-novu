@@ -62,10 +62,10 @@ class WorkflowResponseDto
     /**
      * Steps of the workflow
      *
-     * @var array<\novu\Models\Components\InAppStepResponseDto|\novu\Models\Components\EmailStepResponseDto|\novu\Models\Components\SmsStepResponseDto|\novu\Models\Components\PushStepResponseDto|\novu\Models\Components\ChatStepResponseDto|\novu\Models\Components\DelayStepResponseDto|\novu\Models\Components\DigestStepResponseDto|\novu\Models\Components\CustomStepResponseDto|\novu\Models\Components\ThrottleStepResponseDto|\novu\Models\Components\HttpRequestStepResponseDto> $steps
+     * @var array<\novu\Models\Components\InAppStepResponseDto|\novu\Models\Components\EmailStepResponseDto|\novu\Models\Components\SmsStepResponseDto|\novu\Models\Components\PushStepResponseDto|\novu\Models\Components\ChatStepResponseDto|\novu\Models\Components\DelayStepResponseDto|\novu\Models\Components\DigestStepResponseDto|\novu\Models\Components\CustomStepResponseDto|\novu\Models\Components\ThrottleStepResponseDto|\novu\Models\Components\HttpRequestStepResponseDto|\novu\Models\Components\ToolStepResponseDto> $steps
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('steps')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\InAppStepResponseDto|\novu\Models\Components\EmailStepResponseDto|\novu\Models\Components\SmsStepResponseDto|\novu\Models\Components\PushStepResponseDto|\novu\Models\Components\ChatStepResponseDto|\novu\Models\Components\DelayStepResponseDto|\novu\Models\Components\DigestStepResponseDto|\novu\Models\Components\CustomStepResponseDto|\novu\Models\Components\ThrottleStepResponseDto|\novu\Models\Components\HttpRequestStepResponseDto>')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\InAppStepResponseDto|\novu\Models\Components\EmailStepResponseDto|\novu\Models\Components\SmsStepResponseDto|\novu\Models\Components\PushStepResponseDto|\novu\Models\Components\ChatStepResponseDto|\novu\Models\Components\DelayStepResponseDto|\novu\Models\Components\DigestStepResponseDto|\novu\Models\Components\CustomStepResponseDto|\novu\Models\Components\ThrottleStepResponseDto|\novu\Models\Components\HttpRequestStepResponseDto|\novu\Models\Components\ToolStepResponseDto>')]
     public array $steps;
 
     /**
@@ -153,6 +153,16 @@ class WorkflowResponseDto
     public ?array $payloadSchema = null;
 
     /**
+     * Optional agent assignment used to route this workflow through an agent's connected channels. Null when unassigned.
+     *
+     * @var ?\novu\Models\Components\WorkflowResponseDtoAgent $agent
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('agent')]
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\WorkflowResponseDtoAgent|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?WorkflowResponseDtoAgent $agent = null;
+
+    /**
      * User who last updated the workflow
      *
      * @var ?\novu\Models\Components\WorkflowResponseDtoUpdatedBy $updatedBy
@@ -225,7 +235,7 @@ class WorkflowResponseDto
      * @param  string  $slug
      * @param  string  $updatedAt
      * @param  string  $createdAt
-     * @param  array<\novu\Models\Components\InAppStepResponseDto|\novu\Models\Components\EmailStepResponseDto|\novu\Models\Components\SmsStepResponseDto|\novu\Models\Components\PushStepResponseDto|\novu\Models\Components\ChatStepResponseDto|\novu\Models\Components\DelayStepResponseDto|\novu\Models\Components\DigestStepResponseDto|\novu\Models\Components\CustomStepResponseDto|\novu\Models\Components\ThrottleStepResponseDto|\novu\Models\Components\HttpRequestStepResponseDto>  $steps
+     * @param  array<\novu\Models\Components\InAppStepResponseDto|\novu\Models\Components\EmailStepResponseDto|\novu\Models\Components\SmsStepResponseDto|\novu\Models\Components\PushStepResponseDto|\novu\Models\Components\ChatStepResponseDto|\novu\Models\Components\DelayStepResponseDto|\novu\Models\Components\DigestStepResponseDto|\novu\Models\Components\CustomStepResponseDto|\novu\Models\Components\ThrottleStepResponseDto|\novu\Models\Components\HttpRequestStepResponseDto|\novu\Models\Components\ToolStepResponseDto>  $steps
      * @param  \novu\Models\Components\ResourceOriginEnum  $origin
      * @param  \novu\Models\Components\WorkflowPreferencesResponseDto  $preferences
      * @param  \novu\Models\Components\WorkflowStatusEnum  $status
@@ -237,6 +247,7 @@ class WorkflowResponseDto
      * @param  ?bool  $isTranslationEnabled
      * @param  ?array<string, \novu\Models\Components\RuntimeIssueDto>  $issues
      * @param  ?array<string, mixed>  $payloadSchema
+     * @param  ?\novu\Models\Components\WorkflowResponseDtoAgent  $agent
      * @param  ?\novu\Models\Components\WorkflowResponseDtoUpdatedBy  $updatedBy
      * @param  ?string  $lastPublishedAt
      * @param  ?\novu\Models\Components\LastPublishedBy  $lastPublishedBy
@@ -244,7 +255,7 @@ class WorkflowResponseDto
      * @param  ?array<string, mixed>  $payloadExample
      * @phpstan-pure
      */
-    public function __construct(string $name, string $id, string $workflowId, string $slug, string $updatedAt, string $createdAt, array $steps, ResourceOriginEnum $origin, WorkflowPreferencesResponseDto $preferences, WorkflowStatusEnum $status, SeverityLevelEnum $severity, ?string $description = null, ?array $tags = null, ?bool $validatePayload = null, ?array $issues = null, ?array $payloadSchema = null, ?WorkflowResponseDtoUpdatedBy $updatedBy = null, ?string $lastPublishedAt = null, ?LastPublishedBy $lastPublishedBy = null, ?string $lastTriggeredAt = null, ?array $payloadExample = null, ?bool $active = false, ?bool $isTranslationEnabled = false)
+    public function __construct(string $name, string $id, string $workflowId, string $slug, string $updatedAt, string $createdAt, array $steps, ResourceOriginEnum $origin, WorkflowPreferencesResponseDto $preferences, WorkflowStatusEnum $status, SeverityLevelEnum $severity, ?string $description = null, ?array $tags = null, ?bool $validatePayload = null, ?array $issues = null, ?array $payloadSchema = null, ?WorkflowResponseDtoAgent $agent = null, ?WorkflowResponseDtoUpdatedBy $updatedBy = null, ?string $lastPublishedAt = null, ?LastPublishedBy $lastPublishedBy = null, ?string $lastTriggeredAt = null, ?array $payloadExample = null, ?bool $active = false, ?bool $isTranslationEnabled = false)
     {
         $this->name = $name;
         $this->id = $id;
@@ -262,6 +273,7 @@ class WorkflowResponseDto
         $this->validatePayload = $validatePayload;
         $this->issues = $issues;
         $this->payloadSchema = $payloadSchema;
+        $this->agent = $agent;
         $this->updatedBy = $updatedBy;
         $this->lastPublishedAt = $lastPublishedAt;
         $this->lastPublishedBy = $lastPublishedBy;

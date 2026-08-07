@@ -1,0 +1,14 @@
+# UpdateAgentRequestDto
+
+
+## Fields
+
+| Field                                                                       | Type                                                                        | Required                                                                    | Description                                                                 |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `name`                                                                      | *?string*                                                                   | :heavy_minus_sign:                                                          | N/A                                                                         |
+| `description`                                                               | *?string*                                                                   | :heavy_minus_sign:                                                          | N/A                                                                         |
+| `active`                                                                    | *?bool*                                                                     | :heavy_minus_sign:                                                          | N/A                                                                         |
+| `behavior`                                                                  | [?Components\AgentBehaviorDto](../../Models/Components/AgentBehaviorDto.md) | :heavy_minus_sign:                                                          | N/A                                                                         |
+| `bridgeUrl`                                                                 | *?string*                                                                   | :heavy_minus_sign:                                                          | Production bridge URL for this agent                                        |
+| `devBridgeUrl`                                                              | *?string*                                                                   | :heavy_minus_sign:                                                          | Development bridge URL (set by npx novu dev)                                |
+| `devBridgeActive`                                                           | *?bool*                                                                     | :heavy_minus_sign:                                                          | Whether the dev bridge override is active                                   |

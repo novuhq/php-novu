@@ -28,13 +28,24 @@ class ConfigurationsDto
     public ?string $inboundWebhookSigningKey = null;
 
     /**
+     * JSON Schema describing the payload accepted by this integration.
+     *
+     * @var ?string $payloadSchema
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('payloadSchema')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $payloadSchema = null;
+
+    /**
      * @param  ?bool  $inboundWebhookEnabled
      * @param  ?string  $inboundWebhookSigningKey
+     * @param  ?string  $payloadSchema
      * @phpstan-pure
      */
-    public function __construct(?bool $inboundWebhookEnabled = null, ?string $inboundWebhookSigningKey = null)
+    public function __construct(?bool $inboundWebhookEnabled = null, ?string $inboundWebhookSigningKey = null, ?string $payloadSchema = null)
     {
         $this->inboundWebhookEnabled = $inboundWebhookEnabled;
         $this->inboundWebhookSigningKey = $inboundWebhookSigningKey;
+        $this->payloadSchema = $payloadSchema;
     }
 }

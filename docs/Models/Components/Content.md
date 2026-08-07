@@ -1,25 +1,34 @@
 # Content
 
-Content of the message, can be an email block or a string
+Replacement content. Exactly one of markdown, card, or toolApprovalCard.
 
 
 ## Supported Types
 
-### `array`
+### `Components\MarkdownReplyContentDto`
 
 ```php
 /**
-* @var array<\novu\Models\Components\EmailBlock>
+* @var \novu\Models\Components\MarkdownReplyContentDto
 */
-array $value = /* values here */
+Components\MarkdownReplyContentDto $value = /* values here */
 ```
 
-### `string`
+### `Components\CardReplyContentDto`
 
 ```php
 /**
-* @var string
+* @var \novu\Models\Components\CardReplyContentDto
 */
-string $value = /* values here */
+Components\CardReplyContentDto $value = /* values here */
+```
+
+### `Components\ToolApprovalCardReplyContentDto`
+
+```php
+/**
+* @var \novu\Models\Components\ToolApprovalCardReplyContentDto
+*/
+Components\ToolApprovalCardReplyContentDto $value = /* values here */
 ```
 

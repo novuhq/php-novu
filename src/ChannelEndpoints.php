@@ -54,12 +54,12 @@ class ChannelEndpoints
      *
      * This operation requires either `secretKey` or `secretKey` to be set via `setSecurity` on the SDK builder.
      *
-     * @param  \novu\Models\Components\CreateSlackChannelEndpointDto|\novu\Models\Components\CreateSlackUserEndpointDto|\novu\Models\Components\CreateWebhookEndpointDto|\novu\Models\Components\CreatePhoneEndpointDto|\novu\Models\Components\CreateMsTeamsChannelEndpointDto|\novu\Models\Components\CreateMsTeamsUserEndpointDto|\novu\Models\Components\CreateTelegramChatEndpointDto  $requestBody
+     * @param  \novu\Models\Components\CreateSlackChannelEndpointDto|\novu\Models\Components\CreateSlackUserEndpointDto|\novu\Models\Components\CreateWebhookEndpointDto|\novu\Models\Components\CreatePhoneEndpointDto|\novu\Models\Components\CreateMsTeamsChannelEndpointDto|\novu\Models\Components\CreateMsTeamsUserEndpointDto|\novu\Models\Components\CreateTelegramChatEndpointDto|\novu\Models\Components\CreateWebexRoomEndpointDto|\novu\Models\Components\CreateWebexPersonEndpointDto|\novu\Models\Components\CreateLineUserEndpointDto|\novu\Models\Components\CreatePagerDutyServiceEndpointDto|\novu\Models\Components\CreateOpsgenieIntegrationEndpointDto|\novu\Models\Components\CreateGrafanaOnCallIntegrationEndpointDto|\novu\Models\Components\CreateToolWebhookEndpointDto  $requestBody
      * @param  ?string  $idempotencyKey
      * @return \novu\Models\Operations\ChannelEndpointsControllerCreateChannelEndpointResponse
      * @throws \novu\Models\Errors\APIException
      */
-    public function create(Components\CreateSlackChannelEndpointDto|Components\CreateSlackUserEndpointDto|Components\CreateWebhookEndpointDto|Components\CreatePhoneEndpointDto|Components\CreateMsTeamsChannelEndpointDto|Components\CreateMsTeamsUserEndpointDto|Components\CreateTelegramChatEndpointDto $requestBody, ?string $idempotencyKey = null, ?Options $options = null): Operations\ChannelEndpointsControllerCreateChannelEndpointResponse
+    public function create(Components\CreateSlackChannelEndpointDto|Components\CreateSlackUserEndpointDto|Components\CreateWebhookEndpointDto|Components\CreatePhoneEndpointDto|Components\CreateMsTeamsChannelEndpointDto|Components\CreateMsTeamsUserEndpointDto|Components\CreateTelegramChatEndpointDto|Components\CreateWebexRoomEndpointDto|Components\CreateWebexPersonEndpointDto|Components\CreateLineUserEndpointDto|Components\CreatePagerDutyServiceEndpointDto|Components\CreateOpsgenieIntegrationEndpointDto|Components\CreateGrafanaOnCallIntegrationEndpointDto|Components\CreateToolWebhookEndpointDto $requestBody, ?string $idempotencyKey = null, ?Options $options = null): Operations\ChannelEndpointsControllerCreateChannelEndpointResponse
     {
         $retryConfig = null;
         if ($options) {

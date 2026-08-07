@@ -86,3 +86,12 @@ Components\Eight $value = /* values here */
 Components\Nine $value = /* values here */
 ```
 
+### `Components\Ten`
+
+```php
+/**
+* @var \novu\Models\Components\Ten
+*/
+Components\Ten $value = /* values here */
+```
+

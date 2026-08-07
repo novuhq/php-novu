@@ -1,18 +1,9 @@
 # To
 
-The recipients list of people who will receive the notification. Maximum number of recipients can be 100.
+Recipient(s). Accepts a subscriberId string, subscriber object, topic object, or an array of those. When omitted, Novu falls back to the conversation subscriber.
 
 
 ## Supported Types
-
-### `array`
-
-```php
-/**
-* @var array<\novu\Models\Components\SubscriberPayloadDto|\novu\Models\Components\TopicPayloadDto|string>
-*/
-array $value = /* values here */
-```
 
 ### `string`
 
@@ -23,21 +14,21 @@ array $value = /* values here */
 string $value = /* values here */
 ```
 
-### `Components\SubscriberPayloadDto`
+### `array`
 
 ```php
 /**
-* @var \novu\Models\Components\SubscriberPayloadDto
+* @var array<string, mixed>
 */
-Components\SubscriberPayloadDto $value = /* values here */
+array $value = /* values here */
 ```
 
-### `Components\TopicPayloadDto`
+### `array`
 
 ```php
 /**
-* @var \novu\Models\Components\TopicPayloadDto
+* @var array<string|array<string, mixed>>
 */
-Components\TopicPayloadDto $value = /* values here */
+array $value = /* values here */
 ```
 

@@ -31,6 +31,43 @@ class EmailStepResponseDtoControlValues
     public ?array $skip = null;
 
     /**
+     * Sender name and email overrides for this step.
+     *
+     * @var ?\novu\Models\Components\EmailFromControlDto $from
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('from')]
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\EmailFromControlDto|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?EmailFromControlDto $from = null;
+
+    /**
+     * When true, sender name/email use the primary email integration defaults and skip workflow agent defaults.
+     *
+     * @var ?bool $useProviderDefaults
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('useProviderDefaults')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?bool $useProviderDefaults = null;
+
+    /**
+     * Step-level Reply-To override. When unset, inherits the workflow agent reply-to.
+     *
+     * @var ?string $replyTo
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('replyTo')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $replyTo = null;
+
+    /**
+     * One-line inbox preview text shown next to the subject.
+     *
+     * @var ?string $preheader
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('preheader')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $preheader = null;
+
+    /**
      * $additionalProperties
      *
      * @var ?array<string, mixed> $additionalProperties
@@ -83,14 +120,22 @@ class EmailStepResponseDtoControlValues
      * @param  ?string  $body
      * @param  ?\novu\Models\Components\EmailStepResponseDtoEditorType  $editorType
      * @param  ?bool  $disableOutputSanitization
+     * @param  ?\novu\Models\Components\EmailFromControlDto  $from
+     * @param  ?bool  $useProviderDefaults
+     * @param  ?string  $replyTo
+     * @param  ?string  $preheader
      * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $layoutId
      * @phpstan-pure
      */
-    public function __construct(string $subject, ?array $skip = null, ?array $additionalProperties = null, ?string $layoutId = null, ?string $body = '', ?EmailStepResponseDtoEditorType $editorType = EmailStepResponseDtoEditorType::Block, ?bool $disableOutputSanitization = false)
+    public function __construct(string $subject, ?array $skip = null, ?EmailFromControlDto $from = null, ?bool $useProviderDefaults = null, ?string $replyTo = null, ?string $preheader = null, ?array $additionalProperties = null, ?string $layoutId = null, ?string $body = '', ?EmailStepResponseDtoEditorType $editorType = EmailStepResponseDtoEditorType::Block, ?bool $disableOutputSanitization = false)
     {
         $this->subject = $subject;
         $this->skip = $skip;
+        $this->from = $from;
+        $this->useProviderDefaults = $useProviderDefaults;
+        $this->replyTo = $replyTo;
+        $this->preheader = $preheader;
         $this->additionalProperties = $additionalProperties;
         $this->layoutId = $layoutId;
         $this->body = $body;
