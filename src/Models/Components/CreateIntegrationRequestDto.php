@@ -96,9 +96,10 @@ class CreateIntegrationRequestDto
     public ?bool $check = null;
 
     /**
-     * Conditions for the integration
+     * Legacy StepFilter conditions. Ignored when `rules` is also set.
      *
      * @var ?array<\novu\Models\Components\StepFilterDto> $conditions
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('conditions')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\StepFilterDto>|null')]
@@ -116,6 +117,16 @@ class CreateIntegrationRequestDto
     public ?Configurations $configurations = null;
 
     /**
+     * JSONLogic used at send time to select this integration. Takes precedence over `conditions`.
+     *
+     * @var ?array<string, mixed> $rules
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('rules')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $rules = null;
+
+    /**
      * @param  ?string  $name
      * @param  ?string  $identifier
      * @param  ?string  $environmentId
@@ -127,9 +138,10 @@ class CreateIntegrationRequestDto
      * @param  ?bool  $check
      * @param  ?array<\novu\Models\Components\StepFilterDto>  $conditions
      * @param  ?\novu\Models\Components\Configurations  $configurations
+     * @param  ?array<string, mixed>  $rules
      * @phpstan-pure
      */
-    public function __construct(?string $name = null, ?string $identifier = null, ?string $environmentId = null, ?string $providerId = null, ?CreateIntegrationRequestDtoChannel $channel = null, ?CreateIntegrationRequestDtoKind $kind = null, ?CredentialsDto $credentials = null, ?bool $active = null, ?bool $check = null, ?array $conditions = null, ?Configurations $configurations = null)
+    public function __construct(?string $name = null, ?string $identifier = null, ?string $environmentId = null, ?string $providerId = null, ?CreateIntegrationRequestDtoChannel $channel = null, ?CreateIntegrationRequestDtoKind $kind = null, ?CredentialsDto $credentials = null, ?bool $active = null, ?bool $check = null, ?array $conditions = null, ?Configurations $configurations = null, ?array $rules = null)
     {
         $this->name = $name;
         $this->identifier = $identifier;
@@ -142,5 +154,6 @@ class CreateIntegrationRequestDto
         $this->check = $check;
         $this->conditions = $conditions;
         $this->configurations = $configurations;
+        $this->rules = $rules;
     }
 }

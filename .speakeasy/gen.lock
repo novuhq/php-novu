@@ -1,24 +1,24 @@
 lockVersion: 2.0.0
 id: 4286f3ad-fa54-4c63-a599-e5773b27ae7b
 management:
-  docChecksum: 3d4291e2ca1113e6b563a3ec1074497e
-  docVersion: 3.18.1
-  speakeasyVersion: 1.791.4
-  generationVersion: 2.926.8
-  releaseVersion: 3.19.0
-  configChecksum: 24bedfd63ceed3c8182d4320f3161203
+  docChecksum: fec1761461a1df0795444fc9e014ea39
+  docVersion: 3.19.1
+  speakeasyVersion: 1.796.4
+  generationVersion: 2.935.1
+  releaseVersion: 3.20.0
+  configChecksum: cc976900d044ea0a3c4a5df1706a315a
   repoURL: https://github.com/novuhq/php-novu.git
   installationURL: https://github.com/novuhq/php-novu.git
   published: true
 persistentEdits:
-  generation_id: 1c8a6f55-a007-41a0-afb5-2244df74343c
-  pristine_commit_hash: 847d005a5e340e37a35f025ecdafeb019ebffaf1
-  pristine_tree_hash: 89bda0be67237c5c411ca842e3e010a9463a8586
+  generation_id: f77faec9-8d9a-44df-9902-c11b915ded86
+  pristine_commit_hash: 10c06baebfe86536d47d0258a8985f95451032f2
+  pristine_tree_hash: ca061c21e223e398e28d91daf9c2198c20719122
 features:
   php:
     additionalProperties: 0.1.1
     constsAndDefaults: 0.2.2
-    core: 3.9.25
+    core: 3.9.28
     deprecations: 2.81.1
     examples: 2.81.8
     flattening: 2.81.2
@@ -30,8 +30,8 @@ features:
     nameOverrides: 2.81.4
     nullables: 1.0.1
     responseFormat: 0.1.0
-    retries: 0.1.3
-    unions: 0.1.8
+    retries: 0.1.4
+    unions: 0.1.9
 trackedFiles:
   .gitattributes:
     id: 24139dae6567
@@ -43,8 +43,8 @@ trackedFiles:
     pristine_git_object: 6f68b632e5158692f61d984582534f375afdcaad
   composer.json:
     id: 3957b91a0d84
-    last_write_checksum: sha1:6f85e3e49d9a13595b5d2d33c5e9c147819c774f
-    pristine_git_object: 73778560231a26019548dfbec282db5713600ed1
+    last_write_checksum: sha1:cda8f2eabf02a95662f1ea6ba4a29991cef5a3fc
+    pristine_git_object: 3290a311a7fa04b17cdede4ed605bff913d7c86f
   docs/Models/Components/Action.md:
     id: 60391174ba02
     last_write_checksum: sha1:6c11d2cf18b9f0891a7a62705e582a055daf1efa
@@ -151,8 +151,8 @@ trackedFiles:
     pristine_git_object: 1baf90d6fabb6b88a8c52a23f1e6017585860358
   docs/Models/Components/AgentReplyPayloadDto.md:
     id: ab463742898e
-    last_write_checksum: sha1:6ecb04df4e1d4d31d081c1694350ec42f16daba9
-    pristine_git_object: aba19ee32305acb1e04ea3f8298df7bf75f9300e
+    last_write_checksum: sha1:dca689f855cd589045c8cc73e5b625d8e952e59b
+    pristine_git_object: 0a540a72b38558cea3403cc7c764b93610b547d6
   docs/Models/Components/AgentResponseDto.md:
     id: eca2e05fd8cb
     last_write_checksum: sha1:35b7243580770de653b45f88f381549d51996533
@@ -183,8 +183,8 @@ trackedFiles:
     pristine_git_object: 04b2c4c8a9db75e8e707afa20ed0d062163023a7
   docs/Models/Components/ApiKeyDto.md:
     id: cc102b93708e
-    last_write_checksum: sha1:1fbbcb03e0a0716b9b00fd6b24424df6077e49ec
-    pristine_git_object: 2920d24e5ffbe3747ae65efb5b57ae6c66cf547c
+    last_write_checksum: sha1:9a56b12eb3bfa31ff1070e3412ce1dca04859fef
+    pristine_git_object: 66618ac55afeb2a4dec939bf12b4376c46b53efb
   docs/Models/Components/AuthDto.md:
     id: ca97cdc538c1
     last_write_checksum: sha1:64efd76e5b4b5c17f75a1affc5a0b335913b4743
@@ -275,8 +275,12 @@ trackedFiles:
     pristine_git_object: 2f14fa7f9df039000d0e9ade9513eacf6a852e63
   docs/Models/Components/ChatControlDto.md:
     id: 9f206d23441d
-    last_write_checksum: sha1:da2cd7df8991c4d3e8b31a5c26ea91ef49a54042
-    pristine_git_object: 7cc85e2e44672121e113a9005f5460094c44a433
+    last_write_checksum: sha1:ab8ceba8b6fd2397ec005239bc23a0ee402638ec
+    pristine_git_object: d1e7e9757a415849801585ad4372a405ac426147
+  docs/Models/Components/ChatControlDtoEditorType.md:
+    id: 09f877fb54f5
+    last_write_checksum: sha1:f413235c6047a835b206109baa9d2170fbe8399f
+    pristine_git_object: 845bb1ae347f480864044f24e5c9f45f3256c2e0
   docs/Models/Components/ChatControlsMetadataResponseDto.md:
     id: 2cb2523c99be
     last_write_checksum: sha1:630c542362afb9b860c9c7d892ebc7b1e7cab456
@@ -295,8 +299,12 @@ trackedFiles:
     pristine_git_object: a4319ff8e508d1c7c6243ccfc1eac1cebc58fd7c
   docs/Models/Components/ChatStepResponseDtoControlValues.md:
     id: 22564c4f3183
-    last_write_checksum: sha1:34730520004149bb4889bb96c691e2b5cc16e50a
-    pristine_git_object: be4ff9add21fc15ac7919f9c86be41ae7ef32059
+    last_write_checksum: sha1:eb8449a77eda2f1ec96c7fae3fc3d9096ffedb29
+    pristine_git_object: 5c13d2a1fe8858130a956852a38a43a3c623d6e7
+  docs/Models/Components/ChatStepResponseDtoEditorType.md:
+    id: e9ff117095a0
+    last_write_checksum: sha1:fae999fae47371d855ec4672d2e522d8ec4cccde
+    pristine_git_object: 0040623cff185f709e4e7bd09f3733631ca4b025
   docs/Models/Components/ChatStepUpsertDto.md:
     id: 825e3dd59fe3
     last_write_checksum: sha1:0a32859c8ae2bf51e533c85acf9e9e118dd4bcb1
@@ -343,8 +351,8 @@ trackedFiles:
     pristine_git_object: 8427c5e56c7c5d186a1c55db3f87d44b1937ed92
   docs/Models/Components/ContentIssueEnum.md:
     id: 338d1919951e
-    last_write_checksum: sha1:5d90c43db8314a4852ce62622402fd73d659430f
-    pristine_git_object: 4c00ca6bf27249baa1b9df8921ff0179293df48a
+    last_write_checksum: sha1:8518ee1fb794f761eee96d9d1ccf382f33c08642
+    pristine_git_object: e646230f5432e9d7b05f4f4ce1673c5fb698cbc3
   docs/Models/Components/Context.md:
     id: 89bac66ecd0b
     last_write_checksum: sha1:3468e99589c95af48e8f345f33e24f5122c45d3d
@@ -383,8 +391,8 @@ trackedFiles:
     pristine_git_object: 74d6512b1aa2666461ffb37fcddeeaf9242717de
   docs/Models/Components/CreateContextRequestDto.md:
     id: 30a1f84a3f94
-    last_write_checksum: sha1:672fbdfe00f3bfeb3218bc8fe3d5ff610a55a443
-    pristine_git_object: 67ed115d4838f54a4a5ccb401be03a9000b9b698
+    last_write_checksum: sha1:02102738dbcdc3a0661fe590c15f90c9db2a4e5e
+    pristine_git_object: 930d5f258e7b0f15348d093eafd2c58321678746
   docs/Models/Components/CreateDomainConnectApplyUrlDto.md:
     id: 75c3a5f8511c
     last_write_checksum: sha1:3a6b5f1eb6a5ce5200be595e3587e89984b50e28
@@ -423,8 +431,8 @@ trackedFiles:
     pristine_git_object: 7d33eefc6f231583490c242ba49ad0981ff48fbb
   docs/Models/Components/CreateIntegrationRequestDto.md:
     id: a5690092a736
-    last_write_checksum: sha1:3f847ea56a7d8b431a710c048c7fede2494da8d0
-    pristine_git_object: c4d3f600d0186dbeea7d878ab43c987b22a4b3da
+    last_write_checksum: sha1:e788321995950ec50cb63e5528039a95ad989c02
+    pristine_git_object: c3a43b82f0ed5c9fc5eba914ec5eb057967a8075
   docs/Models/Components/CreateIntegrationRequestDtoChannel.md:
     id: 7cb186d3e649
     last_write_checksum: sha1:d2908221b76f8b6e9c5bcb2075744bcc68cd80fb
@@ -623,8 +631,8 @@ trackedFiles:
     pristine_git_object: e52421f94c4f5d4e5380d2ae73160873d1be77c7
   docs/Models/Components/CreateUpdateTopicRequestDto.md:
     id: 7e40bb373d27
-    last_write_checksum: sha1:3037b62211bf7f599253e37352a167c7e18efb43
-    pristine_git_object: 154e22b2f00a6801fc10d25e41bfaeac46b32ebc
+    last_write_checksum: sha1:45f919099c7f1004b87af361b1de0f8de8261906
+    pristine_git_object: e8da669590153da97231ebddd8be8d8994756c47
   docs/Models/Components/CreateWebexPersonEndpointDto.md:
     id: 1eb70a6a0d33
     last_write_checksum: sha1:61edaec67eb78ad19602fb5a5bbaa2761d605a1b
@@ -683,8 +691,8 @@ trackedFiles:
     pristine_git_object: d7d4f34423f023703d11b19fd0b70015a69fa4ef
   docs/Models/Components/CredentialsDto.md:
     id: acd8ee29ffdc
-    last_write_checksum: sha1:ddd84d201c82adc04fa5ec420bdcf0498f113847
-    pristine_git_object: c0ea612f88375684590f5d19315cc3feedf4bffc
+    last_write_checksum: sha1:7d87127f518d53cf744dcd3fb4cb6fb0ebbac638
+    pristine_git_object: 6a31fcf281aeec168f6d0e58f1c07b54e5779f59
   docs/Models/Components/CustomControlDto.md:
     id: 1e26c2452a1c
     last_write_checksum: sha1:e2fb178fb2e2cd391e0fa322bf52aecb3b809efa
@@ -1271,8 +1279,8 @@ trackedFiles:
     pristine_git_object: 4f42bdf4e2aa18f4c39e360036143b6feeb410e6
   docs/Models/Components/GetContextResponseDto.md:
     id: be12ed40c9b6
-    last_write_checksum: sha1:ab8fbe23485b805eccffef487e965c845de2de76
-    pristine_git_object: 42226d0b0a5acdbaef0bb1fbd4f30f1d7c464519
+    last_write_checksum: sha1:2272fc0981bdd31aaf232382f228aa4cb0add05d
+    pristine_git_object: 0e30773d88d7d2c73bf27530abfc73119d64d88a
   docs/Models/Components/GetEnvironmentTagsDto.md:
     id: ca335e8bf20c
     last_write_checksum: sha1:ac4e196be9d9e8fbaa0261c8dc5af378d7789e5a
@@ -1325,6 +1333,10 @@ trackedFiles:
     id: e0a4064f5034
     last_write_checksum: sha1:87f1ea7acb4ad139387724aadc4acdd1abec31c7
     pristine_git_object: 710c47848e077fedffc9b8c0f6a6fc0cc3f45f72
+  docs/Models/Components/HmacSecretKeyEncoding.md:
+    id: 6de560e48935
+    last_write_checksum: sha1:4b6b42c50368ac0fc8df646362de383144c96215
+    pristine_git_object: 0e56aedfb10604d204f809146022c671165573f3
   docs/Models/Components/HttpMethodEnum.md:
     id: 20c34115e8d3
     last_write_checksum: sha1:23032eb4e30aed4f44c010d88180abaca5aa36b0
@@ -1361,6 +1373,18 @@ trackedFiles:
     id: 46ae0afd07f9
     last_write_checksum: sha1:75e6376e32b3f084dcbc78865beed9d5908556a2
     pristine_git_object: 6c5e910dab99a1020bc65b2fe5f544e2a577fbb3
+  docs/Models/Components/HumanSignalDto.md:
+    id: b217a2d298e1
+    last_write_checksum: sha1:7b643912fd9a69acb233cafe1f67f1489856b6fb
+    pristine_git_object: a7e5531bcb287a9d2aafd1c55b9757aaf18cd796
+  docs/Models/Components/HumanSignalDtoTo.md:
+    id: 17ff1c8f4713
+    last_write_checksum: sha1:5bbd5351cf2d99b054611342e91116edca3f1eb0
+    pristine_git_object: 8cf4cdda5a309ea24c0c0fd3bfa2fa72a2b4f2c2
+  docs/Models/Components/HumanSignalDtoType.md:
+    id: e231e1286d95
+    last_write_checksum: sha1:0c0d6b85f21519c6a1627fcb3ec8e7880165b204
+    pristine_git_object: 5d087a6d11b76cef8d94cc3726de33d4dfc35959
   docs/Models/Components/ImportMasterJsonRequestDto.md:
     id: e2ed3c722f02
     last_write_checksum: sha1:69defc4e1f80f843b6b03a4178dc04a817fa8478
@@ -1423,12 +1447,16 @@ trackedFiles:
     pristine_git_object: 1292c4adfb0d64212124445bdbbea07fc61ab6fc
   docs/Models/Components/IntegrationResponseDto.md:
     id: bfa704ecb23a
-    last_write_checksum: sha1:1fc6af2242b304afd391ce993b94644b66855d5c
-    pristine_git_object: 8ee91ef84bf9828e3b16ba1dc53436d9cb70a7f1
+    last_write_checksum: sha1:138159ec113cb78f77b0ed48157223d9d1a63d49
+    pristine_git_object: c2c1c05652e363bb5c3e59a669f812eaabbf302c
   docs/Models/Components/IntegrationResponseDtoChannel.md:
     id: 8d2a42b0cd14
     last_write_checksum: sha1:8599537588f65414ac31e56b9111e03b94c58ff9
     pristine_git_object: 4c994d34ce7ffc7e167c4f50aea2a1c53b438a1b
+  docs/Models/Components/IntegrationResponseDtoKind.md:
+    id: 7c18f74bdab0
+    last_write_checksum: sha1:0ecaaee4c667ab86bd20b37aec272b86802d0584
+    pristine_git_object: b6356ebd8f29e80940359167ddab0cce79b2f3e3
   docs/Models/Components/IssueIntegrationMobileLinkRequestDto.md:
     id: 89f9f0b81617
     last_write_checksum: sha1:c4a26f403f2f9d72b6fb467c93ec58dbab0baa42
@@ -1447,8 +1475,8 @@ trackedFiles:
     pristine_git_object: 035c9b580f92ac9a91e6c7d731c5bdd2696e04a4
   docs/Models/Components/Kind.md:
     id: d7f536b0f2b3
-    last_write_checksum: sha1:44f44e9af01355cb60acbd111ca3c51e1878cee1
-    pristine_git_object: 5eb3f637d0b95fb0075b73ef09067acbeed03ef1
+    last_write_checksum: sha1:28893787f8e5a16e253c13a87e5d3ef27ab47dca
+    pristine_git_object: fd33ec4cf94980035614569e11119db3cb6ce92c
   docs/Models/Components/LastPublishedBy.md:
     id: 57b4b9027e0d
     last_write_checksum: sha1:4477897c4fe0164b81a14aac9d4cfcea34141463
@@ -2111,8 +2139,8 @@ trackedFiles:
     pristine_git_object: f90d60d9eff44ae380c0d0e80a941958fbe455f9
   docs/Models/Components/Signals.md:
     id: 6e617fcacba1
-    last_write_checksum: sha1:2d0c0059ad463b20d77c9d0a12c7099dc9efe94a
-    pristine_git_object: 07a6baa67f79563827f4aed2abdd65b186a216a4
+    last_write_checksum: sha1:264451e9a6bb3ede49c55921bb0f4bd47865237c
+    pristine_git_object: 9ef3354be19b9a2ce5c1060340b70fbcd5102b03
   docs/Models/Components/Six.md:
     id: 0cca44db5b20
     last_write_checksum: sha1:853876e641e95d9f808ee3e8824308aa4da896b5
@@ -2171,8 +2199,8 @@ trackedFiles:
     pristine_git_object: 8a06bb3f560a9b80c40e5132bdf9e0671301be89
   docs/Models/Components/StepContentIssueDto.md:
     id: e1f3dd2a3bb7
-    last_write_checksum: sha1:45408d04a20aee7304579ff5259cdcfd19422454
-    pristine_git_object: a6d1d95b019e4a85514a7db720380075dbbc2506
+    last_write_checksum: sha1:8c90db7e1b2a4a01357978cc5a5124c1424cbbb5
+    pristine_git_object: a2d39ded26712a68850f83b33153ea089c656c7b
   docs/Models/Components/StepFilterDto.md:
     id: 597e2fea91e1
     last_write_checksum: sha1:620aa3849bfa69494e3a26f16f6f43b5c26bf5a0
@@ -2183,8 +2211,12 @@ trackedFiles:
     pristine_git_object: da30612b9607ed9f96e916664a58457b6158cca4
   docs/Models/Components/StepIntegrationIssue.md:
     id: c751d82baf10
-    last_write_checksum: sha1:996e0e5bdd2012e12d53a83be06256dbe88db3a7
-    pristine_git_object: 5759970b30a8464e7355bcde8f6ceeb7359c4ed5
+    last_write_checksum: sha1:746717b1c49a4c1baf9c4c2b3429b681f8e7615f
+    pristine_git_object: 88b3648fd961e2a4b9b4bf040da61cf2bde62ea2
+  docs/Models/Components/StepIssueSeverityEnum.md:
+    id: 4ba9d8616776
+    last_write_checksum: sha1:2698b58c96894b9b691817bb1379ed123b21e4ef
+    pristine_git_object: 54ff219332a719955fc47edba280d1f41998a5d0
   docs/Models/Components/StepIssuesDto.md:
     id: adc044107d2e
     last_write_checksum: sha1:956db4965461943c3ac555727506b0b70b19c333
@@ -2463,8 +2495,8 @@ trackedFiles:
     pristine_git_object: e66d355e3c783fdd8d9fccadefb1b931ed3a5e83
   docs/Models/Components/ToolApprovalRequestPayloadDto.md:
     id: e4ec301e50af
-    last_write_checksum: sha1:274acdeee86ee246c30ae480fe2fb0f92a91d93c
-    pristine_git_object: fdb8662706f1672fdb8bff13c1a9e71641676468
+    last_write_checksum: sha1:fcb001eb3fc10c4b12fe6d521512625888869630
+    pristine_git_object: 84fdde7af676a430672a6067cbba298c767141a4
   docs/Models/Components/ToolControlDto.md:
     id: 985c257d6f63
     last_write_checksum: sha1:b45515b22527bff8468a89d9e96b817b0e5af4b8
@@ -2499,16 +2531,16 @@ trackedFiles:
     pristine_git_object: 41a38a3f978df1f136d79ce32230a2fd1f074a1c
   docs/Models/Components/TopicDto.md:
     id: 65321617b1ad
-    last_write_checksum: sha1:646c003c508c4630cb2e715cdbe3c28c72d28675
-    pristine_git_object: 7894ff8b7caccf35077b8c920cb72f3dd006bf6f
+    last_write_checksum: sha1:fe19d69d3a71a4357f4cfc035d2c226e4156b124
+    pristine_git_object: 84a8473851a06fe59ea4a21af00ac315bacd8c35
   docs/Models/Components/TopicPayloadDto.md:
     id: 5faba986aa27
     last_write_checksum: sha1:f740c5ae6eb32a1d59961d7228aca50007bee2c1
     pristine_git_object: bf8d04f7a2ce216ebdee590e89a64f17f816ce37
   docs/Models/Components/TopicResponseDto.md:
     id: 3a1050802d7e
-    last_write_checksum: sha1:360b16a290bf115c4c534a18860ca11930b15b8f
-    pristine_git_object: 10e4947dd2e8d04c5b7845cef11a7efdbaebeb66
+    last_write_checksum: sha1:e0bd663c254439a9ce9870db846684e8ca984452
+    pristine_git_object: c14a541ef5edda5ded7b43caeea4644740e8c043
   docs/Models/Components/TopicSubscriberDto.md:
     id: d5632f713f36
     last_write_checksum: sha1:49b69ab9e29995bc300a4de917542423b0451b2b
@@ -2627,8 +2659,8 @@ trackedFiles:
     pristine_git_object: ef2c6958e75e0c1c7c06e987772088d4a8fa3a01
   docs/Models/Components/UiComponentEnum.md:
     id: 493e50fef773
-    last_write_checksum: sha1:c16340d001f4105852436c4fef6be19efc339f51
-    pristine_git_object: 1a28fa14a30daaeb291b0486f94169a1121fed7f
+    last_write_checksum: sha1:411efad1ce75f50f230326fc6559cd84cc6e8af5
+    pristine_git_object: 0b44ecf9e30acef52720e2114b761da96f7b0323
   docs/Models/Components/UiSchema.md:
     id: e4e61a5dbb28
     last_write_checksum: sha1:c1dc98660f7f219074e8c3aa8b58d4dcf765d644
@@ -2679,8 +2711,8 @@ trackedFiles:
     pristine_git_object: 0ea27f2e8c0f18b9ddc31b67bd37bbf14d9f5568
   docs/Models/Components/UpdateContextRequestDto.md:
     id: f0fd9d700ef6
-    last_write_checksum: sha1:1e4f175c397cb36b420ea4f420a470a4106ce72b
-    pristine_git_object: 0774a1f7d9706a13ba216f3a410eb13c4e0ae256
+    last_write_checksum: sha1:d6450964b33996a27882b141fd4189836e7937a0
+    pristine_git_object: 3ecdd5908eba9e402347da6e37a7ef206a5d2c0f
   docs/Models/Components/UpdateDomainDto.md:
     id: d4079c948c43
     last_write_checksum: sha1:4886a271af1e99a7895ce8377b6466774a1b0c30
@@ -2707,8 +2739,8 @@ trackedFiles:
     pristine_git_object: 2db95f9e9a1b7f0f56f20fa907eeb4362422353b
   docs/Models/Components/UpdateIntegrationRequestDto.md:
     id: 3d6c415ccffb
-    last_write_checksum: sha1:3a19fffb1c964ac74aa83f5282f978687d38830c
-    pristine_git_object: 2abe4c15fba8d20c4a0eb00e8573d3dfac20bf42
+    last_write_checksum: sha1:a801b4ba190fc5d216fbbc31b2f1fc737a3a57d5
+    pristine_git_object: e57c144bd7d489767a4c1c8d33f09535d986e153
   docs/Models/Components/UpdateIntegrationRequestDtoConfigurations.md:
     id: 6fb80b1bf8d3
     last_write_checksum: sha1:d6a252a584da56612921e09498f1bc8f0a7c50a0
@@ -2727,8 +2759,8 @@ trackedFiles:
     pristine_git_object: 80725472f0affde86e85a0659049c455e15a4ee6
   docs/Models/Components/UpdateTopicRequestDto.md:
     id: 89b94a20d632
-    last_write_checksum: sha1:b0cf9f4dd65f999b3d940355de337331511e4a5f
-    pristine_git_object: de21a6f51cb548836609065bb6fb53f52c46ab06
+    last_write_checksum: sha1:ecd1f66ba0ab99479ffab1f47ed8697a8f92e57b
+    pristine_git_object: a5ee3ecbcc80eb850f3b65fd8b693e4403888892
   docs/Models/Components/UpdateTopicSubscriptionRequestDto.md:
     id: 2ea7f9ea49bf
     last_write_checksum: sha1:f7404ceabb4d699af1e2a6885277ba5089a45f6e
@@ -2967,8 +2999,8 @@ trackedFiles:
     pristine_git_object: 9143230d572840a721f6e449729c7e2b26870e46
   docs/Models/Errors/TopicResponseDto.md:
     id: b239666f7776
-    last_write_checksum: sha1:360b16a290bf115c4c534a18860ca11930b15b8f
-    pristine_git_object: 10e4947dd2e8d04c5b7845cef11a7efdbaebeb66
+    last_write_checksum: sha1:e0bd663c254439a9ce9870db846684e8ca984452
+    pristine_git_object: c14a541ef5edda5ded7b43caeea4644740e8c043
   docs/Models/Errors/ValidationErrorDto.md:
     id: 021c0f8d6a16
     last_write_checksum: sha1:8994f1c5f5c2b9bfd3d27944f1264168087dea5e
@@ -4295,8 +4327,8 @@ trackedFiles:
     pristine_git_object: 7261d9c959c55b77ae0eb58abb6b5a2e6d3e792f
   docs/sdks/agents/README.md:
     id: 5965d8232fd8
-    last_write_checksum: sha1:eebd330a56017abc75beac0a32accfd0a5b6e426
-    pristine_git_object: bd2bebb89a484630621954a88e5b5474cf8475ec
+    last_write_checksum: sha1:099a51e3d80f457b9a45e9d651945d192c376840
+    pristine_git_object: 1b0bb2c39d4c3e37186806efdcfc7c2e60355072
   docs/sdks/autoconfigure/README.md:
     id: 83a76b13f0e3
     last_write_checksum: sha1:0bb278247e82bd9b718b7d428ab0cf23f10f6a67
@@ -4311,8 +4343,8 @@ trackedFiles:
     pristine_git_object: 6b037e452eb2f2a112bfc0067d4b36f034099168
   docs/sdks/contexts/README.md:
     id: d8fd381b7d65
-    last_write_checksum: sha1:e4a471d7aa49e9c68986b1bbda6c9b7525f6a983
-    pristine_git_object: 073a6e4351f9f4ea95cbcd7ec5da04d30d6a89b2
+    last_write_checksum: sha1:82b090ec59214e07759612b22884a389f907830f
+    pristine_git_object: 4fadf80382bf9886f7d22caf561bee293dc50c93
   docs/sdks/domains/README.md:
     id: 06e9beb4063b
     last_write_checksum: sha1:a6fbc34f3113b6023119d22cc43bde70b8df41c2
@@ -4331,8 +4363,8 @@ trackedFiles:
     pristine_git_object: 90f9b05b4b27ca00a2924ac9b63a2a065539911f
   docs/sdks/integrations/README.md:
     id: 7b29664808c0
-    last_write_checksum: sha1:231c10adb3daf774b66d675c6a604b8555216760
-    pristine_git_object: 393b154c8a7c8dee22778e5bc65c70b68a3cd579
+    last_write_checksum: sha1:b2d05444ca9a47c201f2be8b22d8b2291f57e2a5
+    pristine_git_object: a33caf9ac5e71a7784ccd536dc9282dd1cc25187
   docs/sdks/layouts/README.md:
     id: 9cae4f89dc39
     last_write_checksum: sha1:e180ddf3c946f611fa1bfc75e6df0ae3f8979000
@@ -4407,8 +4439,8 @@ trackedFiles:
     pristine_git_object: 46677c31892b8427e20bc3a079c47b10ce2574a6
   docs/sdks/topics/README.md:
     id: db4aff1adac3
-    last_write_checksum: sha1:b8c9c35b576fe2d1e0b35bc6fe121b32cd570b9c
-    pristine_git_object: 3b2d9fcbcf1792910fb32a252c9aa0707fa09d0b
+    last_write_checksum: sha1:ec2694a51d9b4f70ab5cf54492223c75e3cf2041
+    pristine_git_object: 58bf8d878c2dad8e662a7024d4050b712e81b963
   docs/sdks/topicssubscribers/README.md:
     id: 7ae84d741547
     last_write_checksum: sha1:1f0b1260d8f22b23f546be3f081397d82ded2214
@@ -4659,8 +4691,8 @@ trackedFiles:
     pristine_git_object: a5c02cd44f19520ca77cb9156a9b8435ddb1e0ec
   src/Models/Components/AgentReplyPayloadDto.php:
     id: 6ee392da0c1b
-    last_write_checksum: sha1:843a401d195e56a9664f6ec40b31d475cd91f98b
-    pristine_git_object: dcf1be63754b0bbba226d1f50e1afd89c7b711c8
+    last_write_checksum: sha1:cd80eda496544f8de7c877c07fbbf8ea845178c8
+    pristine_git_object: 2dfa3f606458145599ba144f94accef113dac3b2
   src/Models/Components/AgentResponseDto.php:
     id: 65c0cb4b8068
     last_write_checksum: sha1:4a1aed91dddbec3d856b21bb496019d390b7cdbf
@@ -4771,8 +4803,12 @@ trackedFiles:
     pristine_git_object: 7ae393792c04a43f915486e69cf08d3e814b838c
   src/Models/Components/ChatControlDto.php:
     id: 36573d31d0de
-    last_write_checksum: sha1:aac89e524ed7dfff1e41c524651f704579194344
-    pristine_git_object: 227afcf066e831e1cfd992e7a6d0a6eb9691e5d3
+    last_write_checksum: sha1:4c240f7b68b7ce81df86f57bb80d402b3e46fbca
+    pristine_git_object: 8e5384ebdef39639418527d7b03c73358f2c033f
+  src/Models/Components/ChatControlDtoEditorType.php:
+    id: 5cfe46458f70
+    last_write_checksum: sha1:cf46aae2adc9aad48fcd06492dc6c3aced197a16
+    pristine_git_object: ce7c8d4b4ecf3e412196197b9eb6ea749576b7f0
   src/Models/Components/ChatControlsMetadataResponseDto.php:
     id: d145c63a4a4e
     last_write_checksum: sha1:820f8362e54c3b9901e97f1a4912d9d7abd6d2ee
@@ -4791,8 +4827,12 @@ trackedFiles:
     pristine_git_object: 320ffc46ba4f9985a3dc0a6f1d0ec4978c6ebcbf
   src/Models/Components/ChatStepResponseDtoControlValues.php:
     id: d94a140772eb
-    last_write_checksum: sha1:a1f0cbd65705a4482a4a90a584e2e7d31f1ff0c9
-    pristine_git_object: 00083120dd4d2be1c287c83f10edd80bbebeb55e
+    last_write_checksum: sha1:049df9466eb510f545e7f60ddde1a63b9ec77aae
+    pristine_git_object: 8e1b2d9c5be1b4f14f65f0e3db1a15e0ca7a648e
+  src/Models/Components/ChatStepResponseDtoEditorType.php:
+    id: e3931b7413f8
+    last_write_checksum: sha1:f5dca4fe83ed0d410c0e72b9c607d671de6fcb78
+    pristine_git_object: fa0cc083d39ff0a0771b1b6d99ea2ca6566f84b2
   src/Models/Components/ChatStepUpsertDto.php:
     id: 327938cade45
     last_write_checksum: sha1:46b18c3839653bd57b41ba46c7c7416ba78f13e0
@@ -4831,8 +4871,8 @@ trackedFiles:
     pristine_git_object: b494f4bbdfc9173cd7fce7af77f343b28c1f60a6
   src/Models/Components/ContentIssueEnum.php:
     id: f0b63750dcc0
-    last_write_checksum: sha1:062d8b3c8c954591ec1a9a3379e366b54e49b498
-    pristine_git_object: 0304062652024933cff07e496aea1ef30a3afe60
+    last_write_checksum: sha1:92849cc335f9537a90a98c4639d1c1073d28696e
+    pristine_git_object: b30296f25e96e5841fe44785b7372d42b8a05729
   src/Models/Components/Context2.php:
     id: 1f665f9ba680
     last_write_checksum: sha1:ae2e6142c6680053f4dda4909afef27b9b00ff9e
@@ -4863,8 +4903,8 @@ trackedFiles:
     pristine_git_object: 32fcd6e06ced40d0584973fc912825ed98ccdbd8
   src/Models/Components/CreateContextRequestDto.php:
     id: 2594c847b113
-    last_write_checksum: sha1:f0b8eb37f7cf495fdfcd202b1446c48540dc38b7
-    pristine_git_object: baf1bd32ff231584a45b51023c024ef70a759c1e
+    last_write_checksum: sha1:afc86d7efa21139cc7179672fec0c6f50f24c90a
+    pristine_git_object: 77ccebaabefa64a54022ff9300309a6f9e5b3f5d
   src/Models/Components/CreateDomainConnectApplyUrlDto.php:
     id: 5bdf9d5e0554
     last_write_checksum: sha1:622d0e7228d00b0176e87cdce7bd9bb2ddad1cc5
@@ -4899,8 +4939,8 @@ trackedFiles:
     pristine_git_object: ce997c3c080b2f43d2519cba475d6f973db1c487
   src/Models/Components/CreateIntegrationRequestDto.php:
     id: e7dde45b7e90
-    last_write_checksum: sha1:dc28fcb9d17270bfb0424f133383bc56ccf74fb9
-    pristine_git_object: 10d3c595572f6e51e186a53580147113c4b5c5de
+    last_write_checksum: sha1:1873574bf4ebef3dd606ffa7e41b669b05f39c75
+    pristine_git_object: 4753f61f609a1747d07f53fe030f7bf84cc618a5
   src/Models/Components/CreateIntegrationRequestDtoChannel.php:
     id: dc45b392870f
     last_write_checksum: sha1:1dba14bb26309a73d5b65f7982c8a9a497a49cf9
@@ -5055,8 +5095,8 @@ trackedFiles:
     pristine_git_object: 544124dba55d5331d5ce722bdae80a9327f99998
   src/Models/Components/CreateUpdateTopicRequestDto.php:
     id: 45b8f54e82cb
-    last_write_checksum: sha1:0d5beab3d7e5f4fab0ab94ba5dcf82a3fc2fa13e
-    pristine_git_object: 5e2e7ce7f8ec9dbfc8f247b056e0e4fd39c2b1fd
+    last_write_checksum: sha1:049e0d284fa93ef9be3c6aaea710fd648a041ea2
+    pristine_git_object: 0dd67dfb9deae78170505932e5dce7cb43da990d
   src/Models/Components/CreateWebexPersonEndpointDto.php:
     id: b883a2f80ea4
     last_write_checksum: sha1:aac292f8a84580a59579aeb14e5b30224c3282ef
@@ -5103,8 +5143,8 @@ trackedFiles:
     pristine_git_object: 51fe2640bad60f9d8b315527a783908e1badb521
   src/Models/Components/CredentialsDto.php:
     id: 6f470ab00f42
-    last_write_checksum: sha1:4e6611ffcd1362ea1c8c5d783f34461f1061e4df
-    pristine_git_object: 014587d216c6a19773914b4d14f4e71c918f750b
+    last_write_checksum: sha1:9c2aeb7462529c3f999907e498e296da4eafd985
+    pristine_git_object: da9c2588f1b151fb3b53afff8f9f06b0df6228ea
   src/Models/Components/CustomControlDto.php:
     id: 9e0b816c4821
     last_write_checksum: sha1:221618b42c6388f82a924d909dc28aa6fb446070
@@ -5643,8 +5683,8 @@ trackedFiles:
     pristine_git_object: b60594e43f0894a713f8ad1abee7d3c5c1664eac
   src/Models/Components/GetContextResponseDto.php:
     id: ad7778d67a4e
-    last_write_checksum: sha1:0e0458a7f1013aaefc71b73f9f20f3cd1580ee07
-    pristine_git_object: 25bfb126126f478b2110c56eedcccfb40cad96b9
+    last_write_checksum: sha1:0d8b4ef83c27bd3690965c431b1504cac9ecf0e8
+    pristine_git_object: 5a38e2b3bf18c575283ec14dc2693a96c9d38b36
   src/Models/Components/GetEnvironmentTagsDto.php:
     id: 4cbe6dac39fb
     last_write_checksum: sha1:ee736da2a9d386efd70d50014604f0278a3c6e13
@@ -5697,6 +5737,10 @@ trackedFiles:
     id: 6220066fa180
     last_write_checksum: sha1:a37566231282b81011b04a891794e1d7ddc406f6
     pristine_git_object: e665e3a506c800ac0c09b837eb70e023df833c71
+  src/Models/Components/HmacSecretKeyEncoding.php:
+    id: b4a6ccf1aa5d
+    last_write_checksum: sha1:230000c8c0c90be2bd289c9c681b78ec7c97d62d
+    pristine_git_object: 17504b44d23542e3c96321444c2f2610b70a11a8
   src/Models/Components/HttpMethodEnum.php:
     id: eddb57781ecc
     last_write_checksum: sha1:964d145724c31d23587e219671c63f109a85870d
@@ -5725,6 +5769,14 @@ trackedFiles:
     id: fdac41090d30
     last_write_checksum: sha1:d863bbd9fec6f760f0ded64ba06330970d167678
     pristine_git_object: 37e9ebf7512370944f2e7af47898257c6da6d6db
+  src/Models/Components/HumanSignalDto.php:
+    id: b4fb3ea876d8
+    last_write_checksum: sha1:e02219c923b59ffa9cedcf1ab3eefdea6b194f77
+    pristine_git_object: d438b757718320019f5c24535641127c8f152995
+  src/Models/Components/HumanSignalDtoType.php:
+    id: b958675c6d97
+    last_write_checksum: sha1:07921ad1efaf1ff2609de4fcdf584374cf2859d3
+    pristine_git_object: 92dfbd391fdc89c0dce9ea047db5d61acf2998b9
   src/Models/Components/ImportMasterJsonRequestDto.php:
     id: 8175c2db2903
     last_write_checksum: sha1:a95829af6d96e08b0eebeca07f6324ee6ce24f4e
@@ -5783,12 +5835,16 @@ trackedFiles:
     pristine_git_object: 9624bf9fc57c97eb24951644b973bc28785233fd
   src/Models/Components/IntegrationResponseDto.php:
     id: 57476af2a153
-    last_write_checksum: sha1:b2ee228688d5cf0dbd8374b545b8b5d91cdc2f92
-    pristine_git_object: aede22f2309de86ec0d28b4620463444ea8ce489
+    last_write_checksum: sha1:a5453095dcd5376f686a910f561b2e5390610bfa
+    pristine_git_object: 9ab9d10b2ab4c90a4a64f8fc53353e64ef7137e9
   src/Models/Components/IntegrationResponseDtoChannel.php:
     id: d4ac0709bf8c
     last_write_checksum: sha1:d2c37ed9350de0f47120437d345cbb9d9245c53c
     pristine_git_object: 3f9be385e1598ba427a662bd0fc997869cf01714
+  src/Models/Components/IntegrationResponseDtoKind.php:
+    id: 764728e5a0e0
+    last_write_checksum: sha1:e996858496cab15b39a71450466a106a6193ae95
+    pristine_git_object: ec5e2be31d7ccf5ec124b4e9bd40f4836310fc10
   src/Models/Components/IssueIntegrationMobileLinkRequestDto.php:
     id: c994b4fc3ca6
     last_write_checksum: sha1:605e94be18f6f283e6b980db60a68349842b8f8f
@@ -5807,8 +5863,8 @@ trackedFiles:
     pristine_git_object: ba67b0f2460787aea16554d0376c7028dffb9068
   src/Models/Components/Kind.php:
     id: ab5c5ee97c70
-    last_write_checksum: sha1:1695b86fc07235a7416567c29a93801738546968
-    pristine_git_object: 700cc5994dbb9e2861b036d28366ea39f23546ee
+    last_write_checksum: sha1:5838a06378a168d148f7ad3ec2061821d51cb073
+    pristine_git_object: 3f31cd9b0e0618b568de40faf14a622fae1bdd0b
   src/Models/Components/LastPublishedBy.php:
     id: 4280a5a9ee80
     last_write_checksum: sha1:8241347886c54530224cccb25f1ffdcb96db44c8
@@ -6467,8 +6523,8 @@ trackedFiles:
     pristine_git_object: cb2fca4ea98e3a002d40ce503310fe49168e83f1
   src/Models/Components/StepContentIssueDto.php:
     id: 2b97c2b7dc35
-    last_write_checksum: sha1:a196eaf03d22f17bdf0faafa0db09cbcf1c52824
-    pristine_git_object: 6a552500921e1e22540eb0b6bbe40a01a1ca1be3
+    last_write_checksum: sha1:d146111cc193d9fbe3947bde8b0bdf52418e0b14
+    pristine_git_object: 8461adacd3914b6987c6f5cc2da7db8cbd2dcbc3
   src/Models/Components/StepFilterDto.php:
     id: cb50bf102bef
     last_write_checksum: sha1:b2f41b81b03827bdded507605594520e951cd872
@@ -6479,8 +6535,12 @@ trackedFiles:
     pristine_git_object: 45cf503e417ec285bc736dccd5afaec3a564ef17
   src/Models/Components/StepIntegrationIssue.php:
     id: 9518f54bbcca
-    last_write_checksum: sha1:0a9847285229d3ad8f8c5d84631ea653f535c4e0
-    pristine_git_object: 920460c1a66f986962ac07b5759a07a687fdaccd
+    last_write_checksum: sha1:8660244856d5c6df218822bc14ea44b85c6c13f9
+    pristine_git_object: 2f74b373619fb9bbf997693db692d1c25eef5f9a
+  src/Models/Components/StepIssueSeverityEnum.php:
+    id: 1703f6f73696
+    last_write_checksum: sha1:fe4be83972033fb62d8366e023af0891ae2d6301
+    pristine_git_object: a3c35e5a0adda9678cd5a475f26af4eed3c5fba9
   src/Models/Components/StepIssuesDto.php:
     id: 76d3bdc4e9d9
     last_write_checksum: sha1:b3d88fd46995010c2c18a9a4087eabf504c40000
@@ -6731,8 +6791,8 @@ trackedFiles:
     pristine_git_object: 713c7e5a34e572c6da8707069a99444350d2bb38
   src/Models/Components/ToolApprovalRequestPayloadDto.php:
     id: facdfdac085e
-    last_write_checksum: sha1:260216eb033154f2c98e718138fc665a79a0f195
-    pristine_git_object: c15cbd4be2e5858538e186b7a5b111f3722a5e73
+    last_write_checksum: sha1:be3b8395722252b9d60b97216927ac4acf7789e7
+    pristine_git_object: def347a1a2ad166f54094ce02e7fc749afd0512b
   src/Models/Components/ToolControlDto.php:
     id: d4a3b0c49bb3
     last_write_checksum: sha1:502a30c257e153ef14cc37039d45c3b1d8813e66
@@ -6763,16 +6823,16 @@ trackedFiles:
     pristine_git_object: d8f64b3512f51ca73b302c046459883f5e543812
   src/Models/Components/TopicDto.php:
     id: 3b0d667bbf1c
-    last_write_checksum: sha1:52272fb3f2e385db3894eb75843c03bf99462f62
-    pristine_git_object: 1f2ba10ea190cfb886c89b4a9a02988297dfaacc
+    last_write_checksum: sha1:5d0dd939d74be838f91fb72fa867096c1c779b54
+    pristine_git_object: a772b48b55fa1b68fe19260856fbe8ec361c9014
   src/Models/Components/TopicPayloadDto.php:
     id: ecb597ce498d
     last_write_checksum: sha1:9503276a044e7a4f01dbbbba767713845e0dc756
     pristine_git_object: e0db50ce7a800b548a3fb7e973ea84de0e6a0496
   src/Models/Components/TopicResponseDto.php:
     id: b33bdaa1c579
-    last_write_checksum: sha1:b06a4c28586e994f33fc537b22d8e04c6a837282
-    pristine_git_object: cfcd6544ed494f3335a1b71114e52f04c38aef3f
+    last_write_checksum: sha1:077169113f2610f1a4dc2c279a53f0f6c49c5cfe
+    pristine_git_object: 1dcb925c5e7f90482f71c27ac289d066f9119e69
   src/Models/Components/TopicSubscriberDto.php:
     id: a76d0141107e
     last_write_checksum: sha1:f0737636f8b76b7364f4d274950a70613a8a3dad
@@ -6867,8 +6927,8 @@ trackedFiles:
     pristine_git_object: 11057e8abf51ea63468ef7d8c17f1ae565cda392
   src/Models/Components/UiComponentEnum.php:
     id: 538c5d2c0420
-    last_write_checksum: sha1:656eb40c40a4cedeabbfd798c60f28ddd69b7687
-    pristine_git_object: d938c13a58fd6f72e763681d85850e1c02cb8069
+    last_write_checksum: sha1:0c5f576d938eeeda35044a5a8fd7068309a227af
+    pristine_git_object: 699969cb4c97a22d8c708d443973abdc9e086819
   src/Models/Components/UiSchema.php:
     id: feec459787b0
     last_write_checksum: sha1:65fbb5ea7053350864f508421a311d02b9735cd6
@@ -6915,8 +6975,8 @@ trackedFiles:
     pristine_git_object: 799f3693b76bcee4408e0865e5b804548ed6634f
   src/Models/Components/UpdateContextRequestDto.php:
     id: fe595e60a192
-    last_write_checksum: sha1:790f484ef90a65e396b908130f318d961db30313
-    pristine_git_object: 1bc65ea26bf5230498f738f0d39706d1c0c6c2ad
+    last_write_checksum: sha1:1bf12ca4662da9bf53344730b1b56c665e44d130
+    pristine_git_object: 215cdd145fa0c4bbde928ab5fd99ef4317795bdf
   src/Models/Components/UpdateDomainDto.php:
     id: b6423e375cab
     last_write_checksum: sha1:2d8b95d654c22f7e783f40b188d261cfdb4862b9
@@ -6943,8 +7003,8 @@ trackedFiles:
     pristine_git_object: 4c62c03899967020a7bbded8e03a97d2175ff50f
   src/Models/Components/UpdateIntegrationRequestDto.php:
     id: 127b3a5648ad
-    last_write_checksum: sha1:bbc5bdbd714ed7ef1fa983aa71c1a7d91571e914
-    pristine_git_object: ecc15380bbe8e4cbec18417000def7e232e1295b
+    last_write_checksum: sha1:1758b402f37a9c8558c368b2ed383431e1835690
+    pristine_git_object: 25056edd5187534af704a212857ceeab1a7f6d4e
   src/Models/Components/UpdateIntegrationRequestDtoConfigurations.php:
     id: 1449cfe5fb10
     last_write_checksum: sha1:5a27f8ddb306072005dff062c51422237983fa59
@@ -6963,8 +7023,8 @@ trackedFiles:
     pristine_git_object: edc20b2d7c58cb2a19dc0b2f3ef90b399a5da836
   src/Models/Components/UpdateTopicRequestDto.php:
     id: b6096e49e6c3
-    last_write_checksum: sha1:33f7305cb41d1fad85e997741bb99e6362e2db4f
-    pristine_git_object: 6098598bf6a33867387ee3afb29d5dea8207ffc6
+    last_write_checksum: sha1:81f31ed8a358718eceaab36cac30aee1510de534
+    pristine_git_object: 8cf6b510ff308ea16f5405bc07c82e988e95d240
   src/Models/Components/UpdateTopicSubscriptionRequestDto.php:
     id: b5600cef1d1f
     last_write_checksum: sha1:e61035b767c99c43fd6095a543d072ee19cd8ea9
@@ -7167,8 +7227,8 @@ trackedFiles:
     pristine_git_object: a9ad38b6a60e83538e59b18e003810228f26b664
   src/Models/Errors/TopicResponseDto.php:
     id: 02451388011a
-    last_write_checksum: sha1:3e546d999a77af8f0834fcfb4fac301747c517c6
-    pristine_git_object: fb2238b62a5eb8041329ed502416a664baf6a155
+    last_write_checksum: sha1:9b5fecdd3dac862b7f6a5533d87fc92249bcf002
+    pristine_git_object: d6bdcc73ca53d6cc42f86ae6bb1e38dfcef52074
   src/Models/Errors/TopicResponseDtoThrowable.php:
     id: 0e53e24735f8
     last_write_checksum: sha1:2b9aecc839ecb3393309789720db5d80906f6a8b
@@ -8527,8 +8587,8 @@ trackedFiles:
     pristine_git_object: 1108950af27b5c0a25485670947575257c044c13
   src/SDKConfiguration.php:
     id: 9d60ab0bec0b
-    last_write_checksum: sha1:1c2158072247b08d85ac498912baa1e718e1f8e7
-    pristine_git_object: d83160fb469491baac36bfdcb23ffb4011b8fb58
+    last_write_checksum: sha1:0fa1c668ffed6f09635d23b63427aa11a88f6ef5
+    pristine_git_object: 56dbf58d9f3863301b1279643c22e45afedc00ff
   src/Steps.php:
     id: 9ae87f15c136
     last_write_checksum: sha1:8e390ba9f473cc43bac37ae4a19a15350a91bd8f
@@ -8559,8 +8619,8 @@ trackedFiles:
     pristine_git_object: 79d2c8ba7c189e3c0c825e5f824283d2d2b96afb
   src/Topics.php:
     id: 2f5c9343954e
-    last_write_checksum: sha1:d71c0fe80c502548b5b288fbf1c9fe0489bb56a3
-    pristine_git_object: f4dfcc648ab643872adc4ca26420dcee656d7d5a
+    last_write_checksum: sha1:cec4b4d9583da7ab05c810ba93c794db62738f44
+    pristine_git_object: 4a48f727e73abc2dae1657d29b230d1cf54fc533
   src/TopicsSubscribers.php:
     id: 4af5a4378eab
     last_write_checksum: sha1:aee426c7bd17f538e5106b5ddefbe09ce311e9ce
@@ -8575,8 +8635,8 @@ trackedFiles:
     pristine_git_object: b9fd9eebe53050437f10487050df7eea04f4ec23
   src/Utils/BigIntHandler.php:
     id: 190c4d16fa85
-    last_write_checksum: sha1:22ae132e6f5d3da76e6bbd0f67071c9ed24bd7f2
-    pristine_git_object: e57392a41bc19c59afc6f32f8b457deb127b2ec2
+    last_write_checksum: sha1:a6654eb05444176640840437901482ff31cabfbb
+    pristine_git_object: 9470ae305aa64c1b41528cbc85db18b943a132a4
   src/Utils/DateHandler.php:
     id: 3223e13fd506
     last_write_checksum: sha1:d2964dd94f87bcb2f254fdc66b3ceba17880e2b1
@@ -9066,10 +9126,10 @@ examples:
   TopicsController_upsertTopic:
     speakeasy-default-topics-controller-upsert-topic:
       requestBody:
-        application/json: {"key": "task:12345", "name": "Task Title"}
+        application/json: {"key": "task:12345", "name": "Task Title", "data": {"category": "product", "priority": 1}}
       responses:
         "200":
-          application/json: {"_id": "64da692e9a94fb2e6449ad06", "key": "product-updates", "name": "Product Updates", "createdAt": "2023-08-15T00:00:00.000Z", "updatedAt": "2023-08-15T00:00:00.000Z"}
+          application/json: {"_id": "64da692e9a94fb2e6449ad06", "key": "product-updates", "name": "Product Updates", "data": {"category": "product", "priority": 1}, "createdAt": "2023-08-15T00:00:00.000Z", "updatedAt": "2023-08-15T00:00:00.000Z"}
         "414":
           application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
         "400":
@@ -9079,7 +9139,7 @@ examples:
         "500":
           application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
         "409":
-          application/json: {"_id": "64da692e9a94fb2e6449ad06", "key": "product-updates", "name": "Product Updates", "createdAt": "2023-08-15T00:00:00.000Z", "updatedAt": "2023-08-15T00:00:00.000Z"}
+          application/json: {"_id": "64da692e9a94fb2e6449ad06", "key": "product-updates", "name": "Product Updates", "data": {"category": "product", "priority": 1}, "createdAt": "2023-08-15T00:00:00.000Z", "updatedAt": "2023-08-15T00:00:00.000Z"}
   TopicsController_getTopic:
     speakeasy-default-topics-controller-get-topic:
       parameters:
@@ -9087,7 +9147,7 @@ examples:
           topicKey: "<value>"
       responses:
         "200":
-          application/json: {"_id": "64da692e9a94fb2e6449ad06", "key": "product-updates", "name": "Product Updates", "createdAt": "2023-08-15T00:00:00.000Z", "updatedAt": "2023-08-15T00:00:00.000Z"}
+          application/json: {"_id": "64da692e9a94fb2e6449ad06", "key": "product-updates", "name": "Product Updates", "data": {"category": "product", "priority": 1}, "createdAt": "2023-08-15T00:00:00.000Z", "updatedAt": "2023-08-15T00:00:00.000Z"}
         "414":
           application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
         "400":
@@ -9102,10 +9162,10 @@ examples:
         path:
           topicKey: "<value>"
       requestBody:
-        application/json: {"name": "Updated Topic Name"}
+        application/json: {"name": "Updated Topic Name", "data": {"category": "product", "priority": 1}}
       responses:
         "200":
-          application/json: {"_id": "64da692e9a94fb2e6449ad06", "key": "product-updates", "name": "Product Updates", "createdAt": "2023-08-15T00:00:00.000Z", "updatedAt": "2023-08-15T00:00:00.000Z"}
+          application/json: {"_id": "64da692e9a94fb2e6449ad06", "key": "product-updates", "name": "Product Updates", "data": {"category": "product", "priority": 1}, "createdAt": "2023-08-15T00:00:00.000Z", "updatedAt": "2023-08-15T00:00:00.000Z"}
         "414":
           application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
         "400":
@@ -9201,10 +9261,10 @@ examples:
   IntegrationsController_createIntegration:
     speakeasy-default-integrations-controller-create-integration:
       requestBody:
-        application/json: {}
+        application/json: {"rules": {"==": [{"var": "context.tenant.id"}, "acme"]}}
       responses:
         "201":
-          application/json: {"_environmentId": "<id>", "_organizationId": "<id>", "name": "<value>", "identifier": "<value>", "providerId": "<id>", "active": false, "deleted": false, "primary": true}
+          application/json: {"_environmentId": "<id>", "_organizationId": "<id>", "name": "<value>", "identifier": "<value>", "providerId": "<id>", "active": false, "deleted": false, "primary": true, "rules": {"==": [{"var": "context.tenant.id"}, "acme"]}}
         "414":
           application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
         "400":
@@ -9219,10 +9279,10 @@ examples:
         path:
           integrationId: "<id>"
       requestBody:
-        application/json: {}
+        application/json: {"rules": {"==": [{"var": "context.tenant.id"}, "acme"]}}
       responses:
         "200":
-          application/json: {"_environmentId": "<id>", "_organizationId": "<id>", "name": "<value>", "identifier": "<value>", "providerId": "<id>", "active": false, "deleted": false, "primary": true}
+          application/json: {"_environmentId": "<id>", "_organizationId": "<id>", "name": "<value>", "identifier": "<value>", "providerId": "<id>", "active": false, "deleted": false, "primary": true, "rules": {"==": [{"var": "context.tenant.id"}, "acme"]}}
         "414":
           application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
         "400":
@@ -9254,7 +9314,7 @@ examples:
           integrationId: "<id>"
       responses:
         "200":
-          application/json: {"_environmentId": "<id>", "_organizationId": "<id>", "name": "<value>", "identifier": "<value>", "providerId": "<id>", "active": false, "deleted": false, "primary": false}
+          application/json: {"_environmentId": "<id>", "_organizationId": "<id>", "name": "<value>", "identifier": "<value>", "providerId": "<id>", "active": false, "deleted": false, "primary": false, "rules": {"==": [{"var": "context.tenant.id"}, "acme"]}}
         "414":
           application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
         "400":
@@ -9668,7 +9728,7 @@ examples:
   ContextsController_createContext:
     speakeasy-default-contexts-controller-create-context:
       requestBody:
-        application/json: {"type": "tenant", "id": "org-acme", "data": {"tenantName": "Acme Corp", "region": "us-east-1", "settings": {"theme": "dark"}}}
+        application/json: {"type": "tenant", "id": "org-acme", "data": {"tenantName": "Acme Corp", "region": "us-east-1", "settings": {"theme": "dark"}}, "bridgeUrl": "https://tenant-acme.example.com/api/novu"}
       responses:
         "201":
           application/json: {"type": "<value>", "id": "<id>", "data": {}, "createdAt": "1711061300606", "updatedAt": "1735610973353"}
@@ -9705,7 +9765,7 @@ examples:
           id: "<id>"
           type: "<value>"
       requestBody:
-        application/json: {"data": {"tenantName": "Acme Corp", "region": "us-east-1", "settings": {"theme": "dark"}}}
+        application/json: {"data": {"tenantName": "Acme Corp", "region": "us-east-1", "settings": {"theme": "dark"}}, "bridgeUrl": "https://tenant-acme.example.com/api/novu"}
       responses:
         "200":
           application/json: {"type": "<value>", "id": "<id>", "data": {}, "createdAt": "1716731814509", "updatedAt": "1735639126648"}
@@ -10039,7 +10099,7 @@ examples:
         application/json: {"name": "My Subscription", "preferences": [{"condition": {"===": [{"var": "tier"}, "premium"]}, "workflowId": "workflow-123"}]}
       responses:
         "200":
-          application/json: {"_id": "64f5e95d3d7946d80d0cb679", "identifier": "tk=product-updates:si=subscriber-123", "name": "My Subscription", "topic": {"_id": "64f5e95d3d7946d80d0cb677", "key": "product-updates", "name": "Product Updates"}, "subscriber": {"_id": "64da692e9a94fb2e6449ad07", "subscriberId": "user-123", "avatar": "https://example.com/avatar.png", "firstName": "John", "lastName": "Doe", "email": "john@example.com"}, "preferences": [{"subscriptionId": "64f5e95d3d7946d80d0cb679", "workflow": {"id": "64a1b2c3d4e5f6g7h8i9j0k1", "identifier": "welcome-email", "name": "Welcome Email Workflow", "critical": false, "tags": ["user-onboarding", "email"], "data": {}, "severity": "medium"}, "enabled": true, "condition": {"and": [{"===": [{"var": "tier"}, "premium"]}]}}], "contextKeys": ["tenant:org-a", "project:proj-123"], "createdAt": "2025-04-24T05:40:21Z", "updatedAt": "2025-04-24T05:40:21Z"}
+          application/json: {"_id": "64f5e95d3d7946d80d0cb679", "identifier": "tk=product-updates:si=subscriber-123", "name": "My Subscription", "topic": {"_id": "64f5e95d3d7946d80d0cb677", "key": "product-updates", "name": "Product Updates", "data": {"category": "product", "priority": 1}}, "subscriber": {"_id": "64da692e9a94fb2e6449ad07", "subscriberId": "user-123", "avatar": "https://example.com/avatar.png", "firstName": "John", "lastName": "Doe", "email": "john@example.com"}, "preferences": [{"subscriptionId": "64f5e95d3d7946d80d0cb679", "workflow": {"id": "64a1b2c3d4e5f6g7h8i9j0k1", "identifier": "welcome-email", "name": "Welcome Email Workflow", "critical": false, "tags": ["user-onboarding", "email"], "data": {}, "severity": "medium"}, "enabled": true, "condition": {"and": [{"===": [{"var": "tier"}, "premium"]}]}}], "contextKeys": ["tenant:org-a", "project:proj-123"], "createdAt": "2025-04-24T05:40:21Z", "updatedAt": "2025-04-24T05:40:21Z"}
         "414":
           application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
         "400":
@@ -11014,7 +11074,7 @@ examples:
         "400":
           application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
         "422":
-          application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123", "errors": {"fieldName1": {"messages": ["Field is required", "Must be a valid email address"], "value": "invalidEmail"}, "fieldName2": {"messages": ["Must be at least 18 years old"], "value": 17}, "fieldName3": {"messages": ["Must be a boolean value"], "value": true}, "fieldName4": {"messages": ["Must be a valid object"], "value": []}, "fieldName5": {"messages": ["Field is missing"], "value": null}, "fieldName6": {"messages": ["Undefined value"]}}}
+          application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123", "errors": {"fieldName1": {"messages": ["Field is required", "Must be a valid email address"], "value": "invalidEmail"}, "fieldName2": {"messages": ["Must be at least 18 years old"], "value": 17}, "fieldName3": {"messages": ["Must be a boolean value"], "value": true}, "fieldName4": {"messages": ["Must be a valid object"], "value": {}}, "fieldName5": {"messages": ["Field is missing"], "value": null}, "fieldName6": {"messages": ["Undefined value"]}}}
         "500":
           application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
   AgentReplyController_handleAgentReplyHandler:
@@ -11261,7 +11321,24 @@ examples:
         path:
           agentId: "support-agent"
       requestBody:
-        application/json: {"conversationId": "64f5a1c2e8b7a3d9f0c1b2a3", "integrationIdentifier": "slack-support", "reply": {"toolApprovalCard": {"type": "tool-approval-card", "title": "Approve refund?", "subtitle": "issue_refund · ORD-42 · $25.00", "approveLabel": "Approve", "denyLabel": "Deny"}, "files": [{"filename": "report.pdf", "mimeType": "application/pdf", "data": "JVBERi0xLjQK...", "url": "https://example.com/files/report.pdf"}]}, "toolApprovalRequest": {"approvalId": "apr_01HZX", "toolCallId": "call_refund_1", "name": "issue_refund", "input": {"orderId": "ORD-42", "amountCents": 2500}}, "edit": {"messageId": "1712345678.123456", "content": {"markdown": "**Report ready.** Your weekly summary is attached.", "files": [{"filename": "report.pdf", "mimeType": "application/pdf", "data": "JVBERi0xLjQK...", "url": "https://example.com/files/report.pdf"}]}}, "resolve": {"summary": "Answered billing question about invoice INV-42."}, "signals": [{"type": "metadata", "action": "delete", "key": "crm:ticketId"}], "toolResults": [{"toolCallId": "call_abc123", "toolName": "lookup_order", "preview": "Order ORD-42 is shipped"}], "addReactions": [{"messageId": "1712345678.123456", "emojiName": "white_check_mark"}], "deleteMessages": [{"messageId": "1712345678.123456"}], "typing": {"status": "Looking up your order…"}, "error": true}
+        application/json: {"conversationId": "64f5a1c2e8b7a3d9f0c1b2a3", "integrationIdentifier": "slack-support", "reply": {"toolApprovalCard": {"type": "tool-approval-card", "title": "Approve refund?", "subtitle": "issue_refund · ORD-42 · $25.00", "approveLabel": "Approve", "denyLabel": "Deny"}, "files": [{"filename": "report.pdf", "mimeType": "application/pdf", "data": "JVBERi0xLjQK...", "url": "https://example.com/files/report.pdf"}]}, "toolApprovalRequest": {"approvalId": "apr_01HZX", "toolCallId": "call_refund_1", "name": "issue_refund", "input": {"orderId": "ORD-42", "amountCents": 2500}, "approveActionId": "tool-approval:approve:apr_01HZX", "denyActionId": "tool-approval:deny:apr_01HZX", "mcpServerName": "GitHub"}, "edit": {"messageId": "1712345678.123456", "content": {"markdown": "**Report ready.** Your weekly summary is attached.", "files": [{"filename": "report.pdf", "mimeType": "application/pdf", "data": "JVBERi0xLjQK...", "url": "https://example.com/files/report.pdf"}]}}, "resolve": {"summary": "Answered billing question about invoice INV-42."}, "signals": [{"type": "metadata", "action": "delete", "key": "crm:ticketId"}], "toolResults": [{"toolCallId": "call_abc123", "toolName": "lookup_order", "preview": "Order ORD-42 is shipped"}], "addReactions": [{"messageId": "1712345678.123456", "emojiName": "white_check_mark"}], "deleteMessages": [{"messageId": "1712345678.123456"}], "typing": {"status": "Looking up your order…"}, "error": true}
+      responses:
+        "200":
+          application/json: {"messageId": "1712345678.123456", "platformThreadId": "C0123456789"}
+        "414":
+          application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
+        "400":
+          application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
+        "422":
+          application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123", "errors": {"fieldName1": {"messages": ["Field is required", "Must be a valid email address"], "value": "invalidEmail"}, "fieldName2": {"messages": ["Must be at least 18 years old"], "value": 17}, "fieldName3": {"messages": ["Must be a boolean value"], "value": true}, "fieldName4": {"messages": ["Must be a valid object"], "value": {}}, "fieldName5": {"messages": ["Field is missing"], "value": null}, "fieldName6": {"messages": ["Undefined value"]}}}
+        "500":
+          application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
+    humanApprove:
+      parameters:
+        path:
+          agentId: "support-agent"
+      requestBody:
+        application/json: {"conversationId": "64f5a1c2e8b7a3d9f0c1b2a3", "integrationIdentifier": "slack-support", "signals": [{"type": "human", "kind": "approve", "prompt": "Deploy v2.4.1 to production?", "requestId": "hr_7c2e1a3b-4d5f-6789-abcd-ef0123456789"}]}
       responses:
         "200":
           application/json: {"messageId": "1712345678.123456", "platformThreadId": "C0123456789"}
@@ -11320,7 +11397,7 @@ examples:
         "400":
           application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
         "422":
-          application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123", "errors": {"fieldName1": {"messages": ["Field is required", "Must be a valid email address"], "value": "invalidEmail"}, "fieldName2": {"messages": ["Must be at least 18 years old"], "value": 17}, "fieldName3": {"messages": ["Must be a boolean value"], "value": true}, "fieldName4": {"messages": ["Must be a valid object"], "value": []}, "fieldName5": {"messages": ["Field is missing"], "value": null}, "fieldName6": {"messages": ["Undefined value"]}}}
+          application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123", "errors": {"fieldName1": {"messages": ["Field is required", "Must be a valid email address"], "value": "invalidEmail"}, "fieldName2": {"messages": ["Must be at least 18 years old"], "value": 17}, "fieldName3": {"messages": ["Must be a boolean value"], "value": true}, "fieldName4": {"messages": ["Must be a valid object"], "value": {}}, "fieldName5": {"messages": ["Field is missing"], "value": null}, "fieldName6": {"messages": ["Undefined value"]}}}
         "500":
           application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
   AgentsController_updateAgentBridge:
@@ -11413,7 +11490,7 @@ examples:
           application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Php SDK Changes:\n* `novu->subscribers->notifications->archive()`:  `response.channelType->enum(tool)` **Added** (Breaking ⚠️)\n* `novu->workflows->get()`:  `response` **Changed** (Breaking ⚠️)\n* `novu->layouts->list()`:  `response.layouts[]->controls->uiSchema` **Changed** (Breaking ⚠️)\n* `novu->layouts->update()`:  `response.controls->uiSchema` **Changed** (Breaking ⚠️)\n* `novu->layouts->retrieve()`:  `response.controls->uiSchema` **Changed** (Breaking ⚠️)\n* `novu->subscriberscredentials->append()`: \n  *  `request.updateSubscriberChannelRequestDto->providerId` **Changed**\n  *  `response.channels[]->providerId` **Changed** (Breaking ⚠️)\n* `novu->notifications->get()`:  `response` **Changed** (Breaking ⚠️)\n* `novu->notifications->list()`: \n  *  `request->channels` **Changed**\n  *  `response.data[]` **Changed** (Breaking ⚠️)\n* `novu->messages->get()`: \n  *  `request->channel` **Changed**\n  *  `response.data[]` **Changed** (Breaking ⚠️)\n* `novu->integrations->listActive()`:  `response.[]` **Changed** (Breaking ⚠️)\n* `novu->integrations->setAsPrimary()`:  `response` **Changed** (Breaking ⚠️)\n* `novu->integrations->delete()`:  `response.[]` **Changed** (Breaking ⚠️)\n* `novu->integrations->update()`: \n  *  `request.updateIntegrationRequestDto->credentials->whatsNextCompletedAt` **Added**\n  *  `response` **Changed** (Breaking ⚠️)\n* `novu->integrations->create()`: \n  *  `request.createIntegrationRequestDto` **Changed**\n  *  `response` **Changed** (Breaking ⚠️)\n* `novu->layouts->duplicate()`:  `response.controls->uiSchema` **Changed** (Breaking ⚠️)\n* `novu->layouts->generatePreview()`: \n  *  `request.layoutPreviewRequestDto->previewPayload->subscriber->channels[]->providerId` **Changed**\n  *  `response.previewPayloadExample->subscriber->channels[]->providerId` **Changed** (Breaking ⚠️)\n* `novu->subscribers->search()`:  `response.data[]->channels[]->providerId` **Changed** (Breaking ⚠️)\n* `novu->subscribers->create()`: \n  *  `response.channels[]->providerId` **Changed** (Breaking ⚠️)\n  *  `error.channels[]->providerId` **Changed** (Breaking ⚠️)\n* `novu->subscribers->get()`:  `response.channels[]->providerId` **Changed** (Breaking ⚠️)\n* `novu->subscribers->patch()`:  `response.channels[]->providerId` **Changed** (Breaking ⚠️)\n* `novu->subscribers->updatePreferences()`: \n  *  `request.patchSubscriberPreferencesDto->channels->tool` **Added**\n  *  `response` **Changed** (Breaking ⚠️)\n* `novu->subscribers->notifications->snooze()`:  `response.channelType->enum(tool)` **Added** (Breaking ⚠️)\n* `novu->subscribers->updateOnlineStatus()`:  `response.channels[]->providerId` **Changed** (Breaking ⚠️)\n* `novu->subscribers->notifications->list()`:  `response.data[]->channelType->enum(tool)` **Added** (Breaking ⚠️)\n* `novu->subscribers->notifications->completeAction()`:  `response.channelType->enum(tool)` **Added** (Breaking ⚠️)\n* `novu->subscribers->notifications->revertAction()`:  `response.channelType->enum(tool)` **Added** (Breaking ⚠️)\n* `novu->layouts->create()`:  `response.controls->uiSchema` **Changed** (Breaking ⚠️)\n* `novu->channel connections->create()`: \n  *  `request.createChannelConnectionRequestDto` **Changed**\n  *  `response` **Changed** (Breaking ⚠️)\n* `novu->subscribers->updateCredentials()`: \n  *  `request.updateSubscriberChannelRequestDto->providerId` **Changed**\n  *  `response.channels[]->providerId` **Changed** (Breaking ⚠️)\n* `novu->subscribers->notifications->unarchive()`:  `response.channelType->enum(tool)` **Added** (Breaking ⚠️)\n* `novu->subscribers->notifications->markAsUnread()`:  `response.channelType->enum(tool)` **Added** (Breaking ⚠️)\n* `novu->subscribers->notifications->unsnooze()`:  `response.channelType->enum(tool)` **Added** (Breaking ⚠️)\n* `novu->subscribers->notifications->getFeed()`:  `response.data[]->channel->enum(tool)` **Added** (Breaking ⚠️)\n* `novu->integrations->list()`:  `response.[]` **Changed** (Breaking ⚠️)\n* `novu->channel endpoints->update()`: \n  *  `request.updateChannelEndpointRequestDto->endpoint` **Changed**\n  *  `response` **Changed** (Breaking ⚠️)\n* `novu->channel endpoints->retrieve()`:  `response` **Changed** (Breaking ⚠️)\n* `novu->environments->diff()`:  `response.resources[]->dependencies[]->reason` **Changed** (Breaking ⚠️)\n* `novu->channel endpoints->create()`: \n  *  `requestBody` **Changed**\n  *  `response` **Changed** (Breaking ⚠️)\n* `novu->channel endpoints->list()`: \n  *  `request` **Changed**\n  *  `response.data[]` **Changed** (Breaking ⚠️)\n* `novu->channel connections->update()`: \n  *  `request.updateChannelConnectionRequestDto` **Changed**\n  *  `response` **Changed** (Breaking ⚠️)\n* `novu->subscribers->messages->updateAsSeen()`:  `response` **Changed** (Breaking ⚠️)\n* `novu->subscribers->messages->markAllAs()`:  `response.[]` **Changed** (Breaking ⚠️)\n* `novu->subscriberspreferences->list()`:  `response` **Changed** (Breaking ⚠️)\n* `novu->channel connections->retrieve()`:  `response` **Changed** (Breaking ⚠️)\n* `novu->workflows->create()`: \n  *  `request.createWorkflowDto` **Changed**\n  *  `response` **Changed** (Breaking ⚠️)\n* `novu->workflows->list()`:  `response.workflows[]` **Changed** (Breaking ⚠️)\n* `novu->workflows->update()`: \n  *  `request.updateWorkflowDto` **Changed**\n  *  `response` **Changed** (Breaking ⚠️)\n* `novu->subscribers->notifications->markAsRead()`:  `response.channelType->enum(tool)` **Added** (Breaking ⚠️)\n* `novu->workflows->patch()`:  `response` **Changed** (Breaking ⚠️)\n* `novu->workflows->sync()`:  `response` **Changed** (Breaking ⚠️)\n* `novu->workflows->steps->generatePreview()`: \n  *  `request.generatePreviewRequestDto->previewPayload->subscriber->channels[]->providerId` **Changed**\n  *  `response` **Changed** (Breaking ⚠️)\n* `novu->workflows->steps->retrieve()`:  `response` **Changed** (Breaking ⚠️)\n* `novu->channel connections->list()`: \n  *  `request` **Changed**\n  *  `response.data[]` **Changed** (Breaking ⚠️)\n* `novu->triggerbroadcast()`:  `request.triggerEventToAllRequestDto` **Changed**\n* `novu->topics->subscriptions->list()`:  `response.data[]->preferences` **Added**\n* `novu->subscribers->topics->list()`:  `response.data[]->preferences` **Added**\n* `novu->subscribers->preferences->bulkUpdate()`: \n  *  `request.bulkUpdateSubscriberPreferencesDto->preferences[]->channels->tool` **Added**\n  *  `response.[]->channels->tool` **Added**\n* `novu->triggerbulk()`: \n  *  `request.bulkTriggerEventDto->events[]` **Changed**\n* `novu->trigger()`:  `request.triggerEventRequestDto` **Changed**\n* `novu->agents->integrations->delete()`: **Added**\n* `novu->agents->integrations->update()`: **Added**\n* `novu->agents->integrations->list()`: **Added**\n* `novu->agents->integrations->create()`: **Added**\n* `novu->agents->updateBridge()`: **Added**\n* `novu->agents->delete()`: **Added**\n* `novu->agents->update()`: **Added**\n* `novu->integrations->generateConnectOAuthUrl()`: \n  *  `request.generateConnectOauthUrlRequestDto->contextHash` **Added**\n* `novu->integrations->linkChannelEndpoint()`:  `request.linkChannelEndpointRequestDto` **Changed**\n* `novu->integrations->generateLinkUserOAuthUrl()`: \n  *  `request.generateLinkUserOauthUrlRequestDto->contextHash` **Added**\n* `novu->agents->retrieve()`: **Added**\n* `novu->messages->deleteByTransactionId()`:  `request.channel` **Changed**\n* `novu->agents->sendReply()`: **Added**\n* `novu->agents->list()`: **Added**\n* `novu->agents->create()`: **Added**\n"
+releaseNotes: "## Php SDK Changes:\n* `novu->workflows->steps->retrieve()`:  `response` **Changed** (Breaking ⚠️)\n* `novu->layouts->duplicate()`:  `response.controls->uiSchema->properties->Map<UiSchemaProperty>->component->enum(chatEditorSelect)` **Added** (Breaking ⚠️)\n* `novu->workflows->sync()`:  `response.steps[]` **Changed** (Breaking ⚠️)\n* `novu->workflows->patch()`:  `response.steps[]` **Changed** (Breaking ⚠️)\n* `novu->layouts->create()`:  `response.controls->uiSchema->properties->Map<UiSchemaProperty>->component->enum(chatEditorSelect)` **Added** (Breaking ⚠️)\n* `novu->layouts->list()`:  `response.layouts[]->controls->uiSchema->properties->Map<UiSchemaProperty>->component->enum(chatEditorSelect)` **Added** (Breaking ⚠️)\n* `novu->layouts->update()`:  `response.controls->uiSchema->properties->Map<UiSchemaProperty>->component->enum(chatEditorSelect)` **Added** (Breaking ⚠️)\n* `novu->layouts->retrieve()`:  `response.controls->uiSchema->properties->Map<UiSchemaProperty>->component->enum(chatEditorSelect)` **Added** (Breaking ⚠️)\n* `novu->workflows->get()`:  `response.steps[]` **Changed** (Breaking ⚠️)\n* `novu->workflows->update()`: \n  *  `request.updateWorkflowDto->steps[]->union(chat)->controlValues->union(ChatControlDto)->editorType` **Added**\n  *  `response.steps[]` **Changed** (Breaking ⚠️)\n* `novu->workflows->list()`:  `response.workflows[]->steps[]->issues` **Changed** (Breaking ⚠️)\n* `novu->workflows->create()`: \n  *  `request.createWorkflowDto->steps[]->union(chat)->controlValues->union(ChatControlDto)->editorType` **Added**\n  *  `response.steps[]` **Changed** (Breaking ⚠️)\n* `novu->topics->subscriptions->delete()`:  `response.data[]->topic->data` **Added**\n* `novu->topics->subscriptions->list()`:  `response.data[]->topic->data` **Added**\n* `novu->contexts->list()`:  `response.data[]->bridgeUrl` **Added**\n* `novu->topics->subscriptions->update()`:  `response.topic->data` **Added**\n* `novu->topics->get()`:  `response.data` **Added**\n* `novu->topics->subscriptions->create()`:  `response.data[]->topic->data` **Added**\n* `novu->topics->create()`: \n  *  `request.createUpdateTopicRequestDto->data` **Added**\n  *  `response.data` **Added**\n  *  `error.data` **Added**\n* `novu->topics->list()`:  `response.data[]->data` **Added**\n* `novu->subscribers->topics->list()`:  `response.data[]->topic->data` **Added**\n* `novu->topics->update()`: \n  *  `request.updateTopicRequestDto` **Changed**\n  *  `response.data` **Added**\n* `novu->contexts->retrieve()`:  `response.bridgeUrl` **Added**\n* `novu->contexts->update()`: \n  *  `request.updateContextRequestDto->bridgeUrl` **Added**\n  *  `response.bridgeUrl` **Added**\n* `novu->contexts->create()`: \n  *  `request.createContextRequestDto->bridgeUrl` **Added**\n  *  `response.bridgeUrl` **Added**\n* `novu->agents->sendReply()`:  `request.agentReplyPayloadDto` **Changed**\n* `novu->integrations->list()`:  `response.[]` **Changed**\n* `novu->integrations->create()`: \n  *  `request.createIntegrationRequestDto` **Changed**\n  *  `response` **Changed**\n* `novu->integrations->update()`: \n  *  `request.updateIntegrationRequestDto` **Changed**\n  *  `response` **Changed**\n* `novu->integrations->delete()`:  `response.[]` **Changed**\n* `novu->integrations->setAsPrimary()`:  `response` **Changed**\n* `novu->integrations->listActive()`:  `response.[]` **Changed**\n"
 generatedFiles:
   - .gitattributes
   - USAGE.md

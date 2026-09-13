@@ -46,17 +46,50 @@ class ToolApprovalRequestPayloadDto
     public ?array $input = null;
 
     /**
+     * Server-minted approve action id. When omitted, self-hosted tool-approval:* is minted at persist.
+     *
+     * @var ?string $approveActionId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('approveActionId')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $approveActionId = null;
+
+    /**
+     * Server-minted deny action id. When omitted, self-hosted tool-approval:* is minted at persist.
+     *
+     * @var ?string $denyActionId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('denyActionId')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $denyActionId = null;
+
+    /**
+     * MCP server name when the gated tool is from an MCP server (for UI labels).
+     *
+     * @var ?string $mcpServerName
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('mcpServerName')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $mcpServerName = null;
+
+    /**
      * @param  string  $approvalId
      * @param  string  $toolCallId
      * @param  string  $name
      * @param  ?array<string, mixed>  $input
+     * @param  ?string  $approveActionId
+     * @param  ?string  $denyActionId
+     * @param  ?string  $mcpServerName
      * @phpstan-pure
      */
-    public function __construct(string $approvalId, string $toolCallId, string $name, ?array $input = null)
+    public function __construct(string $approvalId, string $toolCallId, string $name, ?array $input = null, ?string $approveActionId = null, ?string $denyActionId = null, ?string $mcpServerName = null)
     {
         $this->approvalId = $approvalId;
         $this->toolCallId = $toolCallId;
         $this->name = $name;
         $this->input = $input;
+        $this->approveActionId = $approveActionId;
+        $this->denyActionId = $denyActionId;
+        $this->mcpServerName = $mcpServerName;
     }
 }
