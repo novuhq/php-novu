@@ -93,6 +93,10 @@ $sdk = novu\Novu::builder()
 $createUpdateTopicRequestDto = new Components\CreateUpdateTopicRequestDto(
     key: 'task:12345',
     name: 'Task Title',
+    data: [
+        'category' => 'product',
+        'priority' => 1,
+    ],
 );
 
 $response = $sdk->topics->create(
@@ -181,7 +185,7 @@ if ($response->topicResponseDto !== null) {
 
 ## update
 
-Update a topic name by its unique key identifier **topicKey**
+Update a topic name or data by its unique key identifier **topicKey**
 
 ### Example Usage
 
@@ -202,6 +206,10 @@ $sdk = novu\Novu::builder()
 
 $updateTopicRequestDto = new Components\UpdateTopicRequestDto(
     name: 'Updated Topic Name',
+    data: [
+        'category' => 'product',
+        'priority' => 1,
+    ],
 );
 
 $response = $sdk->topics->update(

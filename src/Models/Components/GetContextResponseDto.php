@@ -53,19 +53,30 @@ class GetContextResponseDto
     public string $updatedAt;
 
     /**
+     * Bridge URL override for agent connect, if configured on this context
+     *
+     * @var ?string $bridgeUrl
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('bridgeUrl')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $bridgeUrl = null;
+
+    /**
      * @param  string  $type
      * @param  string  $id
      * @param  array<string, mixed>  $data
      * @param  string  $createdAt
      * @param  string  $updatedAt
+     * @param  ?string  $bridgeUrl
      * @phpstan-pure
      */
-    public function __construct(string $type, string $id, array $data, string $createdAt, string $updatedAt)
+    public function __construct(string $type, string $id, array $data, string $createdAt, string $updatedAt, ?string $bridgeUrl = null)
     {
         $this->type = $type;
         $this->id = $id;
         $this->data = $data;
         $this->createdAt = $createdAt;
         $this->updatedAt = $updatedAt;
+        $this->bridgeUrl = $bridgeUrl;
     }
 }

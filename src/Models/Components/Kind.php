@@ -9,9 +9,11 @@ declare(strict_types=1);
 namespace novu\Models\Components;
 
 
-/** Distinguishes delivery integrations from agent-runtime integrations. Defaults to "delivery". Agent integrations do not have a channel. */
+/** Interaction verb queued by `ctx.ask` / `ctx.approve` / `ctx.choose` / `ctx.tell`. */
 enum Kind: string
 {
-    case Delivery = 'delivery';
-    case Agent = 'agent';
+    case Ask = 'ask';
+    case Approve = 'approve';
+    case Choose = 'choose';
+    case Tell = 'tell';
 }

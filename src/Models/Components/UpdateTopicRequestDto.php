@@ -14,17 +14,30 @@ class UpdateTopicRequestDto
     /**
      * The display name for the topic
      *
-     * @var string $name
+     * @var ?string $name
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('name')]
-    public string $name;
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $name = null;
 
     /**
-     * @param  string  $name
+     * Additional custom data associated with the topic. Flat key-value pairs of scalars (string, number, boolean, string[]). Maximum size: 64KB. Pass null to clear.
+     *
+     * @var ?array<string, mixed> $data
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $data = null;
+
+    /**
+     * @param  ?string  $name
+     * @param  ?array<string, mixed>  $data
      * @phpstan-pure
      */
-    public function __construct(string $name)
+    public function __construct(?string $name = null, ?array $data = null)
     {
         $this->name = $name;
+        $this->data = $data;
     }
 }

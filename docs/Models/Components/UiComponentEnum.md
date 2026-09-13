@@ -8,6 +8,7 @@ Component type for the UI Schema Property
 | Name                                  | Value                                 |
 | ------------------------------------- | ------------------------------------- |
 | `EmailEditorSelect`                   | EMAIL_EDITOR_SELECT                   |
+| `ChatEditorSelect`                    | CHAT_EDITOR_SELECT                    |
 | `LayoutSelect`                        | LAYOUT_SELECT                         |
 | `BlockEditor`                         | BLOCK_EDITOR                          |
 | `EmailBody`                           | EMAIL_BODY                            |

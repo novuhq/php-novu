@@ -317,6 +317,46 @@ if ($response->object !== null) {
     // handle response
 }
 ```
+### Example Usage: humanApprove
+
+<!-- UsageSnippet language="php" operationID="AgentReplyController_handleAgentReplyHandler" method="post" path="/v1/agents/{agentId}/reply" example="humanApprove" -->
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use novu;
+use novu\Models\Components;
+
+$sdk = novu\Novu::builder()
+    ->setSecurity(
+        'YOUR_SECRET_KEY_HERE'
+    )
+    ->build();
+
+$agentReplyPayloadDto = new Components\AgentReplyPayloadDto(
+    conversationId: '64f5a1c2e8b7a3d9f0c1b2a3',
+    integrationIdentifier: 'slack-support',
+    signals: [
+        new Components\HumanSignalDto(
+            type: Components\HumanSignalDtoType::Human,
+            kind: Components\Kind::Approve,
+            prompt: 'Deploy v2.4.1 to production?',
+            requestId: 'hr_7c2e1a3b-4d5f-6789-abcd-ef0123456789',
+        ),
+    ],
+);
+
+$response = $sdk->agents->sendReply(
+    agentId: 'support-agent',
+    agentReplyPayloadDto: $agentReplyPayloadDto
+
+);
+
+if ($response->object !== null) {
+    // handle response
+}
+```
 ### Example Usage: markdownReply
 
 <!-- UsageSnippet language="php" operationID="AgentReplyController_handleAgentReplyHandler" method="post" path="/v1/agents/{agentId}/reply" example="markdownReply" -->
