@@ -36,6 +36,16 @@ class CredentialsDto
     public ?string $secretKey = null;
 
     /**
+     * Email webhook: how `secretKey` is interpreted when signing webhook calls. `text` signs with the raw UTF-8 bytes; `base64`/`hex` decode it to binary first (e.g. for AWS KMS).
+     *
+     * @var ?\novu\Models\Components\HmacSecretKeyEncoding $hmacSecretKeyEncoding
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('hmacSecretKeyEncoding')]
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\HmacSecretKeyEncoding|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?HmacSecretKeyEncoding $hmacSecretKeyEncoding = null;
+
+    /**
      *
      * @var ?string $domain
      */
@@ -219,6 +229,14 @@ class CredentialsDto
     #[\Speakeasy\Serializer\Annotation\SerializedName('ipPoolName')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $ipPoolName = null;
+
+    /**
+     *
+     * @var ?string $configurationSetName
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('configurationSetName')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $configurationSetName = null;
 
     /**
      *
@@ -469,6 +487,7 @@ class CredentialsDto
      * @param  ?string  $apiKey
      * @param  ?string  $user
      * @param  ?string  $secretKey
+     * @param  ?\novu\Models\Components\HmacSecretKeyEncoding  $hmacSecretKeyEncoding
      * @param  ?string  $domain
      * @param  ?string  $password
      * @param  ?string  $host
@@ -492,6 +511,7 @@ class CredentialsDto
      * @param  ?bool  $hmac
      * @param  ?string  $serviceAccount
      * @param  ?string  $ipPoolName
+     * @param  ?string  $configurationSetName
      * @param  ?string  $apiKeyRequestHeader
      * @param  ?string  $secretKeyRequestHeader
      * @param  ?string  $idPath
@@ -524,11 +544,12 @@ class CredentialsDto
      * @param  ?string  $externalWorkspaceId
      * @phpstan-pure
      */
-    public function __construct(?string $apiKey = null, ?string $user = null, ?string $secretKey = null, ?string $domain = null, ?string $password = null, ?string $host = null, ?string $port = null, ?bool $secure = null, ?string $region = null, ?string $accountSid = null, ?string $messageProfileId = null, ?string $token = null, ?string $from = null, ?string $senderName = null, ?string $projectName = null, ?string $applicationId = null, ?string $clientId = null, ?bool $requireTls = null, ?bool $ignoreTls = null, ?TlsOptions $tlsOptions = null, ?string $baseUrl = null, ?string $webhookUrl = null, ?string $redirectUrl = null, ?bool $hmac = null, ?string $serviceAccount = null, ?string $ipPoolName = null, ?string $apiKeyRequestHeader = null, ?string $secretKeyRequestHeader = null, ?string $idPath = null, ?string $datePath = null, ?string $apiToken = null, ?bool $authenticateByToken = null, ?string $authenticationTokenKey = null, ?string $instanceId = null, ?string $alertUid = null, ?string $title = null, ?string $imageUrl = null, ?string $state = null, ?string $externalLink = null, ?string $channelId = null, ?string $phoneNumberIdentification = null, ?string $accessKey = null, ?string $appSid = null, ?string $senderId = null, ?string $tenantId = null, ?string $appIOBaseUrl = null, ?string $signingSecret = null, ?string $outboundIntegrationId = null, ?string $outboundConnectedAt = null, ?string $whatsNextCompletedAt = null, ?bool $useFromAddressOverride = null, ?string $fromAddressOverride = null, ?string $emailSlugPrefix = null, ?string $externalEnvironmentId = null, ?string $externalVaultId = null, ?string $externalWorkspaceId = null)
+    public function __construct(?string $apiKey = null, ?string $user = null, ?string $secretKey = null, ?HmacSecretKeyEncoding $hmacSecretKeyEncoding = null, ?string $domain = null, ?string $password = null, ?string $host = null, ?string $port = null, ?bool $secure = null, ?string $region = null, ?string $accountSid = null, ?string $messageProfileId = null, ?string $token = null, ?string $from = null, ?string $senderName = null, ?string $projectName = null, ?string $applicationId = null, ?string $clientId = null, ?bool $requireTls = null, ?bool $ignoreTls = null, ?TlsOptions $tlsOptions = null, ?string $baseUrl = null, ?string $webhookUrl = null, ?string $redirectUrl = null, ?bool $hmac = null, ?string $serviceAccount = null, ?string $ipPoolName = null, ?string $configurationSetName = null, ?string $apiKeyRequestHeader = null, ?string $secretKeyRequestHeader = null, ?string $idPath = null, ?string $datePath = null, ?string $apiToken = null, ?bool $authenticateByToken = null, ?string $authenticationTokenKey = null, ?string $instanceId = null, ?string $alertUid = null, ?string $title = null, ?string $imageUrl = null, ?string $state = null, ?string $externalLink = null, ?string $channelId = null, ?string $phoneNumberIdentification = null, ?string $accessKey = null, ?string $appSid = null, ?string $senderId = null, ?string $tenantId = null, ?string $appIOBaseUrl = null, ?string $signingSecret = null, ?string $outboundIntegrationId = null, ?string $outboundConnectedAt = null, ?string $whatsNextCompletedAt = null, ?bool $useFromAddressOverride = null, ?string $fromAddressOverride = null, ?string $emailSlugPrefix = null, ?string $externalEnvironmentId = null, ?string $externalVaultId = null, ?string $externalWorkspaceId = null)
     {
         $this->apiKey = $apiKey;
         $this->user = $user;
         $this->secretKey = $secretKey;
+        $this->hmacSecretKeyEncoding = $hmacSecretKeyEncoding;
         $this->domain = $domain;
         $this->password = $password;
         $this->host = $host;
@@ -552,6 +573,7 @@ class CredentialsDto
         $this->hmac = $hmac;
         $this->serviceAccount = $serviceAccount;
         $this->ipPoolName = $ipPoolName;
+        $this->configurationSetName = $configurationSetName;
         $this->apiKeyRequestHeader = $apiKeyRequestHeader;
         $this->secretKeyRequestHeader = $secretKeyRequestHeader;
         $this->idPath = $idPath;
