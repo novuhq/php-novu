@@ -18,4 +18,6 @@ enum ContentIssueEnum: string
     case MissingValue = 'MISSING_VALUE';
     case TierLimitExceeded = 'TIER_LIMIT_EXCEEDED';
     case UnsupportedProperty = 'UNSUPPORTED_PROPERTY';
+    case ChatCardLimitExceeded = 'CHAT_CARD_LIMIT_EXCEEDED';
+    case ChatCardInvalidButton = 'CHAT_CARD_INVALID_BUTTON';
 }
