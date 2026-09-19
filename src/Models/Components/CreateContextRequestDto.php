@@ -38,15 +38,26 @@ class CreateContextRequestDto
     public ?array $data = null;
 
     /**
+     * Optional bridge URL override for agent connect. When an inbound agent turn resolves this context, its bridge call is routed here instead of the agent default bridge URL. Must be a publicly reachable URL.
+     *
+     * @var ?string $bridgeUrl
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('bridgeUrl')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $bridgeUrl = null;
+
+    /**
      * @param  string  $type
      * @param  string  $id
      * @param  ?array<string, mixed>  $data
+     * @param  ?string  $bridgeUrl
      * @phpstan-pure
      */
-    public function __construct(string $type, string $id, ?array $data = null)
+    public function __construct(string $type, string $id, ?array $data = null, ?string $bridgeUrl = null)
     {
         $this->type = $type;
         $this->id = $id;
         $this->data = $data;
+        $this->bridgeUrl = $bridgeUrl;
     }
 }
