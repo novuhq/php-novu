@@ -32,6 +32,16 @@ class ChatStepResponseDtoControlValues
     public ?string $body = null;
 
     /**
+     * Type of editor to use for the body. When omitted, inferred from the body: Maily JSON is "block", otherwise "text".
+     *
+     * @var ?\novu\Models\Components\ChatStepResponseDtoEditorType $editorType
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('editorType')]
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ChatStepResponseDtoEditorType|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?ChatStepResponseDtoEditorType $editorType = null;
+
+    /**
      * $additionalProperties
      *
      * @var ?array<string, mixed> $additionalProperties
@@ -44,13 +54,15 @@ class ChatStepResponseDtoControlValues
     /**
      * @param  ?array<string, mixed>  $skip
      * @param  ?string  $body
+     * @param  ?\novu\Models\Components\ChatStepResponseDtoEditorType  $editorType
      * @param  ?array<string, mixed>  $additionalProperties
      * @phpstan-pure
      */
-    public function __construct(?array $skip = null, ?string $body = null, ?array $additionalProperties = null)
+    public function __construct(?array $skip = null, ?string $body = null, ?ChatStepResponseDtoEditorType $editorType = null, ?array $additionalProperties = null)
     {
         $this->skip = $skip;
         $this->body = $body;
+        $this->editorType = $editorType;
         $this->additionalProperties = $additionalProperties;
     }
 }
