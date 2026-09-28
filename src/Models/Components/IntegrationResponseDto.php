@@ -97,12 +97,12 @@ class IntegrationResponseDto
     /**
      * Distinguishes delivery integrations from agent-runtime integrations. Defaults to "delivery". Agent integrations do not have a channel.
      *
-     * @var ?\novu\Models\Components\Kind $kind
+     * @var ?\novu\Models\Components\IntegrationResponseDtoKind $kind
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('kind')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\Kind|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\IntegrationResponseDtoKind|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?Kind $kind = null;
+    public ?IntegrationResponseDtoKind $kind = null;
 
     /**
      * The decrypted credentials required for the integration to function (e.g. provider API keys, signing secrets). Only returned to dashboard/session-token callers; API-key authenticated callers receive the integration metadata without this field to avoid amplifying API-key leaks into provider-credential leaks.
@@ -143,14 +143,25 @@ class IntegrationResponseDto
     public ?string $deletedBy = null;
 
     /**
-     * An array of conditions associated with the integration that may influence its behavior or processing logic.
+     * Legacy StepFilter conditions. Ignored when `rules` is also set.
      *
      * @var ?array<\novu\Models\Components\StepFilterDto> $conditions
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('conditions')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\StepFilterDto>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $conditions = null;
+
+    /**
+     * JSONLogic used at send time to select this integration. Takes precedence over `conditions`.
+     *
+     * @var ?array<string, mixed> $rules
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('rules')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $rules = null;
 
     /**
      * @param  string  $environmentId
@@ -163,15 +174,16 @@ class IntegrationResponseDto
      * @param  bool  $primary
      * @param  ?string  $id
      * @param  ?\novu\Models\Components\IntegrationResponseDtoChannel  $channel
-     * @param  ?\novu\Models\Components\Kind  $kind
+     * @param  ?\novu\Models\Components\IntegrationResponseDtoKind  $kind
      * @param  ?\novu\Models\Components\CredentialsDto  $credentials
      * @param  ?\novu\Models\Components\ConfigurationsDto  $configurations
      * @param  ?string  $deletedAt
      * @param  ?string  $deletedBy
      * @param  ?array<\novu\Models\Components\StepFilterDto>  $conditions
+     * @param  ?array<string, mixed>  $rules
      * @phpstan-pure
      */
-    public function __construct(string $environmentId, string $organizationId, string $name, string $identifier, string $providerId, bool $active, bool $deleted, bool $primary, ?string $id = null, ?IntegrationResponseDtoChannel $channel = null, ?Kind $kind = null, ?CredentialsDto $credentials = null, ?ConfigurationsDto $configurations = null, ?string $deletedAt = null, ?string $deletedBy = null, ?array $conditions = null)
+    public function __construct(string $environmentId, string $organizationId, string $name, string $identifier, string $providerId, bool $active, bool $deleted, bool $primary, ?string $id = null, ?IntegrationResponseDtoChannel $channel = null, ?IntegrationResponseDtoKind $kind = null, ?CredentialsDto $credentials = null, ?ConfigurationsDto $configurations = null, ?string $deletedAt = null, ?string $deletedBy = null, ?array $conditions = null, ?array $rules = null)
     {
         $this->environmentId = $environmentId;
         $this->organizationId = $organizationId;
@@ -189,5 +201,6 @@ class IntegrationResponseDto
         $this->deletedAt = $deletedAt;
         $this->deletedBy = $deletedBy;
         $this->conditions = $conditions;
+        $this->rules = $rules;
     }
 }

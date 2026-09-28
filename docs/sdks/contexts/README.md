@@ -43,6 +43,7 @@ $createContextRequestDto = new Components\CreateContextRequestDto(
             'theme' => 'dark',
         ],
     ],
+    bridgeUrl: 'https://tenant-acme.example.com/api/novu',
 );
 
 $response = $sdk->contexts->create(
@@ -166,6 +167,7 @@ $updateContextRequestDto = new Components\UpdateContextRequestDto(
             'theme' => 'dark',
         ],
     ],
+    bridgeUrl: 'https://tenant-acme.example.com/api/novu',
 );
 
 $response = $sdk->contexts->update(

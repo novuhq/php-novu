@@ -31,13 +31,25 @@ class ChatControlDto
     public ?string $body = null;
 
     /**
+     * Type of editor to use for the body. When omitted, inferred from the body: Maily JSON is "block", otherwise "text".
+     *
+     * @var ?\novu\Models\Components\ChatControlDtoEditorType $editorType
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('editorType')]
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ChatControlDtoEditorType|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?ChatControlDtoEditorType $editorType = null;
+
+    /**
      * @param  ?array<string, mixed>  $skip
      * @param  ?string  $body
+     * @param  ?\novu\Models\Components\ChatControlDtoEditorType  $editorType
      * @phpstan-pure
      */
-    public function __construct(?array $skip = null, ?string $body = null)
+    public function __construct(?array $skip = null, ?string $body = null, ?ChatControlDtoEditorType $editorType = null)
     {
         $this->skip = $skip;
         $this->body = $body;
+        $this->editorType = $editorType;
     }
 }

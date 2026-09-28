@@ -68,12 +68,12 @@ class AgentReplyPayloadDto
     public ?ResolveDto $resolve = null;
 
     /**
-     * Side-effect signals executed during this turn: conversation metadata mutations or Novu workflow triggers.
+     * Side-effect signals executed during this turn: conversation metadata mutations, Novu workflow triggers, or human-in-the-loop interactions.
      *
-     * @var ?array<\novu\Models\Components\MetadataSetSignalDto|\novu\Models\Components\MetadataDeleteSignalDto|\novu\Models\Components\MetadataClearSignalDto|\novu\Models\Components\TriggerSignalDto> $signals
+     * @var ?array<\novu\Models\Components\MetadataSetSignalDto|\novu\Models\Components\MetadataDeleteSignalDto|\novu\Models\Components\MetadataClearSignalDto|\novu\Models\Components\TriggerSignalDto|\novu\Models\Components\HumanSignalDto> $signals
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('signals')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\MetadataSetSignalDto|\novu\Models\Components\MetadataDeleteSignalDto|\novu\Models\Components\MetadataClearSignalDto|\novu\Models\Components\TriggerSignalDto>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\MetadataSetSignalDto|\novu\Models\Components\MetadataDeleteSignalDto|\novu\Models\Components\MetadataClearSignalDto|\novu\Models\Components\TriggerSignalDto|\novu\Models\Components\HumanSignalDto>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $signals = null;
 
@@ -133,7 +133,7 @@ class AgentReplyPayloadDto
      * @param  ?\novu\Models\Components\ToolApprovalRequestPayloadDto  $toolApprovalRequest
      * @param  ?\novu\Models\Components\EditPayloadDto  $edit
      * @param  ?\novu\Models\Components\ResolveDto  $resolve
-     * @param  ?array<\novu\Models\Components\MetadataSetSignalDto|\novu\Models\Components\MetadataDeleteSignalDto|\novu\Models\Components\MetadataClearSignalDto|\novu\Models\Components\TriggerSignalDto>  $signals
+     * @param  ?array<\novu\Models\Components\MetadataSetSignalDto|\novu\Models\Components\MetadataDeleteSignalDto|\novu\Models\Components\MetadataClearSignalDto|\novu\Models\Components\TriggerSignalDto|\novu\Models\Components\HumanSignalDto>  $signals
      * @param  ?array<\novu\Models\Components\ToolResultDto>  $toolResults
      * @param  ?array<\novu\Models\Components\AddReactionPayloadDto>  $addReactions
      * @param  ?array<\novu\Models\Components\DeleteMessagePayloadDto>  $deleteMessages

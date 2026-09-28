@@ -94,7 +94,16 @@ $sdk = novu\Novu::builder()
     )
     ->build();
 
-$createIntegrationRequestDto = new Components\CreateIntegrationRequestDto();
+$createIntegrationRequestDto = new Components\CreateIntegrationRequestDto(
+    rules: [
+        '==' => [
+            [
+                'var' => 'context.tenant.id',
+            ],
+            'acme',
+        ],
+    ],
+);
 
 $response = $sdk->integrations->create(
     createIntegrationRequestDto: $createIntegrationRequestDto
@@ -148,7 +157,16 @@ $sdk = novu\Novu::builder()
     )
     ->build();
 
-$updateIntegrationRequestDto = new Components\UpdateIntegrationRequestDto();
+$updateIntegrationRequestDto = new Components\UpdateIntegrationRequestDto(
+    rules: [
+        '==' => [
+            [
+                'var' => 'context.tenant.id',
+            ],
+            'acme',
+        ],
+    ],
+);
 
 $response = $sdk->integrations->update(
     integrationId: '<id>',
