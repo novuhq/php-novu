@@ -23,19 +23,19 @@ class MarkMessageActionAsSeenDto
     /**
      * Message action payload
      *
-     * @var ?\novu\Models\Components\MarkMessageActionAsSeenDtoPayload $payload
+     * @var ?array<string, mixed> $payload
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('payload')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\MarkMessageActionAsSeenDtoPayload|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?MarkMessageActionAsSeenDtoPayload $payload = null;
+    public ?array $payload = null;
 
     /**
      * @param  \novu\Models\Components\MarkMessageActionAsSeenDtoStatus  $status
-     * @param  ?\novu\Models\Components\MarkMessageActionAsSeenDtoPayload  $payload
+     * @param  ?array<string, mixed>  $payload
      * @phpstan-pure
      */
-    public function __construct(MarkMessageActionAsSeenDtoStatus $status, ?MarkMessageActionAsSeenDtoPayload $payload = null)
+    public function __construct(MarkMessageActionAsSeenDtoStatus $status, ?array $payload = null)
     {
         $this->status = $status;
         $this->payload = $payload;

@@ -28,21 +28,22 @@ class TenantPayloadDto
     public ?string $name = null;
 
     /**
+     * $data
      *
-     * @var ?\novu\Models\Components\Data $data
+     * @var ?array<string, mixed> $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\Data|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?Data $data = null;
+    public ?array $data = null;
 
     /**
      * @param  ?string  $identifier
      * @param  ?string  $name
-     * @param  ?\novu\Models\Components\Data  $data
+     * @param  ?array<string, mixed>  $data
      * @phpstan-pure
      */
-    public function __construct(?string $identifier = null, ?string $name = null, ?Data $data = null)
+    public function __construct(?string $identifier = null, ?string $name = null, ?array $data = null)
     {
         $this->identifier = $identifier;
         $this->name = $name;

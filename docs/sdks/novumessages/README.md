@@ -37,7 +37,7 @@ $sdk = novu\Novu::builder()
 
 $request = new Operations\SubscribersV1ControllerMarkActionAsSeenRequest(
     messageId: '<id>',
-    type: '<value>',
+    type: Operations\Type::Primary,
     subscriberId: '<id>',
     markMessageActionAsSeenDto: new Components\MarkMessageActionAsSeenDto(
         status: Components\MarkMessageActionAsSeenDtoStatus::Pending,

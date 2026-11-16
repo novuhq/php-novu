@@ -47,17 +47,28 @@ class ResourceDiffDtoUpdatedBy
     public ?string $lastName = null;
 
     /**
+     * User email, used when the user has no name
+     *
+     * @var ?string $email
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('email')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $email = null;
+
+    /**
      * @param  string  $id
      * @param  string  $firstName
      * @param  ?string  $externalId
      * @param  ?string  $lastName
+     * @param  ?string  $email
      * @phpstan-pure
      */
-    public function __construct(string $id, string $firstName, ?string $externalId = null, ?string $lastName = null)
+    public function __construct(string $id, string $firstName, ?string $externalId = null, ?string $lastName = null, ?string $email = null)
     {
         $this->id = $id;
         $this->firstName = $firstName;
         $this->externalId = $externalId;
         $this->lastName = $lastName;
+        $this->email = $email;
     }
 }

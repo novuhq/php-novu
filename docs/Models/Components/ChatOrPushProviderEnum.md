@@ -9,6 +9,7 @@ The provider identifier for the credentials
 | ------------------ | ------------------ |
 | `Slack`            | slack              |
 | `Discord`          | discord            |
+| `GoogleChat`       | google-chat        |
 | `Msteams`          | msteams            |
 | `WebexMessaging`   | webex-messaging    |
 | `Mattermost`       | mattermost         |
@@ -23,6 +24,7 @@ The provider identifier for the credentials
 | `NovuSlack`        | novu-slack         |
 | `Telegram`         | telegram           |
 | `Sendblue`         | sendblue           |
+| `PhotonImessage`   | photon-imessage    |
 | `NovuWebChat`      | novu-web-chat      |
 | `Fcm`              | fcm                |
 | `Apns`             | apns               |

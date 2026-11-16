@@ -48,7 +48,6 @@ class AgentIntegrationSummaryDto
     public bool $active;
 
     /**
-     * Channel type through which the message is sent
      *
      * @var ?\novu\Models\Components\ChannelTypeEnum $channel
      */

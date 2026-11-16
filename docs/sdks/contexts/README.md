@@ -43,6 +43,7 @@ $createContextRequestDto = new Components\CreateContextRequestDto(
             'theme' => 'dark',
         ],
     ],
+    bridgeUrl: 'https://tenant-acme.example.com/api/novu',
 );
 
 $response = $sdk->contexts->create(
@@ -102,6 +103,7 @@ $sdk = novu\Novu::builder()
 
 $request = new Operations\ContextsControllerListContextsRequest(
     limit: 10,
+    type: 'tenant',
     id: 'tenant-prod-123',
     search: 'tenant',
 );
@@ -166,6 +168,7 @@ $updateContextRequestDto = new Components\UpdateContextRequestDto(
             'theme' => 'dark',
         ],
     ],
+    bridgeUrl: 'https://tenant-acme.example.com/api/novu',
 );
 
 $response = $sdk->contexts->update(

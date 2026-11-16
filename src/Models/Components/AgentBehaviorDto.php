@@ -22,16 +22,6 @@ class AgentBehaviorDto
     public ?SubscriberAccess $subscriberAccess = null;
 
     /**
-     * Cross-platform emoji name for resolved conversations (e.g. "check", "star"). Set to null to disable. Default: "check"
-     *
-     * @var ?\novu\Models\Components\ReactionOnResolved $reactionOnResolved
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('reactionOnResolved')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ReactionOnResolved|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?ReactionOnResolved $reactionOnResolved = null;
-
-    /**
      * Acknowledge incoming messages. On platforms that support a native typing indicator (e.g. Slack, WhatsApp, Microsoft Teams, Telegram), shows a "Typing…" indicator while the agent processes the message. On platforms that do not (e.g. Email), reacts with an "eyes" emoji to the first inbound message in a thread. Default: true
      *
      * @var ?bool $acknowledgeOnReceived
@@ -41,15 +31,36 @@ class AgentBehaviorDto
     public ?bool $acknowledgeOnReceived = null;
 
     /**
+     * How the agent replies in shared rooms. "mention_only" requires an @mention in every shared room. "auto_reply" replies to unmentioned follow-ups in a nested Slack or Teams thread after the agent has joined. "smart" behaves like auto_reply while one person is talking to the agent in a thread, then requires an @mention there once someone else or another agent joins, or the incumbent @mentions another teammate. Create persists "smart". An omitted field on existing agents still means "auto_reply". DMs always reply without a mention. Optional on update (partial PATCH).
+     *
+     * @var ?\novu\Models\Components\ReplyPolicy $replyPolicy
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('replyPolicy')]
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ReplyPolicy|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?ReplyPolicy $replyPolicy = null;
+
+    /**
+     * Cross-platform emoji name for resolved conversations (e.g. "check", "star"). Set to null to disable. Default: "check"
+     *
+     * @var ?string $reactionOnResolved
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('reactionOnResolved')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $reactionOnResolved = null;
+
+    /**
      * @param  ?bool  $acknowledgeOnReceived
      * @param  ?\novu\Models\Components\SubscriberAccess  $subscriberAccess
-     * @param  ?\novu\Models\Components\ReactionOnResolved  $reactionOnResolved
+     * @param  ?\novu\Models\Components\ReplyPolicy  $replyPolicy
+     * @param  ?string  $reactionOnResolved
      * @phpstan-pure
      */
-    public function __construct(?SubscriberAccess $subscriberAccess = null, ?ReactionOnResolved $reactionOnResolved = null, ?bool $acknowledgeOnReceived = true)
+    public function __construct(?SubscriberAccess $subscriberAccess = null, ?bool $acknowledgeOnReceived = true, ?ReplyPolicy $replyPolicy = ReplyPolicy::AutoReply, ?string $reactionOnResolved = 'check')
     {
         $this->subscriberAccess = $subscriberAccess;
-        $this->reactionOnResolved = $reactionOnResolved;
         $this->acknowledgeOnReceived = $acknowledgeOnReceived;
+        $this->replyPolicy = $replyPolicy;
+        $this->reactionOnResolved = $reactionOnResolved;
     }
 }

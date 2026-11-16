@@ -9,6 +9,7 @@ The ID of the chat or push provider.
 | ------------------ | ------------------ |
 | `Slack`            | slack              |
 | `Discord`          | discord            |
+| `GoogleChat`       | google-chat        |
 | `Msteams`          | msteams            |
 | `WebexMessaging`   | webex-messaging    |
 | `Mattermost`       | mattermost         |
@@ -23,6 +24,7 @@ The ID of the chat or push provider.
 | `NovuSlack`        | novu-slack         |
 | `Telegram`         | telegram           |
 | `Sendblue`         | sendblue           |
+| `PhotonImessage`   | photon-imessage    |
 | `NovuWebChat`      | novu-web-chat      |
 | `Fcm`              | fcm                |
 | `Apns`             | apns               |

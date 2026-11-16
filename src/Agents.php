@@ -53,10 +53,9 @@ class Agents
     /**
      * Send an agent reply
      *
-     * Send a message or side-effect into an existing agent conversation from your backend.
-     *
-     * Use this endpoint when you are not using `@novu/framework` (for example Python, Go, PHP, .NET, or Java SDKs),
-     * or when a server process outside the bridge needs to post into a live conversation.
+     * **Deprecated** — use `POST /v1/agents/events/ingest` (AgentEvent protocol).
+     * This route stays live for old `@novu/framework` and existing OpenAPI `sendReply` clients.
+     * Do not use it for new integrations.
      *
      * **Message actions**
      * - `reply` — markdown, interactive card, or tool-approval card (optional `files`)
@@ -82,9 +81,11 @@ class Agents
      * @param  ?string  $idempotencyKey
      * @return \novu\Models\Operations\AgentReplyControllerHandleAgentReplyHandlerResponse
      * @throws \novu\Models\Errors\APIException
+     * @deprecated  method: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     public function sendReply(Components\AgentReplyPayloadDto $agentReplyPayloadDto, string $agentId, ?string $idempotencyKey = null, ?Options $options = null): Operations\AgentReplyControllerHandleAgentReplyHandlerResponse
     {
+        trigger_error('Method '.__METHOD__.' is deprecated', E_USER_DEPRECATED);
         $retryConfig = null;
         if ($options) {
             $retryConfig = $options->retryConfig;

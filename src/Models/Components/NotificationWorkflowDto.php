@@ -44,7 +44,7 @@ class NotificationWorkflowDto
     public bool $critical;
 
     /**
-     * Severity of the workflow
+     * Override the severity of the workflow
      *
      * @var \novu\Models\Components\SeverityLevelEnum $severity
      */

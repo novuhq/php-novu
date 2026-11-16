@@ -51,15 +51,12 @@ class SubscribersNotifications
      *
      * This API is deprecated, use v2 API instead. Retrieve unseen in-app notifications count for a subscriber by its unique key identifier **subscriberId**.
      *
-     * @param  string  $subscriberId
-     * @param  ?bool  $seen
-     * @param  ?float  $limit
-     * @param  ?string  $idempotencyKey
+     * @param  \novu\Models\Operations\SubscribersV1ControllerGetUnseenCountRequest  $request
      * @return \novu\Models\Operations\SubscribersV1ControllerGetUnseenCountResponse
      * @throws \novu\Models\Errors\APIException
      * @deprecated  method: This will be removed in a future release, please migrate away from it as soon as possible.
      */
-    public function getUnseenCount(string $subscriberId, ?bool $seen = null, ?float $limit = null, ?string $idempotencyKey = null, ?Options $options = null): Operations\SubscribersV1ControllerGetUnseenCountResponse
+    public function getUnseenCount(Operations\SubscribersV1ControllerGetUnseenCountRequest $request, ?Options $options = null): Operations\SubscribersV1ControllerGetUnseenCountResponse
     {
         trigger_error('Method '.__METHOD__.' is deprecated', E_USER_DEPRECATED);
         $retryConfig = null;
@@ -89,12 +86,6 @@ class SubscribersNotifications
                 '5XX',
             ];
         }
-        $request = new Operations\SubscribersV1ControllerGetUnseenCountRequest(
-            subscriberId: $subscriberId,
-            seen: $seen,
-            limit: $limit,
-            idempotencyKey: $idempotencyKey,
-        );
         $baseUrl = $this->sdkConfiguration->getTemplatedServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/v1/subscribers/{subscriberId}/notifications/unseen', Operations\SubscribersV1ControllerGetUnseenCountRequest::class, $request);
         $urlOverride = null;

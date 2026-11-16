@@ -62,7 +62,7 @@ class PushStepResponseDto
     public string $slug;
 
     /**
-     * Type of the step
+     * Channels of the notification
      *
      * @var \novu\Models\Components\StepTypeEnum $type
      */
@@ -71,7 +71,7 @@ class PushStepResponseDto
     public StepTypeEnum $type;
 
     /**
-     * Origin of the layout
+     * Origin of the workflow
      *
      * @var \novu\Models\Components\ResourceOriginEnum $origin
      */
@@ -135,6 +135,16 @@ class PushStepResponseDto
     public ?array $providerOverrides = null;
 
     /**
+     * Per-integration content overrides keyed by providerId, then by integration identifier. Each entry is merged over the matching providerOverrides entry, only for sends through that integration. Trigger-time overrides still take precedence. Entries whose integration does not exist in the environment are kept but not applied.
+     *
+     * @var ?array<string, array<string, array<string, mixed>>> $integrationOverrides
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('integrationOverrides')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, array<string, array<string, mixed>>>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $integrationOverrides = null;
+
+    /**
      * @param  \novu\Models\Components\PushControlsMetadataResponseDto  $controls
      * @param  array<string, mixed>  $variables
      * @param  string  $stepId
@@ -149,9 +159,10 @@ class PushStepResponseDto
      * @param  ?\novu\Models\Components\StepIssuesDto  $issues
      * @param  ?string  $stepResolverHash
      * @param  ?array<string, array<string, mixed>>  $providerOverrides
+     * @param  ?array<string, array<string, array<string, mixed>>>  $integrationOverrides
      * @phpstan-pure
      */
-    public function __construct(PushControlsMetadataResponseDto $controls, array $variables, string $stepId, string $id, string $name, string $slug, StepTypeEnum $type, ResourceOriginEnum $origin, string $workflowId, string $workflowDatabaseId, ?PushStepResponseDtoControlValues $controlValues = null, ?StepIssuesDto $issues = null, ?string $stepResolverHash = null, ?array $providerOverrides = null)
+    public function __construct(PushControlsMetadataResponseDto $controls, array $variables, string $stepId, string $id, string $name, string $slug, StepTypeEnum $type, ResourceOriginEnum $origin, string $workflowId, string $workflowDatabaseId, ?PushStepResponseDtoControlValues $controlValues = null, ?StepIssuesDto $issues = null, ?string $stepResolverHash = null, ?array $providerOverrides = null, ?array $integrationOverrides = null)
     {
         $this->controls = $controls;
         $this->variables = $variables;
@@ -167,5 +178,6 @@ class PushStepResponseDto
         $this->issues = $issues;
         $this->stepResolverHash = $stepResolverHash;
         $this->providerOverrides = $providerOverrides;
+        $this->integrationOverrides = $integrationOverrides;
     }
 }

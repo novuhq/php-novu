@@ -69,7 +69,7 @@ class WorkflowResponseDto
     public array $steps;
 
     /**
-     * Origin of the layout
+     * Origin of the workflow
      *
      * @var \novu\Models\Components\ResourceOriginEnum $origin
      */
@@ -96,7 +96,7 @@ class WorkflowResponseDto
     public WorkflowStatusEnum $status;
 
     /**
-     * Severity of the workflow
+     * Override the severity of the workflow
      *
      * @var \novu\Models\Components\SeverityLevelEnum $severity
      */
@@ -135,10 +135,10 @@ class WorkflowResponseDto
     /**
      * Runtime issues for workflow creation and update
      *
-     * @var ?array<string, \novu\Models\Components\RuntimeIssueDto> $issues
+     * @var ?array<string, array<\novu\Models\Components\RuntimeIssueDto>> $issues
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('issues')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<string, \novu\Models\Components\RuntimeIssueDto>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, array<\novu\Models\Components\RuntimeIssueDto>>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $issues = null;
 
@@ -245,7 +245,7 @@ class WorkflowResponseDto
      * @param  ?bool  $active
      * @param  ?bool  $validatePayload
      * @param  ?bool  $isTranslationEnabled
-     * @param  ?array<string, \novu\Models\Components\RuntimeIssueDto>  $issues
+     * @param  ?array<string, array<\novu\Models\Components\RuntimeIssueDto>>  $issues
      * @param  ?array<string, mixed>  $payloadSchema
      * @param  ?\novu\Models\Components\WorkflowResponseDtoAgent  $agent
      * @param  ?\novu\Models\Components\WorkflowResponseDtoUpdatedBy  $updatedBy

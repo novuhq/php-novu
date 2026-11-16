@@ -75,7 +75,7 @@ class UpdateWorkflowDto
     public ?string $workflowId = null;
 
     /**
-     * Origin of the layout
+     * Origin of the workflow
      *
      * @var ?\novu\Models\Components\ResourceOriginEnum $origin
      */
@@ -85,7 +85,7 @@ class UpdateWorkflowDto
     public ?ResourceOriginEnum $origin = null;
 
     /**
-     * Severity of the workflow
+     * Override the severity of the workflow
      *
      * @var ?\novu\Models\Components\SeverityLevelEnum $severity
      */

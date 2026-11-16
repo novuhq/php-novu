@@ -1,11 +1,13 @@
 # Kind
 
-Distinguishes delivery integrations from agent-runtime integrations. Defaults to "delivery". Agent integrations do not have a channel.
+Interaction verb queued by `ctx.ask` / `ctx.approve` / `ctx.choose` / `ctx.tell`.
 
 
 ## Values
 
-| Name       | Value      |
-| ---------- | ---------- |
-| `Delivery` | delivery   |
-| `Agent`    | agent      |
+| Name      | Value     |
+| --------- | --------- |
+| `Ask`     | ask       |
+| `Approve` | approve   |
+| `Choose`  | choose    |
+| `Tell`    | tell      |

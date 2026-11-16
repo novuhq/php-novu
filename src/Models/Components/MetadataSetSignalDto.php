@@ -30,11 +30,11 @@ class MetadataSetSignalDto
     /**
      * JSON-serializable value to store.
      *
-     * @var \novu\Models\Components\MetadataSetSignalDtoValue $value
+     * @var string|float|bool|array<string, mixed>|array<mixed> $value
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('value')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\MetadataSetSignalDtoValue')]
-    public MetadataSetSignalDtoValue $value;
+    #[\Speakeasy\Serializer\Annotation\Type('string|float|bool|array<string, mixed>|array<mixed>')]
+    public string|float|bool|array $value;
 
     /**
      * Defaults to `set` when omitted.
@@ -49,11 +49,11 @@ class MetadataSetSignalDto
     /**
      * @param  \novu\Models\Components\MetadataSetSignalDtoType  $type
      * @param  string  $key
-     * @param  \novu\Models\Components\MetadataSetSignalDtoValue  $value
+     * @param  string|float|bool|array<string, mixed>|array<mixed>  $value
      * @param  ?\novu\Models\Components\Action  $action
      * @phpstan-pure
      */
-    public function __construct(MetadataSetSignalDtoType $type, string $key, MetadataSetSignalDtoValue $value, ?Action $action = Action::Set)
+    public function __construct(MetadataSetSignalDtoType $type, string $key, string|float|bool|array $value, ?Action $action = Action::Set)
     {
         $this->type = $type;
         $this->key = $key;

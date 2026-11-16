@@ -12,7 +12,7 @@ namespace novu\Models\Components;
 class DiffEnvironmentRequestDto
 {
     /**
-     * Source environment ID to compare from. Defaults to the Development environment if not provided.
+     * Source environment ID. Only the Development environment is currently supported; defaults to Development if omitted.
      *
      * @var ?string $sourceEnvironmentId
      */

@@ -20,7 +20,7 @@ class ToolStepUpsertDto
     public string $name;
 
     /**
-     * Type of the step
+     * Channels of the notification
      *
      * @var \novu\Models\Components\StepTypeEnum $type
      */
@@ -67,15 +67,26 @@ class ToolStepUpsertDto
     public ?array $providerOverrides = null;
 
     /**
+     * Per-integration content overrides keyed by providerId, then by integration identifier. Each entry is merged over the matching providerOverrides entry, only for sends through that integration. Trigger-time overrides still take precedence. Entries whose integration does not exist in the environment are kept but not applied. Omit to leave unchanged; pass null to delete all integration overrides; pass an object to replace the full set.
+     *
+     * @var ?array<string, array<string, array<string, mixed>>> $integrationOverrides
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('integrationOverrides')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, array<string, array<string, mixed>>>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $integrationOverrides = null;
+
+    /**
      * @param  string  $name
      * @param  \novu\Models\Components\StepTypeEnum  $type
      * @param  ?string  $id
      * @param  ?string  $stepId
      * @param  \novu\Models\Components\ToolControlDto|array<string, mixed>|null  $controlValues
      * @param  ?array<string, array<string, mixed>>  $providerOverrides
+     * @param  ?array<string, array<string, array<string, mixed>>>  $integrationOverrides
      * @phpstan-pure
      */
-    public function __construct(string $name, StepTypeEnum $type, ?string $id = null, ?string $stepId = null, ToolControlDto|array|null $controlValues = null, ?array $providerOverrides = null)
+    public function __construct(string $name, StepTypeEnum $type, ?string $id = null, ?string $stepId = null, ToolControlDto|array|null $controlValues = null, ?array $providerOverrides = null, ?array $integrationOverrides = null)
     {
         $this->name = $name;
         $this->type = $type;
@@ -83,5 +94,6 @@ class ToolStepUpsertDto
         $this->stepId = $stepId;
         $this->controlValues = $controlValues;
         $this->providerOverrides = $providerOverrides;
+        $this->integrationOverrides = $integrationOverrides;
     }
 }

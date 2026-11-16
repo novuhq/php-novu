@@ -45,7 +45,7 @@ class SubscriptionPreferenceDtoWorkflow
     public bool $critical;
 
     /**
-     * Severity of the workflow
+     * Override the severity of the workflow
      *
      * @var \novu\Models\Components\SeverityLevelEnum $severity
      */
@@ -66,12 +66,12 @@ class SubscriptionPreferenceDtoWorkflow
     /**
      * Custom data associated with the workflow
      *
-     * @var ?\novu\Models\Components\SubscriptionPreferenceDtoData $data
+     * @var ?array<string, mixed> $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\SubscriptionPreferenceDtoData|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?SubscriptionPreferenceDtoData $data = null;
+    public ?array $data = null;
 
     /**
      * @param  string  $id
@@ -80,10 +80,10 @@ class SubscriptionPreferenceDtoWorkflow
      * @param  bool  $critical
      * @param  \novu\Models\Components\SeverityLevelEnum  $severity
      * @param  ?array<string>  $tags
-     * @param  ?\novu\Models\Components\SubscriptionPreferenceDtoData  $data
+     * @param  ?array<string, mixed>  $data
      * @phpstan-pure
      */
-    public function __construct(string $id, string $identifier, string $name, bool $critical, SeverityLevelEnum $severity, ?array $tags = null, ?SubscriptionPreferenceDtoData $data = null)
+    public function __construct(string $id, string $identifier, string $name, bool $critical, SeverityLevelEnum $severity, ?array $tags = null, ?array $data = null)
     {
         $this->id = $id;
         $this->identifier = $identifier;

@@ -156,13 +156,14 @@ class WorkflowResponse
     public ?NotificationGroup $notificationGroup = null;
 
     /**
+     * $data
      *
-     * @var ?\novu\Models\Components\WorkflowResponseData $data
+     * @var ?array<string, mixed> $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\WorkflowResponseData|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?WorkflowResponseData $data = null;
+    public ?array $data = null;
 
     /**
      *
@@ -193,11 +194,11 @@ class WorkflowResponse
      * @param  ?string  $id
      * @param  ?string  $parentId
      * @param  ?\novu\Models\Components\NotificationGroup  $notificationGroup
-     * @param  ?\novu\Models\Components\WorkflowResponseData  $data
+     * @param  ?array<string, mixed>  $data
      * @param  ?\novu\Models\Components\WorkflowIntegrationStatus  $workflowIntegrationStatus
      * @phpstan-pure
      */
-    public function __construct(string $name, string $description, bool $active, bool $draft, SubscriberPreferenceChannels $preferenceSettings, bool $critical, array $tags, array $steps, string $organizationId, string $creatorId, string $environmentId, array $triggers, string $notificationGroupId, bool $deleted, string $deletedAt, string $deletedBy, ?string $id = null, ?string $parentId = null, ?NotificationGroup $notificationGroup = null, ?WorkflowResponseData $data = null, ?WorkflowIntegrationStatus $workflowIntegrationStatus = null)
+    public function __construct(string $name, string $description, bool $active, bool $draft, SubscriberPreferenceChannels $preferenceSettings, bool $critical, array $tags, array $steps, string $organizationId, string $creatorId, string $environmentId, array $triggers, string $notificationGroupId, bool $deleted, string $deletedAt, string $deletedBy, ?string $id = null, ?string $parentId = null, ?NotificationGroup $notificationGroup = null, ?array $data = null, ?WorkflowIntegrationStatus $workflowIntegrationStatus = null)
     {
         $this->name = $name;
         $this->description = $description;

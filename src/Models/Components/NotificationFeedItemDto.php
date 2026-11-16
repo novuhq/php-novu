@@ -84,7 +84,6 @@ class NotificationFeedItemDto
     public string $content;
 
     /**
-     * Channel type through which the message is sent
      *
      * @var \novu\Models\Components\ChannelTypeEnum $channel
      */

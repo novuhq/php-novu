@@ -20,7 +20,7 @@ class HttpRequestStepUpsertDto
     public string $name;
 
     /**
-     * Type of the step
+     * Channels of the notification
      *
      * @var \novu\Models\Components\StepTypeEnum $type
      */

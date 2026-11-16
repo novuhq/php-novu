@@ -24,6 +24,7 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use novu;
+use novu\Models\Operations;
 
 $sdk = novu\Novu::builder()
     ->setSecurity(
@@ -31,13 +32,12 @@ $sdk = novu\Novu::builder()
     )
     ->build();
 
-
+$request = new Operations\SubscribersV1ControllerGetUnseenCountRequest(
+    subscriberId: '<id>',
+);
 
 $response = $sdk->subscribersNotifications->getUnseenCount(
-    subscriberId: '<id>',
-    seen: false,
-    limit: 100
-
+    request: $request
 );
 
 if ($response->unseenCountResponse !== null) {
@@ -47,12 +47,9 @@ if ($response->unseenCountResponse !== null) {
 
 ### Parameters
 
-| Parameter                                      | Type                                           | Required                                       | Description                                    |
-| ---------------------------------------------- | ---------------------------------------------- | ---------------------------------------------- | ---------------------------------------------- |
-| `subscriberId`                                 | *string*                                       | :heavy_check_mark:                             | N/A                                            |
-| `seen`                                         | *?bool*                                        | :heavy_minus_sign:                             | Indicates whether to count seen notifications. |
-| `limit`                                        | *?float*                                       | :heavy_minus_sign:                             | The maximum number of notifications to return. |
-| `idempotencyKey`                               | *?string*                                      | :heavy_minus_sign:                             | A header for idempotency purposes              |
+| Parameter                                                                                                                          | Type                                                                                                                               | Required                                                                                                                           | Description                                                                                                                        |
+| ---------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| `$request`                                                                                                                         | [Operations\SubscribersV1ControllerGetUnseenCountRequest](../../Models/Operations/SubscribersV1ControllerGetUnseenCountRequest.md) | :heavy_check_mark:                                                                                                                 | The request object to use for the request.                                                                                         |
 
 ### Response
 

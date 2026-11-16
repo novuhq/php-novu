@@ -85,7 +85,6 @@ class InboxNotificationDto
     public string $createdAt;
 
     /**
-     * Channel type through which the message is sent
      *
      * @var \novu\Models\Components\ChannelTypeEnum $channelType
      */
@@ -94,7 +93,7 @@ class InboxNotificationDto
     public ChannelTypeEnum $channelType;
 
     /**
-     * Severity of the workflow
+     * Override the severity of the workflow
      *
      * @var \novu\Models\Components\SeverityLevelEnum $severity
      */

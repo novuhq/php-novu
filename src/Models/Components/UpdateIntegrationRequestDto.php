@@ -62,9 +62,10 @@ class UpdateIntegrationRequestDto
     public ?bool $check = null;
 
     /**
-     * $conditions
+     * Legacy StepFilter conditions. Ignored when `rules` is also set.
      *
      * @var ?array<\novu\Models\Components\StepFilterDto> $conditions
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('conditions')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\novu\Models\Components\StepFilterDto>|null')]
@@ -74,12 +75,22 @@ class UpdateIntegrationRequestDto
     /**
      * Configurations for the integration
      *
-     * @var ?\novu\Models\Components\UpdateIntegrationRequestDtoConfigurations $configurations
+     * @var ?array<string, string> $configurations
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('configurations')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\UpdateIntegrationRequestDtoConfigurations|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, string>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?UpdateIntegrationRequestDtoConfigurations $configurations = null;
+    public ?array $configurations = null;
+
+    /**
+     * JSONLogic used at send time to select this integration. Takes precedence over `conditions`.
+     *
+     * @var ?array<string, mixed> $rules
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('rules')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $rules = null;
 
     /**
      * @param  ?string  $name
@@ -89,10 +100,11 @@ class UpdateIntegrationRequestDto
      * @param  ?\novu\Models\Components\CredentialsDto  $credentials
      * @param  ?bool  $check
      * @param  ?array<\novu\Models\Components\StepFilterDto>  $conditions
-     * @param  ?\novu\Models\Components\UpdateIntegrationRequestDtoConfigurations  $configurations
+     * @param  ?array<string, string>  $configurations
+     * @param  ?array<string, mixed>  $rules
      * @phpstan-pure
      */
-    public function __construct(?string $name = null, ?string $identifier = null, ?string $environmentId = null, ?bool $active = null, ?CredentialsDto $credentials = null, ?bool $check = null, ?array $conditions = null, ?UpdateIntegrationRequestDtoConfigurations $configurations = null)
+    public function __construct(?string $name = null, ?string $identifier = null, ?string $environmentId = null, ?bool $active = null, ?CredentialsDto $credentials = null, ?bool $check = null, ?array $conditions = null, ?array $configurations = null, ?array $rules = null)
     {
         $this->name = $name;
         $this->identifier = $identifier;
@@ -102,5 +114,6 @@ class UpdateIntegrationRequestDto
         $this->check = $check;
         $this->conditions = $conditions;
         $this->configurations = $configurations;
+        $this->rules = $rules;
     }
 }

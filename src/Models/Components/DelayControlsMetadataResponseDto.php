@@ -12,15 +12,6 @@ namespace novu\Models\Components;
 class DelayControlsMetadataResponseDto
 {
     /**
-     * Control values specific to Delay
-     *
-     * @var \novu\Models\Components\DelayControlDto $values
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('values')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\DelayControlDto')]
-    public DelayControlDto $values;
-
-    /**
      * JSON Schema for data
      *
      * @var ?array<string, mixed> $dataSchema
@@ -41,15 +32,25 @@ class DelayControlsMetadataResponseDto
     public ?UiSchema $uiSchema = null;
 
     /**
-     * @param  \novu\Models\Components\DelayControlDto  $values
+     * Control values specific to Delay
+     *
+     * @var ?\novu\Models\Components\DelayControlsMetadataResponseDtoValues $values
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('values')]
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\DelayControlsMetadataResponseDtoValues|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?DelayControlsMetadataResponseDtoValues $values = null;
+
+    /**
      * @param  ?array<string, mixed>  $dataSchema
      * @param  ?\novu\Models\Components\UiSchema  $uiSchema
+     * @param  ?\novu\Models\Components\DelayControlsMetadataResponseDtoValues  $values
      * @phpstan-pure
      */
-    public function __construct(DelayControlDto $values, ?array $dataSchema = null, ?UiSchema $uiSchema = null)
+    public function __construct(?array $dataSchema = null, ?UiSchema $uiSchema = null, ?DelayControlsMetadataResponseDtoValues $values = null)
     {
-        $this->values = $values;
         $this->dataSchema = $dataSchema;
         $this->uiSchema = $uiSchema;
+        $this->values = $values;
     }
 }

@@ -97,7 +97,7 @@ class TriggerEventToAllRequestDtoOverrides
     public ?string $layoutIdentifier = null;
 
     /**
-     * Severity of the workflow
+     * Override the severity of the workflow
      *
      * @var ?\novu\Models\Components\SeverityLevelEnum $severity
      */

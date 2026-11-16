@@ -243,7 +243,7 @@ Removes a specific layout by its unique identifier **layoutId**
 
 ### Example Usage
 
-<!-- UsageSnippet language="php" operationID="LayoutsController__delete" method="delete" path="/v2/layouts/{layoutId}" -->
+<!-- UsageSnippet language="php" operationID="LayoutsController_delete" method="delete" path="/v2/layouts/{layoutId}" -->
 ```php
 declare(strict_types=1);
 

@@ -29,13 +29,25 @@ class CreateUpdateTopicRequestDto
     public ?string $name = null;
 
     /**
+     * Additional custom data associated with the topic. Flat key-value pairs of scalars (string, number, boolean, string[]). Maximum size: 64KB.
+     *
+     * @var ?array<string, mixed> $data
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $data = null;
+
+    /**
      * @param  string  $key
      * @param  ?string  $name
+     * @param  ?array<string, mixed>  $data
      * @phpstan-pure
      */
-    public function __construct(string $key, ?string $name = null)
+    public function __construct(string $key, ?string $name = null, ?array $data = null)
     {
         $this->key = $key;
         $this->name = $name;
+        $this->data = $data;
     }
 }

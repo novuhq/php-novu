@@ -30,6 +30,7 @@ The provider identifier (e.g., sendgrid, twilio, slack, etc.).
 | `EmailWebhook`     | email-webhook      |
 | `Braze`            | braze              |
 | `NovuEmailAgent`   | novu-email-agent   |
+| `AgentEmailInbox`  | agent-email-inbox  |
 | `Nexmo`            | nexmo              |
 | `Plivo`            | plivo              |
 | `Sms77`            | sms77              |
@@ -79,6 +80,7 @@ The provider identifier (e.g., sendgrid, twilio, slack, etc.).
 | `Novu`             | novu               |
 | `Slack`            | slack              |
 | `Discord`          | discord            |
+| `GoogleChat`       | google-chat        |
 | `Msteams`          | msteams            |
 | `WebexMessaging`   | webex-messaging    |
 | `Mattermost`       | mattermost         |
@@ -93,6 +95,7 @@ The provider identifier (e.g., sendgrid, twilio, slack, etc.).
 | `NovuSlack`        | novu-slack         |
 | `Telegram`         | telegram           |
 | `Sendblue`         | sendblue           |
+| `PhotonImessage`   | photon-imessage    |
 | `NovuWebChat`      | novu-web-chat      |
 | `Anthropic`        | anthropic          |
 | `NovuAnthropic`    | novu-anthropic     |

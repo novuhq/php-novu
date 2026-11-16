@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace novu\Models\Components;
 
 
-/** Severity of the workflow */
+/** Override the severity of the workflow */
 enum SeverityLevelEnum: string
 {
     case High = 'high';

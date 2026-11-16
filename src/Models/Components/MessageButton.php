@@ -12,7 +12,7 @@ namespace novu\Models\Components;
 class MessageButton
 {
     /**
-     * Type of button for the action result
+     * Type of the button
      *
      * @var \novu\Models\Components\ButtonTypeEnum $type
      */

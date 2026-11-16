@@ -14,6 +14,7 @@ enum ChatOrPushProviderEnum: string
 {
     case Slack = 'slack';
     case Discord = 'discord';
+    case GoogleChat = 'google-chat';
     case Msteams = 'msteams';
     case WebexMessaging = 'webex-messaging';
     case Mattermost = 'mattermost';
@@ -28,6 +29,7 @@ enum ChatOrPushProviderEnum: string
     case NovuSlack = 'novu-slack';
     case Telegram = 'telegram';
     case Sendblue = 'sendblue';
+    case PhotonImessage = 'photon-imessage';
     case NovuWebChat = 'novu-web-chat';
     case Fcm = 'fcm';
     case Apns = 'apns';

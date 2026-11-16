@@ -12,15 +12,6 @@ namespace novu\Models\Components;
 class ChatControlsMetadataResponseDto
 {
     /**
-     * Control values specific to Chat
-     *
-     * @var \novu\Models\Components\ChatControlDto $values
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('values')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ChatControlDto')]
-    public ChatControlDto $values;
-
-    /**
      * JSON Schema for data
      *
      * @var ?array<string, mixed> $dataSchema
@@ -41,15 +32,25 @@ class ChatControlsMetadataResponseDto
     public ?UiSchema $uiSchema = null;
 
     /**
-     * @param  \novu\Models\Components\ChatControlDto  $values
+     * Control values specific to Chat
+     *
+     * @var ?\novu\Models\Components\ChatControlsMetadataResponseDtoValues $values
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('values')]
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ChatControlsMetadataResponseDtoValues|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?ChatControlsMetadataResponseDtoValues $values = null;
+
+    /**
      * @param  ?array<string, mixed>  $dataSchema
      * @param  ?\novu\Models\Components\UiSchema  $uiSchema
+     * @param  ?\novu\Models\Components\ChatControlsMetadataResponseDtoValues  $values
      * @phpstan-pure
      */
-    public function __construct(ChatControlDto $values, ?array $dataSchema = null, ?UiSchema $uiSchema = null)
+    public function __construct(?array $dataSchema = null, ?UiSchema $uiSchema = null, ?ChatControlsMetadataResponseDtoValues $values = null)
     {
-        $this->values = $values;
         $this->dataSchema = $dataSchema;
         $this->uiSchema = $uiSchema;
+        $this->values = $values;
     }
 }

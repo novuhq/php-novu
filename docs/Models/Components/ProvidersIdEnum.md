@@ -1,6 +1,6 @@
 # ProvidersIdEnum
 
-Provider ID of the job
+Provider ID of the execution
 
 
 ## Values
@@ -30,6 +30,7 @@ Provider ID of the job
 | `EmailWebhook`     | email-webhook      |
 | `Braze`            | braze              |
 | `NovuEmailAgent`   | novu-email-agent   |
+| `AgentEmailInbox`  | agent-email-inbox  |
 | `Nexmo`            | nexmo              |
 | `Plivo`            | plivo              |
 | `Sms77`            | sms77              |
@@ -79,6 +80,7 @@ Provider ID of the job
 | `Novu`             | novu               |
 | `Slack`            | slack              |
 | `Discord`          | discord            |
+| `GoogleChat`       | google-chat        |
 | `Msteams`          | msteams            |
 | `WebexMessaging`   | webex-messaging    |
 | `Mattermost`       | mattermost         |
@@ -93,6 +95,7 @@ Provider ID of the job
 | `NovuSlack`        | novu-slack         |
 | `Telegram`         | telegram           |
 | `Sendblue`         | sendblue           |
+| `PhotonImessage`   | photon-imessage    |
 | `NovuWebChat`      | novu-web-chat      |
 | `Anthropic`        | anthropic          |
 | `NovuAnthropic`    | novu-anthropic     |

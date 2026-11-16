@@ -12,15 +12,6 @@ namespace novu\Models\Components;
 class DigestControlsMetadataResponseDto
 {
     /**
-     * Control values specific to Digest
-     *
-     * @var \novu\Models\Components\DigestControlDto $values
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('values')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\DigestControlDto')]
-    public DigestControlDto $values;
-
-    /**
      * JSON Schema for data
      *
      * @var ?array<string, mixed> $dataSchema
@@ -41,15 +32,25 @@ class DigestControlsMetadataResponseDto
     public ?UiSchema $uiSchema = null;
 
     /**
-     * @param  \novu\Models\Components\DigestControlDto  $values
+     * Control values specific to Digest
+     *
+     * @var ?\novu\Models\Components\DigestControlsMetadataResponseDtoValues $values
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('values')]
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\DigestControlsMetadataResponseDtoValues|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?DigestControlsMetadataResponseDtoValues $values = null;
+
+    /**
      * @param  ?array<string, mixed>  $dataSchema
      * @param  ?\novu\Models\Components\UiSchema  $uiSchema
+     * @param  ?\novu\Models\Components\DigestControlsMetadataResponseDtoValues  $values
      * @phpstan-pure
      */
-    public function __construct(DigestControlDto $values, ?array $dataSchema = null, ?UiSchema $uiSchema = null)
+    public function __construct(?array $dataSchema = null, ?UiSchema $uiSchema = null, ?DigestControlsMetadataResponseDtoValues $values = null)
     {
-        $this->values = $values;
         $this->dataSchema = $dataSchema;
         $this->uiSchema = $uiSchema;
+        $this->values = $values;
     }
 }

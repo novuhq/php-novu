@@ -35,6 +35,7 @@ enum GetChannelConnectionResponseDtoProviderId: string
     case EmailWebhook = 'email-webhook';
     case Braze = 'braze';
     case NovuEmailAgent = 'novu-email-agent';
+    case AgentEmailInbox = 'agent-email-inbox';
     case Nexmo = 'nexmo';
     case Plivo = 'plivo';
     case Sms77 = 'sms77';
@@ -84,6 +85,7 @@ enum GetChannelConnectionResponseDtoProviderId: string
     case Novu = 'novu';
     case Slack = 'slack';
     case Discord = 'discord';
+    case GoogleChat = 'google-chat';
     case Msteams = 'msteams';
     case WebexMessaging = 'webex-messaging';
     case Mattermost = 'mattermost';
@@ -98,6 +100,7 @@ enum GetChannelConnectionResponseDtoProviderId: string
     case NovuSlack = 'novu-slack';
     case Telegram = 'telegram';
     case Sendblue = 'sendblue';
+    case PhotonImessage = 'photon-imessage';
     case NovuWebChat = 'novu-web-chat';
     case Anthropic = 'anthropic';
     case NovuAnthropic = 'novu-anthropic';

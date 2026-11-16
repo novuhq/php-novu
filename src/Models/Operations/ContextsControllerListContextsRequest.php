@@ -60,6 +60,14 @@ class ContextsControllerListContextsRequest
     public ?bool $includeCursor = null;
 
     /**
+     * Filter contexts by type
+     *
+     * @var ?string $type
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=type')]
+    public ?string $type = null;
+
+    /**
      * Filter contexts by id
      *
      * @var ?string $id
@@ -90,12 +98,13 @@ class ContextsControllerListContextsRequest
      * @param  ?\novu\Models\Operations\OrderDirection  $orderDirection
      * @param  ?string  $orderBy
      * @param  ?bool  $includeCursor
+     * @param  ?string  $type
      * @param  ?string  $id
      * @param  ?string  $search
      * @param  ?string  $idempotencyKey
      * @phpstan-pure
      */
-    public function __construct(?string $after = null, ?string $before = null, ?float $limit = null, ?OrderDirection $orderDirection = null, ?string $orderBy = null, ?bool $includeCursor = null, ?string $id = null, ?string $search = null, ?string $idempotencyKey = null)
+    public function __construct(?string $after = null, ?string $before = null, ?float $limit = null, ?OrderDirection $orderDirection = null, ?string $orderBy = null, ?bool $includeCursor = null, ?string $type = null, ?string $id = null, ?string $search = null, ?string $idempotencyKey = null)
     {
         $this->after = $after;
         $this->before = $before;
@@ -103,6 +112,7 @@ class ContextsControllerListContextsRequest
         $this->orderDirection = $orderDirection;
         $this->orderBy = $orderBy;
         $this->includeCursor = $includeCursor;
+        $this->type = $type;
         $this->id = $id;
         $this->search = $search;
         $this->idempotencyKey = $idempotencyKey;
