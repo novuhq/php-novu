@@ -12,15 +12,6 @@ namespace novu\Models\Components;
 class ThrottleControlsMetadataResponseDto
 {
     /**
-     * Control values specific to Throttle
-     *
-     * @var \novu\Models\Components\ThrottleControlDto $values
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('values')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ThrottleControlDto')]
-    public ThrottleControlDto $values;
-
-    /**
      * JSON Schema for data
      *
      * @var ?array<string, mixed> $dataSchema
@@ -41,15 +32,25 @@ class ThrottleControlsMetadataResponseDto
     public ?UiSchema $uiSchema = null;
 
     /**
-     * @param  \novu\Models\Components\ThrottleControlDto  $values
+     * Control values specific to Throttle
+     *
+     * @var ?\novu\Models\Components\ThrottleControlsMetadataResponseDtoValues $values
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('values')]
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ThrottleControlsMetadataResponseDtoValues|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?ThrottleControlsMetadataResponseDtoValues $values = null;
+
+    /**
      * @param  ?array<string, mixed>  $dataSchema
      * @param  ?\novu\Models\Components\UiSchema  $uiSchema
+     * @param  ?\novu\Models\Components\ThrottleControlsMetadataResponseDtoValues  $values
      * @phpstan-pure
      */
-    public function __construct(ThrottleControlDto $values, ?array $dataSchema = null, ?UiSchema $uiSchema = null)
+    public function __construct(?array $dataSchema = null, ?UiSchema $uiSchema = null, ?ThrottleControlsMetadataResponseDtoValues $values = null)
     {
-        $this->values = $values;
         $this->dataSchema = $dataSchema;
         $this->uiSchema = $uiSchema;
+        $this->values = $values;
     }
 }

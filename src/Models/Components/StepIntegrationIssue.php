@@ -38,15 +38,27 @@ class StepIntegrationIssue
     public ?string $variableName = null;
 
     /**
+     * Blocking severity of the issue. `error` (default when omitted) blocks save; `warning` is a non-blocking notice.
+     *
+     * @var ?\novu\Models\Components\StepIssueSeverityEnum $severity
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('severity')]
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\StepIssueSeverityEnum|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?StepIssueSeverityEnum $severity = null;
+
+    /**
      * @param  \novu\Models\Components\IntegrationIssueEnum  $issueType
      * @param  string  $message
      * @param  ?string  $variableName
+     * @param  ?\novu\Models\Components\StepIssueSeverityEnum  $severity
      * @phpstan-pure
      */
-    public function __construct(IntegrationIssueEnum $issueType, string $message, ?string $variableName = null)
+    public function __construct(IntegrationIssueEnum $issueType, string $message, ?string $variableName = null, ?StepIssueSeverityEnum $severity = null)
     {
         $this->issueType = $issueType;
         $this->message = $message;
         $this->variableName = $variableName;
+        $this->severity = $severity;
     }
 }

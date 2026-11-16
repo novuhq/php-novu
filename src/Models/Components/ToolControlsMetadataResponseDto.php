@@ -12,15 +12,6 @@ namespace novu\Models\Components;
 class ToolControlsMetadataResponseDto
 {
     /**
-     * Control values specific to Tool
-     *
-     * @var \novu\Models\Components\ToolControlDto $values
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('values')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ToolControlDto')]
-    public ToolControlDto $values;
-
-    /**
      * JSON Schema for data
      *
      * @var ?array<string, mixed> $dataSchema
@@ -41,15 +32,25 @@ class ToolControlsMetadataResponseDto
     public ?UiSchema $uiSchema = null;
 
     /**
-     * @param  \novu\Models\Components\ToolControlDto  $values
+     * Control values specific to Tool
+     *
+     * @var ?\novu\Models\Components\ToolControlsMetadataResponseDtoValues $values
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('values')]
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ToolControlsMetadataResponseDtoValues|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?ToolControlsMetadataResponseDtoValues $values = null;
+
+    /**
      * @param  ?array<string, mixed>  $dataSchema
      * @param  ?\novu\Models\Components\UiSchema  $uiSchema
+     * @param  ?\novu\Models\Components\ToolControlsMetadataResponseDtoValues  $values
      * @phpstan-pure
      */
-    public function __construct(ToolControlDto $values, ?array $dataSchema = null, ?UiSchema $uiSchema = null)
+    public function __construct(?array $dataSchema = null, ?UiSchema $uiSchema = null, ?ToolControlsMetadataResponseDtoValues $values = null)
     {
-        $this->values = $values;
         $this->dataSchema = $dataSchema;
         $this->uiSchema = $uiSchema;
+        $this->values = $values;
     }
 }

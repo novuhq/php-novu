@@ -12,15 +12,6 @@ namespace novu\Models\Components;
 class LayoutControlsDto
 {
     /**
-     * Email layout controls
-     *
-     * @var \novu\Models\Components\LayoutControlValuesDto $values
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('values')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\LayoutControlValuesDto')]
-    public LayoutControlValuesDto $values;
-
-    /**
      * JSON Schema for data
      *
      * @var ?array<string, mixed> $dataSchema
@@ -41,15 +32,25 @@ class LayoutControlsDto
     public ?UiSchema $uiSchema = null;
 
     /**
-     * @param  \novu\Models\Components\LayoutControlValuesDto  $values
+     * Email layout controls
+     *
+     * @var ?array<string, mixed> $values
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('values')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $values = null;
+
+    /**
      * @param  ?array<string, mixed>  $dataSchema
      * @param  ?\novu\Models\Components\UiSchema  $uiSchema
+     * @param  ?array<string, mixed>  $values
      * @phpstan-pure
      */
-    public function __construct(LayoutControlValuesDto $values, ?array $dataSchema = null, ?UiSchema $uiSchema = null)
+    public function __construct(?array $dataSchema = null, ?UiSchema $uiSchema = null, ?array $values = null)
     {
-        $this->values = $values;
         $this->dataSchema = $dataSchema;
         $this->uiSchema = $uiSchema;
+        $this->values = $values;
     }
 }

@@ -11,8 +11,41 @@ namespace novu\Models\Components;
 
 class RuntimeIssueDto
 {
+    /**
+     *
+     * @var \novu\Models\Components\WorkflowIssueTypeEnum $issueType
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('issueType')]
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\WorkflowIssueTypeEnum')]
+    public WorkflowIssueTypeEnum $issueType;
 
-    public function __construct()
+    /**
+     * Human-readable issue message
+     *
+     * @var string $message
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('message')]
+    public string $message;
+
+    /**
+     * Variable associated with the issue
+     *
+     * @var ?string $variableName
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('variableName')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $variableName = null;
+
+    /**
+     * @param  \novu\Models\Components\WorkflowIssueTypeEnum  $issueType
+     * @param  string  $message
+     * @param  ?string  $variableName
+     * @phpstan-pure
+     */
+    public function __construct(WorkflowIssueTypeEnum $issueType, string $message, ?string $variableName = null)
     {
+        $this->issueType = $issueType;
+        $this->message = $message;
+        $this->variableName = $variableName;
     }
 }

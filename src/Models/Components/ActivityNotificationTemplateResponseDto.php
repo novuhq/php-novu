@@ -38,7 +38,7 @@ class ActivityNotificationTemplateResponseDto
     public ?string $id = null;
 
     /**
-     * Origin of the layout
+     * Origin of the workflow
      *
      * @var ?\novu\Models\Components\ResourceOriginEnum $origin
      */

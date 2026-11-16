@@ -57,12 +57,12 @@ class ActivityNotificationStepResponseDto
     /**
      * Control variables
      *
-     * @var ?\novu\Models\Components\ControlVariables $controlVariables
+     * @var ?array<string, mixed> $controlVariables
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('controlVariables')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\ControlVariables|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?ControlVariables $controlVariables = null;
+    public ?array $controlVariables = null;
 
     /**
      * Metadata for the workflow step
@@ -128,7 +128,7 @@ class ActivityNotificationStepResponseDto
      * @param  array<\novu\Models\Components\StepFilterDto>  $filters
      * @param  string  $templateId
      * @param  ?\novu\Models\Components\ActivityNotificationStepResponseDtoReplyCallback  $replyCallback
-     * @param  ?\novu\Models\Components\ControlVariables  $controlVariables
+     * @param  ?array<string, mixed>  $controlVariables
      * @param  ?\novu\Models\Components\ActivityNotificationStepResponseDtoMetadata  $metadata
      * @param  ?\novu\Models\Components\Issues  $issues
      * @param  ?\novu\Models\Components\MessageTemplateDto  $template
@@ -137,7 +137,7 @@ class ActivityNotificationStepResponseDto
      * @param  ?string  $parentId
      * @phpstan-pure
      */
-    public function __construct(string $id, bool $active, array $filters, string $templateId, ?ActivityNotificationStepResponseDtoReplyCallback $replyCallback = null, ?ControlVariables $controlVariables = null, ?ActivityNotificationStepResponseDtoMetadata $metadata = null, ?Issues $issues = null, ?MessageTemplateDto $template = null, ?array $variants = null, ?string $name = null, ?string $parentId = null)
+    public function __construct(string $id, bool $active, array $filters, string $templateId, ?ActivityNotificationStepResponseDtoReplyCallback $replyCallback = null, ?array $controlVariables = null, ?ActivityNotificationStepResponseDtoMetadata $metadata = null, ?Issues $issues = null, ?MessageTemplateDto $template = null, ?array $variants = null, ?string $name = null, ?string $parentId = null)
     {
         $this->id = $id;
         $this->active = $active;

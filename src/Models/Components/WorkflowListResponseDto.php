@@ -69,7 +69,7 @@ class WorkflowListResponseDto
     public WorkflowStatusEnum $status;
 
     /**
-     * Origin of the layout
+     * Origin of the workflow
      *
      * @var \novu\Models\Components\ResourceOriginEnum $origin
      */

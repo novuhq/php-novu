@@ -47,7 +47,7 @@ class ActivityNotificationJobResponseDto
     public ActivityNotificationStepResponseDto $step;
 
     /**
-     * Provider ID of the job
+     * Provider ID of the execution
      *
      * @var \novu\Models\Components\ProvidersIdEnum $providerId
      */
@@ -86,12 +86,12 @@ class ActivityNotificationJobResponseDto
     /**
      * Optional payload for the job
      *
-     * @var ?\novu\Models\Components\Payload $payload
+     * @var ?array<string, mixed> $payload
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('payload')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\Payload|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?Payload $payload = null;
+    public ?array $payload = null;
 
     /**
      * Updated time of the notification
@@ -120,12 +120,12 @@ class ActivityNotificationJobResponseDto
      * @param  string  $status
      * @param  ?\novu\Models\Components\DigestMetadataDto  $digest
      * @param  ?array<string, mixed>  $overrides
-     * @param  ?\novu\Models\Components\Payload  $payload
+     * @param  ?array<string, mixed>  $payload
      * @param  ?string  $updatedAt
      * @param  ?float  $scheduleExtensionsCount
      * @phpstan-pure
      */
-    public function __construct(string $id, ActivityNotificationJobResponseDtoType $type, array $executionDetails, ActivityNotificationStepResponseDto $step, ProvidersIdEnum $providerId, string $status, ?DigestMetadataDto $digest = null, ?array $overrides = null, ?Payload $payload = null, ?string $updatedAt = null, ?float $scheduleExtensionsCount = null)
+    public function __construct(string $id, ActivityNotificationJobResponseDtoType $type, array $executionDetails, ActivityNotificationStepResponseDto $step, ProvidersIdEnum $providerId, string $status, ?DigestMetadataDto $digest = null, ?array $overrides = null, ?array $payload = null, ?string $updatedAt = null, ?float $scheduleExtensionsCount = null)
     {
         $this->id = $id;
         $this->type = $type;

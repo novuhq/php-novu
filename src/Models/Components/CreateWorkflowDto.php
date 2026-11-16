@@ -75,7 +75,7 @@ class CreateWorkflowDto
     public ?PreferencesRequestDto $preferences = null;
 
     /**
-     * Severity of the workflow
+     * Override the severity of the workflow
      *
      * @var ?\novu\Models\Components\SeverityLevelEnum $severity
      */

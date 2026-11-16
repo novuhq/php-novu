@@ -22,7 +22,7 @@ class MessageActionResult
     public ?array $payload = null;
 
     /**
-     * Type of button for the action result
+     * Type of the button
      *
      * @var ?\novu\Models\Components\ButtonTypeEnum $type
      */

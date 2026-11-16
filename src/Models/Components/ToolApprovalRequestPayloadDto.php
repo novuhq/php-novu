@@ -46,17 +46,84 @@ class ToolApprovalRequestPayloadDto
     public ?array $input = null;
 
     /**
+     * Server-minted approve action id. When omitted, self-hosted tool-approval:* is minted at persist.
+     *
+     * @var ?string $approveActionId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('approveActionId')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $approveActionId = null;
+
+    /**
+     * Server-minted deny action id. When omitted, self-hosted tool-approval:* is minted at persist.
+     *
+     * @var ?string $denyActionId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('denyActionId')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $denyActionId = null;
+
+    /**
+     * MCP server name when the gated tool is from an MCP server (for UI labels).
+     *
+     * @var ?string $mcpServerName
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('mcpServerName')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $mcpServerName = null;
+
+    /**
+     * Novu subscriberId(s) allowed to settle this tool gate when HITL is enabled.
+     *
+     * @var ?\novu\Models\Components\To $to
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('to')]
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\To|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?To $to = null;
+
+    /**
+     * Attribution label shown on the HITL card.
+     *
+     * @var ?string $from
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('from')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $from = null;
+
+    /**
+     * Seconds until the HITL tool-gate expires.
+     *
+     * @var ?float $ttlSeconds
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('ttlSeconds')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?float $ttlSeconds = null;
+
+    /**
      * @param  string  $approvalId
      * @param  string  $toolCallId
      * @param  string  $name
      * @param  ?array<string, mixed>  $input
+     * @param  ?string  $approveActionId
+     * @param  ?string  $denyActionId
+     * @param  ?string  $mcpServerName
+     * @param  ?\novu\Models\Components\To  $to
+     * @param  ?string  $from
+     * @param  ?float  $ttlSeconds
      * @phpstan-pure
      */
-    public function __construct(string $approvalId, string $toolCallId, string $name, ?array $input = null)
+    public function __construct(string $approvalId, string $toolCallId, string $name, ?array $input = null, ?string $approveActionId = null, ?string $denyActionId = null, ?string $mcpServerName = null, ?To $to = null, ?string $from = null, ?float $ttlSeconds = null)
     {
         $this->approvalId = $approvalId;
         $this->toolCallId = $toolCallId;
         $this->name = $name;
         $this->input = $input;
+        $this->approveActionId = $approveActionId;
+        $this->denyActionId = $denyActionId;
+        $this->mcpServerName = $mcpServerName;
+        $this->to = $to;
+        $this->from = $from;
+        $this->ttlSeconds = $ttlSeconds;
     }
 }

@@ -60,7 +60,7 @@ class SubscribersControllerSearchSubscribersRequest
     public ?bool $includeCursor = null;
 
     /**
-     * Email address of the subscriber to filter results.
+     * Exact email address of the subscriber. The value must match the stored email field.
      *
      * @var ?string $email
      */
@@ -76,7 +76,7 @@ class SubscribersControllerSearchSubscribersRequest
     public ?string $name = null;
 
     /**
-     * Phone number of the subscriber to filter results.
+     * Exact phone number of the subscriber. The value must match the stored phone field.
      *
      * @var ?string $phone
      */

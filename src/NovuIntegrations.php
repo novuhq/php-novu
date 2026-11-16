@@ -54,11 +54,12 @@ class NovuIntegrations
      *
      * @param  \novu\Models\Components\AddAgentIntegrationRequestDto  $addAgentIntegrationRequestDto
      * @param  string  $identifier
+     * @param  string  $novuAnalyticsSource
      * @param  ?string  $idempotencyKey
      * @return \novu\Models\Operations\AgentIntegrationsControllerAddAgentIntegrationResponse
      * @throws \novu\Models\Errors\APIException
      */
-    public function create(Components\AddAgentIntegrationRequestDto $addAgentIntegrationRequestDto, string $identifier, ?string $idempotencyKey = null, ?Options $options = null): Operations\AgentIntegrationsControllerAddAgentIntegrationResponse
+    public function create(Components\AddAgentIntegrationRequestDto $addAgentIntegrationRequestDto, string $identifier, string $novuAnalyticsSource, ?string $idempotencyKey = null, ?Options $options = null): Operations\AgentIntegrationsControllerAddAgentIntegrationResponse
     {
         $retryConfig = null;
         if ($options) {
@@ -89,6 +90,7 @@ class NovuIntegrations
         }
         $request = new Operations\AgentIntegrationsControllerAddAgentIntegrationRequest(
             identifier: $identifier,
+            novuAnalyticsSource: $novuAnalyticsSource,
             addAgentIntegrationRequestDto: $addAgentIntegrationRequestDto,
             idempotencyKey: $idempotencyKey,
         );

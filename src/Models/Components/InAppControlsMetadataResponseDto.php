@@ -12,15 +12,6 @@ namespace novu\Models\Components;
 class InAppControlsMetadataResponseDto
 {
     /**
-     * Control values specific to In-App
-     *
-     * @var \novu\Models\Components\InAppControlDto $values
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('values')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\InAppControlDto')]
-    public InAppControlDto $values;
-
-    /**
      * JSON Schema for data
      *
      * @var ?array<string, mixed> $dataSchema
@@ -41,15 +32,25 @@ class InAppControlsMetadataResponseDto
     public ?UiSchema $uiSchema = null;
 
     /**
-     * @param  \novu\Models\Components\InAppControlDto  $values
+     * Control values specific to In-App
+     *
+     * @var ?\novu\Models\Components\Values $values
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('values')]
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\Values|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?Values $values = null;
+
+    /**
      * @param  ?array<string, mixed>  $dataSchema
      * @param  ?\novu\Models\Components\UiSchema  $uiSchema
+     * @param  ?\novu\Models\Components\Values  $values
      * @phpstan-pure
      */
-    public function __construct(InAppControlDto $values, ?array $dataSchema = null, ?UiSchema $uiSchema = null)
+    public function __construct(?array $dataSchema = null, ?UiSchema $uiSchema = null, ?Values $values = null)
     {
-        $this->values = $values;
         $this->dataSchema = $dataSchema;
         $this->uiSchema = $uiSchema;
+        $this->values = $values;
     }
 }

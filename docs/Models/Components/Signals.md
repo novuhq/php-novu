@@ -39,3 +39,12 @@ Components\MetadataClearSignalDto $value = /* values here */
 Components\TriggerSignalDto $value = /* values here */
 ```
 
+### `Components\HumanSignalDto`
+
+```php
+/**
+* @var \novu\Models\Components\HumanSignalDto
+*/
+Components\HumanSignalDto $value = /* values here */
+```
+

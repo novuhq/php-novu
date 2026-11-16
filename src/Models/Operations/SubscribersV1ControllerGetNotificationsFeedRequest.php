@@ -26,6 +26,14 @@ class SubscribersV1ControllerGetNotificationsFeedRequest
     public ?float $page = null;
 
     /**
+     * $feedIdentifier
+     *
+     * @var ?array<string> $feedIdentifier
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=feedIdentifier')]
+    public ?array $feedIdentifier = null;
+
+    /**
      *
      * @var ?bool $read
      */
@@ -66,16 +74,18 @@ class SubscribersV1ControllerGetNotificationsFeedRequest
      * @param  string  $subscriberId
      * @param  ?float  $page
      * @param  ?float  $limit
+     * @param  ?array<string>  $feedIdentifier
      * @param  ?bool  $read
      * @param  ?bool  $seen
      * @param  ?string  $payload
      * @param  ?string  $idempotencyKey
      * @phpstan-pure
      */
-    public function __construct(string $subscriberId, ?float $page = null, ?bool $read = null, ?bool $seen = null, ?string $payload = null, ?string $idempotencyKey = null, ?float $limit = 10)
+    public function __construct(string $subscriberId, ?float $page = null, ?array $feedIdentifier = null, ?bool $read = null, ?bool $seen = null, ?string $payload = null, ?string $idempotencyKey = null, ?float $limit = 10)
     {
         $this->subscriberId = $subscriberId;
         $this->page = $page;
+        $this->feedIdentifier = $feedIdentifier;
         $this->read = $read;
         $this->seen = $seen;
         $this->payload = $payload;

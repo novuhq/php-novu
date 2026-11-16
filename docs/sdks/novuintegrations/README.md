@@ -34,6 +34,7 @@ $addAgentIntegrationRequestDto = new Components\AddAgentIntegrationRequestDto();
 
 $response = $sdk->agents->integrations->create(
     identifier: '<value>',
+    novuAnalyticsSource: '<value>',
     addAgentIntegrationRequestDto: $addAgentIntegrationRequestDto
 
 );
@@ -48,6 +49,7 @@ if ($response->agentIntegrationResponseDto !== null) {
 | Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
 | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
 | `identifier`                                                                                         | *string*                                                                                             | :heavy_check_mark:                                                                                   | N/A                                                                                                  |
+| `novuAnalyticsSource`                                                                                | *string*                                                                                             | :heavy_check_mark:                                                                                   | N/A                                                                                                  |
 | `addAgentIntegrationRequestDto`                                                                      | [Components\AddAgentIntegrationRequestDto](../../Models/Components/AddAgentIntegrationRequestDto.md) | :heavy_check_mark:                                                                                   | N/A                                                                                                  |
 | `idempotencyKey`                                                                                     | *?string*                                                                                            | :heavy_minus_sign:                                                                                   | A header for idempotency purposes                                                                    |
 

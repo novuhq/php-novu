@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace novu\Models\Components;
 
 
-/** Type of the step */
+/** Channels of the notification */
 enum StepTypeEnum: string
 {
     case InApp = 'in_app';

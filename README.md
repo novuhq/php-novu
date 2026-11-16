@@ -392,7 +392,7 @@ if ($response->triggerEventResponseDto !== null) {
 
 * [create](docs/sdks/agents/README.md#create) - Create an agent
 * [list](docs/sdks/agents/README.md#list) - List all agents
-* [sendReply](docs/sdks/agents/README.md#sendreply) - Send an agent reply
+* [~~sendReply~~](docs/sdks/agents/README.md#sendreply) - Send an agent reply :warning: **Deprecated**
 * [retrieve](docs/sdks/agents/README.md#retrieve) - Retrieve an agent
 * [update](docs/sdks/agents/README.md#update) - Update an agent
 * [delete](docs/sdks/agents/README.md#delete) - Delete an agent

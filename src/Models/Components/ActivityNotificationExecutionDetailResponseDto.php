@@ -71,7 +71,7 @@ class ActivityNotificationExecutionDetailResponseDto
     public ?string $createdAt = null;
 
     /**
-     * Provider ID of the job
+     * Provider ID of the execution
      *
      * @var ?\novu\Models\Components\ProvidersIdEnum $providerId
      */

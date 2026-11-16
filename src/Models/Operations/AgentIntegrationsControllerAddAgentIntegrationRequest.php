@@ -21,6 +21,13 @@ class AgentIntegrationsControllerAddAgentIntegrationRequest
 
     /**
      *
+     * @var string $novuAnalyticsSource
+     */
+    #[SpeakeasyMetadata('header:style=simple,explode=false,name=Novu-Analytics-Source')]
+    public string $novuAnalyticsSource;
+
+    /**
+     *
      * @var \novu\Models\Components\AddAgentIntegrationRequestDto $addAgentIntegrationRequestDto
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
@@ -36,13 +43,15 @@ class AgentIntegrationsControllerAddAgentIntegrationRequest
 
     /**
      * @param  string  $identifier
+     * @param  string  $novuAnalyticsSource
      * @param  \novu\Models\Components\AddAgentIntegrationRequestDto  $addAgentIntegrationRequestDto
      * @param  ?string  $idempotencyKey
      * @phpstan-pure
      */
-    public function __construct(string $identifier, Components\AddAgentIntegrationRequestDto $addAgentIntegrationRequestDto, ?string $idempotencyKey = null)
+    public function __construct(string $identifier, string $novuAnalyticsSource, Components\AddAgentIntegrationRequestDto $addAgentIntegrationRequestDto, ?string $idempotencyKey = null)
     {
         $this->identifier = $identifier;
+        $this->novuAnalyticsSource = $novuAnalyticsSource;
         $this->addAgentIntegrationRequestDto = $addAgentIntegrationRequestDto;
         $this->idempotencyKey = $idempotencyKey;
     }

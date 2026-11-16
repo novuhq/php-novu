@@ -9,7 +9,6 @@ declare(strict_types=1);
 namespace novu\Models\Components;
 
 
-/** Channel type through which the message is sent */
 enum ChannelTypeEnum: string
 {
     case InApp = 'in_app';

@@ -89,7 +89,7 @@ class ActivityNotificationResponseDto
     public ?string $updatedAt = null;
 
     /**
-     * $channels
+     * Channels of the notification
      *
      * @var ?array<\novu\Models\Components\StepTypeEnum> $channels
      */
@@ -179,7 +179,7 @@ class ActivityNotificationResponseDto
     public ?array $topics = null;
 
     /**
-     * Severity of the workflow
+     * Override the severity of the workflow
      *
      * @var ?\novu\Models\Components\SeverityLevelEnum $severity
      */

@@ -12,6 +12,16 @@ namespace novu\Models\Components;
 class WorkflowPreferenceDto
 {
     /**
+     * JsonLogic condition controlling whether this preference applies
+     *
+     * @var ?array<string, mixed> $condition
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('condition')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $condition = null;
+
+    /**
      * A flag specifying if notification delivery is enabled for the workflow. If true, notification delivery is enabled by default for all channels. This setting can be overridden by the channel preferences.
      *
      * @var ?bool $enabled
@@ -32,10 +42,12 @@ class WorkflowPreferenceDto
     /**
      * @param  ?bool  $enabled
      * @param  ?bool  $readOnly
+     * @param  ?array<string, mixed>  $condition
      * @phpstan-pure
      */
-    public function __construct(?bool $enabled = true, ?bool $readOnly = false)
+    public function __construct(?array $condition = null, ?bool $enabled = true, ?bool $readOnly = false)
     {
+        $this->condition = $condition;
         $this->enabled = $enabled;
         $this->readOnly = $readOnly;
     }

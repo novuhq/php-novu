@@ -13,3 +13,5 @@ Type of step content issue
 | `MissingValue`                    | MISSING_VALUE                     |
 | `TierLimitExceeded`               | TIER_LIMIT_EXCEEDED               |
 | `UnsupportedProperty`             | UNSUPPORTED_PROPERTY              |
+| `ChatCardLimitExceeded`           | CHAT_CARD_LIMIT_EXCEEDED          |
+| `ChatCardInvalidButton`           | CHAT_CARD_INVALID_BUTTON          |

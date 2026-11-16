@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace novu\Models\Components;
 
 
-/** Type of button for the action result */
+/** Type of the button */
 enum ButtonTypeEnum: string
 {
     case Primary = 'primary';

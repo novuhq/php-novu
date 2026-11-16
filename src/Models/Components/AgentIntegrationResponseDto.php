@@ -72,6 +72,15 @@ class AgentIntegrationResponseDto
     public ?bool $exceedsPlanLimit = null;
 
     /**
+     * `true` when at least one person has linked their chat on this integration (it has a channel endpoint), so the agent has someone to reach there. Only returned by the list, and only when true. Email has no channel endpoints, so it never carries the flag.
+     *
+     * @var ?bool $hasChannelEndpoints
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('hasChannelEndpoints')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?bool $hasChannelEndpoints = null;
+
+    /**
      * Set when the agent–integration link received its first inbound webhook delivery.
      *
      * @var ?\novu\Models\Components\ConnectedAt $connectedAt
@@ -90,10 +99,11 @@ class AgentIntegrationResponseDto
      * @param  string  $createdAt
      * @param  string  $updatedAt
      * @param  ?bool  $exceedsPlanLimit
+     * @param  ?bool  $hasChannelEndpoints
      * @param  ?\novu\Models\Components\ConnectedAt  $connectedAt
      * @phpstan-pure
      */
-    public function __construct(string $id, string $agentId, AgentIntegrationResponseIntegrationDto $integration, string $environmentId, string $organizationId, string $createdAt, string $updatedAt, ?bool $exceedsPlanLimit = null, ?ConnectedAt $connectedAt = null)
+    public function __construct(string $id, string $agentId, AgentIntegrationResponseIntegrationDto $integration, string $environmentId, string $organizationId, string $createdAt, string $updatedAt, ?bool $exceedsPlanLimit = null, ?bool $hasChannelEndpoints = null, ?ConnectedAt $connectedAt = null)
     {
         $this->id = $id;
         $this->agentId = $agentId;
@@ -103,6 +113,7 @@ class AgentIntegrationResponseDto
         $this->createdAt = $createdAt;
         $this->updatedAt = $updatedAt;
         $this->exceedsPlanLimit = $exceedsPlanLimit;
+        $this->hasChannelEndpoints = $hasChannelEndpoints;
         $this->connectedAt = $connectedAt;
     }
 }

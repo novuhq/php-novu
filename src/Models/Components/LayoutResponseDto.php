@@ -76,7 +76,7 @@ class LayoutResponseDto
     public string $createdAt;
 
     /**
-     * Origin of the layout
+     * Origin of the workflow
      *
      * @var \novu\Models\Components\ResourceOriginEnum $origin
      */

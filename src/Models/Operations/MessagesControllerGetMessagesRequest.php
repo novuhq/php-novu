@@ -13,7 +13,6 @@ use novu\Utils\SpeakeasyMetadata;
 class MessagesControllerGetMessagesRequest
 {
     /**
-     * Channel type through which the message is sent
      *
      * @var ?\novu\Models\Components\ChannelTypeEnum $channel
      */

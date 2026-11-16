@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace novu\Models\Components;
 
 
-/** Origin of the layout */
+/** Origin of the workflow */
 enum ResourceOriginEnum: string
 {
     case NovuCloud = 'novu-cloud';

@@ -34,6 +34,14 @@ class SubscribersControllerGetSubscriberNotificationsRequest
     public ?float $offset = null;
 
     /**
+     * Filter by workflow tags. Returns notifications that have any of the given tags.
+     *
+     * @var ?array<string> $tags
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=tags')]
+    public ?array $tags = null;
+
+    /**
      * Filter by read/unread state
      *
      * @var ?bool $read
@@ -125,6 +133,7 @@ class SubscribersControllerGetSubscriberNotificationsRequest
      * @param  ?float  $limit
      * @param  ?string  $after
      * @param  ?float  $offset
+     * @param  ?array<string>  $tags
      * @param  ?bool  $read
      * @param  ?bool  $archived
      * @param  ?bool  $snoozed
@@ -137,11 +146,12 @@ class SubscribersControllerGetSubscriberNotificationsRequest
      * @param  ?string  $idempotencyKey
      * @phpstan-pure
      */
-    public function __construct(string $subscriberId, ?string $after = null, ?float $offset = null, ?bool $read = null, ?bool $archived = null, ?bool $snoozed = null, ?bool $seen = null, ?string $data = null, ?array $severity = null, ?float $createdGte = null, ?float $createdLte = null, ?array $contextKeys = null, ?string $idempotencyKey = null, ?float $limit = 10)
+    public function __construct(string $subscriberId, ?string $after = null, ?float $offset = null, ?array $tags = null, ?bool $read = null, ?bool $archived = null, ?bool $snoozed = null, ?bool $seen = null, ?string $data = null, ?array $severity = null, ?float $createdGte = null, ?float $createdLte = null, ?array $contextKeys = null, ?string $idempotencyKey = null, ?float $limit = 10)
     {
         $this->subscriberId = $subscriberId;
         $this->after = $after;
         $this->offset = $offset;
+        $this->tags = $tags;
         $this->read = $read;
         $this->archived = $archived;
         $this->snoozed = $snoozed;

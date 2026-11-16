@@ -45,7 +45,7 @@ class Workflow
     public bool $critical;
 
     /**
-     * Severity of the workflow
+     * Override the severity of the workflow
      *
      * @var \novu\Models\Components\SeverityLevelEnum $severity
      */
@@ -66,12 +66,12 @@ class Workflow
     /**
      * Custom data associated with the workflow
      *
-     * @var ?\novu\Models\Components\GetPreferencesResponseDtoData $data
+     * @var ?array<string, mixed> $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\GetPreferencesResponseDtoData|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?GetPreferencesResponseDtoData $data = null;
+    public ?array $data = null;
 
     /**
      * @param  string  $id
@@ -80,10 +80,10 @@ class Workflow
      * @param  bool  $critical
      * @param  \novu\Models\Components\SeverityLevelEnum  $severity
      * @param  ?array<string>  $tags
-     * @param  ?\novu\Models\Components\GetPreferencesResponseDtoData  $data
+     * @param  ?array<string, mixed>  $data
      * @phpstan-pure
      */
-    public function __construct(string $id, string $identifier, string $name, bool $critical, SeverityLevelEnum $severity, ?array $tags = null, ?GetPreferencesResponseDtoData $data = null)
+    public function __construct(string $id, string $identifier, string $name, bool $critical, SeverityLevelEnum $severity, ?array $tags = null, ?array $data = null)
     {
         $this->id = $id;
         $this->identifier = $identifier;

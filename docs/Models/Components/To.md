@@ -1,34 +1,9 @@
 # To
 
-Recipient(s). Accepts a subscriberId string, subscriber object, topic object, or an array of those. When omitted, Novu falls back to the conversation subscriber.
+Novu subscriberId(s) allowed to settle this tool gate when HITL is enabled.
 
 
-## Supported Types
+## Fields
 
-### `string`
-
-```php
-/**
-* @var string
-*/
-string $value = /* values here */
-```
-
-### `array`
-
-```php
-/**
-* @var array<string, mixed>
-*/
-array $value = /* values here */
-```
-
-### `array`
-
-```php
-/**
-* @var array<string|array<string, mixed>>
-*/
-array $value = /* values here */
-```
-
+| Field       | Type        | Required    | Description |
+| ----------- | ----------- | ----------- | ----------- |

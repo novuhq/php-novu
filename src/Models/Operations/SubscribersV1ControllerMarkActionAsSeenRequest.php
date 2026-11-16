@@ -21,10 +21,10 @@ class SubscribersV1ControllerMarkActionAsSeenRequest
 
     /**
      *
-     * @var mixed $type
+     * @var \novu\Models\Operations\Type $type
      */
     #[SpeakeasyMetadata('pathParam:style=simple,explode=false,name=type')]
-    public mixed $type;
+    public Type $type;
 
     /**
      *
@@ -50,13 +50,13 @@ class SubscribersV1ControllerMarkActionAsSeenRequest
 
     /**
      * @param  string  $messageId
-     * @param  mixed  $type
+     * @param  \novu\Models\Operations\Type  $type
      * @param  string  $subscriberId
      * @param  \novu\Models\Components\MarkMessageActionAsSeenDto  $markMessageActionAsSeenDto
      * @param  ?string  $idempotencyKey
      * @phpstan-pure
      */
-    public function __construct(string $messageId, mixed $type, string $subscriberId, Components\MarkMessageActionAsSeenDto $markMessageActionAsSeenDto, ?string $idempotencyKey = null)
+    public function __construct(string $messageId, Type $type, string $subscriberId, Components\MarkMessageActionAsSeenDto $markMessageActionAsSeenDto, ?string $idempotencyKey = null)
     {
         $this->messageId = $messageId;
         $this->type = $type;

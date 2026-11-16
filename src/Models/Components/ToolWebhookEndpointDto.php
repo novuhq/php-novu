@@ -22,12 +22,12 @@ class ToolWebhookEndpointDto
     /**
      * Optional headers (e.g. auth tokens) sent with every request to this webhook. Header values are encrypted at rest on the channel endpoint (`endpoint` field).
      *
-     * @var ?\novu\Models\Components\Headers $headers
+     * @var ?array<string, string> $headers
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('headers')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\Headers|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, string>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?Headers $headers = null;
+    public ?array $headers = null;
 
     /**
      * Optional HTTP method override for this webhook. Defaults to the integration-level method.
@@ -41,11 +41,11 @@ class ToolWebhookEndpointDto
 
     /**
      * @param  string  $url
-     * @param  ?\novu\Models\Components\Headers  $headers
+     * @param  ?array<string, string>  $headers
      * @param  ?\novu\Models\Components\Method  $method
      * @phpstan-pure
      */
-    public function __construct(string $url, ?Method $method = null, ?Headers $headers = null)
+    public function __construct(string $url, ?Method $method = null, ?array $headers = null)
     {
         $this->url = $url;
         $this->headers = $headers;

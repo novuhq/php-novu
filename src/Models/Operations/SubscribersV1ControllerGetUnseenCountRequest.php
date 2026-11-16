@@ -19,6 +19,14 @@ class SubscribersV1ControllerGetUnseenCountRequest
     public string $subscriberId;
 
     /**
+     * Identifier for the feed. Can be a single string or an array of strings.
+     *
+     * @var ?array<string> $feedId
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=feedId')]
+    public ?array $feedId = null;
+
+    /**
      * A header for idempotency purposes
      *
      * @var ?string $idempotencyKey
@@ -44,14 +52,16 @@ class SubscribersV1ControllerGetUnseenCountRequest
 
     /**
      * @param  string  $subscriberId
+     * @param  ?array<string>  $feedId
      * @param  ?bool  $seen
      * @param  ?float  $limit
      * @param  ?string  $idempotencyKey
      * @phpstan-pure
      */
-    public function __construct(string $subscriberId, ?string $idempotencyKey = null, ?bool $seen = false, ?float $limit = 100)
+    public function __construct(string $subscriberId, ?array $feedId = null, ?string $idempotencyKey = null, ?bool $seen = false, ?float $limit = 100)
     {
         $this->subscriberId = $subscriberId;
+        $this->feedId = $feedId;
         $this->idempotencyKey = $idempotencyKey;
         $this->seen = $seen;
         $this->limit = $limit;
