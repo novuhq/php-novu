@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 4286f3ad-fa54-4c63-a599-e5773b27ae7b
 management:
-  docChecksum: 14450a9dae3d7717315072c66043654e
-  docVersion: 3.19.2
-  speakeasyVersion: 1.809.0
+  docChecksum: 363e41ba1172909f97181325ffc1b9a2
+  docVersion: 3.20.0
+  speakeasyVersion: 1.810.0
   generationVersion: 2.961.1
-  releaseVersion: 3.20.0
-  configChecksum: 752b0eca9deebf5cfeb621b6d9fdccc7
+  releaseVersion: 3.21.0
+  configChecksum: fad33f0b64613072574f531cc7512f12
   repoURL: https://github.com/novuhq/php-novu.git
   installationURL: https://github.com/novuhq/php-novu.git
   published: true
 persistentEdits:
-  generation_id: 404c2a7c-c6b7-41e2-829b-30a794b9eb83
-  pristine_commit_hash: 4d98d8cec58f23314cb61c817c757bb29ba3745f
-  pristine_tree_hash: bed502a54f774022d12c10cddb7cfb84f28e1968
+  generation_id: aead1aaf-5f94-4785-bf98-2ff56ab4f17f
+  pristine_commit_hash: 61f7dd18522f3bd669ea2ecbe385b352bdfd6542
+  pristine_tree_hash: 999f64e672f5c569c600b4375444d9ccd6dc634b
 features:
   php:
     additionalProperties: 0.1.1
@@ -71,8 +71,8 @@ trackedFiles:
     pristine_git_object: 274abc2799450e020cb0f035c0abc9105a59de06
   docs/Models/Components/ActivityNotificationResponseDto.md:
     id: eee05f5fe70f
-    last_write_checksum: sha1:ff1f3e362eadf5f5a2ced145e602d96c98b73735
-    pristine_git_object: 1943c6c21e9591c628acee7c243d60f4a7597a67
+    last_write_checksum: sha1:02b2d679528260a3136fd23bb20e95ad265e8b21
+    pristine_git_object: 6d5bb109999be20ea4a8198fe83ce995ac35d947
   docs/Models/Components/ActivityNotificationStepResponseDto.md:
     id: c70addb2daf3
     last_write_checksum: sha1:020ca0aa46f0a7dc94a8ff503ee5f3c3bbd1a6bf
@@ -4667,8 +4667,8 @@ trackedFiles:
     pristine_git_object: 9ee34b87fd641042c6b4ac259881a2e9d5fec95d
   src/Models/Components/ActivityNotificationResponseDto.php:
     id: a05aa50fd7e4
-    last_write_checksum: sha1:2a75f2365865b6c03bf3f74746af4f340a36ac28
-    pristine_git_object: 7ead2fc3b493837306bff1b2661f454821d4586f
+    last_write_checksum: sha1:74e14373f29270a35733d122302f074846a18d99
+    pristine_git_object: 6c3fed956f82fb7816858d05c60003c6ea472997
   src/Models/Components/ActivityNotificationStepResponseDto.php:
     id: 52ea28eb1bcc
     last_write_checksum: sha1:f013c7c6b261f381ce80b403090c9a7545465f13
@@ -8683,8 +8683,8 @@ trackedFiles:
     pristine_git_object: 1108950af27b5c0a25485670947575257c044c13
   src/SDKConfiguration.php:
     id: 9d60ab0bec0b
-    last_write_checksum: sha1:4615b4885483337b96070cc7fd2a9131017fe86e
-    pristine_git_object: b1c07aa3697f6be6f94caad7d0a771241224e915
+    last_write_checksum: sha1:a1730348beecc96fc00f077fde225e411b3d6bb1
+    pristine_git_object: d75c1d852bd3f48605fa48da022e41aa68c9798f
   src/Steps.php:
     id: 9ae87f15c136
     last_write_checksum: sha1:8e390ba9f473cc43bac37ae4a19a15350a91bd8f
@@ -11603,7 +11603,10 @@ examples:
           application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Php SDK Changes:\n* `novu->subscribers->topics->list()`:  `response.data[]` **Changed** (Breaking ⚠️)\n* `novu->workflows->patch()`:  `response` **Changed** (Breaking ⚠️)\n* `novu->subscribersnotifications->getUnseenCount()`:  `request` **Changed** (Breaking ⚠️)\n* `novu->subscriberscredentials->append()`: \n  *  `request.updateSubscriberChannelRequestDto->providerId` **Changed**\n  *  `response.channels[]->providerId` **Changed** (Breaking ⚠️)\n* `novu->notifications->get()`:  `response` **Changed** (Breaking ⚠️)\n* `novu->notifications->list()`:  `response.data[]` **Changed** (Breaking ⚠️)\n* `novu->messages->get()`:  `response.data[]` **Changed** (Breaking ⚠️)\n* `novu->integrations->update()`: \n  *  `request.updateIntegrationRequestDto` **Changed** (Breaking ⚠️)\n  *  `response` **Changed**\n* `novu->integrations->create()`: \n  *  `request.createIntegrationRequestDto` **Changed** (Breaking ⚠️)\n  *  `response` **Changed**\n* `novu->agents->integrations->create()`: \n  *  `request.novuAnalyticsSource` **Added** (Breaking ⚠️)\n  *  `response.hasChannelEndpoints` **Added**\n* `novu->agents->updateBridge()`:  `response.behavior` **Changed** (Breaking ⚠️)\n* `novu->agents->update()`: \n  *  `request.updateAgentRequestDto->behavior` **Changed** (Breaking ⚠️)\n  *  `response.behavior` **Changed** (Breaking ⚠️)\n* `novu->agents->retrieve()`:  `response.behavior` **Changed** (Breaking ⚠️)\n* `novu->agents->sendReply()`:  `request.agentReplyPayloadDto` **Changed** (Breaking ⚠️)\n* `novu->agents->list()`:  `response.data[]->behavior` **Changed** (Breaking ⚠️)\n* `novu->agents->create()`:  `response.behavior` **Changed** (Breaking ⚠️)\n* `novu->workflows->steps->retrieve()`:  `response` **Changed** (Breaking ⚠️)\n* `novu->workflows->steps->generatePreview()`: \n  *  `request.generatePreviewRequestDto->previewPayload->subscriber->channels[]->providerId` **Changed**\n  *  `response.previewPayloadExample->subscriber->channels[]->providerId` **Changed** (Breaking ⚠️)\n* `novu->workflows->sync()`:  `response` **Changed** (Breaking ⚠️)\n* `novu->workflows->get()`:  `response` **Changed** (Breaking ⚠️)\n* `novu->workflows->update()`: \n  *  `request.updateWorkflowDto` **Changed**\n  *  `response` **Changed** (Breaking ⚠️)\n* `novu->triggerbroadcast()`:  `request.triggerEventToAllRequestDto` **Changed** (Breaking ⚠️)\n* `novu->triggerbulk()`: \n  *  `request.bulkTriggerEventDto->events[]` **Changed** (Breaking ⚠️)\n* `novu->workflows->list()`:  `response.workflows[]->steps[]->issues` **Changed** (Breaking ⚠️)\n* `novu->workflows->create()`: \n  *  `request.createWorkflowDto` **Changed**\n  *  `response` **Changed** (Breaking ⚠️)\n* `novu->subscribers->preferences->bulkUpdate()`:  `response.[]->workflow->data` **Changed** (Breaking ⚠️)\n* `novu->topics->subscriptions->update()`:  `response` **Changed** (Breaking ⚠️)\n* `novu->topics->subscriptions->getSubscription()`:  `response.preferences[]->workflow->data` **Changed** (Breaking ⚠️)\n* `novu->layouts->create()`:  `response.controls` **Changed** (Breaking ⚠️)\n* `novu->layouts->list()`:  `response.layouts[]->controls` **Changed** (Breaking ⚠️)\n* `novu->layouts->update()`:  `response.controls` **Changed** (Breaking ⚠️)\n* `novu->layouts->retrieve()`:  `response.controls` **Changed** (Breaking ⚠️)\n* `novu->layouts->duplicate()`:  `response.controls` **Changed** (Breaking ⚠️)\n* `novu->layouts->generatePreview()`: \n  *  `request.layoutPreviewRequestDto->previewPayload->subscriber->channels[]->providerId` **Changed**\n  *  `response.previewPayloadExample->subscriber->channels[]->providerId` **Changed** (Breaking ⚠️)\n* `novu->subscribers->search()`:  `response.data[]->channels[]->providerId` **Changed** (Breaking ⚠️)\n* `novu->subscribers->create()`: \n  *  `response.channels[]->providerId` **Changed** (Breaking ⚠️)\n  *  `error.channels[]->providerId` **Changed** (Breaking ⚠️)\n* `novu->subscribers->get()`:  `response.channels[]->providerId` **Changed** (Breaking ⚠️)\n* `novu->subscribers->patch()`:  `response.channels[]->providerId` **Changed** (Breaking ⚠️)\n* `novu->subscribers->updateCredentials()`: \n  *  `request.updateSubscriberChannelRequestDto->providerId` **Changed**\n  *  `response.channels[]->providerId` **Changed** (Breaking ⚠️)\n* `novu->subscribers->updateOnlineStatus()`:  `response.channels[]->providerId` **Changed** (Breaking ⚠️)\n* `novu->trigger()`:  `request.triggerEventRequestDto` **Changed** (Breaking ⚠️)\n* `novu->topics->subscriptions->create()`:  `response.data[]` **Changed** (Breaking ⚠️)\n* `novu->topics->subscriptions->list()`:  `response.data[]` **Changed** (Breaking ⚠️)\n* `novu->subscribers->messages->markAllAs()`:  `response.[]` **Changed** (Breaking ⚠️)\n* `novu->subscribers->messages->updateAsSeen()`: \n  *  `request` **Changed** (Breaking ⚠️)\n  *  `response` **Changed** (Breaking ⚠️)\n* `novu->channel endpoints->delete()`: **Removed** (Breaking ⚠️)\n* `novu->channel endpoints->retrieve()`: **Removed** (Breaking ⚠️)\n* `novu->topics->create()`: \n  *  `request.createUpdateTopicRequestDto->data` **Added**\n  *  `response.data` **Added**\n  *  `error.data` **Added**\n* `novu->topics->get()`:  `response.data` **Added**\n* `novu->topics->update()`: \n  *  `request.updateTopicRequestDto` **Changed**\n  *  `response.data` **Added**\n* `novu->contexts->update()`: \n  *  `request.updateContextRequestDto->bridgeUrl` **Added**\n  *  `response.bridgeUrl` **Added**\n* `novu->channelconnections->create()`: **Added**\n* `novu->topics->subscriptions->delete()`:  `response.data[]->topic->data` **Added**\n* `novu->environments->diff()`:  `response.resources[]` **Changed**\n* `novu->contexts->retrieve()`:  `response.bridgeUrl` **Added**\n* `novu->contexts->list()`: \n  *  `request->type` **Added**\n  *  `response.data[]->bridgeUrl` **Added**\n* `novu->contexts->create()`: \n  *  `request.createContextRequestDto->bridgeUrl` **Added**\n  *  `response.bridgeUrl` **Added**\n* `novu->subscribers->notifications->list()`: \n  *  `request->tags` **Added**\n* `novu->channel endpoints->list()`: **Removed** (Breaking ⚠️)\n* `novu->subscribers->notifications->getFeed()`: \n  *  `request->feedIdentifier` **Added**\n* `novu->channel endpoints->update()`: **Removed** (Breaking ⚠️)\n* `novu->channel connections->list()`: **Removed** (Breaking ⚠️)\n* `novu->channelconnections->list()`: **Added**\n* `novu->topics->list()`:  `response.data[]->data` **Added**\n* `novu->channel endpoints->create()`: **Removed** (Breaking ⚠️)\n* `novu->channel connections->create()`: **Removed** (Breaking ⚠️)\n* `novu->channel connections->update()`: **Removed** (Breaking ⚠️)\n* `novu->channel connections->retrieve()`: **Removed** (Breaking ⚠️)\n* `novu->agents->sendReply()`: **Deprecated**\n* `novu->channel connections->delete()`: **Removed** (Breaking ⚠️)\n* `novu->channelendpoints->delete()`: **Added**\n* `novu->agents->integrations->list()`:  `response.data[]->hasChannelEndpoints` **Added**\n* `novu->agents->integrations->update()`:  `response.hasChannelEndpoints` **Added**\n* `novu->integrations->list()`:  `response.[]` **Changed**\n* `novu->channelendpoints->update()`: **Added**\n* `novu->channelendpoints->retrieve()`: **Added**\n* `novu->integrations->delete()`:  `response.[]` **Changed**\n* `novu->integrations->setAsPrimary()`:  `response` **Changed**\n* `novu->integrations->listActive()`:  `response.[]` **Changed**\n* `novu->channelendpoints->create()`: **Added**\n* `novu->channelendpoints->list()`: **Added**\n* `novu->channelconnections->delete()`: **Added**\n* `novu->channelconnections->update()`: **Added**\n* `novu->channelconnections->retrieve()`: **Added**\n"
+releaseNotes: |
+  ## Php SDK Changes:
+  * `novu->notifications->list()`:  `response.data[]->overrides` **Added**
+  * `novu->notifications->get()`:  `response.overrides` **Added**
 generatedFiles:
   - .gitattributes
   - USAGE.md
