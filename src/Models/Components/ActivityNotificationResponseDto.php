@@ -139,6 +139,16 @@ class ActivityNotificationResponseDto
     public ?array $payload = null;
 
     /**
+     * Trigger overrides of the notification, as passed to the original workflow trigger
+     *
+     * @var ?array<string, mixed> $overrides
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('overrides')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $overrides = null;
+
+    /**
      * Tags associated with the notification
      *
      * @var ?array<string> $tags
@@ -222,6 +232,7 @@ class ActivityNotificationResponseDto
      * @param  ?\novu\Models\Components\ActivityNotificationTemplateResponseDto  $template
      * @param  ?array<\novu\Models\Components\ActivityNotificationJobResponseDto>  $jobs
      * @param  ?array<string, mixed>  $payload
+     * @param  ?array<string, mixed>  $overrides
      * @param  ?array<string>  $tags
      * @param  ?array<string, mixed>  $controls
      * @param  ?array<string, mixed>  $to
@@ -231,7 +242,7 @@ class ActivityNotificationResponseDto
      * @param  ?array<string>  $contextKeys
      * @phpstan-pure
      */
-    public function __construct(string $environmentId, string $organizationId, string $subscriberId, string $transactionId, ?string $id = null, ?string $templateId = null, ?string $digestedNotificationId = null, ?string $createdAt = null, ?string $updatedAt = null, ?array $channels = null, ?ActivityNotificationSubscriberResponseDto $subscriber = null, ?ActivityNotificationTemplateResponseDto $template = null, ?array $jobs = null, ?array $payload = null, ?array $tags = null, ?array $controls = null, ?array $to = null, ?array $topics = null, ?SeverityLevelEnum $severity = null, ?bool $critical = null, ?array $contextKeys = null)
+    public function __construct(string $environmentId, string $organizationId, string $subscriberId, string $transactionId, ?string $id = null, ?string $templateId = null, ?string $digestedNotificationId = null, ?string $createdAt = null, ?string $updatedAt = null, ?array $channels = null, ?ActivityNotificationSubscriberResponseDto $subscriber = null, ?ActivityNotificationTemplateResponseDto $template = null, ?array $jobs = null, ?array $payload = null, ?array $overrides = null, ?array $tags = null, ?array $controls = null, ?array $to = null, ?array $topics = null, ?SeverityLevelEnum $severity = null, ?bool $critical = null, ?array $contextKeys = null)
     {
         $this->environmentId = $environmentId;
         $this->organizationId = $organizationId;
@@ -247,6 +258,7 @@ class ActivityNotificationResponseDto
         $this->template = $template;
         $this->jobs = $jobs;
         $this->payload = $payload;
+        $this->overrides = $overrides;
         $this->tags = $tags;
         $this->controls = $controls;
         $this->to = $to;

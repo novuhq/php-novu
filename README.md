@@ -546,6 +546,10 @@ if ($response->triggerEventResponseDto !== null) {
 
 * [bulkUpdate](docs/sdks/preferences/README.md#bulkupdate) - Bulk update subscriber preferences
 
+#### [Subscribers.Tokens](docs/sdks/tokens/README.md)
+
+* [create](docs/sdks/tokens/README.md#create) - Create a subscriber login token
+
 #### [Subscribers.Topics](docs/sdks/novutopics/README.md)
 
 * [list](docs/sdks/novutopics/README.md#list) - Retrieve subscriber subscriptions
