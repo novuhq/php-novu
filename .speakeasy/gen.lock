@@ -1,24 +1,24 @@
 lockVersion: 2.0.0
 id: 4286f3ad-fa54-4c63-a599-e5773b27ae7b
 management:
-  docChecksum: 14450a9dae3d7717315072c66043654e
-  docVersion: 3.19.2
-  speakeasyVersion: 1.809.0
-  generationVersion: 2.961.1
-  releaseVersion: 3.20.0
-  configChecksum: 752b0eca9deebf5cfeb621b6d9fdccc7
+  docChecksum: 19e970a2954661ffbc064adb3ce8675d
+  docVersion: 3.20.0
+  speakeasyVersion: 1.811.0
+  generationVersion: 2.968.1
+  releaseVersion: 3.21.0
+  configChecksum: fad33f0b64613072574f531cc7512f12
   repoURL: https://github.com/novuhq/php-novu.git
   installationURL: https://github.com/novuhq/php-novu.git
   published: true
 persistentEdits:
-  generation_id: 404c2a7c-c6b7-41e2-829b-30a794b9eb83
-  pristine_commit_hash: 4d98d8cec58f23314cb61c817c757bb29ba3745f
-  pristine_tree_hash: bed502a54f774022d12c10cddb7cfb84f28e1968
+  generation_id: 88ac3cca-44b1-418e-9be3-c8753741f0a4
+  pristine_commit_hash: 4c44fc397e6da84c72f05592965079a6610189f8
+  pristine_tree_hash: ff597b203bf66682f91195bee2b040a339022781
 features:
   php:
     additionalProperties: 0.1.1
     constsAndDefaults: 0.2.2
-    core: 3.9.29
+    core: 3.9.30
     deprecations: 2.81.1
     examples: 2.81.8
     flattening: 2.81.2
@@ -71,8 +71,8 @@ trackedFiles:
     pristine_git_object: 274abc2799450e020cb0f035c0abc9105a59de06
   docs/Models/Components/ActivityNotificationResponseDto.md:
     id: eee05f5fe70f
-    last_write_checksum: sha1:ff1f3e362eadf5f5a2ced145e602d96c98b73735
-    pristine_git_object: 1943c6c21e9591c628acee7c243d60f4a7597a67
+    last_write_checksum: sha1:02b2d679528260a3136fd23bb20e95ad265e8b21
+    pristine_git_object: 6d5bb109999be20ea4a8198fe83ce995ac35d947
   docs/Models/Components/ActivityNotificationStepResponseDto.md:
     id: c70addb2daf3
     last_write_checksum: sha1:020ca0aa46f0a7dc94a8ff503ee5f3c3bbd1a6bf
@@ -123,8 +123,8 @@ trackedFiles:
     pristine_git_object: 1b2d010f689fadbfdb93f45f751bf2259103d8fc
   docs/Models/Components/AgentBehaviorDto.md:
     id: fb898cf2b96a
-    last_write_checksum: sha1:176b76f8e2e1cd554c08124f4e5f188383b01d32
-    pristine_git_object: d7d253fd5e58343f3564a7e53e50a66703b7e6f3
+    last_write_checksum: sha1:ceb14916b5138dd16b6d7717ad359bd0aaa87fd8
+    pristine_git_object: c0f3f341e9c6e0c25212c13c2cc10147b9971b27
   docs/Models/Components/AgentIntegrationResponseDto.md:
     id: d89d6a05e8a0
     last_write_checksum: sha1:894146ad2bbf9842861bdf989895d48cf05a823a
@@ -201,6 +201,10 @@ trackedFiles:
     id: c31c4cf2359a
     last_write_checksum: sha1:fb55abd59f7f8cd52297acb1727c713316256714
     pristine_git_object: cf5fcc00f5b977aaef9dfb27d5238956c3ea155c
+  docs/Models/Components/BaseSubscriberFieldsDto.md:
+    id: 217ba9a9d7ef
+    last_write_checksum: sha1:79fb2d670157c12d1d3766e9e8d800bc68ba6136
+    pristine_git_object: 87bb3fa53a077fba53e97bf1bf6caf2c472c0b34
   docs/Models/Components/Body.md:
     id: b767f59bcaf2
     last_write_checksum: sha1:52190eef9624f32e4690f7d22e8190a62c6639b9
@@ -581,6 +585,22 @@ trackedFiles:
     id: 366004e3231e
     last_write_checksum: sha1:715f4c4d54a97c07a44e2e964b8966369c6a8bef
     pristine_git_object: c2c52145e71ea17535617c9eeba05516f3306ee9
+  docs/Models/Components/CreateSubscriberTokenRequestDto.md:
+    id: 2f0ab2ec5d5d
+    last_write_checksum: sha1:7b5dd2b68ef7139bde6c988e7054fd71288ee9b5
+    pristine_git_object: 5c5d764e610dec90c941cd731815454265185223
+  docs/Models/Components/CreateSubscriberTokenRequestDtoContext.md:
+    id: cc4144de9e33
+    last_write_checksum: sha1:05c076c3edfbe5e0580868f991b7fec2bed7919b
+    pristine_git_object: 51b67a976239fcb69a7a305116600a15d2e64763
+  docs/Models/Components/CreateSubscriberTokenRequestDtoContext2.md:
+    id: 1774ab8e2247
+    last_write_checksum: sha1:b309bcc709b97b52bd99123ea036a7d23b3b6b65
+    pristine_git_object: 4d7daa3dd30ea90e8b10eba8d0a89dca7da1ae50
+  docs/Models/Components/CreateSubscriberTokenResponseDto.md:
+    id: ff849be46354
+    last_write_checksum: sha1:281e16e574dc426fd98b411dfedccd6e3ce44f1b
+    pristine_git_object: ab941a21f6fca24b1b5993bbc7036fb276519937
   docs/Models/Components/CreateSubscriptionsResponseDto.md:
     id: 69ddd87749fd
     last_write_checksum: sha1:ca864c7b72576f51244d74596d3b19c384b96115
@@ -2279,8 +2299,8 @@ trackedFiles:
     pristine_git_object: 700428b46097bfff66d78c8787fb4deef706c8dd
   docs/Models/Components/SubscriberAccess.md:
     id: 08dd308418b7
-    last_write_checksum: sha1:3229d85df2cd4a3d83a2eb7bb52e325da10dd65e
-    pristine_git_object: 3bcac8766c2875283e1de46e7051ef5f824e780a
+    last_write_checksum: sha1:87133920f4ff2896caf3798947ab18a00101c487
+    pristine_git_object: 6dbdc79cde4b5964d4a77deb1c8b5edb70848d0e
   docs/Models/Components/SubscriberChannelDto.md:
     id: 1fb2998524b0
     last_write_checksum: sha1:0c64ff0cd3c1bdf1bb202c0de00f683ae6751052
@@ -2325,6 +2345,10 @@ trackedFiles:
     id: fc2457703643
     last_write_checksum: sha1:fbc4d7826e2901f734769cca92170bb264ff234f
     pristine_git_object: 83a94e250619ae53e43d6751554e42460ae70c6d
+  docs/Models/Components/SubscriberTokenScopeEnum.md:
+    id: 9b6a742ea77c
+    last_write_checksum: sha1:24dc36d2b2c1864c70e0808abb233753aeef2ebe
+    pristine_git_object: 46927a1415c3921942daa5aeb79da210892d77eb
   docs/Models/Components/SubscriberWorkflowPreferenceDto.md:
     id: c34ff68ea4e0
     last_write_checksum: sha1:1a1a0c3588bfccd268b8cce07689387ad5973485
@@ -3873,6 +3897,14 @@ trackedFiles:
     id: d92ac64f8dc1
     last_write_checksum: sha1:915942eb97e9f602e8e13a611fe9bd766cac0dc9
     pristine_git_object: f9205d9da50edf8bc9d615c6e3ad546eaef82c1a
+  docs/Models/Operations/SubscribersControllerCreateSubscriberTokenRequest.md:
+    id: 8b2ccacb820d
+    last_write_checksum: sha1:27862ed0ef9a062e55c1e3eb8e8fdae4f6a79759
+    pristine_git_object: 2b7acf03cf989ae32d7f1729f179ab024df7b461
+  docs/Models/Operations/SubscribersControllerCreateSubscriberTokenResponse.md:
+    id: 0c918f52b251
+    last_write_checksum: sha1:767a84adccbcda288ba6044e0ccbd7c5463e92ec
+    pristine_git_object: 470caceb3f3a7124a9c306d5a856bc54d5e6dce1
   docs/Models/Operations/SubscribersControllerDeleteAllNotificationsRequest.md:
     id: b3800db3cf7b
     last_write_checksum: sha1:14f89357e12fd761c6f6ad63ec81fa9ecb62f98c
@@ -4379,8 +4411,8 @@ trackedFiles:
     pristine_git_object: 7261d9c959c55b77ae0eb58abb6b5a2e6d3e792f
   docs/sdks/agents/README.md:
     id: 5965d8232fd8
-    last_write_checksum: sha1:fd7c0ff83ff52725b4fc46b876d52da0b229b37f
-    pristine_git_object: 7aaa4f86dda80effd242488afcd3e10a40c21416
+    last_write_checksum: sha1:2c83acc89222b703acaef93d4b99f560c2ecfabe
+    pristine_git_object: e6d8fd4e853450153e06b3506e38b640d597a3be
   docs/sdks/autoconfigure/README.md:
     id: 83a76b13f0e3
     last_write_checksum: sha1:0bb278247e82bd9b718b7d428ab0cf23f10f6a67
@@ -4489,6 +4521,10 @@ trackedFiles:
     id: 298b9ab3c3e0
     last_write_checksum: sha1:76f30c4b8d3235479324d5d2edb51c14abd4b0ec
     pristine_git_object: 46677c31892b8427e20bc3a079c47b10ce2574a6
+  docs/sdks/tokens/README.md:
+    id: ca61030eb3e5
+    last_write_checksum: sha1:deddb10bc0f37694976abd2e8bf72798042e9372
+    pristine_git_object: a5661510cd271f61c2896604d45b089ff06e45b0
   docs/sdks/topics/README.md:
     id: db4aff1adac3
     last_write_checksum: sha1:ec2694a51d9b4f70ab5cf54492223c75e3cf2041
@@ -4667,8 +4703,8 @@ trackedFiles:
     pristine_git_object: 9ee34b87fd641042c6b4ac259881a2e9d5fec95d
   src/Models/Components/ActivityNotificationResponseDto.php:
     id: a05aa50fd7e4
-    last_write_checksum: sha1:2a75f2365865b6c03bf3f74746af4f340a36ac28
-    pristine_git_object: 7ead2fc3b493837306bff1b2661f454821d4586f
+    last_write_checksum: sha1:74e14373f29270a35733d122302f074846a18d99
+    pristine_git_object: 6c3fed956f82fb7816858d05c60003c6ea472997
   src/Models/Components/ActivityNotificationStepResponseDto.php:
     id: 52ea28eb1bcc
     last_write_checksum: sha1:f013c7c6b261f381ce80b403090c9a7545465f13
@@ -4715,8 +4751,8 @@ trackedFiles:
     pristine_git_object: d4272d3ff41f5d3e4a2d0b92b85fe09306377977
   src/Models/Components/AgentBehaviorDto.php:
     id: 15cf77dab985
-    last_write_checksum: sha1:185556b5b734c3a0cc7f9c49fec8a27ce3008b95
-    pristine_git_object: 158c797de376187daa9d74012fb9faeb4e29ccdb
+    last_write_checksum: sha1:647c3dc72993ec6a0ddf45db7072aeaecc904efd
+    pristine_git_object: 7559093000154c28d6eb0bd96417ad089c4b08d5
   src/Models/Components/AgentIntegrationResponseDto.php:
     id: 78743d507a98
     last_write_checksum: sha1:9361d0c5d4442787d2d131e07af05fd1308caed9
@@ -4789,6 +4825,10 @@ trackedFiles:
     id: 6f29ce362731
     last_write_checksum: sha1:494c6600909f3470e5e56a0972d196a1b4af1641
     pristine_git_object: 386fc8544785cf23dd4a10a5373c876fef20edd0
+  src/Models/Components/BaseSubscriberFieldsDto.php:
+    id: 717a38aa54eb
+    last_write_checksum: sha1:d139e5e8ff3582003f22632fbb7d9cf48fe779ed
+    pristine_git_object: e1d33043510eaae33e47294d8b124024d4c2c304
   src/Models/Components/BridgeConfigurationDto.php:
     id: 679f31003190
     last_write_checksum: sha1:dc0b22b98333c04393102d270d33743d1dfa4d39
@@ -5109,6 +5149,18 @@ trackedFiles:
     id: fedfff976950
     last_write_checksum: sha1:14c877348d9f79be09363703242e18d822def402
     pristine_git_object: 1d7ed84e521fc183fdd9c6be8a4e5f6a298420c8
+  src/Models/Components/CreateSubscriberTokenRequestDto.php:
+    id: f658dcc03d6f
+    last_write_checksum: sha1:37829824171f8e019aff6251ee9555f1726b436b
+    pristine_git_object: f1ad3a66af4a05546c101e42d952ee23beb9aff4
+  src/Models/Components/CreateSubscriberTokenRequestDtoContext2.php:
+    id: 370dafbd9293
+    last_write_checksum: sha1:849509c475ce1b764ba3e9b1981ca63c589df98f
+    pristine_git_object: 0cb860c763474c47e1022f088ad1e8da975a83b1
+  src/Models/Components/CreateSubscriberTokenResponseDto.php:
+    id: ab7dfeb194c8
+    last_write_checksum: sha1:7e51446e98cf4fa364a7cd8cff4f646bbd9ff881
+    pristine_git_object: 886ca5fa6d4b56d49cc1501a108d8ee12104aec0
   src/Models/Components/CreateSubscriptionsResponseDto.php:
     id: 7619a10f0952
     last_write_checksum: sha1:805f22d6a05abb7cfb6ee1b584c80c30d7a9b5b4
@@ -6643,8 +6695,8 @@ trackedFiles:
     pristine_git_object: 3c9bbe7d0af04c41cd106b64c349d931e5d4f197
   src/Models/Components/SubscriberAccess.php:
     id: 77b4272fb720
-    last_write_checksum: sha1:3df3954bbc80e0f002dedb693557cad735d8646a
-    pristine_git_object: 82e769e425ead8762815cf0528aa21b6e422bcaf
+    last_write_checksum: sha1:f1f4df7c7778b2acee227259b161ae70f96c1df5
+    pristine_git_object: e0a26816e3070a381a2f87d3a1eaa90644fc09ce
   src/Models/Components/SubscriberChannelDto.php:
     id: 8b2af971761c
     last_write_checksum: sha1:f7efa47542bd1e5a7119a4e2741bf7b5654579fc
@@ -6689,6 +6741,10 @@ trackedFiles:
     id: c9831b62ac2e
     last_write_checksum: sha1:35bf1290e34d578c3754e636d056ca3dfdc7ddd3
     pristine_git_object: 7bcf97fee4d7a61d285edca000ecfd1662bda5dd
+  src/Models/Components/SubscriberTokenScopeEnum.php:
+    id: 28505714b4d0
+    last_write_checksum: sha1:a09e7f86041c6ac62791b6d4e21d3aa6c0d8c185
+    pristine_git_object: 0de1293285ae393551f7047fc2bfcfa7c98f0c94
   src/Models/Components/SubscriberWorkflowPreferenceDto.php:
     id: db8c24c7a358
     last_write_checksum: sha1:7ab80ee3566f86acd932a1e72f4de116f7faa10e
@@ -8145,6 +8201,14 @@ trackedFiles:
     id: 275a1cd09b3d
     last_write_checksum: sha1:e6991a398b017d4d1c7463e92c5683a631c89aaa
     pristine_git_object: 41f547a13f0c4f5042ab4a7ca120394a8fe2c733
+  src/Models/Operations/SubscribersControllerCreateSubscriberTokenRequest.php:
+    id: aacd496b3ad5
+    last_write_checksum: sha1:e7fd44edd7cd30b293b5e82400d3b13acec1ae89
+    pristine_git_object: 185dfe2025ac939ba90f04e7761543d81af1410c
+  src/Models/Operations/SubscribersControllerCreateSubscriberTokenResponse.php:
+    id: ea43bd45e7f3
+    last_write_checksum: sha1:9c4c223fca219a55bc2e5ca0dd7cb3e7458e6ce1
+    pristine_git_object: e3c1fa833bb797bafd6bb0fc86978ad1e8f5f006
   src/Models/Operations/SubscribersControllerDeleteAllNotificationsRequest.php:
     id: c527ac1c2585
     last_write_checksum: sha1:9df7a320dbb76b172cb3c03b8353399194095861
@@ -8683,16 +8747,16 @@ trackedFiles:
     pristine_git_object: 1108950af27b5c0a25485670947575257c044c13
   src/SDKConfiguration.php:
     id: 9d60ab0bec0b
-    last_write_checksum: sha1:4615b4885483337b96070cc7fd2a9131017fe86e
-    pristine_git_object: b1c07aa3697f6be6f94caad7d0a771241224e915
+    last_write_checksum: sha1:64f6022b35c646aced6f56ea573f58647d763c40
+    pristine_git_object: 1beed5de63c11a487b1537045073f43fbc7fb307
   src/Steps.php:
     id: 9ae87f15c136
     last_write_checksum: sha1:8e390ba9f473cc43bac37ae4a19a15350a91bd8f
     pristine_git_object: fa62b5e69a3c666eb8b355c7c968544cdaa5cbde
   src/Subscribers.php:
     id: 8e91b5d62429
-    last_write_checksum: sha1:bd196c6cd037511dffc8dd415ef569b9778a69e4
-    pristine_git_object: c5ff8c8faa65bf2570a10f775ed773e4806a86eb
+    last_write_checksum: sha1:be916ace5bbec8d610d0c65335cb1cb12544c760
+    pristine_git_object: e046f7ef2aa508fab28b7c09441c4215dccf85a8
   src/SubscribersCredentials.php:
     id: 3d46948b9f2f
     last_write_checksum: sha1:d75677688c5b2d5f25452e0e54ef825681ad486f
@@ -8713,6 +8777,10 @@ trackedFiles:
     id: 682323fa5228
     last_write_checksum: sha1:57199b3958bd2f3c8f1e1085c2bec90fe4b82acc
     pristine_git_object: 79d2c8ba7c189e3c0c825e5f824283d2d2b96afb
+  src/Tokens.php:
+    id: 90306d85694e
+    last_write_checksum: sha1:bbb521fb4e9612f6666b9bf3d2d776c89e70a2a8
+    pristine_git_object: 6dcb8ebfbf26f0db4c1feed004cf5fa503871e6c
   src/Topics.php:
     id: 2f5c9343954e
     last_write_checksum: sha1:cec4b4d9583da7ab05c810ba93c794db62738f44
@@ -8767,8 +8835,8 @@ trackedFiles:
     pristine_git_object: 729e4abfe0201373151037ee08c4df5b90eea4f0
   src/Utils/Headers.php:
     id: 98710f1dd715
-    last_write_checksum: sha1:a8614dd1c4c2f4cd17a09673100d245b26508c5b
-    pristine_git_object: 1d2d7a1a9d23dab67da9854d8c56eeaded69196d
+    last_write_checksum: sha1:0e850b2b2a1d60fa940d43f644eb093f3c08c54e
+    pristine_git_object: dd9cfa0172f29b336b2e7a3aa3e538a9813fad23
   src/Utils/JSON.php:
     id: fb267328a809
     last_write_checksum: sha1:63c99564d392135ef82362cc719734af591d9ce8
@@ -11149,7 +11217,7 @@ examples:
         application/json: {"name": "<value>", "identifier": "<value>", "active": true}
       responses:
         "201":
-          application/json: {"_id": "<id>", "name": "<value>", "identifier": "<value>", "behavior": {"acknowledgeOnReceived": true, "reactionOnResolved": "check", "replyPolicy": "auto_reply"}, "active": false, "_environmentId": "<id>", "_organizationId": "<id>", "createdAt": "1717068058599", "updatedAt": "1735685075993"}
+          application/json: {"_id": "<id>", "name": "<value>", "identifier": "<value>", "behavior": {"acknowledgeOnReceived": true, "reactionOnResolved": "check", "accessRule": {"in": [{"var": "context.tenant.data.plan"}, ["pro", "enterprise"]]}, "replyPolicy": "auto_reply"}, "active": false, "_environmentId": "<id>", "_organizationId": "<id>", "createdAt": "1717068058599", "updatedAt": "1735685075993"}
         "414":
           application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
         "400":
@@ -11454,7 +11522,7 @@ examples:
           identifier: "<value>"
       responses:
         "200":
-          application/json: {"_id": "<id>", "name": "<value>", "identifier": "<value>", "behavior": {"acknowledgeOnReceived": true, "reactionOnResolved": "check", "replyPolicy": "auto_reply"}, "active": false, "_environmentId": "<id>", "_organizationId": "<id>", "createdAt": "1720683396866", "updatedAt": "1735607530624"}
+          application/json: {"_id": "<id>", "name": "<value>", "identifier": "<value>", "behavior": {"acknowledgeOnReceived": true, "reactionOnResolved": "check", "accessRule": {"in": [{"var": "context.tenant.data.plan"}, ["pro", "enterprise"]]}, "replyPolicy": "auto_reply"}, "active": false, "_environmentId": "<id>", "_organizationId": "<id>", "createdAt": "1720683396866", "updatedAt": "1735607530624"}
         "414":
           application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
         "400":
@@ -11469,10 +11537,10 @@ examples:
         path:
           identifier: "<value>"
       requestBody:
-        application/json: {}
+        application/json: {"behavior": {"acknowledgeOnReceived": true, "reactionOnResolved": "check", "accessRule": {"in": [{"var": "context.tenant.data.plan"}, ["pro", "enterprise"]]}, "replyPolicy": "auto_reply"}}
       responses:
         "200":
-          application/json: {"_id": "<id>", "name": "<value>", "identifier": "<value>", "behavior": {"acknowledgeOnReceived": true, "reactionOnResolved": "check", "replyPolicy": "auto_reply"}, "active": false, "_environmentId": "<id>", "_organizationId": "<id>", "createdAt": "1731316642223", "updatedAt": "1735634418143"}
+          application/json: {"_id": "<id>", "name": "<value>", "identifier": "<value>", "behavior": {"acknowledgeOnReceived": true, "reactionOnResolved": "check", "accessRule": {"in": [{"var": "context.tenant.data.plan"}, ["pro", "enterprise"]]}, "replyPolicy": "auto_reply"}, "active": false, "_environmentId": "<id>", "_organizationId": "<id>", "createdAt": "1731316642223", "updatedAt": "1735634418143"}
         "414":
           application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
         "400":
@@ -11506,7 +11574,7 @@ examples:
         application/json: {}
       responses:
         "200":
-          application/json: {"_id": "<id>", "name": "<value>", "identifier": "<value>", "behavior": {"acknowledgeOnReceived": true, "reactionOnResolved": "check", "replyPolicy": "auto_reply"}, "active": true, "_environmentId": "<id>", "_organizationId": "<id>", "createdAt": "1730116257265", "updatedAt": "1735618058643"}
+          application/json: {"_id": "<id>", "name": "<value>", "identifier": "<value>", "behavior": {"acknowledgeOnReceived": true, "reactionOnResolved": "check", "accessRule": {"in": [{"var": "context.tenant.data.plan"}, ["pro", "enterprise"]]}, "replyPolicy": "auto_reply"}, "active": true, "_environmentId": "<id>", "_organizationId": "<id>", "createdAt": "1730116257265", "updatedAt": "1735618058643"}
         "414":
           application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
         "400":
@@ -11601,9 +11669,27 @@ examples:
           application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123", "errors": {"fieldName1": {"messages": ["Field is required", "Must be a valid email address"], "value": "invalidEmail"}, "fieldName2": {"messages": ["Must be at least 18 years old"], "value": 17}, "fieldName3": {"messages": ["Must be a boolean value"], "value": true}, "fieldName4": {"messages": ["Must be a valid object"], "value": {}}, "fieldName5": {"messages": ["Field is missing"], "value": null}, "fieldName6": {"messages": ["Undefined value"]}}}
         "500":
           application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
+  SubscribersController_createSubscriberToken:
+    speakeasy-default-subscribers-controller-create-subscriber-token:
+      parameters:
+        path:
+          subscriberId: "<id>"
+      requestBody:
+        application/json: {"context": {"key": "org-acme"}, "subscriber": {"firstName": "John", "lastName": "Doe", "email": "john.doe@example.com", "phone": "+1234567890", "avatar": "https://example.com/avatar.jpg", "locale": "en-US", "timezone": "America/New_York"}, "scope": ["channels:shared"], "expiresIn": 600}
+      responses:
+        "201":
+          application/json: {"token": "<value>", "expiresAt": "2025-01-01T00:10:00.000Z"}
+        "414":
+          application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
+        "400":
+          application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
+        "422":
+          application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123", "errors": {"fieldName1": {"messages": ["Field is required", "Must be a valid email address"], "value": "invalidEmail"}, "fieldName2": {"messages": ["Must be at least 18 years old"], "value": 17}, "fieldName3": {"messages": ["Must be a boolean value"], "value": true}, "fieldName4": {"messages": ["Must be a valid object"], "value": "xx xx xx "}, "fieldName5": {"messages": ["Field is missing"], "value": null}, "fieldName6": {"messages": ["Undefined value"]}}}
+        "500":
+          application/json: {"statusCode": 404, "timestamp": "2024-12-12T13:00:00Z", "path": "/api/v1/resource", "message": "xx xx xx ", "ctx": {"workflowId": "some_wf_id", "stepId": "some_wf_id"}, "errorId": "abc123"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Php SDK Changes:\n* `novu->subscribers->topics->list()`:  `response.data[]` **Changed** (Breaking ⚠️)\n* `novu->workflows->patch()`:  `response` **Changed** (Breaking ⚠️)\n* `novu->subscribersnotifications->getUnseenCount()`:  `request` **Changed** (Breaking ⚠️)\n* `novu->subscriberscredentials->append()`: \n  *  `request.updateSubscriberChannelRequestDto->providerId` **Changed**\n  *  `response.channels[]->providerId` **Changed** (Breaking ⚠️)\n* `novu->notifications->get()`:  `response` **Changed** (Breaking ⚠️)\n* `novu->notifications->list()`:  `response.data[]` **Changed** (Breaking ⚠️)\n* `novu->messages->get()`:  `response.data[]` **Changed** (Breaking ⚠️)\n* `novu->integrations->update()`: \n  *  `request.updateIntegrationRequestDto` **Changed** (Breaking ⚠️)\n  *  `response` **Changed**\n* `novu->integrations->create()`: \n  *  `request.createIntegrationRequestDto` **Changed** (Breaking ⚠️)\n  *  `response` **Changed**\n* `novu->agents->integrations->create()`: \n  *  `request.novuAnalyticsSource` **Added** (Breaking ⚠️)\n  *  `response.hasChannelEndpoints` **Added**\n* `novu->agents->updateBridge()`:  `response.behavior` **Changed** (Breaking ⚠️)\n* `novu->agents->update()`: \n  *  `request.updateAgentRequestDto->behavior` **Changed** (Breaking ⚠️)\n  *  `response.behavior` **Changed** (Breaking ⚠️)\n* `novu->agents->retrieve()`:  `response.behavior` **Changed** (Breaking ⚠️)\n* `novu->agents->sendReply()`:  `request.agentReplyPayloadDto` **Changed** (Breaking ⚠️)\n* `novu->agents->list()`:  `response.data[]->behavior` **Changed** (Breaking ⚠️)\n* `novu->agents->create()`:  `response.behavior` **Changed** (Breaking ⚠️)\n* `novu->workflows->steps->retrieve()`:  `response` **Changed** (Breaking ⚠️)\n* `novu->workflows->steps->generatePreview()`: \n  *  `request.generatePreviewRequestDto->previewPayload->subscriber->channels[]->providerId` **Changed**\n  *  `response.previewPayloadExample->subscriber->channels[]->providerId` **Changed** (Breaking ⚠️)\n* `novu->workflows->sync()`:  `response` **Changed** (Breaking ⚠️)\n* `novu->workflows->get()`:  `response` **Changed** (Breaking ⚠️)\n* `novu->workflows->update()`: \n  *  `request.updateWorkflowDto` **Changed**\n  *  `response` **Changed** (Breaking ⚠️)\n* `novu->triggerbroadcast()`:  `request.triggerEventToAllRequestDto` **Changed** (Breaking ⚠️)\n* `novu->triggerbulk()`: \n  *  `request.bulkTriggerEventDto->events[]` **Changed** (Breaking ⚠️)\n* `novu->workflows->list()`:  `response.workflows[]->steps[]->issues` **Changed** (Breaking ⚠️)\n* `novu->workflows->create()`: \n  *  `request.createWorkflowDto` **Changed**\n  *  `response` **Changed** (Breaking ⚠️)\n* `novu->subscribers->preferences->bulkUpdate()`:  `response.[]->workflow->data` **Changed** (Breaking ⚠️)\n* `novu->topics->subscriptions->update()`:  `response` **Changed** (Breaking ⚠️)\n* `novu->topics->subscriptions->getSubscription()`:  `response.preferences[]->workflow->data` **Changed** (Breaking ⚠️)\n* `novu->layouts->create()`:  `response.controls` **Changed** (Breaking ⚠️)\n* `novu->layouts->list()`:  `response.layouts[]->controls` **Changed** (Breaking ⚠️)\n* `novu->layouts->update()`:  `response.controls` **Changed** (Breaking ⚠️)\n* `novu->layouts->retrieve()`:  `response.controls` **Changed** (Breaking ⚠️)\n* `novu->layouts->duplicate()`:  `response.controls` **Changed** (Breaking ⚠️)\n* `novu->layouts->generatePreview()`: \n  *  `request.layoutPreviewRequestDto->previewPayload->subscriber->channels[]->providerId` **Changed**\n  *  `response.previewPayloadExample->subscriber->channels[]->providerId` **Changed** (Breaking ⚠️)\n* `novu->subscribers->search()`:  `response.data[]->channels[]->providerId` **Changed** (Breaking ⚠️)\n* `novu->subscribers->create()`: \n  *  `response.channels[]->providerId` **Changed** (Breaking ⚠️)\n  *  `error.channels[]->providerId` **Changed** (Breaking ⚠️)\n* `novu->subscribers->get()`:  `response.channels[]->providerId` **Changed** (Breaking ⚠️)\n* `novu->subscribers->patch()`:  `response.channels[]->providerId` **Changed** (Breaking ⚠️)\n* `novu->subscribers->updateCredentials()`: \n  *  `request.updateSubscriberChannelRequestDto->providerId` **Changed**\n  *  `response.channels[]->providerId` **Changed** (Breaking ⚠️)\n* `novu->subscribers->updateOnlineStatus()`:  `response.channels[]->providerId` **Changed** (Breaking ⚠️)\n* `novu->trigger()`:  `request.triggerEventRequestDto` **Changed** (Breaking ⚠️)\n* `novu->topics->subscriptions->create()`:  `response.data[]` **Changed** (Breaking ⚠️)\n* `novu->topics->subscriptions->list()`:  `response.data[]` **Changed** (Breaking ⚠️)\n* `novu->subscribers->messages->markAllAs()`:  `response.[]` **Changed** (Breaking ⚠️)\n* `novu->subscribers->messages->updateAsSeen()`: \n  *  `request` **Changed** (Breaking ⚠️)\n  *  `response` **Changed** (Breaking ⚠️)\n* `novu->channel endpoints->delete()`: **Removed** (Breaking ⚠️)\n* `novu->channel endpoints->retrieve()`: **Removed** (Breaking ⚠️)\n* `novu->topics->create()`: \n  *  `request.createUpdateTopicRequestDto->data` **Added**\n  *  `response.data` **Added**\n  *  `error.data` **Added**\n* `novu->topics->get()`:  `response.data` **Added**\n* `novu->topics->update()`: \n  *  `request.updateTopicRequestDto` **Changed**\n  *  `response.data` **Added**\n* `novu->contexts->update()`: \n  *  `request.updateContextRequestDto->bridgeUrl` **Added**\n  *  `response.bridgeUrl` **Added**\n* `novu->channelconnections->create()`: **Added**\n* `novu->topics->subscriptions->delete()`:  `response.data[]->topic->data` **Added**\n* `novu->environments->diff()`:  `response.resources[]` **Changed**\n* `novu->contexts->retrieve()`:  `response.bridgeUrl` **Added**\n* `novu->contexts->list()`: \n  *  `request->type` **Added**\n  *  `response.data[]->bridgeUrl` **Added**\n* `novu->contexts->create()`: \n  *  `request.createContextRequestDto->bridgeUrl` **Added**\n  *  `response.bridgeUrl` **Added**\n* `novu->subscribers->notifications->list()`: \n  *  `request->tags` **Added**\n* `novu->channel endpoints->list()`: **Removed** (Breaking ⚠️)\n* `novu->subscribers->notifications->getFeed()`: \n  *  `request->feedIdentifier` **Added**\n* `novu->channel endpoints->update()`: **Removed** (Breaking ⚠️)\n* `novu->channel connections->list()`: **Removed** (Breaking ⚠️)\n* `novu->channelconnections->list()`: **Added**\n* `novu->topics->list()`:  `response.data[]->data` **Added**\n* `novu->channel endpoints->create()`: **Removed** (Breaking ⚠️)\n* `novu->channel connections->create()`: **Removed** (Breaking ⚠️)\n* `novu->channel connections->update()`: **Removed** (Breaking ⚠️)\n* `novu->channel connections->retrieve()`: **Removed** (Breaking ⚠️)\n* `novu->agents->sendReply()`: **Deprecated**\n* `novu->channel connections->delete()`: **Removed** (Breaking ⚠️)\n* `novu->channelendpoints->delete()`: **Added**\n* `novu->agents->integrations->list()`:  `response.data[]->hasChannelEndpoints` **Added**\n* `novu->agents->integrations->update()`:  `response.hasChannelEndpoints` **Added**\n* `novu->integrations->list()`:  `response.[]` **Changed**\n* `novu->channelendpoints->update()`: **Added**\n* `novu->channelendpoints->retrieve()`: **Added**\n* `novu->integrations->delete()`:  `response.[]` **Changed**\n* `novu->integrations->setAsPrimary()`:  `response` **Changed**\n* `novu->integrations->listActive()`:  `response.[]` **Changed**\n* `novu->channelendpoints->create()`: **Added**\n* `novu->channelendpoints->list()`: **Added**\n* `novu->channelconnections->delete()`: **Added**\n* `novu->channelconnections->update()`: **Added**\n* `novu->channelconnections->retrieve()`: **Added**\n"
+releaseNotes: "## Php SDK Changes:\n* `novu->agents->create()`:  `response.behavior` **Changed** (Breaking ⚠️)\n* `novu->agents->list()`:  `response.data[]->behavior` **Changed** (Breaking ⚠️)\n* `novu->agents->retrieve()`:  `response.behavior` **Changed** (Breaking ⚠️)\n* `novu->agents->update()`: \n  *  `request.updateAgentRequestDto->behavior` **Changed**\n  *  `response.behavior` **Changed** (Breaking ⚠️)\n* `novu->agents->updateBridge()`:  `response.behavior` **Changed** (Breaking ⚠️)\n* `novu->subscribers->tokens->create()`: **Added**\n* `novu->notifications->list()`:  `response.data[]->overrides` **Added**\n* `novu->notifications->get()`:  `response.overrides` **Added**\n"
 generatedFiles:
   - .gitattributes
   - USAGE.md

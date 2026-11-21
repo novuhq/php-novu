@@ -25,6 +25,8 @@ class Subscribers
 
     public NovuTopics $topics;
 
+    public Tokens $tokens;
+
     public NovuMessages $messages;
 
     /**
@@ -36,6 +38,7 @@ class Subscribers
         $this->notifications = new NovuNotifications($this->sdkConfiguration);
         $this->preferences = new Preferences($this->sdkConfiguration);
         $this->topics = new NovuTopics($this->sdkConfiguration);
+        $this->tokens = new Tokens($this->sdkConfiguration);
         $this->messages = new NovuMessages($this->sdkConfiguration);
     }
     /**
