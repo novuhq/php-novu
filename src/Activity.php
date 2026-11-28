@@ -18,12 +18,18 @@ use Speakeasy\Serializer\DeserializationContext;
 class Activity
 {
     private SDKConfiguration $sdkConfiguration;
+    public Requests $requests;
+
+    public WorkflowRuns $workflowRuns;
+
     /**
      * @param  SDKConfiguration  $sdkConfig
      */
     public function __construct(public SDKConfiguration $sdkConfig)
     {
         $this->sdkConfiguration = $sdkConfig;
+        $this->requests = new Requests($this->sdkConfiguration);
+        $this->workflowRuns = new WorkflowRuns($this->sdkConfiguration);
     }
     /**
      * @param  string  $baseUrl

@@ -1,9 +1,13 @@
 # Severity
 
+Severity
+
 
 ## Values
 
-| Name    | Value   |
-| ------- | ------- |
-| `Warn`  | warn    |
-| `Error` | error   |
+| Name     | Value    |
+| -------- | -------- |
+| `High`   | high     |
+| `Medium` | medium   |
+| `Low`    | low      |
+| `None`   | none     |

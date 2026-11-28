@@ -1,0 +1,10 @@
+# GetWorkflowRunsResponseDto
+
+
+## Fields
+
+| Field                                                                                 | Type                                                                                  | Required                                                                              | Description                                                                           |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `data`                                                                                | array<[Components\GetWorkflowRunsDto](../../Models/Components/GetWorkflowRunsDto.md)> | :heavy_check_mark:                                                                    | Workflow runs data                                                                    |
+| `next`                                                                                | [?Components\Next](../../Models/Components/Next.md)                                   | :heavy_minus_sign:                                                                    | Next cursor for pagination                                                            |
+| `previous`                                                                            | [?Components\Previous](../../Models/Components/Previous.md)                           | :heavy_minus_sign:                                                                    | Previous cursor for pagination                                                        |

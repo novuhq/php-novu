@@ -846,7 +846,21 @@ $sdk = novu\Novu::builder()
     )
     ->build();
 
-$updateAgentRequestDto = new Components\UpdateAgentRequestDto();
+$updateAgentRequestDto = new Components\UpdateAgentRequestDto(
+    behavior: new Components\AgentBehaviorDto(
+        accessRule: [
+            'in' => [
+                [
+                    'var' => 'context.tenant.data.plan',
+                ],
+                [
+                    'pro',
+                    'enterprise',
+                ],
+            ],
+        ],
+    ),
+);
 
 $response = $sdk->agents->update(
     identifier: '<value>',

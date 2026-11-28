@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace novu\Models\Components;
 
 
-enum DigestTimedConfigDtoWeekDays: string
+enum TimedConfigWeekDays: string
 {
     case Monday = 'monday';
     case Tuesday = 'tuesday';
