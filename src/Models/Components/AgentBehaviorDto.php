@@ -12,7 +12,7 @@ namespace novu\Models\Components;
 class AgentBehaviorDto
 {
     /**
-     * Controls whether the agent accepts inbound messages from senders not yet linked to a subscriber, across all channels. "open" on managed agents auto-creates a lightweight subscriber so the agent can reply; on custom-code / self-hosted agents, the turn is forwarded to the bridge with a null subscriber. "restricted" rejects unknown senders with a managed denial reply (any runtime). Optional on update (partial PATCH). Persisted agents always have a value — managed create defaults to "open"; self-hosted create defaults to "restricted".
+     * Controls whether the agent accepts inbound messages from senders not yet linked to a subscriber, across all channels. "open" on managed agents auto-creates a lightweight subscriber so the agent can reply; on custom-code / self-hosted agents, the turn is forwarded to the bridge with a null subscriber. "restricted" rejects unknown senders with a managed denial reply (any runtime). "rule" requires a known subscriber and accessRule must evaluate truthy for every message, edit, delete, click and reaction; unknown senders, an invalid rule and an evaluation error are refused; a missing field evaluates as JSON Logic says. Optional on update (partial PATCH). Persisted agents always have a value — managed create defaults to "open"; self-hosted create defaults to "restricted".
      *
      * @var ?\novu\Models\Components\SubscriberAccess $subscriberAccess
      */
@@ -20,6 +20,16 @@ class AgentBehaviorDto
     #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\SubscriberAccess|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?SubscriberAccess $subscriberAccess = null;
+
+    /**
+     * JSON Logic rule evaluated over subscriber.* and context.* when subscriberAccess is "rule". Present only when subscriberAccess is "rule". A missing field evaluates as JSON Logic says, so `null` is less than any positive number. "==" and "!=" compare strictly, without type coercion. At most 16 KB, with objects and arrays nested at most 32 levels deep.
+     *
+     * @var ?array<string, mixed> $accessRule
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('accessRule')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $accessRule = null;
 
     /**
      * Acknowledge incoming messages. On platforms that support a native typing indicator (e.g. Slack, WhatsApp, Microsoft Teams, Telegram), shows a "Typing…" indicator while the agent processes the message. On platforms that do not (e.g. Email), reacts with an "eyes" emoji to the first inbound message in a thread. Default: true
@@ -52,13 +62,15 @@ class AgentBehaviorDto
     /**
      * @param  ?bool  $acknowledgeOnReceived
      * @param  ?\novu\Models\Components\SubscriberAccess  $subscriberAccess
+     * @param  ?array<string, mixed>  $accessRule
      * @param  ?\novu\Models\Components\ReplyPolicy  $replyPolicy
      * @param  ?string  $reactionOnResolved
      * @phpstan-pure
      */
-    public function __construct(?SubscriberAccess $subscriberAccess = null, ?bool $acknowledgeOnReceived = true, ?ReplyPolicy $replyPolicy = ReplyPolicy::AutoReply, ?string $reactionOnResolved = 'check')
+    public function __construct(?SubscriberAccess $subscriberAccess = null, ?array $accessRule = null, ?bool $acknowledgeOnReceived = true, ?ReplyPolicy $replyPolicy = ReplyPolicy::AutoReply, ?string $reactionOnResolved = 'check')
     {
         $this->subscriberAccess = $subscriberAccess;
+        $this->accessRule = $accessRule;
         $this->acknowledgeOnReceived = $acknowledgeOnReceived;
         $this->replyPolicy = $replyPolicy;
         $this->reactionOnResolved = $reactionOnResolved;

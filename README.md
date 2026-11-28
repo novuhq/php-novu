@@ -388,6 +388,16 @@ if ($response->triggerEventResponseDto !== null) {
 
 * [track](docs/sdks/activity/README.md#track) - Track provider activity and engagement events
 
+#### [Activity.Requests](docs/sdks/requests/README.md)
+
+* [list](docs/sdks/requests/README.md#list) - List activity requests
+* [retrieve](docs/sdks/requests/README.md#retrieve) - Retrieve activity request
+
+#### [Activity.WorkflowRuns](docs/sdks/workflowruns/README.md)
+
+* [list](docs/sdks/workflowruns/README.md#list) - List workflow runs
+* [retrieve](docs/sdks/workflowruns/README.md#retrieve) - Retrieve workflow run
+
 ### [Agents](docs/sdks/agents/README.md)
 
 * [create](docs/sdks/agents/README.md#create) - Create an agent
@@ -545,6 +555,10 @@ if ($response->triggerEventResponseDto !== null) {
 #### [Subscribers.Preferences](docs/sdks/preferences/README.md)
 
 * [bulkUpdate](docs/sdks/preferences/README.md#bulkupdate) - Bulk update subscriber preferences
+
+#### [Subscribers.Tokens](docs/sdks/tokens/README.md)
+
+* [create](docs/sdks/tokens/README.md#create) - Create a subscriber login token
 
 #### [Subscribers.Topics](docs/sdks/novutopics/README.md)
 

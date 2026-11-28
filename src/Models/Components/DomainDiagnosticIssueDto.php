@@ -21,11 +21,11 @@ class DomainDiagnosticIssueDto
 
     /**
      *
-     * @var \novu\Models\Components\Severity $severity
+     * @var \novu\Models\Components\DomainDiagnosticIssueDtoSeverity $severity
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('severity')]
-    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\Severity')]
-    public Severity $severity;
+    #[\Speakeasy\Serializer\Annotation\Type('\novu\Models\Components\DomainDiagnosticIssueDtoSeverity')]
+    public DomainDiagnosticIssueDtoSeverity $severity;
 
     /**
      *
@@ -44,12 +44,12 @@ class DomainDiagnosticIssueDto
 
     /**
      * @param  \novu\Models\Components\DomainDiagnosticIssueDtoCode  $code
-     * @param  \novu\Models\Components\Severity  $severity
+     * @param  \novu\Models\Components\DomainDiagnosticIssueDtoSeverity  $severity
      * @param  string  $message
      * @param  string  $fix
      * @phpstan-pure
      */
-    public function __construct(DomainDiagnosticIssueDtoCode $code, Severity $severity, string $message, string $fix)
+    public function __construct(DomainDiagnosticIssueDtoCode $code, DomainDiagnosticIssueDtoSeverity $severity, string $message, string $fix)
     {
         $this->code = $code;
         $this->severity = $severity;

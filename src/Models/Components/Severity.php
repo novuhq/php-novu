@@ -9,8 +9,11 @@ declare(strict_types=1);
 namespace novu\Models\Components;
 
 
+/** Severity */
 enum Severity: string
 {
-    case Warn = 'warn';
-    case Error = 'error';
+    case High = 'high';
+    case Medium = 'medium';
+    case Low = 'low';
+    case None = 'none';
 }

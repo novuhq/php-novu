@@ -39,15 +39,26 @@ class AutoConfigureIntegrationResponseDto
     public ?Integration $integration = null;
 
     /**
+     * The URL the provider sends delivery events to. Set it in the provider yourself when auto-configuration fails.
+     *
+     * @var ?string $webhookUrl
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('webhookUrl')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $webhookUrl = null;
+
+    /**
      * @param  bool  $success
      * @param  ?string  $message
      * @param  ?\novu\Models\Components\Integration  $integration
+     * @param  ?string  $webhookUrl
      * @phpstan-pure
      */
-    public function __construct(bool $success, ?string $message = null, ?Integration $integration = null)
+    public function __construct(bool $success, ?string $message = null, ?Integration $integration = null, ?string $webhookUrl = null)
     {
         $this->success = $success;
         $this->message = $message;
         $this->integration = $integration;
+        $this->webhookUrl = $webhookUrl;
     }
 }
